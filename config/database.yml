@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: pixeltech_production
-  username: pixeltech
+  username: deploy
   password: <%= ENV['PIXELTECH_DATABASE_PASSWORD'] %>
