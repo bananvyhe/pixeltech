@@ -6,7 +6,7 @@ plugins:
       'Aprior': {
         variants: {
           normal: {
-            300: {
+            400: {
               url: {
                 woff2: 'fonts/aprior_normal-webfont.woff2'
               }
@@ -14,5 +14,6 @@ plugins:
           }
         }
       }
+    },
     protocol: 'https:'
   }
