@@ -1,5 +1,20 @@
 plugins:
   postcss-import: {}
+  postcss-extend: {}
+  postcss-nested: {}
+  postcss-simple-vars: {}
+  postcss-custom-media: {}
+
+  #precss: {'lookup': false}
+  postcss-cssnext: {features: {'rem': false}}
+  lost: {}
+  
+  postcss-assets: {
+    loadPaths: ['images/'],
+    basePath: 'public',
+    cachebuster: true,
+  }
+  postcss-hamster: {}
   # postcss-cssnext: {}
   postcss-font-magician: {
     custom: {

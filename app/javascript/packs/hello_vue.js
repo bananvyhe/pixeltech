@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#head',
     render: h => h(Head)
   })
-  console.log(app)
 })
 
 
