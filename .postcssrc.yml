@@ -1,3 +1,18 @@
 plugins:
   postcss-import: {}
-  postcss-cssnext: {}
+  # postcss-cssnext: {}
+  postcss-font-magician: {
+    custom: {
+      'Aprior': {
+        variants: {
+          normal: {
+            300: {
+              url: {
+                woff2: 'fonts/aprior_normal-webfont.woff2'
+              }
+            } 
+          }
+        }
+      }
+    protocol: 'https:'
+  }
