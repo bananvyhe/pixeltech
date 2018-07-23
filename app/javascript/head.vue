@@ -1,9 +1,9 @@
 <template>
   <div id="head">
-  	<div class="contain">
-    <p class="title">{{ message }}</p>
+  	<div class="contain basetext">
+    <h2 class="title">{{ message }}</h2>
      <p class="subj">{{subj}}</p> 
-     <p class="subj">{{cont}}</p> 
+     <h2 class="cont">{{cont}}</h2> 
     </div>
   </div>
 </template>
@@ -32,17 +32,22 @@ export default {
 	display: flex;
 	flex-direction: column;
 }
-.subj {display: flex;
-  color: $titleColor;
-	padding: 0em;
-	align-self: center;
-	font-size: 1em;
-}
 .title {
 	display: flex;
 	justify-content: center;
 	padding: 1em 1em 0.3em 1em;
 	color: $titleColor;
-  font-size: 2em;
 }
+.subj {
+	margin-bottom: spacing(0);
+	display: flex;
+  color: $titleColor;
+	padding: 0em 0.5em 0 0.5em;
+	align-self: center;
+}
+.cont {
+	text-align: center;
+}
+
+
 </style>

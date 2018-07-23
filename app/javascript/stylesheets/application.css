@@ -24,7 +24,8 @@
 End Hamster setup*/
 @reset;
 @box-sizing-reset;
-/*@import "_variables"; 
+@import "_variables"; 
+
 @copy full {
   @import "_typography";
 }
@@ -77,7 +78,7 @@ End Hamster setup*/
   @paste full;
   @hamster end;
 }
- */
+ 
  @import "_variables";
 #head {
   font-family: 'Aprior';
