@@ -46,6 +46,7 @@ export default {
 	align-self: center;
 }
 .cont {
+	padding-top: 0.1em;
 	text-align: center;
 }
 
