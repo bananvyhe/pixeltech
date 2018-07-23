@@ -1,9 +1,9 @@
 <template>
   <div id="head">
-  	<div class="contain basetext">
-    <h2 class="title">{{ message }}</h2>
-     <p class="subj">{{subj}}</p> 
-     <div  class="cont"><h2>{{cont}}</h2></div>
+  	<div class="contain ">
+    <h1 class="title  ">{{ message }}</h1>
+     <p class="subj mediumtext">{{subj}}</p> 
+     <div  class="cont basetext"><h2>{{cont}}</h2></div>
     </div>
   </div>
 </template>
@@ -53,6 +53,7 @@ export default {
   	tween() {
       var selectedWork = new TimelineMax() ;
       selectedWork
+       
       .staggerFromTo('.title', 12, {
         autoAlpha:0,
         
@@ -99,7 +100,8 @@ export default {
   }
 	 
 }
-.contain {  
+.contain { 
+	padding-left: 0.5em; 
 	overflow: hidden;
 	position: relative;
 	display: flex;
@@ -108,20 +110,21 @@ export default {
 .title {
 /*	opacity: 0;*/
 	display: flex;
-	justify-content: center;
-	padding: 1em 1em 0.3em 1em;
+	margin-bottom: spacing(0); 
+	padding: 1em 1em 0.1em 0em;
 	color: $titleColor;
+ 
 }
 .subj {
 	margin-bottom: spacing(0);
 	display: flex;
   color: $titleColor;
-	padding: 0em 0.5em 0 0.5em;
+	padding: 0.4em 0.5em 0 0em;
 	align-self: center;
 }
 .cont {
 
-	padding: 0.2em 0.5em 0 0.5em;
+	padding: 0em 0.5em 0 0em;
 	 
 }
 
