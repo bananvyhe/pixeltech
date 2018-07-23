@@ -6,6 +6,7 @@
     "axios": "^0.18.0",
     "babel-plugin-component": "^1.1.1",
     "css-loader": "^0.28.11",
+    "gsap": "^2.0.1",
     "lost": "^8.2.1",
     "postcss-assets": "^5.0.0",
     "postcss-custom-media": "^6.0.0",
