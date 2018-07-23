@@ -81,10 +81,17 @@ export default {
 <style scoped>
 @import "_variables";
 #head {
-	 lost-center: 250px;
+	lost-center: 250px;
 	height: 100vh;
 	display: flex;
-	align-items: center;
+	@media (--only-medium-screen) {
+  	align-items: center;
+  	lost-center: 300px;
+  }
+  @media (--only-1600more-screen) {
+  	align-items: center;
+  	lost-center: 680px;
+  }
 	 
 }
 .contain {  
