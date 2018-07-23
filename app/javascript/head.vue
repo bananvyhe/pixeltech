@@ -61,12 +61,12 @@ export default {
         yPercent: 0,
         ease:Back.easeOut.config(4)}, 0.1, "+=0.5")
       .staggerFromTo('.subj', 1, {
-        autoAlpha:1,
-        // yPercent: 50,
+         autoAlpha:0,
+         xPercent: 10,
       }, {
-        autoAlpha:1,
-        // yPercent: 0,
-        ease:Back.easeOut.config(4)}, 0, "-=11.5")
+         autoAlpha:1,
+         xPercent: 0,
+        ease:Power4.easeOut,}, 0, "-=12")
       .staggerFromTo('.cont', 5, {
       	 
          xPercent: -250,
