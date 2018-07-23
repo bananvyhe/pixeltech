@@ -93,12 +93,24 @@ export default {
 	@media (--only-medium-screen) {
   	align-items: center;
   	lost-center: 300px;
+	  h1 {
+			margin-top: spacing(0);
+		}
+  	.title {
+  		padding-top: 0;
+  	}
   }
   @media (--only-1600more-screen) {
   	align-items: center;
   	lost-center: 680px;
+  	lost-center: 300px;
+	  h1 {
+			margin-top: spacing(0);
+		}
+  	.title {
+  		padding-top: 0;
+  	}
   }
-	 
 }
 .contain { 
 	padding-left: 0.5em; 
