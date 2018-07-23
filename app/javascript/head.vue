@@ -22,7 +22,7 @@ export default {
   var cont = document.querySelector(".cont");
   var scrambleText = new ScrambleText( cont,
 		{
-			timeOffset : 50,
+			timeOffset : 100,
 			// chars: [
 			// 	'安','以','宇','衣','於',
 			// 	'加','幾','久','計','己',
@@ -43,7 +43,7 @@ export default {
       // self.cropText();
        scrambleText.start();  
 
-    },3500 );
+    },1000 );
 
 	
 
@@ -62,10 +62,10 @@ export default {
         ease:Back.easeOut.config(4)}, 0.1, "+=0.5")
       .staggerFromTo('.subj', 1, {
          autoAlpha:0,
-         xPercent: 10,
+         yPercent: 100,
       }, {
          autoAlpha:1,
-         xPercent: 0,
+         yPercent: 0,
         ease:Power4.easeOut,}, 0, "-=12")
       .staggerFromTo('.cont', 5, {
       	 
@@ -84,6 +84,11 @@ export default {
 	lost-center: 250px;
 	height: 100vh;
 	display: flex;
+	@media (--only-xsmall-screen) {
+  	 h2 {
+  	 	adjust-font-size: fs medium;
+  	 }
+  }
 	@media (--only-medium-screen) {
   	align-items: center;
   	lost-center: 300px;
@@ -115,6 +120,7 @@ export default {
 	align-self: center;
 }
 .cont {
+
 	padding: 0.2em 0.5em 0 0.5em;
 	 
 }
