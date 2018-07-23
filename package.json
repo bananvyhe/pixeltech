@@ -18,6 +18,7 @@
     "postcss-simple-vars": "^4.1.0",
     "precss": "^1.4.0",
     "punycode": "^2.1.1",
+    "scramble-text": "0.0.8",
     "vue": "^2.5.16",
     "vue-loader": "14.2.2",
     "vue-template-compiler": "^2.5.16"
