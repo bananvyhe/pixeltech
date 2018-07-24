@@ -126,7 +126,7 @@ export default {
 	overflow: hidden;
 	position: relative;
 }
-.screen { 
+.screen { margin: 0 1.5em 0 1.5em;
 	border-top-left-radius: 0.3em;
 	border-top-right-radius: 0.3em;
 	border-bottom-left-radius: 0.3em;
@@ -137,7 +137,7 @@ export default {
 	display: flex;
 	justify-content: center;
 }
-.title {
+.title {margin: 0 2em 0 2em;
 	adjust-font-size: 1.7em;
 	line-height: 1.3em;
 	padding: 0.0em 0.4em;
@@ -156,6 +156,7 @@ export default {
 }
 
 .cont {
+	margin: 0 2em 0 2em;
 	display: flex;
 	border-bottom-right-radius: 2.5em;
 	border-bottom-left-radius: 2.5em;
