@@ -54,7 +54,7 @@ p:first-of-type {
    adjust-font-size: fs m;
 }
 .largetext {
-   adjust-font-size: fs l;
+   adjust-font-size: fs xxxl;
 } 
 p { 
   display: block;

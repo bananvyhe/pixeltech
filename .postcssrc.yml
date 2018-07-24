@@ -18,12 +18,23 @@ plugins:
   # postcss-cssnext: {}
   postcss-font-magician: {
     custom: {
-      'Aprior': {
+      'Telidon': {
         variants: {
           normal: {
             400: {
               url: {
-                woff2: 'fonts/aprior_normal-webfont.woff2'
+                woff2: 'fonts/telidon_con_it.woff2'
+              }
+            } 
+          }
+        }
+      },
+      'RobotoReg': {
+        variants: {
+          normal: {
+            400: {
+              url: {
+                woff2: 'fonts/roboto-regular-webfont.woff2'
               }
             } 
           }
@@ -32,3 +43,5 @@ plugins:
     },
     protocol: 'https:'
   }
+
+ 

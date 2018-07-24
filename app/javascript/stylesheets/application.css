@@ -79,8 +79,17 @@ End Hamster setup*/
   @hamster end;
 }
  
- @import "_variables";
+@import "_variables";
+.maincontainer { 
+  background: resolve('../images/bg.png');
+  /*background-position: center 0;*/
+  background-color: $palespringbud;
+  /*background: resolve('../images/bg.png');*/
+}
 #head {
-  font-family: 'Aprior';
+  font-family: 'Telidon';
+  .subj {
+    font-family: 'RobotoReg';
+  }
 }
 
