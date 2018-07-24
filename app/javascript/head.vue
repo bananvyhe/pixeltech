@@ -6,7 +6,7 @@
   				  {{ message }}  
   			</div>
   		</div>
-    	<p class="subj basetext">{{subj}}</p> 
+    	<p class="subj basetext"><vue-typer :text= "subj"></vue-typer></p> 
 			<div  class="cont  dotted">
 				<div class="plashka"><p>{{cont}}</p></div>
 			</div>
@@ -16,7 +16,11 @@
 
 <script>
 import ScrambleText from 'scramble-text'; 
+import { VueTyper } from 'vue-typer'
 export default {
+	components: {
+		'vue-typer': VueTyper
+	},
   data: function () {
     return {
     	subj: 'Разработка веб-приложений, сайтов на Ruby on Rails + Vue.js',
@@ -99,6 +103,8 @@ export default {
 	height: 100vh;
 	display: flex;
 	@media (--only-xsmall-screen) {
+		.screen { margin: 0 ;}
+		.cont {	margin: 0;}
   	 h2 {
   	 	adjust-font-size: fs medium;
   	 }
@@ -121,6 +127,7 @@ export default {
   }
 }
 .contain { 
+	width: 100%;
 	padding-left: 0.6em; 
 	padding-right: 0.6em; 
 	overflow: hidden;
@@ -146,6 +153,7 @@ export default {
 	color: $color-5;
 }
 .subj {
+	min-height: 5em;
 	border: 1px solid $x11gray;
 	@extend %minimalradius;
 	background-color: $palespringbud;
