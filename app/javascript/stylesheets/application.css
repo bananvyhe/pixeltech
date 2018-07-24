@@ -81,7 +81,7 @@ End Hamster setup*/
  
 @import "_variables";
 .maincontainer { 
-  background: resolve('../images/bg.png');
+/*  background: url('../images/bg.png');*/
   /*background-position: center 0;*/
   background-color: $palespringbud;
   /*background: resolve('../images/bg.png');*/

@@ -1,13 +1,13 @@
 <template>
   <div id="head">
   	<div class="contain ">
-  		<div class="screen">
+  		<div class="screen  dotted ">
   			<div class="title">
   				  {{ message }}  
   			</div>
   		</div>
     	<p class="subj basetext">{{subj}}</p> 
-			<div  class="cont ">
+			<div  class="cont  dotted">
 				<div class="plashka"><p>{{cont}}</p></div>
 			</div>
     </div>
@@ -59,14 +59,11 @@ export default {
   	tween() {
       var selectedWork = new TimelineMax() ;
       selectedWork
-       
       .staggerFromTo('.title', 0.2, {
-
-        // autoAlpha:0,
+	      // autoAlpha:0,
         // scaleX: 0.8,
        	scaleY: 0, 
         // xPercent: -350,
-        
       }, {
        transformOrigin: '50% 50%',
       	// scaleX: 1,
@@ -132,6 +129,8 @@ export default {
 .screen {
 	border-top-left-radius: 0.3em;
 	border-top-right-radius: 0.3em;
+	border-bottom-left-radius: 0.3em;
+	border-bottom-right-radius: 0.3em;
 	overflow: hidden;
 	@extend %screenbg;
 	padding: 0em 1em 0.1em 0em;
@@ -147,15 +146,18 @@ export default {
 	color: $color-5;
 }
 .subj {
+	background-color: $palespringbud;
 	margin-bottom: spacing(0);
   color: $titleColor;
-	padding: 0.7em 0.5em 0.7em 0.7em;
+	padding: 1.2em 1em 1.2em 1em;
 }
 
 .cont {
 	display: flex;
- border-bottom-right-radius: 2.5em;
- border-bottom-left-radius: 2.5em;
+	border-bottom-right-radius: 2.5em;
+	border-bottom-left-radius: 2.5em;
+	border-top-right-radius: 0.3em;
+	border-top-left-radius: 0.3em;
 	@extend %screenbg;
 	padding: 0.2em 0.5em 0 0em;
 	justify-content: center;
@@ -170,6 +172,19 @@ export default {
 	text-align: left;
 }
 
+
+.dotted {
+  
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  -webkit-background-size: 3px 3px;
+  -moz-background-size: 3px 3px;
+  background-size: 3px 3px;
+  
+  
+}
 
 .flicker-in-1 {
 	-webkit-animation: flicker-in-1 2s linear both;
