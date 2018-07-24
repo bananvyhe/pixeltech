@@ -3,6 +3,6 @@
 }
 %screenbg {
  	border: 0.1em solid $x11gray;
-  box-shadow: inset 0px 0px 40px 8px rgba(0,0,0,0.4);
-  background:  color($screenbg shade(0%));
+  box-shadow: inset 0px 0px 40px 6px rgba(0,0,0,0.5);
+  background:  color($str2 shade(0%));
 }

@@ -7,7 +7,14 @@
   			</div>
   		</div>
   <!-- 		 -->
-    	<p class="subj basetext"><vue-typer :text= "subj"></vue-typer></p> 
+    	<p class="subj basetext">
+    		<vue-typer 
+    		:pre-type-delay= '1000'
+    		:repeat='0'
+    		:text= "subj">
+    			
+    		</vue-typer>
+    	</p> 
     	<div class="borcon">
     		<div  class="cont  dotted">
 					<div class="plashka"><p>{{cont}}</p></div>
