@@ -2,7 +2,7 @@
   <div id="head">
   	<div class="contain ">
   		<div class="screen  dotted ">
-  			<div class="title">
+  			<div class="title largetext">
   				  {{ message }}  
   			</div>
   		</div>
@@ -17,7 +17,7 @@
     	</p> 
     	<div class="borcon">
     		<div  class="cont  dotted">
-					<div class="plashka"><p>{{cont}}</p></div>
+					<div class="plashka ьувшгьtext"><p>{{cont}}</p></div>
 				</div>
     	</div>
 			
@@ -158,7 +158,7 @@ export default {
 }
 .title {
 	margin: 0 2em 0 2em;
-	adjust-font-size: 1.3em;
+	 
 	line-height: 1.3em;
 	padding: 0.0em 0.4em;
 	vertical-align: top;
