@@ -6,10 +6,14 @@
   				  {{ message }}  
   			</div>
   		</div>
+  <!-- 		 -->
     	<p class="subj basetext"><vue-typer :text= "subj"></vue-typer></p> 
-			<div  class="cont  dotted">
-				<div class="plashka"><p>{{cont}}</p></div>
-			</div>
+    	<div class="borcon">
+    		<div  class="cont  dotted">
+					<div class="plashka"><p>{{cont}}</p></div>
+				</div>
+    	</div>
+			
     </div>
   </div>
 </template>
@@ -133,7 +137,8 @@ export default {
 	overflow: hidden;
 	position: relative;
 }
-.screen { margin: 0 1.5em 0 1.5em;
+.screen { 
+	/*margin: 0 1em 0 1em;*/
 	border-top-left-radius: 0.3em;
 	border-top-right-radius: 0.3em;
 	border-bottom-left-radius: 0.3em;
@@ -144,8 +149,9 @@ export default {
 	display: flex;
 	justify-content: center;
 }
-.title {margin: 0 2em 0 2em;
-	adjust-font-size: 1.7em;
+.title {
+	margin: 0 2em 0 2em;
+	adjust-font-size: 1.3em;
 	line-height: 1.3em;
 	padding: 0.0em 0.4em;
 	vertical-align: top;
@@ -158,13 +164,16 @@ export default {
 	@extend %minimalradius;
 	background-color: $palespringbud;
 	margin-bottom: spacing(0);
-	margin: 0.4em 0 0.4em 0;
+	margin: 0.3em 0 0.3em 0;
   color: $titleColor;
 	padding: 1.2em 1em 1.2em 1em;
+	/*border-bottom: 1px solid $x11gray;*/
 }
+.borcon {
 
+}
 .cont {
-	margin: 0 2em 0 2em;
+	margin: 0 4em 0 4em;
 	display: flex;
 	border-bottom-right-radius: 2.5em;
 	border-bottom-left-radius: 2.5em;
@@ -176,7 +185,7 @@ export default {
 	p {
 		margin-bottom: spacing(0);
 		color: $color-5;
-		padding: 0em 0.2em 0.3em 0.5em;
+		padding: 0em 0.2em 0.1em 0.5em;
 	}
 	min-width: 10em;
 }
