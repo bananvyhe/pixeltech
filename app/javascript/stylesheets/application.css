@@ -81,9 +81,10 @@ End Hamster setup*/
  
 @import "_variables";
 .maincontainer { 
+  background: radial-gradient(80% 22%, $tuscan, $paleaqua); 
 /*  background: url('../images/bg.png');*/
   /*background-position: center 0;*/
-  background-color: $palespringbud;
+  /*background-color: $palespringbud;*/
   /*background: resolve('../images/bg.png');*/
 }
 #head {

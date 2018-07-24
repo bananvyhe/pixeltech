@@ -1,8 +1,8 @@
 %minimalradius {
-  border-radius: 0.3em; border: 0.1em solid $cambridgeblue;
+  border-radius: 0.3em; 
 }
 %screenbg {
- 
-  box-shadow: inset 0px 0px 40px 5px rgba(0,0,0,0.3);
-  background:  color($screenbg shade(15%));
+ 	border: 0.1em solid $x11gray;
+  box-shadow: inset 0px 0px 40px 8px rgba(0,0,0,0.4);
+  background:  color($screenbg shade(0%));
 }

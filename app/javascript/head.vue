@@ -126,28 +126,31 @@ export default {
 	overflow: hidden;
 	position: relative;
 }
-.screen {
+.screen { 
 	border-top-left-radius: 0.3em;
 	border-top-right-radius: 0.3em;
 	border-bottom-left-radius: 0.3em;
 	border-bottom-right-radius: 0.3em;
 	overflow: hidden;
 	@extend %screenbg;
-	padding: 0em 1em 0.1em 0em;
+	padding: 0em 1em 0.2em 0em;
 	display: flex;
 	justify-content: center;
 }
 .title {
-	adjust-font-size: 2em;
-	line-height: 1.4em;
+	adjust-font-size: 1.7em;
+	line-height: 1.3em;
 	padding: 0.0em 0.4em;
 	vertical-align: top;
 	margin-bottom: spacing(0); 
 	color: $color-5;
 }
 .subj {
+	border: 1px solid $x11gray;
+	@extend %minimalradius;
 	background-color: $palespringbud;
 	margin-bottom: spacing(0);
+	margin: 0.4em 0 0.4em 0;
   color: $titleColor;
 	padding: 1.2em 1em 1.2em 1em;
 }
@@ -159,7 +162,7 @@ export default {
 	border-top-right-radius: 0.3em;
 	border-top-left-radius: 0.3em;
 	@extend %screenbg;
-	padding: 0.2em 0.5em 0 0em;
+	padding: 0.1em 0.5em 0 0em;
 	justify-content: center;
 	p {
 		margin-bottom: spacing(0);
