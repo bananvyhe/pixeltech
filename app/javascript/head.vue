@@ -155,7 +155,7 @@ export default {
 .cont {
 	display: flex;
  border-bottom-right-radius: 2.5em;
- border-bottom-left-radius: 0.3em;
+ border-bottom-left-radius: 2.5em;
 	@extend %screenbg;
 	padding: 0.2em 0.5em 0 0em;
 	justify-content: center;
