@@ -19,7 +19,7 @@
     	</p> 
     	<div class="borcon">
     		<div  class="cont  dotted">
-					<div class="plashka ьувшгьtext"><p>{{cont}}</p></div>
+					<div class="plashka largertext"><p>{{cont}}</p></div>
 				</div>
     	</div>
 			
@@ -119,6 +119,7 @@ export default {
 @import "_extends";
 
 .bgclass  {
+
   background-image: radial-gradient(ellipse 30% 70% at 50% top,rgba(255, 255, 255, 0.99) 0%,rgba(142, 212, 241, 0) 100.1%);
 }
 /* IE8- CSS hack */
@@ -213,8 +214,8 @@ export default {
 	justify-content: center;
 	p {
 		margin-bottom: spacing(0);
-		color: $color-5;
-		padding: 0em 0.2em 0.1em 0.5em;
+		color: #fff;
+		padding: 0em 0.2em 0.2em 0.5em;
 	}
 	min-width: 10em;
 }
@@ -257,102 +258,131 @@ export default {
   0% {
     opacity: 1;
   }
+  9.9% {
+    opacity: 1;
+ 
+  }
   10% {
     opacity: 1;
+ 
   }
-  10.1% {
-    opacity: 0;
-  }
-  14.2% {
+  15.1% {
     opacity: 1;
+  
   }
-  17.2% {
-    opacity: 1;
-  }
-  17.3% {
+  15.2% {
     opacity: 0;
+ 
   }
   20% {
     opacity: 0;
+ 
   }
   20.1% {
-    opacity: 1;
+    opacity: 0;
+ 
   }
   20.6% {
     opacity: 0;
+ 
   }
   30% {
     opacity: 0;
+ 
   }
   30.1% {
     opacity: 1;
+ 
   }
   30.5% {
     opacity: 1;
+ 
   }
   30.6% {
-    opacity: 0;
+    opacity: 1;
+ 
   }
   45% {
-    opacity: 0;
+    opacity: 1;
+ 
   }
   45.1% {
-    opacity: 1;
+    opacity: 0;
+ 
   }
   50% {
-    opacity: 1;
+    opacity: 0;
+ 
   }
   55% {
-    opacity: 1;
+    opacity: 0;
+ ;
   }
   55.1% {
-    opacity: 0;
+    opacity: 1;
+ 
   }
   57% {
-    opacity: 0;
+    opacity: 1;
+ 
   }
   57.1% {
-    opacity: 1;
+    opacity: 0;
+ 
   }
   60% {
-    opacity: 1;
+    opacity: 0;
+
   }
   60.1% {
     opacity: 0;
+    box-shadow: none;
   }
   65% {
     opacity: 0;
+ 
   }
   65.1% {
     opacity: 1;
+ 
   }
   75% {
     opacity: 1;
+ 
   }
   75.1% {
     opacity: 0;
+     
   }
   77% {
     opacity: 0;
+     
   }
   77.1% {
     opacity: 1;
+ 
   }
   85% {
     opacity: 1;
+ ;
   }
   85.1% {
     opacity: 0;
+    
   }
   86% {
     opacity: 0;
+ 
   }
   86.1% {
     opacity: 1;
+ 
   }
   100% {
     opacity: 1;
+     
   }
 }
+ 
 
 </style>

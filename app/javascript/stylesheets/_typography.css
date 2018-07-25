@@ -53,6 +53,9 @@ p:first-of-type {
 .mediumtext {
    adjust-font-size: fs m;
 }
+.largertext {
+   adjust-font-size: fs xl;
+}
 .largetext {
    adjust-font-size: fs xxxl;
 } 
