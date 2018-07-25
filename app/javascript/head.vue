@@ -1,7 +1,7 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
-	<div :class="{ bgclass: activatorclass }" >
-  <div id="head">
+	<div><div class="bgan" :class="{ bgclass: activatorclass }" >  </div>
+  <div id="head">	
   	<div class="contain ">
   		<div class="screen  dotted ">
   			<div class="title largetext" :class="{flickerin1: activatorclass}">
@@ -25,7 +25,7 @@
 			
     </div>
   </div>
-  </div>
+	</div>
 </template>
 
 <script>
@@ -117,7 +117,11 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
-
+.bgan {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
 .bgclass  {
 
   background-image: radial-gradient(ellipse 30% 70% at 50% top,rgba(255, 255, 255, 0.99) 0%,rgba(142, 212, 241, 0) 100.1%);
@@ -131,6 +135,7 @@ export default {
 
  
 #head { 
+	position: relative;
 	align-items: center;
 	/*lost-utility: edit;*/
 	lost-center: 24em;
@@ -307,15 +312,15 @@ export default {
  
   }
   45.1% {
-    opacity: 0;
+    opacity: 1;
  
   }
   50% {
-    opacity: 0;
+    opacity: 1;
  
   }
   55% {
-    opacity: 0;
+    opacity: 1;
  ;
   }
   55.1% {
