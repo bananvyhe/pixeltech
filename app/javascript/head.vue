@@ -1,8 +1,10 @@
+<!-- :class="{ bgclass: activatorclass }" -->
 <template>
+	<div :class="{ bgclass: activatorclass }" >
   <div id="head">
   	<div class="contain ">
   		<div class="screen  dotted ">
-  			<div class="title largetext">
+  			<div class="title largetext" :class="{flickerin1: activatorclass}">
   				  {{ message }}  
   			</div>
   		</div>
@@ -23,6 +25,7 @@
 			
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -34,6 +37,7 @@ export default {
 	},
   data: function () {
     return {
+    	activatorclass: false,
     	subj: 'Разработка веб-приложений, сайтов на Ruby on Rails + Vue.js',
       message: "Pixeltech",
       cont: "admin@pixeltech.ru"
@@ -57,9 +61,11 @@ export default {
 			// 	'和','遠','无'
 			// ],
 			callback: function () { 
+				self.activatorclass = true;
 				console.log( 'ended' ); 
 			}}).play();
 		this.tween();
+		var self = this
     setTimeout(function(){
        
       // self.cropText();
@@ -72,6 +78,9 @@ export default {
 		 
   },
   methods: {
+  	addlightclass() {
+
+  	},
   	tween() {
       var selectedWork = new TimelineMax() ;
       selectedWork
@@ -108,6 +117,18 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+
+.bgclass  {
+  background-image: radial-gradient(ellipse 30% 70% at 50% top,rgba(255, 255, 255, 0.99) 0%,rgba(142, 212, 241, 0) 100.1%);
+}
+/* IE8- CSS hack */
+@media \0screen\,screen\9 {
+  .gradient {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fcffffff",endColorstr="#008ed4f1",GradientType=0);
+  }
+}
+
+ 
 #head { 
 	align-items: center;
 	/*lost-utility: edit;*/
@@ -138,7 +159,7 @@ export default {
 		}
   }
 }
-.contain { 
+.contain {
 	width: 100%;
 	padding-left: 0.6em; 
 	padding-right: 0.6em; 
@@ -215,7 +236,7 @@ export default {
   
 }
 
-.flicker-in-1 {
+.flickerin1 {
 	-webkit-animation: flicker-in-1 2s linear both;
 	        animation: flicker-in-1 2s linear both;
 } 
@@ -229,112 +250,26 @@ export default {
  * @animation flicker-in-1
  * ----------------------------------------
  */
-@-webkit-keyframes flicker-in-1 {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0;
-  }
-  10.1% {
-    opacity: 1;
-  }
-  10.2% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  20.1% {
-    opacity: 1;
-  }
-  20.6% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 0;
-  }
-  30.1% {
-    opacity: 1;
-  }
-  30.5% {
-    opacity: 1;
-  }
-  30.6% {
-    opacity: 0;
-  }
-  45% {
-    opacity: 0;
-  }
-  45.1% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  55% {
-    opacity: 1;
-  }
-  55.1% {
-    opacity: 0;
-  }
-  57% {
-    opacity: 0;
-  }
-  57.1% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  60.1% {
-    opacity: 0;
-  }
-  65% {
-    opacity: 0;
-  }
-  65.1% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
-  }
-  75.1% {
-    opacity: 0;
-  }
-  77% {
-    opacity: 0;
-  }
-  77.1% {
-    opacity: 1;
-  }
-  85% {
-    opacity: 1;
-  }
-  85.1% {
-    opacity: 0;
-  }
-  86% {
-    opacity: 0;
-  }
-  86.1% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
+@-webkit-keyframes flickerin1 {
+ 
 }
 @keyframes flicker-in-1 {
   0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0;
-  }
-  10.1% {
     opacity: 1;
   }
-  10.2% {
+  10% {
+    opacity: 1;
+  }
+  10.1% {
+    opacity: 0;
+  }
+  14.2% {
+    opacity: 1;
+  }
+  17.2% {
+    opacity: 1;
+  }
+  17.3% {
     opacity: 0;
   }
   20% {
