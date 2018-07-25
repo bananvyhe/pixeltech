@@ -56,8 +56,9 @@ export default {
 			// 	'良','利','留','礼','呂',
 			// 	'和','遠','无'
 			// ],
-			callback: function () { console.log( 'ended' ); }
-		} ).play();
+			callback: function () { 
+				console.log( 'ended' ); 
+			}}).play();
 		this.tween();
     setTimeout(function(){
        

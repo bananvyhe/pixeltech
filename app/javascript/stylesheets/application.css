@@ -81,7 +81,7 @@ End Hamster setup*/
  
 @import "_variables";
 .maincontainer { 
-  background: radial-gradient(circle at 55% 45%, $ghostwhite, $paleaqua); 
+  background: radial-gradient(ellipse at 50% center, $ghostwhite, $paleaqua); 
 /*  background: url('../images/bg.png');*/
   /*background-position: center 0;*/
   /*background-color: $palespringbud;*/ 
