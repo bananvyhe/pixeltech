@@ -81,14 +81,15 @@ End Hamster setup*/
  
 @import "_variables";
 .maincontainer { 
-  background: radial-gradient(ellipse at 50% center, $spacecadet, $siteBG); 
+/*  background: radial-gradient(ellipse at 50% 40% , $sunsetorange , $siteBG  ); */
+background: radial-gradient(circle at center, #3C6997  0%, #003459, #00171F 100%);
 /*  background: url('../images/bg.png');*/
   /*background-position: center 0;*/
   /*background-color: $palespringbud;*/ 
   /*background: resolve('../images/bg.png');*/
 }
 #head {
-  
+
   font-family: 'Telidon';
   .subj {
     font-family: 'RobotoReg';

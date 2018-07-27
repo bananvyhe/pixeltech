@@ -120,7 +120,7 @@ export default {
 .bgan { 
 	opacity: 0.2;
 	background: url('./images/scheme.svg');
-	background-position: center;
+	background-position: center 50%;
 	background-repeat: no-repeat;
  
 	background-size: 130% auto;
@@ -171,7 +171,7 @@ export default {
 		}
   }
 }
-.contain {margin-bottom: 15%;
+.contain {margin-bottom: 10%;
 	width: 100%;
 	padding-left: 0.6em; 
 	padding-right: 0.6em; 
@@ -211,18 +211,17 @@ export default {
 	/*border-bottom: 1px solid $x11gray;*/
 }
 .borcon {
-
+	display: flex;justify-content: center;
 }
 .cont {
-	margin: 0 4em 0 4em;
-	display: flex;
-	border-bottom-right-radius: 2.5em;
-	border-bottom-left-radius: 2.5em;
-	border-top-right-radius: 0.3em;
-	border-top-left-radius: 0.3em;
+	/*margin: 0 5em 0 5em;*/
+	width: 10em;
+
+	
 	/*@extend %screenbg;*/
+
 	padding: 0.1em 0.5em 0 0em;
-	justify-content: center;
+	
 	p {
 
 		margin-bottom: spacing(0);
@@ -231,8 +230,11 @@ export default {
 	}
 	min-width: 10em;
 }
-.plashka {
-
+.plashka {border-bottom-right-radius: 0.3em;
+	border-bottom-left-radius: 0.3em;
+	border-top-right-radius: 0.3em;
+	border-top-left-radius: 0.3em;
+	background-color: color($spacecadet blackness(80%));
 	text-align: left;
 }
 
