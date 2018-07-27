@@ -3,12 +3,12 @@
 	<div><div class="bgan" :class="{ bgclass: activatorclass }" >  </div>
   <div id="head">	
   	<div class="contain ">
-  		<div class="screen  dotted ">
+  		<!-- <div class="screen  dotted "> -->
   			<div class="title largetext" :class="{flickerin1: activatorclass}">
-  				  {{ message }}  
+  				  {{ title }}  
   			</div>
-  		</div>
-  <!-- 		 -->
+  		<!-- </div> -->
+  
     	<p class="subj basetext">
     		<vue-typer 
     		:pre-type-delay= '1000'
@@ -18,8 +18,8 @@
     		</vue-typer>
     	</p> 
     	<div class="borcon">
-    		<div  class="cont  dotted">
-					<div class="plashka largertext"><p>{{cont}}</p></div>
+    		<div  class="cont   ">
+					<div class="plashka "><p>{{cont}}</p></div>
 				</div>
     	</div>
 			
@@ -39,12 +39,12 @@ export default {
     return {
     	activatorclass: false,
     	subj: 'Разработка веб-приложений, сайтов на Ruby on Rails + Vue.js',
-      message: "Pixeltech",
+      title: "Pixeltech",
       cont: "admin@pixeltech.ru"
     }
   },
   mounted() {
-  var cont = document.querySelector(".cont");
+  var cont = document.querySelector(".plashka");
   var scrambleText = new ScrambleText( cont,
 		{
 			timeOffset : 100,
@@ -61,7 +61,7 @@ export default {
 			// 	'和','遠','无'
 			// ],
 			callback: function () { 
-				self.activatorclass = true;
+				// self.activatorclass = true;
 				console.log( 'ended' ); 
 			}}).play();
 		this.tween();
@@ -103,7 +103,7 @@ export default {
          autoAlpha:1,
          yPercent: 0,
         ease:Power4.easeOut,}, 0, "-=12")
-      .staggerFromTo('.cont', 5, {
+      .staggerFromTo('.plashka', 5, {
       	 
          xPercent: -250,
       }, {
@@ -117,7 +117,13 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
-.bgan {
+.bgan { 
+	opacity: 0.2;
+	background: url('./images/scheme.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+ 
+	background-size: 130% auto;
 	position: absolute;
 	height: 100%;
 	width: 100%;
@@ -165,7 +171,7 @@ export default {
 		}
   }
 }
-.contain {
+.contain {margin-bottom: 15%;
 	width: 100%;
 	padding-left: 0.6em; 
 	padding-right: 0.6em; 
@@ -186,7 +192,7 @@ export default {
 }
 .title {
 	margin: 0 2em 0 2em;
-	 
+	 text-align: center;
 	line-height: 1.3em;
 	padding: 0.0em 0.4em;
 	vertical-align: top;
@@ -214,17 +220,19 @@ export default {
 	border-bottom-left-radius: 2.5em;
 	border-top-right-radius: 0.3em;
 	border-top-left-radius: 0.3em;
-	@extend %screenbg;
+	/*@extend %screenbg;*/
 	padding: 0.1em 0.5em 0 0em;
 	justify-content: center;
 	p {
+
 		margin-bottom: spacing(0);
-		color: #fff;
+		color: $color-5;
 		padding: 0em 0.2em 0.2em 0.5em;
 	}
 	min-width: 10em;
 }
 .plashka {
+
 	text-align: left;
 }
 
