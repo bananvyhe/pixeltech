@@ -84,6 +84,18 @@ export default {
   	tween() {
       var selectedWork = new TimelineMax() ;
       selectedWork
+      .staggerFromTo('.subj', 0.5, {
+	      
+          scaleX: 0.8,
+       	scaleY: 0, 
+        // xPercent: -350,
+      }, {
+       transformOrigin: '50% 50%',
+      	  scaleX: 1,
+      	scaleY: 1, 
+        // autoAlpha:1,
+        // xPercent: 0,
+        ease:Back.easeOut.config(1.7)}, 0.5, "+=1.0")
       .staggerFromTo('.title', 0.2, {
 	      // autoAlpha:0,
         // scaleX: 0.8,
@@ -95,7 +107,7 @@ export default {
       	scaleY: 1, 
         // autoAlpha:1,
         // xPercent: 0,
-        ease:Expo.easeIn}, 0.5, "+=1.0")
+        ease:Expo.easeIn}, 0.5, "-=0.5")
       .staggerFromTo('.subj', 1, {
          autoAlpha:0,
          yPercent: 100,
@@ -191,9 +203,10 @@ export default {
 	justify-content: center;
 }
 .title {
+	font-size: 2em;
 	margin: 0 2em 0 2em;
 	 text-align: center;
-	line-height: 1.3em;
+	line-height: 1.5em;
 	padding: 0.0em 0.4em;
 	vertical-align: top;
 	margin-bottom: spacing(0); 
@@ -202,7 +215,7 @@ export default {
 .subj {
 	min-height: 5em;
 	border: 1px solid $x11gray;
-	@extend %minimalradius;
+	/*@extend %minimalradius;*/
 	background-color: $palespringbud;
 	margin-bottom: spacing(0);
 	margin: 0.3em 0 0.3em 0;
