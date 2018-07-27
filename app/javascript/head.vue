@@ -84,18 +84,30 @@ export default {
   	tween() {
       var selectedWork = new TimelineMax() ;
       selectedWork
-      .staggerFromTo('.subj', 0.5, {
+      .staggerFromTo('.subj', 0.2, {
 	      
-          scaleX: 0.8,
+        scaleX: 0,
        	scaleY: 0, 
         // xPercent: -350,
       }, {
        transformOrigin: '50% 50%',
       	  scaleX: 1,
-      	scaleY: 1, 
+      	scaleY: 0.1, 
         // autoAlpha:1,
         // xPercent: 0,
-        ease:Back.easeOut.config(1.7)}, 0.5, "+=1.0")
+        ease:Expo.easeIn}, 0.3, "+=0.5")
+      .staggerFromTo('.subj', 0.2, {
+	      
+         
+       	scaleY: 0.1, 
+        // xPercent: -350,
+      }, {
+       transformOrigin: '50% 50%',
+      	  scaleY: 1,
+      	 
+        // autoAlpha:1,
+        // xPercent: 0,
+        ease:Expo.easeOut}, 0.3, "+=0")
       .staggerFromTo('.title', 0.2, {
 	      // autoAlpha:0,
         // scaleX: 0.8,
@@ -107,7 +119,7 @@ export default {
       	scaleY: 1, 
         // autoAlpha:1,
         // xPercent: 0,
-        ease:Expo.easeIn}, 0.5, "-=0.5")
+        ease:Expo.easeIn}, 0.5, "+=0.5")
       .staggerFromTo('.subj', 1, {
          autoAlpha:0,
          yPercent: 100,
