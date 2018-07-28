@@ -226,7 +226,7 @@ export default {
 }
 
 .title { width: 5.5em;
-	font-size: 2em;
+	font-size: 1.7em;
 	 
 	 text-align: left;
 	line-height: 1.4em;
@@ -257,7 +257,7 @@ export default {
 	
 	/*@extend %screenbg;*/
 
-	padding: 0.15em 0.5em 0 0em;
+	padding: 0.2em 0.5em 0 0em;
 	
 	p {
 
