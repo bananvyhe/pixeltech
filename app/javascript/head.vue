@@ -1,6 +1,6 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
-	<div><div class="bgan" :class="{ bgclass: activatorclass }" >  </div>
+	<div><div class="bgan" :class="{ bgclass: activatorclass }" > </div>
   <div id="head">	
   	<div class="contain ">
   		  <div class="screen">  
@@ -152,7 +152,7 @@ export default {
 @import "_variables";
 @import "_extends";
 .bgan { 
-	opacity: 0.2;
+	opacity: 0.15;
 	background: url('./images/scheme.svg');
 	background-position: 55% 45%;
 	background-repeat: no-repeat;
