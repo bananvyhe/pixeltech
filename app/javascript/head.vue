@@ -7,7 +7,7 @@
   			<div class="title largetext" :class="{flickerin1: activatorclass}">
   				<vue-typer 
 
-  				text="Pixeltech" 
+  				text="Pixeltech.ru" 
   				:repeat='1' 
   				:shuffle='true'
   				:pre-type-delay='1600'
@@ -212,7 +212,7 @@ export default {
 	/*overflow: hidden;*/
 	position: relative;
 }
-.screen { color: $color-5;
+.screen { color: $isabelline;
 	/*margin: 0 1em 0 1em;*/
 	/*border-top-left-radius: 0.3em;
 	border-top-right-radius: 0.3em;
@@ -225,7 +225,7 @@ export default {
 	justify-content: center;
 }
 
-.title { width: 5.5em;
+.title { width: 6.5em;
 	font-size: 1.7em;
 	 
 	 text-align: left;
