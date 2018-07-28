@@ -13,12 +13,12 @@
 		  -webkit-animation-timing-function: cubic-bezier(0.195, 0.010, 0.940, 1.030);
 		}
 		.shape:nth-child(even) {
-			animation-delay: 1s;
-		  -webkit-animation-delay: 1s;
+			animation-delay: 2s;
+		  -webkit-animation-delay: 2s;
 		}
 		.shape:nth-child(4n+0) {
-			animation-delay: 2.2s;
-		  -webkit-animation-delay: 2.2s;
+			animation-delay: 3.2s;
+		  -webkit-animation-delay: 3.2s;
 		}
 		@keyframes dash {
 		  to {
