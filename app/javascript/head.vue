@@ -161,6 +161,12 @@ export default {
 	position: absolute;
 	height: 100%;
 	width: 100%;
+	@media (--only-small-screen) {
+ 		background-size: 180% auto;
+  }
+  @media (--only-xsmall-screen) {
+ 		background-size: 300% auto;
+  }
 }
 .bgclass  {
 
