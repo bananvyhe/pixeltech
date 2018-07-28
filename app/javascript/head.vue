@@ -80,7 +80,7 @@ export default {
       // self.cropText();
        scrambleText.start();  
 
-    },1000 );
+    },3000 );
 
 	
 
@@ -93,6 +93,14 @@ export default {
   	tween() {
       var selectedWork = new TimelineMax() ;
       selectedWork
+
+      .staggerFromTo('.plashka', 0.4, {
+      	 
+         yPercent: -200,
+      }, {
+         
+        yPercent: 0,
+        ease:Back.easeOut.config(1.7)}, 0, "+=1")
       .staggerFromTo('.subj', 0.2, {
 	      
         scaleX: 0,
@@ -135,14 +143,7 @@ export default {
       }, {
          autoAlpha:1,
          yPercent: 0,
-        ease:Power4.easeOut,}, 0, "-=12")
-      .staggerFromTo('.plashka', 5, {
-      	 
-         xPercent: -250,
-      }, {
-         
-        xPercent: 0,
-        ease:Circ.easeIn}, 0, "-=16.4");
+        ease:Power4.easeOut,}, 0, "-=12");
   	}
   }
 }
@@ -208,7 +209,7 @@ export default {
 	width: 100%;
 	padding-left: 0.6em; 
 	padding-right: 0.6em; 
-	overflow: hidden;
+	/*overflow: hidden;*/
 	position: relative;
 }
 .screen { color: $color-5;
