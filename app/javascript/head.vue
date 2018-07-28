@@ -3,17 +3,26 @@
 	<div><div class="bgan" :class="{ bgclass: activatorclass }" >  </div>
   <div id="head">	
   	<div class="contain ">
-  		<!-- <div class="screen  dotted "> -->
+  		  <div class="screen">  
   			<div class="title largetext" :class="{flickerin1: activatorclass}">
-  				  {{ title }}  
+  				<vue-typer 
+
+  				text="Pixeltech" 
+  				:repeat='1' 
+  				:shuffle='true'
+  				:pre-type-delay='1600'
+  				>
+  					
+  				</vue-typer> 
   			</div>
-  		<!-- </div> -->
+  		  </div>  
   
     	<p class="subj basetext">
     		<vue-typer 
     		:pre-type-delay= '1000'
     		:repeat='0'
-    		:text= "subj">
+    		:text= "subj"
+    		:shuffle='true'>
     			
     		</vue-typer>
     	</p> 
@@ -107,7 +116,7 @@ export default {
       	 
         // autoAlpha:1,
         // xPercent: 0,
-        ease:Expo.easeOut}, 0.3, "+=0")
+        ease:Power4.easeIn}, 0.3, "+=0")
       .staggerFromTo('.title', 0.2, {
 	      // autoAlpha:0,
         // scaleX: 0.8,
@@ -202,27 +211,29 @@ export default {
 	overflow: hidden;
 	position: relative;
 }
-.screen { 
+.screen { color: $color-5;
 	/*margin: 0 1em 0 1em;*/
-	border-top-left-radius: 0.3em;
+	/*border-top-left-radius: 0.3em;
 	border-top-right-radius: 0.3em;
 	border-bottom-left-radius: 0.3em;
 	border-bottom-right-radius: 0.3em;
 	overflow: hidden;
 	@extend %screenbg;
-	padding: 0em 1em 0.2em 0em;
+	padding: 0em 1em 0.2em 0em;*/
 	display: flex;
 	justify-content: center;
 }
-.title {
+
+.title { width: 5.5em;
 	font-size: 2em;
-	margin: 0 2em 0 2em;
-	 text-align: center;
-	line-height: 1.5em;
+	 
+	 text-align: left;
+	line-height: 1.4em;
 	padding: 0.0em 0.4em;
 	vertical-align: top;
 	margin-bottom: spacing(0); 
-	color: $color-5;
+
+	
 }
 .subj {
 	min-height: 5em;
@@ -245,7 +256,7 @@ export default {
 	
 	/*@extend %screenbg;*/
 
-	padding: 0.1em 0.5em 0 0em;
+	padding: 0.15em 0.5em 0 0em;
 	
 	p {
 

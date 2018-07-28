@@ -95,4 +95,9 @@ background: radial-gradient(circle at center, #3C6997  -5%, #003459 38%, #00171F
     font-family: 'RobotoReg';
   }
 }
+.title {
+  .vue-typer .custom.char.typed{
+    color: $color-5;
+  }
+}
 
