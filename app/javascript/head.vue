@@ -166,7 +166,7 @@ export default {
   }
   @media (--only-xsmall-screen) {
  		background-size: 300% auto;
- 		background-position: 50% 45%;
+ 		background-position: 50% 47%;
   }
 }
 .bgclass  {
