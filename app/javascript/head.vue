@@ -153,7 +153,7 @@ export default {
 .bgan { 
 	opacity: 0.2;
 	background: url('./images/scheme.svg');
-	background-position: center 50%;
+	background-position: 55% 45%;
 	background-repeat: no-repeat;
  
 	background-size: 130% auto;
