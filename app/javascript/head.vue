@@ -161,8 +161,14 @@ export default {
 	position: absolute;
 	height: 100%;
 	width: 100%;
+  @media (--only-1600more-screen) {
+    background-size: 75% auto;
+  }
+  @media (--only-medium-screen) {
+    background-size: 110% auto;
+  }
 	@media (--only-small-screen) {
- 		background-size: 180% auto;
+ 		background-size: 200% auto;
   }
   @media (--only-xsmall-screen) {
  		background-size: 300% auto;
