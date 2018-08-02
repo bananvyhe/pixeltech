@@ -274,7 +274,7 @@
 			50.1,155.2 53.9,159 		"/>
 	</g>
 </g>
-<g id="dots" stroke="#fff" stroke-width="0.3">
+<g id="dots" stroke="#fff" stroke-width="0.5">
 	<circle cx="142.1" cy="22.9" r="1.1"/>
 	<circle cx="134" cy="31" r="1.1"/>
 	<circle cx="142.1" cy="39" r="1.1"/>

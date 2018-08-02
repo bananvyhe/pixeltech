@@ -152,7 +152,7 @@ export default {
 @import "_variables";
 @import "_extends";
 .bgan { 
-	opacity: 0.15;
+	opacity: 0.20;
 	background: url('./images/scheme.svg');
 	background-position: 50% 50%;
 	background-repeat: no-repeat;

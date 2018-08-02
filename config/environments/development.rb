@@ -28,7 +28,17 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
-
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.yandex.ru",
+    :port => 25,
+    :domain => 'yandex.ru',
+    :authentication => :plain,
+    :user_name => 'admin@pixeltech.ru',
+    :password => Rails.application.credentials.secret_mail
+  }
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 
