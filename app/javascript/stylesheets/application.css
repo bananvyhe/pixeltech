@@ -98,15 +98,15 @@ background: radial-gradient(circle at center, #3C6997  -5%, #003459 38%, #00171F
 }
 .title {
   .vue-typer .custom.char.typed{
-    color: $color-5;
+    color: $teagreen;
   }
 }
 .subj {
   .vue-typer .custom.char.typed{
-    color: $str3;
+    color:  color($str3 blackness(0%));
   }
 }
 .plashka {
-   
+
 }
 

@@ -194,7 +194,7 @@ export default {
 	position: relative;
 	align-items: center;
 	/*lost-utility: edit;*/
-	lost-center: 20em;
+	lost-center: 19em;
 	height: 100vh;
 	display: flex;
 	@media (--only-xsmall-screen) {
@@ -244,19 +244,20 @@ export default {
 .title { width: 6.2em;
 	font-size: 1.7em;
 	text-align: left;
-	line-height: 1.4em;
+	line-height: 1.2em;
 	padding: 0.0em 0.4em;
 	vertical-align: top;
 	margin-bottom: spacing(0); 
 }
 
 .subj {
-  min-height: 5em;
-	border: 1px solid $onyx;
-	 
+  line-height: 1.5em;
+  min-height: 5.5em;
+	border: 1px solid color($diamond shade(50%));
+	border-radius: 0.2em; 
 	background-color: $siteBG;
 	margin-bottom: spacing(0);
-	margin: 0.3em 0 0.3em 0;
+	margin: 0.3em 0 0.1em 0;
    
     
    
@@ -275,7 +276,7 @@ export default {
 	padding: 0.2em 0.5em 0 0em;
 	p {
 		margin-bottom: spacing(0);
-		color: $color-5;
+		color: $teagreen;
 		padding: 0.2em 0em 0.2em 0.6em;
 	}
 	min-width: 10em;
@@ -288,6 +289,7 @@ export default {
 	border-top-left-radius: 0.2em;
 	background-color: color($spacecadet blackness(80%));
 	text-align: left;
+  border: 1px solid color($diamond shade(50%));
 }
 
 
