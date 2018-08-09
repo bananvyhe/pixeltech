@@ -215,7 +215,7 @@ export default {
   }
   @media (--only-1600more-screen) {
  
-  	lost-center: 600px;
+  	lost-center: 380px;
 	  h1 {
 			margin-top: spacing(0);
 		}
