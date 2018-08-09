@@ -18,12 +18,45 @@ plugins:
   # postcss-cssnext: {}
   postcss-font-magician: {
     custom: {
+      'aprior': {
+        variants: {
+          normal: {
+            400: {
+              url: {
+                woff2: 'fonts/aprior_normal-webfont.woff2'
+              }
+            } 
+          }
+        }
+      },
+      'bulgFant': {
+        variants: {
+          normal: {
+            400: {
+              url: {
+                woff2: 'fonts/bulgaria_fantastica_cyr-webfont.woff2'
+              }
+            } 
+          }
+        }
+      },
       'Telidon': {
         variants: {
           normal: {
             400: {
               url: {
                 woff2: 'fonts/telidon_con_it.woff2'
+              }
+            } 
+          }
+        }
+      },
+       'TelidonReg': {
+        variants: {
+          normal: {
+            400: {
+              url: {
+                woff2: 'fonts/telidon_reg.woff2'
               }
             } 
           }

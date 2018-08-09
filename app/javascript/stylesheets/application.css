@@ -81,6 +81,7 @@ End Hamster setup*/
  
 @import "_variables";
 .maincontainer { 
+
 /*  background: radial-gradient(ellipse at 50% 40% , $sunsetorange , $siteBG  ); */
 background: radial-gradient(circle at center, #3C6997  -5%, #003459 38%, #00171F 100%);
 /*  background: url('../images/bg.png');*/
@@ -90,7 +91,7 @@ background: radial-gradient(circle at center, #3C6997  -5%, #003459 38%, #00171F
 }
 #head {
 
-  font-family: 'Telidon';
+  font-family: 'aprior';
   .subj {
     font-family: 'RobotoReg';
   }
@@ -99,5 +100,13 @@ background: radial-gradient(circle at center, #3C6997  -5%, #003459 38%, #00171F
   .vue-typer .custom.char.typed{
     color: $color-5;
   }
+}
+.subj {
+  .vue-typer .custom.char.typed{
+    color: $str3;
+  }
+}
+.plashka {
+   
 }
 

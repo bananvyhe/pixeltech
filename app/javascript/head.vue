@@ -6,10 +6,10 @@
   		  <div class="screen">  
   			<div class="title largetext" :class="{flickerin1: activatorclass}">
   				<vue-typer 
-
-  				text="Pixeltech.ru" 
-  				:repeat='1' 
-  				:shuffle='true'
+          caret-animation='smooth'
+  				:text='["Пикселтех","Pixeltech.ru"]'
+  				:repeat='0' 
+  				 
   				:pre-type-delay='1600'
   				>
   					
@@ -163,12 +163,15 @@ export default {
 	width: 100%;
   @media (--only-1600more-screen) {
     background-size: 75% auto;
+
   }
   @media (--only-medium-screen) {
     background-size: 110% auto;
+    background-position: 50% 47%;
   }
 	@media (--only-small-screen) {
  		background-size: 200% auto;
+    background-position: 50% 47%;
   }
   @media (--only-xsmall-screen) {
  		background-size: 300% auto;
@@ -191,7 +194,7 @@ export default {
 	position: relative;
 	align-items: center;
 	/*lost-utility: edit;*/
-	lost-center: 24em;
+	lost-center: 20em;
 	height: 100vh;
 	display: flex;
 	@media (--only-xsmall-screen) {
@@ -238,52 +241,51 @@ export default {
 	justify-content: center;
 }
 
-.title { width: 6.5em;
+.title { width: 6.2em;
 	font-size: 1.7em;
-	 
-	 text-align: left;
+	text-align: left;
 	line-height: 1.4em;
 	padding: 0.0em 0.4em;
 	vertical-align: top;
 	margin-bottom: spacing(0); 
-
-	
 }
+
 .subj {
-	min-height: 5em;
-	border: 1px solid $x11gray;
-	/*@extend %minimalradius;*/
-	background-color: $palespringbud;
+  min-height: 5em;
+	border: 1px solid $onyx;
+	 
+	background-color: $siteBG;
 	margin-bottom: spacing(0);
 	margin: 0.3em 0 0.3em 0;
-  color: $titleColor;
+   
+    
+   
+  
 	padding: 1.2em 1em 1.2em 1em;
-	/*border-bottom: 1px solid $x11gray;*/
+	 
 }
 .borcon {
-	display: flex;justify-content: center;
+	display: flex;
+  justify-content: center;
 }
 .cont {
 	/*margin: 0 5em 0 5em;*/
-	width: 10em;
-
-	
-	/*@extend %screenbg;*/
-
+	width: 10.3em;
+/*@extend %screenbg;*/
 	padding: 0.2em 0.5em 0 0em;
-	
 	p {
-
 		margin-bottom: spacing(0);
 		color: $color-5;
-		padding: 0em 0.2em 0.2em 0.5em;
+		padding: 0.2em 0em 0.2em 0.6em;
 	}
 	min-width: 10em;
 }
-.plashka {border-bottom-right-radius: 0.3em;
-	border-bottom-left-radius: 0.3em;
-	border-top-right-radius: 0.3em;
-	border-top-left-radius: 0.3em;
+.plashka {white-space: nowrap;
+  overflow: hidden;
+  border-bottom-right-radius: 0.2em;
+	border-bottom-left-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+	border-top-left-radius: 0.2em;
 	background-color: color($spacecadet blackness(80%));
 	text-align: left;
 }
