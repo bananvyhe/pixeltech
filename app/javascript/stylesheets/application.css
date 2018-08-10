@@ -109,4 +109,10 @@ background: radial-gradient(circle at center, #3C6997  -5%, #003459 38%, #00171F
 .plashka {
 
 }
-
+.railsblock {
+  z-index: 9999;
+  margin: 0.5em;
+  position: absolute;
+  right:0;
+  @extend %roundbgstrw;
+}
