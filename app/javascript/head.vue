@@ -101,13 +101,13 @@ export default {
       var selectedWork = new TimelineMax() ;
       selectedWork
 
-      .staggerFromTo('.plashka', 0.4, {
+      .staggerFromTo('.plashka', 1, {
       	 
          yPercent: -200,
       }, {
          
         yPercent: 0,
-        ease:Back.easeOut.config(1.7)}, 0, "+=1")
+        ease:Circ.easeOut}, 0, "+=1")
       .staggerFromTo('.subj', 0.2, {
 	      
         scaleX: 0,
@@ -119,7 +119,7 @@ export default {
       	scaleY: 0.1, 
         // autoAlpha:1,
         // xPercent: 0,
-        ease:Expo.easeIn}, 0.3, "+=0.5")
+        ease:Expo.easeIn}, 0.3, "-=0.5")
       .staggerFromTo('.subj', 0.2, {
 	      
          
@@ -131,7 +131,7 @@ export default {
       	 
         // autoAlpha:1,
         // xPercent: 0,
-        ease:Power4.easeIn}, 0.3, "+=0")
+        ease:Power4.easeIn}, 0.3, "-=0.3")
       .staggerFromTo('.title', 0.2, {
 	      // autoAlpha:0,
         // scaleX: 0.8,
@@ -143,7 +143,7 @@ export default {
       	scaleY: 1, 
         // autoAlpha:1,
         // xPercent: 0,
-        ease:Expo.easeIn}, 0.5, "+=0.5")
+        ease:Expo.easeIn}, 0.5, "+=0.9")
       .staggerFromTo('.subj', 1, {
          autoAlpha:0,
          yPercent: 100,
