@@ -15,6 +15,7 @@
       			</vue-typer> 
       		</div>
     		</div>  
+        <div class="oversubj">
       	<p class="subj basetext">
       		<vue-typer 
       		:pre-type-delay= '1000'
@@ -23,6 +24,7 @@
       		:shuffle='true'>
       		</vue-typer>
       	</p> 
+        </div>
       	<div class="borcon">
       		<div  class="cont">
   					<div class="plashka" ><div class="overpla "><p>{{cont}}</p></div></div>
@@ -108,7 +110,7 @@ export default {
          
         yPercent: 0,
         ease:Circ.easeOut}, 0, "+=1")
-      .staggerFromTo('.subj', 0.2, {
+      .staggerFromTo('.oversubj', 0.5, {
 	      
         scaleX: 0,
        	scaleY: 0, 
@@ -116,14 +118,14 @@ export default {
       }, {
        transformOrigin: '50% 50%',
       	  scaleX: 1,
-      	scaleY: 0.1, 
+      	scaleY: 0.01, 
         // autoAlpha:1,
         // xPercent: 0,
-        ease:Expo.easeIn}, 0.3, "-=0.5")
-      .staggerFromTo('.subj', 0.2, {
+        ease:Circ.easeIn}, 0.3, "-=0.8")
+      .staggerFromTo('.oversubj', 0.6, {
 	      
          
-       	scaleY: 0.1, 
+       	scaleY: 0.01, 
         // xPercent: -350,
       }, {
        transformOrigin: '50% 50%',
@@ -131,8 +133,8 @@ export default {
       	 
         // autoAlpha:1,
         // xPercent: 0,
-        ease:Power4.easeIn}, 0.3, "-=0.3")
-      .staggerFromTo('.title', 0.2, {
+        ease:Power4.easeOut}, 0.3, "+=0.1")
+      .staggerFromTo('.title', 0.4, {
 	      // autoAlpha:0,
         // scaleX: 0.8,
        	scaleY: 0, 
@@ -143,8 +145,8 @@ export default {
       	scaleY: 1, 
         // autoAlpha:1,
         // xPercent: 0,
-        ease:Expo.easeIn}, 0.5, "+=0.9")
-      .staggerFromTo('.subj', 1, {
+        ease:Expo.easeIn}, 0.5, "-=2.9")
+      .staggerFromTo('.oversubj', 1, {
          autoAlpha:0,
          yPercent: 100,
       }, {
@@ -252,30 +254,32 @@ export default {
 	justify-content: center;
 }
 
-.title { width: 6.3em;
+.title { 
+  width: 6.3em;
 	font-size: 1.7em;
 	text-align: left;
 	line-height: 1.2em;
 	padding: 0.0em 0.4em;
 	vertical-align: top;
 	margin-bottom: spacing(0); 
+  
 }
 
+.oversubj {
+
+}
 .subj {
   line-height: 1.5em;
   min-height: 5.5em;
-	border: 1px solid color($diamond shade(50%));
+  box-shadow: 0 0 40px rgba(0, 0, 0, .4) inset; 
+	/*border: 1px solid color($diamond shade(50%));*/
 	border-radius: 0.2em; 
-	background-color: $siteBG;
+	background-color: color($PAYNESGREY shade(70%));
 	margin-bottom: spacing(0);
 	margin: 0.3em 0 0.1em 0;
-   
-    
-   
-  
 	padding: 1.2em 1em 1.2em 1em;
-	 
 }
+
 .borcon {
 	display: flex;
   justify-content: center;
@@ -284,15 +288,16 @@ export default {
 	/*margin: 0 5em 0 5em;*/
 	width: 10.3em;
 /*@extend %screenbg;*/
-	padding: 0.2em 0.5em 0 0em;
+	padding: 0.3em 0.5em 0 0em;
 	p {
 		margin-bottom: spacing(0);
 		color: $teagreen;
-		padding: 0.2em 0em 0.2em 0.6em;
+		padding: 0.0em 0em 0.1em 0.6em;
 	}
 	min-width: 10em;
 }
-.plashka {white-space: nowrap;
+.plashka {
+  white-space: nowrap;
   overflow: hidden;
   border-bottom-right-radius: 0.2em;
 	border-bottom-left-radius: 0.2em;

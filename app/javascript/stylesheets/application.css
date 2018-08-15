@@ -98,7 +98,14 @@ background: radial-gradient(circle at center, #3C6997  -5%, #003459 38%, #00171F
 }
 .title {
   .vue-typer .custom.char.typed{
+    color: $isabelline;
+  }
+  .vue-typer .custom.caret.typing {
     color: $teagreen;
+    background-color: $teagreen;
+  }
+  .vue-typer .custom.caret {
+    color: $teagreen;background-color: $teagreen;
   }
 }
 .subj {
