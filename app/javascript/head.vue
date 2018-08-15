@@ -110,7 +110,7 @@ export default {
          
         yPercent: 0,
         ease:Circ.easeOut}, 0, "+=1")
-      .staggerFromTo('.oversubj', 0.5, {
+      .staggerFromTo('.oversubj', 1.5, {
 	      
         scaleX: 0,
        	scaleY: 0, 
@@ -118,14 +118,14 @@ export default {
       }, {
        transformOrigin: '50% 50%',
       	  scaleX: 1,
-      	scaleY: 0.01, 
+      	scaleY: 0.02, 
         // autoAlpha:1,
         // xPercent: 0,
-        ease:Circ.easeIn}, 0.3, "-=0.8")
-      .staggerFromTo('.oversubj', 0.6, {
+        ease:Circ.easeOut}, 0.4, "-=0.9")
+      .staggerFromTo('.oversubj', 0.4, {
 	      
          
-       	scaleY: 0.01, 
+       	scaleY: 0.02, 
         // xPercent: -350,
       }, {
        transformOrigin: '50% 50%',
@@ -133,7 +133,7 @@ export default {
       	 
         // autoAlpha:1,
         // xPercent: 0,
-        ease:Power4.easeOut}, 0.3, "+=0.1")
+        ease: Expo.easeOut}, 0.3, "+=0.1")
       .staggerFromTo('.title', 0.4, {
 	      // autoAlpha:0,
         // scaleX: 0.8,
@@ -271,9 +271,9 @@ export default {
 .subj {
   line-height: 1.5em;
   min-height: 5.5em;
-  box-shadow: 0 0 40px rgba(0, 0, 0, .4) inset; 
+  box-shadow: 0 0 40px rgba(0, 0, 0, .6) inset; 
 	/*border: 1px solid color($diamond shade(50%));*/
-	border-radius: 0.2em; 
+	border-radius: 0.5em; 
 	background-color: color($PAYNESGREY shade(70%));
 	margin-bottom: spacing(0);
 	margin: 0.3em 0 0.1em 0;
@@ -286,30 +286,30 @@ export default {
 }
 .cont {
 	/*margin: 0 5em 0 5em;*/
-	width: 10.3em;
+	width: 11.3em;
 /*@extend %screenbg;*/
 	padding: 0.3em 0.5em 0 0em;
 	p {
 		margin-bottom: spacing(0);
 		color: $teagreen;
-		padding: 0.0em 0em 0.1em 0.6em;
+		padding: 0.2em 0em 0.2em 1.2em;
 	}
 	min-width: 10em;
 }
 .plashka {
   white-space: nowrap;
   overflow: hidden;
-  border-bottom-right-radius: 0.2em;
-	border-bottom-left-radius: 0.2em;
-	border-top-right-radius: 0.2em;
-	border-top-left-radius: 0.2em;
+  border-bottom-right-radius: 0.1em;
+	border-bottom-left-radius: 0.1em;
+	border-top-right-radius: 0.1em;
+	border-top-left-radius: 0.1em;
 	background-color: color($spacecadet blackness(80%));
 	text-align: left;
-  border: 1px solid color($diamond shade(50%));
+ /* border: 1px solid color($diamond shade(50%));*/
 }
 .overpla {
   overflow: hidden;
-  width: 9.1em;
+  width: 9.7em;
 }
 .dotted {
   
