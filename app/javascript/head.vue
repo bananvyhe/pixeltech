@@ -1,39 +1,35 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
-	<div><div class="bgan" :class="{ bgclass: activatorclass }" > </div>
-  <div id="head">	
-  	<div class="contain ">
-  		  <div class="screen">  
-  			<div class="title largetext" :class="{flickerin1: activatorclass}">
-  				<vue-typer 
-          caret-animation='smooth'
-  				:text='["Пикселтех","Pixeltech.ru"]'
-  				:repeat='0' 
-  				 
-  				:pre-type-delay='1600'
-  				>
-  					
-  				</vue-typer> 
-  			</div>
-  		  </div>  
-  
-    	<p class="subj basetext">
-    		<vue-typer 
-    		:pre-type-delay= '1000'
-    		:repeat='0'
-    		:text= "subj"
-    		:shuffle='true'>
-    			
-    		</vue-typer>
-    	</p> 
-    	<div class="borcon">
-    		<div  class="cont   ">
-					<div class="plashka "><p>{{cont}}</p></div>
-				</div>
-    	</div>
-			
+	<div>
+    <div class="bgan" :class="{ bgclass: activatorclass }" > </div>
+ <!--    <div class="login"></div> -->
+    <div id="head">	
+    	<div class="contain ">
+    		<div class="screen">  
+      		<div class="title largetext" :class="{flickerin1: activatorclass}">
+      			<vue-typer 
+              caret-animation='smooth'
+      				:text='["Пикселтех","Pixeltech.ru"]'
+      				:repeat='0' 
+      				:pre-type-delay='1600'>
+      			</vue-typer> 
+      		</div>
+    		</div>  
+      	<p class="subj basetext">
+      		<vue-typer 
+      		:pre-type-delay= '1000'
+      		:repeat='0'
+      		:text= "subj"
+      		:shuffle='true'>
+      		</vue-typer>
+      	</p> 
+      	<div class="borcon">
+      		<div  class="cont">
+  					<div class="plashka" ><div class="overpla "><p>{{cont}}</p></div></div>
+  				</div>
+      	</div>
+      </div>
     </div>
-  </div>
 	</div>
 </template>
 
@@ -87,9 +83,20 @@ export default {
 		 
   },
   methods: {
-  	addlightclass() {
-
-  	},
+    onSubmit: function () {
+      axios.post('/users', {
+        user: {
+          email: this.email,
+          password: this.password
+        }
+      })
+      .then(response => {
+        // whatever you want
+      })
+      .catch(error => {
+        // whatever you want
+      })
+    },
   	tween() {
       var selectedWork = new TimelineMax() ;
       selectedWork
@@ -151,6 +158,10 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+.login { background: #dad;
+  height: 100px;
+
+}
 .bgan { 
 	opacity: 0.20;
 	background: url('./images/scheme.svg');
@@ -241,7 +252,7 @@ export default {
 	justify-content: center;
 }
 
-.title { width: 6.2em;
+.title { width: 6.3em;
 	font-size: 1.7em;
 	text-align: left;
 	line-height: 1.2em;
@@ -291,8 +302,10 @@ export default {
 	text-align: left;
   border: 1px solid color($diamond shade(50%));
 }
-
-
+.overpla {
+  overflow: hidden;
+  width: 9.1em;
+}
 .dotted {
   
   background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);

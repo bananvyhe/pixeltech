@@ -8,6 +8,8 @@
 import Vue from 'vue'
 // import App from '../app.vue'
 import Head from '../head.vue'
+import axios from 'axios'
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.body.appendChild(document.createElement('hello'))
@@ -15,6 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
   //   el,
   //   render: h => h(App)
   // })
+  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
+	axios.defaults.headers.common['X-CSRF-Token'] = token
+	axios.defaults.headers.common['Accept'] = 'application/json'
+
   new Vue({
     el: '#head',
     render: h => h(Head)
