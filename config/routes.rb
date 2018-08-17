@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cards
+  resources :lists
   devise_for :users, controllers: { registrations: 'registrations' }
   get 'landing_page/index'
   root 'landing_page#index'

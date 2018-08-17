@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'rails-i18n', '~> 5.1'
 gem 'devise'
 gem 'devise-i18n'
+gem 'acts_as_list'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
