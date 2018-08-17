@@ -1,4 +1,4 @@
-<!-- :class="{ bgclass: activatorclass }" -->
+мос<!-- :class="{ bgclass: activatorclass }" -->
 <template>
 	<div>
     <div class="bgan" :class="{ bgclass: activatorclass }" > </div>
@@ -176,15 +176,15 @@ export default {
 	width: 100%;
   @media (--only-1600more-screen) {
     background-size: 75% auto;
-
+ background-position: 49% 49%;
   }
   @media (--only-medium-screen) {
     background-size: 110% auto;
-    background-position: 50% 47%;
+    background-position: 55% 47%;
   }
 	@media (--only-small-screen) {
  		background-size: 200% auto;
-    background-position: 50% 47%;
+    background-position: 51% 47%;
   }
   @media (--only-xsmall-screen) {
  		background-size: 300% auto;
