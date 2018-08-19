@@ -1,6 +1,6 @@
 мос<!-- :class="{ bgclass: activatorclass }" -->
 <template>
-	<div>
+	<div class="firstpagebg">
     <div class="bgan" :class="{ bgclass: activatorclass }" > </div>
  <!--    <div class="login"></div> -->
     <div id="head">	
@@ -160,6 +160,9 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+.firstpagebg {
+  background: radial-gradient(circle at center, #3C6997  -5%, #003459 38%, #00171F 100%);
+}
 .login { background: #dad;
   height: 100px;
 
