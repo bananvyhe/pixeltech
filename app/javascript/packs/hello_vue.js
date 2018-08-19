@@ -5,14 +5,15 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-import Vue from 'vue'
+import Vue from 'vue/dist/vue.esm.js'
 // import App from '../app.vue'
 import Head from '../head.vue'
+import Boar from '../boar.vue'
 import axios from 'axios'
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const el = document.body.appendChild(document.createElement('hello'))
+document.addEventListener('turbolinks:load', () => {
+  // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({
   //   el,
   //   render: h => h(App)
@@ -26,6 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	    el: '#head',
 	    render: h => h(Head)
 	  })
+	}
+	var boards = document.querySelector('#boards')
+	if (boards != undefined) {
+		const app = new Vue({
+			el: boards,
+			data: {
+				lists: JSON.parse(boards.dataset.lists)
+			},
+			template: "<Boar :original_lists='lists' />",
+			components: { Boar }
+		})
 	}
 })
 
