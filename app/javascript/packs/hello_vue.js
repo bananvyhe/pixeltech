@@ -20,11 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 	axios.defaults.headers.common['X-CSRF-Token'] = token
 	axios.defaults.headers.common['Accept'] = 'application/json'
-
-  new Vue({
-    el: '#head',
-    render: h => h(Head)
-  })
+	var head = document.getElementById("head") 
+  if (head != null) {
+	  new Vue({
+	    el: '#head',
+	    render: h => h(Head)
+	  })
+	}
 })
 
 

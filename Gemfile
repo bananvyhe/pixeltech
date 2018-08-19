@@ -23,6 +23,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'devise'
 gem 'devise-i18n'
 gem 'acts_as_list'
+gem 'turbolinks', '~> 5.1.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
