@@ -24,6 +24,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'acts_as_list'
 gem 'turbolinks', '~> 5.1.0'
+gem 'uglifier'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
