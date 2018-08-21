@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div v-for="list in original_lists" class="cols">
+    <div v-for="(list, index) in lists" class="cols">
       <h6>{{list.name}}</h6>
       <hr />
       <div v-for="(card, index) in list.cards">
@@ -17,12 +17,27 @@
     props: ["original_lists"],
     data: function (){
       return {
-        messages: {}
+        messages: {},
+        lists: this.original_lists,
       }
     },
     methods: {
       submitMessages: function(list_id) {
-        console.log(this.messages[list_id]);
+        var data = new FormData
+        data.append("card[list_id]", list_id)
+        data.append("card[name]", this.messages[list_id])
+
+        Rails.ajax({
+          url: "/cards",
+          type: "POST",
+          data: data,
+          dataType: "json",
+          success: (data) => {
+            const index = this.lists.findIndex(item => item.id == list_id)
+            this.lists[index].cards.push(data)
+            this.messages[list_id] = undefined
+          }
+        })
       }
     }
   }
