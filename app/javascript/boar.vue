@@ -3,9 +3,12 @@
     <div v-for="(list, index) in lists" class="cols">
       <h6>{{list.name}}</h6>
       <hr />
+
+      <draggable v-model="list.cards" :options="{group: 'cards'}" @change="cardMoved">
       <div v-for="(card, index) in list.cards">
         {{ card.name}}
       </div>
+      </draggable>
       <textarea v-model="messages[list.id]"></textarea>
       <button v-on:click="submitMessages(list.id)">Добавить</button>
     </div>
@@ -24,6 +27,25 @@
       }
     },
     methods: {
+      cardMoved: function(event) {
+        if (event.added == undefined) {return}
+
+        const list_index = this.lists.findIndex((list) => {
+          return list.cards.find((card) => {
+            return card.id === event.added.element.id
+          })
+        })
+        var data = new FormData
+        data.append("card[list_id]", this.lists[list_index].id)
+        data.append("card[position]", event.added.newIndex + 1)
+
+        Rails.ajax({
+          url: `/cards/${event.added.element.id}/move`,
+          type: "PATCH",
+          data: data,
+          dataType: "json"
+        })
+      },
       listMoved: function(event) {
         var data = new FormData
         data.append("list[position]", event.newIndex + 1)
