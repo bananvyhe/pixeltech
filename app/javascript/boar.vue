@@ -41,7 +41,7 @@
         data.append("card[position]", evt.newIndex + 1)
 
         Rails.ajax({
-          url: `/cards/${event.added.element.id}/move`,
+          url: `/cards/${element.id}/move`,
           type: "PATCH",
           data: data,
           dataType: "json"
