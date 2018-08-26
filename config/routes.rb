@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
    
-  devise_for :users, controllers: { sessions: 'users/sessions' }
-  get 'landing_page/index'
-  root 'landing_page#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'errors/not_found'
+  get 'errors/internal_server_error'
+   
+  devise_for :users, controllers: { registrations: 'registrations' }
+  resources :users do
+    get :admination, on: :member
+    get :deadmination, on: :member
+  end
+   
   resources :lists do
   	member do
   		patch :move
@@ -14,5 +19,8 @@ Rails.application.routes.draw do
   		patch :move
   	end
   end
-  root to: 'lists#index'
+  root 'landing_page#index'
+ 
+  match "/404", :to => "errors#not_found", :via => :all
+	match "/500", :to => "errors#internal_server_error", :via => :all
 end
