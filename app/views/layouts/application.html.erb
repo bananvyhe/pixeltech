@@ -18,8 +18,10 @@
 
   <body >
     <div class="maincontainer">
-      
-                    <div class="railsblock">
+      <% if current_user.try(:admin?) %>
+       12345
+      <% end %>
+      <div class="railsblock">
         <% if user_signed_in? %>
             <%# if current_user.try(:admin?) %>
              <!--  <a href ="/resizeimages" onclick="window.open(this.href, '', 'scrollbars=1,height='+Math.min(800, screen.availHeight)+',width='+Math.min(800, screen.availWidth)); return false;">обрезать картинку</a>&nbsp;&nbsp; -->
