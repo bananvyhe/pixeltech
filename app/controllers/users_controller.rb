@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       
   end
   def admination
-    if current_user.user?
+    if current_user.admin?
       @user = User.find(params[:id])
       @user.update_attribute :role, :admin
     	# @user.update_attribute :admin, true
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     end
   end
   def deadmination
-    if current_user.user?
+    if current_user.admin?
       @user = User.find(params[:id])
        @user.update_attribute :role, :user
       redirect_to action: :index
