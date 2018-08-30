@@ -62,8 +62,10 @@ class ListsController < ApplicationController
   end
 
   def move
-    @list.insert_at(list_params[:position].to_i)
-    render action: :show
+    if current_user.admin?
+      @list.insert_at(list_params[:position].to_i)
+      render action: :show
+    end
   end
 
   private

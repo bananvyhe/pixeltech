@@ -1,4 +1,8 @@
 <template>
+  <div>
+    <div>
+      123
+    </div>
   <draggable v-model="lists" :options="{group: 'lists'}" class="dragArea" @end="listMoved">
     <div v-for="(list, index) in lists" class="cols">
       <h6>{{list.name}}</h6>
@@ -13,6 +17,7 @@
       <button v-on:click="submitMessages(list.id)">Добавить</button>
     </div>
   </draggable>
+  </div>
 </template>
 
 <script>
