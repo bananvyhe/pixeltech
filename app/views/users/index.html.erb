@@ -2,13 +2,13 @@
 <% @users.each do |user| %>
  
   <%= user.email %> 
-   <%  if  user.admin == false %>
+   <%  if  !user.admin? %>
 
   <%= link_to "+", admination_user_path(user) %>&nbsp; дать права
  <% end %>
  
  
-  <%  if  user.admin == true %>
+  <%  if  user.admin? %>
   - права администратора
    <%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
  <% end %>

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -11,7 +12,12 @@ class User < ApplicationRecord
   validates_presence_of     :password, if: :password_required?
   validates_confirmation_of :password, if: :password_required?
   validates_length_of       :password, within: password_length, allow_blank: true
+    enum role: [:user, :voodoo, :admin]
+  after_initialize :set_default_role, :if => :new_record?
 
+  def set_default_role
+    self.role ||= :user
+  end
   protected
   # From Devise module Validatable
   def password_required?
