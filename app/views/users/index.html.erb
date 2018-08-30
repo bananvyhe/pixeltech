@@ -1,6 +1,6 @@
 <% @users = User.all %>
 <% @users.each do |user| %>
-<% current_user.update_attribute :admin, true %>
+ 
   <%= user.email %> 
    <%  if  user.admin == false %>
 
