@@ -10,8 +10,8 @@ import Vue from 'vue/dist/vue.esm.js'
 import Head from '../head.vue'
 import Boar from '../boar.vue'
 import axios from 'axios'
-
-
+import TurbolinksAdapter from 'vue-turbolinks'
+Vue.use(TurbolinksAdapter)
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({
@@ -36,7 +36,7 @@ document.addEventListener('turbolinks:load', () => {
 				lists: JSON.parse(boards.dataset.lists)
 			},
 			template: "<Boar :original_lists='lists' />",
-			components: { Boar }
+			components: { Boar } 
 		})
 	}
 })
