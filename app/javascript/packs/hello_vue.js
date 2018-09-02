@@ -9,9 +9,11 @@ import Vue from 'vue/dist/vue.esm.js'
 // import App from '../app.vue'
 import Head from '../head.vue'
 import Boar from '../boar.vue'
+import Railsvue from '../railsvue.vue'
 import axios from 'axios'
 import TurbolinksAdapter from 'vue-turbolinks'
 Vue.use(TurbolinksAdapter)
+Vue.component('railsvue', Railsvue)
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({
@@ -39,6 +41,9 @@ document.addEventListener('turbolinks:load', () => {
 			components: { Boar } 
 		})
 	}
+	new Vue({
+		el: '[data-behavior="vue1"]' 
+	})
 })
 
 
