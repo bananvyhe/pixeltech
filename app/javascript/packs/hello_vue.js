@@ -10,7 +10,6 @@ import Vue from 'vue/dist/vue.esm.js'
 import Head from '../head.vue'
 import Boar from '../boar.vue'
 import Currentrole from '../railsvars/currentrole.vue'
- 
 
 import axios from 'axios'
 import TurbolinksAdapter from 'vue-turbolinks'
@@ -53,6 +52,7 @@ document.addEventListener('turbolinks:load', () => {
 	// })
 
 	new Vue({
+		store,
     components: { Currentrole }
   }).$mount('.currentrole')
 })

@@ -1,7 +1,8 @@
  
 <template>
 	<div>
-    <p>{{role}}</p>
+    <p>{{role}}
+    {{ $store.state.number }}</p>
 	</div>
 </template>
 
