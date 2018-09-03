@@ -16,6 +16,9 @@ import axios from 'axios'
 import TurbolinksAdapter from 'vue-turbolinks'
 Vue.use(TurbolinksAdapter)
 Vue.component('currentrole', Currentrole)
+
+import store from 'store'
+
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({
