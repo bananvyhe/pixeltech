@@ -1,14 +1,14 @@
  
 <template>
 	<div>
-    <p>{{message}}</p>
+    <p>{{role}}</p>
 	</div>
 </template>
 
 <script>
  
 export default {
-	props: ["message"],
+	props: ["role"],
 }
 </script>
 <style scoped>

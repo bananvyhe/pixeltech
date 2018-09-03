@@ -9,11 +9,13 @@ import Vue from 'vue/dist/vue.esm.js'
 // import App from '../app.vue'
 import Head from '../head.vue'
 import Boar from '../boar.vue'
-import Railsvue from '../railsvue.vue'
+import Currentrole from '../railsvars/currentrole.vue'
+ 
+
 import axios from 'axios'
 import TurbolinksAdapter from 'vue-turbolinks'
 Vue.use(TurbolinksAdapter)
-Vue.component('railsvue', Railsvue)
+Vue.component('currentrole', Currentrole)
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({
@@ -30,6 +32,7 @@ document.addEventListener('turbolinks:load', () => {
 	    render: h => h(Head)
 	  })
 	}
+
 	var boards = document.querySelector('#boards')
 	if (boards != undefined) {
 		const app = new Vue({
@@ -38,12 +41,17 @@ document.addEventListener('turbolinks:load', () => {
 				lists: JSON.parse(boards.dataset.lists)
 			},
 			template: "<Boar :original_lists='lists' />",
-			components: { Boar } 
+			components: { Boar  } 
 		})
 	}
+
+	// new Vue({
+	// 	el: '[data-behavior="vue1"]' 
+	// })
+
 	new Vue({
-		el: '[data-behavior="vue1"]' 
-	})
+    components: { Currentrole }
+  }).$mount('.currentrole')
 })
 
 

@@ -17,12 +17,13 @@
   </head>
 
   <body >
+    <% if defined?current_user.role %>
+      <currentrole class="currentrole" :role=" <%= current_user.role.to_json %> "></currentrole>
+    <% end %>
     <div class="maincontainer">
-      <div  data-behavior="vue1">
-        <% if defined?current_user.role %>
-          <railsvue  :message=" <%= current_user.role.to_json %> "></railsvue>
-        <% end %>
-      </div>
+     <!--  <div  data-behavior="vue1"> -->
+        
+     <!--  </div> -->
       <% if current_user.try(:admin?) %>
         
       <% end %>
