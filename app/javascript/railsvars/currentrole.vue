@@ -1,8 +1,7 @@
  
 <template>
 	<div>
-    <p>{{role}}
-    {{ $store.state.number }}</p>
+    <p>{{$store.getters.role}}</p>
 	</div>
 </template>
 
@@ -10,6 +9,9 @@
  
 export default {
 	props: ["role"],
+	created() {
+		this.$store.commit('rolesend', this.role)
+	}
 }
 </script>
 <style scoped>

@@ -1,3 +1,4 @@
 export default {
-	number: 10
+	number: 10,
+	role: ''
 }

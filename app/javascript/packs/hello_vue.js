@@ -50,11 +50,13 @@ document.addEventListener('turbolinks:load', () => {
 	// new Vue({
 	// 	el: '[data-behavior="vue1"]' 
 	// })
-
-	new Vue({
-		store,
-    components: { Currentrole }
-  }).$mount('.currentrole')
+	var currentrole = document.querySelector('.currentrole')
+	if (currentrole != undefined) {
+		new Vue({
+			store,
+	    components: { Currentrole }
+	  }).$mount('.currentrole')
+	}
 })
 
 
