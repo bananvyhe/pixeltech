@@ -39,6 +39,7 @@ document.addEventListener('turbolinks:load', () => {
 	if (boards != undefined) {
 		const app = new Vue({
 			el: boards,
+			store,
 			data: {
 				lists: JSON.parse(boards.dataset.lists)
 			},

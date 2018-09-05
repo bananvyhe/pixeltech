@@ -1,25 +1,43 @@
 <template>
   <div>
-    <div>
-      123
-    </div>
-  <draggable v-model="lists" :options="{group: 'lists'}" class="dragArea" @end="listMoved">
-    <div v-for="(list, index) in lists" class="cols">
-      <h6>{{list.name}}</h6>
-      <hr />
+<!-- при текущей роли админ дать возможность позиционирования элементов -->
+    <template v-if="$store.getters.role == 'admin'">
+      <draggable v-model="lists" :options="{group: 'lists'}" class="dragArea" @end="listMoved">
+        <div v-for="(list, index) in lists" class="cols">
+          <h6>{{list.name}}</h6>
+          <hr />
 
-      <draggable v-model="list.cards" :options="{group: 'cards'}" @change="cardMoved">
-      <div v-for="(card, index) in list.cards">
-        {{ card.name}}
-      </div>
+          <draggable  v-model="list.cards" :options="{group: 'cards'}" @change="cardMoved">
+          <div v-for="(card, index) in list.cards">
+            {{ card.name}}
+          </div>
+          </draggable>
+          <textarea v-model="messages[list.id]"></textarea>
+          <button v-on:click="submitMessages(list.id)">Добавить</button>
+        </div>
       </draggable>
-      <textarea v-model="messages[list.id]"></textarea>
-      <button v-on:click="submitMessages(list.id)">Добавить</button>
-    </div>
-  </draggable>
+    </template> 
+<!-- end -->
+<!-- иначе не давать такой возможности -->
+    <template v-else>
+       <div v-model="lists" :options="{group: 'lists'}" class="dragArea" @end="listMoved">
+        <div v-for="(list, index) in lists" class="cols">
+          <h6>{{list.name}}</h6>
+          <hr />
+
+          <div  v-model="list.cards" :options="{group: 'cards'}" @change="cardMoved">
+          <div v-for="(card, index) in list.cards">
+            {{ card.name}}
+          </div>
+          </div>
+          <textarea v-model="messages[list.id]"></textarea>
+          <button v-on:click="submitMessages(list.id)">Добавить</button>
+        </div>
+      </div>
+    </template> 
+<!-- end -->       
   </div>
 </template>
-
 <script>
   import draggable from 'vuedraggable'
   export default {

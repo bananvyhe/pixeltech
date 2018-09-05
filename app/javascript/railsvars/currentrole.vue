@@ -1,7 +1,6 @@
- 
 <template>
 	<div>
-    <p>{{$store.getters.role}}</p>
+    
 	</div>
 </template>
 
