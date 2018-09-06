@@ -1,1 +1,7 @@
-<div id="head"></div>
+<% if !user_signed_in? %>
+	<div id="head"></div>
+<% end %>
+
+<% if user_signed_in? %>
+	форум
+<% end %>
