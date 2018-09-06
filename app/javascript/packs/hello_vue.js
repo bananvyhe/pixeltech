@@ -18,6 +18,9 @@ Vue.component('currentrole', Currentrole)
 
 import store from 'store'
 
+import ElementUI from 'element-ui';
+Vue.use(ElementUI);
+
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({
