@@ -4,7 +4,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
- 
+  validates_presence_of   :username, if: :username_required?  
   validates_presence_of   :email, if: :email_required?
   validates_uniqueness_of :email, allow_blank: true, if: :email_changed?
   validates_format_of     :email, with: email_regexp, allow_blank: true, if: :email_changed?
@@ -26,6 +26,9 @@ class User < ApplicationRecord
 
   # From Devise module Validatable
   def email_required?
+    true
+  end
+  def username_required?
     true
   end
 end
