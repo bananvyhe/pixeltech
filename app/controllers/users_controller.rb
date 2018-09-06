@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       
   end
   def admination
-    if current_user.admin?
+    if current_user.superadmin?
       @user = User.find(params[:id])
       @user.update_attribute :role, :admin
     	# @user.update_attribute :admin, true
@@ -18,14 +18,14 @@ class UsersController < ApplicationController
     end
   end
   def deadmination
-    if current_user.admin?
+    if current_user.superadmin?
       @user = User.find(params[:id])
        @user.update_attribute :role, :user
       redirect_to action: :index
     end
   end
   def voodooation
-    if current_user.admin?
+    if current_user.superadmin?
       @user = User.find(params[:id])
       @user.update_attribute :role, :voodoo
       # @user.update_attribute :admin, true
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     end
   end
   def devoodootion
-    if current_user.admin?
+    if current_user.superadmin?
       @user = User.find(params[:id])
        @user.update_attribute :role, :voodoo
       redirect_to action: :index

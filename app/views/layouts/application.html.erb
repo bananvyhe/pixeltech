@@ -24,7 +24,7 @@
      <!--  <div  data-behavior="vue1"> -->
         
      <!--  </div> -->
-      <% if current_user.try(:admin?) %>
+      <% if current_user.try(:superadmin?) %>
         
       <% end %>
       <div class="railsblock">
