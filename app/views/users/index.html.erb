@@ -2,14 +2,18 @@
 <% @users.each do |user| %>
  
   <%= user.email %> 
-   <%  if  !user.admin? %>
+  <%  if  !user.admin? %>
+		<%= link_to "+", admination_user_path(user) %>&nbsp; дать права админа
+	<% end %>
 
-  <%= link_to "+", admination_user_path(user) %>&nbsp; дать права
- <% end %>
- 
- 
+	<%  if  !user.voodoo? %>
+		<%= link_to "+", voodooation_user_path(user) %>&nbsp; вудуизировать
+	<% end %>
+	<%  if user.voodoo? %>
+		-=Вуду=-
+	<% end %>
   <%  if  user.admin? %>
-  - права администратора
+  -=Админ=-
    <%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
  <% end %>
  

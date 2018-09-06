@@ -24,6 +24,21 @@ class UsersController < ApplicationController
       redirect_to action: :index
     end
   end
+  def voodooation
+    if current_user.admin?
+      @user = User.find(params[:id])
+      @user.update_attribute :role, :voodoo
+      # @user.update_attribute :admin, true
+      redirect_to action: :index
+    end
+  end
+  def devoodootion
+    if current_user.admin?
+      @user = User.find(params[:id])
+       @user.update_attribute :role, :voodoo
+      redirect_to action: :index
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

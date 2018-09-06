@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :users do
     get :admination, on: :member
     get :deadmination, on: :member
+    get :voodooation, on: :member
+    get :devoodooation, on: :member
   end
    
   resources :lists do
