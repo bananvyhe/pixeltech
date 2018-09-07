@@ -10,18 +10,22 @@ import Vue from 'vue/dist/vue.esm.js'
 import Head from '../head.vue'
 import Boar from '../boar.vue'
 import Currentrole from '../railsvars/currentrole.vue'
-
+import Reg from '../components/registration.vue'
 import axios from 'axios'
 import TurbolinksAdapter from 'vue-turbolinks'
 Vue.use(TurbolinksAdapter)
 Vue.component('currentrole', Currentrole)
-
+Vue.component('reg', Reg)
 import store from 'store'
 
-import { Button, Select } from 'element-ui';
-Vue.component(Button.name, Button);
-Vue.component(Select.name, Select);
-
+import { Button, Dialog, Select, Form, FormItem, Input, Option } from 'element-ui';
+Vue.use(Button) 
+Vue.use(Dialog)  
+Vue.use(Form)  
+Vue.use(FormItem)  
+Vue.use(Input)  
+Vue.use(Select)
+Vue.use(Option)
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({
@@ -62,6 +66,14 @@ document.addEventListener('turbolinks:load', () => {
 	    components: { Currentrole }
 	  }).$mount('.currentrole')
 	}
+
+	// var reg = document.querySelector('#reg')
+	// if (reg != undefined) {
+	// 	new Vue({
+	// 		el: '#reg',
+	// 		render: h => h(Reg)
+	// 	})
+	// }
 })
 
 

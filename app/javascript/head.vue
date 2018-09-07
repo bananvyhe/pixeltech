@@ -4,7 +4,8 @@
     <div class="bgan" :class="{ bgclass: activatorclass }" > </div>
  <!--    <div class="login"></div> -->
     <div id="head">	
-    	<div class="contain ">
+      
+    	<div class="contain "><reg class="reg"></reg>
     		<div class="screen">  
       		<div class="title largetext" :class="{flickerin1: activatorclass}">
       			<vue-typer 
