@@ -18,6 +18,7 @@ Vue.component('currentrole', Currentrole)
 Vue.component('reg', Reg)
 import store from 'store'
 
+import '../../../theme/index.css'
 import { Button, Dialog, Select, Form, FormItem, Input, Option } from 'element-ui';
 Vue.use(Button) 
 Vue.use(Dialog)  
@@ -26,6 +27,7 @@ Vue.use(FormItem)
 Vue.use(Input)  
 Vue.use(Select)
 Vue.use(Option)
+
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({

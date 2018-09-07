@@ -11,10 +11,10 @@ $--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 
 /* Colors
 -------------------------- */
-$--color-white: #fff !default;
-$--color-black: #000 !default;
+$--color-white: #16151A !default;
+$--color-black: #b3ddad !default;
 
-$--color-primary: #409EFF !default;
+$--color-primary: #279c1d !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
@@ -25,9 +25,9 @@ $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /
 $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
 $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
 
-$--color-success: #67c23a !default;
-$--color-warning: #e6a23c !default;
-$--color-danger: #f56c6c !default;
+$--color-success: #51B023 !default;
+$--color-warning: #D4A662 !default;
+$--color-danger: #D45555 !default;
 $--color-info: #909399 !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
@@ -40,10 +40,10 @@ $--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
 $--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
 $--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
 
-$--color-text-primary: #303133 !default;
-$--color-text-regular: #606266 !default;
-$--color-text-secondary: #909399 !default;
-$--color-text-placeholder: #c0c4cc !default;
+$--color-text-primary: #EDEBD7 !default;
+$--color-text-regular: #C1BDB3 !default;
+$--color-text-secondary: #C1BDB3 !default;
+$--color-text-placeholder: #C1BDB3 !default;
 
 /* Link
 -------------------------- */
@@ -58,10 +58,10 @@ $--background-color-base: #f5f7fa !default;
 -------------------------- */
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
-$--border-color-base: #dcdfe6 !default;
-$--border-color-light: #e4e7ed !default;
-$--border-color-lighter: #ebeef5 !default;
-$--border-color-extra-light: #f2f6fc !default;
+$--border-color-base: #5D737E !default;
+$--border-color-light: #5D737E !default;
+$--border-color-lighter: #5D737E !default;
+$--border-color-extra-light: #5D737E !default;
 $--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 $--border-radius-base: 4px !default;
