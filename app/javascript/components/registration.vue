@@ -6,7 +6,7 @@
 			<el-dialog title="Создать аккаунт:" :visible.sync="dialogFormVisible">
 			  <el-form :model="form">
 			    <el-form-item size="mini" label="Емайл:" :label-width="formLabelWidth">
-			      <el-input v-model="form.mail" auto-complete="off"></el-input>
+			      <el-input v-model="form.email" auto-complete="off"></el-input>
 			    </el-form-item>
 			    <el-form-item size="mini" label="Имя пользователя:" :label-width="formLabelWidth">
 			      <el-input v-model="form.usernamne" auto-complete="off"></el-input>
@@ -14,9 +14,12 @@
 			    <el-form-item size="mini" label="Пароль:" :label-width="formLabelWidth">
 			      <el-input v-model="form.password" auto-complete="off"></el-input>
 			    </el-form-item>
-			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">
+			    <el-form-item size="mini" label="Пароль:" :label-width="formLabelWidth">
+			      <el-input v-model="form.password_confirmation" auto-complete="off"></el-input>
+			    </el-form-item>{{form}}
+<!-- 			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">
 			      <el-input v-model="form.password" auto-complete="off"></el-input>
-			    </el-form-item>
+			    </el-form-item> -->
 			   <!--  <el-form-item label="Zones" :label-width="formLabelWidth">
 			      <el-select v-model="form.region" placeholder="Please select a zone">
 			        <el-option label="Zone No.1" value="shanghai"></el-option>
@@ -26,7 +29,7 @@
 			  </el-form>
 			  <span slot="footer" class="dialog-footer">
 			    <el-button size="mini" @click="dialogFormVisible = false">Отмена</el-button>
-			    <el-button size="mini" type="primary" @click="dialogFormVisible = false">Подтвердить</el-button>
+			    <el-button size="mini" type="primary" @click="onSubmit" >Подтвердить</el-button>
 			  </span>
 			</el-dialog>
 
@@ -35,26 +38,40 @@
 </template>
 
 <script>
- 
+ import axios from 'axios'
 export default {
 	data() {
-      return {
-         
-        
-        dialogFormVisible: false,
-        form: {
-          name: '',
-          region: '',
-          date1: '',
-          date2: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: ''
-        },
-        formLabelWidth: '150px'
-      };
-    }
+    return {
+       
+      
+      dialogFormVisible: false,
+      form: {
+        email: '',
+        username: '',
+        password: '',
+        password_confirmation:''
+      },
+      formLabelWidth: '150px'
+    };
+  },
+  methods: {
+	  onSubmit: function () {
+	    axios.post('/users', {
+	      user: {
+	        email: this.form.mail,
+	        username: this.form.username,
+	        password: this.form.password,
+	        password_confirmation: this.form.password_confirmation
+	      }
+	    })
+	    .then(response => {
+	      // whatever you want
+	    })
+	    .catch(error => {
+	      // whatever you want
+	    })
+	  }
+	}
 }
 </script>
 <style scoped>
