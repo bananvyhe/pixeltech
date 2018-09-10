@@ -27,7 +27,7 @@ Vue.use(FormItem)
 Vue.use(Input)  
 Vue.use(Select)
 Vue.use(Option)
-
+import '../../../public/theme/index.css'
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({
