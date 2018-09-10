@@ -18,8 +18,7 @@ Vue.use(TurbolinksAdapter)
 Vue.component('currentrole', Currentrole)
 Vue.component('reg', Reg)
 import store from 'store'
-
-import '../../../theme/index.css'
+ 
 import { Button, Dialog, Select, Form, FormItem, Input, Option } from 'element-ui';
 Vue.use(Button) 
 Vue.use(Dialog)  
