@@ -9,6 +9,16 @@ class UsersController < ApplicationController
   def update
       
   end
+  def destroy
+    @user = User.find(params[:id])
+     @user.destroy
+         
+    # @user.destroy
+    # respond_to do |format|
+    #   format.html { redirect_to users_url, notice: 'удален.' }
+    #   format.json { head :no_content }
+    # end
+  end
   def admination
     if current_user.superadmin?
       @user = User.find(params[:id])
@@ -39,7 +49,7 @@ class UsersController < ApplicationController
       redirect_to action: :index
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -48,6 +58,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit( :admin, :email, :username )
+      params.require(:user).permit( :admin, :email, :username  )
     end
 end

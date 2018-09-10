@@ -1,28 +1,41 @@
 <% @users = User.all %>
-<% @users.each do |user| %>
- 
-  <%= user.email %> 
-  <%  if user.user? %>
-		<%= link_to "+", admination_user_path(user) %>&nbsp; дать права админа
-	<% end %>
+<table>
+      <tbody>
+				<% @users.each do |user| %>
+					<tr data-item_id="<%= user.id %>"> 
 
-	<%  if  !user.voodoo? && !user.superadmin? && !user.admin? %>
-		<%= link_to "+", voodooation_user_path(user) %>&nbsp; вудуизировать
-	<% end %>
-
-	<%  if user.voodoo? %>
-		-=Вуду=-
-		<%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
-	<% end %>
-
-  <%  if  user.admin? %>
-  -=Админ=-
-   <%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
- <% end %>
-
- <%  if  user.superadmin? %>
-  -=СуперАдмин=-
- <% end %>
- 
-  <br/>
-<% end %>
+						<td>
+					  <%= user.email %> 
+					  <%  if user.user? %>
+							<%= link_to "+", admination_user_path(user) %>&nbsp; дать права админа
+						<% end %>
+						</td>
+						<td>
+						<%  if  !user.voodoo? && !user.superadmin? && !user.admin? %>
+							<%= link_to "+", voodooation_user_path(user) %>&nbsp; вудуизировать
+						<% end %>
+						</td>
+						<td>
+						<%  if user.voodoo? %>
+							-=Вуду=-
+							<%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
+						<% end %>
+						</td>
+						<td>
+					  <%  if  user.admin? %>
+					  -=Админ=-
+					   <%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
+					 <% end %>
+						</td>
+						<td>
+						<%  if  user.superadmin? %>
+					  -=СуперАдмин=-
+					 <% end %>
+					</td>
+					 
+					 <td><span class="deleteAction">Удалить</span></td>
+					  <br/>
+					   </tr>
+				<% end %>
+ </tbody>
+    </table>

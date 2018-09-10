@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'errors/internal_server_error'
    
   devise_for :users, controllers: {  registrations: 'registrations' }
+  match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_use
   root 'landing_page#index'
   resources :users do
     get :admination, on: :member

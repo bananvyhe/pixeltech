@@ -123,3 +123,8 @@ End Hamster setup*/
   right:0;
   @extend %roundbgstrw;
 }
+.deleteAction {
+  color: blue;
+  border-bottom: solid 1px;
+  cursor: pointer;
+}
