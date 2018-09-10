@@ -1,7 +1,7 @@
 <template>
   <div>
 <!-- при текущей роли админ дать возможность позиционирования элементов -->
-    <template v-if="$store.getters.role == 'admin'">
+    <template v-if="$store.getters.role == 'admin' || $store.getters.role == 'superadmin'">
       <draggable v-model="lists" :options="{group: 'lists'}" class="dragArea" @end="listMoved">
         <div v-for="(list, index) in lists" class="cols">
           <h6>{{list.name}}</h6>

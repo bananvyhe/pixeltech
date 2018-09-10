@@ -16,7 +16,7 @@
 			    </el-form-item>
 			    <el-form-item size="mini" label="Пароль:" :label-width="formLabelWidth">
 			      <el-input v-model="form.password_confirmation" auto-complete="off"></el-input>
-			    </el-form-item>{{form}}
+			    </el-form-item>
 <!-- 			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">
 			      <el-input v-model="form.password" auto-complete="off"></el-input>
 			    </el-form-item> -->

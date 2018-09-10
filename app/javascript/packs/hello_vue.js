@@ -6,6 +6,7 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
 import Vue from 'vue/dist/vue.esm.js'
+import axios from 'axios'
 // import App from '../app.vue'
 import Head from '../head.vue'
 import Boar from '../boar.vue'
@@ -35,6 +36,9 @@ document.addEventListener('turbolinks:load', () => {
   //   render: h => h(App)
   // })
 
+  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
+	axios.defaults.headers.common['X-CSRF-Token'] = token
+	axios.defaults.headers.common['Accept'] = 'application/json'
 	var head = document.getElementById("head") 
   if (head != null) {
 	  new Vue({
