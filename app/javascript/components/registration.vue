@@ -29,7 +29,7 @@
 				    </el-form-item> -->
 				 		</el-form>
 				 		<el-button size="mini" @click="dialogFormVisible = false">Отмена</el-button>
-					  <el-button size="mini" type="primary" @click="onSubmit" >Подтвердить</el-button>
+					  <el-button size="mini" type="primary" @click="handle" >Подтвердить</el-button>
 				  	<span slot="footer" class="dialog-footer">
 		
 				  	</span>
@@ -66,6 +66,10 @@ export default {
     };
   },
   methods: {
+  	handle: function () {
+  		this.onSubmit();
+  		this.dialogFormVisible = false
+  	},
 	  onSubmit: function () {
 	    axios.post('/users', {
 	      user: {
@@ -77,7 +81,7 @@ export default {
 	      }
 	    })
 	    .then(response => {
-	      // whatever you want
+	       location.reload(true);
 	    })
 	    .catch(error => {
 	      // whatever you want
