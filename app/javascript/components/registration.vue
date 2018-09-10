@@ -9,7 +9,7 @@
 			      <el-input v-model="form.email" auto-complete="off"></el-input>
 			    </el-form-item>
 			    <el-form-item size="mini" label="Имя пользователя:" :label-width="formLabelWidth">
-			      <el-input v-model="form.usernamne" auto-complete="off"></el-input>
+			      <el-input v-model="form.username" auto-complete="off"></el-input>
 			    </el-form-item>
 			    <el-form-item size="mini" label="Пароль:" :label-width="formLabelWidth">
 			      <el-input v-model="form.password" auto-complete="off"></el-input>
@@ -26,12 +26,15 @@
 			        <el-option label="Zone No.2" value="beijing"></el-option>
 			      </el-select>
 			    </el-form-item> -->
-			  </el-form>
-			  <span slot="footer" class="dialog-footer">
-			    <el-button size="mini" @click="dialogFormVisible = false">Отмена</el-button>
-			    <el-button size="mini" type="primary" @click="onSubmit" >Подтвердить</el-button>
-			  </span>
+			 		</el-form>
+			 		<el-button size="mini" @click="dialogFormVisible = false">Отмена</el-button>
+				  <el-button size="mini" type="primary" @click="onSubmit" >Подтвердить</el-button>
+			  	<span slot="footer" class="dialog-footer">
+	
+			  	</span>
+
 			</el-dialog>
+				
 
 		</div>
 	</div>
@@ -39,6 +42,11 @@
 
 <script>
  import axios from 'axios'
+  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
+	axios.defaults.headers.common['X-CSRF-Token'] = token
+	axios.defaults.headers.common['Accept'] = 'application/json'
+ 
+
 export default {
 	data() {
     return {
@@ -58,10 +66,11 @@ export default {
 	  onSubmit: function () {
 	    axios.post('/users', {
 	      user: {
-	        email: this.form.mail,
+	        email: this.form.email,
 	        username: this.form.username,
 	        password: this.form.password,
-	        password_confirmation: this.form.password_confirmation
+	        password_confirmation: this.form.password_confirmation,
+	        // password_confirmation: this.form.password_confirmation
 	      }
 	    })
 	    .then(response => {
