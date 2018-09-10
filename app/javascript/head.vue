@@ -10,7 +10,7 @@
       		<div class="title largetext" :class="{flickerin1: activatorclass}">
       			<vue-typer 
               caret-animation='smooth'
-      				:text='["Пикселтех","Pixeltech.ru"]'
+      				:text='[" Пикселтех","Pixeltech.ru"]'
       				:repeat='0' 
       				:pre-type-delay='1600'>
       			</vue-typer> 

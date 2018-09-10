@@ -103,7 +103,7 @@ export default {
 	url(http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/old_map_@2X.png);
 }
 .reg {
-	padding-bottom: 1em;
+	padding-bottom: 0.55em;
 	color: $teagreen;
 }
 .regplace {
