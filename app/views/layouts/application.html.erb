@@ -22,20 +22,22 @@
       <currentrole class="currentrole" :role=" <%= current_user.role.to_json %> "></currentrole>
     <% end %>
     <div class="maincontainer">
-     <!--  <div  data-behavior="vue1"> -->
+      <!--  <div  data-behavior="vue1"> -->
         
-     <!--  </div> -->
+      <!--  </div> -->
       <% if current_user.try(:superadmin?) %>
         
       <% end %>
-    <div class="railsblock">
-        <% if user_signed_in? %>
-            <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
-            <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
-            <% else %>
-             <%= link_to "Войти", new_user_session_path %>
-        <% end %>
-      </div>  
+      <% if user_signed_in? %>
+        <div class="railsblock">
+          <% if user_signed_in? %>
+              <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
+              <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+              <% else %>
+               <%= link_to "Войти", new_user_session_path %>
+          <% end %>
+        </div> 
+      <% end %> 
 <!--       <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p> -->
       <%= yield %>
