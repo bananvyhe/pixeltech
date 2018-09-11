@@ -3,8 +3,8 @@
 		<div class="regplace">
 			<div class="warn">
 				<el-button size="mini" @click="dialogFormVisible = true">Регистрация</el-button>
-
-				<el-dialog v-bind:width="screenwidth.value > 400 ? '100' : '30' +'%'" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
+				 
+					<el-dialog top="34vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form">
 				    <el-form-item size="mini" label="Емайл:" :label-width="formLabelWidth">
 				      <el-input v-model="form.email" auto-complete="off"></el-input>
@@ -17,7 +17,7 @@
 				    </el-form-item>
 				    <el-form-item size="mini" label="Пароль:" :label-width="formLabelWidth">
 				      <el-input v-model="form.password_confirmation" auto-complete="off"></el-input>
-				    </el-form-item>{{screenwidth.value}}
+				    </el-form-item>
 	<!-- 			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">
 				      <el-input v-model="form.password" auto-complete="off"></el-input>
 				    </el-form-item> -->
@@ -39,6 +39,8 @@
 				  	</span> -->
 
 				</el-dialog>
+				 
+				
 			</div>
 			
 				
@@ -59,7 +61,7 @@
 	    return {
 	    	screenwidth: screenwidth,
 	       
-	      
+	      formLabelWidth: '120px',
 	      dialogFormVisible: false,
 	      form: {
 	        email: '',
@@ -119,6 +121,7 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+ 
 .warn {
 	padding: 4px;
 
@@ -141,5 +144,6 @@
 	display: flex;
 	justify-content: center;
 } 
+ 
 
 </style>
