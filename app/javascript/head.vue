@@ -278,13 +278,13 @@ export default {
 .subj {
   line-height: 1.5em;
   min-height: 5.5em;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8) inset,
-  0 0 10px rgba(0, 0, 0, 0.5) inset,
-  0 0 20px rgba(0, 0, 0, 0.2) inset; 
-
-	border: 3px solid color($paleaqua shade(30%));
-	border-radius: 0.2em; 
-	background-color: color($isabelline shade(10%));
+  /*box-shadow: 0 0 40px rgba(0, 0, 0, 0.8) inset,
+  0 0 30px rgba(0, 0, 0, 0.1) inset,
+  0 0 20px rgba(0, 0, 0, 0.2) inset; */
+  background: radial-gradient(at top, #FEFFFF, #A7CECC);
+	border: 1px solid color($paleaqua shade(40%));
+	border-radius: 0.1em; 
+	/*background-color: color($isabelline shade(10%));*/
 	margin-bottom: spacing(0);
 	margin: 0.3em 0 0.1em 0;
 	padding: 1.2em 1.5em 1.2em 1.5em;
@@ -298,7 +298,7 @@ export default {
 	/*margin: 0 5em 0 5em;*/
 	width: 11.3em;
 /*@extend %screenbg;*/
-	padding: 0.4em 0.5em 0 0em;
+	padding: 0.45em 0.5em 0 0em;
 	p {
 		margin-bottom: spacing(0);
 		color: $teagreen;
