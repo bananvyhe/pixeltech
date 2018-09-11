@@ -6,6 +6,7 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
 import Vue from 'vue/dist/vue.esm.js'
+ 
 import axios from 'axios'
 // import App from '../app.vue'
 import Head from '../head.vue'
@@ -27,6 +28,8 @@ Vue.use(FormItem)
 Vue.use(Input)  
 Vue.use(Select)
 Vue.use(Option)
+
+ 
 import '../../../public/theme/index.css'
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))

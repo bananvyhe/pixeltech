@@ -161,12 +161,45 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+
 .firstpagebg {
   background: radial-gradient(circle at center, #3C6997  -5%, #003459 38%, #00171F 100%);
 }
-.login { background: #dad;
+.login { 
+  background: #dad;
   height: 100px;
 
+}
+#head { 
+  position: relative;
+  align-items: center;
+  /*lost-utility: edit;*/
+  lost-center: 19em;
+  height: 100vh;
+  display: flex;
+  @media (--only-xsmall-screen) {
+    .screen { margin: 0 ;}
+    .cont { margin: 0;}
+     h2 {
+      adjust-font-size: fs medium;
+     }
+  }
+  @media (--only-small-screen) {
+ 
+  }
+  @media (--only-medium-screen) {
+ 
+    h1 {
+      margin-top: spacing(0);
+    }
+  }
+  @media (--only-1600more-screen) {
+ 
+    lost-center: 380px;
+    h1 {
+      margin-top: spacing(0);
+    }
+  }
 }
 .bgan { 
 	opacity: 0.20;
@@ -196,7 +229,6 @@ export default {
   }
 }
 .bgclass  {
-
   background-image: radial-gradient(ellipse 30% 70% at 50% top,rgba(255, 255, 255, 0.99) 0%,rgba(142, 212, 241, 0) 100.1%);
 }
 /* IE8- CSS hack */
@@ -206,38 +238,6 @@ export default {
   }
 }
 
- 
-#head { 
-	position: relative;
-	align-items: center;
-	/*lost-utility: edit;*/
-	lost-center: 19em;
-	height: 100vh;
-	display: flex;
-	@media (--only-xsmall-screen) {
-		.screen { margin: 0 ;}
-		.cont {	margin: 0;}
-  	 h2 {
-  	 	adjust-font-size: fs medium;
-  	 }
-  }
-  @media (--only-small-screen) {
- 
-  }
-	@media (--only-medium-screen) {
- 
-	  h1 {
-			margin-top: spacing(0);
-		}
-  }
-  @media (--only-1600more-screen) {
- 
-  	lost-center: 380px;
-	  h1 {
-			margin-top: spacing(0);
-		}
-  }
-}
 .contain {margin-bottom: 10%;
 	width: 100%;
 	padding-left: 0.6em; 

@@ -5,18 +5,27 @@
 				<el-button size="mini" @click="dialogFormVisible = true">Регистрация</el-button>
 				 
 					<el-dialog top="34vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
-				  <el-form :model="form">
-				    <el-form-item size="mini" label="Емайл:" :label-width="formLabelWidth">
+				  <el-form :model="form" :rules="rules" ref="form">
+				    <el-form-item 
+				    	prop="email" 
+				    	size="mini" 
+				    	label="Емайл:" 
+				    	:label-width="formLabelWidth"
+				    	:rules="[
+      { required: true, message: 'Введите адрес', trigger: 'blur' },
+      { type: 'email', message: 'Неправильный адрес почты', trigger: ['blur', 'change'] }
+    ]">
 				      <el-input v-model="form.email" auto-complete="off"></el-input>
 				    </el-form-item>
-				    <el-form-item size="mini" label="Имя пользователя:" :label-width="formLabelWidth">
-				      <el-input v-model="form.username" auto-complete="off"></el-input>
-				    </el-form-item>
-				    <el-form-item size="mini" label="Пароль:" :label-width="formLabelWidth">
+				    
+				    <el-form-item prop="password" size="mini" label="Пароль:" :label-width="formLabelWidth">
 				      <el-input v-model="form.password" auto-complete="off"></el-input>
 				    </el-form-item>
-				    <el-form-item size="mini" label="Пароль:" :label-width="formLabelWidth">
+				    <el-form-item prop="password_confirmation" size="mini" label="Повторите пароль:" :label-width="formLabelWidth">
 				      <el-input v-model="form.password_confirmation" auto-complete="off"></el-input>
+				    </el-form-item>
+				    <el-form-item  prop="username" size="mini" label="Имя пользователя:" :label-width="formLabelWidth">
+				      <el-input v-model="form.username" auto-complete="off"></el-input>
 				    </el-form-item>
 	<!-- 			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">
 				      <el-input v-model="form.password" auto-complete="off"></el-input>
@@ -51,6 +60,7 @@
 
 <script>
 	import axios from 'axios'
+
 	let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 	axios.defaults.headers.common['X-CSRF-Token'] = token
 	axios.defaults.headers.common['Accept'] = 'application/json'
@@ -58,10 +68,27 @@
 	 
 	export default {
 		data() {
+			 var validatePass = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('Введите пароль'));
+        } else {
+          if (this.form.checkPass !== '') {
+            this.$refs.form.validateField('checkPass');
+          }
+          callback();
+        }
+      };
+      var validatePass2 = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('Введите пароль снова'));
+        } else if (value !== this.form.pass) {
+          callback(new Error('Пароли не идентичны'));
+        } else {
+          callback();
+        }
+      };
 	    return {
-	    	screenwidth: screenwidth,
-	       
-	      formLabelWidth: '120px',
+	    	formLabelWidth: '120px',
 	      dialogFormVisible: false,
 	      form: {
 	        email: '',
@@ -69,7 +96,25 @@
 	        password: '',
 	        password_confirmation:''
 	      },
-	      formLabelWidth: '150px'
+	      formLabelWidth: '150px',
+	    	
+        rules: {
+          email: [
+           
+          ],
+          username: [
+            { required: true, message: 'Ваше имя на форуме' }
+          ],
+          password: [
+            { validator: validatePass, trigger: 'blur' }
+          ],
+          password_confirmation: [
+            { validator: validatePass2, trigger: 'blur' }
+          ], 
+        },
+	    	screenwidth: screenwidth,
+	       
+	      
 	    };
 	  },
 	  computed: {
@@ -121,7 +166,9 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
- 
+/*.el-form-item{
+	height: 2.7em;
+},*/
 .warn {
 	padding: 4px;
 
@@ -144,6 +191,7 @@
 	display: flex;
 	justify-content: center;
 } 
+
  
 
 </style>
