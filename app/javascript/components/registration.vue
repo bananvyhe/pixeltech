@@ -4,7 +4,7 @@
 			<div class="warn">
 				<el-button size="mini" @click="dialogFormVisible = true">Регистрация</el-button>
 
-				<el-dialog title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
+				<el-dialog width="40%" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form">
 				    <el-form-item size="mini" label="Емайл:" :label-width="formLabelWidth">
 				      <el-input v-model="form.email" auto-complete="off"></el-input>
@@ -27,12 +27,16 @@
 				        <el-option label="Zone No.2" value="beijing"></el-option>
 				      </el-select>
 				    </el-form-item> -->
+				    <el-form-item size="mini">
+					 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
+						  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
+						</el-form-item>
 				 		</el-form>
-				 		<el-button size="mini" @click="dialogFormVisible = false">Отмена</el-button>
-					  <el-button size="mini" type="primary" @click="handle" >Подтвердить</el-button>
-				  	<span slot="footer" class="dialog-footer">
+				 		 
+
+				<!--   	<span slot="footer" class="dialog-footer">
 		
-				  	</span>
+				  	</span> -->
 
 				</el-dialog>
 			</div>

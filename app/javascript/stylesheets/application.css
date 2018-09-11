@@ -128,3 +128,13 @@ End Hamster setup*/
   border-bottom: solid 1px;
   cursor: pointer;
 }
+.el-dialog {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.el-dialog__header {
+
+}
+.el-dialog__body {
+  padding: 5px 23px 7px;
+}
