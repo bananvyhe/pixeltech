@@ -105,12 +105,12 @@ End Hamster setup*/
     background-color: $teagreen;
   }
   .vue-typer .custom.caret {
-    color: $teagreen;background-color: $teagreen;
+    color: $teagreen; background-color: $teagreen;
   }
 }
 .subj {
   .vue-typer .custom.char.typed{
-    color:  color($str3 blackness(0%));
+    color:  color($warningLine blackness(80%));
   }
 }
 .plashka {
