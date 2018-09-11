@@ -29,7 +29,7 @@
       	<div class="borcon">
       		<div  class="cont">
   					<div class="plashka" ><div class="overpla "><p>{{cont}}</p></div></div>
-  				</div> <reg class="reg"></reg>
+  				</div> <transition name="fade" appear><reg class="reg"></reg></transition>
       	</div>
 
       </div>
@@ -111,7 +111,7 @@ export default {
       }, {
          
         yPercent: 0,
-        ease:Circ.easeOut}, 0, "+=1")
+        ease:Circ.easeOut}, 0, "-=4")
       .staggerFromTo('.oversubj', 1.5, {
 	      
         scaleX: 0,
@@ -214,19 +214,19 @@ export default {
 	width: 100%;
   @media (--only-1600more-screen) {
     background-size: 75% auto;
- background-position: 49% 49%;
+ background-position: 49% 46%;
   }
   @media (--only-medium-screen) {
     background-size: 1350px auto;
-    background-position: 52% 47%;
+    background-position: 52% 44%;
   }
 	@media (--only-small-screen) {
- 		background-size: 170% auto;
-    background-position: 51% 47%;
+ 		background-size: 200% auto;
+    background-position: 51% 43%;
   }
   @media (--only-xsmall-screen) {
  		background-size: 300% auto;
- 		background-position: 50% 46%;
+ 		background-position: 50% 40%;
   }
 }
 .bgclass  {
@@ -240,7 +240,7 @@ export default {
 }
 
 .contain {
-  margin-bottom: 10%;
+  margin-bottom: 0%;
 	width: 100%;
 	padding-left: 0.6em; 
 	padding-right: 0.6em; 
@@ -336,7 +336,13 @@ export default {
   
   
 }
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1.8s;
+  transition-delay: 7s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
 .flickerin1 {
 	-webkit-animation: flicker-in-1 2s linear both;
 	        animation: flicker-in-1 2s linear both;
