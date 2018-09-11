@@ -5,7 +5,7 @@
  <!--    <div class="login"></div> -->
     <div id="head">	
       
-    	<div class="contain "><reg class="reg"></reg>
+    	<div class="contain ">
     		<div class="screen">  
       		<div class="title largetext" :class="{flickerin1: activatorclass}">
       			<vue-typer 
@@ -29,8 +29,9 @@
       	<div class="borcon">
       		<div  class="cont">
   					<div class="plashka" ><div class="overpla "><p>{{cont}}</p></div></div>
-  				</div>
+  				</div> <reg class="reg"></reg>
       	</div>
+
       </div>
     </div>
 	</div>
@@ -216,16 +217,16 @@ export default {
  background-position: 49% 49%;
   }
   @media (--only-medium-screen) {
-    background-size: 110% auto;
-    background-position: 55% 47%;
+    background-size: 1350px auto;
+    background-position: 52% 47%;
   }
 	@media (--only-small-screen) {
- 		background-size: 200% auto;
+ 		background-size: 170% auto;
     background-position: 51% 47%;
   }
   @media (--only-xsmall-screen) {
  		background-size: 300% auto;
- 		background-position: 50% 47%;
+ 		background-position: 50% 46%;
   }
 }
 .bgclass  {
@@ -239,7 +240,7 @@ export default {
 }
 
 .contain {
-  margin-bottom: 32%;
+  margin-bottom: 10%;
 	width: 100%;
 	padding-left: 0.6em; 
 	padding-right: 0.6em; 
@@ -274,6 +275,7 @@ export default {
 }
 .reg{
   margin-bottom: 0.3em;
+  padding: 0.40em 0em 0 0em;
 }
 .subj {
   line-height: 1.5em;
@@ -288,6 +290,7 @@ export default {
 	margin-bottom: spacing(0);
 	margin: 0.3em 0 0.1em 0;
 	padding: 1.2em 1.5em 1.2em 1.5em;
+
 }
 
 .borcon {

@@ -2,7 +2,7 @@
 	<div class="reg">
 		<div class="regplace">
 			<div class="warn">
-				<el-button size="mini" @click="dialogFormVisible = true">Регистрация</el-button>
+				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Регистрация</el-button>
 				 
 					<el-dialog top="34vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form" :rules="rules" ref="form">
@@ -170,8 +170,8 @@
 	height: 2.7em;
 },*/
 .warn {
-	padding: 4px;
-
+	/*padding: 6px;*/
+	/*border-radius: 0.2em;*/
 	background: repeating-linear-gradient(
   45deg,
   rgba(0, 0, 0, 0.2),
@@ -180,7 +180,7 @@
   rgba(0, 0, 0, 0.3) 20px
 	),
 
-	url(http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/old_map_@2X.png);
+	/*url(http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/old_map_@2X.png);*/
 }
 .reg {
 	padding-bottom: 0.55em;
