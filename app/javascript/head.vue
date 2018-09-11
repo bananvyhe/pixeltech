@@ -338,7 +338,7 @@ export default {
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1.8s;
-  transition-delay: 7s;
+  transition-delay: 0s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
   opacity: 0;

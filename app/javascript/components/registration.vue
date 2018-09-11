@@ -12,17 +12,17 @@
 				    	label="Емайл:" 
 				    	:label-width="formLabelWidth"
 				    	:rules="[
-      { required: true, message: 'Введите адрес', trigger: 'blur' },
-      { type: 'email', message: 'Неправильный адрес почты', trigger: ['blur', 'change'] }
-    ]">
+					      { required: true, message: 'Введите адрес', trigger: 'blur' },
+					      { type: 'email', message: 'Неправильный адрес почты', trigger: ['blur', 'change'] }
+					    ]">
 				      <el-input v-model="form.email" auto-complete="off"></el-input>
 				    </el-form-item>
 				    
 				    <el-form-item prop="password" size="mini" label="Пароль:" :label-width="formLabelWidth">
-				      <el-input v-model="form.password" auto-complete="off"></el-input>
+				      <el-input type="password" v-model="form.password" auto-complete="off"></el-input>
 				    </el-form-item>
-				    <el-form-item prop="password_confirmation" size="mini" label="Повторите пароль:" :label-width="formLabelWidth">
-				      <el-input v-model="form.password_confirmation" auto-complete="off"></el-input>
+				    <el-form-item  prop="password_confirmation" size="mini" label="Повторите пароль:" :label-width="formLabelWidth">
+				      <el-input type="password" v-model="form.password_confirmation" auto-complete="off"></el-input>
 				    </el-form-item>
 				    <el-form-item  prop="username" size="mini" label="Имя пользователя:" :label-width="formLabelWidth">
 				      <el-input v-model="form.username" auto-complete="off"></el-input>
@@ -81,7 +81,7 @@
       var validatePass2 = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('Введите пароль снова'));
-        } else if (value !== this.form.pass) {
+        } else if (value !== this.form.password) {
           callback(new Error('Пароли не идентичны'));
         } else {
           callback();
@@ -102,15 +102,15 @@
           email: [
            
           ],
-          username: [
-            { required: true, message: 'Ваше имя на форуме' }
-          ],
           password: [
-            { validator: validatePass, trigger: 'blur' }
+            {min: 6, max: 128, message: 'длина пароля от 6 знаков', trigger: 'blur'  }
           ],
           password_confirmation: [
             { validator: validatePass2, trigger: 'blur' }
-          ], 
+          ],
+          username: [
+            { required: true, message: 'Ваше имя на форуме' }
+          ]
         },
 	    	screenwidth: screenwidth,
 	       
