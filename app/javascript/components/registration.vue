@@ -4,7 +4,7 @@
 			<div class="warn">
 				<el-button size="mini" @click="dialogFormVisible = true">Регистрация</el-button>
 
-				<el-dialog width="40%" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
+				<el-dialog v-bind:width="screenwidth.value > 400 ? '100' : '30' +'%'" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form">
 				    <el-form-item size="mini" label="Емайл:" :label-width="formLabelWidth">
 				      <el-input v-model="form.email" auto-complete="off"></el-input>
@@ -17,7 +17,7 @@
 				    </el-form-item>
 				    <el-form-item size="mini" label="Пароль:" :label-width="formLabelWidth">
 				      <el-input v-model="form.password_confirmation" auto-complete="off"></el-input>
-				    </el-form-item>
+				    </el-form-item>{{screenwidth.value}}
 	<!-- 			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">
 				      <el-input v-model="form.password" auto-complete="off"></el-input>
 				    </el-form-item> -->
@@ -48,51 +48,73 @@
 </template>
 
 <script>
- import axios from 'axios'
-  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
+	import axios from 'axios'
+	let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 	axios.defaults.headers.common['X-CSRF-Token'] = token
 	axios.defaults.headers.common['Accept'] = 'application/json'
- 
-
-export default {
-	data() {
-    return {
-       
-      
-      dialogFormVisible: false,
-      form: {
-        email: '',
-        username: '',
-        password: '',
-        password_confirmation:''
-      },
-      formLabelWidth: '150px'
-    };
-  },
-  methods: {
-  	handle: function () {
-  		this.onSubmit();
-  		this.dialogFormVisible = false
-  	},
-	  onSubmit: function () {
-	    axios.post('/users', {
-	      user: {
-	        email: this.form.email,
-	        username: this.form.username,
-	        password: this.form.password,
-	        password_confirmation: this.form.password_confirmation,
-	        // password_confirmation: this.form.password_confirmation
-	      }
-	    })
-	    .then(response => {
-	       location.reload(true);
-	    })
-	    .catch(error => {
-	      // whatever you want
-	    })
-	  }
+	let screenwidth = {value: ''}
+	 
+	export default {
+		data() {
+	    return {
+	    	screenwidth: screenwidth,
+	       
+	      
+	      dialogFormVisible: false,
+	      form: {
+	        email: '',
+	        username: '',
+	        password: '',
+	        password_confirmation:''
+	      },
+	      formLabelWidth: '150px'
+	    };
+	  },
+	  computed: {
+	  	magicWidth: function(){
+	        console.log("computed");
+	        if(this.age > 17)
+	            return "доступ разрешен";
+	        else
+	            return "доступ запрещен";
+	    }
+	  },
+	  mounted(){
+	  	 
+	  },
+	  methods: {
+	  	handle: function () {
+	  		this.onSubmit();
+	  		this.dialogFormVisible = false
+	  	},
+		  onSubmit: function () {
+		    axios.post('/users', {
+		      user: {
+		        email: this.form.email,
+		        username: this.form.username,
+		        password: this.form.password,
+		        password_confirmation: this.form.password_confirmation,
+		        // password_confirmation: this.form.password_confirmation
+		      }
+		    })
+		    .then(response => {
+		       location.reload(true);
+		    })
+		    .catch(error => {
+		      // whatever you want
+		    })
+		  }
+		}
 	}
-}
+	//подсчет ширины вьюпорта и отправление в переменную
+	function parseCalc () {
+ 		let screenw = document.body.clientWidth;
+ 		screenwidth.value = document.body.clientWidth;
+ 	}
+  window.onload = function () {
+    parseCalc();
+  }
+  window.addEventListener('resize', _.throttle(parseCalc, 100));
 </script>
 <style scoped>
 @import "_variables";
