@@ -3,8 +3,7 @@
 		<div class="regplace">
 			<div class="warn">
 				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Регистрация</el-button>
-				 
-					<el-dialog top="34vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
+					<el-dialog top="26vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form" :rules="rules" ref="form">
 				    <el-form-item 
 				    	prop="email" 
@@ -127,7 +126,7 @@
 	    }
 	  },
 	  mounted(){
-	  	 
+	  	parseCalc();
 	  },
 	  methods: {
 	  	handle: function () {
@@ -158,9 +157,9 @@
  		let screenw = document.body.clientWidth;
  		screenwidth.value = document.body.clientWidth;
  	}
-  window.onload = function () {
-    parseCalc();
-  }
+   
+  
+   
   window.addEventListener('resize', _.throttle(parseCalc, 100));
 </script>
 <style scoped>
