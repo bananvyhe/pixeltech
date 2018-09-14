@@ -7,18 +7,64 @@
 	 	.shape {
 		  stroke-dasharray: 280;
 		  stroke-dashoffset: 280;
-		  animation: dash 8s forwards;
+		  animation: dash 3s forwards;
 		  -webkit-animation: dash 3s forwards;
 		  animation-timing-function: cubic-bezier(0.195, 0.010, 0.940, 1.030);
 		  -webkit-animation-timing-function: cubic-bezier(0.195, 0.010, 0.940, 1.030);
+		  animation-delay: 1s;
+		  -webkit-animation-delay: 1s;
+		}
+		circle{
+			
+		 	opacity: .0;
+		  animation: dots 0.2s forwards;
+		  -webkit-animation: dots 0.2s forwards;
+		  animation-timing-function: cubic-bezier(0.195, 0.010, 0.940, 1.030);
+		  -webkit-animation-timing-function: cubic-bezier(0.195, 0.010, 0.940, 1.030);
+		  animation-delay: 0.2s;
+		  -webkit-animation-delay: 0.2s;
 		}
 		.shape:nth-child(even) {
+
 			animation-delay: 2s;
 		  -webkit-animation-delay: 2s;
 		}
 		.shape:nth-child(4n+0) {
 			animation-delay: 3.2s;
 		  -webkit-animation-delay: 3.2s;
+		}
+
+		circle:nth-child(8n+1){animation: dots 0.2s forwards;
+			animation-delay: 0.2s;
+		  -webkit-animation-delay: 0.2s;
+		}
+		circle:nth-child(8n+2){animation: dots 0.2s forwards;
+			animation-delay: 0.3s;
+		  -webkit-animation-delay: 0.3s;
+		}
+		circle:nth-child(8n+3){animation: dots 0.2s forwards;
+			animation-delay: 0.4s;
+		  -webkit-animation-delay: 0.4s;
+		}
+		circle:nth-child(8n+4){animation: dots 0.2s forwards;
+			animation-delay: 0.5s;
+		  -webkit-animation-delay: 0.5s;
+		}
+		circle:nth-child(8n+5){animation: dots 0.2s forwards;
+			animation-delay: 0.6s;
+		  -webkit-animation-delay: 0.6s;
+		}
+		circle:nth-child(8n+6){animation: dots 0.2s forwards;
+			animation-delay: 0.7s;
+		  -webkit-animation-delay: 0.7s;
+		}
+		circle:nth-child(8n+7){animation: dots 0.2s forwards;
+			animation-delay: 0.8s;
+		  -webkit-animation-delay: 0.8s;
+		}
+		circle:nth-child(8n+8){animation: dots 0.2s forwards;
+			animation-delay: 0.9s;
+		  -webkit-animation-delay: 0.9s;
 		}
 		@keyframes dash {
 		  to {
@@ -28,6 +74,18 @@
 		@-webkit-keyframes dash {
 		  to {
 		    stroke-dashoffset: 0;
+		  }
+		}
+
+		
+		@keyframes dots {
+		  to {
+		    opacity: 1;
+		  }
+		}
+		@-webkit-keyframes dots {
+		  to {
+		    opacity: 1;
 		  }
 		}
 	 </style>
@@ -274,7 +332,7 @@
 			50.1,155.2 53.9,159 		"/>
 	</g>
 </g>
-<g id="dots" fill="#1E2A47" stroke="#43718e" stroke-width="0.5">
+<g id="dots" class="dots" fill="#1E2A47" stroke="#43718e" stroke-width="0.5">
 	<circle cx="142.1" cy="22.9" r="1.1"/>
 	<circle cx="134" cy="31" r="1.1"/>
 	<circle cx="142.1" cy="39" r="1.1"/>

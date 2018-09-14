@@ -1,7 +1,7 @@
 мос<!-- :class="{ bgclass: activatorclass }" -->
 <template>
 	<div class="firstpagebg">
-    <div class="bgan" :class="{ bgclass: activatorclass }"><div class="formsZone"><transition name="fade" appear><log class="log"></log></transition></div></div>
+    <div class="bgan" :class="{ bgclass: activatorclass }"><div class="formsZone"> <log class="log"></log> </div></div>
  <!--    <div class="login"></div> -->
     <div id="head">	
       
