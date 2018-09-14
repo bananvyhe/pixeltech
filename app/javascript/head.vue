@@ -227,7 +227,7 @@ export default {
  
 	background-size: 130% auto;
 	position: absolute;
-	height: 100%;
+	height: 100vh;
 	width: 100%;
   @media (--only-1600more-screen) {
     background-size: 75% auto;
