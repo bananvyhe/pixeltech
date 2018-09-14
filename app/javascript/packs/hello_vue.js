@@ -14,8 +14,10 @@ import Boar from '../boar.vue'
 import Currentrole from '../railsvars/currentrole.vue'
 import Reg from '../components/registration.vue'
 import Log from '../components/login.vue'
+import Topsection from '../components/topsection.vue'
 import TurbolinksAdapter from 'vue-turbolinks'
 Vue.use(TurbolinksAdapter)
+Vue.component('topsection', Topsection)
 Vue.component('currentrole', Currentrole)
 Vue.component('reg', Reg)
 Vue.component('log', Log)
@@ -73,7 +75,13 @@ document.addEventListener('turbolinks:load', () => {
 	    components: { Currentrole }
 	  }).$mount('.currentrole')
 	}
-
+	var topsection = document.querySelector('.topsection')
+	if (topsection != undefined) {
+		new Vue({
+			store,
+	    components: { Topsection }
+	  }).$mount('.topsection')
+	}
 	// var reg = document.querySelector('#reg')
 	// if (reg != undefined) {
 	// 	new Vue({
