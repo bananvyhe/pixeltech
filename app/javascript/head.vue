@@ -189,7 +189,7 @@ export default {
   position: relative;
   align-items: center;
   /*lost-utility: edit;*/
-  lost-center: 19em;
+  lost-center: 20em;
   height: 100vh;
   display: flex;
   @media (--only-xsmall-screen) {
@@ -232,15 +232,15 @@ export default {
   }
   @media (--only-medium-screen) {
     background-size: 1350px auto;
-    background-position: 52% 40%;
+    background-position: 52% 50%;
   }
 	@media (--only-small-screen) {
  		background-size: 200% auto;
-    background-position: 51% 43%;
+    background-position: 51% 50%;
   }
   @media (--only-xsmall-screen) {
  		background-size: 300% auto;
- 		background-position: 50% 40%;
+ 		background-position: 50% 50%;
   }
 }
 .bgclass  {
