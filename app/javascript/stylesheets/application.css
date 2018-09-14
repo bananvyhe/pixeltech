@@ -89,9 +89,13 @@ End Hamster setup*/
   /*background-color: $palespringbud;*/ 
   /*background: resolve('../images/bg.png');*/
 }
-#head {
-
+body {
+  font-family: 'RobotoReg';
+}
+.firstpagebg {
   font-family: 'aprior';
+}
+#head {
   .subj {
     font-family: 'RobotoReg';
   }

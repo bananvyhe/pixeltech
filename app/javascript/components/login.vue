@@ -1,10 +1,9 @@
-login.vuw<template>
+<template>
 	<div class="reg">
 		<div class="regplace">
 			<div class="warn">
 				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Войти</el-button>
-				 
-					<el-dialog top="18vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
+				<el-dialog top="18vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form" :rules="rules" ref="form">
 				    <el-form-item 
 				    	prop="email" 
@@ -17,39 +16,16 @@ login.vuw<template>
 					    ]">
 				      <el-input v-model="form.email" auto-complete="off"></el-input>
 				    </el-form-item>
-				    
 				    <el-form-item prop="password" size="mini" label="Пароль:" :label-width="formLabelWidth">
 				      <el-input type="password" v-model="form.password" auto-complete="off"></el-input>
 				    </el-form-item>
-				    
-				    
-	<!-- 			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">
-				      <el-input v-model="form.password" auto-complete="off"></el-input>
-				    </el-form-item> -->
-				   <!--  <el-form-item label="Zones" :label-width="formLabelWidth">
-				      <el-select v-model="form.region" placeholder="Please select a zone">
-				        <el-option label="Zone No.1" value="shanghai"></el-option>
-				        <el-option label="Zone No.2" value="beijing"></el-option>
-				      </el-select>
-				    </el-form-item> -->
 				    <el-form-item size="mini">
 					 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
 						  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
 						</el-form-item>
-				 		</el-form>
-				 		 
-
-				<!--   	<span slot="footer" class="dialog-footer">
-		
-				  	</span> -->
-
+				 	</el-form>
 				</el-dialog>
-				 
-				
 			</div>
-			
-				
-
 		</div>
 	</div>
 </template>
@@ -61,7 +37,6 @@ login.vuw<template>
 	// axios.defaults.headers.common['X-CSRF-Token'] = token
 	// axios.defaults.headers.common['Accept'] = 'application/json'
 	let screenwidth = {value: ''}
-	 
 	export default {
 		data() {
 			 var validatePass = (rule, value, callback) => {
@@ -93,7 +68,6 @@ login.vuw<template>
 	        password_confirmation:''
 	      },
 	      formLabelWidth: '150px',
-	    	
         rules: {
           email: [
            
@@ -109,8 +83,6 @@ login.vuw<template>
           ]
         },
 	    	screenwidth: screenwidth,
-	       
-	      
 	    };
 	  },
 	  computed: {
