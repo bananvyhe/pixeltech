@@ -178,7 +178,7 @@ export default {
 .log{
    padding: 0.5em 0.5em 0 0em;
 }
-.firstpagebg {
+.firstpagebg { height: 100vh; display: flex;align-items: center;
   background: radial-gradient(circle at center, #3C6997  -5%, #003459 38%, #00171F 100%);
 }
 .login { 
@@ -186,12 +186,15 @@ export default {
   height: 100px;
 }
 #head { 
+
   position: relative;
-  align-items: center;
+  
   /*lost-utility: edit;*/
   lost-center: 20em;
-  height: 100vh;
+  /*height: 100vh;*/
+
   display: flex;
+  align-items: stretch;
   @media (--only-xsmall-screen) {
     .screen { margin: 0 ;}
     .cont { margin: 0;}
