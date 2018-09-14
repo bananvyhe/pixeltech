@@ -13,11 +13,12 @@ import Head from '../head.vue'
 import Boar from '../boar.vue'
 import Currentrole from '../railsvars/currentrole.vue'
 import Reg from '../components/registration.vue'
-
+import Log from '../components/login.vue'
 import TurbolinksAdapter from 'vue-turbolinks'
 Vue.use(TurbolinksAdapter)
 Vue.component('currentrole', Currentrole)
 Vue.component('reg', Reg)
+Vue.component('log', Log)
 import store from 'store'
  
 import { Button, Dialog, Select, Form, FormItem, Input, Option } from 'element-ui';

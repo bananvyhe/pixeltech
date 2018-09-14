@@ -1,8 +1,8 @@
-<template>
+login.vuw<template>
 	<div class="reg">
 		<div class="regplace">
 			<div class="warn">
-				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Регистрация</el-button>
+				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Войти</el-button>
 				 
 					<el-dialog top="34vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form" :rules="rules" ref="form">
@@ -21,12 +21,8 @@
 				    <el-form-item prop="password" size="mini" label="Пароль:" :label-width="formLabelWidth">
 				      <el-input type="password" v-model="form.password" auto-complete="off"></el-input>
 				    </el-form-item>
-				    <el-form-item  prop="password_confirmation" size="mini" label="Повторите пароль:" :label-width="formLabelWidth">
-				      <el-input type="password" v-model="form.password_confirmation" auto-complete="off"></el-input>
-				    </el-form-item>
-				    <el-form-item  prop="username" size="mini" label="Имя пользователя:" :label-width="formLabelWidth">
-				      <el-input v-model="form.username" auto-complete="off"></el-input>
-				    </el-form-item>
+				    
+				    
 	<!-- 			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">
 				      <el-input v-model="form.password" auto-complete="off"></el-input>
 				    </el-form-item> -->
@@ -59,11 +55,11 @@
 </template>
 
 <script>
-	import axios from 'axios'
+	// import axios from 'axios'
 
-	let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
-	axios.defaults.headers.common['X-CSRF-Token'] = token
-	axios.defaults.headers.common['Accept'] = 'application/json'
+	// let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
+	// axios.defaults.headers.common['X-CSRF-Token'] = token
+	// axios.defaults.headers.common['Accept'] = 'application/json'
 	let screenwidth = {value: ''}
 	 
 	export default {
@@ -130,8 +126,14 @@
 	  	 
 	  },
 	  methods: {
+	  	login: function () {
+				const { username, password } = this
+				this.$store.dispatch(AUTH_REQUEST, { username, password }).then(() => {
+					this.$router.push('/')
+				})
+			},
 	  	handle: function () {
-	  		this.onSubmit();
+	  		this.login();
 	  		this.dialogFormVisible = false
 	  	},
 		  onSubmit: function () {
@@ -166,31 +168,6 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
-/*.el-form-item{
-	height: 2.7em;
-},*/
-.warn {
-	/*padding: 6px;*/
-	/*border-radius: 0.2em;*/
-	background: repeating-linear-gradient(
-  45deg,
-  rgba(0, 0, 0, 0.2),
-  rgba(0, 0, 0, 0.2) 10px,
-  rgba(0, 0, 0, 0.3) 10px,
-  rgba(0, 0, 0, 0.3) 20px
-	),
-
-	/*url(http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/old_map_@2X.png);*/
-}
-.reg {
-	 
-	color: $teagreen;
-}
-.regplace {
-	
-	display: flex;
-	justify-content: center;
-} 
 
  
 

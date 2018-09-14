@@ -1,7 +1,7 @@
 мос<!-- :class="{ bgclass: activatorclass }" -->
 <template>
 	<div class="firstpagebg">
-    <div class="bgan" :class="{ bgclass: activatorclass }" > </div>
+    <div class="bgan" :class="{ bgclass: activatorclass }"><div class="formsZone"><transition name="fade" appear><log class="log"></log></transition></div></div>
  <!--    <div class="login"></div> -->
     <div id="head">	
       
@@ -28,8 +28,13 @@
         </div>
       	<div class="borcon">
       		<div  class="cont">
-  					<div class="plashka" ><div class="overpla "><p>{{cont}}</p></div></div>
-  				</div> <transition name="fade" appear><reg class="reg"></reg></transition>
+  					<div class="plashka"><div class="overpla "><p>{{cont}}</p></div></div>
+  				</div> 
+          <div class="formsZone">
+            <transition name="fade" appear><reg class="reg"></reg></transition>
+            
+          </div>
+          
       	</div>
 
       </div>
@@ -162,14 +167,23 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
-
+.formsZone{
+  display: flex;
+  justify-content: flex-end;
+}
+.reg{
+  margin-bottom: 0.0em;
+  padding: 0.40em 0em 0 0em;
+}
+.log{
+   padding: 0.5em 0.5em 0 0em;
+}
 .firstpagebg {
   background: radial-gradient(circle at center, #3C6997  -5%, #003459 38%, #00171F 100%);
 }
 .login { 
   background: #dad;
   height: 100px;
-
 }
 #head { 
   position: relative;
@@ -203,7 +217,7 @@ export default {
   }
 }
 .bgan { 
-	opacity: 0.20;
+	/*opacity: 0.20;*/
 	background: url('./images/scheme.svg');
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -272,10 +286,6 @@ export default {
 }
 
 .oversubj {
-}
-.reg{
-  margin-bottom: 0.3em;
-  padding: 0.40em 0em 0 0em;
 }
 .subj {
   line-height: 1.5em;
