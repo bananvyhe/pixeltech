@@ -228,11 +228,11 @@ export default {
 	width: 100%;
   @media (--only-1600more-screen) {
     background-size: 75% auto;
- background-position: 49% 46%;
+ background-position: 49% 42%;
   }
   @media (--only-medium-screen) {
     background-size: 1350px auto;
-    background-position: 52% 44%;
+    background-position: 52% 40%;
   }
 	@media (--only-small-screen) {
  		background-size: 200% auto;
