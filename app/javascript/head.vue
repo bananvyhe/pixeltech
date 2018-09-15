@@ -110,37 +110,31 @@ export default {
       var selectedWork = new TimelineMax() ;
       selectedWork
 
-      .staggerFromTo('.plashka', 1, {
-      	 
-         yPercent: -200,
-      }, {
-         
-        yPercent: 0,
-        ease:Circ.easeOut}, 0, "-=4")
-      .staggerFromTo('.oversubj', 1.5, {
+     
+      // .staggerFromTo('.oversubj', 1.5, {
 	      
-        scaleX: 0,
-       	scaleY: 0, 
-        // xPercent: -350,
-      }, {
-       transformOrigin: '50% 50%',
-      	  scaleX: 1,
-      	scaleY: 0.02, 
-        // autoAlpha:1,
-        // xPercent: 0,
-        ease:Circ.easeOut}, 0.4, "-=0.9")
-      .staggerFromTo('.oversubj', 0.4, {
+      //   scaleX: 0,
+      //  	scaleY: 0, 
+      //   // xPercent: -350,
+      // }, {
+      //  transformOrigin: '50% 50%',
+      // 	  scaleX: 1,
+      // 	scaleY: 0.02, 
+      //   // autoAlpha:1,
+      //   // xPercent: 0,
+      //   ease:Circ.easeOut}, 0.4, "-=0.9")
+      // .staggerFromTo('.oversubj', 0.4, {
 	      
          
-       	scaleY: 0.02, 
-        // xPercent: -350,
-      }, {
-       transformOrigin: '50% 50%',
-      	  scaleY: 1,
+      //  	scaleY: 0.02, 
+      //   // xPercent: -350,
+      // }, {
+      //  transformOrigin: '50% 50%',
+      // 	  scaleY: 1,
       	 
-        // autoAlpha:1,
-        // xPercent: 0,
-        ease: Expo.easeOut}, 0.3, "+=0.1")
+      //   // autoAlpha:1,
+      //   // xPercent: 0,
+      //   ease: Expo.easeOut}, 0.3, "+=0.1")
       .staggerFromTo('.title', 0.4, {
 	      // autoAlpha:0,
         // scaleX: 0.8,
@@ -153,13 +147,13 @@ export default {
         // autoAlpha:1,
         // xPercent: 0,
         ease:Expo.easeIn}, 0.5, "-=2.9")
-      .staggerFromTo('.oversubj', 1, {
+      .staggerFromTo('.oversubj', 0.7, {
          autoAlpha:0,
-         yPercent: 100,
+         xPercent: 40,
       }, {
          autoAlpha:1,
-         yPercent: 0,
-        ease:Power4.easeOut,}, 0, "-=12");
+         xPercent: 0,
+        ease:Elastic.easeOut.config(0.3, 0.18),}, 0, "+=0.8");
   	}
   }
 }
