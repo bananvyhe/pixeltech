@@ -6,21 +6,24 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
 import Vue from 'vue/dist/vue.esm.js'
- 
 import axios from 'axios'
 // import App from '../app.vue'
 import Head from '../head.vue'
 import Boar from '../boar.vue'
-import Currentrole from '../railsvars/currentrole.vue'
-import Reg from '../components/registration.vue'
-import Log from '../components/login.vue'
+
+
 // import Topsection from '../components/topsection.vue'
 import TurbolinksAdapter from 'vue-turbolinks'
 Vue.use(TurbolinksAdapter)
 // Vue.component('topsection', Topsection)
+
+import Reg from '../components/registration.vue'
+import Log from '../components/login.vue'
+import Currentrole from '../railsvars/currentrole.vue'
 Vue.component('currentrole', Currentrole)
 Vue.component('reg', Reg)
 Vue.component('log', Log)
+
 import store from 'store'
  
 import { Button, Dialog, Select, Form, FormItem, Input, Option } from 'element-ui';
@@ -31,16 +34,14 @@ Vue.use(FormItem)
 Vue.use(Input)  
 Vue.use(Select)
 Vue.use(Option)
-
- 
 import '../../../public/theme/index.css'
+
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({
   //   el,
   //   render: h => h(App)
   // })
-
   let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 	axios.defaults.headers.common['X-CSRF-Token'] = token
 	axios.defaults.headers.common['Accept'] = 'application/json'
