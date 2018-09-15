@@ -28,7 +28,7 @@
         </div>
       	<div class="borcon">
       		<div  class="cont">
-  					<div class="plashka"><div class="overpla "><p>{{cont}}</p></div></div>
+  					<div class="plashka"><div class="overpla"><p>{{cont}}</p></div></div>
   				</div> 
           <div class="formsZone">
             <transition name="fade" appear><reg class="reg"></reg></transition>
@@ -58,7 +58,7 @@ export default {
     }
   },
   mounted() {
-  var cont = document.querySelector(".plashka");
+  var cont = document.querySelector(".overpla");
   var scrambleText = new ScrambleText( cont,
 		{
 			timeOffset : 100,
@@ -85,7 +85,7 @@ export default {
       // self.cropText();
        scrambleText.start();  
 
-    },3000 );
+    },7000 );
 
 	
 
@@ -107,9 +107,13 @@ export default {
       })
     },
   	tween() {
+   
+ 
+      
       var selectedWork = new TimelineMax() ;
       selectedWork
 
+     
      
       // .staggerFromTo('.oversubj', 1.5, {
 	      
@@ -153,7 +157,21 @@ export default {
       }, {
          autoAlpha:1,
          xPercent: 0,
-        ease:Elastic.easeOut.config(0.3, 0.18),}, 0, "+=0.8");
+        ease:Elastic.easeOut.config(0.3, 0.18),}, 0, "+=0.8")
+      .staggerFromTo('.plashka', 1, {
+         autoAlpha:0,
+         // xPercent: 40,
+      }, {
+         autoAlpha:1,
+         // xPercent: 0,
+        ease: RoughEase.ease.config({ template:  Power0.easeNone, strength: 1, points: 20, taper: "none", randomize:  true, clamp: false}),}, 0, "+=2.2")
+      .staggerFromTo('.cont', 1, {
+         autoAlpha:0,xPercent: 40,
+         // xPercent: 40,
+      }, {
+         autoAlpha:1,xPercent: 0,
+         // xPercent: 0,
+        ease: Elastic.easeOut.config(0.3, 0.18),}, 0, "-=3.2");
   	}
   }
 }
@@ -191,7 +209,7 @@ export default {
   align-items: stretch;
   @media (--only-xsmall-screen) {
     .screen { margin: 0 ;}
-    .cont { margin: 0;}
+     
      h2 {
       adjust-font-size: fs medium;
      }
@@ -304,30 +322,31 @@ export default {
 	display: flex;
   justify-content: center;
 }
-.cont {
+.cont { 
+  white-space: nowrap;
+  overflow: hidden;
+  border-bottom-right-radius: 0.1em;
+  border-bottom-left-radius: 0.1em;
+  border-top-right-radius: 0.1em;
+  border-top-left-radius: 0.1em;
+  background-color: color($spacecadet blackness(80%));
+  text-align: left;
 	/*margin: 0 5em 0 5em;*/
-	width: 11.3em;
+	width: 10.5em;
 /*@extend %screenbg;*/
-	padding: 0.45em 0.5em 0 0em;
+	margin: 0.40em 0.4em 0 0em;
 	p {
 		margin-bottom: spacing(0);
 		color: $teagreen;
-		padding: 0.2em 0em 0.2em 1.2em;
+		padding: 0.2em 0em 0em 1.0em;
 	}
 	min-width: 10em;
 }
 .plashka {
-  white-space: nowrap;
-  overflow: hidden;
-  border-bottom-right-radius: 0.1em;
-	border-bottom-left-radius: 0.1em;
-	border-top-right-radius: 0.1em;
-	border-top-left-radius: 0.1em;
-	background-color: color($spacecadet blackness(80%));
-	text-align: left;
+ 
  /* border: 1px solid color($diamond shade(50%));*/
 }
-.overpla {
+.overpla { 
   overflow: hidden;
   width: 9.7em;
 }
