@@ -17,13 +17,13 @@
       		</div>
     		</div>  
         <div class="oversubj">
-      	<p class="subj basetext">
-      		<vue-typer 
+      	 <p class="subj basetext">{{subj}}
+      		<!-- <vue-typer 
       		:pre-type-delay= '1000'
       		:repeat='0'
       		:text= "subj"
       		:shuffle='true'>
-      		</vue-typer>
+      		</vue-typer> -->
       	</p> 
         </div>
       	<div class="borcon">
