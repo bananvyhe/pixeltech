@@ -27,6 +27,8 @@ gem 'turbolinks', '~> 5.1.0'
 gem 'uglifier'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'devise_token_auth'
+gem 'omniauth'
+gem 'rack-cors'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
