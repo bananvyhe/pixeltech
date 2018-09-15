@@ -191,7 +191,7 @@ export default {
    padding: 0.5em 0.5em 0 0em;
 }
 .firstpagebg { height: 100vh; display: flex;align-items: center;
-  background: radial-gradient(circle at center, #3C6997  -5%, #003459 38%, #00171F 100%);
+  background: radial-gradient(circle at center, #365E87  5%, #32577D  15%, #003459 50%, #00171F 80%, #00171F 100%);
 }
 .login { 
   background: #dad;
