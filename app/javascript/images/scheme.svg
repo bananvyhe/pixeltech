@@ -11,8 +11,8 @@
 		  -webkit-animation: dash 3s forwards;
 		  animation-timing-function: cubic-bezier(0.195, 0.010, 0.940, 1.030);
 		  -webkit-animation-timing-function: cubic-bezier(0.195, 0.010, 0.940, 1.030);
-		  animation-delay: 1s;
-		  -webkit-animation-delay: 1s;
+		  animation-delay: 0.25s;
+		  -webkit-animation-delay: 0.25s;
 		}
 		circle{
 			
@@ -34,37 +34,53 @@
 		  -webkit-animation-delay: 3.2s;
 		}
 
-		circle:nth-child(8n+1){animation: dots 0.2s forwards;
-			animation-delay: 0.2s;
-		  -webkit-animation-delay: 0.2s;
+		circle:nth-child(12n+1){animation: dots 0.2s forwards;
+			animation-delay: 0.1s;
+		  -webkit-animation-delay: 0.1s;
 		}
-		circle:nth-child(8n+2){animation: dots 0.2s forwards;
-			animation-delay: 0.3s;
-		  -webkit-animation-delay: 0.3s;
-		}
-		circle:nth-child(8n+3){animation: dots 0.2s forwards;
-			animation-delay: 0.4s;
-		  -webkit-animation-delay: 0.4s;
-		}
-		circle:nth-child(8n+4){animation: dots 0.2s forwards;
+		circle:nth-child(12n+2){animation: dots 0.2s forwards;
 			animation-delay: 0.5s;
 		  -webkit-animation-delay: 0.5s;
 		}
-		circle:nth-child(8n+5){animation: dots 0.2s forwards;
-			animation-delay: 0.6s;
-		  -webkit-animation-delay: 0.6s;
+		circle:nth-child(12n+3){animation: dots 0.2s forwards;
+			animation-delay: 0.1s;
+		  -webkit-animation-delay: 0.1s;
 		}
-		circle:nth-child(8n+6){animation: dots 0.2s forwards;
-			animation-delay: 0.7s;
-		  -webkit-animation-delay: 0.7s;
+		circle:nth-child(12n+4){animation: dots 0.2s forwards;
+			animation-delay: 0.15s;
+		  -webkit-animation-delay: 0.15s;
 		}
-		circle:nth-child(8n+7){animation: dots 0.2s forwards;
-			animation-delay: 0.8s;
-		  -webkit-animation-delay: 0.8s;
+		circle:nth-child(12n+5){animation: dots 0.2s forwards;
+			animation-delay: 0.20s;
+		  -webkit-animation-delay: 0.20s;
 		}
-		circle:nth-child(8n+8){animation: dots 0.2s forwards;
-			animation-delay: 0.9s;
-		  -webkit-animation-delay: 0.9s;
+		circle:nth-child(12n+6){animation: dots 0.2s forwards;
+			animation-delay: 0.25s;
+		  -webkit-animation-delay: 0.25s;
+		}
+		circle:nth-child(12n+7){animation: dots 0.2s forwards;
+			animation-delay: 0.30s;
+		  -webkit-animation-delay: 0.30s;
+		}
+		circle:nth-child(12n+8){animation: dots 0.2s forwards;
+			animation-delay: 0.35s;
+		  -webkit-animation-delay: 0.35s;
+		}
+		circle:nth-child(12n+9){animation: dots 0.2s forwards;
+			animation-delay: 0.40s;
+		  -webkit-animation-delay: 0.40s;
+		}
+		circle:nth-child(12n+10){animation: dots 0.2s forwards;
+			animation-delay: 0.45s;
+		  -webkit-animation-delay: 0.45s;
+		}
+		circle:nth-child12n+11){animation: dots 0.2s forwards;
+			animation-delay: 0.50s;
+		  -webkit-animation-delay: 0.50s;
+		}
+		circle:nth-child(12n+12){animation: dots 0.2s forwards;
+			animation-delay: 0.55s;
+		  -webkit-animation-delay:  0.55s;
 		}
 		@keyframes dash {
 		  to {
