@@ -38,25 +38,29 @@
 			animation-delay: 2s;
 		  -webkit-animation-delay: 2s;
 		} -->
-		.shape:nth-child(5n+1) {
+		.shape:nth-child(6n+1) {
 			animation-delay: 0.2s;
 		  -webkit-animation-delay: 0.2s;
 		}
-		.shape:nth-child(5n+2) {
-			animation-delay: 1.2s;
-		  -webkit-animation-delay: 1.2s;
+		.shape:nth-child(6n+2) {
+			animation-delay: 1s;
+		  -webkit-animation-delay: 1s;
 		}
-		.shape:nth-child(5n+3) {
-			animation-delay: 2.2s;
-		  -webkit-animation-delay: 2.2s;
+		.shape:nth-child(6n+3) {
+			animation-delay: 2.4s;
+		  -webkit-animation-delay: 2.4s;
 		}
-		.shape:nth-child(5n+4) {
-			animation-delay: 3s;
-		  -webkit-animation-delay: 3s;
+		.shape:nth-child(6n+4) {
+			animation-delay: 3.2s;
+		  -webkit-animation-delay: 3.2s;
 		}
-			.shape:nth-child(5n+5) {
-			animation-delay: 4.2s;
-		  -webkit-animation-delay: 4.2s;
+			.shape:nth-child(6n+5) {
+			animation-delay: 4.8s;
+		  -webkit-animation-delay: 4.8s;
+		}
+		.shape:nth-child(6n+6) {
+			animation-delay: 5.6s;
+		  -webkit-animation-delay: 5.6s;
 		}
 		circle:nth-child(12n+1){animation: dots 0.2s forwards;
 			animation-delay: 0.1s;
