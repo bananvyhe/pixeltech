@@ -122,7 +122,7 @@ body {
 }
 .railsblock {
   z-index: 9999;
-  margin: 0.5em;
+  margin: 0.5em 6em;
   position: absolute;
   right:0;
   @extend %roundbgstrw;
