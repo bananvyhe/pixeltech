@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg class="svgclass" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 319.5 336" enable-background="new 0 0 319.5 336" xml:space="preserve">
 	 <style>
-	 	.shape {
+	 	.shape {  
 		  stroke-dasharray: 280;
 		  stroke-dashoffset: 280;
 		  animation: dash 1.5s forwards;
@@ -24,20 +24,7 @@
 		  animation-delay: 0.2s;
 		  -webkit-animation-delay: 0.2s;
 		}
-		<!-- .shape:nth-child(even) {
-
-			animation-delay: 2s;
-		  -webkit-animation-delay: 2s;
-		}
-		.shape:nth-child(4n+0) {
-			animation-delay: 3.2s;
-		  -webkit-animation-delay: 3.2s;
-		} -->
-<!-- 		.shape:nth-child(even) {
-
-			animation-delay: 2s;
-		  -webkit-animation-delay: 2s;
-		} -->
+ 
 		.shape:nth-child(6n+1) {
 			animation-delay: 0.2s;
 		  -webkit-animation-delay: 0.2s;

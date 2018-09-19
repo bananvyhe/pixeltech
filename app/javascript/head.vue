@@ -1,7 +1,7 @@
 мос<!-- :class="{ bgclass: activatorclass }" -->
 <template>
-	<div class="firstpagebg">
-    <div class="bgan" :class="{ bgclass: activatorclass }"><div class="formsZone"> <log class="log"></log> </div></div>
+	<div class="firstpagebg"> 
+    <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }"><div class="formsZone"> <log class="log"></log> </div></div>
  <!--    <div class="login"></div> -->
     <div id="head">	
       
@@ -57,7 +57,20 @@ export default {
       cont: "admin@pixeltech.ru"
     }
   },
+  updated(){
+  
+  },
   mounted() {
+   // var  cof = $(".bgan");
+   //  if (cof.hasClass('bganjs')) {
+   //    cof.removeClass("bganjs");
+   //    cof.addClass("bganjs1");
+   //  }
+   //  setTimeout(function(){
+   //     cof.removeClass("bganjs1");
+   //    $(".bgan").addClass("bganjs");
+   //  },1000 );
+ 
   var cont = document.querySelector(".overpla");
   var scrambleText = new ScrambleText( cont,
 		{
@@ -76,6 +89,7 @@ export default {
 			// ],
 			callback: function () { 
 				// self.activatorclass = true;
+        
 				console.log( 'ended' ); 
 			}}).play();
 		this.tween();
@@ -92,6 +106,7 @@ export default {
 		 
   },
   methods: {
+
     onSubmit: function () {
       axios.post('/users', {
         user: {
@@ -179,6 +194,12 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+.bganjs {
+  background: url('./images/scheme.svg?id="+Math.random()');
+}
+.bganjs1 {
+  background: url('./images/bg.png');
+}
 .formsZone{
   display: flex;
   justify-content: flex-end;
@@ -233,7 +254,7 @@ export default {
 }
 .bgan { 
 	/*opacity: 0.20;*/
-	background: url('./images/scheme.svg');
+	
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
  
