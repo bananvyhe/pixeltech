@@ -29,7 +29,7 @@ gem 'jquery-rails', '~> 4.3.1'
 # gem 'devise_token_auth'
 # gem 'omniauth'
 # gem 'rack-cors'
- gem 'jwt'
+gem 'jwt'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
