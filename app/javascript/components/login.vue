@@ -5,6 +5,7 @@
 				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Войти</el-button>
 				<el-dialog top="18vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form" :rules="rules" ref="form">
+				  	{{token}}
 				    <el-form-item 
 				    	prop="email" 
 				    	size="mini" 
@@ -31,7 +32,10 @@
 </template>
 
 <script>
-	// import axios from 'axios'
+	import axios from 'axios'
+	var state = {
+		token: localStorage.getItem("token")
+	}
 
 	// let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 	// axios.defaults.headers.common['X-CSRF-Token'] = token
@@ -39,6 +43,7 @@
 	let screenwidth = {value: ''}
 	export default {
 		data() {
+
 			 var validatePass = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('Введите пароль'));
@@ -49,23 +54,13 @@
           callback();
         }
       };
-      var validatePass2 = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('Еще раз введите пароль'));
-        } else if (value !== this.form.password) {
-          callback(new Error('Пароли не совпадают'));
-        } else {
-          callback();
-        }
-      };
 	    return {
+	    	token: state,
 	    	formLabelWidth: '120px',
 	      dialogFormVisible: false,
 	      form: {
-	        email: '',
-	        username: '',
-	        password: '',
-	        password_confirmation:''
+	        email: 'admin@pixeltech,ru',
+	        password: '78803054'
 	      },
 	      formLabelWidth: '150px',
         rules: {
@@ -75,12 +70,6 @@
           password: [
             {min: 6, max: 128, message: 'длина пароля от 6 знаков', trigger: 'blur'  }
           ],
-          password_confirmation: [
-            { validator: validatePass2, trigger: 'blur' }
-          ],
-          username: [
-            { required: true, message: 'Ваше имя на форуме' }
-          ]
         },
 	    	screenwidth: screenwidth,
 	    };
@@ -98,28 +87,31 @@
 	  	 
 	  },
 	  methods: {
-	  	login: function () {
-				const { username, password } = this
-				this.$store.dispatch(AUTH_REQUEST, { username, password }).then(() => {
-					this.$router.push('/')
-				})
-			},
+	  // 	login: function () {
+			// 	const { username, password } = this
+			// 	this.$store.dispatch(AUTH_REQUEST, { username, password }).then(() => {
+			// 		this.$router.push('/')
+			// 	})
+			// },
 	  	handle: function () {
-	  		this.login();
-	  		this.dialogFormVisible = false
+	  		this.onSubmit();
+	  		// this.dialogFormVisible = false
 	  	},
 		  onSubmit: function () {
-		    axios.post('/users', {
+		    axios.post('/api/v1/auth', {
+		    	 
+		    	 
 		      user: {
 		        email: this.form.email,
-		        username: this.form.username,
-		        password: this.form.password,
-		        password_confirmation: this.form.password_confirmation,
+		        password: this.form.password
 		        // password_confirmation: this.form.password_confirmation
 		      }
 		    })
 		    .then(response => {
-		       location.reload(true);
+		    	// localStorage.setItem("token", data.jwt);
+		    	this.token = response.data;
+		    	console.log('scacs');
+		       // location.reload(true);
 		    })
 		    .catch(error => {
 		      // whatever you want

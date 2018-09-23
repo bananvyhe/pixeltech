@@ -42,9 +42,10 @@ document.addEventListener('turbolinks:load', () => {
   //   el,
   //   render: h => h(App)
   // })
-  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
-	axios.defaults.headers.common['X-CSRF-Token'] = token
-	axios.defaults.headers.common['Accept'] = 'application/json'
+ //  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
+	// axios.defaults.headers.common['X-CSRF-Token'] = token
+	// axios.defaults.headers.common['Accept'] = 'application/json'
+	
 	var head = document.getElementById("head") 
   if (head != null) {
 	  new Vue({
