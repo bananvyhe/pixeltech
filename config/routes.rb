@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'errors/not_found'
   get 'errors/internal_server_error'
    
-  devise_for :users, controllers: {  registrations: 'registrations' }
+  devise_for :users 
   match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_use
   root 'landing_page#index'
   resources :users do
