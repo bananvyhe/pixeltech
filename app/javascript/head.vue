@@ -1,10 +1,13 @@
 мос<!-- :class="{ bgclass: activatorclass }" -->
 <template>
 	<div class="firstpagebg"> 
-    <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }"><div class="formsZone"> <log class="log"></log> </div></div>
- <!--    <div class="login"></div> -->
+    {{$store.getters.token}}
+    <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }">
+      <div class="formsZone"> 
+        <log class="log"></log> 
+      </div>
+    </div>
     <div id="head">	
-      
     	<div class="contain ">
     		<div class="screen">  
       		<div class="title largetext" :class="{flickerin1: activatorclass}">

@@ -49,6 +49,7 @@ document.addEventListener('turbolinks:load', () => {
 	var head = document.getElementById("head") 
   if (head != null) {
 	  new Vue({
+	  	store,
 	    el: '#head',
 	    render: h => h(Head) 
 	  })

@@ -5,7 +5,7 @@
 				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Войти</el-button>
 				<el-dialog top="18vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form" :rules="rules" ref="form">
-				  	{{token}}
+				  	{{$store.getters.token}}
 				    <el-form-item 
 				    	prop="email" 
 				    	size="mini" 
@@ -33,9 +33,9 @@
 
 <script>
 	import axios from 'axios'
-	var state = {
-		token: localStorage.getItem("token")
-	}
+	// var state = {
+	// 	token: localStorage.getItem("token")
+	// }
 
 	// let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 	// axios.defaults.headers.common['X-CSRF-Token'] = token
@@ -55,7 +55,7 @@
         }
       };
 	    return {
-	    	token: state,
+	    	// token: state,
 	    	formLabelWidth: '120px',
 	      dialogFormVisible: false,
 	      form: {
@@ -86,6 +86,9 @@
 	  mounted(){
 	  	 
 	  },
+	  created(){
+			// this.$store.commit('rolesend', this.role)
+	  },
 	  methods: {
 	  // 	login: function () {
 			// 	const { username, password } = this
@@ -108,9 +111,10 @@
 		      }
 		    })
 		    .then(response => {
-		    	 localStorage.setItem("token", response.data);
-		    	this.token = response.data;
-		    	console.log('scacs');
+		    	this.$store.commit('rolesend', response.data)
+		    	//  localStorage.setItem("token", response.data);
+		    	// this.token = response.data;
+		    	// console.log('scacs');
 		       // location.reload(true);
 		    })
 		    .catch(error => {
