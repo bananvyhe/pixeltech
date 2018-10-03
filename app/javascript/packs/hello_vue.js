@@ -25,6 +25,7 @@ Vue.component('reg', Reg)
 Vue.component('log', Log)
 
 import store from 'store'
+import createPersistedState from 'vuex-persistedstate'
  
 import { Button, Dialog, Select, Form, FormItem, Input, Option } from 'element-ui';
 Vue.use(Button) 

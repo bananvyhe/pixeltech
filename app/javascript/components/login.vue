@@ -111,7 +111,7 @@
 		      }
 		    })
 		    .then(response => {
-		    	this.$store.commit('rolesend', response.data)
+		    	this.$store.commit('tokensend', response.data)
 		    	//  localStorage.setItem("token", response.data);
 		    	// this.token = response.data;
 		    	// console.log('scacs');

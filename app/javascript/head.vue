@@ -1,7 +1,6 @@
 мос<!-- :class="{ bgclass: activatorclass }" -->
 <template>
-	<div class="firstpagebg"> 
-    {{$store.getters.token}}
+	<div class="firstpagebg">
     <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }">
       <div class="formsZone"> 
         <log class="log"></log> 
@@ -20,7 +19,7 @@
       		</div>
     		</div>  
         <div class="oversubj">
-      	 <p class="subj basetext">{{subj}}
+      	 <p class="subj basetext">{{subj}} 
       		<!-- <vue-typer 
       		:pre-type-delay= '1000'
       		:repeat='0'

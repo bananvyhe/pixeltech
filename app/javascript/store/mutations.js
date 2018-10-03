@@ -1,3 +1,3 @@
-export const rolesend = (state,  token ) => {
+export const tokensend = (state,  token ) => {
 	state.token = token
 }
