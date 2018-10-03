@@ -6,17 +6,20 @@
         <div v-for="(list, index) in lists" class="cols">
           <h6>{{list.name}}</h6>
           <hr />
-
           <draggable  v-model="list.cards" :options="{group: 'cards'}" @change="cardMoved">
-          <div v-for="(card, index) in list.cards">
+            <div v-for="(card, index) in list.cards">
             {{ card.name}}
-          </div>
+            </div>
           </draggable>
           <textarea v-model="messages[list.id]"></textarea>
           <button v-on:click="submitMessages(list.id)">Добавить</button>
         </div>
       </draggable>
     </template> 
+
+
+
+
 <!-- end -->
 <!-- иначе не давать такой возможности -->
     <template v-else>

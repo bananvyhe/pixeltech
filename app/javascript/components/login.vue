@@ -108,7 +108,7 @@
 		      }
 		    })
 		    .then(response => {
-		    	// localStorage.setItem("token", data.jwt);
+		    	 localStorage.setItem("token", response.data);
 		    	this.token = response.data;
 		    	console.log('scacs');
 		       // location.reload(true);
