@@ -4,12 +4,11 @@
     <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }">
       <div class="formsZone"> 
         <div v-if="$store.getters.token != null" >
-          <el-button  @click="$store.token = null">Выйти</el-button>
+          <el-button type="primary" plain size="small"   @click="nulltoken">Выйти</el-button>
         </div>
         <div v-else>
           <log class="log"></log> 
-        </div>
-        
+        </div> 
       </div>
     </div>
     <div id="head">	
@@ -39,12 +38,9 @@
   					<div class="plashka"><div class="overpla"><p>{{cont}}</p></div></div>
   				</div> 
           <div class="formsZone">
-            <transition name="fade" appear><reg class="reg"></reg></transition>
-            
+            <transition name="fade" appear><reg class="reg"></reg></transition> 
           </div>
-          
       	</div>
-
       </div>
     </div>
 	</div>
@@ -103,18 +99,14 @@ export default {
 		this.tween();
 		var self = this
     setTimeout(function(){
-       
       // self.cropText();
-       scrambleText.start();  
-
+       scrambleText.start();
     },7000 );
-
-	
-
-		 
   },
   methods: {
-
+    nulltoken: function (){
+      this.$store.commit('tokensend', null)
+    },
     onSubmit: function () {
       axios.post('/users', {
         user: {
@@ -130,16 +122,9 @@ export default {
       })
     },
   	tween() {
-   
- 
-      
       var selectedWork = new TimelineMax() ;
       selectedWork
-
-     
-     
-      // .staggerFromTo('.oversubj', 1.5, {
-	      
+      // .staggerFromTo('.oversubj', 1.5, {  
       //   scaleX: 0,
       //  	scaleY: 0, 
       //   // xPercent: -350,
@@ -212,13 +197,13 @@ export default {
   display: flex;
   justify-content: flex-end;
 }
-.reg{
+/*.reg{
   margin-bottom: 0.0em;
   padding: 0.40em 0em 0 0em;
-}
-.log{
+}*/
+/*.log{
    padding: 0.5em 0.5em 0 0em;
-}
+}*/
 .firstpagebg { height: 100vh; display: flex;align-items: center;
   background: radial-gradient(circle at center, #365E87  5%, #32577D  15%, #003459 50%, #00171F 80%, #00171F 100%);
 }

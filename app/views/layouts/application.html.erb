@@ -29,14 +29,14 @@
         
       <% end %>
        
-        <div class="railsblock">
-          <% if user_signed_in? %>
-              <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
-              <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
-              <% else %>
-               <%= link_to "Войти", new_user_session_path %>
-          <% end %>
-        </div> 
+    <!--     <div class="railsblock">
+          <%# if user_signed_in? %>
+              <%#= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
+              <%#= link_to "Выйти", destroy_user_session_path, method: :delete %>
+              <%# else %>
+               <%#= link_to "Войти", new_user_session_path %>
+          <%# end %>
+        </div>  -->
       
 <!--       <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p> -->
