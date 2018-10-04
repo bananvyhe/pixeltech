@@ -3,7 +3,13 @@
 	<div class="firstpagebg">
     <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }">
       <div class="formsZone"> 
-        <log class="log"></log> 
+        <div v-if="$store.getters.token != null" >
+          <el-button  @click="$store.token = null">Выйти</el-button>
+        </div>
+        <div v-else>
+          <log class="log"></log> 
+        </div>
+        
       </div>
     </div>
     <div id="head">	
@@ -19,7 +25,7 @@
       		</div>
     		</div>  
         <div class="oversubj">
-      	 <p class="subj basetext">{{subj}} 
+      	 <p class="subj basetext">{{subj}} {{$store.getters.token}}
       		<!-- <vue-typer 
       		:pre-type-delay= '1000'
       		:repeat='0'
