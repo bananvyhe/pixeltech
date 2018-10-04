@@ -24,7 +24,7 @@
       		</div>
     		</div>  
         <div class="oversubj">
-      	 <p class="subj basetext">{{subj}} {{$store.getters.token}}
+      	 <p class="subj basetext">{{subj}} 
       		<!-- <vue-typer 
       		:pre-type-delay= '1000'
       		:repeat='0'

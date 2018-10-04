@@ -5,7 +5,7 @@
 				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Войти</el-button>
 				<el-dialog top="18vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form" :rules="rules" ref="form">
-				  	{{$store.getters.token}}
+				  	 
 				    <el-form-item 
 				    	prop="email" 
 				    	size="mini" 
