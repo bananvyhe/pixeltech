@@ -67,13 +67,13 @@
 	 
 	export default {
 		data() {
-			 var validatePass = (rule, value, callback) => {
+			var validatePass = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('Введите пароль'));
         } else {
           if (this.form.checkPass !== '') {
-            this.$refs.form.validateField('checkPass');
-          }
+          this.$refs.form.validateField('checkPass');
+        }
           callback();
         }
       };
@@ -115,6 +115,11 @@
 	       
 	      
 	    };
+	  },
+	  watch: {
+	  	'form.username': function(){
+	  		console.log("username check")
+	  	}
 	  },
 	  computed: {
 	  	magicWidth: function(){
