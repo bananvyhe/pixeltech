@@ -5,12 +5,13 @@ class Api::V1::LocationsController < ApiController
   end
 
   def show
-    render json: @location, include: ['recordings']
+   # render json: @location, include: ['recordings']
   end
 
   private
 
     def set_location
-      @location = Location.find(params[:name])
+      @location = Location.find_by(name: params[:name]) 
     end
+
 end

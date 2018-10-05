@@ -40,19 +40,8 @@
 						  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
 						</el-form-item>
 				 		</el-form>
-				 		 
-
-				<!--   	<span slot="footer" class="dialog-footer">
-		
-				  	</span> -->
-
-				</el-dialog>
-				 
-				
+				</el-dialog>	
 			</div>
-			
-				
-
 		</div>
 	</div>
 </template>
@@ -112,8 +101,7 @@
           ]
         },
 	    	screenwidth: screenwidth,
-	       
-	      
+  
 	    };
 	  },
 	  watch: {
@@ -124,7 +112,6 @@
 			      name: val
 			    }
 	  		})
-
 	       .then((response) => {
 	       	console.log('succes ')
 	    		console.log(response.data.name);
@@ -142,11 +129,11 @@
 	  },
 	  computed: {
 	  	magicWidth: function(){
-	        console.log("computed");
-	        if(this.age > 17)
-	            return "доступ разрешен";
-	        else
-	            return "доступ запрещен";
+        console.log("computed");
+        if(this.age > 17)
+          return "доступ разрешен";
+        else
+          return "доступ запрещен";
 	    }
 	  },
 	  mounted(){
@@ -181,10 +168,7 @@
  		let screenw = document.body.clientWidth;
  		screenwidth.value = document.body.clientWidth;
  	}
-   
-  
-   
-  window.addEventListener('resize', _.throttle(parseCalc, 100));
+ 	window.addEventListener('resize', _.throttle(parseCalc, 100));
 </script>
 <style scoped>
 @import "_variables";
@@ -202,19 +186,13 @@
   rgba(0, 0, 0, 0.3) 10px,
   rgba(0, 0, 0, 0.3) 20px
 	),
-
 	/*url(http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/old_map_@2X.png);*/
 }
 .reg {
-	 
 	color: $teagreen;
 }
 .regplace {
-	
 	display: flex;
 	justify-content: center;
-} 
-
- 
-
+}
 </style>
