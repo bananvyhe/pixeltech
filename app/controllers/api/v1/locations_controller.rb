@@ -1,4 +1,4 @@
-class Api::V1::LocationsController < ApiController
+class Api::V1::LocationsController < Api2Controller
   before_action :set_location
 	def index
      render json: @location, include: ['recordings']
