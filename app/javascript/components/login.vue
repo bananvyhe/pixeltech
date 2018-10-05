@@ -112,6 +112,7 @@
 		    })
 		    .then(response => {
 		    	this.$store.commit('tokensend', response.data)
+		    	location.reload(true);
 		    	//  localStorage.setItem("token", response.data);
 		    	// this.token = response.data;
 		    	// console.log('scacs');
