@@ -117,7 +117,20 @@
 	    };
 	  },
 	  watch: {
-	  	'form.username': function(){
+	  	'form.username': function(val){
+	  		axios.get('/users')
+
+	       .then((data) => {
+	    		console.log('val')
+	      //   if (this.currentPage>1) {
+	      //     var start = this.perPage*this.currentPage-this.perPage
+	      //   } 
+	      //   this.viewedNews = this.news.slice(start, this.perPage)
+	      //   this.newsTween();
+	       })
+	      	.catch(function (error) {
+	        	console.log(error);
+	      	}); 
 	  		console.log("username check")
 	  	}
 	  },
