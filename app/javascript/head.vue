@@ -3,7 +3,7 @@
 	<div class="firstpagebg">
     <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }">
       <div class="formsZone">
-      <!--  {{$store.getters.token}} -->
+       {{$store.getters.token}}
         <div v-if="$store.getters.token != null" >
           <el-button type="primary" plain size="small"   @click="nulltoken">Выйти</el-button>
         </div>
@@ -117,6 +117,7 @@ export default {
       
       }) 
       this.$store.commit('tokensend', null) 
+      location.reload(true);
     },
     onSubmit: function () {
       // axios.post('/users', {
