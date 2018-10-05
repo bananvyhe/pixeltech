@@ -2,7 +2,8 @@
 <template>
 	<div class="firstpagebg">
     <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }">
-      <div class="formsZone"> 
+      <div class="formsZone">
+      <!--  {{$store.getters.token}} -->
         <div v-if="$store.getters.token != null" >
           <el-button type="primary" plain size="small"   @click="nulltoken">Выйти</el-button>
         </div>
@@ -24,7 +25,7 @@
       		</div>
     		</div>  
         <div class="oversubj">
-      	 <p class="subj basetext">{{subj}} 
+      	 <p class="subj basetext">{{subj}}
       		<!-- <vue-typer 
       		:pre-type-delay= '1000'
       		:repeat='0'
@@ -38,7 +39,11 @@
   					<div class="plashka"><div class="overpla"><p>{{cont}}</p></div></div>
   				</div> 
           <div class="formsZone">
-            <transition name="fade" appear><reg class="reg"></reg></transition> 
+            <div v-if="$store.getters.token == null" >
+              <transition name="fade" appear>
+                <reg class="reg"></reg>
+              </transition> 
+            </div>
           </div>
       	</div>
       </div>
@@ -47,6 +52,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import ScrambleText from 'scramble-text'; 
 import { VueTyper } from 'vue-typer'
 export default {
@@ -105,21 +111,26 @@ export default {
   },
   methods: {
     nulltoken: function (){
-      this.$store.commit('tokensend', null)
+      
+      axios.delete('/users/sign_out', {
+        
+      
+      }) 
+      this.$store.commit('tokensend', null) 
     },
     onSubmit: function () {
-      axios.post('/users', {
-        user: {
-          email: this.email,
-          password: this.password
-        }
-      })
-      .then(response => {
-        // whatever you want
-      })
-      .catch(error => {
-        // whatever you want
-      })
+      // axios.post('/users', {
+      //   user: {
+      //     email: this.email,
+      //     password: this.password
+      //   }
+      // })
+      // .then(response => {
+      //   // whatever you want
+      // })
+      // .catch(error => {
+      //   // whatever you want
+      // })
     },
   	tween() {
       var selectedWork = new TimelineMax() ;
@@ -357,7 +368,7 @@ export default {
 	min-width: 10em;
 }
 .plashka {
- 
+ padding-bottom: 0.2em;
  /* border: 1px solid color($diamond shade(50%));*/
 }
 .overpla { 

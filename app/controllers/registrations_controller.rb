@@ -14,7 +14,7 @@ class RegistrationsController < Devise::RegistrationsController
   def sign_up(_resource_name, _resource)
     true
     sign_in(resource_name, resource)
- 
+     
   end
  
 end

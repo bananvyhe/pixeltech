@@ -118,8 +118,10 @@
 		       // location.reload(true);
 		    })
 		    .catch(error => {
+
 		      // whatever you want
 		    })
+		    
 		  }
 		}
 	}
