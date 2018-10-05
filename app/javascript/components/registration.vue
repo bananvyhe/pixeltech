@@ -118,10 +118,16 @@
 	  },
 	  watch: {
 	  	'form.username': function(val){
-	  		axios.get('/users')
+	  		console.log(val)
+	  		axios.get('/api/v1/locations', {
+	  			params: {
+			      name: val
+			    }
+	  		})
 
-	       .then((data) => {
-	    		console.log('val')
+	       .then((response) => {
+	       	console.log('succes ')
+	    		console.log(response.data.name);
 	      //   if (this.currentPage>1) {
 	      //     var start = this.perPage*this.currentPage-this.perPage
 	      //   } 
