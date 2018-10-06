@@ -102,8 +102,6 @@
 	  	},
 		  onSubmit: function () {
 		    axios.post('/api/v1/auth', {
-		    	 
-		    	 
 		      user: {
 		        email: this.form.email,
 		        password: this.form.password

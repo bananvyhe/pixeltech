@@ -150,12 +150,24 @@
 		        email: this.form.email,
 		        username: this.form.username,
 		        password: this.form.password,
-		        password_confirmation: this.form.password_confirmation,
-		        // password_confirmation: this.form.password_confirmation
+		        password_confirmation: this.form.password_confirmation
 		      }
 		    })
 		    .then(response => {
-		       location.reload(true);
+		    	//второй запрос на аутентификацию и создание токена после успешной регистрации в devise
+		    	axios.post('/api/v1/auth', {
+		      user: {
+		        email: this.form.email,
+		        password: this.form.password
+		      }
+			    })
+			    .then(response => {
+			    	this.$store.commit('tokensend', response.data)
+			    	location.reload(true);
+			    })
+			    .catch(error => {
+			      // whatever you want
+			    })    
 		    })
 		    .catch(error => {
 		      // whatever you want
