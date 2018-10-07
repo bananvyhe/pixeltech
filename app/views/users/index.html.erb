@@ -11,6 +11,9 @@
 						<% end %>
 						</td>
 						<td>
+					  <%= user.username %>
+						</td>
+						<td>
 						<%  if  !user.voodoo? && !user.superadmin? && !user.admin? %>
 							<%= link_to "+", voodooation_user_path(user) %>&nbsp; вудуизировать
 						<% end %>
