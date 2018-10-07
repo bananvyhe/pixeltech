@@ -4,7 +4,7 @@
 			<div class="warn">
 				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Регистрация</el-button>
 					<el-dialog top="26vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
-				  <el-form :model="form" :rules="rules" ref="form">
+				  <el-form :model="form" :rules="rules" ref="form"> 
 				    <el-form-item 
 				    	prop="email" 
 				    	size="mini" 
@@ -76,16 +76,19 @@
         }
       };
       var validateUsername = (rule, value, callback) => {
-        if (value === this.responseName) {
-          callback(new Error('Имя занято')); 
-        } else if (value == '') {
-          callback(new Error('Введите ваш псевдоним'));
-        } else {
-          callback();
-        }
+      	var self = this;
+	      setTimeout(function(){
+	        if (value === self.responseName) {
+          	callback(new Error('Имя занято')); 
+	        } else if (value == '') {
+	          callback(new Error('Введите ваш псевдоним'));
+	        } else {
+	          callback();
+	        }
+	      },100 );  
       };
 	    return {
-	    	responseName: '1',
+	    	responseName: false,
 	    	formLabelWidth: '120px',
 	      dialogFormVisible: false,
 	      form: {
@@ -105,7 +108,7 @@
             { validator: validatePass2, trigger: 'blur' }
           ],
           username: [
-            { validator: validateUsername, trigger: ['blur', 'change'], required: true   }
+            { required: true, validator: validateUsername, trigger: ['blur', 'change']   }
           ]
         },
 	    	screenwidth: screenwidth,
@@ -113,25 +116,34 @@
 	  },
 	  watch: {
 	  	'form.username': function(val){
-	  		console.log(val)
-	  		axios.get('/api/v1/locations', {
+  			console.log(val)
+  			axios.get('/api/v1/users', {
 	  			params: {
-			      name: val
+			      username: val
 			    }
 	  		})
-	       .then((response) => {
-	       	 
-	    		this.responseName =  response.data.name
-	      //   if (this.currentPage>1) {
-	      //     var start = this.perPage*this.currentPage-this.perPage
-	      //   } 
-	      //   this.viewedNews = this.news.slice(start, this.perPage)
-	      //   this.newsTween();
-	       })
-	      	.catch(function (error) {
-	        	console.log(error);
-	      	}); 
-	  		console.log("username check")
+      	.then((response) => { 	 
+    			this.responseName =  response.data.username
+
+       	})
+      	.catch(function (error) {
+        	console.log(error);
+      	}); 
+  			console.log("username check")
+	  	},
+	  	'form.email': function(val){
+	  		console.log(val)
+	  		axios.get('/api/v1/users', {
+	  			params: {
+			      email: val
+			    }
+	  		})
+	      .then((response) => {
+	       	this.responseEmail =  response.data.email
+	      })
+	      .catch(function (error) {
+	        console.log(error);
+	      });
 	  	}
 	  },
 	  computed: {

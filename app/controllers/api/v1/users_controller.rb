@@ -1,7 +1,7 @@
-class Api::V1::UsersController < ApiController
+class Api::V1::UsersController < Api2Controller
   before_action :set_users
 	def index
-    # render json: @location, include: ['recordings']
+    render json: @user
   end
 
   def show
@@ -11,7 +11,7 @@ class Api::V1::UsersController < ApiController
   private
 
     def set_users
-      @user = User.find(params[:username])
+      @user = User.find_by(username: params[:username])
     end
  
 end
