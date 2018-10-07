@@ -75,7 +75,17 @@
           callback();
         }
       };
+      var validateUsername = (rule, value, callback) => {
+        if (value === this.responseName) {
+          callback(new Error('Имя занято')); 
+        } else if (value == '') {
+          callback(new Error('Введите ваш псевдоним'));
+        } else {
+          callback();
+        }
+      };
 	    return {
+	    	responseName: '1',
 	    	formLabelWidth: '120px',
 	      dialogFormVisible: false,
 	      form: {
@@ -85,10 +95,8 @@
 	        password_confirmation:''
 	      },
 	      formLabelWidth: '150px',
-	    	
         rules: {
           email: [
-           
           ],
           password: [
             {min: 6, max: 128, message: 'длина пароля от 6 знаков', trigger: 'blur'  }
@@ -97,11 +105,10 @@
             { validator: validatePass2, trigger: 'blur' }
           ],
           username: [
-            { required: true, message: 'Ваше имя на форуме' }
+            { validator: validateUsername, trigger: ['blur', 'change'], required: true   }
           ]
         },
 	    	screenwidth: screenwidth,
-  
 	    };
 	  },
 	  watch: {
@@ -113,8 +120,8 @@
 			    }
 	  		})
 	       .then((response) => {
-	       	console.log('succes ')
-	    		console.log(response.data.name);
+	       	 
+	    		this.responseName =  response.data.name
 	      //   if (this.currentPage>1) {
 	      //     var start = this.perPage*this.currentPage-this.perPage
 	      //   } 
