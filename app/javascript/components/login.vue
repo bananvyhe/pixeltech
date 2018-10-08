@@ -2,10 +2,14 @@
 	<div class="reg">
 		<div class="regplace">
 			<div class="warn">
-				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Войти</el-button>
+				<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
+          <el-button type="primary" plain size="mini"   @click="nulltoken">Выйти</el-button>
+        </div>
+        <div v-else>
+          <el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Войти</el-button>
+        </div>
 				<el-dialog top="18vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
-				  <el-form :model="form" :rules="rules" ref="form">
-				  	 
+				  <el-form :model="form" :rules="rules" ref="form">	 
 				    <el-form-item 
 				    	prop="email" 
 				    	size="mini" 
@@ -76,11 +80,11 @@
 	  },
 	  computed: {
 	  	magicWidth: function(){
-	        console.log("computed");
-	        if(this.age > 17)
-	            return "доступ разрешен";
-	        else
-	            return "доступ запрещен";
+        console.log("computed");
+        if(this.age > 17)
+          return "доступ разрешен";
+        else
+          return "доступ запрещен";
 	    }
 	  },
 	  mounted(){
@@ -90,6 +94,19 @@
 			// this.$store.commit('rolesend', this.role)
 	  },
 	  methods: {
+	  	nulltoken: function (){
+      	axios.delete('/users/sign_out', {
+		    }) 
+		    .then((response) => {
+		      this.$store.commit('tokensend', null) 
+		    })
+	      .then((response) => {
+		      location.reload(true);
+		    })    
+		    // setTimeout(function(){
+		    //   // self.cropText();
+		    // },100 );
+	    },
 	  // 	login: function () {
 			// 	const { username, password } = this
 			// 	this.$store.dispatch(AUTH_REQUEST, { username, password }).then(() => {
@@ -138,6 +155,5 @@
 @import "_variables";
 @import "_extends";
 
- 
 
 </style>

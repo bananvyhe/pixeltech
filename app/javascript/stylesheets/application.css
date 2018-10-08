@@ -90,17 +90,20 @@ End Hamster setup*/
   /*background: resolve('../images/bg.png');*/
 }
 body {
+  background-color: $siteBG;
   font-family: 'RobotoReg';
+  color: color($str3 shade(8%));
 }
 .firstpagebg {
-  font-family: 'aprior';
+ 
 }
 #head {
   .subj {
     font-family: 'RobotoReg';
   }
 }
-.title {
+.title { 
+  font-family: 'aprior';
   .vue-typer .custom.char.typed{
     color: $isabelline;
   }
@@ -112,19 +115,16 @@ body {
     color: $teagreen; background-color: $teagreen;
   }
 }
-.subj {
+/*.subj {
   .vue-typer .custom.char.typed{
     color:  color($warningLine blackness(80%));
   }
-}
+}*/
 .plashka {
-
+ font-family: 'aprior';
 }
 .railsblock {
-  z-index: 9999;
-  margin: 0.5em 6em;
-  position: absolute;
-  right:0;
+
   @extend %roundbgstrw;
 }
 .deleteAction {
@@ -132,7 +132,7 @@ body {
   border-bottom: solid 1px;
   cursor: pointer;
 }
-.el-dialog {
+.el-dialog { font-family: 'aprior';
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
@@ -147,4 +147,18 @@ body {
 }
 .el-button {
   margin: 0.5em 0.5em 0 0.5em;
+}
+.formzone {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 9998;
+  margin: 0.5em 0.5em;
+  position: absolute;
+  right:0;
+}
+.log {
+  z-index: 9999;
+   
+  position: absolute;
+  right:0;
 }

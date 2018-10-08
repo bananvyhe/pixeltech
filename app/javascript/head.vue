@@ -3,12 +3,12 @@
 	<div class="firstpagebg">
     <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }">
       <div class="formsZone">
-     <!--   {{$store.getters.token}} -->
+      
         <div v-if="$store.getters.token != null" >
-          <el-button type="primary" plain size="small"   @click="nulltoken">Выйти</el-button>
+        <!--   <el-button type="primary" plain size="small"   @click="nulltoken">Выйти</el-button> -->
         </div>
         <div v-else>
-          <log class="log"></log> 
+          <!-- <log class="log"></log>  -->
         </div> 
       </div>
     </div>
@@ -41,7 +41,7 @@
           <div class="formsZone">
             <div v-if="$store.getters.token == null" >
               <transition name="fade" appear>
-                <reg class="reg"></reg>
+               <!--  <reg class="reg"></reg> -->
               </transition> 
             </div>
           </div>
@@ -341,7 +341,7 @@ export default {
 	margin-bottom: spacing(0);
 	margin: 0.3em 0 0.1em 0;
 	padding: 1.2em 1.5em 1.2em 1.5em;
-
+  color:  color($warningLine blackness(80%));
 }
 
 .borcon {

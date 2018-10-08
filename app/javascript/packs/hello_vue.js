@@ -21,8 +21,8 @@ import Reg from '../components/registration.vue'
 import Log from '../components/login.vue'
 import Currentrole from '../railsvars/currentrole.vue'
 Vue.component('currentrole', Currentrole)
-Vue.component('reg', Reg)
-Vue.component('log', Log)
+// Vue.component('reg', Reg)
+// Vue.component('log', Log)
 
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
@@ -46,7 +46,22 @@ document.addEventListener('turbolinks:load', () => {
  //  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 	// axios.defaults.headers.common['X-CSRF-Token'] = token
 	// axios.defaults.headers.common['Accept'] = 'application/json'
-	
+	var log = document.getElementById("log") 
+  if (log != null) {
+	  new Vue({
+	  	store,
+	    el: '#log',
+	    render: h => h(Log) 
+	  })
+	}
+	var reg = document.getElementById("reg") 
+  if (reg != null) {
+	  new Vue({
+	  	store,
+	    el: '#reg',
+	    render: h => h(Reg) 
+	  })
+	}
 	var head = document.getElementById("head") 
   if (head != null) {
 	  new Vue({

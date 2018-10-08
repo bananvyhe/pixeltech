@@ -1,7 +1,10 @@
-<%# if !user_signed_in? %>
-	<div id="head"></div>
-<%# end %>
 
-<%# if user_signed_in? %>
-<!-- 	форум -->
-<%# end %>
+<% if !user_signed_in? %>
+	<div id="head"></div>
+<% end %>
+
+<% if user_signed_in? %>
+<p style="text-align: center; padding-top: 1em;">
+	Доступ на сайт —  после одобрения аккаунта администратором.
+</p>
+<% end %>
