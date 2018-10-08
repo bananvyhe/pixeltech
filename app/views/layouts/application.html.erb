@@ -29,7 +29,10 @@
         
       <% end %>
       <div class="formzone">
-        
+        <% if !user_signed_in? %>
+          <div id="reg" class="reg"></div>
+        <% end %>
+        <div id="log" class="log"></div> 
           <% if current_user.try(:superadmin?) %>
             <div class="railsblock">
               <% if user_signed_in? %>
@@ -40,10 +43,7 @@
               <% end %>
             </div> 
           <% end %>
-        <% if !user_signed_in? %>
-          <div id="reg" class="reg"></div>
-        <% end %>
-        <div id="log" class="log"></div> 
+        
 
       </div>
       

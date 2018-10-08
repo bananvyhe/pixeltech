@@ -151,7 +151,7 @@ body {
 .formzone {
   display: flex;
   justify-content: flex-end;
-  z-index: 9998;
+  z-index: 9999;
   margin: 0.5em 0.5em;
   position: absolute;
   right:0;
