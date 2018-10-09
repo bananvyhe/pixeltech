@@ -92,8 +92,13 @@ End Hamster setup*/
 body {
   background-color: #222226;
   font-family: 'RobotoReg';
-  color: color($str3 shade(8%));
+  /*color: color($str3 shade(8%));*/
+ /* color: #777;*/
+ color: #edeef0;
+ color: #e7e8ec;
+
 }
+
 .firstpagebg {
  
 }
