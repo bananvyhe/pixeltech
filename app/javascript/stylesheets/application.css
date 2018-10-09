@@ -89,13 +89,13 @@ End Hamster setup*/
   /*background-color: $palespringbud;*/ 
   /*background: resolve('../images/bg.png');*/
 }
-.body {
+body {
   position: relative;
   background-color: #222226;
   font-family: 'RobotoReg';
   /*color: color($str3 shade(8%));*/
  /* color: #777;*/
- color: #edeef0;
+/* color: #edeef0;*/
  color: #e7e8ec;
 
 }
@@ -165,9 +165,13 @@ End Hamster setup*/
   position: absolute;
   right:0;
 }
-.reg, .log {
+.reg  {
   z-index: 4000;
   position: relative;
    
 }
- 
+.log  {
+  z-index: 4000;
+  position: relative;
+   
+} 
