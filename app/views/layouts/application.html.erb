@@ -18,12 +18,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <body >
-    <%# if defined?current_user.role %>
-     <!--  <currentrole class="currentrole" :role=" <%#= current_user.role.to_json %> "></currentrole> -->
-    <%# end %>
-    <div class="maincontainer">
-      <div class="formzone">
+  <body ><div class="formzone">
 
         <% if !user_signed_in? %>
           <div id="reg" class="reg"></div>
@@ -42,12 +37,14 @@
         <% end %>
 
       </div>
-      
-        
-      
+    <%# if defined?current_user.role %>
+     <!--  <currentrole class="currentrole" :role=" <%#= current_user.role.to_json %> "></currentrole> -->
+    <%# end %>
+    <div class="maincontainer">   
 <!--       <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p> -->
       <%= yield %>
+
     </div>
   </body>
   <%= javascript_pack_tag 'hello_vue', 'data-turbolinks-track': 'reload' %>
