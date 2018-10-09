@@ -81,7 +81,7 @@ End Hamster setup*/
  
 @import "_variables";
 .maincontainer { 
-  position: relative;
+  position: relative; 
 /*  background: radial-gradient(ellipse at 50% 40% , $sunsetorange , $siteBG  ); */
 
 /*  background: url('../images/bg.png');*/
@@ -89,7 +89,8 @@ End Hamster setup*/
   /*background-color: $palespringbud;*/ 
   /*background: resolve('../images/bg.png');*/
 }
-.body {position: relative;
+.body {
+  position: relative;
   background-color: #222226;
   font-family: 'RobotoReg';
   /*color: color($str3 shade(8%));*/
@@ -138,7 +139,7 @@ End Hamster setup*/
 }
 .el-dialog { 
   position: relative;
-  z-index: 9999;
+   
   font-family: 'aprior';
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -159,7 +160,7 @@ End Hamster setup*/
 .formzone {
   display: flex;
   justify-content: flex-end;
-  z-index: 3000;
+  z-index: 9000;
   margin: 0.5em 0.5em;
   position: absolute;
   right:0;

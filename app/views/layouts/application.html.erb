@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <title>Разработка веб-приложений, сайтов с необходимыми вам возможностями</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,10 +14,16 @@
     <%= javascript_pack_tag 'hello_vue', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'hello_vue', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
   </head>
   <body class="body">
-      <div class="formzone">
+
+    <%# if defined?current_user.role %>
+     <!--  <currentrole class="currentrole" :role=" <%#= current_user.role.to_json %> "></currentrole> -->
+    <%# end %>
+
+    <div class="maincontainer">  
+     <div class="formzone">
         <% if !user_signed_in? %>
           <div id="reg"></div>
         <% end %>
@@ -31,12 +38,7 @@
             <% end %>
           </div> 
         <% end %>
-      </div>
-    <%# if defined?current_user.role %>
-     <!--  <currentrole class="currentrole" :role=" <%#= current_user.role.to_json %> "></currentrole> -->
-    <%# end %>
-
-    <div class="maincontainer">   
+      </div> 
 <!--       <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p> -->
       <%= yield %>

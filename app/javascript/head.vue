@@ -206,8 +206,7 @@ export default {
   background: url('./images/bg.png');
 }
 .formsZone{
-  display: flex;
-  justify-content: flex-end;
+   
 }
 /*.reg{
   margin-bottom: 0.0em;
