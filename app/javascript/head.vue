@@ -363,7 +363,7 @@ export default {
 	margin: 0.40em 0.4em 0 0em;
 	p {
 		margin-bottom: spacing(0);
-		color: $teagreen;
+		color: color($str4 shade(5%));
 		padding: 0.2em 0em 0em 1.0em;
 	}
 	min-width: 10em;
