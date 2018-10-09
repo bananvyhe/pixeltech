@@ -146,6 +146,7 @@ End Hamster setup*/
 .el-dialog__header {
 
 }
+ 
 .el-dialog__body {
   padding: 5px 23px 1px;
 }
@@ -158,12 +159,13 @@ End Hamster setup*/
 .formzone {
   display: flex;
   justify-content: flex-end;
-   z-index: 9999;
+  z-index: 3000;
   margin: 0.5em 0.5em;
   position: absolute;
   right:0;
 }
 .reg, .log {
+  z-index: 4000;
   position: relative;
    
 }
