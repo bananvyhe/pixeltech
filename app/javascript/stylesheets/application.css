@@ -81,7 +81,7 @@ End Hamster setup*/
  
 @import "_variables";
 .maincontainer { 
-
+  position: relative;
 /*  background: radial-gradient(ellipse at 50% 40% , $sunsetorange , $siteBG  ); */
 
 /*  background: url('../images/bg.png');*/
@@ -131,7 +131,8 @@ body {
   border-bottom: solid 1px;
   cursor: pointer;
 }
-.el-dialog { font-family: 'aprior';
+.el-dialog { 
+  font-family: 'aprior';
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
@@ -150,7 +151,7 @@ body {
 .formzone {
   display: flex;
   justify-content: flex-end;
-  z-index: 9999;
+  z-index: 2999;
   margin: 0.5em 0.5em;
   position: absolute;
   right:0;
