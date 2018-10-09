@@ -15,11 +15,11 @@
     
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
     <%= stylesheet_pack_tag 'hello_vue', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'hello_vue', 'data-turbolinks-track': 'reload' %>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <body ><div class="formzone">
+  <body >
+      <div class="formzone">
 
         <% if !user_signed_in? %>
           <div id="reg"></div>
@@ -41,6 +41,7 @@
     <%# if defined?current_user.role %>
      <!--  <currentrole class="currentrole" :role=" <%#= current_user.role.to_json %> "></currentrole> -->
     <%# end %>
+    
     <div class="maincontainer">   
 <!--       <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p> -->
@@ -48,7 +49,7 @@
 
     </div>
   </body>
-  
+  <%= javascript_pack_tag 'hello_vue', 'data-turbolinks-track': 'reload' %>
   
   <%#= javascript_pack_tag 'anotherscripts' %>
 </html>

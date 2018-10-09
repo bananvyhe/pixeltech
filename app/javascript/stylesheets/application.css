@@ -137,6 +137,7 @@ body {
   cursor: pointer;
 }
 .el-dialog { 
+  position: relative;
   z-index: 9999;
   font-family: 'aprior';
   padding-left: 0.5em;
@@ -159,10 +160,11 @@ body {
   justify-content: flex-end;
    
   margin: 0.5em 0.5em;
-  position: absolute;
+   
   right:0;
 }
 .reg, .log {
+  position: relative;
   z-index: 8999;
 }
  

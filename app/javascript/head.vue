@@ -216,7 +216,8 @@ export default {
 /*.log{
    padding: 0.5em 0.5em 0 0em;
 }*/
-.firstpagebg { height: 100vh; display: flex;align-items: center;
+.firstpagebg { 
+  height: 100vh; display: flex;align-items: center;
   background: radial-gradient(circle at center, #365E87  5%, #32577D  15%, #003459 50%, #00171F 80%, #00171F 100%);
 }
 .login { 
@@ -234,8 +235,7 @@ export default {
   display: flex;
   align-items: stretch;
   @media (--only-xsmall-screen) {
-    .screen { margin: 0 ;}
-     
+    .screen { margin: 0 ;} 
      h2 {
       adjust-font-size: fs medium;
      }
@@ -269,7 +269,7 @@ export default {
 	width: 100%;
   @media (--only-1600more-screen) {
     background-size: 75% auto;
- background-position: 49% calc(50% + 25px);
+    background-position: 49% calc(50% + 25px);
   }
   @media (--only-medium-screen) {
     background-size: 1350px auto;
