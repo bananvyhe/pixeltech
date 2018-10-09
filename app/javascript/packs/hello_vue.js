@@ -8,6 +8,8 @@
 import Vue from 'vue/dist/vue.esm.js'
 import axios from 'axios'
 // import App from '../app.vue'
+import Reg from '../components/registration.vue'
+import Log from '../components/login.vue'
 import Head from '../head.vue'
 import Boar from '../boar.vue'
 
@@ -17,8 +19,7 @@ import TurbolinksAdapter from 'vue-turbolinks'
 Vue.use(TurbolinksAdapter)
 // Vue.component('topsection', Topsection)
 
-import Reg from '../components/registration.vue'
-import Log from '../components/login.vue'
+
 import Currentrole from '../railsvars/currentrole.vue'
 Vue.component('currentrole', Currentrole)
 // Vue.component('reg', Reg)
@@ -46,6 +47,15 @@ document.addEventListener('turbolinks:load', () => {
  //  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 	// axios.defaults.headers.common['X-CSRF-Token'] = token
 	// axios.defaults.headers.common['Accept'] = 'application/json'
+	
+	var head = document.getElementById("head") 
+  if (head != null) {
+	  new Vue({
+	  	store,
+	    el: '#head',
+	    render: h => h(Head) 
+	  })
+	}
 	var log = document.getElementById("log") 
   if (log != null) {
 	  new Vue({
@@ -62,15 +72,6 @@ document.addEventListener('turbolinks:load', () => {
 	    render: h => h(Reg) 
 	  })
 	}
-	var head = document.getElementById("head") 
-  if (head != null) {
-	  new Vue({
-	  	store,
-	    el: '#head',
-	    render: h => h(Head) 
-	  })
-	}
-
 	var boards = document.querySelector('#boards')
 	if (boards != undefined) {
 		const app = new Vue({
