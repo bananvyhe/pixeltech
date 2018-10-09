@@ -132,6 +132,7 @@ body {
   cursor: pointer;
 }
 .el-dialog { 
+  z-index: 9999;
   font-family: 'aprior';
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -151,7 +152,7 @@ body {
 .formzone {
   display: flex;
   justify-content: flex-end;
-  z-index: 2999;
+  z-index: 8999;
   margin: 0.5em 0.5em;
   position: absolute;
   right:0;
