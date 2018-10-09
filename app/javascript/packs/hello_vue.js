@@ -7,6 +7,8 @@
 
 import Vue from 'vue/dist/vue.esm.js'
 import axios from 'axios'
+import TurbolinksAdapter from 'vue-turbolinks'
+Vue.use(TurbolinksAdapter)
 // import App from '../app.vue'
 import Reg from '../components/registration.vue'
 import Log from '../components/login.vue'
@@ -15,13 +17,12 @@ import Boar from '../boar.vue'
 
 
 // import Topsection from '../components/topsection.vue'
-import TurbolinksAdapter from 'vue-turbolinks'
-Vue.use(TurbolinksAdapter)
+
 // Vue.component('topsection', Topsection)
 
 
-import Currentrole from '../railsvars/currentrole.vue'
-Vue.component('currentrole', Currentrole)
+// import Currentrole from '../railsvars/currentrole.vue'
+// Vue.component('currentrole', Currentrole)
 // Vue.component('reg', Reg)
 // Vue.component('log', Log)
 
@@ -60,7 +61,7 @@ document.addEventListener('turbolinks:load', () => {
   if (log != null) {
 	  new Vue({
 	  	store,
-	    el: '#log',
+	    el: log,
 	    render: h => h(Log) 
 	  })
 	}

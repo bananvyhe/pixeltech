@@ -23,12 +23,6 @@
     <%# end %>
 
     <div class="maincontainer">  
-    
-<!--       <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p> -->
-      <%= yield %>
-
-    </div>
      <div class="formzone">
         <% if !user_signed_in? %>
           <div id="reg"></div>
@@ -45,6 +39,11 @@
           </div> 
         <% end %>
       </div> 
+<!--       <p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p> -->
+      <%= yield %>
+
+    </div>
   </body>
   
   

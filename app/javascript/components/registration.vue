@@ -205,23 +205,15 @@
 /*.el-form-item{
 	height: 2.7em;
 },*/
-.warn {
-	/*padding: 6px;*/
-	/*border-radius: 0.2em;*/
-	background: repeating-linear-gradient(
-  45deg,
-  rgba(0, 0, 0, 0.2),
-  rgba(0, 0, 0, 0.2) 10px,
-  rgba(0, 0, 0, 0.3) 10px,
-  rgba(0, 0, 0, 0.3) 20px
-	),
-	/*url(http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/old_map_@2X.png);*/
+ 
+.reg  {
+  z-index: 4000;
+  position: relative;
+   
 }
-.reg {
+
+/*.reg {
 	color: $teagreen;
-}
-.regplace {
-	display: flex;
-	justify-content: center;
-}
+}*/
+ 
 </style>

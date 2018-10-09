@@ -3,12 +3,17 @@
 		 
 			 
 				<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
-          <el-button type="primary" plain size="mini"   @click="nulltoken">Выйти</el-button>
+          <el-button type="primary" plain size="mini"   @click="nulltoken">
+          	Выйти
+          </el-button>
         </div>
         <div v-else>
-          <el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Войти</el-button>
+          <el-button type="primary" plain size="small"  @click="dialogFormVisible = true">
+	          Войти
+	        </el-button>
         </div>
-				<el-dialog top="18vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
+        
+				<el-dialog class="pos" top="18vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form" :rules="rules" ref="form">	 
 				    <el-form-item 
 				    	prop="email" 
@@ -154,6 +159,10 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
-
+.log  {
+  z-index: 4000;
+  position: relative;
+   
+} 
 
 </style>
