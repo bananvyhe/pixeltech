@@ -18,12 +18,30 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <body >
-      
+  <body class="body">
+      <div class="formzone">
+
+        <% if !user_signed_in? %>
+          <div id="reg"></div>
+        <% end %>
+        <div id="log"></div> 
+
+        <% if current_user.try(:superadmin?) %>
+          <div class="railsblock">
+            <% if user_signed_in? %>
+              <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
+              <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+              <% else %>
+              <%= link_to "Войти", new_user_session_path %>
+            <% end %>
+          </div> 
+        <% end %>
+
+      </div>
     <%# if defined?current_user.role %>
      <!--  <currentrole class="currentrole" :role=" <%#= current_user.role.to_json %> "></currentrole> -->
     <%# end %>
-    
+
     <div class="maincontainer">   
 <!--       <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p> -->
