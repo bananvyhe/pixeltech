@@ -156,11 +156,10 @@ body {
   margin: 0.5em 0.5em 0 0.5em;
 }
 .formzone {
-  display: flex;
-  justify-content: flex-end;
+  
    
   margin: 0.5em 0.5em;
-   
+  position: absolute;
   right:0;
 }
 .reg, .log {
