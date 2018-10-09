@@ -21,9 +21,9 @@
   <body ><div class="formzone">
 
         <% if !user_signed_in? %>
-          <div id="reg" class="reg"></div>
+          <div id="reg"></div>
         <% end %>
-        <div id="log" class="log"></div> 
+        <div id="log"></div> 
 
         <% if current_user.try(:superadmin?) %>
           <div class="railsblock">

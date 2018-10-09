@@ -64,7 +64,7 @@ export default {
     	activatorclass: false,
     	subj: 'Разработка веб-приложений, сайтов на Ruby on Rails + Vue.js',
       title: "Pixeltech",
-      cont: "admin@pixeltech.ru"
+      cont: "VooDoo Cyber Team"
     }
   },
   updated(){
