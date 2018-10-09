@@ -1,7 +1,6 @@
 <template>
 	<div class="reg">
-		<div class="regplace">
-			<div class="warn">
+		 
 				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Регистрация</el-button>
 					<el-dialog top="26vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form" :rules="rules" ref="form"> 
@@ -41,8 +40,7 @@
 						</el-form-item>
 				 		</el-form>
 				</el-dialog>	
-			</div>
-		</div>
+			 
 	</div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
-	<div class="reg">
-		<div class="regplace">
-			<div class="warn">
+	<div class="log">
+		 
+			 
 				<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
           <el-button type="primary" plain size="mini"   @click="nulltoken">Выйти</el-button>
         </div>
@@ -30,8 +30,8 @@
 						</el-form-item>
 				 	</el-form>
 				</el-dialog>
-			</div>
-		</div>
+			 
+		 
 	</div>
 </template>
 

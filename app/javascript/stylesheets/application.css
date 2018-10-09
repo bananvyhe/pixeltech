@@ -165,6 +165,6 @@ End Hamster setup*/
 }
 .reg, .log {
   position: relative;
-  z-index: 8999;
+  z-index: 3999;
 }
  
