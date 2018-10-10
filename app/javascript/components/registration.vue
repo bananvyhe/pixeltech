@@ -208,8 +208,8 @@
  
 .reg  {
   z-index: 4000;
-  position: relative;
-   
+  position: absolute;
+  right: 4.6em;
 }
 
 /*.reg {

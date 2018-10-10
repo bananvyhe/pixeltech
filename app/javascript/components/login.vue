@@ -161,8 +161,9 @@
 @import "_extends";
 .log  {
   z-index: 4000;
-  position: relative;
-   
+  position: absolute;
+  display: flex;
+ 	right: 0;
 } 
 
 </style>
