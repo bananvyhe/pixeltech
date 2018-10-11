@@ -1,6 +1,6 @@
 <template>
 	<div class="reg">
-		 
+		 {{responseEmail}}
 				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Регистрация</el-button>
 					<el-dialog top="26vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form" :rules="rules" ref="form"> 
@@ -8,11 +8,7 @@
 				    	prop="email" 
 				    	size="mini" 
 				    	label="Емайл:" 
-				    	:label-width="formLabelWidth"
-				    	:rules="[
-					      { required: true, message: 'Введите адрес', trigger: 'blur' },
-					      { type: 'email', message: 'Неправильный адрес почты', trigger: ['blur', 'change'] }
-					    ]">
+				    	:label-width="formLabelWidth">
 				      <el-input v-model="form.email" auto-complete="off"></el-input>
 				    </el-form-item>
 				    
@@ -85,7 +81,20 @@
 	        }
 	      },100 );  
       };
+      var validateEmail = (rule, value, callback) => {
+      	var self = this;
+	      setTimeout(function(){
+	        if (value === self.responseEmail) {
+          	callback(new Error('Уже зарегестрирован')); 
+	         } else if (value == '') {
+	          callback(new Error('Введите ваш псевдоним')); 
+	        } else {
+	          callback();
+	        }
+	      },100 );  
+      };
 	    return {
+	    	responseEmail: false,
 	    	responseName: false,
 	    	formLabelWidth: '120px',
 	      dialogFormVisible: false,
@@ -98,6 +107,8 @@
 	      formLabelWidth: '150px',
         rules: {
           email: [
+          { required: true, validator: validateEmail, trigger: ['blur', 'change'] },
+					      { type: 'email', message: 'Неправильный адрес почты', trigger: ['blur', 'change'] }
           ],
           password: [
             {min: 6, max: 128, message: 'длина пароля от 6 знаков', trigger: 'blur'  }

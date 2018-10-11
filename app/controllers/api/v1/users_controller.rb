@@ -12,6 +12,7 @@ class Api::V1::UsersController < Api2Controller
 
     def set_users
       @user = User.find_by(username: params[:username])
+       @user = User.find_by( email: params[:email])
     end
  
 end
