@@ -1,6 +1,5 @@
 <template>
 	<div class="reg">
-		 {{responseEmail}}
 				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Регистрация</el-button>
 					<el-dialog top="26vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Создать аккаунт:" :visible.sync="dialogFormVisible" >
 				  <el-form :model="form" :rules="rules" ref="form"> 

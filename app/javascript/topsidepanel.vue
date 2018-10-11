@@ -1,14 +1,17 @@
 <template>
-	<div>
+	<div class="topside">
+		<div v-if="$store.getters.token != null">Ваша текущая роль: {{role}}</div>
 		<div v-if="$store.getters.token == null" > 
       <reg></reg>
     </div>
-
-    <log></log>
+		<div>
+			<log></log>
+		</div>
   </div>
 </template>
 <script>
 	import axios from 'axios'
+	
 	// var state = {
 	// 	token: localStorage.getItem("token")
 	// }
@@ -20,8 +23,18 @@
 	export default {
 		data() {
 			return {
-	    	 
+	    	token: '',
+	    	role: ''
 	    } 
+	  },
+	  mounted() {
+	  	if (this.$store.getters.token != null) {
+	  		this.token = this.$store.getters.token.token
+	  		let jwtData = this.token.split('.')[1]
+				let decodedJwtJsonData = window.atob(jwtData)
+				let decodedJwtData = JSON.parse(decodedJwtJsonData)
+				this.role = decodedJwtData.role
+	  	}
 	  }
 	}
 	//подсчет ширины вьюпорта и отправление в переменную
@@ -30,5 +43,8 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+.topside {
+	lost-flex-container: row;
+}
  
 </style>
