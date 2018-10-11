@@ -14,7 +14,7 @@ import Reg from '../components/registration.vue'
 import Log from '../components/login.vue'
 import Head from '../head.vue'
 import Boar from '../boar.vue'
-
+import Topsidepanel from '../topsidepanel.vue'
 
 // import Topsection from '../components/topsection.vue'
 
@@ -23,8 +23,8 @@ import Boar from '../boar.vue'
 
 // import Currentrole from '../railsvars/currentrole.vue'
 // Vue.component('currentrole', Currentrole)
-// Vue.component('reg', Reg)
-// Vue.component('log', Log)
+Vue.component('reg', Reg)
+Vue.component('log', Log)
 
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
@@ -48,7 +48,14 @@ document.addEventListener('turbolinks:load', () => {
  //  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 	// axios.defaults.headers.common['X-CSRF-Token'] = token
 	// axios.defaults.headers.common['Accept'] = 'application/json'
-	
+	var topsidepanel = document.getElementById("topsidepanel") 
+  if (topsidepanel != null) {
+	  new Vue({
+	  	store,
+	    el: '#topsidepanel',
+	    render: h => h(Topsidepanel) 
+	  })
+	}
 	var head = document.getElementById("head") 
   if (head != null) {
 	  new Vue({
@@ -57,22 +64,22 @@ document.addEventListener('turbolinks:load', () => {
 	    render: h => h(Head) 
 	  })
 	}
-	var log = document.getElementById("log") 
-  if (log != null) {
-	  new Vue({
-	  	store,
-	    el: log,
-	    render: h => h(Log) 
-	  })
-	}
-	var reg = document.getElementById("reg") 
-  if (reg != null) {
-	  new Vue({
-	  	store,
-	    el: '#reg',
-	    render: h => h(Reg) 
-	  })
-	}
+	// var log = document.getElementById("log") 
+ //  if (log != null) {
+	//   new Vue({
+	//   	store,
+	//     el: log,
+	//     render: h => h(Log) 
+	//   })
+	// }
+	// var reg = document.getElementById("reg") 
+ //  if (reg != null) {
+	//   new Vue({
+	//   	store,
+	//     el: '#reg',
+	//     render: h => h(Reg) 
+	//   })
+	// }
 	var boards = document.querySelector('#boards')
 	if (boards != undefined) {
 		const app = new Vue({
