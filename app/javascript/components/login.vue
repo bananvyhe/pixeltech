@@ -102,7 +102,8 @@
 		      this.$store.commit('tokensend', null) 
 		    })
 	      .then((response) => {
-		      location.reload(true);
+	      	window.location.href = '/';
+		      // location.reload(true);
 		    })    
 		    // setTimeout(function(){
 		    //   // self.cropText();
