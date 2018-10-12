@@ -1,4 +1,13 @@
-<div id="users"></div>
+
+<div id="locations">
+  <temperature>sc</temperature>
+</div>
+<script type="text/x-template" id="temperature-template">
+	<div>
+		 {{ this.$store.getters.role }}
+	</div>
+</script>
+
 <% @users = User.all %>
 <table>
       <tbody>

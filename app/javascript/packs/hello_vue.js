@@ -26,7 +26,28 @@ import Users from '../users.vue'
 // Vue.component('currentrole', Currentrole)
 Vue.component('reg', Reg)
 Vue.component('log', Log)
-
+Vue.component("temperature", {
+  template: "#temperature-template",
+  data: function() {
+    return {temp: '123', location: null};
+  },
+  created: function() {
+    // this.fetchData();
+  },
+  methods: {
+    // fetchData: function() {
+    //   var self = this;
+    //   $.ajax({
+    //     url: "/api/v1/users",
+    //     beforeSend: function(xhr) { xhr.setRequestHeader("Authorization", "Bearer " + state.token); },
+    //     success: function(response) {
+    //       self.temp = response.data.attributes.current.temp;
+    //       self.location = response.data.attributes.name;
+    //     }
+    //   });
+    }
+  
+});
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
  
@@ -49,6 +70,11 @@ document.addEventListener('turbolinks:load', () => {
  //  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 	// axios.defaults.headers.common['X-CSRF-Token'] = token
 	// axios.defaults.headers.common['Accept'] = 'application/json'
+	new Vue({
+	store,
+	  el: "#locations" 
+	})
+
 	var users = document.getElementById("users") 
   if (users != null) {
 	  new Vue({
