@@ -1,6 +1,6 @@
 <template>
 	<div class="topside">
-		<div v-if="$store.getters.token != null">Ваша текущая роль: {{role}}</div>
+		<div v-if="$store.getters.token != null">Ваша текущая роль: {{this.$store.getters.role}}</div>
 		<div v-if="$store.getters.token == null" > 
       <reg></reg>
     </div>
@@ -24,8 +24,7 @@
 		data() {
 			return {
 	    	token: '',
-	    	role: ''
-	    } 
+	    	} 
 	  },
 	  mounted() {
 	  	if (this.$store.getters.token != null) {
@@ -33,7 +32,8 @@
 	  		let jwtData = this.token.split('.')[1]
 				let decodedJwtJsonData = window.atob(jwtData)
 				let decodedJwtData = JSON.parse(decodedJwtJsonData)
-				this.role = decodedJwtData.role
+				let role = decodedJwtData.role
+				this.$store.commit('rolensend', role)
 	  	}
 	  }
 	}

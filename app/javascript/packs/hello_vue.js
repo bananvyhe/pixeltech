@@ -15,6 +15,7 @@ import Log from '../components/login.vue'
 import Head from '../head.vue'
 import Boar from '../boar.vue'
 import Topsidepanel from '../topsidepanel.vue'
+import Users from '../users.vue'
 
 // import Topsection from '../components/topsection.vue'
 
@@ -48,6 +49,14 @@ document.addEventListener('turbolinks:load', () => {
  //  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 	// axios.defaults.headers.common['X-CSRF-Token'] = token
 	// axios.defaults.headers.common['Accept'] = 'application/json'
+	var users = document.getElementById("users") 
+  if (users != null) {
+	  new Vue({
+	  	store,
+	    el: '#users',
+	    render: h => h(Users) 
+	  })
+	}
 	var topsidepanel = document.getElementById("topsidepanel") 
   if (topsidepanel != null) {
 	  new Vue({

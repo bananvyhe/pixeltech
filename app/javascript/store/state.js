@@ -1,4 +1,5 @@
 export default {
 	number: 10,
-	token: ''
+	token: '',
+	role: ''
 }

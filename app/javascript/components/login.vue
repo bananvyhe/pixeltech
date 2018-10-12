@@ -1,42 +1,38 @@
 <template>
 	<div class="log">
-		 
-			 
-				<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
-          <el-button type="primary" plain size="mini"   @click="nulltoken">
-          	Выйти
-          </el-button>
-        </div>
-        <div v-else>
-          <el-button type="primary" plain size="small"  @click="dialogFormVisible = true">
-	          Войти
-	        </el-button>
-        </div>
-        
-				<el-dialog class="pos" top="18vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
-				  <el-form :model="form" :rules="rules" ref="form">	 
-				    <el-form-item 
-				    	prop="email" 
-				    	size="mini" 
-				    	label="Емайл:" 
-				    	:label-width="formLabelWidth"
-				    	:rules="[
-					      { required: true, message: 'Введите адрес', trigger: 'blur' },
-					      { type: 'email', message: 'Неправильный адрес почты', trigger: ['blur', 'change'] }
-					    ]">
-				      <el-input v-model="form.email" auto-complete="off"></el-input>
-				    </el-form-item>
-				    <el-form-item prop="password" size="mini" label="Пароль:" :label-width="formLabelWidth">
-				      <el-input type="password" v-model="form.password" auto-complete="off"></el-input>
-				    </el-form-item>
-				    <el-form-item size="mini">
-					 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
-						  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
-						</el-form-item>
-				 	</el-form>
-				</el-dialog>
-			 
-		 
+		<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
+      <el-button type="primary" plain size="mini"   @click="nulltoken">
+      	Выйти
+      </el-button>
+    </div>
+    <div v-else>
+      <el-button type="primary" plain size="small"  @click="dialogFormVisible = true">
+        Войти
+      </el-button>
+    </div>
+    
+		<el-dialog class="pos" top="18vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
+		  <el-form :model="form" :rules="rules" ref="form">	 
+		    <el-form-item 
+		    	prop="email" 
+		    	size="mini" 
+		    	label="Емайл:" 
+		    	:label-width="formLabelWidth"
+		    	:rules="[
+			      { required: true, message: 'Введите адрес', trigger: 'blur' },
+			      { type: 'email', message: 'Неправильный адрес почты', trigger: ['blur', 'change'] }
+			    ]">
+		      <el-input v-model="form.email" auto-complete="off"></el-input>
+		    </el-form-item>
+		    <el-form-item prop="password" size="mini" label="Пароль:" :label-width="formLabelWidth">
+		      <el-input type="password" v-model="form.password" auto-complete="off"></el-input>
+		    </el-form-item>
+		    <el-form-item size="mini">
+			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
+				  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
+				</el-form-item>
+		 	</el-form>
+		</el-dialog>
 	</div>
 </template>
 
