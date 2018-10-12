@@ -15,7 +15,7 @@ import Log from '../components/login.vue'
 import Head from '../head.vue'
 import Boar from '../boar.vue'
 import Topsidepanel from '../topsidepanel.vue'
-import Users from '../users.vue'
+ 
 
 // import Topsection from '../components/topsection.vue'
 
@@ -26,6 +26,7 @@ import Users from '../users.vue'
 // Vue.component('currentrole', Currentrole)
 Vue.component('reg', Reg)
 Vue.component('log', Log)
+
 Vue.component("temperature", {
   template: "#temperature-template",
   data: function() {
@@ -35,6 +36,9 @@ Vue.component("temperature", {
     // this.fetchData();
   },
   methods: {
+  	reload: function() {
+  		location.reload(true);
+  	}
     // fetchData: function() {
     //   var self = this;
     //   $.ajax({
@@ -70,17 +74,20 @@ document.addEventListener('turbolinks:load', () => {
  //  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
 	// axios.defaults.headers.common['X-CSRF-Token'] = token
 	// axios.defaults.headers.common['Accept'] = 'application/json'
-	new Vue({
-	store,
-	  el: "#locations" 
-	})
+	// var users = document.getElementById("users") 
+ //  if (users != null) {
+	// 	new Vue({
+	// 	store,
+	// 	  el: "#users" 
+	// 	})
+	// }
 
 	var users = document.getElementById("users") 
   if (users != null) {
 	  new Vue({
 	  	store,
 	    el: '#users',
-	    render: h => h(Users) 
+	    
 	  })
 	}
 	var topsidepanel = document.getElementById("topsidepanel") 

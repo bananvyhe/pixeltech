@@ -1,54 +1,55 @@
 
-<div id="locations">
-  <temperature>sc</temperature>
+<div id="users">
+  <temperature></temperature>
 </div>
+
 <script type="text/x-template" id="temperature-template">
 	<div>
-		 {{ this.$store.getters.role }}
+		 <!-- {{ this.$store.getters.role }} -->
+		<% @users.each do |user| %>
+			<div class="userstring">
+				 <%= user.email %> 
+
+				<div v-on:click="reload">
+				<%  if user.user? %>
+					<%= link_to "+", admination_user_path(user) %>&nbsp; дать права админа
+
+				<% end %>
+				</div> 
+			 
+				 
+			  <%= user.username %>
+				 <div>
+				 	<%  if  !user.voodoo? && !user.superadmin? && !user.admin? %>
+							<%= link_to "+", voodooation_user_path(user) %>&nbsp; вудуизировать
+						<% end %>
+				 </div>
+				
+			 
+				<%  if user.voodoo? %>
+					-=Вуду=-
+					<%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
+				<% end %>
+				 
+			  <%  if  user.admin? %>
+			  -=Админ=-
+			   <%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
+			 <% end %>
+			 
+				<%  if  user.superadmin? %>
+			  -=СуперАдмин=-
+			 <% end %>
+			<br> 
+			</div>
+			 
+		<% end %>
 	</div>
 </script>
 
-<% @users = User.all %>
-<table>
-      <tbody>
-				<% @users.each do |user| %>
-					<tr data-item_id="<%= user.id %>"> 
-
-						<td>
-					  <%= user.email %> 
-					  <%  if user.user? %>
-							<%= link_to "+", admination_user_path(user) %>&nbsp; дать права админа
-						<% end %>
-						</td>
-						<td>
-					  <%= user.username %>
-						</td>
-						<td>
-						<%  if  !user.voodoo? && !user.superadmin? && !user.admin? %>
-							<%= link_to "+", voodooation_user_path(user) %>&nbsp; вудуизировать
-						<% end %>
-						</td>
-						<td>
-						<%  if user.voodoo? %>
-							-=Вуду=-
-							<%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
-						<% end %>
-						</td>
-						<td>
-					  <%  if  user.admin? %>
-					  -=Админ=-
-					   <%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
-					 <% end %>
-						</td>
-						<td>
-						<%  if  user.superadmin? %>
-					  -=СуперАдмин=-
-					 <% end %>
-					</td>
-					 
-					 <td><span class="deleteAction">Удалить</span></td>
-					  <br/>
-					   </tr>
-				<% end %>
- </tbody>
-    </table>
+<style scope>
+	.userstring {
+		display: flex;
+		flex-direction: row;
+	}
+</style>
+ 
