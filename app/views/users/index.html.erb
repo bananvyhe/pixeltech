@@ -2,9 +2,14 @@
 <div id="users">
   <temperature></temperature>
 </div>
-
+<% if user_signed_in? %>
+<p style="text-align: center; padding-top: 1em;">
+	Доступ на сайт —  после одобрения аккаунта администратором.
+</p>
+<% end %>
 <script type="text/x-template" id="temperature-template">
-	<div class="usersblock">
+	
+	<div class="usersblock" v-if="this.$store.getters.role == 'superadmin' || this.$store.getters.role == 'admin' ">
 		 <!-- {{ this.$store.getters.role }} -->
 		<% @users.each do |user| %>
 			<div class="userstring">

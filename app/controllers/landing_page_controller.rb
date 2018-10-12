@@ -4,6 +4,8 @@ class LandingPageController < ApplicationController
 	    path = case current_user.role
 	    	when 'superadmin'
 	        users_path
+	      when 'user'
+	        users_path
 	      when 'siteowner'
 	        lists_path
 	      when 'voodoo'
