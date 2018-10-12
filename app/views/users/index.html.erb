@@ -4,41 +4,52 @@
 </div>
 
 <script type="text/x-template" id="temperature-template">
-	<div>
+	<div class="usersblock">
 		 <!-- {{ this.$store.getters.role }} -->
 		<% @users.each do |user| %>
 			<div class="userstring">
-				 <%= user.email %> 
-
+				<div>
+					<%= user.email %> 
+				</div>
+				<div>
+				 	<%= user.username %>
+				</div>
+ 				 
 				<div v-on:click="reload">
 				<%  if user.user? %>
-					<%= link_to "+", admination_user_path(user) %>&nbsp; дать права админа
+					<%= link_to "дать права админа", admination_user_path(user) %> 
 
 				<% end %>
 				</div> 
 			 
 				 
-			  <%= user.username %>
-				 <div>
+			 
+				 <div v-on:click="reload">
 				 	<%  if  !user.voodoo? && !user.superadmin? && !user.admin? %>
-							<%= link_to "+", voodooation_user_path(user) %>&nbsp; вудуизировать
+							<%= link_to "вудуизировать", voodooation_user_path(user) %> 
 						<% end %>
 				 </div>
 				
-			 
-				<%  if user.voodoo? %>
-					-=Вуду=-
-					<%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
-				<% end %>
-				 
-			  <%  if  user.admin? %>
-			  -=Админ=-
-			   <%= link_to "–", deadmination_user_path(user) %>&nbsp; забрать права
-			 <% end %>
-			 
-				<%  if  user.superadmin? %>
-			  -=СуперАдмин=-
-			 <% end %>
+				<div v-on:click="reload">
+					<%  if user.voodoo? %>
+						-=Вуду=-
+						<%= link_to "забрать права", deadmination_user_path(user) %> 
+					<% end %>
+				</div>
+				
+				<div v-on:click="reload">
+					<%  if  user.admin? %>
+					  -=Админ=-
+					   <%= link_to "забрать права", deadmination_user_path(user) %> 
+					<% end %>
+				</div> 
+			  
+				<div>
+					<%  if  user.superadmin? %>
+					  -=СуперАдмин=-
+					 <% end %>
+				</div> 
+				
 			<br> 
 			</div>
 			 
@@ -50,6 +61,16 @@
 	.userstring {
 		display: flex;
 		flex-direction: row;
+ 
 	}
+	.userstring div {
+		padding: 0.1em 1em;
+	}
+	.userstring:nth-child(even) {
+	  background: #774C60;
+	 }
+	 .userstring:nth-child(odd) {
+	  background: #748CAB;
+	 }
 </style>
  
