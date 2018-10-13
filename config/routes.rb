@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
    
+  resources :clients
   resources :voodoos
   get 'errors/not_found'
   get 'errors/internal_server_error'

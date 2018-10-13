@@ -30,6 +30,7 @@ gem 'jquery-rails', '~> 4.3.1'
 # gem 'omniauth'
 # gem 'rack-cors'
 gem 'jwt'
+gem 'yandex-money-sdk'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
