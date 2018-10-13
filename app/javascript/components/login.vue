@@ -12,6 +12,7 @@
     </div>
     
 		<el-dialog class="pos" top="18vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
+			
 		  <el-form :model="form" :rules="rules" ref="form">	 
 		    <el-form-item 
 		    	prop="email" 
@@ -26,7 +27,9 @@
 		    </el-form-item>
 		    <el-form-item prop="password" size="mini" label="Пароль:" :label-width="formLabelWidth">
 		      <el-input type="password" v-model="form.password" auto-complete="off"></el-input>
-		    </el-form-item>
+		    </el-form-item><div>
+				{{error}}
+			</div>
 		    <el-form-item size="mini">
 			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
 				  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
@@ -61,6 +64,7 @@
       };
 	    return {
 	    	// token: state,
+	    	error: '',
 	    	formLabelWidth: '120px',
 	      dialogFormVisible: false,
 	      form: {
@@ -128,15 +132,25 @@
 		      }
 		    })
 		    .then(response => {
-		    	this.$store.commit('tokensend', response.data)
+		    	if (response.data.errors) {
+		    		console.log(response.data.errors)
+		    		this.error = response.data.errors;
+		    	}else{
+		    		this.$store.commit('tokensend', response.data)
 		    	location.reload(true);
+		    	}
+		    	
+		    	// this.$store.commit('tokensend', response.data)
+		    	// location.reload(true);
+
 		    	//  localStorage.setItem("token", response.data);
 		    	// this.token = response.data;
 		    	// console.log('scacs');
 		       // location.reload(true);
 		    })
 		    .catch(error => {
-
+		     
+		    	console.log(error)
 		      // whatever you want
 		    })
 		    

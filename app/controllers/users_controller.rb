@@ -28,15 +28,15 @@ class UsersController < ApplicationController
       redirect_to action: :index
     end
   end
-  def deadmination
-    if current_user.superadmin?
+  def deadmination 
+    if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
        @user.update_attribute :role, :user
       redirect_to action: :index
     end
   end
   def voodooation
-    if current_user.superadmin?
+    if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
       @user.update_attribute :role, :voodoo
       # @user.update_attribute :admin, true
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     end
   end
   def devoodootion
-    if current_user.superadmin?
+    if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
        @user.update_attribute :role, :voodoo
       redirect_to action: :index
@@ -59,6 +59,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit( :admin, :email, :username  )
+      params.require(:user).permit( :admin, :email, :username )
     end
 end
