@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     # end
   end
   def admination
-    if current_user.superadmin?
+    if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
       @user.update_attribute :role, :admin
     	# @user.update_attribute :admin, true

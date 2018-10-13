@@ -11,8 +11,12 @@ class Api::V1::UsersController < Api2Controller
   private
 
     def set_users
-      @user = User.find_by(username: params[:username])
+      # @user = User.find_by(username: params[:username])
+      if (params[:email])
        @user = User.find_by( email: params[:email])
+      elsif (params[:username])
+        @user = User.find_by( username: params[:username])
+      end
     end
  
 end

@@ -193,7 +193,7 @@
 			    	location.reload(true);
 			    })
 			    .catch(error => {
-			      // whatever you want
+			      console.log(errors)
 			    })    
 		    })
 		    .catch(error => {
