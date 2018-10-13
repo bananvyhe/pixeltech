@@ -98,8 +98,13 @@
 	  created(){
 			// this.$store.commit('rolesend', this.role)
 	  },
+	  watch: {
+	  	error: function(val){
+	  		 this.$message.error(val);
+	  	}
+	  },
 	  methods: {
-	  	nulltoken: function (){
+			nulltoken: function (){
       	axios.delete('/users/sign_out', {
 		    }) 
 		    .then((response) => {

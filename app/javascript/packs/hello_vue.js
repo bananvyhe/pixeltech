@@ -55,7 +55,8 @@ Vue.component("temperature", {
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
  
-import { Button, Dialog, Select, Form, FormItem, Input, Option } from 'element-ui';
+import { Button, Dialog, Select, Form, FormItem, Input, Option, Message } from 'element-ui';
+Vue.prototype.$message = Message;  
 Vue.use(Button) 
 Vue.use(Dialog)  
 Vue.use(Form)  
