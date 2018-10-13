@@ -15,13 +15,9 @@ import Log from '../components/login.vue'
 import Head from '../head.vue'
 import Boar from '../boar.vue'
 import Topsidepanel from '../topsidepanel.vue'
- 
 
 // import Topsection from '../components/topsection.vue'
-
 // Vue.component('topsection', Topsection)
-
-
 // import Currentrole from '../railsvars/currentrole.vue'
 // Vue.component('currentrole', Currentrole)
 Vue.component('reg', Reg)
@@ -38,19 +34,23 @@ Vue.component("temperature", {
   methods: {
   	reload: function() {
   		location.reload(true);
+  	},
+  	deleteuser: function(id ) {
+  		axios.delete('/users/'+id, {
+  			headers: {
+  				'Authorization': "bearer " + this.$store.getters.token 
+				} 
+  		})
+  		.then(response => {
+  			var ids = String(id)
+  			var dd = ".userstring.del"+ids 
+  			console.log(dd)
+  			$(dd).fadeOut(200);
+		    // location.reload(true);
+		  })
   	}
-    // fetchData: function() {
-    //   var self = this;
-    //   $.ajax({
-    //     url: "/api/v1/users",
-    //     beforeSend: function(xhr) { xhr.setRequestHeader("Authorization", "Bearer " + state.token); },
-    //     success: function(response) {
-    //       self.temp = response.data.attributes.current.temp;
-    //       self.location = response.data.attributes.name;
-    //     }
-    //   });
-    }
-  
+
+  }
 });
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'

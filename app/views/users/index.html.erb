@@ -12,14 +12,16 @@
 	<div class="usersblock" v-if="this.$store.getters.role == 'superadmin' || this.$store.getters.role == 'admin' ">
 		 <!-- {{ this.$store.getters.role }} -->
 		<% @users.each do |user| %>
-			<div class="userstring">
+			<div class="userstring del<%= user.id %>" >
 				<div>
 					<%= user.email %> 
 				</div>
 				<div>
 				 	<%= user.username %>
 				</div>
- 				 
+ 					<div>
+				 	<%= user.id %>
+				</div> 
 				<div v-on:click="reload">
 				<%  if user.user? %>
 					<%= link_to "дать права админа", admination_user_path(user) %> 
@@ -53,6 +55,11 @@
 					<%  if  user.superadmin? %>
 					  -=СуперАдмин=-
 					 <% end %>
+				</div> 
+				<div v-on:click="deleteuser(<%=user.id.to_s %>)">
+					 
+					  удалить
+					 
 				</div> 
 				
 			<br> 
