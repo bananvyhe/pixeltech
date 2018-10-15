@@ -95,7 +95,6 @@
 	    return {
 	    	responseEmail: false,
 	    	responseName: false,
-	    	formLabelWidth: '120px',
 	      dialogFormVisible: false,
 	      form: {
 	        email: '',
@@ -103,7 +102,7 @@
 	        password: '',
 	        password_confirmation:''
 	      },
-	      formLabelWidth: '150px',
+	      formLabelWidth: '80px',
         rules: {
           email: [
           { required: true, validator: validateEmail, trigger: ['blur', 'change'] },
