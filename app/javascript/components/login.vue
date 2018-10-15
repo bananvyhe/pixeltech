@@ -65,13 +65,13 @@
 	    return {
 	    	// token: state,
 	    	error: '',
-	    	formLabelWidth: '120px',
+	    	 
 	      dialogFormVisible: false,
 	      form: {
 	        email: 'admin@pixeltech,ru',
 	        password: '78803054'
 	      },
-	      formLabelWidth: '150px',
+	      formLabelWidth: '80px',
         rules: {
           email: [
            
