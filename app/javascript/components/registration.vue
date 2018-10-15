@@ -84,7 +84,7 @@
       	var self = this;
 	      setTimeout(function(){
 	        if (value === self.responseEmail) {
-          	callback(new Error('Уже зарегестрирован')); 
+          	callback(new Error('Уже зарегистрирован')); 
 	         } else if (value == '') {
 	          callback(new Error('Введите ваш псевдоним')); 
 	        } else {
