@@ -6,18 +6,17 @@
 				    <el-form-item 
 				    	prop="email" 
 				    	size="mini" 
-				    	label="Емайл:" 
-				    	:label-width="formLabelWidth">
+				    	label="Емайл:">
 				      <el-input v-model="form.email" auto-complete="off"></el-input>
 				    </el-form-item>
 				    
-				    <el-form-item prop="password" size="mini" label="Пароль:" :label-width="formLabelWidth">
+				    <el-form-item prop="password" size="mini" label="Пароль:">
 				      <el-input type="password" v-model="form.password" auto-complete="off"></el-input>
 				    </el-form-item>
-				    <el-form-item  prop="password_confirmation" size="mini" label="Повторите пароль:" :label-width="formLabelWidth">
+				    <el-form-item  prop="password_confirmation" size="mini" label="Повторите пароль:">
 				      <el-input type="password" v-model="form.password_confirmation" auto-complete="off"></el-input>
 				    </el-form-item>
-				    <el-form-item  prop="username" size="mini" label="Имя пользователя:" :label-width="formLabelWidth">
+				    <el-form-item  prop="username" size="mini" label="Никнейм:">
 				      <el-input v-model="form.username" auto-complete="off"></el-input>
 				    </el-form-item>
 	<!-- 			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">

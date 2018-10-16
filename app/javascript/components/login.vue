@@ -17,15 +17,14 @@
 		    <el-form-item 
 		    	prop="email" 
 		    	size="mini" 
-		    	label="Емайл:" 
-		    	:label-width="formLabelWidth"
+		    	label="Емайл:"
 		    	:rules="[
 			      { required: true, message: 'Введите адрес', trigger: 'blur' },
 			      { type: 'email', message: 'Неправильный адрес почты', trigger: ['blur', 'change'] }
 			    ]">
 		      <el-input v-model="form.email" auto-complete="off"></el-input>
 		    </el-form-item>
-		    <el-form-item prop="password" size="mini" label="Пароль:" :label-width="formLabelWidth">
+		    <el-form-item prop="password" size="mini" label="Пароль:">
 		      <el-input type="password" v-model="form.password" auto-complete="off"></el-input>
 		    </el-form-item><div>
 				{{error}}

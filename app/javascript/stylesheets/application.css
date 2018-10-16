@@ -155,10 +155,20 @@ body {
 .el-button {
   margin: 0.5em 0.5em 0 0.5em;
 }
-
+.el-form-item {
+   display: flex;
+}
+.el-form-item__content {
+   display: flex;
+   width: 100%;
+}
 .el-form-item__label {
+  width: 170px;
   line-height: 1em !important; 
   padding: 0 0.5em 0px !important; 
+ display: flex;
+ justify-content: flex-end;
+ align-self: center;
 }
 .formzone {
   display: flex;
