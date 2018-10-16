@@ -85,7 +85,7 @@
 	        if (value === self.responseEmail) {
           	callback(new Error('Уже зарегистрирован')); 
 	         } else if (value == '') {
-	          callback(new Error('Введите ваш псевдоним')); 
+	          callback(new Error('Введите адрес почты')); 
 	        } else {
 	          callback();
 	        }
