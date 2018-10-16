@@ -102,7 +102,7 @@
 	        password: '',
 	        password_confirmation:''
 	      },
-	      formLabelWidth: '100px',
+	      formLabelWidth: '110px',
         rules: {
           email: [
           { required: true, validator: validateEmail, trigger: ['blur', 'change'] },

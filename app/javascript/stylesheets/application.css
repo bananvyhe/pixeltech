@@ -155,9 +155,10 @@ body {
 .el-button {
   margin: 0.5em 0.5em 0 0.5em;
 }
+
 .el-form-item__label {
-    line-height: 1em;
-    background-color: #ada; 
+  line-height: 1em !important; 
+  padding: 0 0.5em 0px !important; 
 }
 .formzone {
   display: flex;

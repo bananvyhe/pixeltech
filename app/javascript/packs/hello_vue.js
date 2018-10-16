@@ -20,6 +20,7 @@ import Topsidepanel from '../topsidepanel.vue'
 // Vue.component('topsection', Topsection)
 // import Currentrole from '../railsvars/currentrole.vue'
 // Vue.component('currentrole', Currentrole)
+import '../../../public/theme/index.css'
 Vue.component('reg', Reg)
 Vue.component('log', Log)
 
@@ -64,7 +65,7 @@ Vue.use(FormItem)
 Vue.use(Input)  
 Vue.use(Select)
 Vue.use(Option)
-import '../../../public/theme/index.css'
+
 
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
