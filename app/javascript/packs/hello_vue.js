@@ -35,6 +35,7 @@ Vue.component("temperature", {
   methods: {
   	reload: function() {
   		location.reload(true);
+  		// window.location.href = window.location.href;
   	},
   	deleteuser: function(id ) {
   		axios.delete('/users/'+id, {

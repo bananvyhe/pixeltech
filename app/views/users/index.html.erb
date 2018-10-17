@@ -23,7 +23,7 @@
 				 	<%= user.id %>
 				</div> 
 				<div>
-				 	<%= user.clients_id  %>
+				 	<%#= @client.user_id  %>
 				</div> 
 				<div v-on:click="reload">
 				<%  if user.user? %>
@@ -31,7 +31,12 @@
 
 				<% end %>
 				</div> 
-			 
+			 <div v-on:click="reload">
+				<%  if user.user? %>
+					<%= link_to "дать права клиента", clientation_user_path(user) %> 
+
+				<% end %>
+				</div> 
 				 
 			 
 				 <div v-on:click="reload">

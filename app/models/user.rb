@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_one :client
+  has_one :client, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -12,7 +12,7 @@ class User < ApplicationRecord
   # validates_presence_of     :password, if: :password_required?
   # validates_confirmation_of :password, if: :password_required?
   # validates_length_of       :password, within: password_length, allow_blank: true
-  enum role: [:user, :voodoo, :admin, :superadmin]
+  enum role: [:user, :voodoo, :admin, :superadmin, :client]
   after_initialize :set_default_role, :if => :new_record?
  
 

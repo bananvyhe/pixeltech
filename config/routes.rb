@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     get :deadmination, on: :member
     get :voodooation, on: :member
     get :devoodooation, on: :member
+    get :clientation, on: :member
+    get :declientation, on: :member
   end
    
   resources :lists do

@@ -56,6 +56,20 @@ class UsersController < ApplicationController
       redirect_to action: :index
     end
   end
+  def clientation
+    if current_user.superadmin? || current_user.admin?
+      @user = User.find(params[:id])
+      @user.create_client(ballance: "0")
+      @user.update_attribute :role, :client
+      redirect_to action: :index
+    end
+  end
+  def declientation
+    if current_user.superadmin? || current_user.admin?
+      @user = User.find(params[:id])
+      @user.update_attribute :role, :client
+    end
+  end
   
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -65,6 +79,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit( :admin, :email, :username, :clients_id )
+      params.require(:user).permit( :admin, :email, :username, :client_id )
     end
 end
