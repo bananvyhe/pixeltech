@@ -4,6 +4,12 @@ class UsersController < ApplicationController
   def index
   	@users = User.all.order(created_at: :desc)
   end
+  def create
+      
+ 
+
+
+  end
   def edit
 		 @user = User.find(params[:id])
   end
@@ -59,6 +65,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit( :admin, :email, :username )
+      params.require(:user).permit( :admin, :email, :username, :clients_id )
     end
 end
