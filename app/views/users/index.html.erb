@@ -25,22 +25,25 @@
 				<div>
 				 	<%#= @client.user_id  %>
 				</div> 
+
 				<div v-on:click="reload">
 				<%  if user.user? %>
 					<%= link_to "дать права админа", admination_user_path(user) %> 
-
 				<% end %>
 				</div> 
 			 <div v-on:click="reload">
 				<%  if user.user? %>
 					<%= link_to "дать права клиента", clientation_user_path(user) %> 
-
 				<% end %>
 				</div> 
-				 
-			 
+				<div v-on:click="reload">
+				 	<%  if  user.client? %>
+							<%= link_to "забрать права", declientation_user_path(user) %> 
+						<% end %>
+				 </div>
+
 				 <div v-on:click="reload">
-				 	<%  if  !user.voodoo? && !user.superadmin? && !user.admin? %>
+				 	<%  if  !user.voodoo? && !user.superadmin? && !user.admin? && !user.client? %>
 							<%= link_to "вудуизировать", voodooation_user_path(user) %> 
 						<% end %>
 				 </div>

@@ -52,14 +52,16 @@ class UsersController < ApplicationController
   def devoodootion
     if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
-       @user.update_attribute :role, :voodoo
+       @user.update_attribute :role, :user
       redirect_to action: :index
     end
   end
   def clientation
     if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
-      @user.create_client(ballance: "0")
+      if (!@user.client)
+        @user.create_client(ballance: "0")
+      end
       @user.update_attribute :role, :client
       redirect_to action: :index
     end
@@ -67,7 +69,8 @@ class UsersController < ApplicationController
   def declientation
     if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
-      @user.update_attribute :role, :client
+      @user.update_attribute :role, :user
+      redirect_to action: :index
     end
   end
   
