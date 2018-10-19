@@ -1,0 +1,2 @@
+class Siteowner < ApplicationRecord
+end

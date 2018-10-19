@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
    
+  resources :siteowners
   resources :clients
   resources :voodoos
   get 'errors/not_found'

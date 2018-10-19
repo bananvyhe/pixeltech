@@ -1,0 +1,17 @@
+<%= form_with(model: siteowner, local: true) do |form| %>
+  <% if siteowner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(siteowner.errors.count, "error") %> prohibited this siteowner from being saved:</h2>
+
+      <ul>
+      <% siteowner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

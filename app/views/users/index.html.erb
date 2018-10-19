@@ -21,11 +21,13 @@
  				<div>
 				 	<%= user.id %>
 				</div> 
-				<div>
+				
 					<% if user.client? %>
-				 		<%= user.client.ballance %>
+						<div style="background-color: green;">
+				 			<%= user.client.ballance %>
+				 		</div> 
 				 	<% end %>
-				</div> 
+				
 				<div v-on:click="reload">
 				<%  if user.user? %>
 					<%= link_to "дать права админа", admination_user_path(user) %> 
