@@ -8,7 +8,6 @@
 </p>
 <% end %>
 <script type="text/x-template" id="temperature-template">
-
 	<div class="usersblock" v-if="this.$store.getters.role == 'superadmin' || this.$store.getters.role == 'admin' ">
 		 <!-- {{ this.$store.getters.role }} -->
 		<% @users.each do |user| %>
@@ -23,56 +22,50 @@
 				 	<%= user.id %>
 				</div> 
 				<div>
-				 	<%#= @client.user_id  %>
+					<% if user.client? %>
+				 		<%= user.client.ballance %>
+				 	<% end %>
 				</div> 
-
 				<div v-on:click="reload">
 				<%  if user.user? %>
 					<%= link_to "дать права админа", admination_user_path(user) %> 
 				<% end %>
 				</div> 
 			 <div v-on:click="reload">
-				<%  if user.user? %>
+				<% if user.user? %>
 					<%= link_to "дать права клиента", clientation_user_path(user) %> 
 				<% end %>
 				</div> 
 				<div v-on:click="reload">
 				 	<%  if  user.client? %>
-							<%= link_to "забрать права", declientation_user_path(user) %> 
-						<% end %>
-				 </div>
-
-				 <div v-on:click="reload">
+						<%= link_to "забрать права", declientation_user_path(user) %> 
+					<% end %>
+				</div>
+				<div v-on:click="reload">
 				 	<%  if  !user.voodoo? && !user.superadmin? && !user.admin? && !user.client? %>
-							<%= link_to "вудуизировать", voodooation_user_path(user) %> 
+						<%= link_to "вудуизировать", voodooation_user_path(user) %> 
 						<% end %>
-				 </div>
-				
+					</div>
 				<div v-on:click="reload">
 					<%  if user.voodoo? %>
 						-=Вуду=-
 						<%= link_to "забрать права", deadmination_user_path(user) %> 
 					<% end %>
 				</div>
-				
 				<div v-on:click="reload">
 					<%  if  user.admin? %>
 					  -=Админ=-
 					   <%= link_to "забрать права", deadmination_user_path(user) %> 
 					<% end %>
 				</div> 
-			  
 				<div>
 					<%  if  user.superadmin? %>
 					  -=СуперАдмин=-
 					 <% end %>
 				</div> 
 				<div v-on:click="deleteuser(<%=user.id.to_s %>)">
-					 
-					  удалить
-					 
-				</div> 
-				
+					удалить
+				</div>	
 			<br> 
 			</div>
 			 
