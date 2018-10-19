@@ -10,6 +10,8 @@ class LandingPageController < ApplicationController
 	        users_path
 	      when 'voodoo'
 	         some_other_path
+	      when 'client'
+	        siteowners_path
 	      else
 	      
 	      	# If you want to raise an exception or have a default root for users without roles

@@ -63,8 +63,8 @@ class UsersController < ApplicationController
       if (!@user.client)
         @user.create_client(ballance: "0")
       end
-      @user.update_attribute :role, :client 
-      redirect_to siteowners_url
+      @user.update_attribute :role, :client
+      redirect_to action: :index
     end
   end
   def declientation
