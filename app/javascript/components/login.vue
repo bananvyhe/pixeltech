@@ -67,8 +67,8 @@
 	    	 
 	      dialogFormVisible: false,
 	      form: {
-	        email: 'admin@pixeltech,ru',
-	        password: '78803054'
+	        email: '',
+	        password: ''
 	      },
 	      formLabelWidth: '80px',
         rules: {

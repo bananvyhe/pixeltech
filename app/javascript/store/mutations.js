@@ -4,3 +4,6 @@ export const tokensend = (state,  token ) => {
 export const rolensend = (state,  role ) => {
 	state.role = role
 }
+export const username = (state,  username ) => {
+	state.username = username
+}

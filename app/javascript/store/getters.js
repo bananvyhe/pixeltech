@@ -4,3 +4,6 @@ export const token = (state) => {
 export const role = (state) => {
 	return state.role
 } 
+export const username = (state) => {
+	return state.username 
+}
