@@ -1,9 +1,10 @@
 class SiteownersController < ApplicationController
   before_action :set_siteowner, only: [:show, :edit, :update, :destroy]
-
+  require 'yandex_money/api'
   # GET /siteowners
   # GET /siteowners.json
   def index
+    # instance_id = YandexMoney::ExternalPayment.get_instance_id(CLIENT_ID)
     @siteowners = Siteowner.all
   end
 
