@@ -1,6 +1,6 @@
 <template>
 	<div class="topside">
-		<div v-if="$store.getters.token != null">{{this.$store.getters.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role}} </div>
+		<div v-if="$store.getters.token != null">{{this.$store.getters.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role}}{{this.$store.getters.token}} </div>
 		<div v-if="$store.getters.token == null" > 
       <reg></reg>
     </div>
