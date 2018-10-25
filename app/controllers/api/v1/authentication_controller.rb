@@ -11,7 +11,7 @@ class Api::V1::AuthenticationController < ApiController
          render json: { errors: "Неверный пароль." }
       end
     else
-      render json: { errors: "Емайл не зарегестрирован." }
+      render json: { errors: "Емайл не зарегистрирован." }
     end
   end
  
