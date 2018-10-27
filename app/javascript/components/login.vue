@@ -27,7 +27,6 @@
 		    <el-form-item prop="password" size="mini" label="Пароль:">
 		      <el-input type="password" v-model="form.password" auto-complete="off"></el-input>
 		    </el-form-item><div>
-				{{error}}
 			</div>
 		    <el-form-item size="mini">
 			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
@@ -40,6 +39,8 @@
 
 <script>
 	import axios from 'axios'
+	 
+
 	// var state = {
 	// 	token: localStorage.getItem("token")
 	// }
@@ -140,9 +141,12 @@
 		    		console.log(response.data.errors)
 		    		this.error = response.data.errors;
 		    	}else{
-		    		this.$store.commit('tokensend', response.data)
+		    		  this.$store.commit('tokensend', response.data)
+		  		// const token = resp.data.token
+		  		// localStorage.setItem('user-token', token)
 		    	location.reload(true);
 		    	}
+
 		    	
 		    	// this.$store.commit('tokensend', response.data)
 		    	// location.reload(true);

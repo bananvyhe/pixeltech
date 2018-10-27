@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
   <head>
     <title>Разработка веб-приложений, сайтов с необходимыми вам возможностями</title>
@@ -18,7 +18,7 @@
   </head>
   <body >
     <div id="topsidepanel"></div>
-    <% if current_user.try(:client? || :admin?) %>
+    <% if current_user.try(:client? && :admin? && :superadmin?) %>
            <div class="railsblock">
             <% if user_signed_in? %>
               <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
