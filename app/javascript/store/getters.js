@@ -1,3 +1,6 @@
+export const exp = (state) => {
+	return state.exp
+}
 export const token = (state) => {
 	return state.token
 }

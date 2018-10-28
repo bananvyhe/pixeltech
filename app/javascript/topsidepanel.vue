@@ -1,6 +1,6 @@
 <template>
 	<div class="topside">
-		<div v-if="$store.getters.token != null">{{this.$store.getters.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role}}{{this.$store.getters.token}} </div>
+		<div v-if="$store.getters.token != null">{{this.$store.getters.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role}} {{this.$store.getters.token}} ------ {{this.$store.getters.exp}} </div>
 		<div v-if="$store.getters.token == null" > 
       <reg></reg>
     </div>
@@ -36,6 +36,8 @@
 				this.$store.commit('rolensend', role)
 				let username = decodedJwtData.username
 				this.$store.commit('username', username)
+				let exp = decodedJwtData.exp
+				this.$store.commit('expsend', exp)
 	  	}
 	  }
 	}

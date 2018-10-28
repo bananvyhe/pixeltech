@@ -1,3 +1,9 @@
+// export const loginUser = (state)  => {
+//       state.token = true;
+//     } 
+export const expsend = (state,  exp ) => {
+	state.exp = exp
+}
 export const tokensend = (state,  token ) => {
 	state.token = token
 }

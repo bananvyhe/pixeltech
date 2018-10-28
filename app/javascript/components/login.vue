@@ -142,6 +142,7 @@
 		    		this.error = response.data.errors;
 		    	}else{
 		    		  this.$store.commit('tokensend', response.data)
+		    		// this.$store.commit('loginUser');
 		  		// const token = resp.data.token
 		  		// localStorage.setItem('user-token', token)
 		    	location.reload(true);
