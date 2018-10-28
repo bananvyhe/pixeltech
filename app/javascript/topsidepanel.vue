@@ -41,14 +41,24 @@
 				var current_time = new Date().getTime() / 1000;
 				if (current_time > this.$store.getters.exp) { 
 					this.$store.commit('tokensend', null) 
-						axios.delete('/users/sign_out', {
+					axios.delete('/users/sign_out', {
 			    }).then((response) => {
-	      	window.location.href = '/';
-		      // location.reload(true);
-		    }) 
+	      		window.location.href = '/';
+		      	// location.reload(true);
+		    	}) 
 					console.log('expired token') 
 
 				}
+				// if (current_time + (this.$store.getters.exp/2)  > this.$store.getters.exp) { 
+				// 	this.$store.commit('tokensend', null) 
+				// 	axios.delete('/users/sign_out', {
+			 //    }).then((response) => {
+	   //    		window.location.href = '/';
+		  //     	// location.reload(true);
+		  //   	}) 
+				// 	console.log('expired token') 
+
+				// }
 
 	  	}
 	  }
