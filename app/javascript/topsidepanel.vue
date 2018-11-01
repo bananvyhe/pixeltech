@@ -1,6 +1,6 @@
 <template>
 	<div class="topside">
-		<div v-if="$store.getters.token != null">{{this.$store.getters.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role}} {{this.$store.getters.token}} ------ {{this.$store.getters.exp}} </div>
+		<div v-if="$store.getters.token != null">{{this.$store.getters.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role}}<br>Ацесс токен: {{this.$store.getters.token.token}}  {{this.$store.getters.exp}}<br> Рефреш токен: {{this.$store.getters.token.refreshToken}} {{this.$store.getters.exp2}}</div>
 		<div v-if="$store.getters.token == null" > 
       <reg></reg>
     </div>
@@ -24,6 +24,7 @@
 		data() {
 			return {
 	    	token: '',
+	    	refreshToken: '',
 	    	} 
 	  },
 	  mounted() {
@@ -38,6 +39,15 @@
 				this.$store.commit('username', username)
 				let exp = decodedJwtData.exp
 				this.$store.commit('expsend', exp)
+
+				this.refreshToken = this.$store.getters.token.refreshToken
+				
+				let jwtData2 = this.refreshToken.split('.')[1]
+				let decodedJwtJsonData2 = window.atob(jwtData2)
+				let decodedJwtData2 = JSON.parse(decodedJwtJsonData2)
+				let exp2 = decodedJwtData2.exp 
+				this.$store.commit('expsend2', exp2)
+
 				var current_time = new Date().getTime() / 1000;
 				if (current_time > this.$store.getters.exp) { 
 					this.$store.commit('tokensend', null) 

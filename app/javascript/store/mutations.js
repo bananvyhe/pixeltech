@@ -4,8 +4,12 @@
 export const expsend = (state,  exp ) => {
 	state.exp = exp
 }
-export const tokensend = (state,  token ) => {
-	state.token = token
+export const expsend2 = (state,  exp2 ) => {
+	state.exp2 = exp2
+}
+export const tokensend = (state,  token, refreshToken) => {
+	state.token = token,
+	state.refreshToken = refreshToken
 }
 export const rolensend = (state,  role ) => {
 	state.role = role

@@ -5,7 +5,9 @@ class Api::V1::AuthenticationController < ApiController
     user = User.find_by(email: params[:user][:email])
     if user
       if user.valid_password? params[:user][:password]
-        render json: { token: JsonWebToken.encode(sub: user.id, role: user.role, username: user.username )}
+        render json: { token: JsonWebToken.encode(sub: user.id, role: user.role, username: user.username ),
+           refreshToken: JsonWebToken.refr(sub: user.id)
+        }
         sign_in user
       else
          render json: { errors: "Неверный пароль." }
