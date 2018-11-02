@@ -1,6 +1,6 @@
 <template>
 	<div class="topside">
-		<div v-if="$store.getters.token != null">{{this.$store.getters.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role}}<br>Ацесс токен: {{this.$store.getters.token.token}}  {{this.$store.getters.exp}}<br> Рефреш токен: {{this.$store.getters.token.refreshToken}} {{this.$store.getters.exp2}}</div>
+		<div v-if="$store.getters.token != null">{{this.$store.getters.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role}}<br>Ацесс токен: {{this.$store.getters.token.token}} -- Истекает через: {{timeConversion(this.$store.getters.exp)}}<br> Рефреш токен: {{this.$store.getters.token.refreshToken}} -- Истекает через: {{timeConversion(this.$store.getters.exp2)}}</div>
 		<div v-if="$store.getters.token == null" > 
       <reg></reg>
     </div>
@@ -27,27 +27,36 @@
 	    	refreshToken: '',
 	    	} 
 	  },
+	  methods: {
+	  	timeConversion: function (millisec){
+	  		var current_time = new Date().getTime() / 1000;
+	  		
+	  		var millisecremains = millisec - current_time
+	  		console.log(millisecremains)
+	  	 var seconds = (millisecremains ).toFixed(1);
+
+        var minutes = (millisecremains / (  60)).toFixed(1);
+
+        var hours = (millisecremains / (  60 * 60)).toFixed(1);
+
+        var days = (millisecremains / (  60 * 60 * 24)).toFixed(1);
+
+        if (seconds  < 60) {
+		            return seconds + " Sec";
+		        } else if (minutes < 60) {
+		            return minutes + " Min";
+		        } else if (hours < 24) {
+		            return hours + " Hrs";
+		        } else {
+		            return days + " Days"
+		        }
+		      }
+	  },
 	  mounted() {
-	  	// function timeConversion(millisec) {
+	  	function timeConversion(millisec) {
 
-    //     var seconds = (millisec / 1000).toFixed(1);
-
-    //     var minutes = (millisec / (1000 * 60)).toFixed(1);
-
-    //     var hours = (millisec / (1000 * 60 * 60)).toFixed(1);
-
-    //     var days = (millisec / (1000 * 60 * 60 * 24)).toFixed(1);
-
-    //     if (seconds < 60) {
-		  //           return seconds + " Sec";
-		  //       } else if (minutes < 60) {
-		  //           return minutes + " Min";
-		  //       } else if (hours < 24) {
-		  //           return hours + " Hrs";
-		  //       } else {
-		  //           return days + " Days"
-		  //       }
-		  //   }
+       
+		    }
 	  	if (this.$store.getters.token != null) {
 	  		axios.defaults.headers.common['Authorization'] = 
                                 'Bearer ' + this.$store.getters.token.refreshToken;
