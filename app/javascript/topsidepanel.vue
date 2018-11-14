@@ -136,6 +136,7 @@
 @import "_variables";
 @import "_extends";
 .topside {
+	z-index: 4000;
 	lost-flex-container: row;
 	position: absolute;
 	right: 0;

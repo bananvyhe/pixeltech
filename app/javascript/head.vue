@@ -36,7 +36,7 @@
         </div>
       	<div class="borcon">
       		<div  class="cont">
-  					<div class="plashka"><div class="overpla"><p>{{cont}}</p></div></div>
+  					<div class="plashka tada"><div class="overpla"><p>{{cont}}</p></div></div>
   				</div> 
           <div class="formsZone">
             <div v-if="$store.getters.token == null" >
@@ -99,7 +99,8 @@ export default {
 			// ],
 			callback: function () { 
 				// self.activatorclass = true;
-        
+        $('.cont').addClass('tada');
+
 				console.log( 'ended' ); 
 			}}).play();
 		this.tween();
@@ -201,6 +202,9 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+.test {
+  background: #dad;
+}
 .bganjs {
   background: url('./images/scheme.svg?id="+Math.random()');
 }
@@ -385,10 +389,113 @@ export default {
   background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
   -webkit-background-size: 3px 3px;
   -moz-background-size: 3px 3px;
-  background-size: 3px 3px;
-  
-  
+  background-size: 3px 3px; 
 }
+.tada {
+  animation: tada 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+ 
+}
+
+@-webkit-keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+
+
+.shake-bottom {
+  animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+@keyframes shake-bottom {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1.8s;
   transition-delay: 0s;
