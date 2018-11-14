@@ -64,7 +64,7 @@ export default {
     	activatorclass: false,
     	subj: 'Development, Programming, Interface UX Design Ruby on Rails + Vue.js',
       title: "Pixeltech",
-      cont: " Voodoo: test login here "
+      cont: " Voodoo power"
     }
   },
   updated(){
@@ -357,15 +357,15 @@ export default {
   background-color: color($spacecadet blackness(80%));
   text-align: left;
 	/*margin: 0 5em 0 5em;*/
-	width: 12.1em;
+	width: 7.2em;
 /*@extend %screenbg;*/
 	margin: 0.40em 0.4em 0 0em;
 	p {
 		margin-bottom: spacing(0);
 		color: color($str4 shade(5%));
-		padding: 0.2em 0em 0em 1.0em;
+		padding: 0.2em 0em 0em 0.6em;
 	}
-	min-width: 10em;
+	min-width: 7em;
 }
 .plashka {
  padding-bottom: 0.2em;
@@ -373,7 +373,7 @@ export default {
 }
 .overpla { 
   overflow: hidden;
-  width: 11.3em;
+  width: 6.7em;
 }
 .dotted {
   
