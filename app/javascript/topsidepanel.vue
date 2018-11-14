@@ -1,5 +1,5 @@
 <template>
-	<div class="topside">
+	<div class="topside" v-bind:style="styleObject">
 		<div v-if="$store.getters.token != null">{{this.$store.getters.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role}}<br>Ацесс токен: {{this.$store.getters.token.token}} -- Истекает через: {{timeConversion(this.$store.getters.exp)}}<br> Рефреш токен: {{this.$store.getters.token.refreshToken}} -- Истекает через: {{timeConversion(this.$store.getters.exp2)}}</div>
 		<div v-if="$store.getters.token == null" > 
       <reg></reg>
@@ -26,6 +26,21 @@
 	    	token: '',
 	    	refreshToken: '',
 	    	} 
+	  },
+	  computed: {
+    	styleObject: function () {
+       	var tok = this.$store.getters.token
+        if (tok != null) {
+        	return {
+        		position: 'relative'
+        	}
+         	
+       	}else{
+         	return {
+        		position: 'absolute'
+        	}
+       	}
+      }
 	  },
 	  methods: {
 	  	timeConversion: function (millisec){
@@ -135,7 +150,7 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
-.topside {
+.topside { 
 	z-index: 4000;
 	lost-flex-container: row;
 	position: absolute;
