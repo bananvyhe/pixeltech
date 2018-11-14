@@ -85,18 +85,18 @@ export default {
   var scrambleText = new ScrambleText( cont,
 		{
 			timeOffset : 100,
-			chars: [
-				'安','以','宇','衣','於',
-				'加','幾','久','計','己',
-				'左','之','寸','世','曽',
-				'太','知','川','天','止',
-				'奈','仁','奴','称','乃',
-				'波','比','不','部','保',
-				'末','美','武','女','毛',
-				'也','為','由','恵','与',
-				'良','利','留','礼','呂',
-				'和','遠','无'
-			],
+			// chars: [
+			// 	'安','以','宇','衣','於',
+			// 	'加','幾','久','計','己',
+			// 	'左','之','寸','世','曽',
+			// 	'太','知','川','天','止',
+			// 	'奈','仁','奴','称','乃',
+			// 	'波','比','不','部','保',
+			// 	'末','美','武','女','毛',
+			// 	'也','為','由','恵','与',
+			// 	'良','利','留','礼','呂',
+			// 	'和','遠','无'
+			// ],
 			callback: function () { 
 				// self.activatorclass = true;
         
@@ -107,7 +107,9 @@ export default {
     setTimeout(function(){
       // self.cropText();
        scrambleText.start();
-    },7000 );
+    },4000 );
+
+
   },
   methods: {
     nulltoken: function (){
@@ -357,13 +359,13 @@ export default {
   background-color: color($spacecadet blackness(80%));
   text-align: left;
 	/*margin: 0 5em 0 5em;*/
-	width: 7.2em;
+	width: 8.4em;
 /*@extend %screenbg;*/
 	margin: 0.40em 0.4em 0 0em;
 	p {
 		margin-bottom: spacing(0);
 		color: color($str4 shade(5%));
-		padding: 0.2em 0em 0em 0.6em;
+		padding: 0.2em 0em 0em 1.1em;
 	}
 	min-width: 7em;
 }
@@ -373,7 +375,7 @@ export default {
 }
 .overpla { 
   overflow: hidden;
-  width: 6.7em;
+  width: 7.4em;
 }
 .dotted {
   
