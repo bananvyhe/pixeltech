@@ -62,9 +62,9 @@ export default {
   data: function () {
     return {
     	activatorclass: false,
-    	subj: 'Разработка веб-приложений, сайтов на Ruby on Rails + Vue.js',
+    	subj: 'Development, Programming, Interface UX Design Ruby on Rails + Vue.js',
       title: "Pixeltech",
-      cont: "VooDoo Cyber Team"
+      cont: " Voodoo: test login here "
     }
   },
   updated(){
@@ -85,18 +85,18 @@ export default {
   var scrambleText = new ScrambleText( cont,
 		{
 			timeOffset : 100,
-			// chars: [
-			// 	'安','以','宇','衣','於',
-			// 	'加','幾','久','計','己',
-			// 	'左','之','寸','世','曽',
-			// 	'太','知','川','天','止',
-			// 	'奈','仁','奴','称','乃',
-			// 	'波','比','不','部','保',
-			// 	'末','美','武','女','毛',
-			// 	'也','為','由','恵','与',
-			// 	'良','利','留','礼','呂',
-			// 	'和','遠','无'
-			// ],
+			chars: [
+				'安','以','宇','衣','於',
+				'加','幾','久','計','己',
+				'左','之','寸','世','曽',
+				'太','知','川','天','止',
+				'奈','仁','奴','称','乃',
+				'波','比','不','部','保',
+				'末','美','武','女','毛',
+				'也','為','由','恵','与',
+				'良','利','留','礼','呂',
+				'和','遠','无'
+			],
 			callback: function () { 
 				// self.activatorclass = true;
         
@@ -357,7 +357,7 @@ export default {
   background-color: color($spacecadet blackness(80%));
   text-align: left;
 	/*margin: 0 5em 0 5em;*/
-	width: 10.5em;
+	width: 12.1em;
 /*@extend %screenbg;*/
 	margin: 0.40em 0.4em 0 0em;
 	p {
@@ -373,7 +373,7 @@ export default {
 }
 .overpla { 
   overflow: hidden;
-  width: 9.7em;
+  width: 11.3em;
 }
 .dotted {
   
