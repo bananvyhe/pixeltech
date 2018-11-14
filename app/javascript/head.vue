@@ -67,6 +67,7 @@ export default {
       cont: " Voodoo power"
     }
   },
+  
   updated(){
   
   },
