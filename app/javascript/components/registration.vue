@@ -216,8 +216,8 @@
  
 .reg  {
   z-index: 4000;
-  position: absolute;
-  right: 4.6em;
+ /* position: absolute;*/
+ /* right: 4.6em;*/
 }
 
 /*.reg {

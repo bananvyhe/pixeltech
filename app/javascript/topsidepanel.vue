@@ -58,8 +58,7 @@
        
 		    }
 	  	if (this.$store.getters.token != null) {
-	  		axios.defaults.headers.common['Authorization'] = 
-                                'Bearer ' + this.$store.getters.token.refreshToken;
+	  		// axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.getters.token.token;
 	  		this.token = this.$store.getters.token.token
 	  		let jwtData = this.token.split('.')[1]
 				let decodedJwtJsonData = window.atob(jwtData)
@@ -87,22 +86,30 @@
 			  //   }).then((response) => {
 	    //   		window.location.href = '/';
 		   //  	}) 
-		    		axios.post('/api/v1/refresh', {
-		    			usernameid: usid
-		        	
-		        // password_confirmation: this.form.password_confirmation
+		    		axios.post('/api/v1/refr', {
+		    			headers: {
+			  				'Authorization': "bearer " + this.$store.getters.token.refreshToken
+							},   
+		    			usernameid: usid,
+
+		        	// headers: {'Authorization': "bearer " + this.$store.getters.token.token}
+		        	 
+		       
 		       
 			    }).then((response) => {
+
 	      		if (response.data.errors) {
 		    		console.log(response.data.errors)
 		    		this.error = response.data.errors;
 		    	}else{
-		    		  this.$store.commit('tokensend', response.data)
-		    		// this.$store.commit('loginUser');
-		  		// const token = resp.data.token
-		  		// localStorage.setItem('user-token', token)
-		    	location.reload(true);
-		    	}
+		    		  this.$store.commit('tokensend', response.data),
+ 
+				    		// this.$store.commit('loginUser');
+				  		// const token = resp.data.token
+				  		// localStorage.setItem('user-token', token)
+				    	location.reload(true);
+
+				    }
 
 		    	}) 
 					console.log('expired token') 
@@ -130,6 +137,10 @@
 @import "_extends";
 .topside {
 	lost-flex-container: row;
+	position: absolute;
+	right: 0;
+	padding: 0.35em;
 }
+
  
 </style>
