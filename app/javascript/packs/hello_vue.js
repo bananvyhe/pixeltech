@@ -39,9 +39,9 @@ Vue.component("temperature", {
   	},
   	deleteuser: function(id ) {
   		axios.delete('/users/'+id, {
-  			headers: {
-  				'Authorization': "bearer " + this.$store.getters.token 
-				} 
+  		// 	headers: {
+  		// 		'Authorization': "bearer " + this.$store.getters.token 
+				// } 
   		})
   		.then(response => {
   			var ids = String(id)

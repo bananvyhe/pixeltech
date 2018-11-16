@@ -285,22 +285,22 @@ Devise.setup do |config|
 end
 
 module Devise
-   module Strategies
-     class JWT < Base
-       def valid?
-         request.headers["Authorization"].present?
-       end
+  module Strategies
+    class JWT < Base
+      def valid?
+        request.headers["Authorization"].present?
+      end
 
-       def authenticate!
-         token   = request.headers.fetch("Authorization", "").split(" ").last
-         payload = JsonWebToken.decode(token)
-         success! User.find(payload["exp", "sub", "role"])
-       rescue ::JWT::ExpiredSignature
-         fail! "Auth token has expired"
-       rescue ::JWT::DecodeError
-         fail! "Auth token is invalid"
-       end
-     end
-   end
- 
- end
+      def authenticate!
+        token   = request.headers.fetch("Authorization", "").split(" ").last
+        payload = JsonWebToken.decode(token)
+        success! User.find(payload["exp", "sub", "role"])
+      rescue ::JWT::ExpiredSignature
+        fail! "Auth token has expired"
+         
+      rescue ::JWT::DecodeError
+        fail! "Auth token is invalid"
+      end
+    end
+  end
+end
