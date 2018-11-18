@@ -131,6 +131,7 @@
 			// },
 	  	handle: function () {
 	  		this.onSubmit();
+	  		this.dialogFormVisible = false
 	  		// this.dialogFormVisible = false
 	  	},
 		  onSubmit: function () {
@@ -148,11 +149,11 @@
 		    	}else{
 		    		  this.$store.commit('tokensend', response.data)
 		    		  this.token = this.$store.getters.token 
-	  		let jwtData = this.token.access.split('.')[1]
-				let decodedJwtJsonData = window.atob(jwtData)
-				let decodedJwtData = JSON.parse(decodedJwtJsonData)
-				let role = decodedJwtData
-				this.$store.commit('rolensend', role)
+				  		let jwtData = this.token.access.split('.')[1]
+							let decodedJwtJsonData = window.atob(jwtData)
+							let decodedJwtData = JSON.parse(decodedJwtJsonData)
+							let role = decodedJwtData
+							this.$store.commit('rolensend', role)
 		    		// this.$store.commit('loginUser');
 		  		// const token = resp.data.token
 		  		// localStorage.setItem('user-token', token)
