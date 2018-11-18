@@ -67,7 +67,7 @@
 		        }
 		      }
 	  },
-	  beforeMount() {
+	  mounted() {
 	  	function timeConversion(millisec) {
 
        
