@@ -3,12 +3,12 @@
   <temperature></temperature>
 </div>
 <% if current_user.user? %>
-<p style="text-align: center; padding-top: 1em;">
-	Доступ на сайт —  после одобрения аккаунта администратором.
-</p>
+	<p style="text-align: center; padding-top: 1em;">
+		Доступ на сайт —  после одобрения аккаунта администратором.
+	</p>
 <% end %>
 <script type="text/x-template" id="temperature-template">
-	<div class="usersblock" v-if="this.$store.getters.role == 'superadmin' || this.$store.getters.role == 'admin' ">
+	<div class="usersblock" v-if="this.$store.getters.role.role == 'superadmin' || this.$store.getters.role.role == 'admin' ">
 		 <!-- {{ this.$store.getters.role }} -->
 		<% @users.each do |user| %>
 			<div class="userstring del<%= user.id %>" >

@@ -1,6 +1,6 @@
 <template>
-	<div class="topside" v-bind:style="styleObject">
-		<div v-if="$store.getters.token != null">{{this.$store.getters.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role}}<br>Ацесс токен: {{this.$store.getters.token.token}} -- Истекает через: {{timeConversion(this.$store.getters.exp)}}<br> Рефреш токен: {{this.$store.getters.token.refreshToken}} -- Истекает через: {{timeConversion(this.$store.getters.exp2)}}</div>
+	<div  class="topside" v-bind:style="styleObject"> 
+		<div v-if="$store.getters.role != null">{{this.$store.getters.role.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}<br>Ацесс токен: {{this.$store.getters.token.access}} -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}<br> Рефреш токен: {{this.$store.getters.token.refresh}} -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}</div>
 		<div v-if="$store.getters.token == null" > 
       <reg></reg>
     </div>
@@ -67,32 +67,30 @@
 		        }
 		      }
 	  },
-	  mounted() {
+	  beforeMount() {
 	  	function timeConversion(millisec) {
 
        
 		    }
 	  	if (this.$store.getters.token != null) {
 	  		// axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.getters.token.token;
-	  		this.token = this.$store.getters.token.token
-	  		let jwtData = this.token.split('.')[1]
-				let decodedJwtJsonData = window.atob(jwtData)
-				let decodedJwtData = JSON.parse(decodedJwtJsonData)
-				let role = decodedJwtData.role
-				this.$store.commit('rolensend', role)
-				let username = decodedJwtData.username
-				this.$store.commit('username', username)
-				let exp = decodedJwtData.exp
-				this.$store.commit('expsend', exp)
-				let usid = decodedJwtData.sub	
-				console.log(usid)  
-				this.refreshToken = this.$store.getters.token.refreshToken
+	  		
+			
+
+
+				// let username =  decodedJwtData.username
+				// this.$store.commit('username', username)
+				// let exp = decodedJwtData.access_expires_at
+				// this.$store.commit('expsend', acctokexp)
+				// let usid = decodedJwtData.sub	
+				// console.log(usid)  
+				this.refreshToken = this.$store.getters.token.refresh
 				
 				let jwtData2 = this.refreshToken.split('.')[1]
 				let decodedJwtJsonData2 = window.atob(jwtData2)
 				let decodedJwtData2 = JSON.parse(decodedJwtJsonData2)
-				let exp2 = decodedJwtData2.exp 
-				this.$store.commit('expsend2', exp2)
+				// let exp2 = decodedJwtData2.exp 
+				// this.$store.commit('expsend2', exp2)
 
 				var current_time = new Date().getTime() / 1000;
 				if (current_time > this.$store.getters.exp) { 

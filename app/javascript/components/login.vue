@@ -107,11 +107,16 @@
 			nulltoken: function (){
       	axios.delete('/users/sign_out', {
 		    }) 
-		    .then((response) => {
+		    .then((response) => {	 window.location.href = '/';
+		    	this.$store.commit('rolensend', null) 
 		      this.$store.commit('tokensend', null) 
+ 			
+	 
+		        //  this.$store.commit('tokensend', null) 
+		        //   this.$store.commit('tokensend', null) 
 		    })
 	      .then((response) => {
-	      	window.location.href = '/';
+	      	// 
 		      // location.reload(true);
 		    })    
 		    // setTimeout(function(){
@@ -142,6 +147,12 @@
 		    		this.error = response.data.errors;
 		    	}else{
 		    		  this.$store.commit('tokensend', response.data)
+		    		  this.token = this.$store.getters.token 
+	  		let jwtData = this.token.access.split('.')[1]
+				let decodedJwtJsonData = window.atob(jwtData)
+				let decodedJwtData = JSON.parse(decodedJwtJsonData)
+				let role = decodedJwtData
+				this.$store.commit('rolensend', role)
 		    		// this.$store.commit('loginUser');
 		  		// const token = resp.data.token
 		  		// localStorage.setItem('user-token', token)
