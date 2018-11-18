@@ -1,6 +1,6 @@
 <template>
 	<div  class="topside" v-bind:style="styleObject"> 
-		<div v-if="$store.getters.role != null">{{this.$store.getters.role.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}<br>Ацесс токен: {{this.$store.getters.token.access}} -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}<br> Рефреш токен: {{this.$store.getters.token.refresh}} -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}</div>
+		<div v-if="$store.getters.token != null">{{this.$store.getters.role.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}<br>Ацесс токен: {{this.$store.getters.token.access}} -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}<br> Рефреш токен: {{this.$store.getters.token.refresh}} -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}</div>
 		<div v-if="$store.getters.token == null" > 
       <reg></reg>
     </div>
