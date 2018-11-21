@@ -1,7 +1,7 @@
 class Api::V1::AuthenticationController < ApiController
    skip_before_action :authenticate_user!
-   include JWTSessions::RailsAuthorization
-   rescue_from JWTSessions::Errors::Unauthorized, with: :not_authorized
+ 
+
 
 
   def create
@@ -12,9 +12,12 @@ class Api::V1::AuthenticationController < ApiController
         #  refreshToken: JsonWebToken.refr(id: user.id) 
         # }
         payload = { sub: user.id, role: user.role, username: user.username }
-        session = JWTSessions::Session.new(payload: payload)
+        refresh_payload = { user_id: user.id }
+        session = JWTSessions::Session.new(payload: payload, refresh_payload: refresh_payload )
         
-        render json: session.login
+         
+         render json: session.login
+
         sign_in user
       else
          render json: { errors: "Неверный пароль." }
@@ -23,9 +26,6 @@ class Api::V1::AuthenticationController < ApiController
       render json: { errors: "Емайл не зарегистрирован." }
     end
   end
-   private
-  def not_authorized
-    render json: { error: 'Not authorized' }, status: :unauthorized
-  end
+  
 
  end

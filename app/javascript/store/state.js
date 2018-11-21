@@ -2,7 +2,8 @@ export default {
 	number: 10,
 	// token: !!localStorage.getItem('token'),
 	token: '',
-	// refreshToken: '',
+	
+	refreshToken: '',
 	// exp: '',
 	// exp2: '',
 	role: '',

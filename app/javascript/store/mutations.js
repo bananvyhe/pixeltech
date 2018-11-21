@@ -11,6 +11,10 @@ export const tokensend = (state,  token ) => {
 	state.token = token 
 	 
 }
+export const refreshsend = (state,  token ) => {
+	state.refreshToken = token 
+	 
+}
 export const rolensend = (state,  role ) => {
 	state.role = role
 }

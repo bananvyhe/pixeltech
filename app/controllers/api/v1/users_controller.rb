@@ -1,5 +1,6 @@
 class Api::V1::UsersController < Api2Controller
   before_action :set_users
+  
 	def index
     render json: @user
   end

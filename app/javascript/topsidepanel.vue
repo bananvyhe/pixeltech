@@ -1,6 +1,6 @@
 <template>
-	<div  class="topside" v-bind:style="styleObject"> 
-		<div v-if="$store.getters.token != null">{{this.$store.getters.role.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}<br>Ацесс токен: {{this.$store.getters.token.access}} -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}<br> Рефреш токен: {{this.$store.getters.token.refresh}} -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}</div>
+	<div  class="topside"v-bind:style="styleObject"> {{this.$store.getters.token}}
+		<div v-if="$store.getters.token != null">{{this.$store.getters.role.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}<br>Ацесс токен: {{this.$store.getters.token.access}} -- Истекает через: {{ this.$store.getters.token.access_expires_at }}<br> Рефреш токен: {{this.$store.getters.token.refresh}} -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}</div> 
 		<div v-if="$store.getters.token == null" > 
       <reg></reg>
     </div>
@@ -44,6 +44,7 @@
 	  },
 	  methods: {
 	  	timeConversion: function (millisec){
+	  		console.log(millisec)
 	  		var current_time = new Date().getTime() / 1000;
 	  		
 	  		var millisecremains = millisec - current_time
@@ -73,6 +74,7 @@
        
 		    }
 	  	if (this.$store.getters.token != null) {
+	  		console.log('dgdgdsdgas43342523521')
 	  		// axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.getters.token.token;
 	  		
 			
@@ -89,11 +91,13 @@
 				let jwtData2 = this.refreshToken.split('.')[1]
 				let decodedJwtJsonData2 = window.atob(jwtData2)
 				let decodedJwtData2 = JSON.parse(decodedJwtJsonData2)
+				this.refreshToken = decodedJwtData2
+				let usid = decodedJwtData2.user_id
 				// let exp2 = decodedJwtData2.exp 
 				// this.$store.commit('expsend2', exp2)
-
+				console.log(decodedJwtJsonData2) 
 				var current_time = new Date().getTime() / 1000;
-				if (current_time > this.$store.getters.exp) { 
+				if (current_time > this.$store.getters.role.exp) { 
 					// this.$store.commit('tokensend', null) 
 					// axios.delete('/users/sign_out', {
 			  //   }).then((response) => {
@@ -101,7 +105,7 @@
 		   //  	}) 
 		    		axios.post('/api/v1/refr', {
 		    			headers: {
-			  				'Authorization': "bearer " + this.$store.getters.token.refreshToken
+			  				'Authorization': "bearer " + this.$store.getters.token.access
 							},   
 		    			usernameid: usid,
 

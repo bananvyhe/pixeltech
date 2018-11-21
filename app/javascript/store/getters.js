@@ -7,9 +7,10 @@
 export const token = (state) => {
 	return state.token
 }
-// export const refreshToken = (state) => {
-// 	return state.refreshToken
-// }
+ 
+export const refreshToken = (state) => {
+	return state.refreshToken
+}
 export const role = (state) => {
 	return state.role
 } 
