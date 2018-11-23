@@ -99,10 +99,7 @@
 			// this.$store.commit('rolesend', this.role)
 	  },
 	  watch: {
-	  	error: function(val){
-	  		 this.$message.error(val);
-	  	}
-	  },
+		},
 	  methods: {
 			nulltoken: function (){
       	axios.delete('/users/sign_out', {
@@ -146,6 +143,17 @@
 		    	if (response.data.errors) {
 		    		console.log(response.data.errors)
 		    		this.error = response.data.errors;
+
+	  		var self = this
+	  		this.$message.error({
+	  		 	showClose: true,
+	  		 	message: self.error,
+	  		 	onClose: function(){
+	  		 		self.error = ''	
+		  		}
+	  		});
+	  	
+
 		    	}else{
 		    		  this.$store.commit('tokensend', response.data)
 		    		  this.token = this.$store.getters.token 

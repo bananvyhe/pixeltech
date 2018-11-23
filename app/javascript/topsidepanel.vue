@@ -44,7 +44,7 @@
 	  },
 	  methods: {
 	  	timeConversion: function (millisec){
-	  		console.log(millisec)
+	  		// console.log(millisec)
 	  		var current_time = new Date().getTime() / 1000;
 	  		
 	  		var millisecremains = millisec - current_time
