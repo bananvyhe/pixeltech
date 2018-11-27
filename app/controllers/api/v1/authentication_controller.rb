@@ -1,4 +1,5 @@
 class Api::V1::AuthenticationController < ApiController
+   
    skip_before_action :authenticate_user!
  
 
@@ -11,9 +12,9 @@ class Api::V1::AuthenticationController < ApiController
         # render json: { token: JsonWebToken.encode(sub: user.id, role: user.role, username: user.username ) ,
         #  refreshToken: JsonWebToken.refr(id: user.id) 
         # }
-        payload = { sub: user.id, role: user.role, username: user.username }
+        payload = { user_id: user.id, role: user.role, username: user.username }
         refresh_payload = { user_id: user.id }
-        session = JWTSessions::Session.new(payload: payload, refresh_payload: refresh_payload )
+        session = JWTSessions::Session.new(payload: payload, refresh_payload: refresh_payload)
         
          
          render json: session.login

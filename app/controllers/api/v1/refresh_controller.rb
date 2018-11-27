@@ -1,17 +1,19 @@
 class Api::V1::RefreshController < ApiController
-   before_action :authorize_refresh_by_access_request!
-
+   before_action :authorize_refresh_request!
+   skip_before_action :authenticate_user!
   def create
-    session = JWTSessions::Session.new(payload: claimless_payload, refresh_by_access_allowed: true)
-    tokens = session.refresh_by_access_payload do
-      # notify the support
-      raise JWTSessions::Errors::Unauthorized, 'Malicious activity detected'
-    end
-    response.set_cookie(JWTSessions.access_cookie,
-                        value: tokens[:access],
-                        httponly: true,
-                        secure: Rails.env.production?)
-
-    render json: { csrf: tokens[:csrf] }
+    session = JWTSessions::Session.new(payload: access_payload)
+    render json: session.refresh(found_token)
   end
+  def access_payload
+    # payload here stands for refresh token payload
+     user = User.find_by!(id: payload['user_id'])
+    { user_id: user.id, role: user.role, username: user.username }
+  end
+  def current_user
+   
+    @current_user ||= User.find(payload['user_id'])
+   
+  end
+  
  end

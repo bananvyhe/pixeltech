@@ -287,9 +287,9 @@ end
 module Devise
   module Strategies
     class JWT < Base
-      def valid?
-        request.headers["Authorization"].present?
-      end
+      # def valid?
+      #   request.headers["Authorization"].present?
+      # end
 
       def authenticate!
         

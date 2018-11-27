@@ -1,6 +1,8 @@
 <template>
-	<div  class="topside"v-bind:style="styleObject"> {{this.$store.getters.token}}
-		<div v-if="$store.getters.token != null">{{this.$store.getters.role.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}<br>Ацесс токен: {{this.$store.getters.token.access}} -- Истекает через: {{ this.$store.getters.token.access_expires_at }}<br> Рефреш токен: {{this.$store.getters.token.refresh}} -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}</div> 
+	<div  class="topside"v-bind:style="styleObject"> {{this.$store.getters.token}}<br><br>{{this.$store.getters.role}}
+		<div v-if="$store.getters.token != null">{{this.$store.getters.role.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}<br>Ацесс токен: {{this.$store.getters.token.access}}
+			<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}<br> Рефреш токен: {{this.$store.getters.token.refresh}}
+			<br><br> -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}</div> 
 		<div v-if="$store.getters.token == null" > 
       <reg></reg>
     </div>
@@ -68,7 +70,7 @@
 		        }
 		      }
 	  },
-	  mounted() {
+	  updated() {
 	  	function timeConversion(millisec) {
 
        
@@ -103,9 +105,11 @@
 			  //   }).then((response) => {
 	    //   		window.location.href = '/';
 		   //  	}) 
-		    		axios.post('/api/v1/refr', {
+		    		axios({
+		    			method: 'post',
+		    			url: '/api/v1/refr',
 		    			headers: {
-			  				'Authorization': "bearer " + this.$store.getters.token.access
+			  				'X-Refresh-Token': this.$store.getters.token.refresh,
 							},   
 		    			usernameid: usid,
 
