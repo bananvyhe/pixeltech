@@ -26,7 +26,7 @@
 		data() {
 			return {
 	    	token: '',
-	    	refreshToken: '',
+	    	accessToken: '',
 	    	} 
 	  },
 	  computed: {
@@ -71,10 +71,9 @@
 		      }
 	  },
 	  updated() {
-	  	function timeConversion(millisec) {
 
-       
-		    }
+	  },
+	  mounted() {
 	  	if (this.$store.getters.token != null) {
 	  		console.log('dgdgdsdgas43342523521')
 	  		// axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.getters.token.token;
@@ -87,53 +86,56 @@
 				// let exp = decodedJwtData.access_expires_at
 				// this.$store.commit('expsend', acctokexp)
 				// let usid = decodedJwtData.sub	
-				// console.log(usid)  
-				this.refreshToken = this.$store.getters.token.refresh
-				
-				let jwtData2 = this.refreshToken.split('.')[1]
+				// console.log(usid) 
+				this.token = this.$store.getters.token 
+				  		let jwtData = this.token.access.split('.')[1]
+							let decodedJwtJsonData = window.atob(jwtData)
+							let decodedJwtData = JSON.parse(decodedJwtJsonData)
+							let role = decodedJwtData
+							this.$store.commit('rolensend', role)
+
+
+				this.accessToken = this.$store.getters.token.access
+				console.log(this.accessToken) 
+				let jwtData2 = this.accessToken.split('.')[1]
 				let decodedJwtJsonData2 = window.atob(jwtData2)
 				let decodedJwtData2 = JSON.parse(decodedJwtJsonData2)
-				this.refreshToken = decodedJwtData2
+				this.accessToken = decodedJwtData2
 				let usid = decodedJwtData2.user_id
 				// let exp2 = decodedJwtData2.exp 
 				// this.$store.commit('expsend2', exp2)
 				console.log(decodedJwtJsonData2) 
 				var current_time = new Date().getTime() / 1000;
 				if (current_time > this.$store.getters.role.exp) { 
-					// this.$store.commit('tokensend', null) 
-					// axios.delete('/users/sign_out', {
-			  //   }).then((response) => {
-	    //   		window.location.href = '/';
-		   //  	}) 
-		    		axios({
-		    			method: 'post',
-		    			url: '/api/v1/refr',
-		    			headers: {
-			  				'X-Refresh-Token': this.$store.getters.token.refresh,
-							},   
-		    			usernameid: usid,
+							// this.$store.commit('tokensend', null) 
+							// axios.delete('/users/sign_out', {
+					  //   }).then((response) => {
+			    //   		window.location.href = '/';
+				   //  	}) 
+		    	axios({
+	    			method: 'post',
+	    			url: '/api/v1/refr',
+	    			headers: {
+		  				'X-Refresh-Token': this.$store.getters.token.refresh,
+						} 
 
 		        	// headers: {'Authorization': "bearer " + this.$store.getters.token.token}
-		        	 
-		       
-		       
-			    }).then((response) => {
+		        }).then((response) => {
 
 	      		if (response.data.errors) {
-		    		console.log(response.data.errors)
-		    		this.error = response.data.errors;
-		    	}else{
+			    		console.log(response.data.errors)
+			    		this.error = response.data.errors;
+		    		}else{
 		    		  this.$store.commit('tokensend', response.data),
- 
+ 							console.log(response.data) 
+
 				    		// this.$store.commit('loginUser');
 				  		// const token = resp.data.token
 				  		// localStorage.setItem('user-token', token)
-				    	location.reload(true);
+				    	//location.reload(true);
 
 				    }
-
-		    	}) 
-					console.log('expired token') 
+		    	})
 
 				}
 				// if (current_time + (this.$store.getters.exp/2)  > this.$store.getters.exp) { 
