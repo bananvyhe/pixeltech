@@ -57,7 +57,7 @@ Vue.component("temperature", {
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
  
-import { Button, Dialog, Select, Form, FormItem, Input, Option, Message } from 'element-ui';
+import { Button, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox } from 'element-ui';
 Vue.prototype.$message = Message;  
 Vue.use(Button) 
 Vue.use(Dialog)  
@@ -66,7 +66,7 @@ Vue.use(FormItem)
 Vue.use(Input)  
 Vue.use(Select)
 Vue.use(Option)
-
+Vue.use(Checkbox)
 
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))

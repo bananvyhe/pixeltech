@@ -8,6 +8,7 @@ class Api::V1::UsersController < Api2Controller
   def show
     # render json: @location, include: ['recordings']
   end
+  
 
   private
 

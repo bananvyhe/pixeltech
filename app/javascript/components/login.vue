@@ -31,6 +31,7 @@
 		    <el-form-item size="mini">
 			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
 				  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
+				  <el-checkbox v-model="checked">Запомнить</el-checkbox>
 				</el-form-item>
 		 	</el-form>
 		</el-dialog>
@@ -63,13 +64,15 @@
         }
       };
 	    return {
+	    	 
+	    	checked: false,
 	    	// token: state,
 	    	error: '',
 	    	 
 	      dialogFormVisible: false,
 	      form: {
 	        email: '',
-	        password: ''
+	        password: '' 
 	      },
 	      formLabelWidth: '80px',
         rules: {
@@ -102,11 +105,12 @@
 		},
 	  methods: {
 			nulltoken: function (){
+					    	this.$store.commit('rolensend', null) 
+		      this.$store.commit('tokensend', null) 
       	axios.delete('/users/sign_out', {
 		    }) 
 		    .then((response) => {	 window.location.href = '/';
-		    	this.$store.commit('rolensend', null) 
-		      this.$store.commit('tokensend', null) 
+	
  			
 	 
 		        //  this.$store.commit('tokensend', null) 
@@ -135,8 +139,9 @@
 		    axios.post('/api/v1/auth', {
 		      user: {
 		        email: this.form.email,
-		        password: this.form.password
-		        // password_confirmation: this.form.password_confirmation
+		        password: this.form.password,
+		        checked: true
+						// password_confirmation: this.form.password_confirmation
 		      }
 		    })
 		    .then(response => {

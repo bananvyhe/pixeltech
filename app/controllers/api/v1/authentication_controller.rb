@@ -1,10 +1,6 @@
 class Api::V1::AuthenticationController < ApiController
    
-   skip_before_action :authenticate_user!
- 
-
-
-
+  skip_before_action :authenticate_user!
   def create
     user = User.find_by(email: params[:user][:email])
     if user
@@ -15,11 +11,14 @@ class Api::V1::AuthenticationController < ApiController
         payload = { user_id: user.id, role: user.role, username: user.username }
         refresh_payload = { user_id: user.id }
         session = JWTSessions::Session.new(payload: payload, refresh_payload: refresh_payload)
-        
-         
-         render json: session.login
-
-        sign_in user
+        tokens = session.login 
+        render json: { access: tokens[:access], refresh: tokens[:refresh] }
+        if  params[:user][:checked] == true
+          user.remember_me = true
+           sign_in(:user, user )
+        else
+          sign_in user
+        end 
       else
          render json: { errors: "Неверный пароль." }
       end

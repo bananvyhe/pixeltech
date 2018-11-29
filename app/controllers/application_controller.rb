@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
   def not_authorized
     render json: { error: 'Неавторизован' }, status: :unauthorized
   end

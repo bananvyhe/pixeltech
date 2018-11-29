@@ -155,6 +155,16 @@ body {
 .el-button {
   margin: 0.25em 0.25em 0.25em 0.25em;
 }
+.el-checkbox{
+  padding-top: 0.1em;
+  margin-left: 10px;
+}
+.el-checkbox__label{
+
+   padding-bottom: 0.1em;
+   vertical-align: middle;
+
+}
 .el-form-item {
    display: flex;
 }

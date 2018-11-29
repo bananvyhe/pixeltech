@@ -1,5 +1,5 @@
 <template>
-	<div  class="topside"v-bind:style="styleObject"> {{this.$store.getters.token}}<br><br>{{this.$store.getters.role}}
+	<div  class="topside"v-bind:style="styleObject"> {{this.$store.getters.token}}<br><br>{{this.$store.getters.refreshToken}}
 		<div v-if="$store.getters.token != null">{{this.$store.getters.role.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}<br>Ацесс токен: {{this.$store.getters.token.access}}
 			<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}<br> Рефреш токен: {{this.$store.getters.token.refresh}}
 			<br><br> -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}</div> 
@@ -116,12 +116,10 @@
 	    			method: 'post',
 	    			url: '/api/v1/refr',
 	    			headers: {
-		  				'X-Refresh-Token': this.$store.getters.token.refresh,
+		  				'X-Refresh-Token': this.$store.getters.token.refresh
 						} 
-
 		        	// headers: {'Authorization': "bearer " + this.$store.getters.token.token}
 		        }).then((response) => {
-
 	      		if (response.data.errors) {
 			    		console.log(response.data.errors)
 			    		this.error = response.data.errors;
