@@ -1,5 +1,5 @@
 <template>
-	<div class="log">{{checked}}
+	<div class="log">
 		<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
       <el-button type="primary" plain size="mini"   @click="nulltoken">
       	Выйти
