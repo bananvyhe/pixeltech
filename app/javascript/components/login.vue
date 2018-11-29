@@ -1,5 +1,5 @@
 <template>
-	<div class="log">
+	<div class="log">{{checked}}
 		<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
       <el-button type="primary" plain size="mini"   @click="nulltoken">
       	Выйти
@@ -65,7 +65,7 @@
       };
 	    return {
 	    	 
-	    	checked: true,
+	    	checked: '',
 	    	// token: state,
 	    	error: '',
 	    	 
@@ -96,7 +96,13 @@
 	    }
 	  },
 	  mounted(){
-	  	 
+	  	//разлогинить при условии отсутсвя флажка и истечении ацесса
+	  	 var current_time = new Date().getTime() / 1000;
+				if (current_time > this.$store.getters.role.exp) {
+				 if  (this.checked == false){ 
+					this.nulltoken()
+					}
+				}
 	  },
 	  created(){
 			// this.$store.commit('rolesend', this.role)
@@ -180,7 +186,7 @@
 		    	//  localStorage.setItem("token", response.data);
 		    	// this.token = response.data;
 		    	// console.log('scacs');
-		       // location.reload(true);
+		        location.reload(true);
 		    })
 		    .catch(error => {
 		     

@@ -10,13 +10,15 @@ class Api::V1::AuthenticationController < ApiController
         # }
         payload = { user_id: user.id, role: user.role, username: user.username }
         refresh_payload = { user_id: user.id }
-        session = JWTSessions::Session.new(payload: payload, refresh_payload: refresh_payload)
+        session = JWTSessions::Session.new(payload: payload, refresh_payload:  refresh_payload )
         tokens = session.login 
-        render json: { access: tokens[:access], refresh: tokens[:refresh] }
+       
         if  params[:user][:checked] == true
           user.remember_me = true
+           render json: { access: tokens[:access], refresh: tokens[:refresh]}
            sign_in(:user, user )
         else
+          render json: { access: tokens[:access]}
           sign_in user
         end 
       else

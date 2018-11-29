@@ -122,7 +122,9 @@
 		        }).then((response) => {
 	      		if (response.data.errors) {
 			    		console.log(response.data.errors)
+ 							
 			    		this.error = response.data.errors;
+			    
 		    		}else{
 		    		  this.$store.commit('tokensend', response.data),
  							console.log(response.data) 
