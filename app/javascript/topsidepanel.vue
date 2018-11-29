@@ -130,7 +130,7 @@
 				    		// this.$store.commit('loginUser');
 				  		// const token = resp.data.token
 				  		// localStorage.setItem('user-token', token)
-				    	//location.reload(true);
+				    location.reload(true);
 
 				    }
 		    	})
