@@ -96,14 +96,22 @@
 	    }
 	  },
 	  mounted(){
-	  	if (!this.$store.getters.token.refresh  ) {
-	  		console.log('666')
-	  		//разлогинить при условии отсутсвя флажка и истечении ацесса
-	  		var current_time = new Date().getTime() / 1000;
-				if (current_time > this.$store.getters.role.exp) {
-					this.nulltoken() 	 
+	  	try{
+				if (!this.$store.getters.token.refresh  ) {
+		  		console.log('666')
+		  		//разлогинить при условии отсутсвя флажка и истечении ацесса
+		  		var current_time = new Date().getTime() / 1000;
+					if (current_time > this.$store.getters.role.exp) {
+						this.nulltoken() 	 
 				}
 			}
+			//code that causes an error
+
+			}catch(e){
+
+			 
+			}
+	  	
 	  },
 	  created(){
 			// this.$store.commit('rolesend', this.role)

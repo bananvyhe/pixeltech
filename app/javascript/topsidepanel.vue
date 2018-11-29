@@ -1,5 +1,5 @@
 <template>
-	<div  class="topside"v-bind:style="styleObject"> {{this.$store.getters.token}}<br><br>{{this.$store.getters.refreshToken}}
+	<div  class="topside"v-bind:style="styleObject"> {{this.$store.getters.token}}<br><br>
 		<div v-if="$store.getters.token != null">{{this.$store.getters.role.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}<br>Ацесс токен: {{this.$store.getters.token.access}}
 			<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}<br> Рефреш токен: {{this.$store.getters.token.refresh}}
 			<br><br> -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}</div> 
