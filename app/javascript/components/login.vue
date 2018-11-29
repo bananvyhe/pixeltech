@@ -140,7 +140,7 @@
 		      user: {
 		        email: this.form.email,
 		        password: this.form.password,
-		        checked: true
+		        checked: this.checked
 						// password_confirmation: this.form.password_confirmation
 		      }
 		    })
