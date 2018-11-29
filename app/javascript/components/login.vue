@@ -1,5 +1,5 @@
 <template>
-	<div class="log">
+	<div class="log"> 
 		<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
       <el-button type="primary" plain size="mini"   @click="nulltoken">
       	Выйти
@@ -65,7 +65,7 @@
       };
 	    return {
 	    	 
-	    	checked: '',
+	    	checked: false,
 	    	// token: state,
 	    	error: '',
 	    	 
@@ -96,13 +96,14 @@
 	    }
 	  },
 	  mounted(){
-	  	//разлогинить при условии отсутсвя флажка и истечении ацесса
-	  	 var current_time = new Date().getTime() / 1000;
+	  	if (!this.$store.getters.token.refresh  ) {
+	  		console.log('666')
+	  		//разлогинить при условии отсутсвя флажка и истечении ацесса
+	  		var current_time = new Date().getTime() / 1000;
 				if (current_time > this.$store.getters.role.exp) {
-				 if  (this.checked == false){ 
-					this.nulltoken()
-					}
+					this.nulltoken() 	 
 				}
+			}
 	  },
 	  created(){
 			// this.$store.commit('rolesend', this.role)
@@ -111,15 +112,12 @@
 		},
 	  methods: {
 			nulltoken: function (){
-					    	this.$store.commit('rolensend', null) 
-		      this.$store.commit('tokensend', null) 
+				this.$store.commit('rolensend', null) 
+		  	this.$store.commit('tokensend', null) 
       	axios.delete('/users/sign_out', {
 		    }) 
 		    .then((response) => {	 window.location.href = '/';
-	
- 			
-	 
-		        //  this.$store.commit('tokensend', null) 
+ 				//  this.$store.commit('tokensend', null) 
 		        //   this.$store.commit('tokensend', null) 
 		    })
 	      .then((response) => {
