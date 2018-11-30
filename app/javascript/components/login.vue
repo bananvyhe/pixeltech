@@ -31,6 +31,7 @@
 		    <el-form-item size="mini">
 			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
 				  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
+				  &nbsp; 
 				  <el-checkbox v-model="checked">Запомнить</el-checkbox>
 				</el-form-item>
 		 	</el-form>
