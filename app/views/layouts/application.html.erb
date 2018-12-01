@@ -19,7 +19,7 @@
   <body >
     <div id="topsidepanel"></div>
 
-    <% if current_user.try(:admin?) or  current_user.try(:superadmin?) or  current_user.try(:user?)%>
+    <% if current_user.try(:admin?) or  current_user.try(:superadmin?) or  current_user.try(:client?)%>
            <div class="railsblock">
             <% if user_signed_in? %>
               <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
