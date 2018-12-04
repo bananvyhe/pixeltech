@@ -180,6 +180,7 @@
 							let decodedJwtData = JSON.parse(decodedJwtJsonData)
 							let role = decodedJwtData
 							this.$store.commit('rolensend', role)
+							location.reload(true);
 		    		// this.$store.commit('loginUser');
 		  		// const token = resp.data.token
 		  		// localStorage.setItem('user-token', token)
@@ -193,7 +194,7 @@
 		    	//  localStorage.setItem("token", response.data);
 		    	// this.token = response.data;
 		    	// console.log('scacs');
-		        location.reload(true);
+		        //location.reload(true);
 		    })
 		    .catch(error => {
 		     
