@@ -1,0 +1,10 @@
+<p>Подождите, Вы будете перенаправлены на страницу Яндекс Денег</p>
+<form action="<%= @acs_uri %>" id="ext_auth_required">
+  <input name="cps_context_id" type="hidden" value="<%= @acs_params["cps_context_id"] %>"></input>
+  <input name="paymentType" type="hidden" value="<%= @acs_params["paymentType"] %>"></input>
+</form>
+<script>
+  
+  document.forms["ext_auth_required"].submit();
+
+</script>
