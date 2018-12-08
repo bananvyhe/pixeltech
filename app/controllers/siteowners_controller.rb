@@ -3,7 +3,7 @@ class SiteownersController < ApplicationController
   #Пополнение счета
   
   def replenishment
-    @amount = 100
+    @amount = 10
   end
 
   def payment_process
