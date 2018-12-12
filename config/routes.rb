@@ -18,10 +18,10 @@ Rails.application.routes.draw do
     get :declientation, on: :member
   end
   
-  get   '/кошелек/пополнить', :to=> 'siteowners#replenishment', :as => :replenishment
-  post  '/пополнение/счета', :to=> 'siteowners#payment_process', :as => :payment_process
-  get   '/платеж/не/прошел', :to=> 'siteowners#payment_fail', :as => :payment_fail
-  get   '/платеж/прошел/:secure_code', :to=> 'siteowners#payment_success', :as => :payment_success 
+  # get   '/кошелек/пополнить', :to=> 'siteowners#replenishment', :as => :replenishment
+  # post  '/пополнение/счета', :to=> 'siteowners#payment_process', :as => :payment_process
+  # get   '/платеж/не/прошел', :to=> 'siteowners#payment_fail', :as => :payment_fail
+  # get   '/платеж/прошел/:secure_code', :to=> 'siteowners#payment_success', :as => :payment_success 
 
 
   resources :lists do
