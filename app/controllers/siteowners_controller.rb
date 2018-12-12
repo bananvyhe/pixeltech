@@ -1,13 +1,15 @@
 class SiteownersController < ApplicationController
-  before_action :set_siteowner, only: [:show, :edit, :update, :destroy]
+  include YandexMoneyHelper
+
+  before_action :set_siteowner, only: [:show, :edit, :update, :destroy ]
   #Пополнение счета
   
   def replenishment
-    @amount = 10
+    @amount = 5
   end
 
   def payment_process
-    @params[:amount] = {:type => :integer, :in => 1..10000.0}
+    params[:amount] = {:type => :integer, :in => 1..10000.0}
     return if !sanitize_params
 
     @amount = params[:amount]
@@ -169,6 +171,7 @@ class SiteownersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def siteowner_params
-      params.fetch(:siteowner, {})
+       params.fetch(:siteowner, {}) 
+       # params.require(:siteowner).permit( :amount )
     end
 end
