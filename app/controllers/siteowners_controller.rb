@@ -173,7 +173,7 @@ class SiteownersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def siteowner_params
-       params.fetch(:siteowner, {}) 
-       # params.require(:siteowner).permit( :amount )
+       #params.fetch(:siteowner, {}) 
+       params.require(:siteowner).permit( :amount )
     end
 end
