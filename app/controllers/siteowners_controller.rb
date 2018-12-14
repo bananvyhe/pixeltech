@@ -106,7 +106,8 @@ class SiteownersController < ApplicationController
 
   # GET /siteowners
   # GET /siteowners.json
-  def index
+  def index 
+    @amount = 'Habrahabr'
     # instance_id = YandexMoney::ExternalPayment.get_instance_id(CLIENT_ID)
     @siteowners = Siteowner.all
   end
@@ -129,6 +130,7 @@ class SiteownersController < ApplicationController
   # POST /siteowners.json
   def create
     @siteowner = Siteowner.new(siteowner_params)
+    @amount = siteowner_params[:amount]
 
     respond_to do |format|
       if @siteowner.save
