@@ -38,7 +38,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post :auth, to: "authentication#create"
-       post :refr, to: "refresh#create"
+      post :refr, to: "refresh#create"
+            post :inb, to: "inboxes#create"
+
       resources :users
       resources :locations do
         resources :recordings
