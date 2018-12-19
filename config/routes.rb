@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
    
+  resources :inboxes
   resources :siteowners
   resources :clients
   resources :voodoos
