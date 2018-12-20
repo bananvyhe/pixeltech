@@ -91,8 +91,8 @@ $redorange: #C14953;
 @custom-media --only-1600more-screen (width >= 1560px);
 @custom-media --only-big-screen (width >= 1920px);
 %roundbgstrw {
-  background: #fff;
-  background: rgba(255, 255, 255, 0.5);
+  background: #000;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 0.1em;
   padding: 0em 0.6em 0.1em 0.8em;
 }
