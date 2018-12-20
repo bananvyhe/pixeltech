@@ -113,7 +113,8 @@ td {
  
 }
 tbody tr:nth-child(even) {
-  background: $onyx;
+  background: color( $HeadBackColor  shade(20%));
+
  }
 thead tr {
   background: $bone;
