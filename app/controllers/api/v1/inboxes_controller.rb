@@ -71,6 +71,7 @@ class Api::V1::InboxesController < ApiController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inbox_params
-      params.as_json.require(:inbox).permit(:body, :amount, :operation_id, :unaccepted)
+      data = params.as_json
+      data.require(:inbox).permit(:body, :amount, :operation_id, :unaccepted)
     end
 end
