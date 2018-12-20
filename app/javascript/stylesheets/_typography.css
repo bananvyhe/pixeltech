@@ -80,6 +80,8 @@ strong {
   font-weight: bold;
 }
 a {
+  color: $str4;
+  text-decoration: none;
 }
 ul,
 ol { 
@@ -111,7 +113,7 @@ td {
  
 }
 tbody tr:nth-child(even) {
-  background: $eggshell;
+  background: $onyx;
  }
 thead tr {
   background: $bone;
