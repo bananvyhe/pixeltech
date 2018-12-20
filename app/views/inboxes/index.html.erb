@@ -10,9 +10,9 @@
   <tbody>
     <% @inboxes.each do |inbox| %>
       <tr>
-        <td><%= inbox.body %>1</td>
-        <td><%= inbox.operation_id %>2</td>
-         <td><%= inbox.amount %>2</td> 
+        <!-- <td><%= inbox.body %>1</td> -->
+        <td><%= inbox.operation_id %>op_id</td>
+         <td><%= inbox.amount %> </td> 
         <td><%= link_to 'Show', inbox %></td>
         <td><%= link_to 'Edit', edit_inbox_path(inbox) %></td>
         <td><%= link_to 'Destroy', inbox, method: :delete, data: { confirm: 'Are you sure?' } %></td>

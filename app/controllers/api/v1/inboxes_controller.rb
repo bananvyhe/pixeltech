@@ -1,6 +1,9 @@
 class Api::V1::InboxesController < ApiController
   #before_action :set_inbox, only: [:show, :edit, :update, :destroy]
  skip_before_action :authenticate_user!
+ skip_before_action :require_no_authentication
+  clear_respond_to
+  respond_to :json
   # GET /inboxes
   # GET /inboxes.json
   def index
