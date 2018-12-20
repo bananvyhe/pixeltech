@@ -26,7 +26,7 @@ class Api::V1::InboxesController < ApiController
   # POST /inboxes
   # POST /inboxes.json
   def create
-    @inbox = Inbox.new(inbox_params)
+    @inbox = Inbox.new(inbox_params.as_json)
 
     respond_to do |format|
       if @inbox.save
