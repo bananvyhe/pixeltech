@@ -4,7 +4,7 @@ class InboxesController < ApplicationController
   # GET /inboxes
   # GET /inboxes.json
   def index
-    @inboxes = Inbox.all
+    @inboxes = Inbox.all.order(created_at: :desc)
   end
 
   # GET /inboxes/1
