@@ -26,7 +26,7 @@ class Api::V1::InboxesController < ApiController
   # POST /inboxes
   # POST /inboxes.json
   def create
-    @inbox = Inbox.new(inbox_params.as_json)
+    @inbox = Inbox.new(inbox_params)
 
     respond_to do |format|
       if @inbox.save
@@ -71,6 +71,6 @@ class Api::V1::InboxesController < ApiController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inbox_params
-      params.require(:inbox).permit(:body, :amount, :operation_id, :unaccepted)
+      params.as_json.require(:inbox).permit(:body, :amount, :operation_id, :unaccepted)
     end
 end
