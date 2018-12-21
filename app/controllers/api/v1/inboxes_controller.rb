@@ -26,52 +26,53 @@ class Api::V1::InboxesController < ApiController
   # POST /inboxes
   # POST /inboxes.json
   def create
-    @inbox = Inbox.new(inbox_params)
-
-    respond_to do |format|
-      if @inbox.save
-        format.html { redirect_to @inbox, notice: 'Inbox was successfully created.' }
-        format.json { render :show, status: :created, location: @inbox }
-      else
-        format.html { render :new }
-        format.json { render json: @inbox.errors, status: :unprocessable_entity }
-      end
-    end
+    @inbox = Inbox.new(:amount => params[:amount])
+    @inbox.save
+    #@inbox = Inbox.new({:amount => params[:amount], :operation_id => params[:operation_id]})
+    # respond_to do |format|
+    #   if @inbox.save
+    #     format.html { redirect_to @inbox, notice: 'Inbox was successfully created.' }
+    #     format.json { render :show, status: :created, location: @inbox }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @inbox.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /inboxes/1
   # PATCH/PUT /inboxes/1.json
-  def update
-    respond_to do |format|
-      if @inbox.update(inbox_params)
-        format.html { redirect_to @inbox, notice: 'Inbox was successfully updated.' }
-        format.json { render :show, status: :ok, location: @inbox }
-      else
-        format.html { render :edit }
-        format.json { render json: @inbox.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @inbox.update(inbox_params)
+  #       format.html { redirect_to @inbox, notice: 'Inbox was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @inbox }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @inbox.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /inboxes/1
   # DELETE /inboxes/1.json
-  def destroy
-    @inbox.destroy
-    respond_to do |format|
-      format.html { redirect_to inboxes_url, notice: 'Inbox was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @inbox.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to inboxes_url, notice: 'Inbox was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_inbox
-      @inbox = Inbox.find(params[:id])
-    end
+    # def set_inbox
+    #   @inbox = Inbox.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def inbox_params
-      data = params.as_json
-      data.require(:inbox).permit(:body, :amount, :operation_id, :unaccepted)
-    end
+    # def inbox_params
+    
+    #   params.require(:inbox).permit(:body, :amount, :operation_id, :unaccepted)
+    # end
 end
