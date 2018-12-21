@@ -26,7 +26,7 @@ class Api::V1::InboxesController < ApiController
   # POST /inboxes
   # POST /inboxes.json
   def create
-    @inbox = Inbox.new(:amount => params[:amount])
+    @inbox = Inbox.new({:amount => params[:amount],:operation_id => params[:operation_id]})
     @inbox.save
     #@inbox = Inbox.new({:amount => params[:amount], :operation_id => params[:operation_id]})
     # respond_to do |format|
