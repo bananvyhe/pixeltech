@@ -29,11 +29,12 @@ class Api::V1::InboxesController < ApiController
    
     @inbox = Inbox.new({:amount => params[:amount],:operation_id => params[:operation_id],:label => params[:label], :sha1_hash => params[:sha1_hash], :withdraw_amount => params[:withdraw_amount], :datetime => params[:datetime], :codepro => params[:codepro], :unaccepted => params[:unaccepted]})
 
-    @w = Digest::SHA1.hexdigest(@inbox.notification_type.to_s  + @inbox.operation_id.to_s  + @inbox.amount.to_s + @inbox.currency.to_s + @inbox.datetime.to_s + @inbox.sender.to_s + @inbox.codepro.to_s + secret_key.to_s + @inbox.label.to_s)
-    if @w == @inbox.sha1_hash 
-      @inbox.save
+    @w = Digest::SHA1.hexdigest("#{@inbox.notification_type}#{@inbox.operation_id}#{@inbox.amount}#{@inbox.currency}#{@inbox.datetime}#{@inbox.sender}#{@inbox.codepro}#{secret_key}#{@inbox.label}")
+
+    if @w != @inbox.sha1_hash 
+      return
     end 
-    
+    @inbox.save
     #@inbox = Inbox.new({:amount => params[:amount], :operation_id => params[:operation_id]})
     # respond_to do |format|
     #   if @inbox.save
