@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_23_153221) do
+ActiveRecord::Schema.define(version: 2018_12_24_120007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,9 @@ ActiveRecord::Schema.define(version: 2018_12_23_153221) do
     t.boolean "unaccepted"
     t.string "label"
     t.string "sha1_hash"
+    t.integer "withdraw_amount"
+    t.string "datetime"
+    t.boolean "codepro"
   end
 
   create_table "lists", force: :cascade do |t|
