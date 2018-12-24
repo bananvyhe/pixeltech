@@ -31,9 +31,9 @@ class Api::V1::InboxesController < ApiController
     @w = Digest::SHA1.hexdigest("#{@inbox.notification_type}#{@inbox.operation_id}#{@inbox.amount}#{@inbox.currency}#{@inbox.datetime}#{@inbox.sender}#{@inbox.codepro}#{@secret_key}#{@inbox.label}")
 
     if @w == @inbox.sha1_hash 
-      return
+      @inbox.save
     end 
-    @inbox.save
+    
     #@inbox = Inbox.new({:amount => params[:amount], :operation_id => params[:operation_id]})
     # respond_to do |format|
     #   if @inbox.save
