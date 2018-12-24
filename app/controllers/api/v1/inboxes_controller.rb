@@ -31,7 +31,7 @@ class Api::V1::InboxesController < ApiController
 
     @w = Digest::SHA1.hexdigest("#{@inbox.notification_type}#{@inbox.operation_id}#{@inbox.amount}#{@inbox.currency}#{@inbox.datetime}#{@inbox.sender}#{@inbox.codepro}#{secret_key}#{@inbox.label}")
 
-    if @w.hexdigest != @inbox.sha1_hash 
+    if @w != @inbox.sha1_hash 
       return
     end 
     @inbox.save
