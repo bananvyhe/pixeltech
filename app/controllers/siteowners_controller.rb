@@ -2,7 +2,7 @@ class SiteownersController < ApplicationController
   # include YandexMoneyHelper
   before_action :set_siteowner, only: [:show, :edit, :update, :destroy]
 
-  secret_key = Rails.application.credentials.secret_secret
+  
 
   #Пополнение счета
   
