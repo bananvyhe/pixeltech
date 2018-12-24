@@ -29,7 +29,7 @@ class Api::V1::InboxesController < ApiController
     secret_key = Rails.application.credentials.secret_secret
     @inbox = Inbox.new({:amount => params[:amount],:operation_id => params[:operation_id],:label => params[:label], :sha1_hash => params[:sha1_hash], :withdraw_amount => params[:withdraw_amount], :datetime => params[:datetime], :codepro => params[:codepro], :unaccepted => params[:unaccepted]})
 
-    @w = Digest::SHA1.hexdigest(:notification_type  + :operation_id  + :amount + :currency +:datetime + :sender + :codepro + secret_key + :label)
+    @w = Digest::SHA1.hexdigest(:notification_type.to_s  + :operation_id.to_s  + :amount.to_s + :currency.to_s +:datetime.to_s + :sender.to_s + :codepro.to_s + secret_key.to_s + :label.to_s)
     if @w = :sha1_hash 
       @inbox.save
     end 
