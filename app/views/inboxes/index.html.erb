@@ -15,6 +15,7 @@
         <td>sha1_hash</td>
         <td>datetime</td>
         <td>codepro</td> 
+        <td>unaccepted</td>
       </tr>
     </thead>
 
@@ -30,6 +31,7 @@
         <td><%= inbox.sha1_hash %> </td>
         <td><%= inbox.datetime %> </td>
         <td><%= inbox.codepro %> </td> 
+        <td><%= inbox.unaccepted %> </td> 
         <td><%= link_to 'Show', inbox %></td>
         <td><%= link_to 'Edit', edit_inbox_path(inbox) %></td>
         <td><%= link_to 'Destroy', inbox, method: :delete, data: { confirm: 'Are you sure?' } %></td>
