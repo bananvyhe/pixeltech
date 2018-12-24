@@ -1,7 +1,7 @@
 class Api::V1::InboxesController < ApiController
   #before_action :set_inbox, only: [:show, :edit, :update, :destroy]
- skip_before_action :authenticate_user!
- 
+  skip_before_action :authenticate_user!
+  secret_key = Rails.application.credentials.secret_secret
  
   # GET /inboxes
   # GET /inboxes.json
@@ -26,11 +26,11 @@ class Api::V1::InboxesController < ApiController
   # POST /inboxes
   # POST /inboxes.json
   def create
-    secret_key = Rails.application.credentials.secret_secret
+   
     @inbox = Inbox.new({:amount => params[:amount],:operation_id => params[:operation_id],:label => params[:label], :sha1_hash => params[:sha1_hash], :withdraw_amount => params[:withdraw_amount], :datetime => params[:datetime], :codepro => params[:codepro], :unaccepted => params[:unaccepted]})
 
-    @w = Digest::SHA1.hexdigest(:notification_type.to_s  + :operation_id.to_s  + :amount.to_s + :currency.to_s +:datetime.to_s + :sender.to_s + :codepro.to_s + secret_key.to_s + :label.to_s)
-    if @w = :sha1_hash 
+    @w = Digest::SHA1.hexdigest(@inbox.notification_type.to_s  + @inbox.operation_id.to_s  + @inbox.amount.to_s + @inbox.currency.to_s + @inbox.datetime.to_s + @inbox.sender.to_s + @inbox.codepro.to_s + secret_key.to_s + @inbox.label.to_s)
+    if @w == @inbox.sha1_hash 
       @inbox.save
     end 
     
