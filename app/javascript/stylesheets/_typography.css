@@ -117,5 +117,13 @@ tbody tr:nth-child(even) {
 
  }
 thead tr {
-  background: $bone;
+  adjust-font-size: fs tiny;
+  background: color( $HeadBackColor  shade(10%));
 } 
+thead td {
+  padding: 1em 2em;
+}
+thead td:nth-child(even) {
+  background: color( $HeadBackColor  shade(2%));
+
+ }

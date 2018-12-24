@@ -6,9 +6,21 @@
   <thead>
    
   </thead>
+    <thead>
+      <tr>
+        <td>operation_i</td>
+        <td>amount</td> 
+        <td>withdraw_amount</td>
+        <td>label</td> 
+        <td>sha1_hash</td>
+        <td>datetime</td>
+        <td>codepro</td> 
+      </tr>
+    </thead>
 
   <tbody>
     <% @inboxes.each do |inbox| %>
+      
       <tr>
         <!-- <td><%= inbox.body %>1</td> -->
         <td><%= inbox.operation_id %></td>
