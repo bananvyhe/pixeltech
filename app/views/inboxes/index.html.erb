@@ -8,7 +8,7 @@
   </thead>
     <thead>
       <tr>
-        <td>operation_i</td>
+        <td>operation_id</td>
         <td>amount</td> 
         <td>withdraw_amount</td>
         <td>label</td> 
@@ -16,6 +16,9 @@
         <td>datetime</td>
         <td>codepro</td> 
         <td>unaccepted</td>
+        <td>notification_type</td> 
+        <td>currency</td> 
+        <td>sender</td> 
       </tr>
     </thead>
 
@@ -32,6 +35,9 @@
         <td><%= inbox.datetime %> </td>
         <td><%= inbox.codepro %> </td> 
         <td><%= inbox.unaccepted %> </td> 
+        <td><%= inbox.notification_type %> </td> 
+        <td><%= inbox.currency %> </td> 
+        <td><%= inbox.sender %> </td> 
         <td><%= link_to 'Show', inbox %></td>
         <td><%= link_to 'Edit', edit_inbox_path(inbox) %></td>
         <td><%= link_to 'Destroy', inbox, method: :delete, data: { confirm: 'Are you sure?' } %></td>

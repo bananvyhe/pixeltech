@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_24_120007) do
+ActiveRecord::Schema.define(version: 2018_12_24_160407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,9 @@ ActiveRecord::Schema.define(version: 2018_12_24_120007) do
     t.integer "withdraw_amount"
     t.string "datetime"
     t.boolean "codepro"
+    t.string "notification_type"
+    t.string "currency"
+    t.string "sender"
   end
 
   create_table "lists", force: :cascade do |t|
