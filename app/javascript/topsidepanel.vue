@@ -27,7 +27,7 @@
 			return {
 	    	token: '',
 	    	accessToken: '',
-	    	} 
+	    } 
 	  },
 	  computed: {
     	styleObject: function () {
@@ -51,7 +51,7 @@
 	  		
 	  		var millisecremains = millisec - current_time
 	  		console.log(millisecremains)
-	  	 var seconds = (millisecremains ).toFixed(1);
+	  		var seconds = (millisecremains ).toFixed(1);
 
         var minutes = (millisecremains / (  60)).toFixed(1);
 
@@ -60,15 +60,15 @@
         var days = (millisecremains / (  60 * 60 * 24)).toFixed(1);
 
         if (seconds  < 60) {
-		            return seconds + " Sec";
-		        } else if (minutes < 60) {
-		            return minutes + " Min";
-		        } else if (hours < 24) {
-		            return hours + " Hrs";
-		        } else {
-		            return days + " Days"
-		        }
-		      }
+          return seconds + " Sec";
+        } else if (minutes < 60) {
+            return minutes + " Min";
+        } else if (hours < 24) {
+            return hours + " Hrs";
+        } else {
+            return days + " Days"
+        }
+		  }
 	  },
 	  updated() {
 
@@ -77,24 +77,18 @@
 	  	if (this.$store.getters.token != null) {
 	  		console.log('dgdgdsdgas43342523521')
 	  		// axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.getters.token.token;
-	  		
-			
-
-
-				// let username =  decodedJwtData.username
+	  		// let username =  decodedJwtData.username
 				// this.$store.commit('username', username)
 				// let exp = decodedJwtData.access_expires_at
 				// this.$store.commit('expsend', acctokexp)
 				// let usid = decodedJwtData.sub	
 				// console.log(usid) 
 				this.token = this.$store.getters.token 
-				  		let jwtData = this.token.access.split('.')[1]
-							let decodedJwtJsonData = window.atob(jwtData)
-							let decodedJwtData = JSON.parse(decodedJwtJsonData)
-							let role = decodedJwtData
-							this.$store.commit('rolensend', role)
-
-
+	  		let jwtData = this.token.access.split('.')[1]
+				let decodedJwtJsonData = window.atob(jwtData)
+				let decodedJwtData = JSON.parse(decodedJwtJsonData)
+				let role = decodedJwtData
+				this.$store.commit('rolensend', role)
 				this.accessToken = this.$store.getters.token.access
 				console.log(this.accessToken) 
 				let jwtData2 = this.accessToken.split('.')[1]
