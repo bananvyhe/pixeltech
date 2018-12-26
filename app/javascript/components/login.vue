@@ -98,17 +98,23 @@
 	  },
 	  mounted(){
 	  	try{
+	  		if (checklog == 'unlogged'){
+					this.nulltoken()
+					console.log('666')
+				}
 				if (!this.$store.getters.token.refresh  ) {
-		  		console.log('666')
+		  		
 		  		//разлогинить при условии отсутсвя флажка и истечении ацесса
 		  		var current_time = new Date().getTime() / 1000;
 					if (current_time > this.$store.getters.role.exp) {
-						this.nulltoken() 	 
+						this.nulltoken()	 
+					}
+
+				
 				}
-			}
 			//code that causes an error
 
-			}catch(e){
+				}catch(e){
 
 			 
 			}
@@ -125,7 +131,8 @@
 		  	this.$store.commit('tokensend', null) 
       	axios.delete('/users/sign_out', {
 		    }) 
-		    .then((response) => {	 window.location.href = '/';
+		    .then((response) => {	 
+		    	window.location.href = '/';
  				//  this.$store.commit('tokensend', null) 
 		        //   this.$store.commit('tokensend', null) 
 		    })
