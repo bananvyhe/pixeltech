@@ -1,45 +1,49 @@
 <!-- <p id="notice"><%= notice %></p> -->
 <!-- <iframe src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D1%85%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3&targets-hint=&default-sum=10&button-text=11&payment-type-choice=on&hint=&successURL=&quickpay=shop&account=410013909808332" width="100%" height="222"  frameborder="0" allowtransparency="true" scrolling="no"></iframe>
  -->
-<div class="basetext">
-  баланс: <%= @client.ballance%> руб.
-</div>
-<br>
- пополнить счет: 
-<!--  <%= @amount %> -->
-<form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">    
-  <input type="hidden" name="receiver" value="410013909808332">
-<!--   <input type="hidden" name="formcomment" value="Проект «Железный человек»: реактор холодного ядерного синтеза">
-  <input type="hidden" name="short-dest" value="Проект «Железный человек»: реактор холодного ядерного синтеза">   -->  
-  <input type="hidden" name="label" value="<%=current_user.id %>">    
-  <input type="hidden" name="quickpay-form" value="donate">    
-  <input type="hidden" name="targets" value="хостинг">    
-  <input   name="sum" value="2" data-type="number"> руб.   
-<!--   <input type="hidden" name="comment" value="Хотелось бы получить дистанционное управление.">     -->
-<!--   <input type="hidden" name="need-fio" value="true">    
-  <input type="hidden" name="need-email" value="true">    
-  <input type="hidden" name="need-phone" value="false">    
-  <input type="hidden" name="need-address" value="false">  -->   <br>
-  <label><input type="radio" name="paymentType" value="PC">Яндекс.Деньгами</label>  <br>  <label><input type="radio" name="paymentType" value="AC" checked="checked">Банковской картой</label>  <br>  <input type="submit" value="Перевести"></form>
+ <div class="mainframe">
+  <div class="basetext">
+    баланс: <%= @client.ballance%> руб.
+  </div>
+  <br>
+   пополнить счет: 
+  <!--  <%= @amount %> -->
+  <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">    
+    <input type="hidden" name="receiver" value="410013909808332">
+  <!--   <input type="hidden" name="formcomment" value="Проект «Железный человек»: реактор холодного ядерного синтеза">
+    <input type="hidden" name="short-dest" value="Проект «Железный человек»: реактор холодного ядерного синтеза">   -->  
+    <input type="hidden" name="label" value="<%=current_user.id %>">    
+    <input type="hidden" name="quickpay-form" value="donate">    
+    <input type="hidden" name="targets" value="хостинг">    
+    <input   name="sum" value="2" data-type="number"> руб.   
+  <!--   <input type="hidden" name="comment" value="Хотелось бы получить дистанционное управление.">     -->
+  <!--   <input type="hidden" name="need-fio" value="true">    
+    <input type="hidden" name="need-email" value="true">    
+    <input type="hidden" name="need-phone" value="false">    
+    <input type="hidden" name="need-address" value="false">  -->   <br>
+    <label><input type="radio" name="paymentType" value="PC">Яндекс.Деньгами</label>  <br>  <label><input type="radio" name="paymentType" value="AC" checked="checked">Банковской картой</label>  <br>  <input type="submit" value="Перевести"></form>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @siteowners.each do |siteowner| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= link_to 'Show', siteowner %></td>
-        <td><%= link_to 'Edit', edit_siteowner_path(siteowner) %></td>
-        <td><%= link_to 'Destroy', siteowner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-<%= link_to 'зачисления',  inboxes_path %>
-<%#= link_to 'New Siteowner', new_siteowner_path %>
+    <tbody>
+      <% @siteowners.each do |siteowner| %>
+        <tr>
+          <td><%= link_to 'Show', siteowner %></td>
+          <td><%= link_to 'Edit', edit_siteowner_path(siteowner) %></td>
+          <td><%= link_to 'Destroy', siteowner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <%= link_to 'зачисления',  inboxes_path %>
+  <%#= link_to 'New Siteowner', new_siteowner_path %>
+
+     
+ </div>
