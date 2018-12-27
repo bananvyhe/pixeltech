@@ -38,7 +38,9 @@ class Api::V1::InboxesController < ApiController
       earn = params[:withdraw_amount]
       @fee.ballance += earn.to_i
       @fee.save
-      render status: 200
+      respond_to do |format|
+        format.all { render :nothing => true, :status => 200, :content_type => 'text/html' }
+      end
       # respond_to do |format|
       #   format.html { status: :ok }
       #   format.json {  status: :ok }
