@@ -1,14 +1,32 @@
 <template>
-	<div  class="topside smalltext"v-bind:style="styleObject"> {{this.$store.getters.token}}<br><br>
-		<div v-if="$store.getters.token != null">{{this.$store.getters.role.username}} &nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}<br>Ацесс токен: {{this.$store.getters.token.access}}
-			<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}<br> Рефреш токен: {{this.$store.getters.token.refresh}}
-			<br><br> -- Истекает через: {{timeConversion(this.$store.getters.role.exp)}}</div> 
-		<div v-if="$store.getters.token == null" > 
-      <reg></reg>
-    </div>
-		<div>
-			<log></log>
+	<div class="smalltext main" v-bind:style="styleObject"> 
+		<!-- <div v-if="$store.getters.token != null" > -->
+			<div class="logohead">
+				<div v-if="$store.getters.token != null" >
+					Site hosting tech
+				</div>
+			</div>
+	<!-- 	</div> -->
+<!-- 		{{this.$store.getters.token}}
+		<br><br> -->
+		<div class="maininfo">
+			<div v-if="$store.getters.token != null" class="info">
+				<!-- {{this.$store.getters.role.username}} 
+				&nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}
+				<br>Ацесс токен: {{this.$store.getters.token.access}}
+				<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}
+				<br> Рефреш токен: {{this.$store.getters.token.refresh}}
+				<br><br> -->
+				&nbsp;&nbsp; Истекает через: {{timeConversion(this.$store.getters.role.exp)}}
+			</div> 
+			<div v-if="$store.getters.token == null" > 
+	      <reg></reg>
+	    </div>
+			<div>
+				<log></log>
+			</div>
 		</div>
+		
   </div>
 </template>
 <script>
@@ -152,13 +170,30 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
-.topside { 
+.main {
+	lost-column: 1/1 flex; 
 	z-index: 4000;
 	lost-flex-container: row;
+}
+/*.topside { 
 	position: absolute;
 	right: 0;
 	padding: 0.35em;
+}*/
+.logohead{
+	lost-column: 1/5; 
+	align-self: center;
+	padding: 0 1em;
 }
-
+.maininfo {
+	align-self: center;
+	lost-column: 4/5; 
+	lost-flex-container: row;
+	justify-content: flex-end;
+	.info {
+		align-self: center;
+		padding: 0 1em;
+	}
+}
  
 </style>
