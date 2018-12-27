@@ -33,18 +33,12 @@ class Api::V1::InboxesController < ApiController
     @inbox.check = @check
     
     if @check == @inbox.sha1_hash 
-      respond_to do |format|
-        if @inbox.save
-          format.html { status: "success"}
-          format.json { status: "success"}
-        end
-      end
-      
+      @inbox.save
       @fee =  Client.find_by_user_id(params[:label])
       earn = params[:withdraw_amount]
       @fee.ballance += earn.to_i
       @fee.save
-
+      render status: 200
     end 
     
     #@inbox = Inbox.new({:amount => params[:amount], :operation_id => params[:operation_id]})
