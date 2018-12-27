@@ -38,7 +38,8 @@ class Api::V1::InboxesController < ApiController
       earn = params[:withdraw_amount]
       @fee.ballance += earn.to_i
       @fee.save
-      render status: 200
+      format.html { status: :ok }
+      format.json {  status: :ok }
     end 
     
     #@inbox = Inbox.new({:amount => params[:amount], :operation_id => params[:operation_id]})
