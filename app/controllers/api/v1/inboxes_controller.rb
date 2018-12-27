@@ -35,8 +35,9 @@ class Api::V1::InboxesController < ApiController
     if @check == @inbox.sha1_hash 
       @inbox.save
       @fee =  Client.find_by_user_id(params[:label])
-      @fee.ballance += @inbox.withdraw_amount
+      @fee.ballance += params[:withdraw_amount]
       @fee.save
+      
     end 
     
     #@inbox = Inbox.new({:amount => params[:amount], :operation_id => params[:operation_id]})
