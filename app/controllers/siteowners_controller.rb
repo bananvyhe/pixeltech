@@ -107,7 +107,8 @@ class SiteownersController < ApplicationController
   # GET /siteowners
   # GET /siteowners.json
   def index 
-    @amount = 'Habrahabr'
+    @client =  Client.find_by_user_id(current_user.id)
+    
     # instance_id = YandexMoney::ExternalPayment.get_instance_id(CLIENT_ID)
     @siteowners = Siteowner.all
   end
