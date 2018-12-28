@@ -183,17 +183,17 @@ export default {
          xPercent: 0,
         ease:Elastic.easeOut.config(0.3, 0.18),}, 0, "+=0.8")
       .staggerFromTo('.plashka', 1, {
-         autoAlpha:0,
+         autoAlpha:1,
          // xPercent: 40,
       }, {
          autoAlpha:1,
          // xPercent: 0,
         ease: RoughEase.ease.config({ template:  Power0.easeNone, strength: 1, points: 20, taper: "none", randomize:  true, clamp: false}),}, 0, "+=2.2")
-      .staggerFromTo('.cont', 1, {
-         autoAlpha:0,xPercent: 40,
+      .staggerFromTo('.cont', 1.5, {
+         autoAlpha:0,yPercent: -100,
          // xPercent: 40,
       }, {
-         autoAlpha:1,xPercent: 0,
+         autoAlpha:1,yPercent: 0,
          // xPercent: 0,
         ease: Elastic.easeOut.config(0.3, 0.18),}, 0, "-=3.2");
   	}
@@ -224,7 +224,7 @@ export default {
 }*/
 .firstpagebg { 
   height: 100vh; display: flex;align-items: center;
-  background: radial-gradient(circle at center, #365E87  5%, #32577D  15%, #003459 50%, #00171F 80%, #00171F 100%);
+ 
 }
 .login { 
   background: #dad;
@@ -308,7 +308,8 @@ export default {
 	/*overflow: hidden;*/
 	position: relative;
 }
-.screen { color: $isabelline;
+.screen { 
+  color: $isabelline;
 	/*margin: 0 1em 0 1em;*/
 	/*border-top-left-radius: 0.3em;
 	border-top-right-radius: 0.3em;
@@ -326,15 +327,17 @@ export default {
 	font-size: 1.7em;
 	text-align: left;
 	line-height: 1.2em;
-	padding: 0.0em 0.4em;
+	padding: 0.05em 0.4em;
 	vertical-align: top;
 	margin-bottom: spacing(0); 
   
 }
 
-.oversubj {
+.oversubj {z-index: 1000;
+  position: relative;
 }
 .subj {
+  
   line-height: 1.5em;
   min-height: 5.5em;
   /*box-shadow: 0 0 40px rgba(0, 0, 0, 0.8) inset,
@@ -355,18 +358,22 @@ export default {
   justify-content: center;
 }
 .cont { 
+  z-index: 1;
+  position: relative;
   white-space: nowrap;
   overflow: hidden;
-  border-bottom-right-radius: 0.1em;
+ /* border-bottom-right-radius: 0.1em;
   border-bottom-left-radius: 0.1em;
   border-top-right-radius: 0.1em;
-  border-top-left-radius: 0.1em;
-  background-color: color($spacecadet blackness(80%));
+  border-top-left-radius: 0.1em;*/
+/*  background-color: #18231a;
+  border-color: #279c1d;*/
+  /*background-color: color($spacecadet blackness(20%));*/
   text-align: left;
 	/*margin: 0 5em 0 5em;*/
 	width: 8.4em;
 /*@extend %screenbg;*/
-	margin: 0.40em 0.4em 0 0em;
+	margin: 0.20em 0.4em 0 0em;
 	p {
 		margin-bottom: spacing(0);
 		color: color($str4 shade(5%));
