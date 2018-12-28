@@ -178,7 +178,16 @@ export default {
         // autoAlpha:1,
         // xPercent: 0,
         ease:Expo.easeIn}, 0.5, "-=2.9")
-      .staggerFromTo('.oversubj', 0.8, {
+       .staggerFromTo('.offsubj', 0.4, {
+         // autoAlpha:0,
+         // xPercent: 40,
+         scaleY: 0,
+      }, {
+         // autoAlpha:1,
+         scaleY: 1,
+         // xPercent: 0,
+        ease: Back.easeOut.config(1.7),}, 0, "+=0.5")
+      .staggerFromTo('.oversubj', 1, {
          autoAlpha:0,
          // xPercent: 40,
          // scaleY: 0,
@@ -186,7 +195,7 @@ export default {
          autoAlpha:1,
          // scaleY: 1,
          // xPercent: 0,
-        ease: RoughEase.ease.config({ template:  Power0.easeNone, strength: 1, points: 20, taper: "none", randomize:  true, clamp: false}),}, 0, "+=2.8")
+        ease: RoughEase.ease.config({ template:  Power0.easeNone, strength: 1, points: 20, taper: "none", randomize:  true, clamp: false}),}, 0, "+=0.25")
       .staggerFromTo('.plashka', 1, {
          autoAlpha:1,
          // xPercent: 40,
