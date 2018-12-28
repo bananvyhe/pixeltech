@@ -1,23 +1,24 @@
+<div class="mainframe">
 <p id="notice"><%= notice %></p>
 
 <h1>Inboxes</h1>
-
+<%= link_to 'Назад',  siteowners_path %>
 <table>
   <thead>
    
   </thead>
     <thead>
       <tr>
-        <td>operation_id</td>
-        <td>amount</td> 
-        <td>w_amount</td>
-        <td>label</td> 
-        <td>sha1_hash</td>
-        <td>check</td> 
+        <td>op_id</td>
+        <td>am</td> 
+        <td>w_am</td>
+        <td>label_id</td> 
+        <!-- <td>sha1_hash</td>
+        <td>check</td>  -->
         <td>datetime</td>
         <td>codepro</td> 
         <td>unaccepted</td>
-        <td>notification_type</td> 
+       <!--  <td>notification_type</td>  -->
         <td>currency</td> 
         <td>sender</td> 
 
@@ -33,12 +34,12 @@
         <td><%= inbox.amount %> </td> 
         <td><%= inbox.withdraw_amount %> </td>
         <td><%= inbox.label %> </td> 
-        <td><%= inbox.sha1_hash %> </td>
-        <td><%= inbox.check %> </td>
+       <!--  <td><%= inbox.sha1_hash %> </td>
+        <td><%= inbox.check %> </td> -->
         <td><%= inbox.datetime %> </td>
         <td><%= inbox.codepro %> </td> 
         <td><%= inbox.unaccepted %> </td> 
-        <td><%= inbox.notification_type %> </td> 
+        <!-- <td><%= inbox.notification_type %> </td>  -->
         <td><%= inbox.currency %> </td> 
         <td><%= inbox.sender %> </td> 
         <td><%= link_to 'Show', inbox %></td>
@@ -50,5 +51,5 @@
 </table>
 
 <br>
-<%= link_to 'Назад',  siteowners_path %>
 
+</div>
