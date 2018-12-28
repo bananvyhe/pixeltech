@@ -39,7 +39,7 @@ class Api::V1::InboxesController < ApiController
       @fee.ballance += earn.to_i
       @fee.save
       respond_to do |format|
-        format.all { render :nothing => true, :status => 200, :content_type => 'text/html' }
+        format.all { head :ok, content_type: "text/html" }
       end
       # respond_to do |format|
       #   format.html { status: :ok }
