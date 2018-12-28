@@ -314,7 +314,8 @@ export default {
 	position: relative;
 }
 .screen { 
-  color: $isabelline;
+ /* color: $isabelline;*/
+  /* color: color($warningLine shade(80%));*/
 	/*margin: 0 1em 0 1em;*/
 	/*border-top-left-radius: 0.3em;
 	border-top-right-radius: 0.3em;
@@ -348,7 +349,7 @@ export default {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset,
   0 0 30px rgba(0, 0, 0, 0.1) inset,
   0 0 20px rgba(0, 0, 0, 0.2) inset; 
-  background: radial-gradient(at top, #FFFFFF, #A7CECC);
+  background: radial-gradient(at top, #FFFEFF, #A7CECC);
 	border: 1px solid color($paleaqua shade(40%));
 	border-radius: 0.2em; 
 	/*background-color: color($isabelline shade(10%));*/

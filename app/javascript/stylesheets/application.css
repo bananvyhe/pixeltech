@@ -113,7 +113,7 @@ body {
 .title { 
   font-family: 'aprior';
   .vue-typer .custom.char.typed{
-    color: $isabelline;
+    color: color( $isabelline shade(10%));
   }
   .vue-typer .custom.caret.typing {
     color: $teagreen;
