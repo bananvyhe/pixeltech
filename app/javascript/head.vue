@@ -175,20 +175,22 @@ export default {
         // autoAlpha:1,
         // xPercent: 0,
         ease:Expo.easeIn}, 0.5, "-=2.9")
-      .staggerFromTo('.oversubj', 0.7, {
+      .staggerFromTo('.oversubj', 1.8, {
          autoAlpha:0,
-         xPercent: 40,
+         // xPercent: 40,
+         // scaleY: 0,
       }, {
          autoAlpha:1,
-         xPercent: 0,
-        ease:Elastic.easeOut.config(0.3, 0.18),}, 0, "+=0.8")
+         // scaleY: 1,
+         // xPercent: 0,
+        ease:Elastic.easeIn.config(0.3, 0.18),}, 0, "+=0.8")
       .staggerFromTo('.plashka', 1, {
          autoAlpha:1,
          // xPercent: 40,
       }, {
          autoAlpha:1,
          // xPercent: 0,
-        ease: RoughEase.ease.config({ template:  Power0.easeNone, strength: 1, points: 20, taper: "none", randomize:  true, clamp: false}),}, 0, "+=2.2")
+        ease: RoughEase.ease.config({ template:  Power0.easeNone, strength: 1, points: 20, taper: "none", randomize:  true, clamp: false}),}, 0, "+=3.2")
       .staggerFromTo('.cont', 1.5, {
          autoAlpha:0,yPercent: -100,
          // xPercent: 40,
@@ -327,7 +329,7 @@ export default {
 	font-size: 1.7em;
 	text-align: left;
 	line-height: 1.2em;
-	padding: 0.05em 0.4em;
+	padding: 0.1em 0.4em;
 	vertical-align: top;
 	margin-bottom: spacing(0); 
   
@@ -335,21 +337,22 @@ export default {
 
 .oversubj {z-index: 1000;
   position: relative;
+
 }
 .subj {
   
   line-height: 1.5em;
-  min-height: 5.5em;
-  /*box-shadow: 0 0 40px rgba(0, 0, 0, 0.8) inset,
+  /*min-height: 5.5em;*/
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset,
   0 0 30px rgba(0, 0, 0, 0.1) inset,
-  0 0 20px rgba(0, 0, 0, 0.2) inset; */
-  background: radial-gradient(at top, #FEFFFF, #A7CECC);
+  0 0 20px rgba(0, 0, 0, 0.2) inset; 
+  background: radial-gradient(at top, #FFFFFF, #A7CECC);
 	border: 1px solid color($paleaqua shade(40%));
-	border-radius: 0.1em; 
+	border-radius: 0.2em; 
 	/*background-color: color($isabelline shade(10%));*/
 	margin-bottom: spacing(0);
 	margin: 0.3em 0 0.1em 0;
-	padding: 1.2em 1.5em 1.2em 1.5em;
+	padding: 0.5em 0.5em 0.5em 0.8em;
   color:  color($warningLine blackness(80%));
 }
 
