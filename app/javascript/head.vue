@@ -334,7 +334,7 @@ export default {
 	line-height: 1.2em;
 	padding: 0.1em 0.4em;
 	vertical-align: top;
-	margin-bottom: spacing(0); 
+	margin-bottom: spacing(0.1); 
   
 }
 
