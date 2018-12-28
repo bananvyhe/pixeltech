@@ -24,16 +24,19 @@
       			</vue-typer> 
       		</div>
     		</div>  
-        <div class="oversubj">
-      	 <p class="subj basetext">{{subj}}
-      		<!-- <vue-typer 
-      		:pre-type-delay= '1000'
-      		:repeat='0'
-      		:text= "subj"
-      		:shuffle='true'>
-      		</vue-typer> -->
-      	</p> 
+        <div class="offsubj">
+           <div class="oversubj">
+             <p class="subj basetext">{{subj}}
+              <!-- <vue-typer 
+              :pre-type-delay= '1000'
+              :repeat='0'
+              :text= "subj"
+              :shuffle='true'>
+              </vue-typer> -->
+            </p> 
+          </div>
         </div>
+       
       	<div class="borcon">
       		<div  class="cont">
   					<div class="plashka tada"><div class="overpla"><p>{{cont}}</p></div></div>
@@ -340,7 +343,6 @@ export default {
 
 }
 .subj {
-  
   line-height: 1.5em;
   /*min-height: 5.5em;*/
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset,
@@ -351,9 +353,14 @@ export default {
 	border-radius: 0.2em; 
 	/*background-color: color($isabelline shade(10%));*/
 	margin-bottom: spacing(0);
-	margin: 0.3em 0 0.1em 0;
+/*	margin: 0.3em 0 0.1em 0;*/
 	padding: 0.5em 0.5em 0.5em 0.8em;
   color:  color($warningLine blackness(80%));
+}
+.offsubj{
+  background:  $siteBG;
+  border-radius: 0.2em; 
+  border: 1px solid color($HeadBackColor shade(0%));
 }
 
 .borcon {
