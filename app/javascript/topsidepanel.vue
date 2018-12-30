@@ -186,6 +186,7 @@
 	padding: 0 1em;
 }
 .maininfo {
+	padding: 0.3em 0.5em;
 	align-self: center;
 	lost-column: 4/5; 
 	lost-flex-container: row;
