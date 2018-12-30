@@ -19,22 +19,23 @@
     <div id="topsidepanel"></div>
 
   <%# if current_user.try(:admin?) or  current_user.try(:superadmin?) or  current_user.try(:client?)%>
-    <%# if user_signed_in? %>
+    <% if user_signed_in? %>
       <div class="railsblock">
         <% if user_signed_in? %>
 
           <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
           <%#= link_to "Выйти", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <script>
-            var checklog = 'unlogged'
-            console.log('unlogged')
-          </script>
+        
           <%#= link_to "Войти", new_user_session_path %>
 
         <% end %>
       </div>  
-    <%# end %> 
+    <% else %>
+      <script>
+        var checklog = 'unlogged'
+        console.log('unlogged')
+      </script>
+    <% end %> 
     <%# end %>    
     <%# if defined?current_user.role %>
      <!--  <currentrole class="currentrole" :role=" <%#= current_user.role.to_json %> "></currentrole> -->
