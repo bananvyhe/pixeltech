@@ -32,6 +32,8 @@ gem 'jquery-rails', '~> 4.3.1'
 gem 'jwt'
 gem 'jwt_sessions'
 gem 'sidekiq'
+gem 'whenever'
+gem 'sidekiq-client-cli'
 # gem 'yandex-money-sdk'
 
 # Use ActiveStorage variant
