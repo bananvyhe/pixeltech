@@ -80,7 +80,7 @@ strong {
   font-weight: bold;
 }
 a {
-  color: color( $str1  blackness(15%));
+  color: color( $str5  blackness(12%));
   text-decoration: none;
 }
 ul,
