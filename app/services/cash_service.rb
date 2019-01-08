@@ -1,4 +1,6 @@
-
+class CashService
+  
+end
 
 # EXAMPLE:
 # require 'open_weather'
