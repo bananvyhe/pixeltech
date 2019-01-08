@@ -32,6 +32,7 @@ gem 'jquery-rails', '~> 4.3.1'
 gem 'jwt'
 gem 'jwt_sessions'
 gem 'sidekiq'
+#работа с кроном
 gem 'whenever'
 gem 'sidekiq-client-cli'
 # gem 'yandex-money-sdk'
