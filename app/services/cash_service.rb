@@ -1,5 +1,9 @@
 class CashService
-  
+  private
+
+    def load_cli(cli_id)
+      @cli = Client.find_by!(id: cli_id)
+    end
 end
 
 # EXAMPLE:

@@ -7,6 +7,6 @@ class Client < ApplicationRecord
 	private
 	# метод, который будет заниматься формированием задачи
 	def fetch_cash_data
-		#todo
+		CashService.delay.fetch(id)
 	end
 end
