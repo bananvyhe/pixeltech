@@ -1,9 +1,11 @@
 class CashService
-  private
+	  @cli = Client.ballance -= 1.to_i
+	  @cli.save
+  # private
 
-    def load_cli(cli_id)
-      @cli = Client.find_by!(id: cli_id)
-    end
+  #   def load_cli(cli_id)
+  #     @cli = Client.find_by!(id: cli_id)
+  #   end
 end
 
 # EXAMPLE:
