@@ -1,5 +1,6 @@
 <template>
-	<div class="log"> {{this.$store.getters.token.access}}<br>{{this.$store.getters.token.refresh}}
+	<div class="log"> 
+		<!-- {{this.$store.getters.token.access}}<br>{{this.$store.getters.token.refresh}} -->
 		<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
       <el-button type="primary" plain size="mini"   @click="nulltoken">
       	Выйти
@@ -130,19 +131,18 @@
 		   //    }
 		   //  })
 		    axios({
-	    			method: 'post',
-	    			url: '/clients',
-	    			data: {
-							ballance: 1000
-						},
-		    	headers: {'Authorization': 'bearer '+this.$store.getters.token.access} ,
-	    	// 		headers: {
-		  		// 		'X-Refresh-Token': this.$store.getters.token.refresh
-						// } 
-		        	
-						
-		        })
-	  	},
+    			method: 'post',
+    			url: '/clients',
+    			data: {
+						ballance: 1000
+					},
+		    	headers: {
+		    		'Authorization': 'bearer '+this.$store.getters.token.access
+		    	} 
+		    }).then((response) => {	
+        	location.reload(true);
+        })
+		  },
 			nulltoken: function (){
 				this.$store.commit('rolensend', null) 
 		  	this.$store.commit('tokensend', null) 
