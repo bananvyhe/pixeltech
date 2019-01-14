@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize_access_request!
   # GET /clients
   # GET /clients.json
   def index
@@ -32,7 +32,7 @@ class ClientsController < ApplicationController
     earn = params[:ballance]
     @fee.ballance += earn.to_i
     @fee.save
-    respond_to do |format|
+    #respond_to do |format|
       # @yad = params[:amount]
       # if @client.save
       #   format.html { redirect_to @client, notice: 'Client was successfully created.' }
@@ -41,7 +41,7 @@ class ClientsController < ApplicationController
       #   format.html { render :new }
       #   format.json { render json: @client.errors, status: :unprocessable_entity }
       # end
-    end
+    #end
   end
 
   # PATCH/PUT /clients/1
