@@ -6,7 +6,9 @@
     баланс: <%= @client.ballance%> руб.
   </div>
   <br>
-   пополнить счет: 
+   пополнить счет:
+
+
   <!--  <%= @amount %> -->
   <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">    
     <input type="hidden" name="receiver" value="410013909808332">

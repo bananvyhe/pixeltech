@@ -129,7 +129,7 @@
 	    			url: '/api/v1/refr',
 	    			headers: {
 		  				'X-Refresh-Token': this.$store.getters.token.refresh
-						} 
+						}
 		        	// headers: {'Authorization': "bearer " + this.$store.getters.token.token}
 		        }).then((response) => {
 	      		if (response.data.errors) {

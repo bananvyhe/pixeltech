@@ -131,7 +131,9 @@ class SiteownersController < ApplicationController
   # POST /siteowners.json
   def create
     @siteowner = Siteowner.new(siteowner_params)
-    @amount = siteowner_params[:amount]
+    #@amount = siteowner_params[:amount]
+
+    
 
     respond_to do |format|
       if @siteowner.save
@@ -177,6 +179,6 @@ class SiteownersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def siteowner_params
        #params.fetch(:siteowner, {}) 
-       params.require(:siteowner).permit( :amount )
+       params.require(:siteowner).permit( :sum )
     end
 end

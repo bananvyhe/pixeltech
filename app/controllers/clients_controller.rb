@@ -28,16 +28,19 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     # @client = Client.find(params[:id])
     
-
+    @fee =  Client.find_by_user_id(6)
+    earn = params[:ballance]
+    @fee.ballance += earn.to_i
+    @fee.save
     respond_to do |format|
       # @yad = params[:amount]
-      if @client.save
-        format.html { redirect_to @client, notice: 'Client was successfully created.' }
-        format.json { render :show, status: :created, location: @client }
-      else
-        format.html { render :new }
-        format.json { render json: @client.errors, status: :unprocessable_entity }
-      end
+      # if @client.save
+      #   format.html { redirect_to @client, notice: 'Client was successfully created.' }
+      #   format.json { render :show, status: :created, location: @client }
+      # else
+      #   format.html { render :new }
+      #   format.json { render json: @client.errors, status: :unprocessable_entity }
+      # end
     end
   end
 

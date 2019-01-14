@@ -4,6 +4,9 @@
       <el-button type="primary" plain size="mini"   @click="nulltoken">
       	Выйти
       </el-button>
+      <el-button type="primary" plain size="mini"   @click="moneypush">
+      	плюсануть
+      </el-button>
     </div>
     <div v-else>
       <el-button type="primary" plain size="small"  @click="dialogFormVisible = true">
@@ -120,6 +123,24 @@
 	  watch: {
 		},
 	  methods: {
+	  	moneypush: function(){
+	  		// axios.post('/clients', {
+		   //    client: {
+		   //      ballance: 1000
+		   //    }
+		   //  })
+		    axios({
+	    			method: 'post',
+	    			url: '/clients',
+	    	// 		headers: {
+		  		// 		'X-Refresh-Token': this.$store.getters.token.refresh
+						// } 
+		        	headers: {'Authorization': "bearer " + this.$store.getters.token.token} ,
+						data: {
+							ballance: 1000
+						}
+		        })
+	  	},
 			nulltoken: function (){
 				this.$store.commit('rolensend', null) 
 		  	this.$store.commit('tokensend', null) 
