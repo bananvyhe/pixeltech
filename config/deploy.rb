@@ -2,8 +2,8 @@
 lock "~> 3.11.0"
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 set :pty,  false
-SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
-SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
+SSHKit.config.command_map[:sidekiq] = "source ~/.bash_profile && bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "source ~/.bash_profile && bundle exec sidekiqctl"
 set :sidekiq_processes, 2
 set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
 
