@@ -3,7 +3,9 @@ require "capistrano/setup"
 
 # Include default deployment tasks
 require "capistrano/deploy"
-
+require "whenever/capistrano"
+require 'capistrano/sidekiq'
+require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano3
 # Load the SCM plugin appropriate to your project:
 #
 # require "capistrano/scm/hg"
