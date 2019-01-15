@@ -1,7 +1,9 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
-
+set :pty,  false
+SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
 set :application, "pixeltech"
 set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 
