@@ -3,7 +3,7 @@ require "capistrano/setup"
 
 # Include default deployment tasks
 require "capistrano/deploy"
-require "whenever/capistrano"
+
 # Load the SCM plugin appropriate to your project:
 #
 # require "capistrano/scm/hg"
@@ -22,7 +22,7 @@ require "capistrano/rails/migrations"
 require "capistrano/passenger"
 require 'capistrano/sidekiq'
 require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano3_type, :user
-
+require "whenever/capistrano"
 set :rbenv_ruby, '2.5.1'
 set :linked_files, %w{config/master.key}
 
