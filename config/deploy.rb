@@ -29,9 +29,11 @@ set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 
 # Default value for linked_dirs is []
  append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads"
+ set :rbenv_map_bins, %w(rake gem bundle ruby rails sidekiq sidekiqctl)
 set :pty,  false
 SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
 SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
+
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
