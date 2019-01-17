@@ -1,9 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
-# set :pty,  false
-SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
-SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
+
 set :sidekiq_processes, 2
 set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
 
@@ -31,7 +29,9 @@ set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 
 # Default value for linked_dirs is []
  append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads"
-
+set :pty,  false
+SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
