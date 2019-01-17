@@ -4,8 +4,6 @@ require "capistrano/setup"
 # Include default deployment tasks
 require "capistrano/deploy"
 require "whenever/capistrano"
-require 'capistrano/sidekiq'
-require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano3
 # Load the SCM plugin appropriate to your project:
 #
 # require "capistrano/scm/hg"
@@ -16,15 +14,17 @@ require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano
 # or
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
-	require "capistrano/rbenv"
-	# require "capistrano/chruby"
-	require "capistrano/bundler"
-	require "capistrano/rails/assets"
-	require "capistrano/rails/migrations"
-	require "capistrano/passenger"
-	set :rbenv_type, :user
-	set :rbenv_ruby, '2.5.1'
-	set :linked_files, %w{config/master.key}
+require "capistrano/rbenv"
+# require "capistrano/chruby"
+require "capistrano/bundler"
+require "capistrano/rails/assets"
+require "capistrano/rails/migrations"
+require "capistrano/passenger"
+require 'capistrano/sidekiq'
+require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano3_type, :user
+
+set :rbenv_ruby, '2.5.1'
+set :linked_files, %w{config/master.key}
 
 # Include tasks from other gems included in your Gemfile
 #
