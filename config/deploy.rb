@@ -30,7 +30,7 @@ set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 # Default value for linked_dirs is []
  append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads"
 
-set :pty,  false
+set :pty,  true
 set :rbenv_map_bins, fetch(:rbenv_map_bins).to_a.concat(%w(sidekiq sidekiqctl))
 
 SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
