@@ -25,7 +25,7 @@ require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano
 require "whenever/capistrano"
 set :rbenv_ruby, '2.5.1'
 set :linked_files, %w{config/master.key}
-set :init_system, :systemd
+
 # Include tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:
