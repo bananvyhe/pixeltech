@@ -1,9 +1,9 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
-set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+# set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
-set :sidekiq_processes, 2
-set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
+# set :sidekiq_processes, 2
+# set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
 
 set :application, "pixeltech"
 set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
