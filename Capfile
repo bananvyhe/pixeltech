@@ -1,6 +1,7 @@
 # Load DSL and set up stages
 require "capistrano/setup"
-
+set :stage, :production
+cap sidekiq:install
 # Include default deployment tasks
 require "capistrano/deploy"
 
