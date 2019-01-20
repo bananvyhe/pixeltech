@@ -30,17 +30,18 @@ set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 # Default value for linked_dirs is []
  append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads"
 # role :all, %w{deploy@46.161.39.175}
-
-#set :pty,  false
-SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
-SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
 set :pty,  false
-
 set :init_system, :upstart
 set :sidekiq_monit_use_sudo, false
 set :upstart_service_name, 'sidekiq'
-set :sidekiq_processes, 2
-set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
+#set :pty,  false
+SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
+
+
+
+# set :sidekiq_processes, 2
+# set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
