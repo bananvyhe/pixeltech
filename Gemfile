@@ -37,7 +37,8 @@ gem 'whenever'
 gem 'sidekiq-client-cli'
 # gem 'yandex-money-sdk'
 gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
-
+gem 'ed25519'  
+gem 'bcrypt_pbkdf'  
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -64,6 +65,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
 end
 
 group :test do
