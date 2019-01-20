@@ -7,8 +7,7 @@ lock "~> 3.11.0"
 
 set :application, "pixeltech"
 set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
-SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
-SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
