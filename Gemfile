@@ -36,8 +36,7 @@ gem 'sidekiq'
 gem 'whenever'
 gem 'sidekiq-client-cli'
 # gem 'yandex-money-sdk'
-gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
-
+gem 'capistrano-sidekiq', group: :development
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
