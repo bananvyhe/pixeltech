@@ -29,7 +29,7 @@ set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 
 # Default value for linked_dirs is []
  append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads"
-role :all, %w{deploy@46.161.39.175}
+# role :all, %w{deploy@46.161.39.175}
 
 #set :pty,  false
 SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
