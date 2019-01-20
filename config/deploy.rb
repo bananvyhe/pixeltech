@@ -32,7 +32,8 @@ set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 
 
 #set :pty,  false
-
+SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
 set :pty,  false
 
 set :init_system, :upstart
