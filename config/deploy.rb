@@ -33,7 +33,7 @@ set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 set :pty,  false
 set :init_system, :systemd
 set :sidekiq_monit_use_sudo, false
-set :upstart_service_name, 'sidekiq'
+set :upstart_service_name, 'sidekiq-production.service'
 #set :pty,  false
 SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
 SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
