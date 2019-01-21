@@ -35,6 +35,7 @@ SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
 set :pty,  false
 set :init_system, :systemd
 set :sidekiq_monit_use_sudo, false
+:sidekiq_service_name => "sidekiq_#{fetch(:application)}_#{fetch(:sidekiq_env)}" + (index ? "_#{index}" : '')
 #set :upstart_service_name, 'sidekiq'
 #set :pty,  false
 
