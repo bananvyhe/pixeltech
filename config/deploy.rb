@@ -7,7 +7,35 @@ lock "~> 3.11.0"
 
 set :application, "pixeltech"
 set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
+# set :pty,  false
+# SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
+# SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
+# namespace :sidekiq do
+#   task :quiet do
+#     on roles(:app) do
+#       puts capture("pgrep -f 'sidekiq' | xargs kill -TSTP") 
+#     end
+#   end
+#   task :restart do
+#     on roles(:app) do
+#       execute :sudo, :initctl, :restart, :workers
+#     end
+#   end
+# end
 
+# after 'deploy:starting', 'sidekiq:quiet'
+# after 'deploy:reverted', 'sidekiq:restart'
+# after 'deploy:published', 'sidekiq:restart'
+# set :init_system, :upstart
+
+# set :sidekiq_monit_use_sudo, true
+# set :sidekiq_monit_templates_path, 'config/deploy/templates'
+# set :sidekiq_monit_conf_dir, '/etc/monit/conf.d'
+# set :monit_bin, '/usr/bin/monit'
+# set :sidekiq_monit_default_hooks, true
+# set :sidekiq_monit_group, nil
+
+#set :sidekiq_service_name, "sidekiq_#{fetch(:application)}_#{fetch(:sidekiq_env)}" + (index ? "_#{index}" : '')
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -30,11 +58,8 @@ set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 # Default value for linked_dirs is []
  append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads"
 # role :all, %w{deploy@46.161.39.175}
-SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
-SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
-set :pty,  false
-# set :init_system, :upstart
-set :sidekiq_monit_use_sudo, false
+
+
 # set :upstart_service_name, 'sidekiq'
 
 # namespace :sidekiq do
