@@ -7,9 +7,12 @@ lock "~> 3.11.0"
 
 set :application, "pixeltech"
 set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
-# set :pty,  false
-# SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
-# SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
+# set :init_system, :systemd
+# set :upstart_service_name, 'sidekiq'
+
+set :pty,  false
+SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
 # namespace :sidekiq do
 #   task :quiet do
 #     on roles(:app) do
@@ -23,9 +26,9 @@ set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 #   end
 # end
 
-# after 'deploy:starting', 'sidekiq:quiet'
-# after 'deploy:reverted', 'sidekiq:restart'
-# after 'deploy:published', 'sidekiq:restart'
+after 'deploy:starting', 'sidekiq:quiet'
+after 'deploy:reverted', 'sidekiq:restart'
+after 'deploy:published', 'sidekiq:restart'
 # set :init_system, :upstart
 
 # set :sidekiq_monit_use_sudo, true
