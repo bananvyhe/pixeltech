@@ -28,10 +28,10 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     # @client = Client.find(params[:id])
     
-    @fee =  Client.find_by_user_id(payload['user_id'])
-    earn = params[:ballance]
-    @fee.ballance += earn.to_i
-    @fee.save
+    # @fee =  Client.find_by_user_id(payload['user_id'])
+    # earn = params[:ballance]
+    # @fee.ballance += earn.to_i
+    # @fee.save
     #respond_to do |format|
       # @yad = params[:amount]
       # if @client.save
