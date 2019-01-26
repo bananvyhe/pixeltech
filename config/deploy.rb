@@ -5,6 +5,7 @@ lock "~> 3.11.0"
 # set :sidekiq_processes, 2
 # set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
 
+
 set :application, "pixeltech"
 set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 # set :init_system, :systemd
@@ -13,6 +14,10 @@ set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 set :pty,  false
 SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
 SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
+set :whenever_identifier,   ->{ fetch :application }
+    set :whenever_environment,  ->{ fetch :rails_env, fetch(:stage, "production") }
+        set :whenever_command,      ->{ [:bundle, :exec, :whenever] }
+
 # namespace :sidekiq do
 #   task :quiet do
 #     on roles(:app) do
@@ -29,6 +34,8 @@ SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
 after 'deploy:starting', 'sidekiq:quiet'
 after 'deploy:reverted', 'sidekiq:restart'
 after 'deploy:published', 'sidekiq:restart'
+after "deploy:updated",  "whenever:update_crontab"
+after "deploy:reverted", "whenever:update_crontab"
 # set :init_system, :upstart
 
 # set :sidekiq_monit_use_sudo, true
