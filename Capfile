@@ -26,6 +26,12 @@ require "whenever/capistrano"
 require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano3_type, :user
 set :rbenv_ruby, '2.5.1'
 set :linked_files, %w{config/master.key}
+set :init_system, :systemd
+set :init_system, :upstart
+set :upstart_service_name, 'sidekiq'
+set :sidekiq_processes, 2
+set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
+# set :sidekiq_user, 'deploy'
 # set :rbenv_map_bins, fetch(:rbenv_map_bins).to_a.concat(%w(sidekiq sidekiqctl))
 
 # set :init_system, :systemd
