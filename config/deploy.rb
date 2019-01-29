@@ -10,14 +10,16 @@ set :application, "pixeltech"
 set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 # set :init_system, :systemd
 # set :upstart_service_name, 'sidekiq'
-
+# set :rbenv_map_bins, fetch(:rbenv_map_bins).to_a.concat(%w(sidekiq sidekiqctl))
 set :pty,  false
+set :rbenv_map_bins, %w{rake gem bundle ruby rails sidekiq sidekiqctl}
 
 SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
 SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
-set :whenever_identifier,   ->{ fetch :application }
-    set :whenever_environment,  ->{ fetch :rails_env, fetch(:stage, "production") }
-        set :whenever_command,      ->{ [:bundle, :exec, :whenever] }
+
+# set :whenever_identifier,   ->{ fetch :application }
+#     set :whenever_environment,  ->{ fetch :rails_env, fetch(:stage, "production") }
+#         set :whenever_command,      ->{ [:bundle, :exec, :whenever] }
 
 # namespace :sidekiq do
 #   task :quiet do
@@ -35,8 +37,8 @@ set :whenever_identifier,   ->{ fetch :application }
 after 'deploy:starting', 'sidekiq:quiet'
 after 'deploy:reverted', 'sidekiq:restart'
 after 'deploy:published', 'sidekiq:restart'
-after "deploy:updated",  "whenever:update_crontab"
-after "deploy:reverted", "whenever:update_crontab"
+# after "deploy:updated",  "whenever:update_crontab"
+# after "deploy:reverted", "whenever:update_crontab"
 # set :init_system, :upstart
 
 # set :sidekiq_monit_use_sudo, true
