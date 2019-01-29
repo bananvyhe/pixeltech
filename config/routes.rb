@@ -2,7 +2,7 @@ require "sidekiq/web"
 
 
 Rails.application.routes.draw do
-  Sidekiq::Web.set :session_secret, Rails.application.credentials[:secret_key_base]
+  
   
   resources :inboxes
   resources :siteowners
@@ -58,6 +58,7 @@ Rails.application.routes.draw do
  
   match "/404", :to => "errors#not_found", :via => :all
 	match "/500", :to => "errors#internal_server_error", :via => :all
+  Sidekiq::Web.set :session_secret, Rails.application.credentials[:secret_key_base]
   Sidekiq::Web.use Rack::Auth::Basic do |username, password|
     # Protect against timing attacks:
     # - See https://codahale.com/a-lesson-in-timing-attacks/
