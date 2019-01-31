@@ -1,4 +1,4 @@
-# env :PATH, ENV['PATH']
+env :PATH, ENV['PATH']
 # env :GEM_PATH, ENV['GEM_PATH']
 job_type :sidekiq,  "cd :path && RAILS_ENV=:environment sidekiq-client :task :output"
 
