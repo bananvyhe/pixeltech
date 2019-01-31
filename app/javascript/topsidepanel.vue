@@ -2,8 +2,14 @@
 	<div class="smalltext main" v-bind:style="styleObject"> 
 		<!-- <div v-if="$store.getters.token != null" > -->
 			<div class="logohead">
-				<div v-if="$store.getters.token != null" >
+				<div v-if="$store.getters.token != null">
 					Site hosting tech
+				</div>
+				<div v-if="$store.getters.token == null">
+					<div v-if="checklog == null ">
+						{{nulltoken}}
+					</div>
+					
 				</div>
 			</div>
 	<!-- 	</div> -->
@@ -20,8 +26,9 @@
 				&nbsp;&nbsp; Истекает через: {{timeConversion(this.$store.getters.role.exp)}}
 			</div> 
 			<div v-if="$store.getters.token == null" > 
-	      <reg></reg>
-	    </div>
+
+		      <reg></reg>
+		    </div>
 			<div>
 				<log></log>
 			</div>
@@ -48,6 +55,21 @@
 	    } 
 	  },
 	  computed: {
+	  	nulltoken: function(){
+	  		axios.delete('/users/sign_out', {
+		    }) 
+		    .then((response) => {	 
+		    	if (document.location.pathname != '/'){
+						window.location.href = '/';
+						console.log('666')
+					}else{
+
+					}
+		    	
+ 				//  this.$store.commit('tokensend', null) 
+		        //   this.$store.commit('tokensend', null) 
+		    })
+	  	},
     	styleObject: function () {
        	var tok = this.$store.getters.token
         if (tok != null) {
@@ -92,6 +114,7 @@
 
 	  },
 	  mounted() {
+	  
 	  	if (this.$store.getters.token != null) {
 	  		console.log('dgdgdsdgas43342523521')
 	  		// axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.getters.token.token;

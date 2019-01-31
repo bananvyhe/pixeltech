@@ -27,13 +27,31 @@
           <%#= link_to "Выйти", destroy_user_session_path, method: :delete %>
         
           <%#= link_to "Войти", new_user_session_path %>
+          
+<!--           <script>
+              axios.delete('/users/sign_out', {
+              }) 
+              .then((response) => {  
+                if (document.location.pathname != '/'){
+                  window.location.href = '/';
+                   
+                }else{
 
-        <% end %>
+                }
+                
+              //  this.$store.commit('tokensend', null) 
+                  //   this.$store.commit('tokensend', null) 
+              })
+            
+          </script> -->
+          <% end %>
+        
       </div>  
     <% else %>
       <script>
         var checklog = 'unlogged'
         console.log('unlogged')
+         
       </script>
     <% end %> 
     <%# end %>    
