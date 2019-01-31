@@ -39,7 +39,7 @@
   <% if current_user.try(:admin?) or  current_user.try(:superadmin?) %>
     <%= link_to 'зачисления',  inboxes_path %>
   <% end %>
-   ~ <%=  (@client.ballance/@step/60/24).round %> дней 
+   ~ <%=  (@client.ballance/@step/24).round %> дней 
   <%#= link_to 'New Siteowner', new_siteowner_path %>
 <!--   <table>
     <tr>
