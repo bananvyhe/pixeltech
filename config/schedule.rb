@@ -5,6 +5,6 @@ job_type :sidekiq,  "cd :path && RAILS_ENV=:environment sidekiq-client :task :ou
 set :output, error: 'error.log', standard: 'cron.log'
 set :environment, :production
 
-every 1.hours do
+every 1.minutes do
   sidekiq 'push CashWorker'
 end
