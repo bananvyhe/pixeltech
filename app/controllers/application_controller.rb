@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  # шаг списания 
+  $step = 0.38
   
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	include JWTSessions::RailsAuthorization 

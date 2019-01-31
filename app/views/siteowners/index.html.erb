@@ -32,20 +32,25 @@
       </tr>
     </thead>
 
-    <tbody>
-      <% @siteowners.each do |siteowner| %>
-        <tr>
-          <td><%= link_to 'Show', siteowner %></td>
-          <td><%= link_to 'Edit', edit_siteowner_path(siteowner) %></td>
-          <td><%= link_to 'Destroy', siteowner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+     
 
   <br>
-  <%= link_to 'зачисления',  inboxes_path %>
-  <%#= link_to 'New Siteowner', new_siteowner_path %>
 
+  <% if current_user.try(:admin?) or  current_user.try(:superadmin?) %>
+    <%= link_to 'зачисления',  inboxes_path %>
+  <% end %>
+   ~ <%=  (@client.ballance/@step/60/24).round %> дней 
+  <%#= link_to 'New Siteowner', new_siteowner_path %>
+<!--   <table>
+    <tr>
+               <%# @siteowners.each do |siteowner| %>
+              <td>
+                списание pf: <%#= siteowner.spent %>
+              </td>
+          <%# end %>  
      
+    </tr>
+   
+  </table> -->
+  
  </div>

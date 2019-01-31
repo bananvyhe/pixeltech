@@ -108,7 +108,7 @@ class SiteownersController < ApplicationController
   # GET /siteowners.json
   def index 
     @client =  Client.find_by_user_id(current_user.id)
-    
+    @step = $step
     # instance_id = YandexMoney::ExternalPayment.get_instance_id(CLIENT_ID)
     @siteowners = Siteowner.all
   end
@@ -179,6 +179,6 @@ class SiteownersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def siteowner_params
        #params.fetch(:siteowner, {}) 
-       params.require(:siteowner).permit( :sum )
+       params.require(:siteowner).permit( :sum, :spent, :incoming )
     end
 end

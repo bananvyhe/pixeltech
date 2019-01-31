@@ -2,10 +2,11 @@ class DayWorker
 	include Sidekiq::Worker
 
 	def perform
-		client = Client.all
-		 client.find_each do |c| 
-		 	c.ballance += $step.to_i
-		 	c.save
-		 end
+		 
+				 #  @siteowner = Siteowner.new
+					# @siteowner.spent = $step*24 
+				 
+					# @siteowner.save
+	 
 	end
 end
