@@ -137,7 +137,7 @@
     			method: 'post',
     			url: '/clients',
     			data: {
-						ballance: -50
+						ballance: -10
 					},
 		    	headers: {
 		    		'Authorization': 'bearer '+this.$store.getters.token.access
