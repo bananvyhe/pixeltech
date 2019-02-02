@@ -1,12 +1,9 @@
-class CashWorker
+class CashWorker < ApplicationController
 	include Sidekiq::Worker
-	 $step=0.38
 	def perform
-		
 		client = Client.all
 		client.find_each do |c|
-			
-		 	c.ballance -= $step 
+			c.ballance -= $stepcash 
 		 	c.save
 		end
 	end
