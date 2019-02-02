@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   # шаг списания 
-  
-  
-	before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 	include JWTSessions::RailsAuthorization 
 	rescue_from JWTSessions::Errors::Unauthorized, with: :not_authorized
 
