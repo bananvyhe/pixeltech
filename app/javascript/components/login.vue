@@ -8,6 +8,9 @@
       <el-button type="primary" plain size="mini"   @click="moneypush">
       	плюсануть
       </el-button>
+      <el-button type="primary" plain size="mini"   @click="moneymin">
+      	минуснуть
+      </el-button>
     </div>
     <div v-else>
       <el-button type="primary" plain size="small"  @click="dialogFormVisible = true">
@@ -124,6 +127,25 @@
 	  watch: {
 		},
 	  methods: {
+	  	moneymin: function(){
+	  		// axios.post('/clients', {
+		   //    client: {
+		   //      ballance: 1000
+		   //    }
+		   //  })
+		    axios({
+    			method: 'post',
+    			url: '/clients',
+    			data: {
+						ballance: -50
+					},
+		    	headers: {
+		    		'Authorization': 'bearer '+this.$store.getters.token.access
+		    	} 
+		    }).then((response) => {	
+        	location.reload(true);
+        })
+		  },
 	  	moneypush: function(){
 	  		// axios.post('/clients', {
 		   //    client: {
@@ -134,7 +156,7 @@
     			method: 'post',
     			url: '/clients',
     			data: {
-						ballance: 1000
+						ballance: 100
 					},
 		    	headers: {
 		    		'Authorization': 'bearer '+this.$store.getters.token.access
