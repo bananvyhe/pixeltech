@@ -166,14 +166,13 @@
         })
 		  },
 			nulltoken: function (){
-				this.$store.commit('rolensend', null) 
-		  	this.$store.commit('tokensend', null) 
-      	axios.delete('/users/sign_out', {
+				axios.delete('/users/sign_out', {
 		    }) 
 		    .then((response) => {	 
+		    	
 		    	if (document.location.pathname != '/'){
 						window.location.href = '/';
-						console.log('666')
+
 					}else{
 
 					}
@@ -181,7 +180,9 @@
  				//  this.$store.commit('tokensend', null) 
 		        //   this.$store.commit('tokensend', null) 
 		    })
-	      .then((response) => {
+	      .then(() => {
+					this.$store.commit('rolensend', null) 
+		  		this.$store.commit('tokensend', null) 
 	      	// 
 		      // location.reload(true);
 		    })    
@@ -231,8 +232,9 @@
 							let decodedJwtJsonData = window.atob(jwtData)
 							let decodedJwtData = JSON.parse(decodedJwtJsonData)
 							let role = decodedJwtData
-							this.$store.commit('rolensend', role)
 							location.reload(true);
+							this.$store.commit('rolensend', role)
+							
 		    		// this.$store.commit('loginUser');
 		  		// const token = resp.data.token
 		  		// localStorage.setItem('user-token', token)
