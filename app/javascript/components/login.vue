@@ -156,7 +156,8 @@
     			method: 'post',
     			url: '/clients',
     			data: {
-						ballance: 100
+						ballance: 100,
+						mescount: ''
 					},
 		    	headers: {
 		    		'Authorization': 'bearer '+this.$store.getters.token.access

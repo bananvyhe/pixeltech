@@ -31,6 +31,7 @@ class ClientsController < ApplicationController
     @fee =  Client.find_by_user_id(payload['user_id'])
     earn = params[:ballance]
     @fee.ballance += earn.to_i
+    @fee.mescount = nil
     @fee.save
     #respond_to do |format|
       # @yad = params[:amount]
