@@ -37,7 +37,7 @@ class Api::V1::InboxesController < ApiController
       @fee =  Client.find_by_user_id(params[:label])
       earn = params[:withdraw_amount]
       @fee.ballance += earn.to_i
-      @fee.mescount = nil
+      @fee.mescount = ''
       @fee.save
       Client.
       respond_to do |format|
