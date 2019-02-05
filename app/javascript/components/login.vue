@@ -5,12 +5,12 @@
       <el-button type="primary" plain size="mini"   @click="nulltoken">
       	Выйти
       </el-button>
-      <el-button type="primary" plain size="mini"   @click="moneypush">
+     <!--  <el-button type="primary" plain size="mini"   @click="moneypush">
       	плюсануть
       </el-button>
       <el-button type="primary" plain size="mini"   @click="moneymin">
       	минуснуть
-      </el-button>
+      </el-button> -->
     </div>
     <div v-else>
       <el-button type="primary" plain size="small"  @click="dialogFormVisible = true">
