@@ -9,7 +9,7 @@ class LandingPageController < ApplicationController
 	      when 'user'
 	        users_path
 	      when 'voodoo'
-	         some_other_path
+	         voodoo_index_path
 	      when 'client'
 	        siteowners_path
 	      else
