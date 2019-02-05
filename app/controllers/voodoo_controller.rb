@@ -2,6 +2,8 @@ class VoodooController < ApplicationController
 	before_action :set_voodoo, only: [:show, :edit, :update, :destroy]
 	def index
     @voodoo = Voodoo.all
+    user = User.all
+    
   end
  
   def show
