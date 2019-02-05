@@ -220,9 +220,9 @@ export default {
 .test {
   background: #dad;
 }
-.bganjs {
+/*.bganjs {
   background: url('./images/scheme.svg?id="+Math.random()');
-}
+}*/
 .bganjs1 {
   background: url('./images/bg.png');
 }

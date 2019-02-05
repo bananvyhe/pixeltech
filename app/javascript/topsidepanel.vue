@@ -1,19 +1,21 @@
 <template>
 	<div class="smalltext main" v-bind:style="styleObject"> 
 		<!-- <div v-if="$store.getters.token != null" > -->
-			<div class="logohead">
+			<div class="logohead" >
+				<div v-if="$store.getters.role">
+					<div v-if="$store.getters.role.role == 'client'">
+						Site hosting tech
+					</div>
+					<div v-if="$store.getters.role.role == 'voodoo'">
+						Voodoo tech
+					</div>
+				</div>
 				<!-- {{$store.getters.role.role}} -->
-				<div v-if="$store.getters.role.role == 'client'">
-					Site hosting tech
-				</div>
-				<div v-if="$store.getters.role.role == 'voodoo'">
-					Voodoo tech
-				</div>
+				
 				<div v-if="$store.getters.token == null">
 					<div v-if="checklog == null ">
 						{{nulltoken}}
 					</div>
-					
 				</div>
 			</div>
 	<!-- 	</div> -->
