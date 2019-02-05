@@ -1,0 +1,2 @@
+class VoodooController < ApplicationController
+end

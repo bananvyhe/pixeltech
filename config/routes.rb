@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :inboxes
   resources :siteowners
   resources :clients
-  resources :voodoos
+  resources :voodoo
   get 'errors/not_found'
   get 'errors/internal_server_error'
    
