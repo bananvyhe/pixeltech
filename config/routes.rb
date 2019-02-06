@@ -4,6 +4,7 @@ require "sidekiq/web"
 Rails.application.routes.draw do
   
   
+  resources :posts
   resources :inboxes
   resources :siteowners
   resources :clients
