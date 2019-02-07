@@ -162,6 +162,22 @@ document.addEventListener('turbolinks:load', () => {
 	// 		render: h => h(Reg)
 	// 	})
 	// }
+	jQuery(function($){
+	$(".deleteAction").click( function(){
+		var current_item_tr = $(this).parents('tr')[0];
+		if(confirm("Точно удалить?")){
+			$.ajax({
+				beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+				url: document.location.pathname + '/' + $(current_item_tr).attr('data-item_id'),
+				type: 'POST',
+				data: { _method: 'DELETE'},
+				success: function(){
+					$(current_item_tr).fadeOut(200);
+				}
+			});
+		};
+	});
+});
 })
 
 
@@ -216,19 +232,4 @@ document.addEventListener('turbolinks:load', () => {
 //   })
 // })
 //delete destroy withowt refresh page rails
-jQuery(function($){
-	$(".deleteAction").click( function(){
-		var current_item_tr = $(this).parents('tr')[0];
-		if(confirm("Точно удалить?")){
-			$.ajax({
-				beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-				url: document.location.pathname + '/' + $(current_item_tr).attr('data-item_id'),
-				type: 'POST',
-				data: { _method: 'DELETE'},
-				success: function(){
-					$(current_item_tr).fadeOut(200);
-				}
-			});
-		};
-	});
-});
+
