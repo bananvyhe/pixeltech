@@ -190,4 +190,6 @@ body {
   position: absolute;
   right:0;
 }
- 
+.d-none {
+  display: none;
+}
