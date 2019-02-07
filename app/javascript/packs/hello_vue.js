@@ -7,8 +7,8 @@
 
 import Vue from 'vue/dist/vue.esm.js'
 import axios from 'axios'
-import TurbolinksAdapter from 'vue-turbolinks'
-Vue.use(TurbolinksAdapter)
+// import TurbolinksAdapter from 'vue-turbolinks'
+// Vue.use(TurbolinksAdapter)
 // import App from '../app.vue'
 import Reg from '../components/registration.vue'
 import Log from '../components/login.vue'
