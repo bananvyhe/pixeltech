@@ -13,7 +13,10 @@
 		<%= link_to 'редактировать', edit_post_path(@post) %> |
 		<%= link_to 'назад', posts_path %>		
 	</div>
-
+<hr>
+<p>комментарии:</p>
+<p>
+	<%= render @post.comments %></p>
 	<%= render partial: "comments/form", locals: {commentable: @post} %>
-	<%= render @post.comments %>
+	
 </div>
