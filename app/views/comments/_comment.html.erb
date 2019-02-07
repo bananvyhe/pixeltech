@@ -1,6 +1,6 @@
 <div style="padding: 0.5em 1em; ">
   
-  <%=  comment.body %>
+  <%= simple_format comment.body %>
   <h5>написал(а) <%= comment.user.username %></h5>
   <div data-controller="reply">
 
