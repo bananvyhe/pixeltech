@@ -4,8 +4,8 @@
   <h5>написал(а) <%= comment.user.username %></h5>
   <div data-controller="reply">
 
-  	<%= link_to "ответить", "#", data: {action: "click->reply#toggle"} %>
+  	<%= link_to "ответить", "#", data: {action: "click->reply#toggle"}, style: "padding: 0em 0em 1em;" %>
   	<%= render partial: "comments/form", locals: {commentable: comment.commentable, parent_id: comment.id, class: "d-none", target: "reply.form"} %>
   </div>
-  <%= render comment.comments %> 
+  	<%= render comment.comments %> 
 </div>

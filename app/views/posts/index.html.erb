@@ -7,7 +7,7 @@
     <thead>
       <tr>
         <th> </th>
-        <th> </th>
+        <!-- <th> </th> -->
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -16,7 +16,8 @@
       <% @posts.each do |post| %>
         <tr data-item_id="<%= post.id %>">
           <td><%= post.title %></td>
-          <td><%= post.body %></td>
+          <!-- <td><%#= post.user.username %></td> -->
+   <!--        <td><%#= post.body %></td> -->
           <td><%= link_to 'Посмотреть', post %></td>
           <td><%= link_to 'Редактировать', edit_post_path(post) %></td>
           <td><span class="deleteAction">Удалить</span></td>
