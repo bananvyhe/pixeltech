@@ -1,7 +1,9 @@
-<div>
+<div style="padding: 0.5em;">
   <%= comment.user.username %>  пишет:
   <%= simple_format comment.body %>
-
-  <%= link_to "ответить", "#" %>
-  <%= render partial: "comments/form", locals: {commentable: @post, parent_id: comment.id, class: "d-none"} %>
+  <div data-controller="reply">
+  	<%= link_to "ответить", "#", data: {action: "click->reply#toggle"} %>
+  	<%= render partial: "comments/form", locals: {commentable: @post, parent_id: comment.id, class: "d-none", target: "reply.form"} %>
+  </div>
+  
 </div>
