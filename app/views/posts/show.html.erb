@@ -15,8 +15,8 @@
 	</div>
 <hr>
 <h4>комментарии:</h4>
-<p>
-	<%= render @post.comments %></p>
+ 
+	<%= render @post.comments.where(parent_id: nil) %> 
 	<%= render partial: "comments/form", locals: {commentable: @post} %>
 	
 </div>
