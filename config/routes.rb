@@ -4,7 +4,7 @@ require "sidekiq/web"
 Rails.application.routes.draw do
   
   
-  resources :posts
+
   resources :inboxes
   resources :siteowners
   resources :clients
@@ -54,7 +54,13 @@ Rails.application.routes.draw do
       end
     end
   end
-
+  resources :posts do
+    resources :comments, module: :posts
+  end
+  # resources :discussios do
+  #   resources :comments, module: :discussios
+  # end
+  root to: 'posts#index'
   resources :locations
  
   match "/404", :to => "errors#not_found", :via => :all
