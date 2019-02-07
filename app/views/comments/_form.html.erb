@@ -1,8 +1,8 @@
 <%= form_with model: [commentable, Comment.new], local: true do |form| %>
 	<div>
-		<%= form.text_area :body, placeholder: "добавить комментарий", class: "form-control" %>
+		<%= form.text_area :body, cols: "50", rows: "6", placeholder: "добавить комментарий", class: "form-control" %>
 	</div>
 	<div>
-		<%= form.submit class: "button" %>
+		<%= form.submit "Сохранить", :class => "el-button el-button--mini" %>
 	</div>
 <% end %>
