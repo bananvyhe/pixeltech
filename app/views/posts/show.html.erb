@@ -14,7 +14,7 @@
 		<%= link_to 'назад', posts_path %>		
 	</div>
 <hr>
-<p>комментарии:</p>
+<h4>комментарии:</h4>
 <p>
 	<%= render @post.comments %></p>
 	<%= render partial: "comments/form", locals: {commentable: @post} %>
