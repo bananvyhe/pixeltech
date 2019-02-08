@@ -1,7 +1,7 @@
 <div style="padding: 0.5em 1em; ">
   
   <%= simple_format comment.body %>
-  <h5>написал(а) <%= comment.user.username %></h5>
+  <h4>написал(а) <%= comment.user.username %></h4>
   <div data-controller="reply">
 
   	<%= link_to "ответить", "#", data: {action: "click->reply#toggle"}, style: "padding: 0em 0em 1em;" %>
