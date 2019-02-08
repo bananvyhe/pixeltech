@@ -100,7 +100,10 @@ body {
 
 }
 .mainframe {
-  padding: 0.7em 0.7em;
+  padding: 0.7em 2.0em;
+  @media (--only-xsmall-screen) {
+      padding: 0.7em 0.5em;
+    }
 }
 .firstpagebg {
  
