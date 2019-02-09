@@ -48,7 +48,8 @@ p:first-of-type {
   adjust-font-size: fs tiny;
 }
 .basetext {
-   adjust-font-size: fs b;
+  color: #888;
+  adjust-font-size: fs b;
 }
 .mediumtext {
    adjust-font-size: fs m;

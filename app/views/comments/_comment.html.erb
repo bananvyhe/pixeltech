@@ -4,10 +4,10 @@
   </div>
 
 	<div style="margin: -0.4em 0;">
-		<h4>написал(а) <%= comment.user.username %></h4>
+		<div class="basetext">написал(а) <%= comment.user.username %> &nbsp;&nbsp;<%= link_to "ответить", "#", data: {action: "click->reply#toggle"}, style: "padding: 0em 0em 1em;" %></div>
   	<div data-controller="reply" style="margin: -0.5em 0 0.8em;">
 			<div >
-				<%= link_to "ответить", "#", data: {action: "click->reply#toggle"}, style: "padding: 0em 0em 1em;" %>
+				
 			</div>
 		  <div>
 		  	<%= render partial: "comments/form", locals: {commentable: comment.commentable, parent_id: comment.id, class: "d-none", target: "reply.form"} %>
