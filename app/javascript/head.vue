@@ -1,8 +1,10 @@
 мос<!-- :class="{ bgclass: activatorclass }" -->
 <template>
 	<div class="firstpagebg">
+
     <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }">
-       
+     
+
       <div class="formsZone">
       
         <div v-if="$store.getters.token != null" >

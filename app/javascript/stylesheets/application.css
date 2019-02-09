@@ -32,9 +32,9 @@ End Hamster setup*/
 @paste full;
 @media (--only-xsmall-screen) {
   @ihamster {
-    --font-size: 15px;
+    --font-size: 12px;
     --line-height: 1.6;
-    --to-font-size: 14px;
+    --to-font-size: 11px;
     --to-line-height: 1.6;
     --viewport: 320px 450px;
     --unit: vw;
@@ -44,7 +44,7 @@ End Hamster setup*/
 }
 @media (--only-small-screen) {
   @ihamster {
-    --font-size: 14px;
+    --font-size: 11px;
     --line-height: 1.6;
     --to-font-size: 11px;
     --to-line-height: 1.6 ;
@@ -58,7 +58,7 @@ End Hamster setup*/
   @ihamster {
     --font-size: 11px;
     --line-height: 1.6;
-    --to-font-size: 18px;
+    --to-font-size: 14px;
     --to-line-height: 1.6;
     --viewport: 800px 1919px;
     --unit: vw;
@@ -68,9 +68,9 @@ End Hamster setup*/
 }
 @media (--only-1600more-screen){
   @ihamster {
-    --font-size: 18px;
+    --font-size: 14px;
     --line-height: 1.6; 
-    --to-font-size: 26px;
+    --to-font-size: 22px;
     --to-line-height: 2;
     --viewport: 1920px 3840px;
     --unit: vw;
@@ -169,8 +169,8 @@ body {
 }
 .el-checkbox__label{
 
-   padding-bottom: 0.1em;
-   vertical-align: middle;
+  padding-bottom: 0.1em;
+  vertical-align: middle;
 
 }
 .el-form-item {
