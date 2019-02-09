@@ -20,7 +20,7 @@ h2 {
 }
 h3 {
   adjust-font-size: fs xlarge;
-  margin-top: spacing(0.8);
+  margin-top: spacing(0.4);
   margin-bottom: spacing(0.4);
  
   line-height: 1.1em;
@@ -109,7 +109,7 @@ li {
 }
 
 td {adjust-font-size: fs m;
-  padding: 0.5em;
+  padding: 0.4em 0.6em;
  
 }
 tbody tr:nth-child(even) {
