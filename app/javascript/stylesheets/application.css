@@ -100,7 +100,7 @@ body {
 
 }
 .mainframe {
-  padding: 0.7em 2.0em;
+  padding: 0.5em 1.2em;
   @media (--only-xsmall-screen) {
     padding: 0.7em 0.5em;
   }

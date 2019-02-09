@@ -79,7 +79,7 @@ em {
 strong {
   font-weight: bold;
 }
-a {
+a {adjust-font-size: fs l;
   color: color( $str5  blackness(12%));
   text-decoration: none;
 }
@@ -109,7 +109,7 @@ li {
 }
 
 td {adjust-font-size: fs m;
-  padding: 0.4em 0.6em;
+  padding: 0.5em 0.7em;
  
 }
 tbody tr:nth-child(even) {
