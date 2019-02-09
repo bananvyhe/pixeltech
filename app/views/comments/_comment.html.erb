@@ -1,11 +1,22 @@
-<div style="padding: 0.5em 1em; ">
-  
-  <%= simple_format comment.body %>
-  <h4 style="p">написал(а) <%= comment.user.username %></h4>
-  <div data-controller="reply">
-
-  	<%= link_to "ответить", "#", data: {action: "click->reply#toggle"}, style: "padding: 0em 0em 1em;" %>
-  	<%= render partial: "comments/form", locals: {commentable: comment.commentable, parent_id: comment.id, class: "d-none", target: "reply.form"} %>
+<div style="padding: 0.0em 1em;">
+  <div>
+  	<%= simple_format comment.body %>
   </div>
+
+	<div style="margin: -0.4em 0;">
+		<h4>написал(а) <%= comment.user.username %></h4>
+  	<div data-controller="reply" style="margin: -0.5em 0 0.8em;">
+			<div >
+				<%= link_to "ответить", "#", data: {action: "click->reply#toggle"}, style: "padding: 0em 0em 1em;" %>
+			</div>
+		  <div>
+		  	<%= render partial: "comments/form", locals: {commentable: comment.commentable, parent_id: comment.id, class: "d-none", target: "reply.form"} %>
+		  </div>	
+  	
+  	</div>
+	</div> 
+ 
+
+
   	<%= render comment.comments %> 
 </div>

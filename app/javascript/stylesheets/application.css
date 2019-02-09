@@ -99,6 +99,12 @@ body {
   color: #e7e8ec;
 
 }
+.lost1 {
+  lost-column: 1/2;
+}
+.lost2 {
+  lost-column: 1/1;
+}
 .mainframe {
   padding: 0.5em 1.2em;
   @media (--only-xsmall-screen) {
