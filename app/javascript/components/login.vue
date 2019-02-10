@@ -18,7 +18,7 @@
       </el-button>
     </div>
     
-		<el-dialog class="pos" top="18vh" v-bind:width="screenwidth.value > '600' ? '40'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
+		<el-dialog class="pos" top="18vh" v-bind:width="screenwidth.value > '500' ? '35'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
 			
 		  <el-form :model="form" :rules="rules" ref="form">	 
 		    <el-form-item 
@@ -32,15 +32,16 @@
 		      <el-input v-model="form.email" auto-complete="off"></el-input>
 		    </el-form-item>
 		    <el-form-item prop="password" size="mini" label="Пароль:">
-		      <el-input type="password" v-model="form.password" auto-complete="off"></el-input>
-		    </el-form-item><div>
-			</div>
-		    <el-form-item size="mini">
-			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
-				  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
-				  &nbsp; 
-				  <el-checkbox v-model="checked">Запомнить</el-checkbox>
+		      <el-input type="password" v-model="form.password" auto-complete="off">
+		      </el-input>
+		    </el-form-item>
+				<el-form-item size="mini"  style="margin-bottom: 0px;">
+			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button><el-button   type="primary" @click="handle" >Подтвердить</el-button>
+			 	</el-form-item>
+				<el-form-item label="запомнить" size="mini"  class="lab">
+				  <el-switch  size="mini" v-model="checked" label="Запомнить"></el-switch>
 				</el-form-item>
+				 
 		 	</el-form>
 		</el-dialog>
 	</div>
@@ -273,6 +274,18 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+.flexlab {
+	 
+}
+.lab {
+	display: flex;
+	justify-content: flex-end;
+/*	 
+	   padding-top: 0.2em;*/
+	  right: 0px;
+
+	  
+}
 .log  {
   z-index: 4000;
  /* position: absolute;*/

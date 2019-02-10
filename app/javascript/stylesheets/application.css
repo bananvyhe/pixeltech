@@ -157,17 +157,20 @@ body {
   padding-right: 0.5em;
 }
 .el-dialog__header {
-
+  padding: 25px 25px 7px 25px;
 }
  
 .el-dialog__body {
-  padding: 5px 23px 1px;
+  padding: 5px 35px 1px;
+}
+.el-form-item--mini {
+  padding-bottom: 0px;
 }
 .el-form-item--mini:last-child{
- padding: 0.5em;
+ padding-bottom: 0.2em;
 }
 .el-button {
-  margin: 0.25em 0.25em 0.25em 0.25em;
+  margin: 0.25em 0.25em 1em 0.25em;
 }
 .el-checkbox{
   padding-top: 0.1em;
@@ -181,10 +184,12 @@ body {
 }
 .el-form-item {
    display: flex;
+   margin-bottom: 0px;
+
 }
 .el-form-item__content {
-   display: flex;
-   width: 100%;
+   /*display: flex;
+   width: 100%;*/
 }
 .el-form-item__label {
   width: 110px;
