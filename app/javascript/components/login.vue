@@ -18,7 +18,7 @@
       </el-button>
     </div>
     
-		<el-dialog class="pos" top="18vh" v-bind:width="screenwidth.value > '600' ? '30'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
+		<el-dialog class="pos" top="18vh" v-bind:width="screenwidth.value > '600' ? '40'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
 			
 		  <el-form :model="form" :rules="rules" ref="form">	 
 		    <el-form-item 
