@@ -18,7 +18,7 @@
       </el-button>
     </div>
     
-		<el-dialog class="pos" top="18vh" v-bind:width="screenwidth.value > '500' ? '35'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
+		<el-dialog class="pos" top="18vh" v-bind:width="screenwidth.value > '400' ? '35'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
 			
 		  <el-form :model="form" :rules="rules" ref="form">	 
 		    <el-form-item 
@@ -38,8 +38,8 @@
 				<el-form-item size="mini"  style="margin-bottom: 0px;">
 			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button><el-button   type="primary" @click="handle" >Подтвердить</el-button>
 			 	</el-form-item>
-				<el-form-item label="запомнить" size="mini"  class="lab">
-				  <el-switch  size="mini" v-model="checked" label="Запомнить"></el-switch>
+				<el-form-item size="mini" label="запомнить"  class="lab">
+				  <el-switch width="26"  size="mini" v-model="checked" label="Запомнить"></el-switch>
 				</el-form-item>
 				 
 		 	</el-form>
