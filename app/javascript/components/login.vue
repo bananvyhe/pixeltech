@@ -274,7 +274,11 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
-
+.el-input--mini {
+	width: 16em;
+ 
+ 
+}
 .flexlab {
 	 
 }

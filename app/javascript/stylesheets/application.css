@@ -152,24 +152,16 @@ body {
   cursor: pointer;
 }
 .el-switch__core {
-     
-     
-    height: 12px;
-    
-    border-radius: 5px;
-    
- 
+  height: 12px;
+  border-radius: 5px;
 }
 .el-switch__core:after {
- 
- 
-    width: 8px;
-    height: 8px;
- 
+  width: 8px;
+  height: 8px; 
 }
- .el-switch.is-checked .el-switch__core::after {
-    left: 100%;
-    margin-left: -9px;
+.el-switch.is-checked .el-switch__core::after {
+  left: 100%;
+  margin-left: -9px;
 }
 .el-dialog { 
   font-family: 'aprior';
@@ -197,22 +189,19 @@ body {
   margin-left: 10px;
 }
 .el-checkbox__label{
-
   padding-bottom: 0.1em;
   vertical-align: middle;
-
 }
 .el-form-item {
    display: flex;
    margin-bottom: 0px;
-
 }
 .el-form-item__content {
    /*display: flex;
    width: 100%;*/
 }
 .el-form-item__label {
-  width: 110px;
+  width: 80px;
   line-height: 1em !important; 
   padding: 0 0.5em 0px !important; 
  display: flex;
