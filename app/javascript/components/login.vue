@@ -38,8 +38,8 @@
 				<el-form-item size="mini"  style="margin-bottom: 0px;">
 			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button><el-button   type="primary" @click="handle" >Подтвердить</el-button>
 			 	</el-form-item>
-				<el-form-item size="mini" label="запомнить"  class="lab">
-				  <el-switch width="26"  size="mini" v-model="checked" label="Запомнить"></el-switch>
+				<el-form-item size="mini"   class="lab">
+				  <el-switch  inactive-text="короткая сессия" active-text="запомнить" width="25"  size="mini" v-model="checked" ></el-switch>
 				</el-form-item>
 				 
 		 	</el-form>
@@ -274,6 +274,7 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+
 .flexlab {
 	 
 }

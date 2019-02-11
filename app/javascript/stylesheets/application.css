@@ -151,6 +151,26 @@ body {
   border-bottom: solid 1px;
   cursor: pointer;
 }
+.el-switch__core {
+     
+     
+    height: 12px;
+    
+    border-radius: 5px;
+    
+ 
+}
+.el-switch__core:after {
+ 
+ 
+    width: 8px;
+    height: 8px;
+ 
+}
+ .el-switch.is-checked .el-switch__core::after {
+    left: 100%;
+    margin-left: -9px;
+}
 .el-dialog { 
   font-family: 'aprior';
   padding-left: 0.5em;
