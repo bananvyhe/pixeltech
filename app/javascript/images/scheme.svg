@@ -211,8 +211,8 @@
 		  -webkit-animation-delay: 0.50s;
 		}
 		circle:nth-child(12n+12){animation: dots 0.2s forwards;
-			animation-delay: 0.55s;
-		  -webkit-animation-delay:  0.55s;
+			animation-delay: 0.75s;
+		  -webkit-animation-delay:  0.75s;
 		}
 		@keyframes dash {
 		  to {
