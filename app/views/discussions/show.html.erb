@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @discussion.title %>
+</p>
+
+<%= link_to 'Edit', edit_discussion_path(@discussion) %> |
+<%= link_to 'Back', discussions_path %>
+
+<h4>комментарии:</h4>
+ 
+	<%= render @discussion.comments.where(parent_id: nil) %> 
+	<%= render partial: "comments/form", locals: {commentable: @discussion} %>

@@ -2,9 +2,6 @@ require "sidekiq/web"
 
 
 Rails.application.routes.draw do
-  
-  
-
   resources :inboxes
   resources :siteowners
   resources :clients
@@ -62,7 +59,9 @@ Rails.application.routes.draw do
   # end
   root to: 'posts#index'
   resources :locations
- 
+  resources :discussions do
+    resources :comments, module: :discussions
+  end
   match "/404", :to => "errors#not_found", :via => :all
 	match "/500", :to => "errors#internal_server_error", :via => :all
   Sidekiq::Web.set :session_secret, Rails.application.credentials[:secret_key_base]
