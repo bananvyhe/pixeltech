@@ -15,11 +15,13 @@ class Api::V1::AuthenticationController < ApiController
        
         if  params[:user][:checked] == true
           user.remember_me = true
-           render json: { access: tokens[:access], refresh: tokens[:refresh]}
-           sign_in(:user, user )
+          sign_in(:user, user )
+          render json: { access: tokens[:access], refresh: tokens[:refresh]}
+           
         else
-          render json: { access: tokens[:access]}
           sign_in user
+          render json: { access: tokens[:access]}
+          
         end 
       else
          render json: { errors: "Неверный пароль." }

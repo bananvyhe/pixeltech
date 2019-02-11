@@ -203,6 +203,8 @@
 	  		this.dialogFormVisible = false
 	  		var contain = $('.contain');
 	  		contain.addClass('hidden');
+	  		var bg = $('#bg');
+	  		bg.addClass('hidden');
 	  		// this.dialogFormVisible = false
 	  	},
 		  onSubmit: function () {
