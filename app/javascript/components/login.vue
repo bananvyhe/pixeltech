@@ -201,6 +201,8 @@
 	  	handle: function () {
 	  		this.onSubmit();
 	  		this.dialogFormVisible = false
+	  		var contain = $('.contain');
+	  		contain.addClass('hidden');
 	  		// this.dialogFormVisible = false
 	  	},
 		  onSubmit: function () {

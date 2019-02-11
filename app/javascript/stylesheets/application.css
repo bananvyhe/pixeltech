@@ -89,6 +89,9 @@ End Hamster setup*/
   /*background-color: $palespringbud;*/ 
   /*background: resolve('../images/bg.png');*/
 }
+.hidden {
+  display: none;
+}
 body {
   
   background-color: #1E1E21;
