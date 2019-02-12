@@ -10,5 +10,5 @@
 
 <h4>комментарии:</h4>
  
-	<%= render @discussion.comments.where(parent_id: nil) %> 
+	<%= render @discussion.comments.where(parent_id: nil), max_nesting: 5 %> 
 	<%= render partial: "comments/form", locals: {commentable: @discussion} %>
