@@ -19,8 +19,10 @@
 		  <div style="">
 		  	<%= render partial: "comments/form", locals: {
 		  		commentable: comment.commentable, 
-		  		parent_id: (nesting < max_nesting ? comment.id : comment.parent_id), class: "d-none", 
-		  		target: "reply.form"} %>
+		  		# parent_id: (max_nesting.blank? || nesting < max_nesting) ? comment.id : comment.parent_id, class: "d-none", 
+		  		parent_id: reply_to_comment_id(comment, nesting, max_nesting), class: "d-none",
+		  		target: "reply.form"
+		  	} %>
 		  </div>	
   		
   	</div>
