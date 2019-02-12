@@ -14,11 +14,14 @@
   	<div data-controller="reply" style="margin: -0.3em 0 1.2em;">
 			<div >
 				<%= max_nesting %>
-				<%= link_to "ответить", "#", data: {action: "click->reply#toggle"} , style: "padding: 0em 0em 1em;" if nesting < max_nesting %>
+				<%= link_to "ответить", "#", data: {action: "click->reply#toggle"} , style: "padding: 0em 0em 1em;" %>
 				<%= link_to "удалить", [comment.commentable, comment], method: :delete, data: {confirm: "Вы уверены?"} if comment.user == current_user %>
 			</div>
 		  <div style="">
-		  	<%= render partial: "comments/form", locals: {commentable: comment.commentable, parent_id: comment.id, class: "d-none", target: "reply.form"} %>
+		  	<%= render partial: "comments/form", locals: {
+		  		commentable: comment.commentable, 
+		  		parent_id: (nesting < max_nesting ? comment.id : comment.parent_id), class: "d-none", 
+		  		target: "reply.form"} %>
 		  </div>	
   		
   	</div>

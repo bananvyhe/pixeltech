@@ -11,7 +11,7 @@
 <hr>
 <h4>комментарии:</h4>
  
-	<%= render @post.comments.where(parent_id: nil) %> 
+	<%= render @post.comments.where(parent_id: nil), max_nesting: 24 %> 
 	<%= render partial: "comments/form", locals: {commentable: @post} %>
 	
 </div>

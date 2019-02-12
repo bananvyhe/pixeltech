@@ -4,7 +4,7 @@ class DiscussionsController < ApplicationController
   # GET /discussions
   # GET /discussions.json
   def index
-    @discussions = Discussion.all
+    @discussions = Discussion.all.order(created_at: :desc)
   end
 
   # GET /discussions/1

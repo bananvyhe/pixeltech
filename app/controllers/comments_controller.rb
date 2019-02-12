@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController	
 	#before_action :authenticate_user!
   #before_action :authorize_access_request!
+  def index
+    @comments = Comment.all.order(created_at: :asc)
+  end
 	def create
 		@comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
