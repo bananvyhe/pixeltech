@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+<div class="mainframe">
+	<p>
+	  <strong>Title:</strong>
+	  <%= @discussion.title %>
+	</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @discussion.title %>
-</p>
+	<%= link_to 'Edit', edit_discussion_path(@discussion) %> |
+	<%= link_to 'Back', discussions_path %>
 
-<%= link_to 'Edit', edit_discussion_path(@discussion) %> |
-<%= link_to 'Back', discussions_path %>
-
-<h4>комментарии:</h4>
- 
-	<%= render @discussion.comments.where(parent_id: nil), max_nesting: 12 %> 
-	<%= render partial: "comments/form", locals: {commentable: @discussion} %>
+	<h4>комментарии:</h4>
+	<div id="comments">  
+		<%= render @discussion.comments.where(parent_id: nil), max_nesting: 12 %> 
+		<%= render partial: "comments/form", locals: {commentable: @discussion} %>
+	</div>
+</div>

@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 		if @comment.save
 			 respond_to do |format|
         format.html { redirect_to @commentable }
-        # format.js
+        format.js
       end
     else
       redirect_to @commentable, alert: "Something went wrong"
