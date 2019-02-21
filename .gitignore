@@ -37,3 +37,4 @@ error.log
 .DS_Store
 app/.DS_Store
 dump.rdb
+dump.rdb
