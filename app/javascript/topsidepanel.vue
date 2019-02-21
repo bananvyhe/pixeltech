@@ -1,5 +1,5 @@
 <template>
-	<div class="smalltext main" v-bind:style="styleObject"> 
+	<div class="smalltext main bpad" v-bind:style="styleObject"> 
 		<!-- <div v-if="$store.getters.token != null" > -->
 			<div class="logohead" >
 				<div v-if="$store.getters.role">
