@@ -39,6 +39,8 @@ gem 'sidekiq-client-cli'
 gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
 gem 'ed25519'  
 gem 'bcrypt_pbkdf'  
+gem 'nokogiri'
+gem 'mechanize'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
