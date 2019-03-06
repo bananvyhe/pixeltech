@@ -15,13 +15,12 @@ page = agent.get(url)
 # content = document.read
 # parsed_content = Nokogiri::HTML(content)
 show_more = agent.page.link_with(text: 'Show more').click
-.link_with(text: 'Show more').click
-.link_with(text: 'Show more').click
-.link_with(text: 'Show more').click
-.link_with(text: 'Show more').click
- 
- 
-page.css('.wall_item').each do |row|
+# .link_with(text: 'Show more').click
+# .link_with(text: 'Show more').click
+# .link_with(text: 'Show more').click
+# .link_with(text: 'Show more').click
+ # print show_more.body 
+def selection_scrapped(row)
 	title     = row.css('.pi_text').inner_text
 	posted_at = row.css('.wi_date').inner_text
 
@@ -30,13 +29,12 @@ page.css('.wall_item').each do |row|
 	puts '--------------------------'
 end
 
-show_more.css('.wall_item').each do |row|
-	title     = row.css('.pi_text').inner_text
-	posted_at = row.css('.wi_date').inner_text
+page.css('.wall_item').each do |row|
+	selection_scrapped(row)
+end
 
-	puts title
-	puts posted_at
-	puts '--------------------------'
+show_more.css('.wall_item').each do |row|
+	selection_scrapped(row)
 end
 
 
