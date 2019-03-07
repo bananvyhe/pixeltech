@@ -60,7 +60,7 @@ show_more.css('.wall_item').each do |row|
 	selection_scrapped(row)
 end
 result = JSON.pretty_generate(@rowsd)
-HTTParty.post("https://pixeltech.ru/api/v1/vk", body: {user: {email: 'user1@example.com', password: 'secret'}}).body
+HTTParty.post("https://pixeltech.ru/api/v1/vk", body: result) 
 
 
 
