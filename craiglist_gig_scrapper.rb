@@ -23,9 +23,18 @@ show_more = agent.page.link_with(text: 'Show more').click
 def selection_scrapped(row)
 	title     = row.css('.pi_text').inner_text
 	posted_at = row.css('.wi_date').inner_text
+	v_views = row.css('.v_views').inner_text
+	v_like = row.css('.v_like').inner_text
+	## регулярные выражения здесь не работают, необходщим синтаксис нокогири - реализован экстракт ссылок с картинками из стилей
+ 	# (/https.*jpg/)
+	thumb_map_img_as_div = row.search('.thumb_map_img_as_div').map{ |n| n['style'][/url\((.+)\)/, 1] }
 
+	puts thumb_map_img_as_div
 	puts title
 	puts posted_at
+	puts v_like	
+	puts v_views
+
 	puts '--------------------------'
 end
 
