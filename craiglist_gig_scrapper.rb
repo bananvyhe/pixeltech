@@ -2,11 +2,12 @@
 # require 'nokogiri'
 require 'mechanize'
 require 'json'
-require 'Pry'
+require 'httparty'
+# require 'Pry'
 
 agent = Mechanize.new
 
-url="https://vk.com/powermetalheads"
+url="https://vk.com/po_jesti"
 
 page = agent.get(url)
 # puts page.inspect
@@ -58,7 +59,8 @@ end
 show_more.css('.wall_item').each do |row|
 	selection_scrapped(row)
 end
-puts puts JSON.pretty_generate(@rowsd)
+result = JSON.pretty_generate(@rowsd)
+HTTParty.post("https://pixeltech.ru/api/v1/vk", body: {user: {email: 'user1@example.com', password: 'secret'}}).body
 
 
 

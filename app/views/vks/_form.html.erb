@@ -1,0 +1,42 @@
+<%= form_with(model: vk, local: true) do |form| %>
+  <% if vk.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vk.errors.count, "error") %> prohibited this vk from being saved:</h2>
+
+      <ul>
+      <% vk.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :posted_at %>
+    <%= form.text_field :posted_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :v_views %>
+    <%= form.number_field :v_views %>
+  </div>
+
+  <div class="field">
+    <%= form.label :v_like %>
+    <%= form.number_field :v_like %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thumb_map_img_as_div %>
+    <%= form.text_field :thumb_map_img_as_div %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

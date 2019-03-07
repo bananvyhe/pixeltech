@@ -2,6 +2,7 @@ require "sidekiq/web"
 
 
 Rails.application.routes.draw do
+  resources :vks
   resources :inboxes
   resources :siteowners
   resources :clients
@@ -44,7 +45,7 @@ Rails.application.routes.draw do
       post :auth, to: "authentication#create"
       post :refr, to: "refresh#create"
       post :inb, to: "inboxes#create"
-
+      post :vk, to: "vks#create"
       resources :users
       resources :locations do
         resources :recordings

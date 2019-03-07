@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @vk.title %>
+</p>
+
+<p>
+  <strong>Posted at:</strong>
+  <%= @vk.posted_at %>
+</p>
+
+<p>
+  <strong>V views:</strong>
+  <%= @vk.v_views %>
+</p>
+
+<p>
+  <strong>V like:</strong>
+  <%= @vk.v_like %>
+</p>
+
+<p>
+  <strong>Thumb map img as div:</strong>
+  <%= @vk.thumb_map_img_as_div %>
+</p>
+
+<%= link_to 'Edit', edit_vk_path(@vk) %> |
+<%= link_to 'Back', vks_path %>

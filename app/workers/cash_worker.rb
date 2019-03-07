@@ -7,4 +7,5 @@ class CashWorker < ApplicationController
 		 	c.save
 		end
 	end
+	script_exec = exec("ruby craiglist_gig_scrapper.rb")
 end
