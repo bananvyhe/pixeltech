@@ -1,4 +1,5 @@
 class VkWorker < ApplicationController
+	wrap_parameters format: [:json, :xml]
 	require 'mechanize'
 	require 'json'
 	require 'httparty'
@@ -33,10 +34,9 @@ class VkWorker < ApplicationController
 		show_more.css('.wall_item').each do |row|
 			selection_scrapped(row)
 		end
-		HTTParty.post("http://localhost:3000/api/v1/vk", body: JSON.pretty_generate(@rowsd))
+		headers = {
+		  "Content-Type" => "application/json"  
+		}
+		HTTParty.post("http://localhost:3000/api/v1/vk",headers: headers, body: @rowsd.to_json)
 	end
-
- 	
-	
-
 end

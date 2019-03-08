@@ -1,7 +1,7 @@
 class Api::V1::VksController < ApiController
 	skip_before_action :authenticate_user!
- 
-  def index
+	
+	def index
     @vks = Vk.all
   end
  
@@ -18,8 +18,10 @@ class Api::V1::VksController < ApiController
   # POST /Vks
   # POST /Vks.json
   def create
-		@vk = Vk.new({:title => params[:title],:posted_at => params[:posted_at],:v_views => params[:v_views], :v_like => params[:v_like], :thumb_map_img_as_div => params[:thumb_map_img_as_div]})
-    @vk.save
+  	params.require(:_json).each do |d|
+			@vk = Vk.new({:title => d[:title],:posted_at => d[:posted_at],:v_views => d[:v_views], :v_like => d[:v_like], :thumb_map_img_as_div => d[:thumb_map_img_as_div]})
+	    @vk.save
+  	end
   end 
  
 end
