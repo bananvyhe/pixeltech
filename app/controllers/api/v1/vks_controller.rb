@@ -19,7 +19,7 @@ class Api::V1::VksController < ApiController
   # POST /Vks.json
   def create
 		@vk = Vk.new({:title => params[:title],:posted_at => params[:posted_at],:v_views => params[:v_views], :v_like => params[:v_like], :thumb_map_img_as_div => params[:thumb_map_img_as_div]})
-    @inbox.save
+    @vk.save
   end 
  
 end
