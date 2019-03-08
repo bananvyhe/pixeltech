@@ -23,7 +23,7 @@ show_more = agent.page.link_with(text: 'Show more').click
 # .link_with(text: 'Show more').click
 # .link_with(text: 'Show more').click
  # print show_more.body 
- @rowsd = Array.new
+@rowsd = Array.new
 def selection_scrapped(row)
 	title     = row.css('.pi_text').inner_text
 	posted_at = row.css('.wi_date').inner_text
@@ -59,8 +59,8 @@ end
 show_more.css('.wall_item').each do |row|
 	selection_scrapped(row)
 end
-result = JSON.pretty_generate(@rowsd)
-HTTParty.post("https://pixeltech.ru/api/v1/vk", body: result) 
+ 
+# HTTParty.post("http://localhost:3000/api/v1/vk", body: JSON.pretty_generate(@rowsd)) 
 
 
 

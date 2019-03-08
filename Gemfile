@@ -41,6 +41,7 @@ gem 'ed25519'
 gem 'bcrypt_pbkdf'  
 gem 'nokogiri'
 gem 'mechanize'
+gem 'httparty'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
