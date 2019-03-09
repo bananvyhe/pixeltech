@@ -57,6 +57,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry'
   gem 'capistrano', '~> 3.8'
   gem 'capistrano-rails', '1.2'
   gem 'capistrano-passenger', '~> 0.2'
