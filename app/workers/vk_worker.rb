@@ -29,8 +29,7 @@ class VkWorker < ApplicationController
 			"https://vk.com/mtblog", 
 			'https://vk.com/clevermusic', 
 			'https://vk.com/warm_music', 
-			'https://vk.com/soundtracks_for_coding', 
-			'https://vk.com/fresh_house_music']
+			'https://vk.com/soundtracks_for_coding']
 		@rowsd = Array.new
 
 		url.each do |url|
