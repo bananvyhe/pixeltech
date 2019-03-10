@@ -25,12 +25,24 @@ class VkWorker < ApplicationController
 			@rowsd << data
 		end
 		agent = Mechanize.new
-		url=["https://vk.com/po_jesti", "https://vk.com/mtblog", 'https://vk.com/clevermusic']
+		url=["https://vk.com/po_jesti", 
+			"https://vk.com/mtblog", 
+			'https://vk.com/clevermusic', 
+			'https://vk.com/warm_music', 
+			'https://vk.com/soundtracks_for_coding', 
+			'https://vk.com/fresh_house_music']
 		@rowsd = Array.new
-		
+
 		url.each do |url|
 			page = agent.get(url)
 			show_more = agent.page.link_with(text: 'Show more').click
+				.link_with(text: 'Show more').click
+				.link_with(text: 'Show more').click
+				.link_with(text: 'Show more').click
+				.link_with(text: 'Show more').click 
+				.link_with(text: 'Show more').click 
+				.link_with(text: 'Show more').click 
+
 			page.css('.wall_item').each do |row|
 				selection_scrapped(row)
 			end
