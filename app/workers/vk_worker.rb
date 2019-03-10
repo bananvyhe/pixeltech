@@ -47,11 +47,7 @@ class VkWorker < ApplicationController
 			.link_with(text: 'Show more').click
 			.link_with(text: 'Show more').click
 			.link_with(text: 'Show more').click
-			.link_with(text: 'Show more').click
-			.link_with(text: 'Show more').click
-			.link_with(text: 'Show more').click
-			.link_with(text: 'Show more').click
-			.link_with(text: 'Show more').click
+
 			
 			page.css('.wall_item').each do |row|
 				selection_scrapped(row)
