@@ -25,10 +25,10 @@ class VkWorker < ApplicationController
 			@rowsd << data
 		end
 		agent = Mechanize.new
-		url=["https://vk.com/po_jesti", 
-			"https://vk.com/mtblog", 
-			'https://vk.com/clevermusic', 
-			'https://vk.com/warm_music', 
+		url=["https://vk.com/po_jesti",
+			"https://vk.com/mtblog",
+			'https://vk.com/clevermusic',
+			'https://vk.com/warm_music',
 			'https://vk.com/soundtracks_for_coding',
 			'https://vk.com/powermetalheads',
 			'https://vk.com/lostark',
