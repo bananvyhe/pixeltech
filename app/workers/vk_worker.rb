@@ -38,6 +38,11 @@ class VkWorker < ApplicationController
 		headers = {
 		  "Content-Type" => "application/json"  
 		}
-		HTTParty.post("https://pixeltech.ru/api/v1/vk",headers: headers, body: @rowsd.to_json)
+		if Rails.env.production?
+			HTTParty.post("https://pixeltech.ru/api/v1/vk",headers: headers, body: @rowsd.to_json)
+		end
+		if Rails.env.development?
+			HTTParty.post("http://localhost:3000/api/v1/vk",headers: headers, body: @rowsd.to_json)
+		end
 	end
 end
