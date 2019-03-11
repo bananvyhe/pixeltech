@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.order(created_at: :desc)
-    @vks = Vk.all.order(created_at: :desc)
+    @vks = Vk.all.order(created_at: :asc)
   end
 
   # GET /posts/1
