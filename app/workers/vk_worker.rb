@@ -39,13 +39,13 @@ class VkWorker < ApplicationController
 		url.each do |url|
 			page = agent.get(url)
 			show_more = agent.page.link_with(text: 'Show more').click
-			sleep (1)
+			sleep (2)
 			show_more = show_more.link_with(text: 'Show more').click
-			sleep (1)
+			sleep (2)
 			show_more = show_more.link_with(text: 'Show more').click
-			sleep (1)
+			sleep (2)
 			show_more = show_more.link_with(text: 'Show more').click
-			sleep (1)
+			sleep (2)
 			show_more = show_more.link_with(text: 'Show more').click
 			show_more.to_s.delete "Expand text…"
  
