@@ -3,9 +3,8 @@ class VkWorker < ApplicationController
 	require 'mechanize'
 	require 'json'
 	require 'httparty'
-	
+
 	include Sidekiq::Worker
-	 
 	def perform	
 		def selection_scrapped(row)
 			title     = row.css('.pi_text').inner_text
@@ -40,15 +39,16 @@ class VkWorker < ApplicationController
 		url.each do |url|
 			page = agent.get(url)
 			show_more = agent.page.link_with(text: 'Show more').click
-			.link_with(text: 'Show more').click
-			.link_with(text: 'Show more').click
-			.link_with(text: 'Show more').click
-			.link_with(text: 'Show more').click
-			.link_with(text: 'Show more').click
-			# .link_with(text: 'Show more').click
-			# .link_with(text: 'Show more').click
-
-			
+			sleep (1)
+			show_more = show_more.link_with(text: 'Show more').click
+			sleep (1)
+			show_more = show_more.link_with(text: 'Show more').click
+			sleep (1)
+			show_more = show_more.link_with(text: 'Show more').click
+			sleep (1)
+			show_more = show_more.link_with(text: 'Show more').click
+			show_more.to_s.delete "Expand text…"
+ 
 			page.css('.wall_item').each do |row|
 				selection_scrapped(row)
 			end
