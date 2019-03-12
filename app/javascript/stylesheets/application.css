@@ -129,7 +129,7 @@ body {
  
 }
 .vkpost:nth-child(even) {
-  background-color: color( $HeadBackColor  shade(52%));
+  background-color: color( $HeadBackColor  shade(46%));
 }
 .vktext {
   padding: 0.5em 1em; 
