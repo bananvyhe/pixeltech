@@ -128,11 +128,19 @@ body {
 .firstpagebg {
  
 }
+.vkpost {
+  padding: 0em 1em 0.6em 1em;
+}
 .vkpost:nth-child(even) {
   background-color: color( $HeadBackColor  shade(46%));
 }
 .vktext {
-  padding: 0.5em 1em; 
+  padding: 0.5em 0em; 
+}
+.vkdate {
+  font-style: italic;
+  adjust-font-size: fs tiny;
+  padding: 0.5em 1em 0em 0em;  
 }
 #head {
   .subj {

@@ -68,7 +68,7 @@ p { adjust-font-size: fs l;
 
 }
 img {
-  padding: 0em 1.5em 0.9em 1.5em;
+  /*padding: 0em 1.5em 0.9em 1.5em;*/
 /*   margin-right: 4vw;
    margin-left: 4vw;
    margin-top: 0.5em;

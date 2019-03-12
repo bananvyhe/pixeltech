@@ -3,18 +3,19 @@
  <div class="mainframe">
 <% @vks.each do |post| %>
   <div class="vkpost">
-    <div class="vktext">
-      <%= post.title %>
+    <div class="vkdate">
+      <%= post.posted_at %>      
     </div>
+    <% if post.title? %>
+      <div class="vktext">
+        <%= post.title %>
+      </div>
+    <% end %>
     <div>
     <% post.thumb_map_img_as_div[0...-1].split(",").each do |img| %>
       <img src="<%= img[2...-1] %>" />      
     <% end %>
       </div>
-    <div class="vkdate">
-      <%= post.posted_at %>      
-    </div>
-
   </div>
   <!-- <td><%#= post.user.username %></td> -->
   <!--        <td><%#= post.body %></td> -->
