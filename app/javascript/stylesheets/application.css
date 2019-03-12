@@ -112,20 +112,27 @@ body {
   .vktext {
     padding-bottom: 0.5em;
   }
-  adjust-font-size: fs base;
+
+/*  adjust-font-size: fs base;
   padding: 0.5em 1.2em;
   @media (--only-xsmall-screen) {
     padding: 0.7em 0.5em;
   }
   @media (--only-small-screen) {
     padding: 0.7em 1em;
-  }
+  }*/
 }
 .thumb_map_img_as_div{
   height: 300px; width: 500px;
 }
 .firstpagebg {
  
+}
+.vkpost:nth-child(even) {
+  background-color: color( $HeadBackColor  shade(20%));
+}
+.vktext {
+  padding: 0.5em 1em; 
 }
 #head {
   .subj {

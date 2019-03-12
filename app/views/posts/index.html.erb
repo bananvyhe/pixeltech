@@ -6,13 +6,11 @@
     <div class="vktext">
       <%= post.title %>
     </div>
-    <% post.thumb_map_img_as_div[0...-1].split(",").each do |img| %>
-    <%#= img[2...-1] %>
     <div>
+    <% post.thumb_map_img_as_div[0...-1].split(",").each do |img| %>
       <img src="<%= img[2...-1] %>" />      
-    </div>
-
     <% end %>
+      </div>
     <div class="vkdate">
       <%= post.posted_at %>      
     </div>
