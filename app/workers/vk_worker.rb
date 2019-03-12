@@ -9,7 +9,7 @@ class VkWorker < ApplicationController
 		def selection_scrapped(row)
 			title     = row.css('.pi_text').inner_text.sub("Expand text…", "").sub("#", " ")
 			posted_at = row.css('.wi_date').inner_text
-			v_views = row.css('.v_views').inner_text
+			v_views = row.css('.v_views').inner_text.sub("K", "000")
 			v_like = row.css('.v_like').inner_text
 			thumb_map_img_as_div = row.search('.thumb_map_img')
 			.map do |n| 
@@ -31,7 +31,7 @@ class VkWorker < ApplicationController
 		agent = Mechanize.new
 
 # ,
-# 			'https://vk.com/po_jesti',
+# 			
 # 			'https://vk.com/powermetalheads',
 # 			'https://vk.com/mtblog',
 # 			'https://vk.com/clevermusic',
@@ -39,10 +39,10 @@ class VkWorker < ApplicationController
 # 			'https://vk.com/soundtracks_for_coding',
 # 			'https://vk.com/lostark',
 # 			'https://vk.com/e_music_ambient',
-# 			'https://vk.com/fashionsound'
+# 			'https://vk.com/fashionsound','https://vk.com/joise', 
+			# 'https://vk.com/lostark'
 
-		url=['https://vk.com/joise', 
-			'https://vk.com/lostark']
+		url=['https://vk.com/po_jesti']
 		@rowsd = Array.new
 		timer = rand(1.0 .. 2.0)
 		url.each do |url|
@@ -50,22 +50,22 @@ class VkWorker < ApplicationController
 			sleep(timer)
 			show_more = agent.page.link_with(text: 'Show more').click
  			sleep(timer)
-			# show_more1 = show_more.link_with(text: 'Show more').click 
-			# sleep(timer)
-			# show_more2 = show_more1.link_with(text: 'Show more').click  
-			# sleep(timer)
-			# show_more3 = show_more2.link_with(text: 'Show more').click 
-			# sleep(timer)
-			# show_more4 = show_more3.link_with(text: 'Show more').click 
-			# sleep(timer)
-			# show_more5 = show_more4.link_with(text: 'Show more').click 
-			# sleep(timer)
-			# show_more6 = show_more5.link_with(text: 'Show more').click 
-			# sleep(timer)
-			# show_more7 = show_more6.link_with(text: 'Show more').click 
-			# sleep(timer)
-			# show_more8 = show_more7.link_with(text: 'Show more').click
-			# sleep(timer)
+			show_more1 = show_more.link_with(text: 'Show more').click 
+			sleep(timer)
+			show_more2 = show_more1.link_with(text: 'Show more').click  
+			sleep(timer)
+			show_more3 = show_more2.link_with(text: 'Show more').click 
+			sleep(timer)
+			show_more4 = show_more3.link_with(text: 'Show more').click 
+			sleep(timer)
+			show_more5 = show_more4.link_with(text: 'Show more').click 
+			sleep(timer)
+			show_more6 = show_more5.link_with(text: 'Show more').click 
+			sleep(timer)
+			show_more7 = show_more6.link_with(text: 'Show more').click 
+			sleep(timer)
+			show_more8 = show_more7.link_with(text: 'Show more').click
+			sleep(timer)
 			
  			
 			page.css('.wall_item').each do |row|
@@ -74,30 +74,30 @@ class VkWorker < ApplicationController
 			show_more.css('.wall_item').each do |row|
 				selection_scrapped(row)
 			end
-			# show_more1.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end
-			# show_more2.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end
-			# show_more3.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end
-			# show_more4.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end
-			# show_more5.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end 
-			# show_more6.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end 
-			# show_more7.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end 
-			# show_more8.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end 
+			show_more1.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end
+			show_more2.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end
+			show_more3.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end
+			show_more4.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end
+			show_more5.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end 
+			show_more6.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end 
+			show_more7.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end 
+			show_more8.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end 
 		end
 		headers = {
 		  "Content-Type" => "application/json"  

@@ -69,6 +69,6 @@ class VksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vk_params
-      params.require(:vk).permit(:wall, :title, :posted_at, :v_views, :v_like, :thumb_map_img_as_div)
+      params.require(:vk).permit(:wall, :raiting, :title, :posted_at, :v_views, :v_like, :thumb_map_img_as_div)
     end
 end

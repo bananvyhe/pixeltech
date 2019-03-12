@@ -1,5 +1,6 @@
 <!-- <p id="notice"><%= notice %></p>
  -->
+
    <script>
     function setOnclick(a) {
     a.setAttribute("onclick","popupWin = window.open(this.href,'contacts','width=820px,height=700px,top=50,left=200px,toolbar=0, location=0, directories=0, menubar=0, scrollbars=0, resizable=0, status=0'); popupWin.focus(); return false");
@@ -31,6 +32,9 @@
         <img src="<%= img[2...-1] %>" />      
       <% end %>
     </div>
+     <%= post.v_like %> ---
+    <%= post.v_views %> |
+    <%= post.raiting %>
     <a rel="external" href='https://vk.com<%= post.wall[2...-2] %>'>открыть в окне</a>
     <div>      
     </div>
