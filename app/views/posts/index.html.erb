@@ -1,5 +1,20 @@
 <!-- <p id="notice"><%= notice %></p>
  -->
+   <script>
+    function setOnclick(a) {
+    a.setAttribute("onclick","popupWin = window.open(this.href,'contacts','width=820px,height=700px,top=50,left=200px,toolbar=0, location=0, directories=0, menubar=0, scrollbars=0, resizable=0, status=0'); popupWin.focus(); return false");
+    }
+
+    function externalLinks() {
+    var links = document.getElementsByTagName("a");
+      for (i=0; i<links.length; i++) {
+        if (links[i].getAttribute("href") && links[i].getAttribute("rel") == "external") {
+          setOnclick(links[i])
+        }
+      }
+    }
+    window.onload = externalLinks;
+  </script>
  <div class="mainframe">
 <% @vks.each do |post| %>
   <div class="vkpost">
@@ -12,10 +27,13 @@
       </div>
     <% end %>
     <div>
-    <% post.thumb_map_img_as_div[0...-1].split(",").each do |img| %>
-      <img src="<%= img[2...-1] %>" />      
-    <% end %>
-      </div>
+      <% post.thumb_map_img_as_div[0...-1].split(",").each do |img| %>
+        <img src="<%= img[2...-1] %>" />      
+      <% end %>
+    </div>
+    <a rel="external" href='https://vk.com<%= post.wall[2...-2] %>'>открыть в окне</a>
+    <div>      
+    </div>
   </div>
   <!-- <td><%#= post.user.username %></td> -->
   <!--        <td><%#= post.body %></td> -->
