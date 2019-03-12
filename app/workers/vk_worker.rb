@@ -41,12 +41,10 @@ class VkWorker < ApplicationController
 			'https://vk.com/lostark',
 			'https://vk.com/e_music_ambient',
 			'https://vk.com/fashionsound',
-			'https://vk.com/fresh_house_music'
-	]
+			'https://vk.com/fresh_house_music']
 		@rowsd = Array.new
 		timer = rand(1.0 .. 2.0)
 		url.each do |url|
-
 	 		page = agent.get(url)
 			sleep(timer)
 			show_more = agent.page.link_with(text: 'Show more').click
@@ -67,46 +65,38 @@ class VkWorker < ApplicationController
 			sleep(timer)
 			show_more8 = show_more7.link_with(text: 'Show more').click
 			sleep(timer)
-			page.to_s.sub("Expand text…", "")
- 			show_more.to_s.sub("Expand text…", "")
-			# show_more1.to_s.gsub(/["Expand text…"]/,'')
-			# show_more2.to_s.gsub(/["Expand text…"]/,'')
-			# show_more3.to_s.gsub(/["Expand text…"]/,'')
-			# show_more4.to_s.gsub(/["Expand text…"]/,'')
-			# show_more5.to_s.gsub(/["Expand text…"]/,'')
-			# show_more6.to_s.gsub(/["Expand text…"]/,'')
-			# show_more7.to_s.gsub(/["Expand text…"]/,'')
- 
+			
+ 			
 			page.css('.wall_item').each do |row|
 				selection_scrapped(row)
 			end
 			show_more.css('.wall_item').each do |row|
 				selection_scrapped(row)
 			end
-			# show_more1.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end
-			# show_more2.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end
-			# show_more3.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end
-			# show_more4.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end
-			# show_more5.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end 
-			# show_more6.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end 
-			# show_more7.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end 
-			# show_more8.css('.wall_item').each do |row|
-			# 	selection_scrapped(row)
-			# end 
+			show_more1.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end
+			show_more2.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end
+			show_more3.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end
+			show_more4.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end
+			show_more5.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end 
+			show_more6.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end 
+			show_more7.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end 
+			show_more8.css('.wall_item').each do |row|
+				selection_scrapped(row)
+			end 
 		end
 		headers = {
 		  "Content-Type" => "application/json"  

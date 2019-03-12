@@ -109,6 +109,10 @@ body {
   lost-column: 1/1;
 }
 .mainframe {
+  .vktext {
+    padding-bottom: 0.5em;
+  }
+  adjust-font-size: fs base;
   padding: 0.5em 1.2em;
   @media (--only-xsmall-screen) {
     padding: 0.7em 0.5em;

@@ -1,21 +1,27 @@
 <!-- <p id="notice"><%= notice %></p>
  -->
+ <div class="mainframe">
 <% @vks.each do |post| %>
-        
-          <%= post.title %><br>
-          <% post.thumb_map_img_as_div[0...-1].split(",").each do |img| %>
-          
-         <%#= img[2...-1] %>
-         <img src="<%= img[2...-1] %>" />
+  <div class="vkpost">
+    <div class="vktext">
+      <%= post.title %>
+    </div>
+    <% post.thumb_map_img_as_div[0...-1].split(",").each do |img| %>
+    <%#= img[2...-1] %>
+    <div>
+      <img src="<%= img[2...-1] %>" />      
+    </div>
 
-          <br>
-          <% end %>
-          <%= post.posted_at %><br><br>
-          <!-- <td><%#= post.user.username %></td> -->
-   <!--        <td><%#= post.body %></td> -->
-     
-        </tr>
-      <% end %>
+    <% end %>
+    <div class="vkdate">
+      <%= post.posted_at %>      
+    </div>
+
+  </div>
+  <!-- <td><%#= post.user.username %></td> -->
+  <!--        <td><%#= post.body %></td> -->
+<% end %>
+
   <h2>Флуд</h2>
 
   <table>
@@ -44,4 +50,5 @@
   <br>
 
   <%= link_to 'Новый пост', new_post_path %>
+</div>
 </div>
