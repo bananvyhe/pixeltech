@@ -40,8 +40,7 @@ class VkWorker < ApplicationController
 			'https://vk.com/soundtracks_for_coding',
 			'https://vk.com/lostark',
 			'https://vk.com/e_music_ambient',
-			'https://vk.com/fashionsound',
-			'https://vk.com/fresh_house_music']
+			'https://vk.com/fashionsound']
 		@rowsd = Array.new
 		timer = rand(1.0 .. 2.0)
 		url.each do |url|
