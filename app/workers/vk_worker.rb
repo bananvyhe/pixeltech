@@ -9,8 +9,13 @@ class VkWorker < ApplicationController
 		def selection_scrapped(row)
 			title     = row.css('.pi_text').inner_text.sub("Expand text…", "").sub("#", " ")
 			posted_at = row.css('.wi_date').inner_text
-			v_views = row.css('.v_views').inner_text.sub("K", "000")
-			v_like = row.css('.v_like').inner_text
+			mane = row.css('.v_views').inner_text
+			croppedmane = mane.sub(".", "")
+			v_views = croppedmane.sub("K", "000").to_s 
+			if mane.mb_chars.length > croppedmane.mb_chars.length
+				v_views = v_views[0...-1]
+			end
+			v_like = row.css('.v_like').inner_text.sub("K", "000")
 			thumb_map_img_as_div = row.search('.thumb_map_img')
 			.map do |n| 
 		 		if n['data-src_big'] != nil

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_170150) do
+ActiveRecord::Schema.define(version: 2019_03_13_091036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -161,13 +161,13 @@ ActiveRecord::Schema.define(version: 2019_03_12_170150) do
   create_table "vks", force: :cascade do |t|
     t.string "title"
     t.string "posted_at"
-    t.integer "v_views"
-    t.integer "v_like"
     t.string "thumb_map_img_as_div"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "wall"
     t.float "raiting"
+    t.string "v_like"
+    t.string "v_views"
   end
 
   create_table "voodoos", force: :cascade do |t|
