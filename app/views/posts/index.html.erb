@@ -32,10 +32,14 @@
         <img src="<%= img[2...-1] %>" />      
       <% end %>
     </div>
+
     <%= post.v_like %> --
     <%= post.v_views %> |
     <%= post.raiting %>
-    <a rel="external" href='https://vk.com<%= post.wall[2...-2] %>'>открыть в окне</a>
+    <% if  post.medias_row? %>
+    <a rel="external" href='https://vk.com<%= post.wall[2...-2] %>'>музыка в окне</a>
+    <% end %>
+
   </div>
   <!-- <td><%#= post.user.username %></td> -->
   <!--        <td><%#= post.body %></td> -->

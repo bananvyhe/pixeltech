@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_091036) do
+ActiveRecord::Schema.define(version: 2019_03_13_175352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -168,6 +168,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_091036) do
     t.float "raiting"
     t.string "v_like"
     t.string "v_views"
+    t.string "medias_row"
   end
 
   create_table "voodoos", force: :cascade do |t|

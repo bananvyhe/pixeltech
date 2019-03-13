@@ -10,6 +10,7 @@ class VkWorker < ApplicationController
 			title     = row.css('.pi_text').inner_text.sub("Expand text…", "").sub("#", " ")
 			posted_at = row.css('.wi_date').inner_text
 			mane = row.css('.v_views').inner_text
+			medias_row = row.search('.medias_row').inner_text
 			croppedmane = mane.sub(".", "")
 			v_views = croppedmane.sub("K", "000").to_s 
 			if mane.mb_chars.length > croppedmane.mb_chars.length
@@ -25,6 +26,7 @@ class VkWorker < ApplicationController
 			wall = row.css('div.wi_info a').map { |link| link['href'] }
 			data = {
 				wall: wall,
+				medias_row: medias_row,
 			    title: title,
 			    posted_at: posted_at,
 			    v_views: v_views,
@@ -35,18 +37,19 @@ class VkWorker < ApplicationController
 			end
 		agent = Mechanize.new
 
+# ,
+# 			
+# 			'https://vk.com/powermetalheads',
+# 			'https://vk.com/mtblog',
+# 			'https://vk.com/clevermusic',
+# 			'https://vk.com/warm_music',
+# 			'https://vk.com/soundtracks_for_coding',
+# 			'https://vk.com/lostark',
+# 			'https://vk.com/e_music_ambient',
+# 			'https://vk.com/fashionsound','https://vk.com/joise', 
+			# 'https://vk.com/lostark'
 
-
-		url=['https://vk.com/po_jesti',
-			'https://vk.com/powermetalheads',
-			'https://vk.com/mtblog',
-			'https://vk.com/clevermusic',
-			'https://vk.com/warm_music',
-			'https://vk.com/soundtracks_for_coding',
-			'https://vk.com/lostark',
-			'https://vk.com/e_music_ambient',
-			'https://vk.com/fashionsound','https://vk.com/joise', 
-			'https://vk.com/lostark']
+		url=['https://vk.com/po_jesti']
 		@rowsd = Array.new
 		timer = rand(1.0 .. 2.0)
 		url.each do |url|
