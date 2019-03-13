@@ -3,6 +3,7 @@ class Api::V1::VksController < ApiController
 	skip_before_action :authenticate_user!
 
 	def index
+		
     @vks = Vk.all.order(raiting: :desc)
   end
  
