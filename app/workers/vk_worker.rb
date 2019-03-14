@@ -26,7 +26,7 @@ class VkWorker < ApplicationController
 			wall = row.css('div.wi_info a').map { |link| link['href'] }
 			data = {
 				wall: wall,
-				medias_row: medias_row,
+					medias_row: medias_row,
 			    title: title,
 			    posted_at: posted_at,
 			    v_views: v_views,
@@ -37,9 +37,8 @@ class VkWorker < ApplicationController
 			end
 		agent = Mechanize.new
 
-
-
 		url=['https://vk.com/po_jesti',
+			
 			'https://vk.com/powermetalheads',
 			'https://vk.com/mtblog',
 			'https://vk.com/clevermusic',
@@ -48,7 +47,10 @@ class VkWorker < ApplicationController
 			'https://vk.com/lostark',
 			'https://vk.com/e_music_ambient',
 			'https://vk.com/fashionsound','https://vk.com/joise', 
-			'https://vk.com/lostark']
+			'https://vk.com/lostark'
+
+
+		]
 		@rowsd = Array.new
 		timer = rand(1.0 .. 2.0)
 		url.each do |url|
