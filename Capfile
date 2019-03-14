@@ -29,7 +29,7 @@ set :linked_files, %w{config/master.key}
 set :init_system, :systemd
 set :init_system, :upstart
 set :upstart_service_name, 'sidekiq'
-set :sidekiq_processes, 2
+set :sidekiq_processes, 5
 set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
 # set :sidekiq_user, 'deploy'
 # set :rbenv_map_bins, fetch(:rbenv_map_bins).to_a.concat(%w(sidekiq sidekiqctl))

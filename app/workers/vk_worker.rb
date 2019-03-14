@@ -37,18 +37,17 @@ class VkWorker < ApplicationController
 			end
 		agent = Mechanize.new
 
-		url=['https://vk.com/po_jesti',
-			
-			'https://vk.com/powermetalheads',
-			'https://vk.com/mtblog',
-			'https://vk.com/clevermusic',
-			'https://vk.com/warm_music',
-			'https://vk.com/soundtracks_for_coding',
-			'https://vk.com/lostark',
-			'https://vk.com/e_music_ambient',
-			'https://vk.com/fashionsound','https://vk.com/joise', 
-			'https://vk.com/lostark'
+			# 'https://vk.com/powermetalheads',
+			# 'https://vk.com/mtblog',
+			# 'https://vk.com/clevermusic',
+			# 'https://vk.com/warm_music',
+			# 'https://vk.com/soundtracks_for_coding',
+			# 'https://vk.com/lostark',
+			# 'https://vk.com/e_music_ambient',
+			# 'https://vk.com/fashionsound','https://vk.com/joise', 
+			# 'https://vk.com/lostark'
 
+		url=['https://vk.com/po_jesti'
 
 		]
 		@rowsd = Array.new
