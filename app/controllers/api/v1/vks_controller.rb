@@ -27,7 +27,7 @@ class Api::V1::VksController < ApiController
   	 	views = d[:v_views]
   	 	posted_at = d[:posted_at]
   	 	wald = d[:wall] 
-      medias_row = d[:medias_row].chop
+      medias_row = d[:medias_row].strip
  			# binding.pry
 
   		if !Vk.find_by(:wall => wald.to_s)
