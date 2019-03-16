@@ -50,7 +50,7 @@ class VkWorker < ApplicationController
 			'https://vk.com/soundtracks_for_coding',
 			'https://vk.com/lostark',
 			'https://vk.com/e_music_ambient',
-			'https://vk.com/fashionsound','https://vk.com/joise'
+			'https://vk.com/fashionsound','https://vk.com/joise',
 			'https://vk.com/clevermusic']
 		@rowsd = Array.new
 		timer = rand(1.0 .. 2.0)
