@@ -43,8 +43,7 @@ class VkWorker < ApplicationController
 		agent = Mechanize.new
 
 
-		url=[
-			'https://vk.com/po_jesti',
+		url=['https://vk.com/po_jesti',
 			'https://vk.com/powermetalheads',
 			'https://vk.com/mtblog',
 			'https://vk.com/warm_music',
@@ -53,10 +52,7 @@ class VkWorker < ApplicationController
 			'https://vk.com/e_music_ambient',
 			'https://vk.com/fashionsound','https://vk.com/joise', 
 			'https://vk.com/lostark',
-			'https://vk.com/clevermusic'
-
-
-		]
+			'https://vk.com/clevermusic']
 		@rowsd = Array.new
 		timer = rand(1.0 .. 2.0)
 		url.each do |url|
