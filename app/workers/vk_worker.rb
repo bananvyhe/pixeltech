@@ -10,9 +10,9 @@ class VkWorker < ApplicationController
 			title     = row.css('.pi_text').inner_text.sub("Expand text…", "").sub("#", " ")
 			posted_at = row.css('.wi_date').inner_text
 			mane = row.css('.v_views').inner_text
-			medias_row = row.search('.medias_row').text.strip.gsub(/"/, '')
+			medias_row = row.search('.medias_row').text.strip 
 			
-			if medias_row != '""'
+			if medias_row == '""'
 				medias_row = nil
 			end
 			# Pry.start(binding)
@@ -43,16 +43,17 @@ class VkWorker < ApplicationController
 		agent = Mechanize.new
 
 
-		url=['https://vk.com/po_jesti',
+		url=[
+			'https://vk.com/po_jesti',
 			'https://vk.com/powermetalheads',
 			'https://vk.com/mtblog',
-			'https://vk.com/clevermusic',
 			'https://vk.com/warm_music',
 			'https://vk.com/soundtracks_for_coding',
 			'https://vk.com/lostark',
 			'https://vk.com/e_music_ambient',
 			'https://vk.com/fashionsound','https://vk.com/joise', 
-			'https://vk.com/lostark'
+			'https://vk.com/lostark',
+			'https://vk.com/clevermusic'
 
 
 		]
