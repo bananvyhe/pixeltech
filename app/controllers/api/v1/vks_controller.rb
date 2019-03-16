@@ -27,12 +27,8 @@ class Api::V1::VksController < ApiController
   	 	views = d[:v_views]
   	 	posted_at = d[:posted_at]
   	 	wald = d[:wall] 
-      
-      if medias_row?
-        medias_row = d[:medias_row].strip
-      else
-        medias_row = nil
-      end
+      medias_row = d[:medias_row]
+ 
  			# binding.pry
 
   		if !Vk.find_by(:wall => wald.to_s)

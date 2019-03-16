@@ -3,14 +3,19 @@ class VkWorker < ApplicationController
 	require 'mechanize'
 	require 'json'
 	require 'httparty'
-
+ # require 'pry'
 	include Sidekiq::Worker
 	def perform	
 		def selection_scrapped(row)
 			title     = row.css('.pi_text').inner_text.sub("Expand text…", "").sub("#", " ")
 			posted_at = row.css('.wi_date').inner_text
 			mane = row.css('.v_views').inner_text
-			medias_row = row.search('.medias_row').inner_text
+			medias_row = row.search('.medias_row').text.strip.gsub(/"/, '')
+			
+			if medias_row != '""'
+				medias_row = nil
+			end
+			# Pry.start(binding)
 			croppedmane = mane.sub(".", "")
 			v_views = croppedmane.sub("K", "000").to_s 
 			if mane.mb_chars.length > croppedmane.mb_chars.length
@@ -37,17 +42,18 @@ class VkWorker < ApplicationController
 			end
 		agent = Mechanize.new
 
-			# 'https://vk.com/powermetalheads',
-			# 'https://vk.com/mtblog',
-			# 'https://vk.com/clevermusic',
-			# 'https://vk.com/warm_music',
-			# 'https://vk.com/soundtracks_for_coding',
-			# 'https://vk.com/lostark',
-			# 'https://vk.com/e_music_ambient',
-			# 'https://vk.com/fashionsound','https://vk.com/joise', 
-			# 'https://vk.com/lostark'
 
-		url=['https://vk.com/po_jesti'
+		url=['https://vk.com/po_jesti',
+			'https://vk.com/powermetalheads',
+			'https://vk.com/mtblog',
+			'https://vk.com/clevermusic',
+			'https://vk.com/warm_music',
+			'https://vk.com/soundtracks_for_coding',
+			'https://vk.com/lostark',
+			'https://vk.com/e_music_ambient',
+			'https://vk.com/fashionsound','https://vk.com/joise', 
+			'https://vk.com/lostark'
+
 
 		]
 		@rowsd = Array.new
