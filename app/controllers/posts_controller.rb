@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.order(created_at: :desc)
-    @vks = Vk.where('raiting > 15.00').order(medias_row: :desc, created_at: :desc, raiting: :desc, v_like: :desc).limit(500)
+    @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(500)
   end
 
   # GET /posts/1
