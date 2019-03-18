@@ -2,7 +2,7 @@
 	<div class="log"> 
 		<!-- {{this.$store.getters.token.access}}<br>{{this.$store.getters.token.refresh}} -->
 		<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
-      <el-button type="primary" plain size="mini"   @click="nulltoken">
+      <el-button type="primary" plain size="mini" @click="handler">
       	Выйти
       </el-button>
      <!--  <el-button type="primary" plain size="mini"   @click="moneypush">
@@ -167,14 +167,22 @@
         	location.reload(true);
         })
 		  },
+		  handler: function () {
+		  	this.nulltoken();
+		  	var elem = document.querySelector('.railsblock')
+		  	elem.style.display = "none"
+		  	if (document.location.pathname == '/'){
+		  		setTimeout(function tick() {
+ 						window.location.reload();
+					}, 200);
+		  	}
+		  },
 			nulltoken: function (){
 				axios.delete('/users/sign_out', {
 		    }) 
 		    .then((response) => {	 
-		    	
 		    	if (document.location.pathname != '/'){
 						window.location.href = '/';
-
 					}else{
 
 					}

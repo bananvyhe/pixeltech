@@ -7,7 +7,7 @@ class LandingPageController < ApplicationController
 	      when 'admin'
 	        users_path
 	      when 'user'
-	        users_path
+	        posts_path
 	      when 'voodoo'
 	        # voodoo_index_path
 	        posts_path
@@ -17,8 +17,9 @@ class LandingPageController < ApplicationController
 	      
 	      	# If you want to raise an exception or have a default root for users without roles
 	    end
-
-	    redirect_to path   
+	    if current_user.role != "user"
+	    	redirect_to path  
+	    end 
 	  else
 	    
 	  end

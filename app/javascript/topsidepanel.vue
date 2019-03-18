@@ -199,6 +199,9 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+.hiderailsblock {
+	display: none;
+}
 .main {
 	lost-column: 1/1 flex; 
 	z-index: 4000;
