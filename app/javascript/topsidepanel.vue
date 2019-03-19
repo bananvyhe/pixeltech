@@ -1,5 +1,10 @@
 <template>
+	<div>
+<!-- 		<div v-if="$store.getters.role == null" style="height: 4em;">
+ asfasf
+		</div> -->
 	<div class="smalltext main bpad" v-bind:style="styleObject"> 
+		
 		<!-- <div v-if="$store.getters.token != null" > -->
 			<div class="logohead" >
 				<div v-if="$store.getters.role">
@@ -40,6 +45,7 @@
 			</div>
 		</div>
 		
+  </div>
   </div>
 </template>
 <script>
@@ -85,7 +91,8 @@
          	
        	}else{
          	return {
-        		position: 'absolute'
+        		position: 'relative',
+        		height: '4em'
         	}
        	}
       }
@@ -203,6 +210,7 @@
 	display: none;
 }
 .main {
+	height: 4em;
 	lost-column: 1/1 flex; 
 	z-index: 4000;
 	lost-flex-container: row;

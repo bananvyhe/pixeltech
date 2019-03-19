@@ -19,6 +19,9 @@
     <div id="topsidepanel"></div>
 
   <%# if current_user.try(:admin?) or  current_user.try(:superadmin?) or  current_user.try(:client?)%>
+  <% if !user_signed_in? %>
+   <div class="railsblock" style="height: 1.7em;"></div>
+  <% end %>
     <% if user_signed_in? %>
       <div class="railsblock">
         <% if user_signed_in? %>

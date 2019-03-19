@@ -169,8 +169,8 @@
 		  },
 		  handler: function () {
 		  	this.nulltoken();
-		  	var elem = document.querySelector('.railsblock')
-		  	elem.style.display = "none"
+		  	// var elem = document.querySelector('.railsblock')
+		  	// elem.style.display = "none"
 		  	if (document.location.pathname == '/'){
 		  		setTimeout(function tick() {
  						window.location.reload();

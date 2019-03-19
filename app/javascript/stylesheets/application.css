@@ -169,6 +169,7 @@ body {
  font-family: 'aprior';
 }
 .railsblock {
+  height: 1.7em;
   @extend %roundbgstrw;
 }
 .deleteAction {
