@@ -11,6 +11,9 @@
 					<div v-if="$store.getters.role.role == 'client'">
 						Site hosting tech
 					</div>
+					<div v-if="$store.getters.role.role == 'user'">
+						Voodoo tech
+					</div>
 					<div v-if="$store.getters.role.role == 'voodoo'">
 						Voodoo tech
 					</div>

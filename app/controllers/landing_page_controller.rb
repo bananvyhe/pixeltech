@@ -19,6 +19,8 @@ class LandingPageController < ApplicationController
 	    end
 	    if current_user.role != "user"
 	    	redirect_to path  
+	    else
+	    	
 	    end 
 	  else
 	    
