@@ -95,7 +95,7 @@
        	}else{
          	return {
         		position: 'relative',
-        		height: '4em'
+        		height: '5em'
         	}
        	}
       }
@@ -213,7 +213,7 @@
 	display: none;
 }
 .main {
-	height: 4em;
+	height: 5em;
 	lost-column: 1/1 flex; 
 	z-index: 4000;
 	lost-flex-container: row;
