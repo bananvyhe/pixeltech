@@ -1,10 +1,12 @@
 class Api::V1::VksController < ApiController
  # require 'pry'
 	skip_before_action :authenticate_user!
-
+  before_action :set_vks
 	def index
-		
-    @vks = Vk.all.order(raiting: :desc)
+ 
+    
+    @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
+    render json: @vks
   end
  
   def show
@@ -36,5 +38,13 @@ class Api::V1::VksController < ApiController
 		  end
   	 	TobdWorker.perform_async(like, views, posted_at, wald, medias_row)
   	end
+  end 
+  private
+
+  def set_vks
+    # @user = User.find_by(username: params[:username])
+    if (params[:pos])
+      @pos = params[:pos]
+    end
   end 
 end

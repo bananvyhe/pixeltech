@@ -4,7 +4,6 @@
  asfasf
 		</div> -->
 	<div class="smalltext main bpad" v-bind:style="styleObject"> 
-		
 		<!-- <div v-if="$store.getters.token != null" > -->
 			<div class="logohead" >
 				<div v-if="$store.getters.role">
@@ -178,7 +177,7 @@
 			    
 		    		}else{
 		    		  this.$store.commit('tokensend', response.data),
- 							console.log(response.data) 
+ 							
 
 				    		// this.$store.commit('loginUser');
 				  		// const token = resp.data.token

@@ -1,13 +1,14 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
 <div id="app">
+
   <section>
-    <div v-if="beers.length === 0" class="loading">Загрузка...</div>
-    <div v-for="beer in beers" class="beer-contain">
-      <div class="beer-img">
-        <img :src="beer.img" height="350" />
+    <div v-if="alldata.length === 0" class="loading">Загрузка...</div>
+    <div v-for="data in alldata" class="beer-contain">
+      <div class="beer-img">{{data.title}}
+        <!-- <img :src="data.title" height="150" /> -->
       </div>
-      <div class="beer-info">
+      <!-- <div class="beer-info">
         <h2>{{ beer.name }}</h2>
         <p class="bright">{{ beer.tagline }}</p>
         <p><span class="bright">Description:</span> {{ beer.desc }}</p>
@@ -18,7 +19,8 @@
             {{ item }}
           </li>
         </ul>
-      </div>
+      </div> -->
+      {{bottom}} {{pos}} 
     </div>
   </section>
 </div>
@@ -30,7 +32,9 @@ import axios from 'axios'
 export default {
  
   data: function () {
-    return {    
+    return {   
+      alldata: [], 
+      pos: 0,
       bottom: false,
       beers: [] 
     }
@@ -57,22 +61,42 @@ export default {
       return bottomOfPage || pageHeight < visible
     },
     addBeer() {
-      axios.get('https://api.punkapi.com/v2/beers/random')
-        .then(response => {
-          let api = response.data[0];
-          let apiInfo = {
-            name : api.name,
-            desc : api.description,
-            img : api.image_url,
-            tips : api.brewers_tips,
-            tagline : api.tagline,
-            food : api.food_pairing
-          };
-          this.beers.push(apiInfo)
+      axios({
+          method: 'get',
+          url: '/api/v1/vks',
+          params: {
+            pos: this.pos
+          } 
+        })
+        .then((response) => { 
+          this.alldata.push(response.data)
+          this.pos = this.alldata.length
           if (this.bottomVisible()) {
-            this.addBeer()
+              this.addBeer()
           }
-      })
+          // this.beers.push(apiInfo)
+          // this.pos = 
+          // if (this.bottomVisible()) {
+          //   this.addBeer()
+          // }
+        })
+ 
+      // axios.get('https://api.punkapi.com/v2/beers/random')
+      //   .then(response => {
+      //     let api = response.data[0];
+      //     let apiInfo = {
+      //       name : api.name,
+      //       desc : api.description,
+      //       img : api.image_url,
+      //       tips : api.brewers_tips,
+      //       tagline : api.tagline,
+      //       food : api.food_pairing
+      //     };
+      //     this.beers.push(apiInfo)
+      //     if (this.bottomVisible()) {
+      //       this.addBeer()
+      //     }
+      // })
     }
   }
 }

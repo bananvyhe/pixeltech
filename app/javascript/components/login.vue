@@ -144,7 +144,19 @@
 		    		'Authorization': 'bearer '+this.$store.getters.token.access
 		    	} 
 		    }).then((response) => {	
-        	location.reload(true);
+        	let api = response.data[0];
+      //     let apiInfo = {
+      //       name : api.name,
+      //       desc : api.description,
+      //       img : api.image_url,
+      //       tips : api.brewers_tips,
+      //       tagline : api.tagline,
+      //       food : api.food_pairing
+      //     };
+      //     this.beers.push(apiInfo)
+      //     if (this.bottomVisible()) {
+      //       this.addBeer()
+      //     }
         })
 		  },
 	  	moneypush: function(){
