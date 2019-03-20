@@ -1,11 +1,10 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
 <div id="app">
-
   <section>
     <div v-if="alldata.length === 0" class="loading">Загрузка...</div>
     <div v-for="data in alldata" class="beer-contain">
-      <div class="beer-img">{{data.title}}
+      <div class="beer-img">{{data}} 
         <!-- <img :src="data.title" height="150" /> -->
       </div>
       <!-- <div class="beer-info">
@@ -20,7 +19,6 @@
           </li>
         </ul>
       </div> -->
-      {{bottom}} {{pos}} 
     </div>
   </section>
 </div>
@@ -69,16 +67,11 @@ export default {
           } 
         })
         .then((response) => { 
-          this.alldata.push(response.data)
+          var alld = response.data
+          alld = alld
+          console.log(response.data)
+          this.alldata = this.alldata.concat(alld);
           this.pos = this.alldata.length
-          if (this.bottomVisible()) {
-              this.addBeer()
-          }
-          // this.beers.push(apiInfo)
-          // this.pos = 
-          // if (this.bottomVisible()) {
-          //   this.addBeer()
-          // }
         })
  
       // axios.get('https://api.punkapi.com/v2/beers/random')
@@ -104,41 +97,34 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
- 
- 
-
 .loading {
   color: white;
   text-align: center;
   font-size: 20px;
 }
-
 .display {
   display: flex;
   justify-content: center;
   align-content: center;
 }
-
 #app {
   @extend .display;
   flex-direction: column;
 }
-
 .beer-contain {
   @extend .display;
   width: 50%;
   margin: 20px 24%;
   box-shadow: 0 2px 3px 1px rgba(30, 0, 0, 0.1);
 }
-
 .beer-img {
   @extend .display;
+  height: 300px;
   padding: 30px;
   background: #FF6542;
   border: 1px solid #88498F;
   border-right: 1px solid #f44822;
 }
-
 .beer-info {
   background: #564154;
   color: white;
@@ -157,6 +143,4 @@ h3 {
 ul {
   margin-top: 5px;
 }
-
-
 </style>

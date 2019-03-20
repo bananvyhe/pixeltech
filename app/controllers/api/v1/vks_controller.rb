@@ -5,7 +5,7 @@ class Api::V1::VksController < ApiController
 	def index
  
     
-    @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
+    @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(5).offset(@pos)
     render json: @vks
   end
  
@@ -22,7 +22,6 @@ class Api::V1::VksController < ApiController
   # POST /Vks
   # POST /Vks.json
   def create
-
 		params.require(:_json).each do |d|
 			@vk = Vk.new({:title => d[:title],:medias_row => d[:medias_row],:posted_at => d[:posted_at],:v_views => d[:v_views], :v_like => d[:v_like], :thumb_map_img_as_div => d[:thumb_map_img_as_div],:wall => d[:wall]})
   	 	like = d[:v_like]
