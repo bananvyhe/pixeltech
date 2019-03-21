@@ -129,7 +129,7 @@ body {
  
 }
 .vkpost {
-  padding: 0.1em 1em 0.1em 1em;
+  padding: 0.1em 1em 0.1em 0em;
 }
 .vkpost:nth-child(even) {
   background-color: color( $HeadBackColor  shade(46%));
@@ -173,7 +173,7 @@ body {
   @extend %roundbgstrw;
 }
 .railsblockhide {
- 
+
 }
 .deleteAction {
   color: blue;
