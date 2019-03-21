@@ -45,20 +45,17 @@ class VkWorker < ApplicationController
 				@rowsd << data
 			end
 		agent = Mechanize.new
-		# 'https://vk.com/chillrussia',
-		# 	'https://vk.com/powermetalheads',
-		# 	'https://vk.com/mtblog',
-		# 	'https://vk.com/warm_music',
-		# 	'https://vk.com/soundtracks_for_coding',
-		# 	'https://vk.com/lostark',
-		# 	'https://vk.com/e_music_ambient',
-		# 	'https://vk.com/fashionsound',
-		# 	'https://vk.com/joise',
-		# 	'https://vk.com/clevermusic'
-
-		url=[
-			'https://vk.com/po_jesti',
-			]
+		url=['https://vk.com/chillrussia',
+			'https://vk.com/powermetalheads',
+			'https://vk.com/mtblog',
+			'https://vk.com/warm_music',
+			'https://vk.com/soundtracks_for_coding',
+			'https://vk.com/lostark',
+			'https://vk.com/e_music_ambient',
+			'https://vk.com/fashionsound',
+			'https://vk.com/joise',
+			'https://vk.com/clevermusic'
+			'https://vk.com/po_jesti']
 		@rowsd = Array.new
 		timer = rand(1.0 .. 2.0)
 		url.each do |url|

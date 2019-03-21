@@ -1,36 +1,21 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
 <div id="app">
-
- 
-    <div v-if="alldata.length === 0" class="loading">Загрузка...</div>
-    <div v-for="data in alldata" class="vkpost">
-      <div class="itembg ">
-   <!--      {{data.thumb_map_img_as_div.split(',')[1]}} -->
-       <!--  <div v-for="item in data.thumb_map_img_as_div.split(',')"> -->
-              <el-carousel >
-                <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
-                  <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
-                </el-carousel-item>
-              </el-carousel>
-          
-
-      <!--   </div> -->
-      </div>
-      <!-- <div class="beer-info">
-        <h2>{{ beer.name }}</h2>
-        <p class="bright">{{ beer.tagline }}</p>
-        <p><span class="bright">Description:</span> {{ beer.desc }}</p>
-        <p><span class="bright">Tips:</span> {{ beer.tips }}</p>
-        <h3 class="bright">Food Pairings</h3>
-        <ul>
-          <li v-for="item in beer.food">
-            {{ item }}
-          </li>
-        </ul>
-      </div> -->
+  <div v-if="alldata.length === 0" class="loading">Загрузка...</div>
+  <div v-for="data in alldata" class="vkpost">
+    <div class="itembg ">
+      <el-carousel  :height="carouselh">
+        <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
+          <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
+        </el-carousel-item>
+      </el-carousel>
     </div>
- 
+    <div class="infobg">
+      {{data.title}}
+      <br><div class="vkdate">{{data.posted_at}}</div>
+      <br><a  target="_blank" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'>медиа в окне</a>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -41,6 +26,8 @@ export default {
  
   data: function () {
     return {   
+      carouselh: "",
+      width: '',
       alldata: [], 
       pos: 0,
       bottom: false,
@@ -55,6 +42,12 @@ export default {
     }
   },
   created() {
+    if(document.body.clientWidth > 980) {
+      this.carouselh = "30em"
+    }else{
+      this.carouselh = "20em"
+    }
+    
     window.addEventListener('scroll', () => {
       this.bottom = this.bottomVisible()
     })
@@ -108,20 +101,30 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+#app {
+  @media (--only-1600more-screen) {
+    lost-center: 980px;
+  }
+    @media (--only-medium-screen) {
+    lost-center: 980px;
+  }
+},
 .itembg {
-  lost-column: 1/2 flex; 
-   
-   
-  
+  lost-column: 1/2 2 0.5em; 
+}
+.infobg {
+  padding: 0.5em 0 0.5em 0;
+  lost-column: 1/2 2 0.5em; 
 }
 .imgstyle {
   position: relative;
   background-position: center;
   background-size: cover; 
   background-repeat: no-repeat;
-lost-column: 1/1 flex;
 
-height: 20em;
+height: 100%; 
+ 
+
 }
 .loading {
   color: white;
