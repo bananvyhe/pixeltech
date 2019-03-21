@@ -8,8 +8,7 @@ class TobdWorker
 	  			df.update_attribute(:v_views, views)
 	  			df.update_attribute(:v_like, like)
 	  			df.update_attribute(:posted_at, posted_at)
-						df.update_attribute(:posted_at, nil)
-					end
+ 
 
 	  			# if df[:created_at] > Date.today - 7.days
 	  			# 	# df.update_attribute(:raiting, -20)
