@@ -54,7 +54,7 @@ class VkWorker < ApplicationController
 			'https://vk.com/e_music_ambient',
 			'https://vk.com/fashionsound',
 			'https://vk.com/joise',
-			'https://vk.com/clevermusic'
+			'https://vk.com/clevermusic',
 			'https://vk.com/po_jesti']
 		@rowsd = Array.new
 		timer = rand(1.0 .. 2.0)
