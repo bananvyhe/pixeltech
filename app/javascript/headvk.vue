@@ -13,7 +13,7 @@
     <div class="infobg">
       {{data.title}}
       <br><div class="vkdate">{{data.posted_at}}</div>
-      <br>
+      <br><div class="vkdate">{{data.raiting}}</div>
       <div v-if="data.medias_row">
         <a  target="_blank" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'>медиа в окне</a>
       </div>
