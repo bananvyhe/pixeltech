@@ -1,9 +1,10 @@
 class TobdWorker
   include Sidekiq::Worker
 
-  def perform (like, views, posted_at, wald, medias_row)
+  def perform (like, views, posted_at, wald, medias_row, thumb_map_img_as_div)
   	raiting = like.to_f/views.to_f*1000
 	    if df = Vk.find_by(:wall => wald.to_s)
+	    		df.update_attribute(:thumb_map_img_as_div, thumb_map_img_as_div)
 	  	 		df.update_attribute(:raiting, raiting.round(2))
 	  			df.update_attribute(:v_views, views)
 	  			df.update_attribute(:v_like, like)

@@ -22,12 +22,16 @@ class VkWorker < ApplicationController
 				v_views = v_views[0...-1]
 			end
 			v_like = row.css('.v_like').inner_text.sub("K", "000")
-			thumb_map_img_as_div = row.search('.thumb_map_img')
+			thumb_map_img_as_div = row.search('.thumb_map_img') 
 			.map do |n| 
 		 		if n['data-src_big'] != nil
-		 			n['data-src_big'][0...-8]
+		 			n['data-src_big'][0...-8] 
 		 		end
 		 	end
+		 	thumb_map_img_as_div = thumb_map_img_as_div.to_s.gsub('[', '').gsub(']', '')
+		 	# thumb_map_img_as_div = thumb_map_img_as_div.to_s.gsub('[', '')
+		 	# thumb_map_img_as_div = thumb_map_img_as_div
+ 			# thumb_map_img_as_div = thumb_map_img_as_div[3...-3]
 			wall = row.css('div.wi_info a').map { |link| link['href'] }
 			data = {
 				wall: wall,
@@ -41,19 +45,20 @@ class VkWorker < ApplicationController
 				@rowsd << data
 			end
 		agent = Mechanize.new
+		# 'https://vk.com/chillrussia',
+		# 	'https://vk.com/powermetalheads',
+		# 	'https://vk.com/mtblog',
+		# 	'https://vk.com/warm_music',
+		# 	'https://vk.com/soundtracks_for_coding',
+		# 	'https://vk.com/lostark',
+		# 	'https://vk.com/e_music_ambient',
+		# 	'https://vk.com/fashionsound',
+		# 	'https://vk.com/joise',
+		# 	'https://vk.com/clevermusic'
 
-
-		url=['https://vk.com/chillrussia',
+		url=[
 			'https://vk.com/po_jesti',
-			'https://vk.com/powermetalheads',
-			'https://vk.com/mtblog',
-			'https://vk.com/warm_music',
-			'https://vk.com/soundtracks_for_coding',
-			'https://vk.com/lostark',
-			'https://vk.com/e_music_ambient',
-			'https://vk.com/fashionsound',
-			'https://vk.com/joise',
-			'https://vk.com/clevermusic']
+			]
 		@rowsd = Array.new
 		timer = rand(1.0 .. 2.0)
 		url.each do |url|
