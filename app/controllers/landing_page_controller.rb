@@ -8,9 +8,9 @@ class LandingPageController < ApplicationController
 	        users_path
 	      when 'user'
 	        posts_path
-	      when 'voodoo'
-	        # voodoo_index_path
-	        posts_path
+	      # when 'voodoo'
+	      #   # voodoo_index_path
+	      #   posts_path
 	      when 'client'
 	        siteowners_path
 	      else
@@ -19,8 +19,8 @@ class LandingPageController < ApplicationController
 	    end
 	    if current_user.role != "user"
 	    	redirect_to path  
-	    else
-	    	
+	    elsif current_user.role != "voodoo"
+	    	redirect_to path  
 	    end 
 	  else
 	    
