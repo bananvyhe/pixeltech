@@ -35,7 +35,7 @@ class Api::V1::VksController < ApiController
   		if !Vk.find_by(:wall => wald.to_s)
   			@vk.save	
 		  end
-  	 	TobdWorker.perform_async(like, views, posted_at, wald, medias_row, thumb_map_img_as_div)
+  	 	TobdWorker.perform_async(like, views, posted_at, medias_row)
   	end
   end 
   private

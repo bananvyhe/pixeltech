@@ -172,6 +172,9 @@ body {
   height: 1.7em;
   @extend %roundbgstrw;
 }
+.railsblockhide {
+ 
+}
 .deleteAction {
   color: blue;
   border-bottom: solid 1px;
