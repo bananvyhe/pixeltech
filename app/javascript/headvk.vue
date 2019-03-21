@@ -2,15 +2,20 @@
 <template>
 <div id="app">
 
-  <section>
+ 
     <div v-if="alldata.length === 0" class="loading">Загрузка...</div>
-    <div v-for="data in alldata" class="itembg vkpost">
-      <div class="">{{data.thumb_map_img_as_div.split(',')[0]}}
-<!--         <div v-for="item in data.thumb_map_img_as_div">
-            <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}">{{item}}
-          </div> 
+    <div v-for="data in alldata" class="vkpost">
+      <div class="itembg ">
+   <!--      {{data.thumb_map_img_as_div.split(',')[1]}} -->
+       <!--  <div v-for="item in data.thumb_map_img_as_div.split(',')"> -->
+              <el-carousel >
+                <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
+                  <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
+                </el-carousel-item>
+              </el-carousel>
+          
 
-        </div> -->
+      <!--   </div> -->
       </div>
       <!-- <div class="beer-info">
         <h2>{{ beer.name }}</h2>
@@ -25,7 +30,7 @@
         </ul>
       </div> -->
     </div>
-  </section>
+ 
 </div>
 </template>
 
@@ -104,17 +109,19 @@ export default {
 @import "_variables";
 @import "_extends";
 .itembg {
-  background-color: str1;
-  width: 17em;
-  height: 20em;
+  lost-column: 1/2 flex; 
+   
+   
+  
 }
 .imgstyle {
   position: relative;
   background-position: center;
   background-size: cover; 
   background-repeat: no-repeat;
-  width: 17em;
-  height: 20em;
+lost-column: 1/1 flex;
+
+height: 20em;
 }
 .loading {
   color: white;
