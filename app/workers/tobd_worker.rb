@@ -1,16 +1,13 @@
 class TobdWorker
   include Sidekiq::Worker
 
-  def perform (like, views, posted_at, medias_row)
+  def perform (like, views, posted_at)
   	raiting = like.to_f/views.to_f*1000
 
 	  	 		df.update_attribute(:raiting, raiting.round(2))
 	  			df.update_attribute(:v_views, views)
 	  			df.update_attribute(:v_like, like)
 	  			df.update_attribute(:posted_at, posted_at)
-	  			if medias_row != nil
-						df.update_attribute(:medias_row, medias_row)
-					else
 						df.update_attribute(:posted_at, nil)
 					end
 
