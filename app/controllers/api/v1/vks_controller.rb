@@ -35,7 +35,7 @@ class Api::V1::VksController < ApiController
   		if !Vk.find_by(:wall => wald)
   			@vk.save	
 		  end
-  	 	TobdWorker.perform_async(like, views, posted_at)
+  	 	TobdWorker.perform_async(like, views, posted_at, wald)
   	end
   end 
   private
