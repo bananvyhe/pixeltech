@@ -59,10 +59,11 @@ export default {
   methods: {
     bottomVisible() {
       const scrollY = window.scrollY
-      const visible = document.documentElement.clientHeight
+      const visible = document.documentElement.clientHeight+100 
+      console.log(visible)
       const pageHeight = document.documentElement.scrollHeight
       const bottomOfPage = visible + scrollY >= pageHeight
-      return bottomOfPage || pageHeight < visible
+      return bottomOfPage || pageHeight < visible 
     },
     addBeer() {
       axios({
