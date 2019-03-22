@@ -33,9 +33,9 @@ End Hamster setup*/
 @media (--only-xsmall-screen) {
   @ihamster {
     --font-size: 12px;
-    --line-height: 1.6;
+    --line-height: 1.2;
     --to-font-size: 11px;
-    --to-line-height: 1.6;
+    --to-line-height: 1.2;
     --viewport: 320px 450px;
     --unit: vw;
   }

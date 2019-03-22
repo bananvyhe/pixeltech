@@ -60,7 +60,6 @@ export default {
     bottomVisible() {
       const scrollY = window.scrollY
       const visible = document.documentElement.clientHeight+200 
-      console.log(visible)
       const pageHeight = document.documentElement.scrollHeight
       const bottomOfPage = visible + scrollY >= pageHeight
       return bottomOfPage || pageHeight < visible 

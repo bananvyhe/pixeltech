@@ -8,13 +8,13 @@
 			<div class="logohead" >
 				<div v-if="$store.getters.role">
 					<div v-if="$store.getters.role.role == 'client'">
-						Site hosting tech
+						Site-hosting
 					</div>
 					<div v-if="$store.getters.role.role == 'user'">
-						Voodoo tech
+						pixy
 					</div>
 					<div v-if="$store.getters.role.role == 'voodoo'">
-						Voodoo tech
+						<span class="largertext">{{$store.getters.role.username}}</span>&nbsp;Voodoo
 					</div>
 				</div>
 				<!-- {{$store.getters.role.role}} -->
