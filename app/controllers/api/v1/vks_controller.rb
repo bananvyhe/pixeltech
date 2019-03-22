@@ -3,8 +3,6 @@ class Api::V1::VksController < ApiController
 	skip_before_action :authenticate_user!
   before_action :set_vks
 	def index
- 
-    
     @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(5).offset(@pos)
     render json: @vks
   end

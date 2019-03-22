@@ -3,12 +3,17 @@
 <div id="app">
   <div v-if="alldata.length === 0" class="loading">Загрузка...</div>
   <div v-for="data in alldata" class="vkpost">
-    <div class="itembg ">
-      <el-carousel  :height="carouselh">
+    <div class="itembg" v-if="data.thumb_map_img_as_div.split(',').length > 1">
+      <el-carousel  :height="carouselh" >
         <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
-          <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
+          {{data.thumb_map_img_as_div.length}}<div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
         </el-carousel-item>
       </el-carousel>
+    </div>
+    <div v-else class="itembg" :style="{height: carouselh}" v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
+       
+          <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
+       
     </div>
     <div class="infobg">
       {{data.title}}
