@@ -92,8 +92,19 @@ End Hamster setup*/
 .hidden {
   display: none;
 }
+.noimage {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background-position: center;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  align-content: center;
+  align-items: center;
+
+}
+
 body {
-  
   background-color: #1E1E21;
   font-family: 'RobotoReg';
   /*color: color($str3 shade(8%));*/
