@@ -21,9 +21,15 @@
       {{data.title}}
       <br><div class="vkdate">{{data.posted_at}}</div>
       <br><div class="vkdate">{{data.raiting}}</div>
-      <div v-if="data.medias_row">
-        <a  target="_blank" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'>медиа в окне</a>
+   
+      <div v-if="data.medias_row" class="bottom">
+        <div class="link">
+          <a target="_blank" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'> медиа в окне </a>
+        </div>
+    
+        <!-- <div id="charge" class="charged"></div> -->
       </div>
+ 
     </div>
   </div>
 </div>
@@ -66,7 +72,7 @@ export default {
   methods: {
     bottomVisible() {
       const scrollY = window.scrollY
-      const visible = document.documentElement.clientHeight+200 
+      const visible = document.documentElement.clientHeight+300 
       const pageHeight = document.documentElement.scrollHeight
       const bottomOfPage = visible + scrollY >= pageHeight
       return bottomOfPage || pageHeight < visible 
@@ -111,6 +117,26 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+#charge {
+  animation-play-state: paused;
+}
+.link {
+  position: relative;
+  z-index: 0;
+  width: 130px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.bottom {
+  position: relative;
+/*   display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;*/
+}
 #app {
   @media (--only-1600more-screen) {
     lost-center: 980px;
@@ -123,6 +149,7 @@ export default {
   lost-column: 1/2 2 0.5em; 
 }
 .infobg {
+  position: relative;
   padding: 0.5em 0 0.5em 0;
   lost-column: 1/2 2 0.5em; 
 }
