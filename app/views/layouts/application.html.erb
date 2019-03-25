@@ -21,6 +21,9 @@
   <%# if current_user.try(:admin?) or  current_user.try(:superadmin?) or  current_user.try(:client?)%>
   <% if !user_signed_in? %>
    <div class="railsblock" style="height: 1.7em;"></div>
+<!--     <script>
+      var checklog = null
+    </script> -->
   <% end %>
     <% if user_signed_in? %>
       <div class="railsblock">
@@ -48,18 +51,16 @@
               })
             
           </script> -->
-          <script>
-            var checklog = null
-          </script>
+
           <% end %>
         
       </div>  
     <% else %>
-      <script>
+<!--       <script>
         var checklog = 'unlogged'
         console.log('unlogged')
          
-      </script>
+      </script> -->
     <% end %> 
     <%# end %>    
     <%# if defined?current_user.role %>
