@@ -29,12 +29,14 @@ class Api::V1::VksController < ApiController
       medias_row = d[:medias_row]
       thumb_map_img_as_div = d[:medias_row]
  			# binding.pry
-
-  		if !Vk.find_by(:wall => wald)
-  			@vk.save	
+      # print Vk.find_by_wall(wald)
+      check = Vk.find_by(wall: wald.to_s)
+  		if (check == nil)
+  			@vk.save
+      else
+        TobdWorker.perform_async(like, views, posted_at, wald)
 		  end
-  	 	TobdWorker.perform_async(like, views, posted_at, wald)
-  	end
+   	end
   end 
   private
 
