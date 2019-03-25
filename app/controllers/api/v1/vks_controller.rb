@@ -22,7 +22,7 @@ class Api::V1::VksController < ApiController
   def create
 		params.require(:_json).each do |d|
     wall = d[:wall]
-    ike = d[:v_like]
+    like = d[:v_like]
     views = d[:v_views]
     posted_at = d[:posted_at]
     medias_row = d[:medias_row]
