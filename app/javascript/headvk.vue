@@ -174,7 +174,7 @@ export default {
 }
 /*Carousel*/
 .itembg {
-  padding: 0.7em 0;
+  padding: 0.7em;
   height: 20em;
   lost-column: 5/7 2 1.3em; 
 } 
