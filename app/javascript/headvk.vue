@@ -3,22 +3,26 @@
 <div id="app">
   <div v-if="alldata.length === 0" class="loading">Загрузка...</div>
   <div v-for="data in alldata" class="vkpost">
-    <div class="itembg" v-if="data.thumb_map_img_as_div.split(',').length > 1">
+
+    <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
       <el-carousel  type="card" :height="carouselh" >
         <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
           <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
         </el-carousel-item>
       </el-carousel>
     </div>
-    <div v-else class="itembg" :style="{height: carouselh}" v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
+    <div v-else class="itembg"  v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
           <div v-if="data.thumb_map_img_as_div == 'nil'" class="noimage">
             нет фото
           </div>
           <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
           
     </div>
-    <div class="infobg">
-      {{data.title}}
+    <div :class="[data.thumb_map_img_as_div.split(',').length > 1 ? slideInfoClass :  simpleInfoClass]">
+      <div>
+              {{data.title}}
+      </div>
+
       <br><div class="vkdate">{{data.posted_at}}</div>
       <br><div class="vkdate">{{data.raiting}}</div>
    
@@ -41,7 +45,9 @@ import axios from 'axios'
 export default {
  
   data: function () {
-    return {   
+    return {  
+      slideInfoClass: 'infobg2',
+      simpleInfoClass: 'infobg', 
       carouselh: "",
       width: '',
       alldata: [], 
@@ -59,7 +65,7 @@ export default {
   },
   created() {
     if(document.body.clientWidth > 980) {
-      this.carouselh = "30em"
+      this.carouselh = "40em"
     }else{
       this.carouselh = "20em"
     }
@@ -145,13 +151,35 @@ export default {
     lost-center: 980px;
   }
 },
-.itembg {
-  lost-column: 1/2 2 0.5em; 
+.itembg2 {
+  margin-top: 3.4em;
+  /*lost-column: 1/2 2 0.5em; */
+/*  lost-center: 80%;*/
+  lost-center: 80%; 
+  margin-bottom: 2.4em;
 }
+.infobg2 {
+  width: 100%;
+  text-align: center;
+  position: absolute; top: 0; 
+  /*background-color: #dad;*/
+/*  display: flex;
+  justify-content: center;*/
+  padding: 1.4em 0 0em 0;
+  lost-center: 100%;
+  display: flex;
+  justify-content: center;
+}
+/*Carousel*/
+.itembg {
+  height: 20em;
+  lost-column: 5/7 2 1.2em; 
+} 
+
 .infobg {
-  position: relative;
-  padding: 0.5em 0 0.5em 0;
-  lost-column: 1/2 2 0.5em; 
+   padding: 1.2em 1.2em;
+     
+/*  background-color: #ada;*/
 }
 .imgstyle {
   position: relative;
@@ -177,8 +205,6 @@ height: 100%;
   @extend .display;
   flex-direction: column;
 }
-
-
 h3 {
   margin-bottom: 5px;
 }
