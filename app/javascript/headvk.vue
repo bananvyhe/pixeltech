@@ -4,7 +4,7 @@
   <div v-if="alldata.length === 0" class="loading">Загрузка...</div>
   <div v-for="data in alldata" class="vkpost">
     <div class="itembg" v-if="data.thumb_map_img_as_div.split(',').length > 1">
-      <el-carousel  :height="carouselh" >
+      <el-carousel  type="card" :height="carouselh" >
         <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
           <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
         </el-carousel-item>
