@@ -15,7 +15,7 @@
           <div v-if="data.thumb_map_img_as_div == 'nil'" class="noimage">
             нет фото
           </div>
-          <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
+          <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}"  ></div> 
           
     </div>
     <div :class="[data.thumb_map_img_as_div.split(',').length > 1 ? slideInfoClass :  simpleInfoClass]">
@@ -47,6 +47,9 @@ export default {
  
   data: function () {
     return {  
+      bganim: {
+        backgroundPosition: "center",
+      },
       slideInfoClass: 'infobg2',
       simpleInfoClass: 'infobg', 
       carouselh: "",
@@ -67,7 +70,7 @@ export default {
   created() {
     if(document.body.clientWidth > 980) {
       this.carouselh = "40em"
-    }else if(document.body.clientWidth <620){
+    }else if(document.body.clientWidth <480){
       this.carouselh = "20em"
     }else{
       this.carouselh = "30em"
@@ -75,6 +78,7 @@ export default {
     
     window.addEventListener('scroll', () => {
       this.bottom = this.bottomVisible()
+      this.bganim.backgroundPosition = "center"
     })
     this.addBeer()
   },
@@ -150,7 +154,7 @@ export default {
   @media (--only-1600more-screen) {
     lost-center: 980px;
   }
-    @media (--only-medium-screen) {
+  @media (--only-medium-screen) {
     lost-center: 980px;
   }
 },
@@ -172,6 +176,13 @@ export default {
 /*  lost-center: 80%;*/
   lost-center: 80%; 
   margin-bottom: 2.4em;
+  .imgstyle {
+    position: relative;
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    height: 100%; 
+  }
 }
 .infobg2 {
   height: 3.2em;
@@ -199,27 +210,46 @@ export default {
 /*Carousel*/
 .itembg {
   margin: 0.7em 0.3em 0.7em 0.7em; 
-  height: 20em;
+  height: 30em;
+  @media (--only-1600more-screen) {
+    height: 40em;
+  }
+  @media (--only-medium-screen) {
+    height: 20em;
+    lost-column: 2/3 2 1.2em; 
+  }    
+  @media (--only-xsmall-screen) {
+    height: 10em;
+    lost-column: 2/3 2 1.2em; 
+  }  
+  @media (--only-small-screen) {
+    height: 30em;
+    lost-column: 2/3 2 1.2em; 
+  }    
   lost-column: 5/7 2 1.2em; 
+  .imgstyle {
+    position: relative;
+    background-position: center;
+/*    @media (--only-xsmall-screen) {
+      background-position: center;
+    }  */
+/*    @media (--only-small-screen) {
+      background-position: 100% auto;
+    }  */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    height: 100%; 
+  }
 } 
 
 .infobg {
-height: 100%;
+  height: 100%;
   
   padding:  1em 0 0 0.7em;
   margin: 0em 0;   
 /*  background-color: #ada;*/
 }
-.imgstyle {
-  position: relative;
-  background-position: center;
-  background-size: cover; 
-  background-repeat: no-repeat;
 
-height: 100%; 
- 
-
-}
 .loading {
   color: white;
   text-align: center;
