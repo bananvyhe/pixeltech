@@ -93,17 +93,34 @@ End Hamster setup*/
   display: none;
 }
 .noimage {
-  display: flex;
-  justify-content: center;
+  
   height: 100%;
   background-position: center;
   background-size: cover; 
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
   align-content: center;
   align-items: center;
-
 }
-
+.charged {
+  position: absolute;
+  top: 0;
+  width: 130px;
+  height: 70px;
+  background: url('../images/energy32_48.gif');
+  background-repeat: no-repeat;
+  background-position: -8px -4px;
+  animation: like-gif steps(96) 1s infinite both; 
+}
+@keyframes like-gif {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+} 
 body {
   background-color: #1E1E21;
   font-family: 'RobotoReg';
@@ -140,6 +157,8 @@ body {
  
 }
 .vkpost {
+  position: relative;
+  overflow: hidden;
   padding: 0.1em 1em 0.1em 0em;
 }
 .vkpost:nth-child(even) {
@@ -151,7 +170,10 @@ body {
 .vkdate {
   font-style: italic;
   adjust-font-size: fs tiny;
-  padding: 0.5em 1em 0em 0em;  
+  padding: 1.0em 1em 0em 0em;  
+}
+.vkraiting{
+  
 }
 #head {
   .subj {
