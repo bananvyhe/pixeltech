@@ -1,5 +1,5 @@
-class Api::V1::AuthenticationController < ApiController
-  skip_before_action :authenticate_user!
+class Api::V1::AuthenticationController < Api2Controller
+ 
   def create
     user = User.find_by(email: params[:user][:email])
     if user
