@@ -19,14 +19,15 @@
           
     </div>
     <div :class="[data.thumb_map_img_as_div.split(',').length > 1 ? slideInfoClass :  simpleInfoClass]">
-      <div>
-              {{data.title}}
+ 
+        {{data.title}}
+  
+      <div class="raitingdate" >
+        <div class="vkdate">{{data.posted_at}}</div>
+        <div class="vkraiting">{{data.raiting}}</div>        
       </div>
-
-      <br><div class="vkdate">{{data.posted_at}}</div>
-      <br><div class="vkdate">{{data.raiting}}</div>
-   
-      <div v-if="data.medias_row" class="bottom">
+  
+      <div v-if="data.medias_row" class="mediabutton">
         <div class="link">
           <a target="_blank" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'> медиа в окне </a>
         </div>
@@ -132,7 +133,7 @@ export default {
   position: relative;
   z-index: 0;
   width: 130px;
-  height: 70px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -153,14 +154,27 @@ export default {
     lost-center: 980px;
   }
 },
+.raitingdate {
+
+}
+.mediabutton {
+  display: flex;
+  margin-left: -1em;
+  align-items: flex-end;
+  align-self: flex-end;
+  .link {
+
+  }
+}
 .itembg2 {
-  margin-top: 3.4em;
+  margin-top: 4.2em;
   /*lost-column: 1/2 2 0.5em; */
 /*  lost-center: 80%;*/
   lost-center: 80%; 
   margin-bottom: 2.4em;
 }
 .infobg2 {
+  height: 3.2em;
   width: 100%;
   text-align: center;
   position: absolute; top: 0; 
@@ -171,16 +185,25 @@ export default {
   lost-center: 100%;
   display: flex;
   justify-content: center;
+  .mediabutton {
+    display: flex;
+    position: absolute;
+  }
+  .raitingdate {
+ position: absolute;
+    left: 10%;
+  }
 }
 /*Carousel*/
 .itembg {
-  padding: 0.7em;
+  margin: 0.7em 0.3em  0.3em 0.7em; 
   height: 20em;
-  lost-column: 5/7 2 1.3em; 
+  lost-column: 5/7 2 1em; 
 } 
 
 .infobg {
-   padding: 1.2em 1.2em;
+height: 100%;
+   padding: 0.7em 0 0 1.1em;
      
 /*  background-color: #ada;*/
 }
