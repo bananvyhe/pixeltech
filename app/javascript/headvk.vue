@@ -167,7 +167,7 @@ export default {
   }
 }
 .itembg2 {
-  margin-top: 4.2em;
+  margin-top: 3.2em;
   /*lost-column: 1/2 2 0.5em; */
 /*  lost-center: 80%;*/
   lost-center: 80%; 
@@ -188,15 +188,17 @@ export default {
   .mediabutton {
     display: flex;
     position: absolute;
+    right: 0.5em;
+    top: 0.3em;
   }
   .raitingdate {
- position: absolute;
+    position: absolute;
     left: 10%;
   }
 }
 /*Carousel*/
 .itembg {
-  margin: 0.7em 0.3em 0.3em 0.7em; 
+  margin: 0.7em 0.3em 0.7em 0.7em; 
   height: 20em;
   lost-column: 5/7 2 1.2em; 
 } 
@@ -204,8 +206,8 @@ export default {
 .infobg {
 height: 100%;
   
-   padding: 0.5em 0 0 0.7em;
-     
+  padding:  1em 0 0 0.7em;
+  margin: 0em 0;   
 /*  background-color: #ada;*/
 }
 .imgstyle {
