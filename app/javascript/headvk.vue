@@ -196,14 +196,15 @@ export default {
 }
 /*Carousel*/
 .itembg {
-  margin: 0.7em 0.3em  0.3em 0.7em; 
+  margin: 0.7em 0.3em 0.3em 0.7em; 
   height: 20em;
-  lost-column: 5/7 2 1em; 
+  lost-column: 5/7 2 1.2em; 
 } 
 
 .infobg {
 height: 100%;
-   padding: 0.7em 0 0 1.1em;
+  
+   padding: 0.5em 0 0 0.7em;
      
 /*  background-color: #ada;*/
 }
