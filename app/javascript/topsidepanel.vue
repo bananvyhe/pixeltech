@@ -18,12 +18,11 @@
 					</div>
 				</div>
 				<!-- {{$store.getters.role.role}} -->
-				
-<!-- 				<div v-if="$store.getters.token == null">
-					<div v-if="checklog == null ">
+				<div v-if="$store.getters.role == null">
+					<div v-if="checklog != false ">
 						{{nulltoken}}
 					</div>
-				</div> -->
+				</div>
 			</div>
 	<!-- 	</div> -->
 <!-- 		{{this.$store.getters.token}}
@@ -64,6 +63,7 @@
 	export default {
 		data() {
 			return {
+				checklog: checklog,
 	    	token: '',
 	    	accessToken: '',
 	    } 
@@ -75,9 +75,8 @@
 		    .then((response) => {	 
 		    	if (document.location.pathname != '/'){
 						window.location.href = '/';
-						console.log('666')
 					}else{
-
+						document.location.reload()
 					}
 		    	
  				//  this.$store.commit('tokensend', null) 
