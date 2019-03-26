@@ -18,11 +18,11 @@
 					</div>
 				</div>
 				<!-- {{$store.getters.role.role}} -->
-				<div v-if="$store.getters.role == null">
+<!-- 				<div v-if="$store.getters.role == null">
 					<div v-if="checklog != false ">
 						{{nulltoken}}
 					</div>
-				</div>
+				</div> -->
 			</div>
 	<!-- 	</div> -->
 <!-- 		{{this.$store.getters.token}}

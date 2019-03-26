@@ -18,7 +18,7 @@
       </el-button>
     </div>
     
-		<el-dialog class="pos" top="18vh" v-bind:width="screenwidth.value > '400' ? '35'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
+		<el-dialog class="pos" top="18vh" v-bind:width="screenwidth.value > 400 ? 35+'em' : 90 +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
 			
 		  <el-form :model="form" :rules="rules" ref="form">	 
 		    <el-form-item 
@@ -106,7 +106,7 @@
 	  },
 	  mounted(){
 	  	try{
-	  		if (checklog == 'unlogged'){
+	  		if (checklog == false){
 					this.nulltoken()
 				}
 				if (!this.$store.getters.token.refresh  ) {
