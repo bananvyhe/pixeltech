@@ -215,14 +215,15 @@ export default {
     height: 40em;
   }
   @media (--only-medium-screen) {
-    height: 20em;
+    height: 35em;
     lost-column: 2/3 2 1.2em; 
   }    
   @media (--only-xsmall-screen) {
-    height: 10em;
+    height: 20em;
     lost-column: 2/3 2 1.2em; 
   }  
   @media (--only-small-screen) {
+    margin: 0.7em 0.3em 0.4em 0.7em; 
     height: 30em;
     lost-column: 2/3 2 1.2em; 
   }    
@@ -244,7 +245,6 @@ export default {
 
 .infobg {
   height: 100%;
-  
   padding:  1em 0 0 0.7em;
   margin: 0em 0;   
 /*  background-color: #ada;*/
