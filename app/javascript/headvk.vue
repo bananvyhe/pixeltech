@@ -66,8 +66,10 @@ export default {
   created() {
     if(document.body.clientWidth > 980) {
       this.carouselh = "40em"
-    }else{
+    }else if(document.body.clientWidth <620){
       this.carouselh = "20em"
+    }else{
+      this.carouselh = "30em"
     }
     
     window.addEventListener('scroll', () => {
@@ -172,8 +174,9 @@ export default {
 }
 /*Carousel*/
 .itembg {
+  padding: 0.7em 0;
   height: 20em;
-  lost-column: 5/7 2 1.2em; 
+  lost-column: 5/7 2 1.3em; 
 } 
 
 .infobg {
