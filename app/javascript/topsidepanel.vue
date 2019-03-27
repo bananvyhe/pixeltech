@@ -3,51 +3,49 @@
 <!-- 		<div v-if="$store.getters.role == null" style="height: 4em;">
  asfasf
 		</div> -->
-	<div class="smalltext main bpad" v-bind:style="styleObject"> 
-		<!-- <div v-if="$store.getters.token != null" > -->
-			<div class="logohead" >
-				<div v-if="$store.getters.role">
-					<div v-if="$store.getters.role.role == 'client'">
-						Site-hosting
+		<div class="smalltext main bpad" v-bind:style="styleObject"> 
+			<!-- <div v-if="$store.getters.token != null" > -->
+				<div class="logohead" >
+					<div v-if="$store.getters.role">
+						<div v-if="$store.getters.role.role == 'client'">
+							Site-hosting
+						</div>
+						<div v-if="$store.getters.role.role == 'user'">
+							pixy
+						</div>
+						<div v-if="$store.getters.role.role == 'voodoo'">
+							<span class="largertext">{{$store.getters.role.username}}</span>&nbsp;Voodoo
+						</div>
 					</div>
-					<div v-if="$store.getters.role.role == 'user'">
-						pixy
-					</div>
-					<div v-if="$store.getters.role.role == 'voodoo'">
-						<span class="largertext">{{$store.getters.role.username}}</span>&nbsp;Voodoo
+					<!-- {{$store.getters.role.role}} -->
+					
+					<div v-if="$store.getters.token == null">
+						<div v-if="checklog != 'unlogged' ">
+							{{nulltoken}}
+						</div>
 					</div>
 				</div>
-				<!-- {{$store.getters.role.role}} -->
-				
-<!-- 				<div v-if="$store.getters.token == null">
-					<div v-if="checklog == 'unlogged' ">
-						{{nulltoken}}
-					</div>
-				</div> -->
+		<!-- 	</div> -->
+	<!-- 		{{this.$store.getters.token}}
+			<br><br> -->
+			<div class="maininfo">
+				<div v-if="$store.getters.token != null" class="info">
+					<!-- {{this.$store.getters.role.username}} 
+					&nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}
+					<br>Ацесс токен: {{this.$store.getters.token.access}}
+					<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}
+					<br> Рефреш токен: {{this.$store.getters.token.refresh}}
+					<br><br> -->
+					&nbsp;&nbsp; Истекает через: {{timeConversion(this.$store.getters.role.exp)}}
+				</div> 
+				<div v-if="$store.getters.token == null" > 
+			    <reg></reg>
+			  </div>
+				<div>
+					<log></log>
+				</div>
 			</div>
-	<!-- 	</div> -->
-<!-- 		{{this.$store.getters.token}}
-		<br><br> -->
-		<div class="maininfo">
-			<div v-if="$store.getters.token != null" class="info">
-				<!-- {{this.$store.getters.role.username}} 
-				&nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}
-				<br>Ацесс токен: {{this.$store.getters.token.access}}
-				<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}
-				<br> Рефреш токен: {{this.$store.getters.token.refresh}}
-				<br><br> -->
-				&nbsp;&nbsp; Истекает через: {{timeConversion(this.$store.getters.role.exp)}}
-			</div> 
-			<div v-if="$store.getters.token == null" > 
-
-		      <reg></reg>
-		    </div>
-			<div>
-				<log></log>
-			</div>
-		</div>
-		
-  </div>
+	  </div>
   </div>
 </template>
 <script>
@@ -64,6 +62,7 @@
 	export default {
 		data() {
 			return {
+				checklog: checklog,
 	    	token: '',
 	    	accessToken: '',
 	    } 
@@ -76,7 +75,7 @@
 		    	if (document.location.pathname != '/'){
 						window.location.href = '/';
 					}else{
-
+document.location.reload()
 					}
 		    	
  				//  this.$store.commit('tokensend', null) 
@@ -128,7 +127,6 @@
 
 	  },
 	  mounted() {
-	  
 	  	if (this.$store.getters.token != null) {
 	  		console.log('dgdgdsdgas43342523521')
 	  		// axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.getters.token.token;
@@ -171,21 +169,15 @@
 		        }).then((response) => {
 	      		if (response.data.errors) {
 			    		console.log(response.data.errors)
- 							
 			    		this.error = response.data.errors;
-			    
 		    		}else{
 		    		  this.$store.commit('tokensend', response.data),
- 							
-
 				    		// this.$store.commit('loginUser');
 				  		// const token = resp.data.token
 				  		// localStorage.setItem('user-token', token)
 				    location.reload(true);
-
 				    }
 		    	})
-
 				}
 				// if (current_time + (this.$store.getters.exp/2)  > this.$store.getters.exp) { 
 				// 	this.$store.commit('tokensend', null) 
@@ -197,12 +189,10 @@
 				// 	console.log('expired token') 
 
 				// }
-
 	  	}
 	  }
 	}
 	//подсчет ширины вьюпорта и отправление в переменную
-	 
 </script>
 <style scoped>
 @import "_variables";

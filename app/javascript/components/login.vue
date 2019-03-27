@@ -200,7 +200,6 @@
 					}else{
 
 					}
-		    	
  				//  this.$store.commit('tokensend', null) 
 		        //   this.$store.commit('tokensend', null) 
 		    })
@@ -302,8 +301,6 @@
 @import "_extends";
 .el-input--mini {
 	width: 16em;
- 
- 
 }
 .flexlab {
 	 
@@ -311,11 +308,8 @@
 .lab {
 	display: flex;
 	justify-content: flex-end;
-/*	 
-	   padding-top: 0.2em;*/
-	  right: 0px;
-
-	  
+/* padding-top: 0.2em;*/
+	right: 0px;
 }
 .log  {
   z-index: 4000;
