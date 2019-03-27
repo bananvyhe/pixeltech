@@ -93,7 +93,6 @@ End Hamster setup*/
   display: none;
 }
 .noimage {
-  
   height: 100%;
   background-position: center;
   background-size: cover; 
@@ -103,24 +102,16 @@ End Hamster setup*/
   align-content: center;
   align-items: center;
 }
-.charged {
-  position: absolute;
-  top: 0;
+/*.charged {
+  position: absolute; 
   width: 130px;
-  height: 70px;
-  background: url('../images/energy32_48.gif');
+  height: 50px;
+  background: url('../images/energy_32.png');
   background-repeat: no-repeat;
-  background-position: -8px -4px;
-  animation: like-gif steps(96) 1s infinite both; 
-}
-@keyframes like-gif {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 100%;
-  }
-} 
+  background-position: center;
+  background-position: -15px 43%;
+}*/
+
 body {
   background-color: #1E1E21;
   font-family: 'RobotoReg';

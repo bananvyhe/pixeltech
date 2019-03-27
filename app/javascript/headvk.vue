@@ -25,11 +25,9 @@
         <div class="vkraiting largertext">{{data.raiting}}</div>        
       </div>
       <div v-if="data.medias_row" class="mediabutton">
-        <div class="link">
-          <a target="_blank" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'> медиа в окне </a>
-        </div>
-    
-        <!-- <div id="charge" class="charged"></div> -->
+        <a target="_blank" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'><div class="link">
+          
+        </div></a>
       </div>
  
     </div>
@@ -127,18 +125,41 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
-#charge {
-  animation-play-state: paused;
-}
 .link {
+ content: 'sdegsdg';
+/*  padding: 24px 13px;*/
+  display: block;
   position: relative;
-  z-index: 0;
   width: 130px;
   height: 50px;
-  display: flex;
-  justify-content: center;
+
+  /*display: flex;*/
+/*  justify-content: center;
   align-content: center;
-  align-items: center;
+  align-items: center;*/
+}
+.link:before {
+  adjust-font-size: fs m;
+  color: color( $str5  blackness(12%));
+ /* padding: 20px 15px;*/
+  content: 'медиа в окне';
+  position: absolute; 
+  top: 10px; right: 0;
+  bottom: 0; left: 0; z-index: -1;
+}
+.link:after {
+  z-index: 4;
+  content: url('./images/energy_32.png');
+  position: absolute; 
+/*  width: 130px;
+  height: 50px;*/
+  top: -13px; right: 0;
+  bottom: 0; left: -22px;
+/*  background: url('./images/energy_32.png');*/
+  /*background-color: #ada;*/
+/*  background-repeat: no-repeat;
+  background-position: center;
+  background-position: -15px 43%;*/
 }
 .bottom {
   position: relative;
@@ -163,9 +184,6 @@ export default {
   margin-left: -1em;
   align-items: flex-end;
   align-self: flex-end;
-  .link {
-
-  }
 }
 .itembg2 {
   margin-top: 3.2em;
