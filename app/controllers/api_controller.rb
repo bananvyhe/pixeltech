@@ -1,6 +1,6 @@
 class ApiController < ApplicationController
-	# skip_before_action :verify_authenticity_token
-  before_action :authenticate_user!
+ skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!, raise: false
   before_action :set_default_format
 
   private

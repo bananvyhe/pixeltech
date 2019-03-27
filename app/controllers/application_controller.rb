@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # шаг списания 
   $stepcash = 0.38
-  
+  protect_from_forgery with: :exception
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	include JWTSessions::RailsAuthorization 
 	rescue_from JWTSessions::Errors::Unauthorized, with: :not_authorized
