@@ -139,6 +139,9 @@ body {
 .lostcenter {
   lost-center: 980px;
 }
+.mainframepaddings {
+  margin: 1em;
+}
 .mainframe {
   .vktext {
     padding-bottom: 0.5em;
