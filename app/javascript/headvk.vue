@@ -245,7 +245,7 @@ export default {
 
 .infobg {
   height: 100%;
-  padding:  1em 0 0 0.7em;
+  padding:  2.4em 0 0 0.7em;
   margin: 0em 0;   
 /*  background-color: #ada;*/
 }
