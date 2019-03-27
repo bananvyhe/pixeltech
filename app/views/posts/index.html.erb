@@ -18,36 +18,31 @@
 </script> -->
 <div class="mainframe lostcenter">
   <div style="margin: 1em;">
-  <h2>Флуд</h2>
-  <table style="width: 100%;">
-    <thead>
-      <tr>
-        <th> </th>
-        <!-- <th> </th> -->
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @posts.each do |post| %>
-        <tr data-item_id="<%= post.id %>">
-          <td><%= post.title %></td>
-          <!-- <td><%#= post.user.username %></td> -->
-   <!--        <td><%#= post.body %></td> -->
-          <td style="width: 10%;"><%= link_to 'Посмотреть', post %></td>
-          <td style="width: 10%;"><%= link_to 'Редактировать', edit_post_path(post) %></td>
-          <td style="width: 10%;"><span class="deleteAction">Удалить</span></td>
+    <h2>Флуд</h2>
+    <table style="width: 100%;">
+      <thead>
+        <tr>
+          <th> </th>
+          <!-- <th> </th> -->
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <div style="padding: 0.7em 1.2em;">
-    <%= link_to 'Новый пост', new_post_path %>
+      </thead>
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr data-item_id="<%= post.id %>">
+            <td><%= post.title %></td>
+            <!-- <td><%#= post.user.username %></td> -->
+     <!--        <td><%#= post.body %></td> -->
+            <td style="width: 10%;"><%= link_to 'Посмотреть', post %></td>
+            <td style="width: 10%;"><%= link_to 'Редактировать', edit_post_path(post) %></td>
+            <td style="width: 10%;"><span class="deleteAction">Удалить</span></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div style="padding: 0.7em 1.2em;">
+      <%= link_to 'Новый пост', new_post_path %>
+    </div>
   </div>
+</div>
 
-  
-  <br><br>
-</div>
-</div>
-</div>
