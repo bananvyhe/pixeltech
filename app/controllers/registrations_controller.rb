@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_action :authenticate_user! 
+  before_action :authenticate_user!, raise: false 
   skip_before_action :require_no_authentication
 
   clear_respond_to
