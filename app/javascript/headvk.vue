@@ -139,22 +139,22 @@ export default {
   align-items: center;*/
 }
 .link:before {
-  adjust-font-size: fs m;
+  adjust-font-size: fs b;
   color: color( $str5  blackness(12%));
  /* padding: 20px 15px;*/
   content: 'медиа в окне';
   position: absolute; 
-  top: 10px; right: 0;
-  bottom: 0; left: 0; z-index: -1;
+  top: 6px; right: 0;
+  bottom: 0; left: 10px; z-index: -1;
 }
 .link:after {
-  z-index: 4;
+/*  z-index: 4000;*/
   content: url('./images/energy_32.png');
   position: absolute; 
 /*  width: 130px;
   height: 50px;*/
-  top: -13px; right: 0;
-  bottom: 0; left: -22px;
+  top: -17px; right: 0;
+  bottom: 0; left: -17px;
 /*  background: url('./images/energy_32.png');*/
   /*background-color: #ada;*/
 /*  background-repeat: no-repeat;

@@ -159,6 +159,8 @@ body {
   padding: 0.7em 1em 0.7em 0em;
 }
 .vkpost:nth-child(even) {
+  position: relative;
+  z-index: 1;
   background-color: color( $HeadBackColor  shade(46%));
 }
 .vktext {
