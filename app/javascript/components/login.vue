@@ -17,9 +17,7 @@
         Войти
       </el-button>
     </div>
-    
-		<el-dialog class="pos" top="18vh" :width="calcul" title="Войти:" :visible.sync="dialogFormVisible" >{{screenwidth}}
-			
+  		<el-dialog class="pos" top="18vh" :width="calcul" title="Войти:" :visible.sync="dialogFormVisible" >
 		  <el-form :model="form" :rules="rules" ref="form">	 
 		    <el-form-item 
 		    	prop="email" 
@@ -49,8 +47,6 @@
 
 <script>
 	import axios from 'axios'
-	 
-
 	// var state = {
 	// 	token: localStorage.getItem("token")
 	// }

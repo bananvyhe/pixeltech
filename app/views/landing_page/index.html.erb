@@ -1,5 +1,7 @@
 <div class="mediumtext">
-	<%= render :template => "posts/index" %>
+	<% if user_signed_in? %>
+		<%= render :template => "posts/index" %>
+	<% end %>
 	<%= tag.div id: :headvk, 
 		data: { 
 		} 
