@@ -1,5 +1,8 @@
 class LandingPageController < ApplicationController
 	def index
+		@vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
+		    @posts = Post.all.order(created_at: :desc)
+	
 		if (current_user)
 	    path = case current_user.role
 	    	when 'superadmin'

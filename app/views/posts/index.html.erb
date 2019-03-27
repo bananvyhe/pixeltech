@@ -16,38 +16,10 @@
   }
   window.onload = externalLinks;
 </script>
-<div class="mainframe">
-<% @vks.each do |post| %>
-  <div class="vkpost">
-    <div class="vkdate">
-      <%= post.posted_at %>      
-    </div>
-    <% if post.title? %>
-      <div class="vktext">
-        <%= post.title %>
-      </div>
-    <% end %>
-    <div>
-      <% post.thumb_map_img_as_div[0...-1].split(",").each do |img| %>
-        <img src="<%= img[2...-1] %>" />      
-      <% end %>
-    </div>
-
-    <%= post.v_like %> --
-    <%= post.v_views %> |
-    <%= post.raiting %>
-    <% if  post.medias_row? %>
-    <a rel="external" href='https://vk.com<%= post.wall[2...-2] %>'>медиа в окне</a>
-    <% end %>
-
-  </div>
-  <!-- <td><%#= post.user.username %></td> -->
-  <!--        <td><%#= post.body %></td> -->
-<% end %>
-
+<div class="mainframe lostcenter">
+  <div style="margin: 1em;">
   <h2>Флуд</h2>
-
-  <table>
+  <table style="width: 100%;">
     <thead>
       <tr>
         <th> </th>
@@ -62,16 +34,20 @@
           <td><%= post.title %></td>
           <!-- <td><%#= post.user.username %></td> -->
    <!--        <td><%#= post.body %></td> -->
-          <td><%= link_to 'Посмотреть', post %></td>
-          <td><%= link_to 'Редактировать', edit_post_path(post) %></td>
-          <td><span class="deleteAction">Удалить</span></td>
+          <td style="width: 10%;"><%= link_to 'Посмотреть', post %></td>
+          <td style="width: 10%;"><%= link_to 'Редактировать', edit_post_path(post) %></td>
+          <td style="width: 10%;"><span class="deleteAction">Удалить</span></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
-  <br>
+  <div style="padding: 0.7em 1.2em;">
+    <%= link_to 'Новый пост', new_post_path %>
+  </div>
 
-  <%= link_to 'Новый пост', new_post_path %>
+  
+  <br><br>
+</div>
 </div>
 </div>
