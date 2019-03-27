@@ -18,7 +18,7 @@
       </el-button>
     </div>
     
-		<el-dialog class="pos" top="18vh" :width="screenwidth.value > 400 ? '35'+'em' : '90' +'%'" title="Войти:" :visible.sync="dialogFormVisible" >
+		<el-dialog class="pos" top="18vh" :width="calcul" title="Войти:" :visible.sync="dialogFormVisible" >{{screenwidth}}
 			
 		  <el-form :model="form" :rules="rules" ref="form">	 
 		    <el-form-item 
@@ -96,6 +96,9 @@
 	    };
 	  },
 	  computed: {
+	  	calcul: function(){
+	  		return screenwidth.value > 400 ? '35'+'em' : '90' +'%'
+	  	},
 	  	magicWidth: function(){
         console.log("computed");
         if(this.age > 17)
@@ -105,6 +108,7 @@
 	    }
 	  },
 	  mounted(){
+	  	parseCalc()
 	  	try{
 	  		if (checklog == 'unlogged'){
 					this.nulltoken()
@@ -287,13 +291,10 @@
 		}
 	}
 	//подсчет ширины вьюпорта и отправление в переменную
-	function parseCalc () {
+	function parseCalc() {
  		let screenw = document.body.clientWidth;
  		screenwidth.value = document.body.clientWidth;
  	}
-  window.onload = function () {
-    parseCalc();
-  }
   window.addEventListener('resize', _.throttle(parseCalc, 100));
 </script>
 <style scoped>
