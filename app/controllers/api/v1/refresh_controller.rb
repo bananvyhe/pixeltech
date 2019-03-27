@@ -1,6 +1,6 @@
 class Api::V1::RefreshController < ApiController
    before_action :authorize_refresh_request!
-   skip_before_action :authenticate_user!
+   skip_before_action :authenticate_user!, raise: false
   def create
  
     
