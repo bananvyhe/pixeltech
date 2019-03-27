@@ -3,7 +3,6 @@
 <div id="app">
   <div v-if="alldata.length === 0" class="loading">Загрузка...</div>
   <div v-for="data in alldata" class="vkpost">
-
     <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
       <el-carousel  type="card" :height="carouselh" >
         <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
@@ -12,11 +11,10 @@
       </el-carousel>
     </div>
     <div v-else class="itembg"  v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
-          <div v-if="data.thumb_map_img_as_div == 'nil'" class="noimage">
-            нет фото
-          </div>
-          <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}"  ></div> 
-          
+      <div v-if="data.thumb_map_img_as_div == 'nil'" class="noimage">
+        нет фото
+      </div>
+      <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}"  ></div> 
     </div>
     <div :class="[data.thumb_map_img_as_div.split(',').length > 1 ? slideInfoClass :  simpleInfoClass]">
  
@@ -24,9 +22,8 @@
   
       <div class="raitingdate" >
         <div class="vkdate">{{data.posted_at}}</div>
-        <div class="vkraiting">{{data.raiting}}</div>        
+        <div class="vkraiting largertext">{{data.raiting}}</div>        
       </div>
-  
       <div v-if="data.medias_row" class="mediabutton">
         <div class="link">
           <a target="_blank" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'> медиа в окне </a>
@@ -209,7 +206,7 @@ export default {
 }
 /*Carousel*/
 .itembg {
-  margin: 0.7em 0.3em 0.3em 0.7em; 
+  margin: 0em 0.3em 0em 0.7em; 
   height: 30em;
   @media (--only-1600more-screen) {
     height: 40em;

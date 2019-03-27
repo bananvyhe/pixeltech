@@ -33,9 +33,9 @@ End Hamster setup*/
 @media (--only-xsmall-screen) {
   @ihamster {
     --font-size: 12px;
-    --line-height: 1.2;
+    --line-height: 1.4;
     --to-font-size: 11px;
-    --to-line-height: 1.2;
+    --to-line-height: 1.4;
     --viewport: 320px 450px;
     --unit: vw;
   }
@@ -45,7 +45,7 @@ End Hamster setup*/
 @media (--only-small-screen) {
   @ihamster {
     --font-size: 11px;
-    --line-height: 1.6;
+    --line-height: 1.4;
     --to-font-size: 11px;
     --to-line-height: 1.6 ;
     --viewport: 451px 800px;
@@ -165,7 +165,7 @@ body {
 .vkpost {
   position: relative;
   overflow: hidden;
-  padding: 0.1em 1em 0.1em 0em;
+  padding: 0.7em 1em 0.7em 0em;
 }
 .vkpost:nth-child(even) {
   background-color: color( $HeadBackColor  shade(46%));
@@ -179,7 +179,7 @@ body {
   padding: 1.0em 1em 0em 0em;  
 }
 .vkraiting{
-
+  padding: 0.1em;
 }
 #head {
   .subj {

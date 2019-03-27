@@ -60,12 +60,10 @@ p:first-of-type {
 .hugetext {
    adjust-font-size: fs xl;
 } 
-p { adjust-font-size: fs l;
+p { 
   display: block;
-   
   /*margin-top: spacing(1);*/
   margin-bottom: spacing(0.5);
-
 }
 img {
   /*padding: 0em 1.5em 0.9em 1.5em;*/
