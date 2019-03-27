@@ -209,7 +209,7 @@ export default {
 }
 /*Carousel*/
 .itembg {
-  margin: 0.7em 0.3em 0.7em 0.7em; 
+  margin: 0.7em 0.3em 0.3em 0.7em; 
   height: 30em;
   @media (--only-1600more-screen) {
     height: 40em;
@@ -223,7 +223,7 @@ export default {
     lost-column: 2/3 2 1.2em; 
   }  
   @media (--only-small-screen) {
-    margin: 0.7em 0.3em 0.4em 0.7em; 
+    
     height: 30em;
     lost-column: 2/3 2 1.2em; 
   }    
