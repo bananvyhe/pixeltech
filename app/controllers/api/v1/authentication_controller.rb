@@ -1,4 +1,4 @@
-class Api::V1::AuthenticationController < ApiController
+class Api::V1::AuthenticationController < Api2Controller
    
   skip_before_action :authenticate_user!, raise: false
   def create
