@@ -1,20 +1,16 @@
+<% if user_signed_in? %>
+	<%= render :template => "posts/index" %>
+<% end %>
 <div class="mediumtext">
-	<% if user_signed_in? %>
-		<%= render :template => "posts/index" %>
-	<% end %>
 	<%= tag.div id: :headvk, 
 		data: { 
 		} 
 	%>
 </div>
 
-
-
 <% if !user_signed_in? %>
 	<!-- <div id="head"></div> -->
 <% end %>
-
-
 
 <%# if user_signed_in? %>
 <!-- <p style="text-align: center; padding-top: 1em;">
