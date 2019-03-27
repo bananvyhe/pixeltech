@@ -73,7 +73,7 @@ export default {
     }else if(document.body.clientWidth <480){
       this.carouselh = "20em"
     }else{
-      this.carouselh = "30em"
+      this.carouselh = "35em"
     }
     
     window.addEventListener('scroll', () => {
