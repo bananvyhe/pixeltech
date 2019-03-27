@@ -1,6 +1,6 @@
 
 h1, h2, h3, h4, h5 {
-  color: #999;
+  color: color( $navajowhite shade(25%) saturation(+ 50%));
   /*font-family: "RobotoA";*/
   padding-right: 0.5em;
 }
@@ -52,7 +52,8 @@ p:first-of-type {
   adjust-font-size: fs b;
 }
 .mediumtext {
-   adjust-font-size: fs m;
+  color: color( $ghostwhite  shade(12%) saturation(+0%));
+  adjust-font-size: fs m;
 }
 .largertext {
    adjust-font-size: fs l;
