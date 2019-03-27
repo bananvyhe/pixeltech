@@ -183,7 +183,7 @@ document.addEventListener('turbolinks:load', () => {
 		if(confirm("Точно удалить?")){
 			$.ajax({
 				beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-				url: document.location.pathname + '/' + $(current_item_tr).attr('data-item_id'),
+				url: window.location.href + '/posts/' + $(current_item_tr).attr('data-item_id'),
 				type: 'POST',
 				data: { _method: 'DELETE'},
 				success: function(){
