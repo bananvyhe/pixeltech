@@ -52,7 +52,7 @@ p:first-of-type {
   adjust-font-size: fs b;
 }
 .mediumtext {
-  color: color( $ghostwhite  shade(12%) saturation(+0%));
+  @extend %textcolor;
   adjust-font-size: fs m;
 }
 .largertext {
@@ -79,7 +79,8 @@ em {
 strong {
   font-weight: bold;
 }
-a {adjust-font-size: fs l;
+a {
+  adjust-font-size: fs l;
   color: color( $str5  blackness(12%));
   text-decoration: none;
 }

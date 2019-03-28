@@ -30,12 +30,9 @@
       <tbody>
         <% @posts.each do |post| %>
           <tr data-item_id="<%= post.id %>">
-            <td><%= post.title %></td>
-            <!-- <td><%#= post.user.username %></td> -->
-     <!--        <td><%#= post.body %></td> -->
-            <td style="width: 10%;"><%= link_to 'Посмотреть', post %></td>
-            <td style="width: 10%;"><%= link_to 'Редактировать', edit_post_path(post) %></td>
-            <td style="width: 10%;"><span class="deleteAction">Удалить</span></td>
+            <td><span><%= link_to post.title, post, :class => 'posttitlelink' %></span></td>
+            <td><%= link_to 'Редактировать', edit_post_path(post), :class => 'mediumtext' %></td>
+            <td style="width: 10%;"><span class="deleteAction" >Удалить</span></td>
           </tr>
         <% end %>
       </tbody>

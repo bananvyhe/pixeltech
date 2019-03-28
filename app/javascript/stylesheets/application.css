@@ -25,7 +25,7 @@ End Hamster setup*/
 @reset;
 @box-sizing-reset;
 @import "_variables"; 
-
+@import "_extends"; 
 @copy full {
   @import "_typography";
 }
@@ -173,6 +173,13 @@ body {
 }
 .vkraiting{
   padding: 0.1em;
+}
+.posttitlelink {
+  @extend %textcolor;
+  adjust-font-size: fs medium;
+}
+.posttitlelink:hover {
+    color: rgb(86, 224, 31);
 }
 #head {
   .subj {
