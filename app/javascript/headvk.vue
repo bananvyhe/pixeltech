@@ -216,7 +216,7 @@ export default {
   top: -20px; right: 0;
   bottom: 0; left: -14px;
 }
-.linkactive2 {
+/*.linkactive2 {
   content: '';
   display: block;
   position: relative;
@@ -237,7 +237,7 @@ export default {
   position: absolute; 
   top: -13px; right: 0;
   bottom: 0; left: -14px;
-}
+}*/
 .bottom {
   position: relative;
 }
