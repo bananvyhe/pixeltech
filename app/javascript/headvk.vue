@@ -217,7 +217,7 @@ export default {
   color: color( $str5  blackness(12%));
   content: 'медиа в окне';
   position: absolute; 
-  top: 6px; right: 0;
+  top: 7px; right: 0;
   bottom: 0; left: 5px; z-index: -1;
 }
 .linkVisited:after {
@@ -248,7 +248,7 @@ export default {
   /*content: url('./images/energy_32.png');*/
   content: url('./images/energy29.gif');
   position: absolute; 
-  top: 1px; right: 0;
+  top: 0px; right: 0;
   bottom: 0; left: -19px;
 }
 
@@ -272,7 +272,7 @@ export default {
 .linkactive:after {
   content: url('./images/energy32.gif');
   position: absolute; 
-  top: -1px; right: 0;
+  top: -4px; right: 0;
   bottom: 0; left: -14px;
 }
 .linkactive2 {
@@ -295,7 +295,7 @@ export default {
 .linkactive2:after {
   content: url('./images/energy27.gif');
   position: absolute; 
-  top: -7px; right: 0;
+  top: -9px; right: 0;
   bottom: 0; left: -26px;
 }
 .bottom {
