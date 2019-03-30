@@ -9,6 +9,8 @@ class TobdWorker < ApplicationController
   	if (df == nil)
   		@vk.save
     else
+    	df.update_attribute(:title, title)
+    	df.update_attribute(:thumb_map_img_as_div, thumb_map_img_as_div)
     	df.update_attribute(:medias_row, medias_row)
 			df.update_attribute(:raiting, raiting.round(2))
 			df.update_attribute(:v_views, views)

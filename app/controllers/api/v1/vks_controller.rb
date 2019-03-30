@@ -28,7 +28,7 @@ class Api::V1::VksController < ApiController
     medias_row = d[:medias_row]
     thumb_map_img_as_div = d[:thumb_map_img_as_div]
     title = d[:title]
-    TobdWorker.perform_async(wall, like, views, posted_at, medias_row, thumb_map_img_as_div, title)
+    TobdWorker.perform_async(wall, like, views, posted_at, thumb_map_img_as_div, title, medias_row)
 	end
 
   end 
