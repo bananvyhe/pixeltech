@@ -27,7 +27,7 @@
       <div v-if="data.medias_row" class="mediabutton">
 <!--         <a target="_blank" v-on:click.capture="linkswicher=true" v-bind:href='""+data.wall.slice(2, -2)'><div class="link" :class="[linkswicher ? linkactive : '', link]"> -->
        <!--  <component v-bind:href='""+data.wall.slice(2, -2)'></component> -->
-         <energy-button v-bind:href='""+data.wall.slice(2, -2)'></energy-button> 
+         <energy-button v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
       <!-- </a> -->
       </div>
  
@@ -55,7 +55,7 @@ var cmp = {
       this.status = 'link';
     },
     changeStatus: function() {
-            this.status = 'link';
+            this.status = 'linkactive2';
    
 
        //  if ($('.energy').hasClass('linkactive'))
@@ -216,12 +216,12 @@ export default {
   top: -20px; right: 0;
   bottom: 0; left: -14px;
 }
-/*.linkactive2 {
+.linkactive2 {
   content: '';
   display: block;
   position: relative;
-  width: 130px;
-  height: 50px;
+  width: 150px;
+  height: 70px;
 
 }
 .linkactive2:before {
@@ -233,11 +233,11 @@ export default {
   bottom: 0; left: 10px; z-index: -1;
 }
 .linkactive2:after {
-  content: url('./images/energy_27_2.gif');
+  content: url('./images/energy27.gif');
   position: absolute; 
-  top: -13px; right: 0;
-  bottom: 0; left: -14px;
-}*/
+  top: -23px; right: 0;
+  bottom: 0; left: -22px;
+}
 .bottom {
   position: relative;
 }
