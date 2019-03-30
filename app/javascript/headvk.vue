@@ -27,7 +27,7 @@
       <div v-if="data.medias_row" class="mediabutton">
 <!--         <a target="_blank" v-on:click.capture="linkswicher=true" v-bind:href='""+data.wall.slice(2, -2)'><div class="link" :class="[linkswicher ? linkactive : '', link]"> -->
        <!--  <component v-bind:href='""+data.wall.slice(2, -2)'></component> -->
-         <energy-button class="js-newWindow" data-popup="width=600,height=350,top=50,left=50, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
+         <energy-button class="js-newWindow" data-popup="width=600,height=500,top=50,left=50, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
       <!-- </a> -->
       </div>
  
@@ -200,8 +200,9 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
-.link, .linkactive, .linkVisited {
+.link, .linkactive, .linkactive2, .linkVisited {
   white-space: nowrap;
+
 }
 .linkVisited {
   content: '';
@@ -217,7 +218,7 @@ export default {
   content: 'медиа в окне';
   position: absolute; 
   top: 6px; right: 0;
-  bottom: 0; left: 10px; z-index: -1;
+  bottom: 0; left: 5px; z-index: -1;
 }
 .linkVisited:after {
   /*content: url('./images/energy29.gif');*/
@@ -239,7 +240,7 @@ export default {
   content: 'медиа в окне';
   position: absolute; 
   top: 6px; right: 0;
-  bottom: 0; left: 10px; z-index: -1;
+  bottom: 0; left: 5px; z-index: -1;
 }
  /*content: url('./images/energy_32.gif');*/
 .link:after {
@@ -264,7 +265,7 @@ export default {
   content: 'медиа в окне';
   position: absolute; 
   top: 6px; right: 0;
-  bottom: 0; left: 10px; z-index: -1;
+  bottom: 0; left: 5px; z-index: -1;
 }
 .linkactive:after {
   content: url('./images/energy32.gif');
@@ -286,7 +287,7 @@ export default {
   content: 'медиа в окне';
   position: absolute; 
   top: 6px; right: 0;
-  bottom: 0; left: 10px; z-index: -1;
+  bottom: 0; left: 5px; z-index: -1;
 }
 .linkactive2:after {
   content: url('./images/energy27.gif');
@@ -353,7 +354,7 @@ export default {
 }
 /*Carousel*/
 .itembg {
-  margin: 0em 0.3em 0em 0.7em; 
+  margin: 0em 0.3em 0em 0em; 
   height: 30em;
   @media (--only-1600more-screen) {
     height: 40em;
@@ -388,8 +389,11 @@ export default {
 } 
 
 .infobg {
+
+  position: relative;
   height: 100%;
-  padding:  2.4em 0 0 0.7em;
+  padding:  2.4em 0 0 0em;
+
   margin: 0em 0;   
 /*  background-color: #ada;*/
 }

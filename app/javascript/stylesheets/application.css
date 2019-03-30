@@ -156,7 +156,7 @@ body {
 .vkpost {
   position: relative;
   overflow: hidden;
-  padding: 0.7em 1em 0.7em 0em;
+  padding: 0.7em 1em 0.7em 0.7em;
 }
 .vkpost:nth-child(even) {
   position: relative;
