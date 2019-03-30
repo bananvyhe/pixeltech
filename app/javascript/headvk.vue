@@ -27,7 +27,7 @@
       <div v-if="data.medias_row" class="mediabutton">
 <!--         <a target="_blank" v-on:click.capture="linkswicher=true" v-bind:href='""+data.wall.slice(2, -2)'><div class="link" :class="[linkswicher ? linkactive : '', link]"> -->
        <!--  <component v-bind:href='""+data.wall.slice(2, -2)'></component> -->
-         <energy-button v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
+         <energy-button class="js-newWindow" data-popup="width=600,height=500,top=50,left=50, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
       <!-- </a> -->
       </div>
  
@@ -38,6 +38,8 @@
 
 <script>
 import axios from 'axios'
+
+ 
 var cmp = {
 
   data: function(){
@@ -46,30 +48,45 @@ var cmp = {
       link: 'unvisited'
     };
   },
-  template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" target="_blank" ></a>',
+  mounted() {
+    //jq для открытия нового окна заданных размеров
+    $('.js-newWindow').click(function (event) {
+        event.preventDefault();
+        var $this = $(this);
+        var url = $this.attr("href");
+        var windowName = "popUp";
+        var windowSize = $this.data("popup");
+        window.open(url, windowName, windowSize);
+    });           
+  },
+  watch: {
+    link() {
+      if (this.link != 'visited'){
+
+      }
+    }
+  },
+  // template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" target="_blank" ></a>',
+    template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" ></a>',
 
   methods: {
     overAction: function() {
-        if (this.link != 'visited'){
-          this.status = 'linkactive';
-        }
-       
+      if (this.link != 'visited'){
+        this.status = 'linkactive';
+      }       
     },
     leaveAction: function() {
-        if (this.link != 'visited') {
-          this.status = 'link';
-        }
-       
+      if (this.link != 'visited') {
+        this.status = 'link';
+      } 
     },
     changeStatus: function() {
-            this.status = 'linkactive2';
-
-          this.link = "visited";
+      this.status = 'linkactive2';
+      this.link = "visited";
       var self = this;
       setTimeout(function(){
-        self.link  = 'linkVisited';
-
-      },2000 );
+        self.status = 'linkVisited';
+      },1600 );
 
        //  if ($('.energy').hasClass('linkactive'))
        // {
@@ -178,6 +195,7 @@ export default {
     }
   }
 }
+
 </script>
 <style scoped>
 @import "_variables";
