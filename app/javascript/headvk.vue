@@ -44,7 +44,7 @@ var cmp = {
 
   data: function(){
     return {
-      status: 'link',
+      status: 'linkactive2',
       link: 'unvisited'
     };
   },
@@ -232,6 +232,7 @@ export default {
   position: relative;
   width: 150px;
   height: 70px;
+  margin-top: -15px;
 }
 
 .link:before {
@@ -239,7 +240,7 @@ export default {
   color: color( $str5  blackness(12%));
   content: 'медиа в окне';
   position: absolute; 
-  top: 6px; right: 0;
+  top: 22px; right: 0;
   bottom: 0; left: 5px; z-index: -1;
 }
  /*content: url('./images/energy_32.gif');*/
@@ -247,16 +248,17 @@ export default {
   /*content: url('./images/energy_32.png');*/
   content: url('./images/energy29.gif');
   position: absolute; 
-  top: -15px; right: 0;
+  top: 1px; right: 0;
   bottom: 0; left: -19px;
 }
 
 .linkactive {
+  margin-top: -15px;
   content: '';
   display: block;
   position: relative;
-  width: 130px;
-  height: 50px;
+  width: 150px;
+  height: 70px;
 
 }
 .linkactive:before {
@@ -264,16 +266,17 @@ export default {
   color: color( $str5  blackness(12%));
   content: 'медиа в окне';
   position: absolute; 
-  top: 6px; right: 0;
+  top: 22px; right: 0;
   bottom: 0; left: 5px; z-index: -1;
 }
 .linkactive:after {
   content: url('./images/energy32.gif');
   position: absolute; 
-  top: -20px; right: 0;
+  top: -1px; right: 0;
   bottom: 0; left: -14px;
 }
 .linkactive2 {
+  margin-top: -15px;
   content: '';
   display: block;
   position: relative;
@@ -286,14 +289,14 @@ export default {
   color: color( $str5  blackness(12%));
   content: 'медиа в окне';
   position: absolute; 
-  top: 6px; right: 0;
+  top: 22px; right: 0;
   bottom: 0; left: 5px; z-index: -1;
 }
 .linkactive2:after {
   content: url('./images/energy27.gif');
   position: absolute; 
-  top: -23px; right: 0;
-  bottom: 0; left: -22px;
+  top: -7px; right: 0;
+  bottom: 0; left: -26px;
 }
 .bottom {
   position: relative;
