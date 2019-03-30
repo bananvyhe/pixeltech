@@ -44,7 +44,7 @@ var cmp = {
 
   data: function(){
     return {
-      status: 'linkactive2',
+      status: 'link',
       link: 'unvisited'
     };
   },
