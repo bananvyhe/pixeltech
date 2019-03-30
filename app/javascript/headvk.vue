@@ -42,21 +42,34 @@ var cmp = {
 
   data: function(){
     return {
-      status: 'link'
+      status: 'link',
+      link: 'unvisited'
     };
   },
   template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" target="_blank" ></a>',
 
   methods: {
     overAction: function() {
-      this.status = 'linkactive';
+        if (this.link != 'visited'){
+          this.status = 'linkactive';
+        }
+       
     },
     leaveAction: function() {
-      this.status = 'link';
+        if (this.link != 'visited') {
+          this.status = 'link';
+        }
+       
     },
     changeStatus: function() {
             this.status = 'linkactive2';
-   
+
+          this.link = "visited";
+      var self = this;
+      setTimeout(function(){
+        self.link  = 'linkVisited';
+
+      },2000 );
 
        //  if ($('.energy').hasClass('linkactive'))
        // {
@@ -169,6 +182,28 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+.linkVisited {
+  content: '';
+  display: block;
+  position: relative;
+  width: 150px;
+  height: 70px;
+}
+
+.linkVisited:before {
+  adjust-font-size: fs b;
+  color: color( $str5  blackness(12%));
+  content: 'медиа в окне';
+  position: absolute; 
+  top: 6px; right: 0;
+  bottom: 0; left: 10px; z-index: -1;
+}
+.linkVisited:after {
+  /*content: url('./images/energy29.gif');*/
+  position: absolute; 
+  top: -15px; right: 0;
+  bottom: 0; left: -19px;
+}
 .link {
   content: '';
   display: block;
