@@ -190,7 +190,7 @@ export default {
   /*content: url('./images/energy_32.png');*/
   content: url('./images/energy29.gif');
   position: absolute; 
-  top: -18px; right: 0;
+  top: -15px; right: 0;
   bottom: 0; left: -19px;
 }
 
