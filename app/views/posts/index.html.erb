@@ -31,7 +31,7 @@
         <% @posts.each do |post| %>
           <tr data-item_id="<%= post.id %>">
             <td><%= link_to post.title, post, :class => 'posttitlelink' %></td>
-            <td><%= link_to 'Редактировать', edit_post_path(post), :class => 'mediumtext' %></td>
+           <!--  <td><%= link_to 'Редактировать', edit_post_path(post), :class => 'mediumtext' %></td> -->
             <td style="width: 10%;"><span class="deleteAction" >Удалить</span></td>
           </tr>
         <% end %>
