@@ -45,7 +45,8 @@ var cmp = {
   data: function(){
     return {
       status: 'link',
-      link: 'unvisited'
+      link: 'unvisited',
+      exp: ''
     };
   },
   mounted() {
@@ -67,7 +68,7 @@ var cmp = {
     }
   },
   // template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" target="_blank" ></a>',
-    template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" ></a>',
+  template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" ></a>',
 
   methods: {
     overAction: function() {
@@ -80,6 +81,38 @@ var cmp = {
         this.status = 'link';
       } 
     },
+    exppush: function(){
+      // axios.post('/clients', {
+     //    client: {
+     //      ballance: 1000
+     //    }
+     //  })
+      axios({
+        method: 'post',
+        url: '/gameboards',
+        data: {
+          expirience: 100
+        },
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      }).then((response) => { 
+ 
+      })
+      axios.get('/gameboards', {
+        method: 'get',
+        url: '/gameboards',
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+        })
+        .then((response) => {    
+          this.exp =  response.data.expirience
+        })
+        .catch(function (error) {
+          console.log(error);
+        }); 
+    },
     changeStatus: function() {
       this.status = 'linkactive2';
       this.link = "visited";
@@ -87,6 +120,8 @@ var cmp = {
       setTimeout(function(){
         self.status = 'linkVisited';
       },1600 );
+      this.exppush() 
+
 
        //  if ($('.energy').hasClass('linkactive'))
        // {

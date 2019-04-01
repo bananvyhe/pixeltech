@@ -58,8 +58,9 @@ Vue.component("temperature", {
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
  
-import { Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
+import {Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
 Vue.prototype.$message = Message;  
+Vue.use(Progress) 
 Vue.use(Button) 
 Vue.use(Dialog)  
 Vue.use(Form)  

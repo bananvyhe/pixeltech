@@ -2,6 +2,7 @@ require "sidekiq/web"
 
 
 Rails.application.routes.draw do
+  resources :gameboards
   resources :vks
   resources :inboxes
   resources :siteowners

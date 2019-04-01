@@ -1,0 +1,27 @@
+<%= form_with(model: gameboard, local: true) do |form| %>
+  <% if gameboard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gameboard.errors.count, "error") %> prohibited this gameboard from being saved:</h2>
+
+      <ul>
+      <% gameboard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :expirience %>
+    <%= form.text_field :expirience %>
+  </div>
+
+  <div class="field">
+    <%= form.label :karma %>
+    <%= form.number_field :karma %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

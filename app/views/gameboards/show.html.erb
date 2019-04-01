@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Expirience:</strong>
+  <%= @gameboard.expirience %>
+</p>
+
+<p>
+  <strong>Karma:</strong>
+  <%= @gameboard.karma %>
+</p>
+
+<%= link_to 'Edit', edit_gameboard_path(@gameboard) %> |
+<%= link_to 'Back', gameboards_path %>

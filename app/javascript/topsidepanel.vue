@@ -11,10 +11,10 @@
 							Site-hosting
 						</div>
 						<div v-if="$store.getters.role.role == 'user'">
-							pixy
+							<game-board></game-board>
 						</div>
 						<div v-if="$store.getters.role.role == 'voodoo'">
-							<span class="largertext">{{$store.getters.role.username}}</span>&nbsp;Voodoo
+							<game-board></game-board>
 						</div>
 					</div>
 					<!-- {{$store.getters.role.role}} -->
@@ -47,6 +47,7 @@
 			</div>
 	  </div>
   </div>
+
 </template>
 <script>
 	import axios from 'axios'
@@ -67,6 +68,12 @@
 	    	accessToken: '',
 	    } 
 	  },
+
+	  components: {
+    'game-board': {
+    	template: '<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;<span v-if="$store.getters.role.expirience != null">&nbsp;лвл:&nbsp;{{$store.getters.role.expirience}}</span><span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span></div>'
+    	}
+    },
 	  computed: {
 	  	nulltoken: function(){
 	  		axios.delete('/users/sign_out', {
@@ -75,7 +82,7 @@
 		    	if (document.location.pathname != '/'){
 						window.location.href = '/';
 					}else{
-document.location.reload()
+						document.location.reload()
 					}
 		    	
  				//  this.$store.commit('tokensend', null) 
