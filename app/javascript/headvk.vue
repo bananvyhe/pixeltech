@@ -200,6 +200,7 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+
 .link, .linkactive, .linkactive2, .linkVisited {
   white-space: nowrap;
 
@@ -261,6 +262,9 @@ export default {
   height: 70px;
 
 }
+.linkactive:hover {
+
+}
 .linkactive:before {
   adjust-font-size: fs b;
   color: color( $str5  blackness(12%));
@@ -270,10 +274,12 @@ export default {
   bottom: 0; left: 5px; z-index: -1;
 }
 .linkactive:after {
+  background-size: 10px 10px ;
   content: url('./images/energy32.gif');
   position: absolute; 
-  top: -4px; right: 0;
-  bottom: 0; left: -14px;
+
+  top: -3px; right: 0;
+  bottom: 0; left: -8px;
 }
 .linkactive2 {
   margin-top: -15px;
@@ -285,6 +291,9 @@ export default {
 
 }
 .linkactive2:before {
+  -webkit-animation: shake-vertical 0.6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation: shake-vertical 0.6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+
   adjust-font-size: fs b;
   color: color( $str5  blackness(12%));
   content: 'медиа в окне';
@@ -354,6 +363,20 @@ export default {
     position: absolute;
     left: 10%;
   }
+  .linkactive:after {
+    background-size: 10px 10px ;
+    content: url('./images/energy32.gif');
+    position: absolute; 
+
+    top: -3px; right: 0;
+    bottom: 0; left: 15px;
+  }
+  .linkactive2:after {
+    content: url('./images/energy27.gif');
+    position: absolute; 
+    top: -9px; right: 0;
+    bottom: 0; left: -10px;
+  }
 }
 /*Carousel*/
 .itembg {
@@ -422,4 +445,95 @@ h3 {
 ul {
   margin-top: 5px;
 }
+@-webkit-keyframes shake-bottom {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+}
+@-webkit-keyframes shake-vertical {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  80% {
+    -webkit-transform: translateY(6.4px);
+            transform: translateY(6.4px);
+  }
+  90% {
+    -webkit-transform: translateY(-6.4px);
+            transform: translateY(-6.4px);
+  }
+}
+@keyframes shake-vertical {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+  80% {
+    -webkit-transform: translateY(1.4px);
+            transform: translateY(1.4px);
+  }
+  90% {
+    -webkit-transform: translateY(-0.8px);
+            transform: translateY(-0.8px);
+  }
+}
+
+
 </style>
