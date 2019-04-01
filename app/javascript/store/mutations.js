@@ -11,6 +11,10 @@ export const tokensend = (state,  token ) => {
 	state.token = token 
 	 
 }
+export const gamesend = (state,  game ) => {
+	state.gamebo = game 
+	 
+}
 export const refreshsend = (state,  token ) => {
 	state.refreshToken = token 
 	 

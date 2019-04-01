@@ -229,7 +229,7 @@
 	  		// this.dialogFormVisible = false
 	  	},
 		  onSubmit: function () {
-		    axios.post('/api/v1/auth', {
+				axios.post('/api/v1/auth', {
 		      user: {
 		        email: this.form.email,
 		        password: this.form.password,
@@ -250,9 +250,8 @@
 	  		 		self.error = ''	
 		  		}
 	  		});
-	  	
-
 		    	}else{
+
 		    		  this.$store.commit('tokensend', response.data)
 		    		  this.token = this.$store.getters.token 
 				  		let jwtData = this.token.access.split('.')[1]
@@ -261,21 +260,21 @@
 							let role = decodedJwtData
 							location.reload(true);
 							this.$store.commit('rolensend', role)
-							
-		    		// this.$store.commit('loginUser');
-		  		// const token = resp.data.token
-		  		// localStorage.setItem('user-token', token)
-		    	//location.reload(true);
+
+							axios.get('/gameboards', {
+				        method: 'get',
+				        url: '/gameboards',
+					        headers: {
+					          'Authorization': 'bearer '+this.$store.getters.token.access
+					        } 
+				        })
+				        .then((response) => {
+				          this.$store.commit('gamesend', response.data)
+				        })
+				        .catch(function (error) {
+				          console.log(error);
+				      }); 					
 		    	}
-
-		    	
-		    	// this.$store.commit('tokensend', response.data)
-		    	// location.reload(true);
-
-		    	//  localStorage.setItem("token", response.data);
-		    	// this.token = response.data;
-		    	// console.log('scacs');
-		        //location.reload(true);
 		    })
 		    .catch(error => {
 		     

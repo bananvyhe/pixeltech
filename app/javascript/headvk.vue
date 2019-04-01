@@ -46,7 +46,7 @@ var cmp = {
     return {
       status: 'link',
       link: 'unvisited',
-      exp: ''
+ 
     };
   },
   mounted() {
@@ -97,21 +97,8 @@ var cmp = {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       }).then((response) => { 
- 
+        // this.$store.commit('gamesend', 100)
       })
-      axios.get('/gameboards', {
-        method: 'get',
-        url: '/gameboards',
-        headers: {
-          'Authorization': 'bearer '+this.$store.getters.token.access
-        } 
-        })
-        .then((response) => {    
-          this.exp =  response.data.expirience
-        })
-        .catch(function (error) {
-          console.log(error);
-        }); 
     },
     changeStatus: function() {
       this.status = 'linkactive2';
@@ -121,22 +108,18 @@ var cmp = {
         self.status = 'linkVisited';
       },1600 );
       this.exppush() 
-
-
        //  if ($('.energy').hasClass('linkactive'))
        // {
        //   this.status = 'linkactive2';
        // } else
        // {
        //  this.status = 'linkactive';
-       // }
-       
+       // }      
     }
   }
 };
  
 export default {
- 
   data: function () {
     return {  
       linkswicher: false,
@@ -198,7 +181,6 @@ export default {
       axios({
           method: 'get',
           url: '/api/v1/vks',
- 
           params: {
             pos: this.pos
           } 
@@ -230,7 +212,6 @@ export default {
     }
   }
 }
-
 </script>
 <style scoped>
 @import "_variables";

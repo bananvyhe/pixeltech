@@ -71,7 +71,7 @@
 
 	  components: {
     'game-board': {
-    	template: '<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;<span v-if="$store.getters.role.expirience != null">&nbsp;лвл:&nbsp;{{$store.getters.role.expirience}}</span><span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span></div>'
+    	template: '<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;<span v-if="$store.getters.gamebo.expirience != null">&nbsp;лвл:&nbsp;{{$store.getters.gamebo.expirience}}</span><span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span></div>'
     	}
     },
 	  computed: {

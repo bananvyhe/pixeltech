@@ -7,6 +7,9 @@
 export const token = (state) => {
 	return state.token
 }
+export const gamebo = (state) => {
+	return state.gamebo
+}
  
 export const refreshToken = (state) => {
 	return state.refreshToken

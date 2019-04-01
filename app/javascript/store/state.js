@@ -7,5 +7,6 @@ export default {
 	// exp: '',
 	// exp2: '',
 	role: '',
+	gamebo: ''
 	// username: ''
 }
