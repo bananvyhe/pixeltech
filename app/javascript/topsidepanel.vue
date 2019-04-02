@@ -4,8 +4,13 @@
  asfasf
 		</div> -->
 		<div class="smalltext main bpad" v-bind:style="styleObject"> 
+
 			<!-- <div v-if="$store.getters.token != null" > -->
 				<div class="logohead" >
+								<div v-if="!$store.getters.role">
+Voodoo da
+					</div>
+					
 					<div v-if="$store.getters.role">
 						<div v-if="$store.getters.role.role == 'client'">
 							Site-hosting

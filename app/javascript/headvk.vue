@@ -27,7 +27,7 @@
       <div v-if="data.medias_row" class="mediabutton">
 <!--         <a target="_blank" v-on:click.capture="linkswicher=true" v-bind:href='""+data.wall.slice(2, -2)'><div class="link" :class="[linkswicher ? linkactive : '', link]"> -->
        <!--  <component v-bind:href='""+data.wall.slice(2, -2)'></component> -->
-         <energy-button class="js-newWindow" data-popup="width=600,height=500,top=50,left=50, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
+         <energy-button class="js-newWindow" data-popup="width=740,height=250,top=250,left=150, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
       <!-- </a> -->
       </div>
  
