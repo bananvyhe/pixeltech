@@ -8,7 +8,7 @@
 			<!-- <div v-if="$store.getters.token != null" > -->
 				<div class="logohead" >
 								<div v-if="!$store.getters.role">
-Voodoo da
+Voodoo -->>
 					</div>
 					
 					<div v-if="$store.getters.role">
@@ -16,10 +16,10 @@ Voodoo da
 							Site-hosting
 						</div>
 						<div v-if="$store.getters.role.role == 'user'">
-							<game-board></game-board>
+							<game-board></game-board> 
 						</div>
 						<div v-if="$store.getters.role.role == 'voodoo'">
-							<game-board></game-board>
+							<game-board></game-board>  
 						</div>
 					</div>
 					<!-- {{$store.getters.role.role}} -->
@@ -41,7 +41,7 @@ Voodoo da
 					<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}
 					<br> Рефреш токен: {{this.$store.getters.token.refresh}}
 					<br><br> -->
-					&nbsp;&nbsp; Истекает через: {{timeConversion(this.$store.getters.role.exp)}}
+					<div style="textAlign: center;">права: {{$store.getters.role.role}}</div><div>&nbsp;&nbsp; Истекает через: {{timeConversion(this.$store.getters.role.exp)}}</div>
 				</div> 
 				<div v-if="$store.getters.token == null" > 
 			    <reg></reg>
@@ -224,14 +224,14 @@ Voodoo da
 	padding: 0.35em;
 }*/
 .logohead{
-	lost-column: 1/5; 
+	lost-column: 1/3; 
 	align-self: center;
 	padding: 0 1em;
 }
 .maininfo {
 	padding: 0.3em 0.5em;
 	align-self: center;
-	lost-column: 4/5; 
+	lost-column: 2/3; 
 	lost-flex-container: row;
 	justify-content: flex-end;
 	.info {
