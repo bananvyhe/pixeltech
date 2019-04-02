@@ -90,12 +90,15 @@ var cmp = {
      //      ballance: 1000
      //    }
      //  })
-     var loa = 
+     var min = 890
+     var max = 1400
+     var loa = Math.random() * (max - min) + min;
+     loa =  Math.round(loa)
       axios({
         method: 'post',
         url: '/gameboards',
         data: {
-          expirience: 100
+          expirience: loa
         },
         headers: {
           'Authorization': 'bearer '+this.$store.getters.token.access
@@ -103,7 +106,7 @@ var cmp = {
       }).then((response) => { 
         // this.$store.commit('gamesendplus', 100)
         this.gamesendplus({
-          amount: 100
+          amount: loa
         })
       })
     },
