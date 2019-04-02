@@ -19,6 +19,11 @@ class Api::V1::VksController < ApiController
 
   # POST /Vks
   # POST /Vks.json
+  def associate
+    wall = params[:wallStr]
+    user_id = params[:user_id]
+  end
+  
   def create
 		params.require(:_json).each do |d|
     wall = d[:wall]

@@ -17,20 +17,15 @@
       <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}"  ></div> 
     </div>
     <div :class="[data.thumb_map_img_as_div.split(',').length > 1 ? slideInfoClass :  simpleInfoClass]">
- 
-        {{data.title}}
-  
+      {{data.title}}
       <div class="raitingdate" >
         <div class="vkdate">{{data.posted_at}}</div>
         <div class="vkraiting largertext">{{data.raiting}}</div>        
       </div>
       <div v-if="data.medias_row" class="mediabutton">
-<!--         <a target="_blank" v-on:click.capture="linkswicher=true" v-bind:href='""+data.wall.slice(2, -2)'><div class="link" :class="[linkswicher ? linkactive : '', link]"> -->
-       <!--  <component v-bind:href='""+data.wall.slice(2, -2)'></component> -->
-         <energy-button class="js-newWindow" data-popup="width=740,height=250,top=250,left=150, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
+        <energy-button class="js-newWindow" :testString="data.wall.slice(2, -2)"  data-popup="width=740,height=250,top=250,left=150, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
       <!-- </a> -->
       </div>
- 
     </div>
   </div>
 </div>
@@ -41,9 +36,10 @@ import axios from 'axios'
 import { mapMutations } from 'vuex';
  
 var cmp = {
-
+  props: ['testString'],
   data: function(){
     return {
+
       status: 'link',
       link: 'unvisited',
  
@@ -110,6 +106,25 @@ var cmp = {
         })
       })
     },
+    makeProceedLink: function() {
+      axios({
+        method: 'post',
+        url: '/api/v1/vkwall',
+        data: {
+          user_id: this.$store.getters.role.user_id,
+          wallStr: this.testString
+
+        },
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      }).then((response) => { 
+        // this.$store.commit('gamesendplus', 100)
+        // this.gamesendplus({
+        //   amount: loa
+        // })
+      })
+    },
     changeStatus: function() {
       this.status = 'linkactive2';
       this.link = "visited";
@@ -118,6 +133,7 @@ var cmp = {
         self.status = 'linkVisited';
       },1600 );
       this.exppush() 
+      this.makeProceedLink() 
        //  if ($('.energy').hasClass('linkactive'))
        // {
        //   this.status = 'linkactive2';

@@ -47,7 +47,7 @@ Rails.application.routes.draw do
       post :refr, to: "refresh#create"
       post :inb, to: "inboxes#create"
       post :vk, to: "vks#create"
- 
+      post :vkwall, to: "vks#associate"
       resources :vks
       resources :users
       resources :locations do
