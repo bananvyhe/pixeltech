@@ -242,46 +242,43 @@
 		    		console.log(response.data.errors)
 		    		this.error = response.data.errors;
 
-	  		var self = this
-	  		this.$message.error({
-	  		 	showClose: true,
-	  		 	message: self.error,
-	  		 	onClose: function(){
-	  		 		self.error = ''	
-		  		}
+		  		var self = this
+		  		this.$message.error({
+		  		 	showClose: true,
+		  		 	message: self.error,
+		  		 	onClose: function(){
+		  		 		self.error = ''	
+			  	}
 	  		});
-		    	}else{
 
-		    		  this.$store.commit('tokensend', response.data)
-		    		  this.token = this.$store.getters.token 
-				  		let jwtData = this.token.access.split('.')[1]
-							let decodedJwtJsonData = window.atob(jwtData)
-							let decodedJwtData = JSON.parse(decodedJwtJsonData)
-							let role = decodedJwtData
-							location.reload(true);
-							this.$store.commit('rolensend', role)
-
-							axios.get('/gameboards', {
-				        method: 'get',
-				        url: '/gameboards',
-					        headers: {
-					          'Authorization': 'bearer '+this.$store.getters.token.access
-					        } 
-				        })
-				        .then((response) => {
-				          this.$store.commit('gamesend', response.data)
-				        })
-				        .catch(function (error) {
-				          console.log(error);
-				      }); 					
+	    	}else{
+	    		  this.$store.commit('tokensend', response.data)
+	    		  this.token = this.$store.getters.token 
+			  		let jwtData = this.token.access.split('.')[1]
+						let decodedJwtJsonData = window.atob(jwtData)
+						let decodedJwtData = JSON.parse(decodedJwtJsonData)
+						let role = decodedJwtData
+						location.reload(true);
+						this.$store.commit('rolensend', role)
 		    	}
 		    })
 		    .catch(error => {
-		     
 		    	console.log(error)
 		      // whatever you want
 		    })
-		    
+	    	axios.get('/gameboards', {
+	        method: 'get',
+	        url: '/gameboards',
+		        headers: {
+		          'Authorization': 'bearer '+this.$store.getters.token.access
+		        } 
+	        })
+	        .then((response) => {
+	          this.$store.commit('gamesend', response.data)
+	        })
+	        .catch(function (error) {
+	          console.log(error);
+      	}); 						
 		  }
 		}
 	}
