@@ -38,7 +38,7 @@
 
 <script>
 import axios from 'axios'
-
+import { mapMutations } from 'vuex';
  
 var cmp = {
 
@@ -71,6 +71,9 @@ var cmp = {
   template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" ></a>',
 
   methods: {
+    ...mapMutations([
+      'gamesendplus'
+    ]),
     overAction: function() {
       if (this.link != 'visited'){
         this.status = 'linkactive';
@@ -87,6 +90,7 @@ var cmp = {
      //      ballance: 1000
      //    }
      //  })
+     var loa = 
       axios({
         method: 'post',
         url: '/gameboards',
@@ -97,7 +101,10 @@ var cmp = {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       }).then((response) => { 
-        // this.$store.commit('gamesend', 100)
+        // this.$store.commit('gamesendplus', 100)
+        this.gamesendplus({
+          amount: 100
+        })
       })
     },
     changeStatus: function() {
