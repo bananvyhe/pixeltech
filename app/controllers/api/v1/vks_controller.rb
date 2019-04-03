@@ -6,6 +6,7 @@ class Api::V1::VksController < ApiController
 	def index
     @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
     render json: @vks
+
   end
  
   def show
@@ -26,8 +27,13 @@ class Api::V1::VksController < ApiController
     @wallid = Vk.find(params[:wallStr])
     # Pry.start(binding)
     @userget = User.find(params[:user_id])
-    @wallid.users << @userget
-    @wallid.save
+
+    @findvk = Appointment.find_by_vk_id(params[:wallStr])
+    @finduser = Appointment.find_by_user_id(params[:user_id])
+    unless (@findvk && @finduser)
+      @wallid.users << @userget
+      @wallid.save
+    end
   end
 
   def create
