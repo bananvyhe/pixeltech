@@ -1,16 +1,10 @@
 <template>
 	<div>
-<!-- 		<div v-if="$store.getters.role == null" style="height: 4em;">
- asfasf
-		</div> -->
 		<div class="smalltext main bpad" v-bind:style="styleObject"> 
-
-			<!-- <div v-if="$store.getters.token != null" > -->
-				<div class="logohead" >
-								<div v-if="!$store.getters.role">
-Voodoo -->>
-					</div>
-					
+			<div class="logohead" >
+				<div v-if="!$store.getters.role">
+					Voodoo team basecamp
+				</div>
 					<div v-if="$store.getters.role">
 						<div v-if="$store.getters.role.role == 'client'">
 							Site-hosting
@@ -22,17 +16,12 @@ Voodoo -->>
 							<game-board></game-board>  
 						</div>
 					</div>
-					<!-- {{$store.getters.role.role}} -->
-					
 					<div v-if="$store.getters.token == null">
 						<div v-if="checklog != 'unlogged' ">
 							{{nulltoken}}
 						</div>
 					</div>
 				</div>
-		<!-- 	</div> -->
-	<!-- 		{{this.$store.getters.token}}
-			<br><br> -->
 			<div class="maininfo">
 				<div v-if="$store.getters.token != null" class="info">
 					<!-- {{this.$store.getters.role.username}} 
@@ -73,7 +62,6 @@ Voodoo -->>
 	    	accessToken: '',
 	    } 
 	  },
-
 	  components: {
     'game-board': {
     	template: '<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;<span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span><span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span></div>'
@@ -111,17 +99,12 @@ Voodoo -->>
 	  },
 	  methods: {
 	  	timeConversion: function (millisec){
-	  		// console.log(millisec)
 	  		var current_time = new Date().getTime() / 1000;
-	  		
 	  		var millisecremains = millisec - current_time
 	  		console.log(millisecremains)
 	  		var seconds = (millisecremains ).toFixed(1);
-
         var minutes = (millisecremains / (  60)).toFixed(1);
-
         var hours = (millisecremains / (  60 * 60)).toFixed(1);
-
         var days = (millisecremains / (  60 * 60 * 24)).toFixed(1);
 
         if (seconds  < 60) {
@@ -131,7 +114,7 @@ Voodoo -->>
         } else if (hours < 24) {
             return hours + " Hrs";
         } else {
-            return days + " Days"
+          return days + " Days"
         }
 		  }
 	  },
@@ -140,7 +123,6 @@ Voodoo -->>
 	  },
 	  mounted() {
 	  	if (this.$store.getters.token != null) {
-	  		console.log('dgdgdsdgas43342523521')
 	  		// axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.getters.token.token;
 	  		// let username =  decodedJwtData.username
 				// this.$store.commit('username', username)
