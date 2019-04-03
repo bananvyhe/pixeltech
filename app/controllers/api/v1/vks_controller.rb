@@ -2,6 +2,7 @@ class Api::V1::VksController < ApiController
  # require 'pry'
 	skip_before_action :authenticate_user!
   before_action :set_vks
+
 	def index
     @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
     render json: @vks
@@ -20,10 +21,15 @@ class Api::V1::VksController < ApiController
   # POST /Vks
   # POST /Vks.json
   def associate
-    wall = params[:wallStr]
+    # params.require(:vk).permit( :wallStr )
     user_id = params[:user_id]
+    @wallid = Vk.find(params[:wallStr])
+    # Pry.start(binding)
+    @userget = User.find(params[:user_id])
+    @wallid.users << @userget
+    @wallid.save
   end
-  
+
   def create
 		params.require(:_json).each do |d|
     wall = d[:wall]
@@ -38,6 +44,10 @@ class Api::V1::VksController < ApiController
 
   end 
   private
+
+  def vk_params
+    params.require(:vk).permit(:wall, :medias_row, :raiting, :title, :posted_at, :v_views, :v_like, :thumb_map_img_as_div)
+  end
 
   def set_vks
     # @user = User.find_by(username: params[:username])
