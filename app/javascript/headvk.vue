@@ -24,7 +24,6 @@
       </div>
       <div v-if="data.medias_row" class="mediabutton">
         <energy-button class="js-newWindow" :testString="data.id"  data-popup="width=740,height=250,top=250,left=150, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
-      <!-- </a> -->
       </div>
     </div>
   </div>
@@ -205,36 +204,33 @@ export default {
     },
     addBeer() {
       axios({
-          method: 'get',
-          url: '/api/v1/vks',
-          params: {
-            pos: this.pos
-          } 
-        })
-        .then((response) => { 
-          var alld = response.data
- // var alld = JSON.parse(response.data)
-          console.log(response.data)
-          this.alldata = this.alldata.concat(alld);
-          this.pos = this.alldata.length
-        })
- 
-      // axios.get('https://api.punkapi.com/v2/beers/random')
-      //   .then(response => {
-      //     let api = response.data[0];
-      //     let apiInfo = {
-      //       name : api.name,
-      //       desc : api.description,
-      //       img : api.image_url,
-      //       tips : api.brewers_tips,
-      //       tagline : api.tagline,
-      //       food : api.food_pairing
-      //     };
-      //     this.beers.push(apiInfo)
-      //     if (this.bottomVisible()) {
-      //       this.addBeer()
-      //     }
-      // })
+        method: 'get',
+        url: '/api/v1/vks',
+        params: {
+          pos: this.pos
+        } 
+      })
+      .then((response) => { 
+        var alld = response.data
+        console.log(response.data)
+        this.alldata = this.alldata.concat(alld);
+        this.pos = this.alldata.length
+      });
+      axios({
+        method: 'get',
+        url: '/api/v1/vks/visited',
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+
+      })
+      .then((response) => { 
+        var vis = response.data
+        console.log(response.data)
+
+      });
+
+
     }
   }
 }
@@ -365,10 +361,11 @@ export default {
 }
 .mediabutton {
   display: flex;
-  margin-left: -1em;
+  margin-left: 0em;
   align-items: flex-end;
   align-self: flex-end;
 }
+/*Carousel*/
 .itembg2 {
   margin-top: 3.2em;
   /*lost-column: 1/2 2 0.5em; */
@@ -420,49 +417,48 @@ export default {
     bottom: 0; left: -10px;
   }
 }
-/*Carousel*/
+
 .itembg {
+  lost-column: 1/4 2 1em;   
   margin: 0em 0.3em 0em 0em; 
-  height: 30em;
+  height: 10em;
   @media (--only-1600more-screen) {
-    height: 40em;
+    height: 14em;
   }
   @media (--only-medium-screen) {
-    height: 35em;
-    lost-column: 2/3 2 1.2em; 
+    height: 13em;
+    lost-column: 1/4 2 1.2em; 
   }    
   @media (--only-xsmall-screen) {
     height: 20em;
-    lost-column: 2/3 2 1.2em; 
+    lost-column: 1/1 2 1.2em; 
   }  
   @media (--only-small-screen) {
-    
-    height: 30em;
-    lost-column: 2/3 2 1.2em; 
+    height: 20em;
+    lost-column: 1/2 2 1.2em; 
   }    
-  lost-column: 5/7 2 1.2em; 
+/*  lost-column: 5/7 2 1.2em; */
   .imgstyle {
     position: relative;
     background-position: center;
-/*    @media (--only-xsmall-screen) {
-      background-position: center;
-    }  */
-/*    @media (--only-small-screen) {
-      background-position: 100% auto;
-    }  */
     background-size: cover; 
     background-repeat: no-repeat;
     height: 100%; 
   }
 } 
-
 .infobg {
-
+  lost-column: 3/4 2 1em;     
   position: relative;
   height: 100%;
   padding:  2.4em 0 0 0em;
-
   margin: 0em 0;   
+  @media (--only-xsmall-screen) {
+    lost-column: 1/1 2 1.2em; 
+    padding:  0.4em 0 0 0em;
+  }  
+  @media (--only-small-screen) {
+    lost-column: 1/2 2 1.2em; 
+  }  
 /*  background-color: #ada;*/
 }
 

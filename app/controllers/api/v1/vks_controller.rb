@@ -4,7 +4,7 @@ class Api::V1::VksController < ApiController
   before_action :set_vks
 
 	def index
-    @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
+    @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos).includes(:appointments)
     render json: @vks
 
   end
