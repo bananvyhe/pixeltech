@@ -76,7 +76,7 @@ var cmp = {
     },
     leaveAction: function() {
       if (this.link != 'visited') {
-        this.status = 'link';
+        this.status = 'linkb';
       } 
     },
     exppush: function(){
@@ -290,7 +290,34 @@ export default {
   top: 0px; right: 0;
   bottom: 0; left: -19px;
 }
+.linkb {
+  content: '';
+  display: block;
+  position: relative;
+  width: 150px;
+  height: 70px;
+  margin-top: -15px;
+}
 
+
+
+
+.linkb:before {
+  adjust-font-size: fs b;
+  color: color( $str5  blackness(12%));
+  content: 'медиа в окне';
+  position: absolute; 
+  top: 22px; right: 0;
+  bottom: 0; left: 5px; z-index: -1;
+}
+ /*content: url('./images/energy_32.gif');*/
+.linkb:after {
+  /*content: url('./images/energy_32.png');*/
+  content: url('./images/energy29b.gif');
+  position: absolute; 
+  top: 0px; right: 0;
+  bottom: 0; left: -19px;
+}
 .linkactive {
   margin-top: -15px;
   content: '';
