@@ -2,9 +2,12 @@ class Api::V1::VksController < ApiController
  # require 'pry'
 	skip_before_action :authenticate_user!
   before_action :set_vks
+  before_action :set_user
 
 	def index
-    @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos).includes(:appointments)
+    @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
+    @app = current_user.vk_ids
+    Pry.start(binding)
     render json: @vks
 
   end
@@ -50,6 +53,10 @@ class Api::V1::VksController < ApiController
 
   end 
   private
+
+  def set_user
+    @appointment = Appointment.find_by_user_id(13)
+  end
 
   def vk_params
     params.require(:vk).permit(:wall, :medias_row, :raiting, :title, :posted_at, :v_views, :v_like, :thumb_map_img_as_div)
