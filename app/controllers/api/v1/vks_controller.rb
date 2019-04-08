@@ -6,9 +6,9 @@ class Api::V1::VksController < ApiController
 
 	def index
     @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
-    @app = current_user.vk_ids
-    Pry.start(binding)
-    render json: @vks
+    # @app = current_user.vk_ids
+    # Pry.start(binding)
+    # render json: @vks, :include => :appointments, :except => [:created_at, :updated_at]
 
   end
  
@@ -55,7 +55,7 @@ class Api::V1::VksController < ApiController
   private
 
   def set_user
-    @appointment = Appointment.find_by_user_id(13)
+    # @appointment = Appointment.find_by_user_id(13)
   end
 
   def vk_params
