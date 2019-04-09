@@ -31,9 +31,10 @@ class Api::V1::VksController < ApiController
     # Pry.start(binding)
     @userget = User.find(params[:user_id])
 
-    @findvk = Appointment.find_by_vk_id(params[:wallStr])
-    @finduser = Appointment.find_by_user_id(params[:user_id])
-    unless (@findvk && @finduser)
+    # @findvk = Appointment.find_by_vk_id(params[:wallStr])
+    # @finduser = Appointment.find_by_user_id(params[:user_id])
+    # unless (@findvk && @finduser)
+    unless (Appointment.where(vk_id: @wallid, user_id: user_id).exists?)
       @wallid.users << @userget
       @wallid.save
     end
