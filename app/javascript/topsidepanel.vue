@@ -30,7 +30,10 @@
 					<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}
 					<br> Рефреш токен: {{this.$store.getters.token.refresh}}
 					<br><br> -->
-					<div style="textAlign: center;">права: {{$store.getters.role.role}}</div><div>&nbsp;&nbsp; Истекает через: {{timeConversion(this.$store.getters.role.exp)}}</div>
+					<div style="textAlign: center;">права: {{$store.getters.role.role}}</div>
+					<div>&nbsp;&nbsp; Истекает через: 
+						<!-- {{timeConversion(this.$store.getters.role.exp)}} -->
+					</div>{{exptime}}
 				</div> 
 				<div v-if="$store.getters.token == null" > 
 			    <reg></reg>
@@ -45,18 +48,11 @@
 </template>
 <script>
 	import axios from 'axios'
-	
-	// var state = {
-	// 	token: localStorage.getItem("token")
-	// }
-
-	// let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
-	// axios.defaults.headers.common['X-CSRF-Token'] = token
-	// axios.defaults.headers.common['Accept'] = 'application/json'
 	let screenwidth = {value: ''}
 	export default {
 		data() {
 			return {
+				exptime: '',
 				checklog: checklog,
 	    	token: '',
 	    	accessToken: '',
@@ -77,9 +73,7 @@
 					}else{
 						document.location.reload()
 					}
-		    	
  				//  this.$store.commit('tokensend', null) 
-		        //   this.$store.commit('tokensend', null) 
 		    })
 	  	},
     	styleObject: function () {
@@ -101,7 +95,8 @@
 	  	timeConversion: function (millisec){
 	  		var current_time = new Date().getTime() / 1000;
 	  		var millisecremains = millisec - current_time
-	  		console.log(millisecremains)
+	  		this.exptime = millisecremains
+
 	  		var seconds = (millisecremains ).toFixed(1);
         var minutes = (millisecremains / (  60)).toFixed(1);
         var hours = (millisecremains / (  60 * 60)).toFixed(1);
@@ -137,7 +132,7 @@
 				let role = decodedJwtData
 				this.$store.commit('rolensend', role)
 				this.accessToken = this.$store.getters.token.access
-				console.log(this.accessToken) 
+				console.log(this.$store.getters.role.exp) 
 				let jwtData2 = this.accessToken.split('.')[1]
 				let decodedJwtJsonData2 = window.atob(jwtData2)
 				let decodedJwtData2 = JSON.parse(decodedJwtJsonData2)
@@ -147,42 +142,30 @@
 				// this.$store.commit('expsend2', exp2)
 				console.log(decodedJwtJsonData2) 
 				var current_time = new Date().getTime() / 1000;
-				if (current_time > this.$store.getters.role.exp) { 
-							// this.$store.commit('tokensend', null) 
-							// axios.delete('/users/sign_out', {
-					  //   }).then((response) => {
-			    //   		window.location.href = '/';
-				   //  	}) 
+			    		  var current_time = new Date().getTime() / 1000;
+					  		var millisecremains = this.$store.getters.role.exp - current_time
+					  		this.exptime = millisecremains
+				var self = this;
+	      setInterval(function(){
 		    	axios({
 	    			method: 'post',
 	    			url: '/api/v1/refr',
 	    			headers: {
-		  				'X-Refresh-Token': this.$store.getters.token.refresh
+		  				'X-Refresh-Token': self.$store.getters.token.refresh
 						}
-		        	// headers: {'Authorization': "bearer " + this.$store.getters.token.token}
 		        }).then((response) => {
 	      		if (response.data.errors) {
 			    		console.log(response.data.errors)
-			    		this.error = response.data.errors;
+			    		self.error = response.data.errors;
 		    		}else{
-		    		  this.$store.commit('tokensend', response.data),
-				    		// this.$store.commit('loginUser');
-				  		// const token = resp.data.token
-				  		// localStorage.setItem('user-token', token)
-				    location.reload(true);
+		    		  self.$store.commit('tokensend', response.data)
+		    		  var current_time = new Date().getTime() / 1000;
+				  		var millisecremains = self.$store.getters.role.exp - current_time
+				  		self.exptime = millisecremains
+				    	// location.reload(true);
 				    }
 		    	})
-				}
-				// if (current_time + (this.$store.getters.exp/2)  > this.$store.getters.exp) { 
-				// 	this.$store.commit('tokensend', null) 
-				// 	axios.delete('/users/sign_out', {
-			 //    }).then((response) => {
-	   //    		window.location.href = '/';
-		  //     	// location.reload(true);
-		  //   	}) 
-				// 	console.log('expired token') 
-
-				// }
+	      },self.exptime*1000 );			
 	  	}
 	  }
 	}
@@ -221,5 +204,4 @@
 		padding: 0 1em;
 	}
 }
- 
 </style>
