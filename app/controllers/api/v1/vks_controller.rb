@@ -3,7 +3,7 @@ class Api::V1::VksController < ApiController
 	skip_before_action :authenticate_user!
   before_action :set_vks
   before_action :set_user
-
+  before_action :authorize_access_request!, only: [:associate]
 	def index
     @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
     # @app = current_user.vk_ids

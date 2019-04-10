@@ -31,9 +31,11 @@
 					<br> Рефреш токен: {{this.$store.getters.token.refresh}}
 					<br><br> -->
 					<div style="textAlign: center;">права: {{$store.getters.role.role}}</div>
-					<div>&nbsp;&nbsp; Истекает через: 
+					<div>
+						<!-- &nbsp;&nbsp; Истекает через:  -->
 						<!-- {{timeConversion(this.$store.getters.role.exp)}} -->
-					</div>{{exptime}}
+					</div>
+					<!-- {{exptime}} -->
 				</div> 
 				<div v-if="$store.getters.token == null" > 
 			    <reg></reg>
@@ -82,7 +84,6 @@
         	return {
         		position: 'relative'
         	}
-         	
        	}else{
          	return {
         		position: 'relative',
@@ -142,9 +143,9 @@
 				// this.$store.commit('expsend2', exp2)
 				console.log(decodedJwtJsonData2) 
 				var current_time = new Date().getTime() / 1000;
-			    		  var current_time = new Date().getTime() / 1000;
-					  		var millisecremains = this.$store.getters.role.exp - current_time
-					  		this.exptime = millisecremains
+    		  var current_time = new Date().getTime() / 1000;
+		  		var millisecremains = this.$store.getters.role.exp - current_time
+		  		this.exptime = millisecremains
 				var self = this;
 	      setInterval(function(){
 		    	axios({
@@ -159,12 +160,12 @@
 			    		self.error = response.data.errors;
 		    		}else{
 		    		  self.$store.commit('tokensend', response.data)
-		    		  var current_time = new Date().getTime() / 1000;
-				  		var millisecremains = self.$store.getters.role.exp - current_time
-				  		self.exptime = millisecremains
 				    	// location.reload(true);
 				    }
 		    	})
+		      //var current_time = new Date().getTime() / 1000;
+		  		// var millisecremains = self.$store.getters.role.exp - current_time
+		  		// self.exptime = millisecremains
 	      },self.exptime*1000 );			
 	  	}
 	  }

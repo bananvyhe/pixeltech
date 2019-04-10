@@ -1,7 +1,7 @@
 class GameboardsController < ApplicationController
   before_action :set_gameboard, only: [:show, :edit, :update, :destroy]
   before_action :authorize_access_request!
-    before_action :set_gameboard
+  before_action :set_gameboard
   # GET /gameboards
   # GET /gameboards.json
   def index
