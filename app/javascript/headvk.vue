@@ -213,21 +213,19 @@ export default {
         this.alldata = this.alldata.concat(alld);
         this.pos = this.alldata.length
       });
-      axios({
-        method: 'get',
-        url: '/api/v1/vks/visited',
-        headers: {
-          'Authorization': 'bearer '+this.$store.getters.token.access
-        } 
-
-      })
-      .then((response) => { 
-        var vis = response.data
-        console.log(response.data)
-
-      });
-
-
+      if (this.$store.getters.token){
+        axios({
+          method: 'get',
+          url: '/api/v1/vks/visited',
+          headers: {
+            'Authorization': 'bearer '+this.$store.getters.token.access
+          } 
+        })
+        .then((response) => { 
+          var vis = response.data
+          console.log(response.data)
+        });
+      }
     }
   }
 }
