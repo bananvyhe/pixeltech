@@ -6,10 +6,11 @@ json.array! @vks do |vks|
 	json.medias_row vks.medias_row
 	json.raiting vks.raiting
 	json.v_like vks.v_like
-	json.thumb_map_img_as_div vks.thumb_map_img_as_div
 	json.wall vks.wall
-	json.currentUser current_user.id
-	# json.user  vks.users.find(vks.user_ids)
- 	json.user  vks.users.where(:id => current_user.id), :id 
-	# json.user  vks.users, :id 
+	json.thumb_map_img_as_div vks.thumb_map_img_as_div
+	json.posted_at vks.posted_at
+	if current_user 
+		json.currentUser current_user.id  
+		json.user  vks.users.where(:id => current_user.id), :id 
+	end
 end

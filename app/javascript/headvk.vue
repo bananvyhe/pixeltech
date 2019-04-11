@@ -23,7 +23,7 @@
         <div class="vkraiting largertext">{{data.raiting}}</div>        
       </div>
       <div v-if="data.medias_row" class="mediabutton">
-        <energy-button class="js-newWindow" :testString="data.id"  data-popup="width=740,height=250,top=250,left=150, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
+        <energy-button class="js-newWindow" :testString="data.id" :userId="data.user" data-popup="width=740,height=250,top=250,left=150, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
       </div>
     </div>
   </div>
@@ -35,7 +35,7 @@ import axios from 'axios'
 import { mapMutations } from 'vuex';
  
 var cmp = {
-  props: ['testString'],
+  props: ['testString', 'userId'],
   data: function(){
     return {
       status: 'link',
@@ -45,12 +45,12 @@ var cmp = {
   mounted() {
     //jq для открытия нового окна заданных размеров
     $('.js-newWindow').click(function (event) {
-        event.preventDefault();
-        var $this = $(this);
-        var url = $this.attr("href");
-        var windowName = "popUp";
-        var windowSize = $this.data("popup");
-        window.open(url, windowName, windowSize);
+      event.preventDefault();
+      var $this = $(this);
+      var url = $this.attr("href");
+      var windowName = "popUp";
+      var windowSize = $this.data("popup");
+      window.open(url, windowName, windowSize);
     });           
   },
   watch: {
@@ -61,7 +61,7 @@ var cmp = {
     }
   },
   // template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" target="_blank" ></a>',
-  template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" ></a>',
+  template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status"></a>',
 
   methods: {
     ...mapMutations([
@@ -110,7 +110,6 @@ var cmp = {
         data: {
           user_id: this.$store.getters.role.user_id,
           wallStr: this.testString
-
         },
         headers: {
           'Authorization': 'bearer '+this.$store.getters.token.access
