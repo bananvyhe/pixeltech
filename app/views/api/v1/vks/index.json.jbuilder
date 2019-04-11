@@ -8,6 +8,8 @@ json.array! @vks do |vks|
 	json.v_like vks.v_like
 	json.thumb_map_img_as_div vks.thumb_map_img_as_div
 	json.wall vks.wall
-	# json.currentUser current_user.id
+	json.currentUser current_user.id
 	# json.user  vks.users.find(vks.user_ids)
+ 	json.user  vks.users.where(:id => current_user.id), :id 
+	# json.user  vks.users, :id 
 end

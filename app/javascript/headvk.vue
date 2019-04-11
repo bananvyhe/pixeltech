@@ -38,10 +38,8 @@ var cmp = {
   props: ['testString'],
   data: function(){
     return {
-
       status: 'link',
       link: 'unvisited',
- 
     };
   },
   mounted() {
