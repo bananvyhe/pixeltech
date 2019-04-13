@@ -22,7 +22,7 @@
         <div class="vkdate">{{data.posted_at}}</div>
         <div class="vkraiting largertext">{{data.raiting}}</div>        
       </div>
-      <div v-if="data.medias_row" class="mediabutton">
+      <div v-if="data.medias_row" class="mediabutton"> 
         <energy-button class="js-newWindow" :testString="data.id" :userId="data.user" data-popup="width=740,height=250,top=250,left=150, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
       </div>
     </div>
@@ -35,12 +35,28 @@ import axios from 'axios'
 import { mapMutations } from 'vuex';
  
 var cmp = {
-  props: ['testString', 'userId'],
+  props: {
+    testString:{
+      type: Number
+    },
+    userId:{
+      type: Array
+    }
+  },
   data: function(){
     return {
       status: 'link',
       link: 'unvisited',
     };
+  },
+  computed: {
+    classlink() {
+    if (this.userId.length > 0) {
+        return 'linkVisited';
+      }else{
+        return 'link';
+      }
+    }
   },
   mounted() {
     //jq для открытия нового окна заданных размеров
@@ -61,7 +77,7 @@ var cmp = {
     }
   },
   // template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" target="_blank" ></a>',
-  template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status"></a>',
+  template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="classlink"></a>',
 
   methods: {
     ...mapMutations([
