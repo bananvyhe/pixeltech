@@ -69,11 +69,9 @@
         }
       };
 	    return {
-	    	 
 	    	checked: false,
 	    	// token: state,
 	    	error: '',
-	    	 
 	      dialogFormVisible: false,
 	      form: {
 	        email: '',
@@ -231,7 +229,7 @@
 		  onSubmit: function () {
 				axios.post('/api/v1/auth', {
 		      user: {
-		        email: this.form.email,
+		        email: this.form.email.toLowerCase().trim(),
 		        password: this.form.password,
 		        checked: this.checked
 						// password_confirmation: this.form.password_confirmation
