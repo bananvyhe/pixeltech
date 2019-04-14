@@ -220,6 +220,7 @@ export default {
         console.log(response.data)
         this.alldata = this.alldata.concat(alld);
         this.pos = this.alldata.length
+        this.bottom = false
       });
       // if (this.$store.getters.token){
       //   axios({
