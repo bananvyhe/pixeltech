@@ -46,12 +46,12 @@ var cmp = {
   data: function(){
     return {
       status: '',
-      link: 'unvisited',
+      link: '',
     };
   },
   computed: {
     classlink() {
-    if (this.userId.length > 0) {
+    if (this.userId.length > 0 || this.link == 'visited') {
         return 'linkVisited';
       }else{
         return 'link';
@@ -59,6 +59,9 @@ var cmp = {
     }
   },
   mounted() {
+      if ( this.userId.length > 0 ){
+        this.link = 'visited'
+      }
     //jq для открытия нового окна заданных размеров
     $('.js-newWindow').click(function (event) {
       event.preventDefault();
@@ -80,14 +83,16 @@ var cmp = {
       'gamesendplus'
     ]),
     overAction: function() {
-      if (this.link != 'visited'){
+      if ( this.userId.length < 1  && this.link != 'visited' ){
         this.status = 'linkactive';
-      }       
+      }else if (this.userId.length > 0  || this.link == 'visited'){
+        this.status = 'linkVisited';
+      }     
     },
     leaveAction: function() {
-      if (this.userId.length < 1) {
+      if (this.link != 'visited' &&  this.userId.length < 1) {
         this.status = 'linkb';
-      }else{
+      }else if( this.link == 'visited' || this.userId.length > 0){
         this.status = '';
       } 
     },
@@ -137,20 +142,14 @@ var cmp = {
     },
     changeStatus: function() {
       this.status = 'linkactive2';
-      this.link = "visited";
+      this.link = 'visited'
       var self = this;
       setTimeout(function(){
         self.status = 'linkVisited';
       },1600 );
       this.exppush() 
       this.makeProceedLink() 
-       //  if ($('.energy').hasClass('linkactive'))
-       // {
-       //   this.status = 'linkactive2';
-       // } else
-       // {
-       //  this.status = 'linkactive';
-       // }      
+
     }
   }
 };
@@ -176,12 +175,6 @@ export default {
   },
   components: {
     'energy-button': cmp
-    // 'lk': {
-    //   template: '<a  v-bind:is="view" v-on:click ="view = lka" target="_blank" class="link"></a>'
-    // },
-    // 'lka': {
-    //   template: '<a target="_blank" class="linkactive"></a>'
-    // }
   },
   watch: {
     bottom(bottom) {
@@ -198,7 +191,6 @@ export default {
     }else{
       this.carouselh = "35em"
     }
-    
     window.addEventListener('scroll', () => {
       this.bottom = this.bottomVisible()
       this.bganim.backgroundPosition = "center"
