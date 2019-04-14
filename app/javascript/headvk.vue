@@ -45,7 +45,7 @@ var cmp = {
   },
   data: function(){
     return {
-      status: 'link',
+      status: '',
       link: 'unvisited',
     };
   },
@@ -70,14 +70,10 @@ var cmp = {
     });           
   },
   watch: {
-    link() {
-      if (this.link != 'visited'){
-
-      }
-    }
+ 
   },
   // template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" target="_blank" ></a>',
-  template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="classlink"></a>',
+  template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="[classlink, status]"></a>',
 
   methods: {
     ...mapMutations([
@@ -89,8 +85,10 @@ var cmp = {
       }       
     },
     leaveAction: function() {
-      if (this.link != 'visited') {
+      if (this.userId.length < 1) {
         this.status = 'linkb';
+      }else{
+        this.status = '';
       } 
     },
     exppush: function(){
@@ -260,6 +258,7 @@ export default {
   position: relative;
   width: 150px;
   height: 70px;
+   margin-top: -15px;
 }
 
 .linkVisited:before {
@@ -267,7 +266,7 @@ export default {
   color: color( $str5  blackness(12%));
   content: 'медиа в окне';
   position: absolute; 
-  top: 7px; right: 0;
+  top: 22px; right: 0;
   bottom: 0; left: 5px; z-index: -1;
 }
 .linkVisited:after {
