@@ -51,7 +51,7 @@ var cmp = {
   },
   computed: {
     classlink() {
-    if (this.userId.length > 0 || this.link == 'visited') {
+      if (this.userId.length > 0 || this.link == 'visited') {
         return 'linkVisited';
       }else{
         return 'link';
@@ -142,14 +142,15 @@ var cmp = {
     },
     changeStatus: function() {
       this.status = 'linkactive2';
-      this.link = 'visited'
+      if (this.link != 'visited' &&  this.userId.length < 1) {
+        this.exppush() 
+      }
       var self = this;
       setTimeout(function(){
         self.status = 'linkVisited';
+        self.link = 'visited'
       },1600 );
-      this.exppush() 
       this.makeProceedLink() 
-
     }
   }
 };
@@ -219,19 +220,19 @@ export default {
         this.alldata = this.alldata.concat(alld);
         this.pos = this.alldata.length
       });
-      if (this.$store.getters.token){
-        axios({
-          method: 'get',
-          url: '/api/v1/vks/visited',
-          headers: {
-            'Authorization': 'bearer '+this.$store.getters.token.access
-          } 
-        })
-        .then((response) => { 
-          var vis = response.data
-          console.log(response.data)
-        });
-      }
+      // if (this.$store.getters.token){
+      //   axios({
+      //     method: 'get',
+      //     url: '/api/v1/vks/visited',
+      //     headers: {
+      //       'Authorization': 'bearer '+this.$store.getters.token.access
+      //     } 
+      //   })
+      //   .then((response) => { 
+      //     var vis = response.data
+      //     console.log(response.data)
+      //   });
+      // }
     }
   }
 }
