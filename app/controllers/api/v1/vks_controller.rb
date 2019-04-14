@@ -5,7 +5,7 @@ class Api::V1::VksController < ApiController
   before_action :set_user
   before_action :authorize_access_request!, only: [:associate]
 	def index
-    @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
+    @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(25).offset(@pos)
     # @app = current_user.vk_ids
     # Pry.start(binding)
     # render json: @vks, :include => :appointments, :except => [:created_at, :updated_at]

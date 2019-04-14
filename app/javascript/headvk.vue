@@ -195,7 +195,7 @@ export default {
     }
     window.addEventListener('scroll', () => {
       this.bottom = this.bottomVisible()
-      this.bganim.backgroundPosition = "center"
+      // this.bganim.backgroundPosition = "center"
     })
     this.addBeer()
   },
@@ -329,7 +329,6 @@ export default {
   position: relative;
   width: 150px;
   height: 70px;
-
 }
 .linkactive:hover {
 
@@ -362,7 +361,6 @@ export default {
 .linkactive2:before {
   -webkit-animation: shake-vertical 0.6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
   animation: shake-vertical 0.6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-
   adjust-font-size: fs b;
   color: color( $str5  blackness(12%));
   content: 'медиа в окне';
