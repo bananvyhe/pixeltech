@@ -27,6 +27,7 @@
       </div>
     </div>
   </div>
+  <div v-if="this.bottom == true" class="loading">Загрузка...</div>
 </div>
 </template>
 
@@ -493,6 +494,8 @@ export default {
 }
 
 .loading {
+  padding: 0.5em;
+  height: 2em;
   color: white;
   text-align: center;
   font-size: 20px;
