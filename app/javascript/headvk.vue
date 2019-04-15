@@ -491,6 +491,7 @@ export default {
   position: relative;
 }
 #app {
+  overflow: hidden;
   @media (--only-1600more-screen) {
     lost-center: 980px;
   }

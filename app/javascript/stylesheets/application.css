@@ -116,10 +116,9 @@ body {
   background-color: #1E1E21;
   font-family: 'RobotoReg';
   /*color: color($str3 shade(8%));*/
- /* color: #777;*/
-/* color: #edeef0;*/
+  /* color: #777;*/
+  /* color: #edeef0;*/
   color: #e7e8ec;
-
 }
 .lost1 {
   lost-column: 1/2;
