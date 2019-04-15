@@ -291,7 +291,7 @@ export default {
 @import "_variables";
 @import "_extends";
 .vkpost {
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease-out;
   opacity: 0;
 }
 .inview {
