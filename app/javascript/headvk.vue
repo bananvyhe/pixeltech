@@ -92,7 +92,7 @@ var cmp = {
     },
     leaveAction: function() {
       if (this.link != 'visited' &&  this.userId.length < 1) {
-        this.status = 'linkb';
+        this.status = 'link';
       }else if( this.link == 'visited' || this.userId.length > 0){
         this.status = '';
       } 
@@ -270,7 +270,7 @@ export default {
   top: -15px; right: 0;
   bottom: 0; left: -19px;
 }
-.link {
+/*.link {
   content: '';
   display: block;
   position: relative;
@@ -287,14 +287,66 @@ export default {
   top: 22px; right: 0;
   bottom: 0; left: 5px; z-index: -1;
 }
- /*content: url('./images/energy_32.gif');*/
 .link:after {
-  /*content: url('./images/energy_32.png');*/
   content: url('./images/energy29.gif');
   position: absolute; 
   top: 0px; right: 0;
   bottom: 0; left: -19px;
+}*/
+.link {
+  content: '';
+  display: block;
+  position: relative;
+  width: 150px;
+  height: 70px;
+  margin-top: -15px;
+  -webkit-animation: pulsate-fwd 1s ease-out infinite both;
+  animation: pulsate-fwd 1s ease-out infinite both;
 }
+
+.link:before {
+  adjust-font-size: fs b;
+  color: color( $str5  blackness(12%));
+  content: 'медиа в окне';
+  position: absolute; 
+  top: 22px; right: 0;
+  bottom: 0; left: 5px; z-index: -1;
+}
+.link:after {
+/*  content: url('./images/energy29.gif');*/
+  position: absolute; 
+  top: 0px; right: 0;
+  bottom: 0; left: -19px;
+}
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 .linkb {
   content: '';
   display: block;
@@ -303,10 +355,6 @@ export default {
   height: 70px;
   margin-top: -15px;
 }
-
-
-
-
 .linkb:before {
   adjust-font-size: fs b;
   color: color( $str5  blackness(12%));
