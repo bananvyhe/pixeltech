@@ -290,12 +290,23 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
-.vkpost {
+.vkpost:nth-child(odd) {
   transition: 0.3s ease-out;
-  opacity: 0;
+  left: -1000px;
+/*  opacity: 0;*/
 }
-.inview {
-  opacity: 1
+.inview:nth-child(odd) {
+  left: 0px;
+  /*opacity: 1*/
+}
+.vkpost:nth-child(even) {
+  transition: 0.3s ease-out;
+  right: -1000px;
+  /*opacity: 0;*/
+}
+.inview:nth-child(even) {
+  right: 0px;
+  /*opacity: 1*/
 }
 .link, .linkactive, .linkactive2, .linkVisited {
   white-space: nowrap;
