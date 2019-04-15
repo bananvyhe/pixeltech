@@ -185,7 +185,10 @@ export default {
   },
   watch: {
     alldata() {
-
+      var self = this
+      setTimeout(function(){
+        self.anim()
+      },1000 );
     },
     bottom(bottom) {
       if (bottom) {
@@ -211,10 +214,7 @@ export default {
     this.addBeer()
   },
   mounted(){
-    var self = this
-    setTimeout(function(){
-      self.anim()
-    },3000 );
+    
   },
   updated() {
 
@@ -227,8 +227,11 @@ export default {
       this.animate = document.querySelectorAll(".vkpost")
       console.log(this.animate)
     },
+    animHarvest() {
+
+    },
     checkView(e){
-      if(this.animate){
+      if(this.animate && this.animate.length == this.alldata.length){
         let element = this.animate[e];
         let elTop = element.offsetTop;
         let elBottom = element.offsetTop + element.scrollHeight;
@@ -249,6 +252,7 @@ export default {
       const pageHeight = document.documentElement.scrollHeight
       const bottomOfPage = visible + scrollY+1000 > pageHeight
       return bottomOfPage || pageHeight < visible 
+
     },
     addBeer() {
       axios({
@@ -264,6 +268,7 @@ export default {
         this.alldata = this.alldata.concat(alld);
         this.pos = this.alldata.length
         this.bottom = false
+
       });
       // if (this.$store.getters.token){
       //   axios({
@@ -286,7 +291,7 @@ export default {
 @import "_variables";
 @import "_extends";
 .vkpost {
-  transition: 1s ease-in-out;
+  transition: 0.3s ease-in-out;
   opacity: 0;
 }
 .inview {
@@ -294,7 +299,6 @@ export default {
 }
 .link, .linkactive, .linkactive2, .linkVisited {
   white-space: nowrap;
-
 }
 .linkVisited {
   content: '';
