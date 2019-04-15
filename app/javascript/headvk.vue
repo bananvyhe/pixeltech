@@ -2,7 +2,8 @@
 <template>
 <div id="app">
   <div v-if="alldata.length === 0" class="loading">Загрузка...</div>
-  <div v-for="data in alldata" class="vkpost" >
+  <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
+    <div >
     <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
       <el-carousel  type="card" :height="carouselh" >
         <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
@@ -25,6 +26,7 @@
       <div v-if="data.medias_row" class="mediabutton"> 
         <energy-button class="js-newWindow" :testString="data.id" :userId="data.user" data-popup="width=740,height=250,top=250,left=150, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
       </div>
+    </div>
     </div>
   </div>
   <div v-if="this.bottom == true" class="loading">Загрузка...</div>
@@ -159,6 +161,9 @@ var cmp = {
 export default {
   data: function () {
     return {  
+      scrollTop: '',
+      scrollBottom: '',
+      animate: '',
       linkswicher: false,
       linkactive: 'linkactive',
       link: 'link',
@@ -179,11 +184,17 @@ export default {
     'energy-button': cmp
   },
   watch: {
+    alldata() {
+
+    },
     bottom(bottom) {
       if (bottom) {
         this.addBeer()
       }
     }
+  },
+  updated() {
+
   },
   created() {
     if(document.body.clientWidth > 980) {
@@ -199,7 +210,39 @@ export default {
     })
     this.addBeer()
   },
+  mounted(){
+    var self = this
+    setTimeout(function(){
+      self.anim()
+    },3000 );
+  },
+  updated() {
+
+  },
   methods: {
+    anim() {
+      this.scrollTop = window.scrollY;
+      this.scrollBottom = window.scrollY + window.innerHeight;
+      window.addEventListener('scroll', _.throttle(this.scrollHandler, 300))
+      this.animate = document.querySelectorAll(".vkpost")
+      console.log(this.animate)
+    },
+    checkView(e){
+      if(this.animate){
+        let element = this.animate[e];
+        let elTop = element.offsetTop;
+        let elBottom = element.offsetTop + element.scrollHeight;
+        if(this.scrollBottom > (elTop + 200) && (elBottom - 100) > this.scrollTop){
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    scrollHandler(){
+      this.scrollBottom = window.scrollY + window.innerHeight;
+      this.scrollTop = window.scrollY;
+    },
     bottomVisible() {
       const scrollY = window.scrollY
       const visible = document.documentElement.clientHeight 
@@ -242,7 +285,13 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
-
+.vkpost {
+  transition: 1s ease-in-out;
+  opacity: 0;
+}
+.inview {
+  opacity: 1
+}
 .link, .linkactive, .linkactive2, .linkVisited {
   white-space: nowrap;
 
