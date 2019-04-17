@@ -16,7 +16,9 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
   </head>
   <body>
+    
     <div id="topsidepanel"></div>
+    <div id="topBlank"></div>
     <%# if current_user.try(:admin?) or  current_user.try(:superadmin?) or  current_user.try(:client?)%>
     <% if !user_signed_in? %>
     <div class="railsblock" style="height: 1.7em;"></div>

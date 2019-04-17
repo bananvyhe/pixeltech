@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div id="bpad">
 		<div class="smalltext main bpad" v-bind:style="styleObject"> 
 			<div class="logohead" >
 				<div v-if="!$store.getters.role">
@@ -175,11 +175,21 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+#bpad{
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	background-color: #1E1E21;
+}
+.bpad {
+
+}
 .hiderailsblock {
 	display: none;
 }
 .main {
-	height: 5em;
+	position: fixed;
+	height: $topSizePanel;
 	lost-column: 1/1 flex; 
 	z-index: 4000;
 	lost-flex-container: row;
@@ -192,10 +202,10 @@
 .logohead{
 	lost-column: 1/3; 
 	align-self: center;
-	padding: 0 1em;
+	padding: 0 1.3em;
 }
 .maininfo {
-	padding: 0.3em 0.5em;
+	padding: 0.3em 1.3em;
 	align-self: center;
 	lost-column: 2/3; 
 	lost-flex-container: row;
