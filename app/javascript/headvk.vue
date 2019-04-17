@@ -54,17 +54,23 @@ var cmp = {
   },
   computed: {
     classlink() {
-      if (this.userId.length > 0 || this.link == 'visited') {
-        return 'linkVisited';
-      }else{
-        return 'link';
+      if (this.user_Id) {
+        if (this.userId.length > 0 || this.link == 'visited') {
+          return 'linkVisited';
+        }else{
+          return 'link';
+        }        
       }
+
     }
   },
   mounted() {
-      if ( this.userId.length > 0 ){
-        this.link = 'visited'
+      if (this.user_id){
+        if ( this.userId.length > 0 ){
+          this.link = 'visited'
+        }        
       }
+
     //jq для открытия нового окна заданных размеров
     $('.js-newWindow').click(function (event) {
       event.preventDefault();
@@ -79,7 +85,7 @@ var cmp = {
  
   },
   // template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" target="_blank" ></a>',
-  template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="[classlink, status]"></a>',
+  template: '<a @click="changeStatus" @mouseover="overAction"  @mouseleave="leaveAction" class="energy" :class="[classlink, status]"></a>',
 
   methods: {
     ...mapMutations([
