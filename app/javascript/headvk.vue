@@ -54,7 +54,7 @@ var cmp = {
   },
   computed: {
     classlink() {
-      if (this.user_Id) {
+      if (this.userId) {
         if (this.userId.length > 0 || this.link == 'visited') {
           return 'linkVisited';
         }else{
@@ -65,7 +65,7 @@ var cmp = {
     }
   },
   mounted() {
-      if (this.user_id){
+      if (this.userId){
         if ( this.userId.length > 0 ){
           this.link = 'visited'
         }        
@@ -554,7 +554,7 @@ export default {
   .linkactive:after {
     background-size: 10px 10px ;
     content: url('./images/energy32.gif');
-    position: absolute; 
+    position: absolute;
     top: -3px; right: 0;
     bottom: 0; left: 15px;
   }
