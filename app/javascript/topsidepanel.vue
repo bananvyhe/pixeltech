@@ -177,7 +177,7 @@
 @import "_extends";
 #bpad{
 	position: fixed;
-	z-index: 100;
+	z-index: 9999;
 	width: 100%;
 	background-color: #1E1E21;
 }
