@@ -177,12 +177,13 @@
 @import "_extends";
 #bpad{
 	position: fixed;
+	height: 2.2em;
 	z-index: 9999;
 	width: 100%;
 	background-color: #1E1E21;
 }
-.bpad {
-
+.bpad {height: 2.4em;
+background-color: #1E1E21;
 }
 .hiderailsblock {
 	display: none;
@@ -205,7 +206,7 @@
 	padding: 0 1.3em;
 }
 .maininfo {
-	padding: 0.3em 1.3em;
+	padding: 0 1.3em;
 	align-self: center;
 	lost-column: 2/3; 
 	lost-flex-container: row;

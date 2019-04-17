@@ -555,7 +555,6 @@ export default {
     background-size: 10px 10px ;
     content: url('./images/energy32.gif');
     position: absolute; 
-
     top: -3px; right: 0;
     bottom: 0; left: 15px;
   }

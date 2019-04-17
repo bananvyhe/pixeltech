@@ -210,7 +210,7 @@ body {
  font-family: 'aprior';
 }
 .railsblock {
-  height: 1.7em;
+  height: 1.2em;
   @extend %roundbgstrw;
 }
 .railsblockhide {
