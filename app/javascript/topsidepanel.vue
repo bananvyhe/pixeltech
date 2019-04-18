@@ -9,11 +9,11 @@
 						<div v-if="$store.getters.role.role == 'client'">
 							Site-hosting
 						</div>
-						<div v-if="$store.getters.role.role == 'user'">
-							<game-board></game-board> 
-						</div>
-						<div v-if="$store.getters.role.role == 'voodoo'">
-							<game-board></game-board>  
+<!-- 						<div v-if="$store.getters.role.role == 'user'">
+							<game-board ></game-board> 
+						</div> -->
+						<div v-if="$store.getters.role.role == 'voodoo' || $store.getters.role.role == 'user'">
+							<game-board :expresult="lvlConversion"></game-board>  
 						</div>
 					</div>
 					<div v-if="$store.getters.token == null">
@@ -63,7 +63,8 @@
 	  },
 	  components: {
     'game-board': {
-    	template: '<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;<span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span><div class="expline"><el-progress class="elpro" :stroke-width="6" :percentage="70"></el-progress></div><span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span></div>'
+    	props: ['expresult'],
+    	template: '<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;<span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span><div class="expline">lvl:{{expresult[0]}}<el-progress class="elpro" :stroke-width="6" :percentage="expresult[1]"></el-progress></div><span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span></div>'
     	}
     },
 	  computed: {
