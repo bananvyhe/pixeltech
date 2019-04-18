@@ -111,8 +111,8 @@ var cmp = {
      //      ballance: 1000
      //    }
      //  })
-     var min = 890
-     var max = 1400
+     var min = 60
+     var max = 120
      var loa = Math.random() * (max - min) + min;
      loa =  Math.round(loa)
       axios({
