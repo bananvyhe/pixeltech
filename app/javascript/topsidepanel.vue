@@ -1,7 +1,7 @@
 <template>
 	<div id="bpad">
 		<div class="smalltext main bpad" v-bind:style="styleObject"> 
-			<div class="logohead" >{{lvlConversion[0]}}
+			<div class="logohead">
 				<div v-if="!$store.getters.role">
 					Voodoo team basecamp
 				</div>
@@ -64,83 +64,182 @@
 	  components: {
     'game-board': {
     	props: ['expresult'],
-    	template: '<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;<span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span><div class="expline">lvl:{{expresult[0]}}<el-progress class="elpro" :stroke-width="6" :percentage="expresult[1]"></el-progress></div><span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span></div>'
+    	template: '<div class="expbar"><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;<span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp;<div class="lvl">lvl:{{expresult[0]}}&nbsp;</div><div class="expline"><el-progress class="elpro" :stroke-width="6" :percentage="expresult[1]"></el-progress></div><span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span></div>'
     	}
     },
 	  computed: {
 	  	lvlConversion: function () {
 	  		var exp = this.expa
 	  		if (exp > 0 && exp <= 68){
-	  			return 1;
+	  			var total = 68;
+	  			var calcproc = exp - 0;
+	  			var result = calcproc/total*100
+	  			return [1,result.toFixed(2)];
 	  		}else if(exp > 68 && exp <= 369){
-	  			return 2;
+	  			var total = 295;
+	  			var calcproc = exp - 68;
+	  			var result = calcproc/total*100
+	  			return [2,result.toFixed(2)];
 	  		}else if(exp > 369 && exp <= 1168){
-	  			return 3;
+	  			var total = 805;
+	  			var calcproc = exp - 369;
+	  			var result = calcproc/total*100
+	  			return [3,result.toFixed(2)];
 	  		}else if(exp > 1168 && exp <= 2884){
-	  			return 4;
+	  			var total = 1716;
+	  			var calcproc = exp - 1168;
+	  			var result = calcproc/total*100
+	  			return [4,result.toFixed(2)];
 	  		}else if(exp > 2884 && exp <= 6038){
-	  			return 5;
+	  			var total = 3154;
+	  			var calcproc = exp - 2884;
+	  			var result = calcproc/total*100
+	  			return [5,result.toFixed(2)];
 	  		}else if(exp > 6038 && exp <= 11287){
-	  			return 6;
+	  			var total = 5249;
+	  			var calcproc = exp - 6038;
+	  			var result = calcproc/total*100
+	  			return [6,result.toFixed(2)];
 	  		}else if(exp > 11287 && exp <= 19423){
-	  			return 7;
+	  			var total = 8136;
+	  			var calcproc = exp - 11287;
+	  			var result = calcproc/total*100
+	  			return [7,result.toFixed(2)];
 	  		}else if(exp > 19423 && exp <= 31378){
-	  			return 8;
+	  			var total = 11955	;
+	  			var calcproc = exp - 19423;
+	  			var result = calcproc/total*100
+	  			return [8,result.toFixed(2)];
 	  		}else if(exp > 31378 && exp <= 48229){
-	  			return 9;
+	  			var total = 16851;
+	  			var calcproc = exp - 31378;
+	  			var result = calcproc/total*100
+	  			return [9,result.toFixed(2)];
 	  		}else if(exp > 48229 && exp <= 71202){
-	  			return 10;
+	  			var total = 22973;
+	  			var calcproc = exp - 48229;
+	  			var result = calcproc/total*100
+	  			return [10,result.toFixed(2)];
 	  		}else if(exp > 71202 && exp <= 101677){
-	  			return 11;
+	  			var total = 30475;
+	  			var calcproc = exp - 71202;
+	  			var result = calcproc/total*100
+	  			return [11,result.toFixed(2)];
 	  		}else if(exp > 101677 && exp <= 141193){
-	  			return 12;
+	  			var total = 39516;
+	  			var calcproc = exp - 101677;
+	  			var result = calcproc/total*100
+	  			return [12,result.toFixed(2)];
 	  		}else if(exp > 141193 && exp <= 191454){
-	  			return 13;
-	  		}else if(exp > 191454 && exp <= 254330){
 	  			var total = 50261;
+	  			var calcproc = exp - 141193;
+	  			var result = calcproc/total*100
+	  			return [13,result.toFixed(2)];
+	  		}else if(exp > 191454 && exp <= 254330){
+	  			var total = 62876;
 	  			var calcproc = exp - 191454;
 	  			var result = calcproc/total*100
 	  			return [14,result.toFixed(2)];
 	  		}else if(exp > 254330 && exp <= 331867){
-	  			return 15;
+	  			var total = 77537;
+	  			var calcproc = exp - 254330;
+	  			var result = calcproc/total*100
+	  			return [15,result.toFixed(2)];
 	  		}else if(exp > 331867 && exp <= 426288){
-	  			return 16;
+	  			var total = 94421;
+	  			var calcproc = exp - 331867;
+	  			var result = calcproc/total*100
+	  			return [16,result.toFixed(2)];
 	  		}else if(exp > 426288 && exp <= 540000){
-	  			return 17;
+	  			var total = 113712;
+	  			var calcproc = exp - 426288;
+	  			var result = calcproc/total*100
+	  			return [17,result.toFixed(2)];
 	  		}else if(exp > 540000 && exp <= 675596){
-	  			return 18;
+	  			var total = 135596;
+	  			var calcproc = exp - 540000;
+	  			var result = calcproc/total*100
+	  			return [18,result.toFixed(2)];
 	  		}else if(exp > 675596 && exp <= 835862){
-	  			return 19;
+	  			var total = 160266;
+	  			var calcproc = exp - 675596;
+	  			var result = calcproc/total*100
+	  			return [19,result.toFixed(2)];
 	  		}else if(exp > 835863 && exp <= 920357){
-	  			return 20;
+	  			var total = 84495;
+	  			var calcproc = exp - 835863;
+	  			var result = calcproc/total*100
+	  			return [20,result.toFixed(2)];
 	  		}else if(exp > 920357 && exp <= 1015431){
-	  			return 21;
+	  			var total = 95074;
+	  			var calcproc = exp - 920357;
+	  			var result = calcproc/total*100
+	  			return [21,result.toFixed(2)];
 	  		}else if(exp > 1015431 && exp <= 1123336){
-	  			return 22;
+	  			var total = 107905;
+	  			var calcproc = exp - 1015431;
+	  			var result = calcproc/total*100
+	  			return [22,result.toFixed(2)];
 	  		}else if(exp > 1123336 && exp <= 1246808){
-	  			return 23;
+	  			var total = 123472;
+	  			var calcproc = exp - 1123336;
+	  			var result = calcproc/total*100
+	  			return [23,result.toFixed(2)];
 	  		}else if(exp > 1246808 && exp <= 1389235){
-	  			return 24;
+	  			var total = 142427;
+	  			var calcproc = exp - 1246808;
+	  			var result = calcproc/total*100
+	  			return [24,result.toFixed(2)];
 	  		}else if(exp > 1389235 && exp <= 1554904){
-	  			return 25;
+	  			var total = 165669;
+	  			var calcproc = exp - 1389235;
+	  			var result = calcproc/total*100
+	  			return [25,result.toFixed(2)];
 	  		}else if(exp > 1554904 && exp <= 1749413){
-	  			return 26;
+	  			var total = 194509;
+	  			var calcproc = exp - 1554904;
+	  			var result = calcproc/total*100
+	  			return [26,result.toFixed(2)];
 	  		}else if(exp > 1749413 && exp <= 1980499){
-	  			return 27;
+	  			var total = 231086;
+	  			var calcproc = exp - 1749413;
+	  			var result = calcproc/total*100
+	  			return [27,result.toFixed(2)];
 	  		}else if(exp > 1980499 && exp <= 2260321){
-	  			return 28;
+	  			var total = 279822;
+	  			var calcproc = exp - 1980499;
+	  			var result = calcproc/total*100
+	  			return [28,result.toFixed(2)];
 	  		}else if(exp > 2260321 && exp <= 2634751){
-	  			return 29;
+	  			var total = 374430;
+	  			var calcproc = exp - 2260321;
+	  			var result = calcproc/total*100
+	  			return [29,result.toFixed(2)];
 	  		}else if(exp > 2634751 && exp <= 2844287){
-	  			return 30;
+	  			var total = 209536;
+	  			var calcproc = exp - 2634751;
+	  			var result = calcproc/total*100
+	  			return [30,result.toFixed(2)];
 	  		}else if(exp > 2844287 && exp <= 3093068){
-	  			return 31;
+	  			var total = 248781;
+	  			var calcproc = exp - 2844287;
+	  			var result = calcproc/total*100
+	  			return [31,result.toFixed(2)];
 	  		}else if(exp > 3093068 && exp <= 3389496){
-	  			return 32;
+	  			var total = 296428;
+	  			var calcproc = exp - 3093068;
+	  			var result = calcproc/total*100
+	  			return [32,result.toFixed(2)];
 	  		}else if(exp > 3389496 && exp <= 3744042){
-	  			return 33;
+	  			var total = 354546;
+	  			var calcproc = exp - 3389496;
+	  			var result = calcproc/total*100
+	  			return [33,result.toFixed(2)];
 	  		}else if(exp > 3744042 && exp <= 4169){
-	  			return 25;
+	  			var total = 425860;
+	  			var calcproc = exp - 3744042;
+	  			var result = calcproc/total*100
+	  			return [34,result.toFixed(2)];
 	  		}
 	  	},	  	
 	  	nulltoken: function(){
@@ -255,6 +354,14 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+.lvl {
+display: flex;
+}
+.expbar { 
+	  adjust-font-size: fs medium;
+	display: flex;
+	width: 220px;
+}
 /deep/ .expline {
 	width: 120px;
 }
@@ -284,14 +391,14 @@ background-color: #1E1E21;
 	padding: 0.35em;
 }*/
 .logohead{
-	lost-column: 1/3; 
+	lost-column: 1/2; 
 	align-self: center;
 	padding: 0 1.3em;
 }
 .maininfo {
 	padding: 0 1.3em;
 	align-self: center;
-	lost-column: 2/3; 
+	lost-column: 1/2; 
 	lost-flex-container: row;
 	justify-content: flex-end;
 	.info {
