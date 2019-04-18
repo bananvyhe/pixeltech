@@ -26,7 +26,6 @@ class GameboardsController < ApplicationController
   # POST /gameboards
   # POST /gameboards.json
   def create
-
     @xp =  Gameboard.find_by_user_id(payload['user_id'])
     @earn = params[:expirience]
     if @xp == nil

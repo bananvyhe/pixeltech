@@ -1,7 +1,7 @@
 <template>
 	<div id="bpad">
 		<div class="smalltext main bpad" v-bind:style="styleObject"> 
-			<div class="logohead" >
+			<div class="logohead" >{{lvlConversion[0]}}
 				<div v-if="!$store.getters.role">
 					Voodoo team basecamp
 				</div>
@@ -54,6 +54,7 @@
 	export default {
 		data() {
 			return {
+				expa: this.$store.getters.gamebo.expirience,
 				exptime: '',
 				checklog: checklog,
 	    	token: '',
@@ -62,10 +63,85 @@
 	  },
 	  components: {
     'game-board': {
-    	template: '<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;<span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span><span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span></div>'
+    	template: '<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;<span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span><div class="expline"><el-progress class="elpro" :stroke-width="6" :percentage="70"></el-progress></div><span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span></div>'
     	}
     },
 	  computed: {
+	  	lvlConversion: function () {
+	  		var exp = this.expa
+	  		if (exp > 0 && exp <= 68){
+	  			return 1;
+	  		}else if(exp > 68 && exp <= 369){
+	  			return 2;
+	  		}else if(exp > 369 && exp <= 1168){
+	  			return 3;
+	  		}else if(exp > 1168 && exp <= 2884){
+	  			return 4;
+	  		}else if(exp > 2884 && exp <= 6038){
+	  			return 5;
+	  		}else if(exp > 6038 && exp <= 11287){
+	  			return 6;
+	  		}else if(exp > 11287 && exp <= 19423){
+	  			return 7;
+	  		}else if(exp > 19423 && exp <= 31378){
+	  			return 8;
+	  		}else if(exp > 31378 && exp <= 48229){
+	  			return 9;
+	  		}else if(exp > 48229 && exp <= 71202){
+	  			return 10;
+	  		}else if(exp > 71202 && exp <= 101677){
+	  			return 11;
+	  		}else if(exp > 101677 && exp <= 141193){
+	  			return 12;
+	  		}else if(exp > 141193 && exp <= 191454){
+	  			return 13;
+	  		}else if(exp > 191454 && exp <= 254330){
+	  			var total = 50261;
+	  			var calcproc = exp - 191454;
+	  			var result = calcproc/total*100
+	  			return [14,result.toFixed(2)];
+	  		}else if(exp > 254330 && exp <= 331867){
+	  			return 15;
+	  		}else if(exp > 331867 && exp <= 426288){
+	  			return 16;
+	  		}else if(exp > 426288 && exp <= 540000){
+	  			return 17;
+	  		}else if(exp > 540000 && exp <= 675596){
+	  			return 18;
+	  		}else if(exp > 675596 && exp <= 835862){
+	  			return 19;
+	  		}else if(exp > 835863 && exp <= 920357){
+	  			return 20;
+	  		}else if(exp > 920357 && exp <= 1015431){
+	  			return 21;
+	  		}else if(exp > 1015431 && exp <= 1123336){
+	  			return 22;
+	  		}else if(exp > 1123336 && exp <= 1246808){
+	  			return 23;
+	  		}else if(exp > 1246808 && exp <= 1389235){
+	  			return 24;
+	  		}else if(exp > 1389235 && exp <= 1554904){
+	  			return 25;
+	  		}else if(exp > 1554904 && exp <= 1749413){
+	  			return 26;
+	  		}else if(exp > 1749413 && exp <= 1980499){
+	  			return 27;
+	  		}else if(exp > 1980499 && exp <= 2260321){
+	  			return 28;
+	  		}else if(exp > 2260321 && exp <= 2634751){
+	  			return 29;
+	  		}else if(exp > 2634751 && exp <= 2844287){
+	  			return 30;
+	  		}else if(exp > 2844287 && exp <= 3093068){
+	  			return 31;
+	  		}else if(exp > 3093068 && exp <= 3389496){
+	  			return 32;
+	  		}else if(exp > 3389496 && exp <= 3744042){
+	  			return 33;
+	  		}else if(exp > 3744042 && exp <= 4169){
+	  			return 25;
+	  		}
+	  	},	  	
 	  	nulltoken: function(){
 	  		axios.delete('/users/sign_out', {
 		    }) 
@@ -147,6 +223,7 @@
 		  		var millisecremains = this.$store.getters.role.exp - current_time
 		  		this.exptime = millisecremains
 				var self = this;
+				if (self.$store.getters.token.refresh){
 	      setInterval(function(){
 		    	axios({
 	    			method: 'post',
@@ -166,7 +243,9 @@
 		      //var current_time = new Date().getTime() / 1000;
 		  		// var millisecremains = self.$store.getters.role.exp - current_time
 		  		// self.exptime = millisecremains
-	      },self.exptime*1000 );			
+	      },self.exptime*1000 );							
+				}
+	
 	  	}
 	  }
 	}
@@ -175,6 +254,9 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+/deep/ .expline {
+	width: 120px;
+}
 #bpad{
 	position: fixed;
 	height: 2.2em;
