@@ -380,10 +380,11 @@ align-self: center;
 	height: 2.4em;
 	z-index: 9999;
 	width: 100%;
-	background-color: #1E1E21;
+	background-color: color( #1E1E21 shade(10%));
 }
-.bpad {height: 2.4em;
-background-color: #1E1E21;
+.bpad {
+	height: 2.4em;
+/*background-color: color( #1E1E21 shade(10%));*/
 }
 .hiderailsblock {
 	display: none;
