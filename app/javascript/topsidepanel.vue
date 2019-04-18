@@ -13,7 +13,15 @@
 							<game-board ></game-board> 
 						</div> -->
 						<div v-if="$store.getters.role.role == 'voodoo' || $store.getters.role.role == 'user'">
-							<game-board :expresult="lvlConversion"></game-board>  
+							<div class="expbar"><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;&nbsp;
+								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
+								<div class="lvl">lvl:{{lvlConversion[0]}}&nbsp;</div>
+							<div class="expline">
+								<el-progress class="elpro" :stroke-width="6" :percentage="lvlConversion[1]"></el-progress>
+							</div>
+							<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
+						</div>
+							<!-- <game-board :expresult="lvlConversion"></game-board>   -->
 						</div>
 					</div>
 					<div v-if="$store.getters.token == null">
@@ -54,22 +62,21 @@
 	export default {
 		data() {
 			return {
-				expa: this.$store.getters.gamebo.expirience,
 				exptime: '',
 				checklog: checklog,
 	    	token: '',
 	    	accessToken: '',
 	    } 
 	  },
-	  components: {
-    'game-board': {
-    	props: ['expresult'],
-    	template: '<div class="expbar"><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;<span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp;<div class="lvl">lvl:{{expresult[0]}}&nbsp;</div><div class="expline"><el-progress class="elpro" :stroke-width="6" :percentage="expresult[1]"></el-progress></div><span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span></div>'
-    	}
-    },
+	  // components: {
+   //  'game-board': {
+   //  	props: ['expresult'],
+   //  	template: ''
+   //  	}
+   //  },
 	  computed: {
 	  	lvlConversion: function () {
-	  		var exp = this.expa
+	  		var exp = this.$store.getters.gamebo.expirience
 	  		if (exp > 0 && exp <= 68){
 	  			var total = 68;
 	  			var calcproc = exp - 0;
