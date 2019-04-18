@@ -4,7 +4,8 @@
 // to the head of your layout file,
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
-
+import TurbolinksAdapter from 'vue-turbolinks';
+Vue.use(TurbolinksAdapter)
 import Vue from 'vue/dist/vue.esm.js'
 import axios from 'axios'
 // import TurbolinksAdapter from 'vue-turbolinks'
