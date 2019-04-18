@@ -13,14 +13,16 @@
 							<game-board ></game-board> 
 						</div> -->
 						<div v-if="$store.getters.role.role == 'voodoo' || $store.getters.role.role == 'user'">
-							<div class="expbar"><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;&nbsp;
+							<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;&nbsp;</div> 
+							<div class="expbar">
+								
 								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
 								<div class="lvl">lvl:{{lvlConversion[0]}}&nbsp;</div>
-							<div class="expline">
-								<el-progress class="elpro" :stroke-width="6" :percentage="lvlConversion[1]"></el-progress>
+								<div class="expline">
+									<el-progress class="elpro" :stroke-width="6" :percentage="lvlConversion[1]"></el-progress>
+								</div>
+								<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
 							</div>
-							<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
-						</div>
 							<!-- <game-board :expresult="lvlConversion"></game-board>   -->
 						</div>
 					</div>
@@ -363,9 +365,10 @@
 @import "_extends";
 .lvl {
 display: flex;
+align-self: center;
 }
 .expbar { 
-	  adjust-font-size: fs medium;
+	adjust-font-size: fs medium;
 	display: flex;
 	width: 220px;
 }
@@ -374,7 +377,7 @@ display: flex;
 }
 #bpad{
 	position: fixed;
-	height: 2.2em;
+	height: 2.4em;
 	z-index: 9999;
 	width: 100%;
 	background-color: #1E1E21;

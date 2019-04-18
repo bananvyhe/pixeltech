@@ -284,6 +284,9 @@ body {
  justify-content: flex-end;
  align-self: center;
 }
+.el-progress__text {
+  adjust-font-size: fs small !important;
+}
 .formzone {
   display: flex;
   justify-content: flex-end;
