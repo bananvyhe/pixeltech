@@ -17,7 +17,7 @@ import Head from '../head.vue'
 import Headvk from '../headvk.vue'
 import Boar from '../boar.vue'
 import Topsidepanel from '../topsidepanel.vue'
-
+import Request from '../components/request.vue'
 // import Topsection from '../components/topsection.vue'
 // Vue.component('topsection', Topsection)
 // import Currentrole from '../railsvars/currentrole.vue'
@@ -25,6 +25,7 @@ import Topsidepanel from '../topsidepanel.vue'
 import '../../../public/theme/index.css'
 Vue.component('reg', Reg)
 Vue.component('log', Log)
+Vue.component('request', Request)
 
 Vue.component("temperature", {
   template: "#temperature-template",

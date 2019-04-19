@@ -2,8 +2,8 @@
 	<div id="bpad">
 		<div class="smalltext main bpad" v-bind:style="styleObject"> 
 			<div class="logohead">
-				<div v-if="!$store.getters.role">
-					Voodoo team basecamp
+				<div class="voodoo" v-if="!$store.getters.role">
+					<div class="basecamp">Voodoo team basecamp</div>&nbsp;&nbsp;<request class="request"></request>
 				</div>
 					<div v-if="$store.getters.role">
 						<div v-if="$store.getters.role.role == 'client'">
@@ -363,6 +363,16 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+.voodoo {
+	display: flex;
+	
+}
+.basecamp {
+	align-self: center;
+}
+.request {
+ 
+}
 .lvl {
 display: flex;
 align-self: center;
