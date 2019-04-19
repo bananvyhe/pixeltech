@@ -54,22 +54,22 @@ var cmp = {
   },
   computed: {
     classlink() {
-      if (this.userId) {
-        if (this.userId.length > 0 || this.link == 'visited') {
+      // if (this.userId) {
+        if (this.userId && this.userId.length > 0 || this.link == 'visited' || !this.userId) {
           return 'linkVisited';
         }else{
           return 'link';
         }        
-      }
+      // }
 
     }
   },
   mounted() {
-      if (this.userId){
-        if ( this.userId.length > 0 ){
+      // if (this.userId){
+        if (this.userId && this.userId.length > 0 ){
           this.link = 'visited'
         }        
-      }
+      // }
 
     //jq для открытия нового окна заданных размеров
     $('.js-newWindow').click(function (event) {
@@ -92,18 +92,20 @@ var cmp = {
       'gamesendplus'
     ]),
     overAction: function() {
-      if ( this.userId.length < 1  && this.link != 'visited' ){
+      if (this.userId && this.userId.length < 1  && this.link != 'visited' ){
         this.status = 'linkactive';
-      }else if (this.userId.length > 0  || this.link == 'visited'){
+      }else if (this.userId && this.userId.length > 0  || this.link == 'visited'){
         this.status = 'linkVisited';
       }     
     },
     leaveAction: function() {
-      if (this.link != 'visited' &&  this.userId.length < 1) {
+      if ( this.link != 'visited' &&  this.userId && this.userId.length < 1 ) {
         this.status = 'link';
-      }else if( this.link == 'visited' || this.userId.length > 0){
+      }else if( this.link == 'visited' || this.userId && this.userId.length > 0 ){
         this.status = '';
-      } 
+      } else if(!this.userId){
+        this.status = '';
+      }
     },
     exppush: function(){
       // axios.post('/clients', {
