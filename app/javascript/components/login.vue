@@ -94,7 +94,7 @@
 	  		return screenwidth.value > 400 ? '35'+'em' : '90' +'%'
 	  	},
 	  	magicWidth: function(){
-        console.log("computed");
+        // console.log("computed");
         if(this.age > 17)
           return "доступ разрешен";
         else
