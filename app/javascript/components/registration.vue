@@ -173,7 +173,7 @@
 		  onSubmit: function () {
 		    axios.post('/users', {
 		      user: {
-		        email: this.form.email,
+		        email: this.form.email.toLowerCase().trim(),
 		        username: this.form.username,
 		        password: this.form.password,
 		        password_confirmation: this.form.password_confirmation
@@ -183,7 +183,7 @@
 		    	//второй запрос на аутентификацию и создание токена после успешной регистрации в devise
 		    	axios.post('/api/v1/auth', {
 		      user: {
-		        email: this.form.email,
+		        email: this.form.email.toLowerCase().trim(),
 		        password: this.form.password
 		      }
 			    })
