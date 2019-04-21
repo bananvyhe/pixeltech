@@ -51,6 +51,18 @@ export default {
     parseCalc()
   },
   methods: {
+    resetForm(formName) {
+      this.$refs[formName].resetFields();
+    },
+    open() {
+      const h = this.$createElement;
+
+      this.$notify({
+        type: 'success',
+        title: 'Спасибо',
+        message: h('i', { style: 'color: teal' }, 'Ваше сообщение отправлено.'),
+      });
+    },    
     handle: function () {
       this.onSubmit();
       this.dialogFormVisible = false
@@ -58,6 +70,8 @@ export default {
       contain.addClass('hidden');
       var bg = $('#bg');
       bg.addClass('hidden');
+      this.open();
+      this.resetForm('form');      
       // this.dialogFormVisible = false
     },
     onSubmit: function () {
@@ -107,7 +121,7 @@ function parseCalc() {
   right: 0px;
 }
 .request  {
-  z-index: 4000;
+  z-index: 6000;
  /* position: absolute;*/
   display: flex;
  /* right: 0;*/

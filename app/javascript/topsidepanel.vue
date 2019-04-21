@@ -388,7 +388,7 @@ align-self: center;
 #bpad{
 	position: fixed;
 	height: 2.4em;
-	z-index: 9999;
+	z-index: 2005;
 	width: 100%;
 	background-color: color( #1E1E21 shade(10%));
 }
@@ -403,7 +403,7 @@ align-self: center;
 	position: fixed;
 	height: $topSizePanel;
 	lost-column: 1/1 flex; 
-	z-index: 4000;
+	z-index: 10;
 	lost-flex-container: row;
 }
 /*.topside { 
