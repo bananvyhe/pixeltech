@@ -4,7 +4,7 @@
     </el-button>
 
     <el-dialog class="pos" top="18vh" :width="calcul" title="Заявка:" :visible.sync="dialogFormVisible" >
-      <el-form :model="form" ref="form">  
+      <el-form :model="form" ref="forma">  
         <el-form-item 
           prop="email" 
           size="mini" 
@@ -61,6 +61,7 @@ export default {
         type: 'success',
         title: 'Спасибо',
         message: h('i', { style: 'color: teal' }, 'Ваше сообщение отправлено.'),
+        position: 'bottom-right'
       });
     },    
     handle: function () {
@@ -71,7 +72,7 @@ export default {
       var bg = $('#bg');
       bg.addClass('hidden');
       this.open();
-      this.resetForm('form');      
+      this.resetForm('forma');      
       // this.dialogFormVisible = false
     },
     onSubmit: function () {

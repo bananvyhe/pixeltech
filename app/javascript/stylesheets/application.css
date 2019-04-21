@@ -289,7 +289,7 @@ body {
 .formzone {
   display: flex;
   justify-content: flex-end;
-  z-index: 9000;
+  /*z-index: 9000;*/
   margin: 0.5em 0.5em;
   position: absolute;
   right:0;

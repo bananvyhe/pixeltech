@@ -3,7 +3,8 @@
 		<div class="smalltext main bpad" v-bind:style="styleObject"> 
 			<div class="logohead">
 				<div class="voodoo" v-if="!$store.getters.role">
-					<div class="basecamp">Voodoo team basecamp</div>&nbsp;&nbsp;<request class="request"></request>
+					<div class="basecamp">Voodoo team basecamp</div>&nbsp;&nbsp;
+					<request class="request"></request>
 				</div>
 					<div v-if="$store.getters.role">
 						<div v-if="$store.getters.role.role == 'client'">
@@ -272,7 +273,7 @@
        	}else{
          	return {
         		position: 'relative',
-        		height: '5em'
+        		// height: '5em'
         	}
        	}
       }
@@ -388,7 +389,7 @@ align-self: center;
 #bpad{
 	position: fixed;
 	height: 2.4em;
-	z-index: 2005;
+	z-index: 3005;
 	width: 100%;
 	background-color: color( #1E1E21 shade(10%));
 }
