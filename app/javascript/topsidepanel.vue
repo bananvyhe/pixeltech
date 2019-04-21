@@ -4,7 +4,10 @@
 			<div class="logohead">
 				<div class="voodoo" v-if="!$store.getters.role">
 					<div class="basecamp">Voodoo team basecamp</div>&nbsp;&nbsp;
-					<div class="swing"><request class="request"></request></div>&nbsp;&nbsp;<div class="basecamp">разработка сайтов</div>
+					<!-- <div class="swing"> -->
+						<request class="request"></request>
+					<!-- </div> -->
+					&nbsp;&nbsp;<div class="basecamp">разработка сайтов</div>
 				</div>
 					<div v-if="$store.getters.role">
 						<div v-if="$store.getters.role.role == 'client'">
@@ -371,134 +374,7 @@
 .basecamp {
 	align-self: center;
 }
-.request {
-  -webkit-animation: pulsate-fwd 3s ease-out infinite both;
-  animation: pulsate-fwd 3s ease-out infinite both; 
-}
-.swing {
-  -webkit-animation: swing-fwd 3s ease-out infinite both;
-  animation: swing-fwd 3s ease-out infinite both; 
-}
-@-webkit-keyframes pulsate-fwd {
-  0% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  30% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  40% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-}
-@keyframes pulsate-fwd {
-  0% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  30% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  40% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-}
-@-webkit-keyframes swing-fwd {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  10% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  15% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  20% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  25% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  30% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }   
-  35% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  40% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }           
-  45% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }  
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-@keyframes swing-fwd {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  10% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  15% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  20% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  25% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  30% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }   
-  35% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  40% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }           
-  45% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }  
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
+
 .lvl {
 display: flex;
 align-self: center;

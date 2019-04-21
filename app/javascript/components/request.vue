@@ -1,8 +1,11 @@
 <template>
   <div class="request">
-    <el-button type="info" icon="el-icon-message" size="mini" circle @click="dialogFormVisible = true">
-    </el-button>
-
+    <div class="scale">
+      <div class="swing">
+        <el-button type="info" icon="el-icon-message" size="mini" circle @click="dialogFormVisible = true">
+        </el-button>
+      </div>
+    </div>
     <el-dialog class="pos" top="18vh" :width="calcul" title="Заявка:" :visible.sync="dialogFormVisible" >
       <el-form :model="form" ref="forma">  
         <el-form-item 
@@ -109,6 +112,134 @@ function parseCalc() {
 
 <style scoped>
 @import "stylesheets/_variables";
+.scale {
+  -webkit-animation: pulsate-fwd 3s ease-out infinite both;
+  animation: pulsate-fwd 3s ease-out infinite both; 
+}
+.swing {
+  -webkit-animation: swing-fwd 3s ease-out infinite both;
+  animation: swing-fwd 3s ease-out infinite both; 
+}
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  30% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  30% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+@-webkit-keyframes swing-fwd {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  15% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  20% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  30% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }   
+  35% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  40% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }           
+  45% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }  
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes swing-fwd {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  15% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  20% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  30% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }   
+  35% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  40% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }           
+  45% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }  
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
 .el-input--mini {
   width: 16em;
 }
