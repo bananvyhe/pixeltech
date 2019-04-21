@@ -23,7 +23,7 @@
           </el-input>
         </el-form-item>
         <el-form-item size="mini"  style="margin-bottom: 1.2em;">
-          <el-button  @click="dialogFormVisible = false">Отмена</el-button><el-button   type="primary" @click="handle" >Подтвердить</el-button>
+          <el-button  @click="dialogFormVisible = false">Отмена</el-button><el-button   type="primary" @click="handle" >Отправить</el-button>
         </el-form-item>    
       </el-form>
     </el-dialog>
