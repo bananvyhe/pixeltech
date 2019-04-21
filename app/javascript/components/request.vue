@@ -61,14 +61,13 @@ export default {
       // this.dialogFormVisible = false
     },
     onSubmit: function () {
-      // axios.post('/api/v1/auth', {
-      //   user: {
-      //     email: this.form.email.toLowerCase().trim(),
-      //     password: this.form.password,
-      //     checked: this.checked
-      //     // password_confirmation: this.form.password_confirmation
-      //   }
-      // })
+      axios.post('/api/v1/request', {
+        user: {
+          email: this.form.email.toLowerCase().trim(),
+          text: this.form.text
+          // password_confirmation: this.form.password_confirmation
+        }
+      })
       // .then(response => {
       //   if (response.data.errors) {
       //     console.log(response.data.errors)

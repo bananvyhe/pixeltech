@@ -1,5 +1,7 @@
 class RequestMailer < ApplicationMailer
-	def send_low_mail(mes) 
-		mail(to:"loadonden@yahoo.com",from:"admin@pixeltech.ru",subject:mes)
+	def message_request_mail(mes, email) 
+		@mes = mes
+		@email = email
+		mail(to:'loadonden@yahoo.com',from:"admin@pixeltech.ru",subject:'заявка')
 	end
 end

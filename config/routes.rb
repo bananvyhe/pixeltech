@@ -48,6 +48,7 @@ Rails.application.routes.draw do
       post :inb, to: "inboxes#create"
       post :vk, to: "vks#create"
       post :vkwall, to: "vks#associate"
+      post :request, to: "request#message"
       resources :vks
       resources :users
       resources :locations do
