@@ -104,6 +104,22 @@
 	  mounted(){
 	  	parseCalc()
 	  	try{
+	  		if (this.$store.getters.token.access) {
+	  			axios.get('/gameboards', {
+		        method: 'get',
+		        url: '/gameboards',
+			        headers: {
+			          'Authorization': 'bearer '+this.$store.getters.token.access
+			        } 
+		        })
+		        .then((response) => {
+		        	console.log(response.data)
+		          this.$store.commit('gamesend', response.data.expirience)
+		        })
+		        .catch(function (error) {
+		          console.log(error);
+	      	}); 						
+	  		}
 	  		if (checklog == 'unlogged'){
 					this.nulltoken()
 				}
@@ -240,16 +256,16 @@
 		    		console.log(response.data.errors)
 		    		this.error = response.data.errors;
 
-		  		var self = this
-		  		this.$message.error({
-		  		 	showClose: true,
-		  		 	message: self.error,
-		  		 	onClose: function(){
-		  		 		self.error = ''	
-			  	}
-	  		});
+			  		var self = this
+			  		this.$message.error({
+			  		 	showClose: true,
+			  		 	message: self.error,
+			  		 	onClose: function(){
+			  		 		self.error = ''	
+				  	}
+		  		});
 
-	    	}else{
+	    		}else{
 	    		  this.$store.commit('tokensend', response.data)
 	    		  this.token = this.$store.getters.token 
 			  		let jwtData = this.token.access.split('.')[1]
@@ -263,20 +279,8 @@
 		    .catch(error => {
 		    	console.log(error)
 		      // whatever you want
-		    })
-	    	axios.get('/gameboards', {
-	        method: 'get',
-	        url: '/gameboards',
-		        headers: {
-		          'Authorization': 'bearer '+this.$store.getters.token.access
-		        } 
-	        })
-	        .then((response) => {
-	          this.$store.commit('gamesend', response.data)
-	        })
-	        .catch(function (error) {
-	          console.log(error);
-      	}); 						
+		    });
+	    	
 		  }
 		}
 	}

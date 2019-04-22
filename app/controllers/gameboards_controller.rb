@@ -1,12 +1,12 @@
 class GameboardsController < ApplicationController
   before_action :set_gameboard, only: [:show, :edit, :update, :destroy]
   before_action :authorize_access_request!
-  before_action :set_gameboard
+  # before_action :set_gameboard
   # GET /gameboards
   # GET /gameboards.json
   def index
-    @gameboards = Gameboard.all
-    render json: @gameboard
+    @gameboards = Gameboard.find_by_user_id(payload['user_id'])
+    render json: @gameboards, :except => [:created_at, :updated_at]
   end
 
   # GET /gameboards/1

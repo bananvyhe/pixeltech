@@ -12,7 +12,7 @@ export const tokensend = (state,  token ) => {
 	 
 }
 export const gamesend = (state,  game ) => {
-	state.gamebo = game
+	state.gamebo.expirience = game
 	 
 }
 export const gamesendplus = (state,  payload ) => {
