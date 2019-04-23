@@ -530,9 +530,7 @@ align-self: center;
 .main {
 	position: fixed;
 	height: $topSizePanel;
-	lost-column: 1/1 flex; 
 	z-index: 10;
-	lost-flex-container: row;
 }
 /*.topside { 
 	position: absolute;
