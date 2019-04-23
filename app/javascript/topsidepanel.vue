@@ -43,7 +43,7 @@
 					<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}
 					<br> Рефреш токен: {{this.$store.getters.token.refresh}}
 					<br><br> -->
-					<div  >права: {{$store.getters.role.role}}</div>
+					<div>права: {{$store.getters.role.role}}</div>
 					<div>
 						<!-- &nbsp;&nbsp; Истекает через:  -->
 						<!-- {{timeConversion(this.$store.getters.role.exp)}} -->
@@ -551,8 +551,10 @@ align-self: center;
 	lost-column: 1/2; 
 	lost-flex-container: row;
 	justify-content: flex-end;
+	/*align-items: center;*/
 	.info {
-		/*align-self: center;*/
+		display: flex;
+		align-self: center;
 		padding: 0 1em;
 	}
 }
