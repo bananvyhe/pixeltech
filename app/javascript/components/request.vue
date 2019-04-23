@@ -6,7 +6,7 @@
         </el-button>
       </div>
     </div>
-    <el-dialog class="pos" top="18vh" :width="calcul" title="Заявка:" :visible.sync="dialogFormVisible" >
+    <el-dialog class="pos" top="18vh" :width="calcul" title="Заявка:" :visible.sync="dialogFormVisible" :lock-scroll="false">
       <el-form :model="form" ref="forma">  
         <el-form-item 
           prop="email" 

@@ -17,7 +17,7 @@
         Войти
       </el-button>
     </div>
-  		<el-dialog class="pos" top="18vh" :width="calcul" title="Войти:" :visible.sync="dialogFormVisible" >
+  		<el-dialog class="pos" top="18vh" :width="calcul" title="Войти:" :visible.sync="dialogFormVisible" :lock-scroll="false">
 		  <el-form :model="form" :rules="rules" ref="form">	 
 		    <el-form-item 
 		    	prop="email" 
