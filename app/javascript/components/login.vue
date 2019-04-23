@@ -29,10 +29,11 @@
 			    ]">
 		      <el-input v-model="form.email" auto-complete="off"></el-input>
 		    </el-form-item>
-		    <el-form-item prop="password" size="mini" label="Пароль:">
+		    <el-form-item prop="password" size="mini" label="Пароль:"  style="margin-bottom: 0px !important;">
 		      <el-input type="password" v-model="form.password" auto-complete="off">
 		      </el-input>
 		    </el-form-item>
+		    	<div class="forgetPassword"><a href="/users/password/new">забыли пароль?</a></div>
 				<el-form-item size="mini"  style="margin-bottom: 0px;">
 			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button><el-button   type="primary" @click="handle" >Подтвердить</el-button>
 			 	</el-form-item>
@@ -294,6 +295,11 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+.forgetPassword{
+	padding: 0.6em;
+	display: flex; 
+	justify-content: flex-end;
+}
 .el-input--mini {
 	width: 16em;
 }

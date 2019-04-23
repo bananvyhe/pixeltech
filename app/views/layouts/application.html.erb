@@ -23,7 +23,7 @@
     <div id="topBlank"></div>
     <%# if current_user.try(:admin?) or  current_user.try(:superadmin?) or  current_user.try(:client?)%>
     <% if !user_signed_in? %>
-    <div class="railsblock"></div>
+    <div class="railsblock" style="margin-top: 0em;"><%#= link_to "Войти", new_user_session_path %></div>
     <% end %>
     <% if user_signed_in? %>
       <div class="railsblock">
