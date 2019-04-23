@@ -20,9 +20,9 @@
 							<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;&nbsp;</div>
 							<div class="expbar"> 
 								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
-								<div v-if="$store.getters.gamebo" class="lvl">lvl:{{lvlConversion[0]}}&nbsp;</div>
+								<!-- <div v-if="$store.getters.gamebo" class="lvl">lvl:{{lvlConversion[0]}}&nbsp;</div> -->
 								<div class="expline">
-									<el-progress v-if="$store.getters.gamebo" class="elpro" :stroke-width="6" :percentage="lvlConversion[1]"></el-progress>
+									<!-- <el-progress v-if="$store.getters.gamebo" class="elpro" :stroke-width="6" :percentage="lvlConversion[1]"></el-progress> -->
 								</div>
 								<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
 							</div>

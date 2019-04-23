@@ -105,7 +105,19 @@
 	  mounted(){
 	  	parseCalc()
 	  	try{
-	  		if (this.$store.getters.token.access) {
+	  		if (checklog == 'unlogged'){
+					this.nulltoken()
+				}
+				if (!this.$store.getters.token.refresh  ) {
+		  		 
+		  		//разлогинить при условии отсутсвя флажка и истечении ацесса
+		  		var current_time = new Date().getTime() / 1000;
+					if (current_time > this.$store.getters.role.exp) {
+						this.nulltoken()	
+						// window.location.href = '/';
+					}
+				}
+				if (this.$store.getters.token.access) {
 	  			axios.get('/gameboards', {
 		        method: 'get',
 		        url: '/gameboards',
@@ -120,19 +132,7 @@
 		        .catch(function (error) {
 		          console.log(error);
 	      	}); 						
-	  		}
-	  		if (checklog == 'unlogged'){
-					this.nulltoken()
-				}
-				if (!this.$store.getters.token.refresh  ) {
-		  		 
-		  		//разлогинить при условии отсутсвя флажка и истечении ацесса
-		  		var current_time = new Date().getTime() / 1000;
-					if (current_time > this.$store.getters.role.exp) {
-						this.nulltoken()	
-						// window.location.href = '/';
-					}
-				}
+	  		}	
 			//code that causes an error
 				}catch(e){
 			}	  	
