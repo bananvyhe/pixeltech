@@ -551,10 +551,10 @@ align-self: center;
 	lost-column: 1/2; 
 	lost-flex-container: row;
 	justify-content: flex-end;
-	/*align-items: center;*/
+	align-items: center;
 	.info {
 		display: flex;
-		align-self: center;
+
 		padding: 0 1em;
 	}
 }
