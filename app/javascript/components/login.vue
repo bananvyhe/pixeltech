@@ -31,11 +31,11 @@
 		    </el-form-item>
 		    <el-form-item prop="password" size="mini" label="Пароль:"  style="margin-bottom: 0px !important;">
 		      <el-input type="password" v-model="form.password" auto-complete="off">
-		      </el-input>
+		      </el-input><div class="forgetPassword"><a href="/users/password/new">забыли пароль?</a></div>
 		    </el-form-item>
-		    	<div class="forgetPassword"><a href="/users/password/new">забыли пароль?</a></div>
+		    	
 				<el-form-item size="mini"  style="margin-bottom: 0px;">
-			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button><el-button   type="primary" @click="handle" >Подтвердить</el-button>
+			 		<el-button  @click="dialogFormVisible = false" style="margin-top: 3.2em;">Отмена</el-button><el-button   type="primary" @click="handle" >Подтвердить</el-button>
 			 	</el-form-item>
 				<el-form-item size="mini"   class="lab">
 				  <el-switch  inactive-text="короткая сессия" active-text="запомнить" width="25"  size="mini" v-model="checked" ></el-switch>
@@ -296,9 +296,12 @@
 @import "_variables";
 @import "_extends";
 .forgetPassword{
-	padding: 0.6em;
-	display: flex; 
-	justify-content: flex-end;
+	padding: 0.2em 0em;
+/*	display: flex; 
+	justify-content: flex-end;*/
+
+	position: absolute;
+	right: 0;
 }
 .el-input--mini {
 	width: 16em;
