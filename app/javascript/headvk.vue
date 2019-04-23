@@ -1,7 +1,7 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
 <div id="app">
-  <div v-if="alldata.length === 0" class="loading">Загрузка...</div>
+  <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка..."></div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
     <div >
     <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
@@ -29,7 +29,7 @@
     </div>
     </div>
   </div>
-  <div v-if="this.bottom == true" class="loading">Загрузка...</div>
+  <div v-if="this.bottom == true" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка..."></div>
 </div>
 </template>
 
@@ -169,6 +169,7 @@ var cmp = {
 export default {
   data: function () {
     return {  
+      loading: true,
       scrollTop: '',
       scrollBottom: '',
       animate: '',
@@ -196,7 +197,7 @@ export default {
       var self = this
       setTimeout(function(){
         self.anim()
-      },1000 );
+      },300 );
     },
     bottom(bottom) {
       if (bottom) {
@@ -499,6 +500,7 @@ export default {
   position: relative;
 }
 #app {
+  padding-top: 1.4em;
   overflow: hidden;
   @media (--only-1600more-screen) {
     lost-center: 980px;

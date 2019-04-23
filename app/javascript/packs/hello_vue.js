@@ -74,7 +74,7 @@ Vue.use(Checkbox)
 Vue.use(Switch)
 Vue.use(Carousel)
 Vue.use(CarouselItem)
-Vue.use(Loading)
+Vue.use(Loading.directive);
 Vue.prototype.$notify = Notification;
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
