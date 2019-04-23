@@ -29,9 +29,9 @@
       <!-- <div class="railsblock"> -->
         <%# if user_signed_in? %>
           <!-- <div class="railsblockhide"> -->
-            <%= link_to current_user.email, edit_user_registration_path %> 
+            <%#= link_to current_user.email, edit_user_registration_path %> 
           <!-- </div> -->
-          <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+          <%#= link_to "Выйти", destroy_user_session_path, method: :delete %>
         
           <%#= link_to "Войти", new_user_session_path %>
           
@@ -45,7 +45,7 @@
         <%# end %>
       <!-- </div>   -->
     <% else %>
-    <%= link_to "Войти", new_user_session_path %>
+    <%#= link_to "Войти", new_user_session_path %>
       <script>
         var checklog = "unlogged"
         console.log(checklog)
