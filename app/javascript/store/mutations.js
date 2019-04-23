@@ -12,11 +12,11 @@ export const tokensend = (state,  token ) => {
 	 
 }
 export const gamesend = (state,  game ) => {
-	state.gamebo.expirience = game
+	state.gamebo  = game
 	 
 }
 export const gamesendplus = (state,  payload ) => {
-	state.gamebo.expirience += payload.amount
+	state.gamebo += payload.amount
 	 
 }
 export const refreshsend = (state,  token ) => {

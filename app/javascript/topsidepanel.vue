@@ -17,13 +17,12 @@
 							<game-board ></game-board> 
 						</div> -->
 						<div v-if="$store.getters.role.role == 'voodoo' || $store.getters.role.role == 'user'">
-							<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;&nbsp;</div> 
-							<div class="expbar">
-								
+							<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;&nbsp;</div>
+							<div class="expbar"> 
 								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
-								<div class="lvl">lvl:{{lvlConversion[0]}}&nbsp;</div>
+								<div v-if="$store.getters.gamebo" class="lvl">lvl:{{lvlConversion[0]}}&nbsp;</div>
 								<div class="expline">
-									<el-progress class="elpro" :stroke-width="6" :percentage="lvlConversion[1]"></el-progress>
+									<el-progress v-if="$store.getters.gamebo" class="elpro" :stroke-width="6" :percentage="lvlConversion[1]"></el-progress>
 								</div>
 								<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
 							</div>
@@ -44,7 +43,7 @@
 					<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}
 					<br> Рефреш токен: {{this.$store.getters.token.refresh}}
 					<br><br> -->
-					<div style="textAlign: center;">права: {{$store.getters.role.role}}</div>
+					<div  >права: {{$store.getters.role.role}}</div>
 					<div>
 						<!-- &nbsp;&nbsp; Истекает через:  -->
 						<!-- {{timeConversion(this.$store.getters.role.exp)}} -->
@@ -82,7 +81,7 @@
    //  },
 	  computed: {
 	  	lvlConversion: function () {
-	  		var exp = this.$store.getters.gamebo.expirience
+	  		var exp = this.$store.getters.gamebo
 	  		if (exp > 0 && exp <= 68){
 	  			var total = 68;
 	  			var calcproc = exp - 0;
@@ -374,7 +373,134 @@
 .basecamp {
 	align-self: center;
 }
-
+.request {
+/*  -webkit-animation: pulsate-fwd 3s ease-out infinite both;
+  animation: pulsate-fwd 3s ease-out infinite both; */
+}
+.swing {
+  -webkit-animation: swing-fwd 3s ease-out infinite both;
+  animation: swing-fwd 3s ease-out infinite both; 
+}
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  30% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  30% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+@-webkit-keyframes swing-fwd {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  15% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  20% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  30% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }   
+  35% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  40% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }           
+  45% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }  
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes swing-fwd {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  15% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  20% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  30% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }   
+  35% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  40% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }           
+  45% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }  
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
 .lvl {
 display: flex;
 align-self: center;
@@ -415,17 +541,18 @@ align-self: center;
 }*/
 .logohead{
 	lost-column: 1/2; 
-	align-self: center;
+
+	/*align-self: center;*/
 	padding: 0 1.3em;
 }
 .maininfo {
 	padding: 0 1.3em;
-	align-self: center;
+	/*align-self: center;*/
 	lost-column: 1/2; 
 	lost-flex-container: row;
 	justify-content: flex-end;
 	.info {
-		align-self: center;
+		/*align-self: center;*/
 		padding: 0 1em;
 	}
 }

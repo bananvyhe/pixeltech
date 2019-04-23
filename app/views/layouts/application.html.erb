@@ -22,44 +22,30 @@
     <div id="topsidepanel"></div>
     <div id="topBlank"></div>
     <%# if current_user.try(:admin?) or  current_user.try(:superadmin?) or  current_user.try(:client?)%>
-    <% if !user_signed_in? %>
-    <div class="railsblock" style="margin-top: 0em;"><%#= link_to "Войти", new_user_session_path %></div>
-    <% end %>
+    <%# if !user_signed_in? %>
+    <!-- <div class="railsblock" style="margin-top: 0em;"><%#= link_to "Войти", new_user_session_path %></div> -->
+    <%# end %>
     <% if user_signed_in? %>
-      <div class="railsblock">
-        <% if user_signed_in? %>
-          <div class="railsblockhide">
-            <%#= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;
-          </div>
-          <%#= link_to "Выйти", destroy_user_session_path, method: :delete %>
+      <!-- <div class="railsblock"> -->
+        <%# if user_signed_in? %>
+          <!-- <div class="railsblockhide"> -->
+            <%= link_to current_user.email, edit_user_registration_path %> 
+          <!-- </div> -->
+          <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
         
           <%#= link_to "Войти", new_user_session_path %>
           
-<!--           <script>
-              axios.delete('/users/sign_out', {
-              }) 
-              .then((response) => {  
-                if (document.location.pathname != '/'){
-                  window.location.href = '/';
-                   
-                }else{
-
-                }
-                
-              //  this.$store.commit('tokensend', null) 
-                  //   this.$store.commit('tokensend', null) 
-              })
-            
-          </script> -->
+ 
 
           <script>
             var checklog = true
             console.log(checklog)
           </script>
 
-        <% end %>
-      </div>  
+        <%# end %>
+      <!-- </div>   -->
     <% else %>
+    <%= link_to "Войти", new_user_session_path %>
       <script>
         var checklog = "unlogged"
         console.log(checklog)

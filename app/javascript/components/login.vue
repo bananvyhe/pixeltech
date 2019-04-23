@@ -114,8 +114,8 @@
 			        } 
 		        })
 		        .then((response) => {
-		        	console.log(response.data)
-		          this.$store.commit('gamesend', response.data.expirience)
+		        	console.log(response.data.expirience)
+		          this.$store.commit('gamesend', response.data.expirience )
 		        })
 		        .catch(function (error) {
 		          console.log(error);
