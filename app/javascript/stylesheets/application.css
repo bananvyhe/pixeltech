@@ -120,6 +120,13 @@ body {
   /* color: #edeef0;*/
   color: #e7e8ec;
 }
+#comment_body {
+  background-color: color( $HeadBackColor  shade(46%));
+  border-color: color( $HeadBackColor  shade(0%));
+  color: inherit;
+  padding: 0.5em 0.7em;
+  margin-top: 0.7em;
+}
 #topBlank {
   height: $topSizePanel
 }
