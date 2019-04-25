@@ -300,7 +300,7 @@ export default {
 @import "_variables";
 @import "_extends";
 .vkpost:nth-child(odd) {
-  transition: 0.3s ease-out;
+  transition: 0.1s ease-out;
   left: -1000px;
   opacity: 0;
 }
@@ -309,7 +309,7 @@ export default {
   opacity: 1
 }
 .vkpost:nth-child(even) {
-  transition: 0.3s ease-out;
+  transition: 0.1s ease-out;
   right: -1000px;
   opacity: 0;
 }
