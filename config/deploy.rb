@@ -14,8 +14,8 @@ set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 set :pty,  false
 set :rbenv_map_bins, %w{rake gem bundle ruby rails sidekiq sidekiqctl}
 
-SSHKit.config.command_map[:sidekiq] = "env MALLOC_ARENA_MAX=2 bundle exec sidekiq"
-SSHKit.config.command_map[:sidekiqctl] = "env MALLOC_ARENA_MAX=2 bundle exec sidekiqctl"
+SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
 
 # set :whenever_identifier,   ->{ fetch :application }
 #     set :whenever_environment,  ->{ fetch :rails_env, fetch(:stage, "production") }
