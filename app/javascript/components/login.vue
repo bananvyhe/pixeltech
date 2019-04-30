@@ -211,7 +211,8 @@
 		    }) 
 		    .then((response) => {	 
 		    	if (document.location.pathname != '/'){
-						window.location.href = '/';
+						// window.location.href = '/';
+						// document.location.reload()
 					}else{
 
 					}
