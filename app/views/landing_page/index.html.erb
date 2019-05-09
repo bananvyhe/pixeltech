@@ -1,6 +1,15 @@
+<!-- Hat of site -->
+<div class="hat">
+	<%= tag.div id: :hat, 
+		data: { 
+		} 
+%>
+</div>
+<!-- POsts -->
 <% if user_signed_in? %>
 	<%= render :template => "posts/index" %>
 <% end %>
+<!-- Parsed and sorted content from vk-->
 <div class="mediumtext">
 	<%= tag.div id: :headvk, 
 		data: { 
@@ -17,3 +26,4 @@
 	Доступ на сайт —  после одобрения аккаунта администратором.
 </p> -->
 <%# end %>
+ 

@@ -18,6 +18,7 @@ import Headvk from '../headvk.vue'
 import Boar from '../boar.vue'
 import Topsidepanel from '../topsidepanel.vue'
 import Request from '../components/request.vue'
+import Hat from '../hat.vue'
 // import Topsection from '../components/topsection.vue'
 // Vue.component('topsection', Topsection)
 // import Currentrole from '../railsvars/currentrole.vue'
@@ -92,7 +93,14 @@ document.addEventListener('turbolinks:load', () => {
 	// 	  el: "#users" 
 	// 	})
 	// }
-
+	var hat = document.getElementById("hat") 
+  if (hat != null) {
+	  new Vue({
+	  	store,
+	    el: '#hat',
+	    render: h => h(Hat) 
+	  })
+	}
 	var users = document.getElementById("users") 
   if (users != null) {
 	  new Vue({

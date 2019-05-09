@@ -367,6 +367,10 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+.hat {
+	background-color: #ada;
+	height: 440px;
+}
 .voodoo {
 	display: flex;
 	
