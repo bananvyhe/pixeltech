@@ -503,7 +503,7 @@ export default {
   padding-top: 1.4em;
   overflow: hidden;
   @media (--only-1600more-screen) {
-    lost-center: 980px;
+    lost-center: $lostCenter;
   }
   @media (--only-medium-screen) {
     lost-center: 980px;
