@@ -25,8 +25,8 @@
 @import "_extends";
 .hat {
 	lost-center: $lcenter;
-	lost-utility: edit;
-	height: 220px;
+	/*lost-utility: edit;*/
+	height: 162px;
 }
 .fog {
 	background-repeat: no-repeat;
@@ -37,7 +37,7 @@
 .warriors {
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center -10%;
+	background-position: center -30%;
 	height: 100%;
 	width: 100%;
 	background-image: url('./images/_hat/warriors.gif');
