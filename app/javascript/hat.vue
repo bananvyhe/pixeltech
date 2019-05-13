@@ -14,8 +14,17 @@
       }
     },
     methods: {
+    },
+    mounted() {
+    			var tl2 = new TimelineMax({repeat:-1});
+			tl2.to('.clouds', 50, {backgroundPositionX: 149, ease: Power0.easeOut});
     }
+
+
   }
+ // 	(function(){
+
+	// }());
 </script>
 <style scoped>
 @import "_variables";
