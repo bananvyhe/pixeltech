@@ -36,8 +36,9 @@
 }
 .warriors {
 	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center -30%;
+
+	background-position: center bottom;
+		background-size: contain;
 	height: 100%;
 	width: 100%;
 	background-image: url('./images/_hat/warriors.gif');
