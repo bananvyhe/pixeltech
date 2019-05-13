@@ -3,11 +3,11 @@
 		<div class="smalltext bpad" v-bind:style="styleObject"> 
 			<div class="logohead">
 				<div class="voodoo" v-if="!$store.getters.role">
-					<div class="basecamp">Voodoo team basecamp</div>&nbsp;&nbsp;
+					<div class="basecamp">Voodoo team</div>&nbsp;&nbsp;
 					<!-- <div class="swing"> -->
 						<request class="request"></request>
 					<!-- </div> -->
-					&nbsp;&nbsp;<div class="basecamp">разработка сайтов</div>
+					&nbsp;&nbsp;<div class="basecamp1">разработка сайтов</div>
 				</div>
 					<div v-if="$store.getters.role">
 						<div v-if="$store.getters.role.role == 'client'">
@@ -36,7 +36,7 @@
 					</div>
 				</div>
 			<div class="maininfo">
-				<div v-if="$store.getters.token != null" class="info">
+				<div v-if="$store.getters.token != null" class="info wrap">
 					<!-- {{this.$store.getters.role.username}} 
 					&nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}
 					<br>Ацесс токен: {{this.$store.getters.token.access}}
@@ -50,11 +50,11 @@
 					</div>
 					<!-- {{exptime}} -->
 				</div> 
-				<div v-if="$store.getters.token == null" > 
+				<div class="wrap" v-if="$store.getters.token == null" > 
 			    <reg></reg>
 			  </div>
-				<div>
-					<log></log>
+				<div class="wrap">
+					<log class="wrap"></log>
 				</div>
 			</div>
 	  </div>
@@ -374,8 +374,16 @@
 	display: flex;
 	
 }
-.basecamp {
+.basecamp, .basecamp1 {
 	align-self: center;
+}
+.basecamp {
+/*  @media (--only-small-screen) {
+		display: none;
+  }	
+  @media (--only-xsmall-screen) {
+		display: none;
+  }	  */
 }
 .request {
 /*  -webkit-animation: pulsate-fwd 3s ease-out infinite both;
@@ -547,22 +555,40 @@ align-self: center;
 	align-items: center;
 }*/
 .logohead{
-	lost-column: 1/2; 
+	lost-column: 1/2 2 0em; 
 	/*align-self: center;*/
 	padding: 0 1.3em;
+	@media (--only-small-screen) {
+		lost-column: 1/3 2 0em; 
+  }
+  @media (--only-xsmall-screen) {
+		lost-column: 1/3 2 0em; 
+  }
 }
 .maininfo {
+	overflow-x: auto;
+	white-space: nowrap;
 	padding: 0 1.3em;
 	/*align-self: center;*/
-	lost-column: 1/2; 
+	lost-column: 1/2 2 0em; 
 	lost-flex-container: row;
 	justify-content: flex-end;
 	align-items: center;
+	@media (--only-small-screen) {
+		lost-column: 2/3 2 0em; 
+  }
+  @media (--only-xsmall-screen) {
+		lost-column: 2/3 2 0em; 
+  }
 	.info {
 		display: flex;
 
 		padding: 0 1em;
 	}
+
+}
+.wrap {
+	display: inline-block;
 }
 /*.topside { 
 	position: absolute;
