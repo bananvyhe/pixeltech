@@ -1,21 +1,19 @@
 <template>
-  <div class="hat fog">
+  <div class="hat">
+  	<div class="fog"></div>
   	<div class="clouds"></div>
   	<div class="warriors"></div>
-</div>
+	</div>
 </template>
 <script>
  
   export default {
-    
     data: function (){
       return {
         
       }
     },
     methods: {
-      
-
     }
   }
 </script>
@@ -29,20 +27,29 @@
 	lost-center: $lcenter;
 	/*lost-utility: edit;*/
 	height: 162px;
+	background-color: #13151a;
 	@media (--only-small-screen) {
 		height: 120px;
   }
  	@media (--only-xsmall-screen) {
 		height: 80px;
   }
+
 }
 .fog {
+	align-self: flex-end;	
 	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+	background-size: contain;
+	background-position: center bottom;
+	height: 80%;
+	width: 100%;
+
+	position: absolute;
 	background-image: url('./images/_hat/fog.jpg');
+
 }
 .warriors {
+	z-index: 20;
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: contain;
@@ -67,11 +74,17 @@
 	position: absolute;
 	background-image: url('./images/_hat/clouds.png');
 	background-position: center top;
-	background-size: 35%  auto;
+	background-size: 30%  auto;
 	height: 100%;
 	width: 100%;
 	@media (--only-xsmall-screen) {
-			background-size: 65%  auto;
+		background-size: 65%  auto;
+  }
+  @media (--only-small-screen) {
+		background-size: 55%  auto;
+  }
+  @media (--only-medium-screen) {
+		background-size: 35%  auto;
   }
 }
 </style>

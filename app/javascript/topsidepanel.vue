@@ -1,6 +1,6 @@
 <template>
 	<div id="bpad">
-		<div class="smalltext main bpad" v-bind:style="styleObject"> 
+		<div class="smalltext bpad" v-bind:style="styleObject"> 
 			<div class="logohead">
 				<div class="voodoo" v-if="!$store.getters.role">
 					<div class="basecamp">Voodoo team basecamp</div>&nbsp;&nbsp;
@@ -367,10 +367,9 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
-.hat {
-	background-color: #ada;
+/*.hat {
 	height: 440px;
-}
+}*/
 .voodoo {
 	display: flex;
 	
@@ -520,31 +519,35 @@ align-self: center;
 }
 #bpad{
 	position: fixed;
-	height: 2.4em;
+	height: 2.6em;
 	z-index: 3005;
 	width: 100%;
 	background-color: color( #1E1E21 shade(10%));
+	display: flex;
+	align-items: center;
 }
 .bpad {
-	height: 2.4em;
-/*background-color: color( #1E1E21 shade(10%));*/
+	width: 100%;
+	display: flex;
+	/*height: 2.6em;*/
+	position: fixed;
+	/*height: $topSizePanel;*/
+	z-index: 10;
+	lost-center: $lcenter;
+	/*background-color: color( #1E1E21 shade(10%));*/
 }
 .hiderailsblock {
 	display: none;
 }
-.main {
+/*.main {
 	position: fixed;
 	height: $topSizePanel;
 	z-index: 10;
-}
-/*.topside { 
-	position: absolute;
-	right: 0;
-	padding: 0.35em;
+	display: flex;
+	align-items: center;
 }*/
 .logohead{
 	lost-column: 1/2; 
-
 	/*align-self: center;*/
 	padding: 0 1.3em;
 }
@@ -561,4 +564,10 @@ align-self: center;
 		padding: 0 1em;
 	}
 }
+/*.topside { 
+	position: absolute;
+	right: 0;
+	padding: 0.35em;
+}*/
+
 </style>
