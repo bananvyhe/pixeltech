@@ -13,8 +13,8 @@
 				    <el-form-item prop="password" size="mini" label="Пароль:">
 				      <el-input type="password" v-model="form.password" auto-complete="off"></el-input>
 				    </el-form-item>
-				    <el-form-item  prop="password_confirmation" size="mini" label="Повторите пароль:">
-				      <el-input type="password" v-model="form.password_confirmation" auto-complete="off"></el-input>
+				    <el-form-item  prop="password_confirmation" size="mini" label="">
+				      <el-input type="password" placeholder="Повторите пароль" v-model="form.password_confirmation" auto-complete="off"></el-input>
 				    </el-form-item>
 				    <el-form-item  prop="username" size="mini" label="Никнейм:">
 				      <el-input v-model="form.username" auto-complete="off"></el-input>
@@ -214,7 +214,9 @@
 /*.el-form-item{
 	height: 2.7em;
 },*/
- 
+ .el-form-item__label {
+ 	width: 30px;
+ }
 .reg  {
   z-index: 4000;
  /* position: absolute;*/
