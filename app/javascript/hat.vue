@@ -25,8 +25,9 @@
 			tl2.to('.clouds', 90, {backgroundPositionX: 149, ease: Expo.easeOut});
 
 			var repDelay = 8;
-			var firsFlash = 0.2;
-			var flashTime = 0.5;
+			var firsFlash = 0.1;
+			var flashTime = 0.45;
+
 			// var repDelay = 8;
 			// var self = this;
 			// function randomize() {
@@ -40,20 +41,20 @@
 			var tlfl = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tlfl.to('.warriors', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
 			.to('.warriors', 0.15, {css:{className:'-=brightness'}})
-			.to('.warriors', flashTime, {css:{className:'+=brightness'}}, '+=0.1')
+			.to('.warriors', flashTime, {css:{className:'+=brightness'}}, '+=0.01')
 			.to('.warriors', 0.15, {css:{className:'-=brightness'}});
 
 			var tlfl1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tlfl1.to('.clouds', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
 			.to('.clouds', 0.15, {css:{className:'-=brightness'}})
-			.to('.clouds', flashTime, {css:{className:'+=brightness'}}, '+=0.1')
+			.to('.clouds', flashTime, {css:{className:'+=brightness'}}, '+=0.01')
 			.to('.clouds', 0.15, {css:{className:'-=brightness'}});
  
 			var tldn1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tldn1.set('.flash', {visibility: "hidden"})
 			.to('.flash', firsFlash, {visibility: "visible"}, '+=2.6')
 			.to('.flash', 0.15, {visibility: "hidden"})
-			.to('.flash', flashTime, {visibility: "visible"}, '+=0.1')
+			.to('.flash', flashTime, {visibility: "visible"}, '+=0.01')
 			.to('.flash', 0.15, {visibility: "hidden"});
     }
 
@@ -95,7 +96,7 @@
 
 }
 .brightness{
-	filter: brightness(0%);
+	filter: brightness(25%);
 }
 
 .flash {
