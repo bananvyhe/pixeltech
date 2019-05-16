@@ -75,6 +75,7 @@
 	/*lost-utility: edit;*/
 	height: 162px;
 	background-color: #13151a;
+	border-bottom: 4px solid color( #1E1E21 shade(30%));
 	@media (--only-small-screen) {
 		height: 120px;
   }

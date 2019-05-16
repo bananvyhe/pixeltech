@@ -530,7 +530,7 @@ align-self: center;
 	height: 2.6em;
 	z-index: 3005;
 	width: 100%;
-	background-color: color( #1E1E21 shade(10%));
+	background-color: color( #1E1E21 shade(30%));
 	display: flex;
 	align-items: center;
 }
