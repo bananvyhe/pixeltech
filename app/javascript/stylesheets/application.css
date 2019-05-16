@@ -127,6 +127,9 @@ body {
   padding: 0.5em 0.7em;
   margin-top: 0.7em;
 }
+.commRaiting {
+  margin-left: -1em;
+}
 #topBlank {
   height: $topSizePanel
 }
@@ -276,6 +279,7 @@ body {
 }
 .el-form-item {
    display: flex;
+   justify-content: flex-end;
    margin-bottom: 0px;
 }
 .el-form-item__content {
