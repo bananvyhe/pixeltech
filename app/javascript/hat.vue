@@ -25,8 +25,8 @@
 			tl2.to('.clouds', 90, {backgroundPositionX: 149, ease: Expo.easeOut});
 
 			var repDelay = 8;
-			var firsFlash = 0.1;
-			var flashTime = 0.45;
+			var firsFlash = 0.05;
+			var flashTime = 0.5;
 
 			// var repDelay = 8;
 			// var self = this;
@@ -40,22 +40,28 @@
 
 			var tlfl = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tlfl.to('.warriors', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
-			.to('.warriors', 0.15, {css:{className:'-=brightness'}})
-			.to('.warriors', flashTime, {css:{className:'+=brightness'}}, '+=0.01')
-			.to('.warriors', 0.15, {css:{className:'-=brightness'}});
+			.to('.warriors', 0.05, {css:{className:'-=brightness'}})
+			.to('.warriors', firsFlash, {css:{className:'+=brightness'}}, '+=0.05')
+			.to('.warriors', 0.05, {css:{className:'-=brightness'}})
+			.to('.warriors', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
+			.to('.warriors', 0.05, {css:{className:'-=brightness'}});
 
 			var tlfl1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tlfl1.to('.clouds', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
-			.to('.clouds', 0.15, {css:{className:'-=brightness'}})
-			.to('.clouds', flashTime, {css:{className:'+=brightness'}}, '+=0.01')
-			.to('.clouds', 0.15, {css:{className:'-=brightness'}});
+			.to('.clouds', 0.05, {css:{className:'-=brightness'}})
+			.to('.clouds', firsFlash, {css:{className:'+=brightness'}}, '+=0.05')
+			.to('.clouds', 0.05, {css:{className:'-=brightness'}})
+			.to('.clouds', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
+			.to('.clouds', 0.05, {css:{className:'-=brightness'}});
  
 			var tldn1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tldn1.set('.flash', {visibility: "hidden"})
 			.to('.flash', firsFlash, {visibility: "visible"}, '+=2.6')
-			.to('.flash', 0.15, {visibility: "hidden"})
-			.to('.flash', flashTime, {visibility: "visible"}, '+=0.01')
-			.to('.flash', 0.15, {visibility: "hidden"});
+			.to('.flash', 0.05, {visibility: "hidden"})
+			.to('.flash', firsFlash, {visibility: "visible"}, '+=0.05')
+			.to('.flash', 0.05, {visibility: "hidden"})
+			.to('.flash', flashTime, {visibility: "visible"}, '+=0.05')
+			.to('.flash', 0.05, {visibility: "hidden"});
     }
 
 
@@ -76,6 +82,7 @@
 	height: 162px;
 	background-color: #13151a;
 	border-bottom: 4px solid color( #1E1E21 shade(30%));
+	border
 	@media (--only-small-screen) {
 		height: 120px;
   }
