@@ -5,22 +5,21 @@
 				<div class="voodoo" v-if="!$store.getters.role">
 					<div class="basecamp">Voodoo team</div>&nbsp;&nbsp;
 					<!-- <div class="swing"> -->
-												
-						<request class="request"></request>
-
+					<request class="request"></request>
 					<!-- </div> -->
 					&nbsp;&nbsp;
 					<div class="basecamp1">
-							 <el-popover
-    placement="bottom"
- 
-    width="100"
-    trigger="hover">
-    <div  style="text-align: center;"><a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a></div>
+						<el-popover
+				    placement="bottom"
+				    width="100"
+				    trigger="click">
+
+					    <div style="text-align: center;">
+					    	<a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a>
+					    </div>
 		
-							 <el-button size="mini" slot="reference" round>сайты</el-button>
-							</el-popover>
-    				 
+							<el-button size="mini" slot="reference">сайты</el-button>
+						</el-popover>
 					</div>
 				</div>
 					<div v-if="$store.getters.role">
@@ -572,6 +571,8 @@ align-self: center;
 	align-items: center;
 }*/
 .logohead{
+	display: flex;
+	align-items: center;
 	lost-column: 1/2 2 0em; 
 	/*align-self: center;*/
 	padding: 0 1.3em;
