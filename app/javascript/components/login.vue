@@ -34,8 +34,8 @@
 		      </el-input><div class="forgetPassword"><a href="/users/password/new">забыли пароль?</a></div>
 		    </el-form-item>
 		    	
-				<el-form-item size="mini"  style="margin-bottom: 0px;">
-			 		<el-button  @click="dialogFormVisible = false" style="margin-top: 3.2em;">Отмена</el-button><el-button   type="primary" @click="handle" >Подтвердить</el-button>
+				<el-form-item size="mini"  style="margin-bottom: 10px;" class="bottomField">
+			 		<el-button  @click="dialogFormVisible = false"  >Отмена</el-button><el-button   type="primary" @click="handle" >Подтвердить</el-button>
 			 	</el-form-item>
 				<el-form-item size="mini"   class="lab">
 				  <el-switch  inactive-text="короткая сессия" active-text="запомнить" width="25"  size="mini" v-model="checked" ></el-switch>
@@ -296,6 +296,9 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+.bottomField {
+	padding-top: 3em;
+}
 .forgetPassword{
 	padding: 0.2em 0em;
 /*	display: flex; 
