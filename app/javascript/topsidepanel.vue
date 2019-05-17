@@ -5,9 +5,23 @@
 				<div class="voodoo" v-if="!$store.getters.role">
 					<div class="basecamp">Voodoo team</div>&nbsp;&nbsp;
 					<!-- <div class="swing"> -->
+												
 						<request class="request"></request>
+
 					<!-- </div> -->
-					&nbsp;&nbsp;<div class="basecamp1">разработка сайтов</div>
+					&nbsp;&nbsp;
+					<div class="basecamp1">
+							 <el-popover
+    placement="bottom"
+ 
+    width="100"
+    trigger="hover">
+    <div  style="text-align: center;"><a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a></div>
+		
+							 <el-button size="mini" slot="reference" round>сайты</el-button>
+							</el-popover>
+    				 
+					</div>
 				</div>
 					<div v-if="$store.getters.role">
 						<div v-if="$store.getters.role.role == 'client'">
@@ -369,6 +383,9 @@
 @import "_extends";
 /*.hat {
 	height: 440px;
+}*/
+/*.item {
+	clear: both;
 }*/
 .voodoo {
 	display: flex;
