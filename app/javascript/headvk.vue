@@ -24,7 +24,7 @@
         <div class="vkraiting largertext">{{data.raiting}}</div>        
       </div>
       <div v-if="data.medias_row" class="mediabutton"> 
-        <energy-button class="js-newWindow" :testString="data.id" :userId="data.user" data-popup="width=740,height=250,top=250,left=150, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
+        <energy-button class="js-newWindow" :testString="data.id" :userId="data.user" data-popup="width=780,height=950,top=250,left=150, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
       </div>
     </div>
     </div>
@@ -78,7 +78,9 @@ var cmp = {
       var url = $this.attr("href");
       var windowName = "popUp";
       var windowSize = $this.data("popup");
-      window.open(url, windowName, windowSize);
+      setTimeout(function(){
+        window.open(url, windowName, windowSize);
+      },1200 ); 
     });           
   },
   watch: {
