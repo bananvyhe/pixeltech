@@ -571,6 +571,8 @@ align-self: center;
 	align-items: center;
 }*/
 .logohead{
+	position: relative;
+	z-index: 50;
 	display: flex;
 	align-items: center;
 	lost-column: 1/2 2 0em; 
@@ -584,6 +586,8 @@ align-self: center;
   }
 }
 .maininfo {
+	position: relative;
+	z-index: 49;
 	overflow-x: auto;
 	white-space: nowrap;
 	padding: 0 1.3em;
