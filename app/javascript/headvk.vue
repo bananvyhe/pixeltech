@@ -80,7 +80,7 @@ var cmp = {
       var windowSize = $this.data("popup");
       setTimeout(function(){
         window.open(url, windowName, windowSize);
-      },1000 ); 
+      },800 ); 
     });           
   },
   watch: {
