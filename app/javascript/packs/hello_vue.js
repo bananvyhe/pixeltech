@@ -19,6 +19,7 @@ import Boar from '../boar.vue'
 import Topsidepanel from '../topsidepanel.vue'
 import Request from '../components/request.vue'
 import Hat from '../hat.vue'
+import VmBackTop from '../back-top.vue'
 // import Topsection from '../components/topsection.vue'
 // Vue.component('topsection', Topsection)
 // import Currentrole from '../railsvars/currentrole.vue'
@@ -61,8 +62,9 @@ Vue.component("temperature", {
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
  
-import {Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
+import {Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
 Vue.prototype.$message = Message;  
+Vue.use(Icon)
 Vue.use(Popover)
 Vue.use(Progress) 
 Vue.use(Button) 
@@ -94,6 +96,10 @@ document.addEventListener('turbolinks:load', () => {
 	// 	  el: "#users" 
 	// 	})
 	// }
+	new Vue({
+    el: '#VmBackTop',
+    render: h => h(VmBackTop)
+  })
 	var hat = document.getElementById("hat") 
   if (hat != null) {
 	  new Vue({
