@@ -87,44 +87,9 @@
 		height: 120px;
   }
  	@media (--only-xsmall-screen) {
-		height: 80px;
+		height: 100px;
   }
 
-}
-.fog {
-	align-self: flex-end;	
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center bottom;
-	height: 80%;
-	width: 100%;
-
-	position: absolute;
-	background-image: url('./images/_hat/fog.jpg');
-
-}
-.brightness{
-	filter: brightness(25%);
-}
-
-.flash {
- 	/*visibility: hidden;*/
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	background-size: cover;
-	background-image: url('./images/_hat/flash.jpg');
-	@media (--only-1600more-screen) {
-    background-position: center -20px;
-  }
-  @media (--only-medium-screen) {
-    background-position: center -20px;
-  }
-}
-.dvis {
-	visibility: visible;
 }
 .warriors {
 	z-index: 20;
@@ -146,6 +111,39 @@
 		background-size: auto 100%;
     background-position: center 25px;
   }
+}
+.fog {
+	align-self: flex-end;	
+	background-repeat: no-repeat;
+	background-size: contain;
+	/*background-size: 80% auto;*/
+	background-position: center bottom;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-image: url('./images/_hat/fog.jpg');
+}
+.brightness{
+	filter: brightness(25%);
+}
+.flash {
+ 	/*visibility: hidden;*/
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: cover;
+	background-image: url('./images/_hat/flash.jpg');
+	@media (--only-1600more-screen) {
+    background-position: center -20px;
+  }
+  @media (--only-medium-screen) {
+    background-position: center -20px;
+  }
+}
+.dvis {
+	visibility: visible;
 }
 .clouds {  
 	background-repeat: repeat-x;

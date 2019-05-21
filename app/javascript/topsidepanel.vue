@@ -1,6 +1,6 @@
 <template>
 	<div id="bpad">
-		<div class="smalltext bpad" v-bind:style="styleObject"> 
+		<div class="bpad smalltext" v-bind:style="styleObject"> 
 			<div class="logohead">
 				<div class="voodoo" v-if="!$store.getters.role">
 					<div class="basecamp">Voodoo team</div>&nbsp;&nbsp;
@@ -543,11 +543,12 @@ align-self: center;
 }
 #bpad{
 	position: fixed;
-	height: 2.6em;
+	height: $topBlank;
 	z-index: 3005;
 	width: 100%;
-	background-color: color( #1E1E21 shade(30%));
-	display: flex;
+
+	/*background-color: color( #1E1E21 shade(30%));*/
+	/*display: flex;*/
 	align-items: center;
 }
 .bpad {
@@ -558,7 +559,7 @@ align-self: center;
 	/*height: $topSizePanel;*/
 	z-index: 10;
 	lost-center: $lcenter;
-	/*background-color: color( #1E1E21 shade(10%));*/
+	background-color: color( #1E1E21 shade(30%));
 }
 .hiderailsblock {
 	display: none;

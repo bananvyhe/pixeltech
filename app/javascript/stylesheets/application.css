@@ -131,7 +131,12 @@ body {
   margin-left: -1em;
 }
 #topBlank {
-  height: $topSizePanel
+  height: $topBlank;
+ 
+}
+.topBlank {
+  height: $topBlank;
+ 
 }
 .lost1 {
   lost-column: 1/2;
