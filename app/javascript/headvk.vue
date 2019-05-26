@@ -4,6 +4,7 @@
     <div class='sliderRait'><span>рейтинг: &nbsp;</span>
       <el-slider style='width: 25em;'
       v-model="value"
+      :max='40'
       input-size="mini"
       show-input>
     </el-slider>
