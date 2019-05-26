@@ -5,7 +5,7 @@ class Api::V1::VksController < ApiController
   before_action :set_user
   before_action :authorize_access_request!, only: [:associate]
 	def index
-    @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(25).offset(@pos)
+    @vks = Vk.where('raiting > ?', @rait).order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(25).offset(@pos)
     # @app = current_user.vk_ids
     # Pry.start(binding)
     # render json: @vks, :include => :appointments, :except => [:created_at, :updated_at]
@@ -40,8 +40,9 @@ class Api::V1::VksController < ApiController
     end
   end
 
-  def create
+  def create 
 		params.require(:_json).each do |d|
+    url = d[:url]
     wall = d[:wall]
     like = d[:v_like]
     views = d[:v_views]
@@ -49,7 +50,7 @@ class Api::V1::VksController < ApiController
     medias_row = d[:medias_row]
     thumb_map_img_as_div = d[:thumb_map_img_as_div]
     title = d[:title]
-    TobdWorker.perform_async(wall, like, views, posted_at, thumb_map_img_as_div, title, medias_row)
+    TobdWorker.perform_async(url, wall, like, views, posted_at, thumb_map_img_as_div, title, medias_row)
 	end
 
   end 
@@ -68,5 +69,9 @@ class Api::V1::VksController < ApiController
     if (params[:pos])
       @pos = params[:pos]
     end
+    if (params[:rait])
+      @rait = params[:rait]
+    end
+      
   end 
 end

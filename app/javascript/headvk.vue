@@ -1,6 +1,17 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
 <div id="app">
+    <div class='sliderRait'><span>рейтинг: &nbsp;</span>
+      <el-slider style='width: 25em;'
+      v-model="value"
+      input-size="mini"
+      show-input>
+    </el-slider>
+    <div class="filterBut">
+          <el-button v-on:click="filterRes" size='mini'>показать</el-button> 
+    </div>
+
+  </div>
   <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка..."></div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
     <div >
@@ -171,6 +182,7 @@ var cmp = {
 export default {
   data: function () {
     return {  
+      value: 20,
       loading: true,
       scrollTop: '',
       scrollBottom: '',
@@ -231,6 +243,10 @@ export default {
 
   },
   methods: {
+    filterRes() {
+      this.alldata = [],
+      this.addBeer()
+    },
     anim() {
       this.scrollTop = window.scrollY;
       this.scrollBottom = window.scrollY + window.innerHeight;
@@ -270,6 +286,7 @@ export default {
         method: 'get',
         url: '/api/v1/vks',
         params: {
+          rait: this.value,
           pos: this.pos
         } 
       })
@@ -301,6 +318,18 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+.filterBut {
+  padding-left: 2em;
+  display: flex;
+  align-items: center;
+}
+.sliderRait {
+  /*height: 4em;*/
+  /*width: 25em;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .vkpost:nth-child(odd) {
   transition: 0.1s ease-out;
   left: -1000px;
