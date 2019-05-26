@@ -5,9 +5,8 @@
       <el-slider style='width: 15em;'
       v-model="value"
       range
-      :marks="marks"
-      :max='50'
-      >
+      :max='60'
+      :marks="marks">
     </el-slider>
     <div class="filterBut">
           <el-button v-on:click="filterRes" size='mini'>показать</el-button> 
@@ -184,11 +183,11 @@ var cmp = {
 export default {
   data: function () {
     return {
+      value: [20, 60],
       marks: {
         20: '20',
         40: '40'
       },
-      value: [20, 50],
       loading: true,
       scrollTop: '',
       scrollBottom: '',
@@ -330,6 +329,7 @@ export default {
   align-items: center;
 }
 .sliderRait {
+  padding: 0 0 0.7em 1.7em;
   /*height: 4em;*/
   /*width: 25em;*/
   display: flex;
