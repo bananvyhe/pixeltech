@@ -2,11 +2,12 @@
 <template>
 <div id="app">
     <div class='sliderRait'><span>рейтинг: &nbsp;</span>
-      <el-slider style='width: 25em;'
+      <el-slider style='width: 15em;'
       v-model="value"
-      :max='40'
-      input-size="mini"
-      show-input>
+      range
+      :marks="marks"
+      :max='50'
+      >
     </el-slider>
     <div class="filterBut">
           <el-button v-on:click="filterRes" size='mini'>показать</el-button> 
@@ -182,8 +183,12 @@ var cmp = {
  
 export default {
   data: function () {
-    return {  
-      value: 20,
+    return {
+      marks: {
+        20: '20',
+        40: '40'
+      },
+      value: [20, 50],
       loading: true,
       scrollTop: '',
       scrollBottom: '',
