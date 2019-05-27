@@ -61,7 +61,7 @@ class Api::V1::VksController < ApiController
   end
 
   def vk_params
-    params.require(:vk).permit(:wall, :medias_row, :raiting, :title, :posted_at, :v_views, :v_like, :thumb_map_img_as_div)
+    params.require(:vk).permit(:url, :wall, :medias_row, :raiting, :title, :posted_at, :v_views, :v_like, :thumb_map_img_as_div)
   end
 
   def set_vks

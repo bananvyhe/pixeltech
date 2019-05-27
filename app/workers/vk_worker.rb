@@ -6,7 +6,7 @@ class VkWorker < ApplicationController
  # require 'pry'
 	include Sidekiq::Worker
 	def perform	
-		def selection_scrapped(row)
+		def selection_scrapped(row, url)
 			title     = row.css('.pi_text').inner_text.sub("Expand text…", "").sub("#", " ")
 			posted_at = row.css('.wi_date').inner_text
 			mane = row.css('.v_views').inner_text
@@ -34,6 +34,7 @@ class VkWorker < ApplicationController
  			# thumb_map_img_as_div = thumb_map_img_as_div[3...-3]
 			wall = row.css('div.wi_info a').map { |link| link['href'] }
 			data = {
+				url: url,
 				wall: wall,
 					medias_row: medias_row,
 			    title: title,
@@ -41,12 +42,15 @@ class VkWorker < ApplicationController
 			    v_views: v_views,
 			    v_like: v_like,
 			    thumb_map_img_as_div: thumb_map_img_as_div
-			  }	
-				@rowsd << data
-			end
+			 }	
+			@rowsd << data
+		end
 		agent = Mechanize.new
+		
+
 		url=['https://vk.com/chillrussia',
-			'https://vk.com/powermetalheads',
+			'https://vk.com/po_jesti',
+					'https://vk.com/powermetalheads',
 			'https://vk.com/mtblog',
 			'https://vk.com/warm_music',
 			'https://vk.com/soundtracks_for_coding',
@@ -54,13 +58,12 @@ class VkWorker < ApplicationController
 			'https://vk.com/e_music_ambient',
 			'https://vk.com/fashionsound',
 			'https://vk.com/joise',
-			'https://vk.com/clevermusic',
-			'https://vk.com/po_jesti']
+			'https://vk.com/clevermusic']
 		@rowsd = Array.new
 		timer = rand(1.0 .. 2.0)
 		url.each do |url|
 	 		page = agent.get(url)
- 
+ 			url = url
 			show_more = agent.page.link_with(text: 'Show more').click
  			sleep(timer)
 			show_more1 = show_more.link_with(text: 'Show more').click 
@@ -82,22 +85,22 @@ class VkWorker < ApplicationController
 			
  			
 			page.css('.wall_item').each do |row|
-				selection_scrapped(row)
+				selection_scrapped(row, url)
 			end
 			show_more.css('.wall_item').each do |row|
-				selection_scrapped(row)
+				selection_scrapped(row, url)
 			end
 			show_more1.css('.wall_item').each do |row|
-				selection_scrapped(row)
+				selection_scrapped(row, url)
 			end
 			show_more2.css('.wall_item').each do |row|
-				selection_scrapped(row)
+				selection_scrapped(row, url)
 			end
 			show_more3.css('.wall_item').each do |row|
-				selection_scrapped(row)
+				selection_scrapped(row, url)
 			end
 			show_more4.css('.wall_item').each do |row|
-				selection_scrapped(row)
+				selection_scrapped(row, url)
 			end
 			# show_more5.css('.wall_item').each do |row|
 			# 	selection_scrapped(row)
