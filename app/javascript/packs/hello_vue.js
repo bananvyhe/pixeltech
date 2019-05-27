@@ -6,7 +6,8 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 import TurbolinksAdapter from 'vue-turbolinks';
 Vue.use(TurbolinksAdapter)
-import Vue from 'vue/dist/vue.esm.js'
+// import Vue from 'vue/dist/vue.esm.js'
+import Vue from 'vue'
 import axios from 'axios'
 // import TurbolinksAdapter from 'vue-turbolinks'
 // Vue.use(TurbolinksAdapter)
@@ -63,7 +64,8 @@ import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
  
 import {Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
-Vue.prototype.$message = Message;  
+Vue.prototype.$message = Message; 
+Vue.prototype.$ELEMENT = { size: 'small', zIndex: 2000 }; 
 Vue.use(Slider)
 Vue.use(Icon)
 Vue.use(Popover)
