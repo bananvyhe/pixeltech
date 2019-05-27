@@ -1,6 +1,6 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
-<div id="app">
+<div id="app"> 
     <div class='sliderRait'><span>рейтинг: &nbsp;</span>
       <el-slider style='width: 15em;'
       v-model="value"
@@ -186,7 +186,7 @@ export default {
       value: [20, 60],
       marks: {
         20: '20',
-        40: '40'
+        40: '60'
       },
       loading: true,
       scrollTop: '',
@@ -249,8 +249,13 @@ export default {
   },
   methods: {
     filterRes() {
-      this.alldata = [],
-      this.addBeer()
+      this.alldata = [];
+      this.pos = 0;
+      var self = this
+      setTimeout(function(){
+        self.addBeer()
+      },300 );
+      
     },
     anim() {
       this.scrollTop = window.scrollY;
