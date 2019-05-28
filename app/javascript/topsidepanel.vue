@@ -592,7 +592,7 @@ align-self: center;
 	z-index: 49;
 	overflow-x: auto;
 	white-space: nowrap;
-	padding: 0 1.3em;
+	padding: 0 0.4em;
 	/*align-self: center;*/
 	lost-column: 1/2 2 0em; 
 	lost-flex-container: row;
@@ -612,6 +612,7 @@ align-self: center;
 
 }
 .wrap {
+	padding: 0.1em 0.1em;
 	display: inline-block;
 }
 /*.topside { 
