@@ -165,6 +165,7 @@ var cmp = {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       }).then((response) => { 
+        this.status = '';
         // this.$store.commit('gamesendplus', 100)
         // this.gamesendplus({
         //   amount: loa
@@ -180,7 +181,7 @@ var cmp = {
       setTimeout(function(){
         self.status = 'linkVisited';
         self.link = 'visited'
-      },1600 );
+      },800 );
       this.makeProceedLink() 
     }
   }
