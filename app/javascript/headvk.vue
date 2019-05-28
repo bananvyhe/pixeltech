@@ -557,7 +557,7 @@ export default {
   position: relative;
 }
 #app {
-  padding-top: 1.4em;
+  /*padding-top: 1.4em;*/
   overflow: hidden;
   @media (--only-1600more-screen) {
     lost-center: $lostCenter;
