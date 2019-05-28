@@ -2,20 +2,23 @@
 <template>
 <div id="app">
 
-    <div class='sliderRait'>
-      <el-slider 
-      :label="рейтинг"
-      :marks='marks'
-      v-model="value"
-      range
-      :max='60'
-      >
-      </el-slider>
-      <div class="filterBut">
-        <el-button v-on:click="filterRes" size='mini'>показать</el-button> 
-      </div>
+  <div class='sliderRait'>
+    <div class="labelSlide plashka">
+      рейтинг:
     </div>
- 
+    <el-slider 
+    :label="рейтинг"
+    :marks='marks'
+    v-model="value"
+    range
+    :max='60'
+    >
+    </el-slider>
+    <div class="filterBut">
+      <el-button v-on:click="filterRes" size='mini'>показать</el-button> 
+    </div>
+  </div>
+
   <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка..."></div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
     <div >
@@ -331,6 +334,10 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+.labelSlide {
+
+  padding-right: 1em;
+}
 .filterBut {
   padding-left: 2em;
  

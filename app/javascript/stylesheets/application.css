@@ -317,12 +317,12 @@ body {
   height: 12px;
   width: 12px;
   @media (--only-small-screen) {
-    height: 18px;
-    width: 18px;
+    height: 14px;
+    width: 14px;
   }
   @media (--only-xsmall-screen) {
-    height: 18px;
-    width: 18px;
+    height: 14px;
+    width: 14px;
   }
 }
 .el-slider {
