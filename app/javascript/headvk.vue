@@ -15,7 +15,7 @@
     >
     </el-slider>
     <div class="filterBut">
-      <el-button v-on:click="filterRes" size='mini'>показать</el-button> 
+      <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
     </div>
   </div>
 

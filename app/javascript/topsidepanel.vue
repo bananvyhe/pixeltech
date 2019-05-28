@@ -3,7 +3,7 @@
 		<div class="bpad smalltext" v-bind:style="styleObject"> 
 			<div class="logohead">
 				<div class="voodoo" v-if="!$store.getters.role">
-					<div class="basecamp">Voodoo team</div>&nbsp;&nbsp;
+					<div class="basecamp">Cyber team</div>&nbsp;&nbsp;
 					<!-- <div class="swing"> -->
 					<request class="request"></request>
 					<!-- </div> -->
@@ -394,6 +394,7 @@
 	align-self: center;
 }
 .basecamp {
+	justify-content: center;
 /*  @media (--only-small-screen) {
 		display: none;
   }	
