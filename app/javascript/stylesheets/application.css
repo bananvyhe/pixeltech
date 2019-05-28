@@ -302,6 +302,38 @@ body {
 .el-progress__text {
   adjust-font-size: fs small !important;
 }
+.el-slider__bar {
+  height: 3px !important;
+}
+.el-slider__runway {
+  height: 3px !important;
+}
+.el-slider__button-wrapper {
+  top: -16px;
+ 
+} 
+.el-slider__button {
+
+  height: 12px;
+  width: 12px;
+  @media (--only-small-screen) {
+    height: 18px;
+    width: 18px;
+  }
+  @media (--only-xsmall-screen) {
+    height: 18px;
+    width: 18px;
+  }
+}
+.el-slider {
+  width: 8em;
+  @media (--only-small-screen) {
+    width: 15em;
+  }
+  @media (--only-xsmall-screen) {
+    width: 15em;
+  }
+}
 .formzone {
   display: flex;
   justify-content: flex-end;

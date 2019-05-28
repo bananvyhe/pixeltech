@@ -1,18 +1,21 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
-<div id="app"> 
-    <div class='sliderRait'><span>рейтинг: &nbsp;</span>
-      <el-slider style='width: 15em;'
+<div id="app">
+
+    <div class='sliderRait'>
+      <el-slider 
+      :label="рейтинг"
+      :marks='marks'
       v-model="value"
       range
       :max='60'
-      :marks="marks">
-    </el-slider>
-    <div class="filterBut">
-          <el-button v-on:click="filterRes" size='mini'>показать</el-button> 
+      >
+      </el-slider>
+      <div class="filterBut">
+        <el-button v-on:click="filterRes" size='mini'>показать</el-button> 
+      </div>
     </div>
-
-  </div>
+ 
   <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка..."></div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
     <div >
@@ -330,16 +333,20 @@ export default {
 @import "_extends";
 .filterBut {
   padding-left: 2em;
-  display: flex;
-  align-items: center;
+ 
 }
 .sliderRait {
-  padding: 0 0 0.7em 1.7em;
+  /*background-color: color( #1E1E21 shade(30%));*/
+  border: 1px solid color( #1E1E21 shade(30%));
+  padding: 0.5em 0 0.5em 1.7em;
+  margin: 0.5em 0em;
   /*height: 4em;*/
   /*width: 25em;*/
   display: flex;
   flex-direction: row;
   align-items: center;
+  /*justify-content: center;*/
+
 }
 .vkpost:nth-child(odd) {
   transition: 0.1s ease-out;
