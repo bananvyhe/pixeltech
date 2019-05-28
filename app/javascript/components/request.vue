@@ -6,14 +6,14 @@
         </el-button>
       </div>
     </div>
-    <el-dialog class="pos" top="18vh" :width="calcul" title="Заявка:" :visible.sync="dialogFormVisible" :lock-scroll="false">
+    <el-dialog class="pos" top="18vh" :width="calcul" title="Задать вопрос:" :visible.sync="dialogFormVisible" :lock-scroll="false">
       <el-form :model="form" ref="forma">  
         <el-form-item 
           prop="email" 
           size="mini" 
           label="Емайл:"
           :rules="[
-            { required: true, message: 'Введите адрес', trigger: 'blur' },
+            { required: true, message: 'Введите обратный адрес', trigger: 'blur' },
             { type: 'email', message: 'Неправильный адрес почты', trigger: ['blur', 'change'] }
           ]">
           <el-input v-model="form.email" auto-complete="off"></el-input>
