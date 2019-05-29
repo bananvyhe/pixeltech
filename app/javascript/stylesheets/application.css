@@ -326,12 +326,12 @@ body {
   }
 }
 .el-slider {
-  width: 8em;
+  width: 10em;
   @media (--only-small-screen) {
-    width: 15em;
+    width: 10em;
   }
   @media (--only-xsmall-screen) {
-    width: 15em;
+    width: 13em;
   }
 }
 .formzone {

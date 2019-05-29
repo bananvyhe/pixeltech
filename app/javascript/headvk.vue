@@ -1,22 +1,50 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
 <div id="app">
+  <div class="inputForm">
+    <div class='sliderRait'>
+      <div>
+        
 
-  <div class='sliderRait'>
-    <div class="labelSlide plashka">
-      рейтинг:
-    </div>
-    <el-slider 
-    :marks='marks'
-    v-model="value"
-    range
-    :max='60'
-    >
-    </el-slider>
-    <div class="filterBut">
-      <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
-    </div>
+      <div class="labelSlide plashka">
+        рейтинг:
+      </div>
+
+        <el-slider 
+        class=""
+        :marks='marks'
+        v-model="value"
+        range
+        :max='60'
+        >
+        </el-slider>
+      </div> 
+      <div class="filterBut">
+        <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
+      </div>
+    </div>    
+
+
+    <el-select
+      class="elselect"
+      v-model="optionsValue"
+      multiple
+      filterable
+      allow-create
+      default-first-option
+      placeholder="выбрать контент">
+      <el-option
+        v-for="item in options"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value">
+      </el-option>
+    </el-select>
   </div>
+
+
+
+
 
   <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка..."></div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
@@ -194,7 +222,7 @@ var cmp = {
       },800 );
 
 
-      if (this.userId.length > 0) {
+      if (this.userId.length < 1) {
         this.makeProceedLink() 
       }
     }
@@ -204,6 +232,18 @@ var cmp = {
 export default {
   data: function () {
     return {
+      options: [{
+          value: 'HTML',
+          label: 'HTML'
+        }, {
+          value: 'CSS',
+          label: 'CSS'
+        }, {
+          value: 'JavaScript',
+          label: 'JavaScript'
+        }],
+      optionsValue: [],
+
       value: [20, 60],
       marks: {
         20: '20',
@@ -349,25 +389,48 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
-.labelSlide {
+.elselect {
+  width: 100%;
+}
+.inputForm {
+  width: 100%;
+  /*lost-column: 2/3;*/
 
+}
+/*.optionSlider {
+
+  width: 400px;
+  background-color: #dad;
+}*/
+.labelSlide {
   padding-right: 1em;
 }
 .filterBut {
-  padding-left: 2em;
+  margin: 0 0 0 2em;
  
 }
 .sliderRait {
   /*background-color: color( #1E1E21 shade(30%));*/
   border: 1px solid color( #1E1E21 shade(30%));
-  padding: 0.4em 0 0.4em 1.7em;
-  margin: 0.2em 0em 0.3em;
+  padding: 0.2em 1.5em 0.2em 1.7em;
+  margin: 0.3em 0em;
   /*height: 4em;*/
   /*width: 25em;*/
   display: flex;
   flex-direction: row;
   align-items: center;
-  /*justify-content: center;*/
+  justify-content: space-between;
+  lost-column: 1/2;
+    @media (--only-small-screen) {
+    lost-column: 3/4;
+  }
+  @media (--only-xsmall-screen) {
+    lost-column: 1/1;
+  }
+  div {
+    display: flex;
+    align-items: center;
+  }
 
 }
 .vkpost:nth-child(odd) {
@@ -570,14 +633,16 @@ export default {
 .bottom {
   position: relative;
 }
-#app {
+#app { lost-center: $lostCenter;
   /*padding-top: 1.4em;*/
   overflow: hidden;
+  @extend .display;
+  flex-direction: column;
   @media (--only-1600more-screen) {
     lost-center: $lostCenter;
   }
   @media (--only-medium-screen) {
-    lost-center: 980px;
+    lost-center: $lostCenter;
   }
 },
 .raitingdate {
@@ -698,8 +763,7 @@ export default {
   align-content: center;
 }
 #app {
-  @extend .display;
-  flex-direction: column;
+
 }
 h3 {
   margin-bottom: 5px;
