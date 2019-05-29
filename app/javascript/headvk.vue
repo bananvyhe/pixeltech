@@ -346,8 +346,8 @@ export default {
 .sliderRait {
   /*background-color: color( #1E1E21 shade(30%));*/
   border: 1px solid color( #1E1E21 shade(30%));
-  padding: 0.2em 0 0.5em 1.7em;
-  margin: 0.3em 0em;
+  padding: 0.4em 0 0.4em 1.7em;
+  margin: 0.2em 0em 0.3em;
   /*height: 4em;*/
   /*width: 25em;*/
   display: flex;
