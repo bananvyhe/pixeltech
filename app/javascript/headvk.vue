@@ -7,7 +7,6 @@
       рейтинг:
     </div>
     <el-slider 
-    :label="рейтинг"
     :marks='marks'
     v-model="value"
     range
@@ -84,8 +83,8 @@ var cmp = {
   },
   mounted() {
       // if (this.userId){
-        if (this.userId && this.userId.length > 0 ){
-          // this.link = 'visited'
+        if (!this.$store.getters.token){
+         this.status = 'link'
         }        
       // }
 
@@ -119,8 +118,9 @@ var cmp = {
       }     
     },
     leaveAction: function() {
+      // this.status = '';
       if ( this.link != 'visited' &&  this.userId && this.userId.length < 1 ) {
-        this.status = '';
+        this.status = 'link';
       }else if( this.link == 'visited' || this.userId && this.userId.length > 0 ){
         this.status = '';
       } else if(!this.userId){
@@ -166,7 +166,7 @@ var cmp = {
         } 
       }).then((response) => { 
 
-        // this.status = 'link';
+
         // this.link = 'visited'
         // this.$store.commit('gamesendplus', 100)
         // this.gamesendplus({
@@ -175,15 +175,25 @@ var cmp = {
       })
     },
     changeStatus: function() {
-      this.status = 'linkactive2';
+                  if (!this.$store.getters.token){
+              this.status = 'link';
+            }
+      if (this.$store.getters.token){
+        this.status = 'linkactive2';
+      }
+
       if (this.link != 'visited' &&  this.userId.length < 1) {
         this.exppush() 
       }
+
       var self = this;
       setTimeout(function(){
-        self.status = '';
-        self.link = 'visited'
+        self.status = 'linkVisited';
+        self.link = 'visited';
+        // self.status = '';
       },800 );
+
+
       if (this.userId.length > 0) {
         this.makeProceedLink() 
       }
