@@ -85,7 +85,7 @@ var cmp = {
   mounted() {
       // if (this.userId){
         if (this.userId && this.userId.length > 0 ){
-          this.link = 'visited'
+          // this.link = 'visited'
         }        
       // }
 
@@ -120,7 +120,7 @@ var cmp = {
     },
     leaveAction: function() {
       if ( this.link != 'visited' &&  this.userId && this.userId.length < 1 ) {
-        this.status = 'link';
+        this.status = '';
       }else if( this.link == 'visited' || this.userId && this.userId.length > 0 ){
         this.status = '';
       } else if(!this.userId){
@@ -165,7 +165,9 @@ var cmp = {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       }).then((response) => { 
-        this.status = '';
+
+        // this.status = 'link';
+        // this.link = 'visited'
         // this.$store.commit('gamesendplus', 100)
         // this.gamesendplus({
         //   amount: loa
@@ -179,10 +181,12 @@ var cmp = {
       }
       var self = this;
       setTimeout(function(){
-        self.status = 'linkVisited';
+        self.status = '';
         self.link = 'visited'
       },800 );
-      this.makeProceedLink() 
+      if (this.userId.length > 0) {
+        this.makeProceedLink() 
+      }
     }
   }
 };
