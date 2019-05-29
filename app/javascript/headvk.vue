@@ -3,7 +3,7 @@
 <div id="app">
   <div class="inputForm">
     <div class='sliderRait'>
-      <div>
+      <div class="bord">
         
 
       <div class="labelSlide plashka">
@@ -395,7 +395,8 @@ export default {
 .inputForm {
   width: 100%;
   /*lost-column: 2/3;*/
-
+  padding: 0.2em 0.5em;
+  margin-bottom: 0.5em;
 }
 /*.optionSlider {
 
@@ -411,7 +412,7 @@ export default {
 }
 .sliderRait {
   /*background-color: color( #1E1E21 shade(30%));*/
-  border: 1px solid color( #1E1E21 shade(30%));
+  
   padding: 0.2em 1.5em 0.2em 1.7em;
   margin: 0.3em 0em;
   /*height: 4em;*/
@@ -419,17 +420,18 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  lost-column: 1/2;
+  justify-content: flex-start;
+  /*lost-column: 1/2;*/
     @media (--only-small-screen) {
-    lost-column: 3/4;
+    /*lost-column: 3/4;*/
   }
   @media (--only-xsmall-screen) {
-    lost-column: 1/1;
+    /*lost-column: 1/1;*/
   }
-  div {
+  .bord {
     display: flex;
     align-items: center;
+
   }
 
 }
