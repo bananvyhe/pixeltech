@@ -415,7 +415,7 @@ export default {
 @import "_extends";
 .avatarSect1 {
   display: flex;
-  height: 80vh;
+  height: 80vw;
   width: 100%;
  
   background-position: center;
