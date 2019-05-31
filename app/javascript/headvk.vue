@@ -3,14 +3,12 @@
 <div id="app">
   <el-dialog
     class="containerpop"
- 
     :visible.sync="dialogVisible"
-    width="90%">
-
-
-      <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid}"  >
-          </div>
-            <span slot="footer" class="dialog-footer"></span>
+    width="90%"
+    >
+      <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid}">
+      </div>
+      <span slot="footer" class="dialog-footer"></span>
   </el-dialog>
   <div class="inputForm">
     <div class='sliderRait'>
@@ -415,14 +413,14 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
- 
 .avatarSect1 {
   display: flex;
-  height: 80vw;
+  height: 80vh;
+  width: 100%;
  
   background-position: center;
-    background-size: contain; 
-    background-repeat: no-repeat;
+  background-size: contain; 
+  background-repeat: no-repeat;
 }
 .elselect {
   width: 100%;
