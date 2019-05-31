@@ -6,32 +6,30 @@
     :visible.sync="dialogVisible"
     width="90%"
     >
-      <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid}">
-      </div>
-      <span slot="footer" class="dialog-footer"></span>
+    <a :href="empid.slice(1, -1)" target="_blank">
+    <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid}">
+    </div></a>
+    <span slot="footer" class="dialog-footer"></span>
   </el-dialog>
   <div class="inputForm">
     <div class='sliderRait'>
       <div class="bord">
-        
-
-      <div class="labelSlide plashka">
-        рейтинг:
-      </div>
-
-        <el-slider 
-        class=""
-        :marks='marks'
-        v-model="value"
-        range
-        :max='60'
-        >
-        </el-slider>
-      </div> 
-      <div class="filterBut">
-        <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
-      </div>
-    </div>    
+        <div class="labelSlide plashka">
+          рейтинг:
+          </div>
+            <el-slider 
+            class=""
+            :marks='marks'
+            v-model="value"
+            range
+            :max='60'
+            >
+            </el-slider>
+          </div> 
+          <div class="filterBut">
+            <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
+          </div>
+        </div>    
 
 
 <!--     <el-select
@@ -416,7 +414,7 @@ export default {
 .avatarSect1 {
   display: flex;
   height: 80vw;
-  width: 100%;
+
  
   background-position: center;
   background-size: contain; 
