@@ -1,6 +1,17 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
 <div id="app">
+  <el-dialog
+    class="containerpop"
+ 
+    :visible.sync="dialogVisible"
+    width="90%">
+
+
+      <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid}"  >
+          </div>
+            <span slot="footer" class="dialog-footer"></span>
+  </el-dialog>
   <div class="inputForm">
     <div class='sliderRait'>
       <div class="bord">
@@ -25,7 +36,7 @@
     </div>    
 
 
-    <el-select
+<!--     <el-select
       class="elselect"
       v-model="optionsValue"
       multiple
@@ -39,7 +50,7 @@
         :label="item.label"
         :value="item.value">
       </el-option>
-    </el-select>
+    </el-select> -->
   </div>
 
 
@@ -49,19 +60,27 @@
   <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка..."></div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
     <div >
-    <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
-      <el-carousel  type="card" :height="carouselh" >
-        <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
-          <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
-        </el-carousel-item>
-      </el-carousel>
-    </div>
-    <div v-else class="itembg"  v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
+      <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
+        <el-carousel  type="card" :height="carouselh" >
+          <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
+            <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
+          </el-carousel-item>
+        </el-carousel>
+      </div>
+
+    <div v-else class="itembg"  v-for="item in data.thumb_map_img_as_div.split(',')" :key="item" @click="clickhandler(item, $event) "> 
+      <!-- <el-button @click="dialogVisible = true"  icon="el-icon-search" circle></el-button> -->
       <div v-if="data.thumb_map_img_as_div == 'nil'" class="noimage">
         нет фото
       </div>
-      <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}"  ></div> 
+      
+      
+        <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}" > 
+          <i class="el-icon-thumb"></i>
+        </div> 
+
     </div>
+
     <div :class="[data.thumb_map_img_as_div.split(',').length > 1 ? slideInfoClass :  simpleInfoClass]">
       {{data.title}}
       <div class="raitingdate" >
@@ -232,6 +251,8 @@ var cmp = {
 export default {
   data: function () {
     return {
+      empid: '',
+      dialogVisible: false,
       options: [{
           value: 'HTML',
           label: 'HTML'
@@ -309,6 +330,11 @@ export default {
 
   },
   methods: {
+    clickhandler( event) {
+      this.dialogVisible = true;
+      this.empid = event;
+       
+    },
     filterRes() {
       this.alldata = [];
       this.pos = 0;
@@ -389,6 +415,15 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+ 
+.avatarSect1 {
+  display: flex;
+  height: 80vw;
+ 
+  background-position: center;
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
 .elselect {
   width: 100%;
 }
