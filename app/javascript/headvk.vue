@@ -422,15 +422,17 @@ export default {
   -o-transform: rotate(-4deg);
   -ms-transform: rotate(-4deg);
   transform: rotate(-4deg);*/
-  font-size: 5em;
+  /*font-size: 1em;*/
   font-weight: bold;
-  color: color( #1E1E21 shade(7%));
+  color: color( $tuscan shade(47%));
+  /*color: color( #1E1E21 shade(7%));*/
   position: absolute;
 /*  top: 6%;
   left: 10%;*/
 align-items: flex-end;
 justify-content: flex-end;
 padding: 0.7em 0.5em;
+ 
   height: 100%;
   display: flex;
 
