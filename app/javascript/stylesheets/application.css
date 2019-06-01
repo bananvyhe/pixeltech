@@ -171,6 +171,7 @@ body {
  
 }
 .vkpost {
+  border: 1em  solid #1E1E21;
   position: relative;
   overflow: hidden;
   padding: 0.7em 1em 0.7em 0.7em;
@@ -178,6 +179,7 @@ body {
 .vkpost:nth-child(even) {
   position: relative;
   z-index: 1;
+  border: 1em solid color( $HeadBackColor  shade(46%));
   background-color: color( $HeadBackColor  shade(46%));
 }
 .vktext {

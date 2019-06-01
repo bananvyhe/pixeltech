@@ -1,6 +1,7 @@
 # json.id @vks.ids
 # json.title @vks.title
 json.array! @vks do |vks|
+	json.url vks.url
 	json.id vks.id
 	json.title vks.title
 	json.medias_row vks.medias_row

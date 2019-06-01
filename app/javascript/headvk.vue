@@ -55,11 +55,14 @@
 
   <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка..."></div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
+           <div class="namewww hugetext">
+        {{data.url.substr(15)}}
+      </div>
     <div >
       <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
         <el-carousel  type="card" :height="carouselh" >
           <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
-            <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"></div> 
+            <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"  @click="clickhandler(item, $event) "></div> 
           </el-carousel-item>
         </el-carousel>
       </div>
@@ -72,13 +75,14 @@
       
       
         <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}" > 
-          <i class="el-icon-thumb"></i>
+           
         </div> 
 
     </div>
 
     <div :class="[data.thumb_map_img_as_div.split(',').length > 1 ? slideInfoClass :  simpleInfoClass]">
       {{data.title}}
+
       <div class="raitingdate" >
         <div class="vkdate">{{data.posted_at}}</div>
         <div class="vkraiting largertext">{{data.raiting}}</div>        
@@ -411,6 +415,27 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+.namewww{
+
+/*  -moz-transform: rotate(-4deg);
+  -webkit-transform: rotate(-4deg);
+  -o-transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  transform: rotate(-4deg);*/
+  font-size: 5em;
+  font-weight: bold;
+  color: color( #1E1E21 shade(7%));
+  position: absolute;
+/*  top: 6%;
+  left: 10%;*/
+align-items: flex-end;
+justify-content: flex-end;
+padding: 0.7em 0.5em;
+  height: 100%;
+  display: flex;
+
+  width: 100%;
+}
 .avatarSect1 {
   display: flex;
   height: 80vw;
@@ -424,6 +449,7 @@ export default {
   width: 100%;
 }
 .inputForm {
+  position: relative;
   width: 100%;
   /*lost-column: 2/3;*/
   padding: 0.2em 0.5em;
