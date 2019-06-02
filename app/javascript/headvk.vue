@@ -437,7 +437,7 @@ padding: 0.7em 1em;
   display: flex;
 
   width: 100%;
-  margin-bottom: 1em;
+ 
 
 }
 .namewww2{
