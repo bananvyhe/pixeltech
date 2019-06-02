@@ -456,7 +456,7 @@ margin: -0.3em -1.3em;
   position: absolute;
 /* */
   display: flex;
- 
+ height: 100%;
 justify-content: flex-end;
 align-self: flex-end;
 
@@ -466,7 +466,7 @@ padding: 0.3em 0.5em;
   width: 100%;
     @media (--only-xsmall-screen) {
     align-items: flex-end;
-    padding: 0.7em 1em;
+    padding: 0.8em 1em;
   }
 }
 .avatarSect1 {
