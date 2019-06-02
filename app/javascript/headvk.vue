@@ -7,7 +7,7 @@
     width="90%"
     >
     <a :href="empid.slice(1, -1)" target="_blank">
-    <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid}">
+    <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid.slice(1, -1)}">
     </div></a>
     <span slot="footer" class="dialog-footer"></span>
   </el-dialog>
@@ -55,9 +55,9 @@
 
   <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка..."></div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
-           <div class="namewww hugetext">
-        {{data.url.substr(15)}}
-      </div>
+    <div class="namewww hugetext">
+      {{data.url.substr(15)}}
+    </div>
     <div >
       <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
         <el-carousel  type="card" :height="carouselh" >
@@ -427,8 +427,7 @@ export default {
   color: color( $tuscan shade(47%));
   /*color: color( #1E1E21 shade(7%));*/
   position: absolute;
-/*  top: 6%;
-  left: 10%;*/
+/* */
 align-items: flex-end;
 justify-content: flex-end;
 padding: 0.7em 0.5em;
