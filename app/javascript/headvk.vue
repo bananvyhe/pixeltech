@@ -432,7 +432,7 @@ export default {
 
 align-items: flex-start;
 justify-content: flex-end;
-margin: -0.7em -1.3em;
+margin: -0.3em -1.3em;
 
   height: 100%;
   display: flex;
@@ -456,7 +456,7 @@ margin: -0.7em -1.3em;
   position: absolute;
 /* */
   display: flex;
-align-items: flex-end;
+ 
 justify-content: flex-end;
 align-self: flex-end;
 
@@ -464,6 +464,10 @@ align-self: flex-end;
 /*bottom: 0;*/
 padding: 0.3em 0.5em;
   width: 100%;
+    @media (--only-xsmall-screen) {
+    align-items: flex-end;
+    padding: 0.7em 1em;
+  }
 }
 .avatarSect1 {
   display: flex;
