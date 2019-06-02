@@ -6,7 +6,7 @@
     :visible.sync="dialogVisible"
     width="90%"
     >
-    <a :href='empid.replace(/"/g,"")' target="_blank">
+    <a :href='empid.replace(/"/g,"")' target="_blank" >
     <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid.slice(1, -1)}">
     </div></a>
     <span slot="footer" class="dialog-footer"></span>
@@ -429,19 +429,21 @@ export default {
   /*color: color( #1E1E21 shade(7%));*/
   position: absolute;
 /* */
-align-items: flex-end;
+
+align-items: flex-start;
 justify-content: flex-end;
-padding: 0.7em 1em;
+margin: -0.7em -1.3em;
 
   height: 100%;
   display: flex;
 
   width: 100%;
- 
-
+  @media (--only-xsmall-screen) {
+    align-items: flex-end;
+    padding: 0.7em 1em;
+  }
 }
 .namewww2{
- 
   -moz-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
@@ -453,13 +455,14 @@ padding: 0.7em 1em;
   color: color( #1E1E21 shade(7%));
   position: absolute;
 /* */
+  display: flex;
 align-items: flex-end;
 justify-content: flex-end;
-padding: 3.7em 1em;
- 
-  height: 100%;
-  display: flex;
+align-self: flex-end;
 
+ /*background-color: #ada;*/
+/*bottom: 0;*/
+padding: 0.3em 0.5em;
   width: 100%;
 }
 .avatarSect1 {
