@@ -48,19 +48,16 @@
       </el-option>
     </el-select> -->
   </div>
-
-
-
-
-
-  <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка..."></div>
+  <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка...">
+  </div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
     <div class="namewww hugetext">
-      {{data.url.substr(15)}}
+<!--       {{data.url.substr(15)}} -->
     </div>
     <div >
       <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
-        <el-carousel type="card" :height="carouselh">{{data.thumb_map_img_as_div}}
+        <el-carousel type="card" :height="carouselh">
+          <!-- {{data.thumb_map_img_as_div}} -->
           <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
             <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}"  @click="clickhandler(item, $event) "></div> 
           </el-carousel-item>
