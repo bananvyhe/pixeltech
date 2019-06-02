@@ -51,9 +51,13 @@
   <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка...">
   </div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
-    <div class="namewww hugetext">
-<!--       {{data.url.substr(15)}} -->
+    <div class="namewww2">
+      {{data.url.substr(15).toUpperCase()}}
     </div>
+    <div class="namewww hugetext">
+      {{data.url.substr(15).toUpperCase()}}
+    </div>
+
     <div >
       <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
         <el-carousel type="card" :height="carouselh">
@@ -413,7 +417,7 @@ export default {
 @import "_variables";
 @import "_extends";
 .namewww{
-
+ 
 /*  -moz-transform: rotate(-4deg);
   -webkit-transform: rotate(-4deg);
   -o-transform: rotate(-4deg);
@@ -421,13 +425,37 @@ export default {
   transform: rotate(-4deg);*/
   /*font-size: 1em;*/
   font-weight: bold;
-  color: color( $tuscan shade(47%));
+  color: color( $tuscan shade(67%));
   /*color: color( #1E1E21 shade(7%));*/
   position: absolute;
 /* */
 align-items: flex-end;
 justify-content: flex-end;
-padding: 0.7em 0.5em;
+padding: 0.7em 1em;
+
+  height: 100%;
+  display: flex;
+
+  width: 100%;
+  margin-bottom: 1em;
+
+}
+.namewww2{
+ 
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+  font-size: 4em;
+  font-weight: bold;
+  /*color: color( $tuscan shade(67%));*/
+  color: color( #1E1E21 shade(7%));
+  position: absolute;
+/* */
+align-items: flex-end;
+justify-content: flex-end;
+padding: 3.7em 1em;
  
   height: 100%;
   display: flex;
