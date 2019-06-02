@@ -6,7 +6,7 @@
     :visible.sync="dialogVisible"
     width="90%"
     >
-    <a :href="empid.slice(1, -1)" target="_blank">
+    <a :href='empid.replace(/"/g,"")' target="_blank">
     <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid.slice(1, -1)}">
     </div></a>
     <span slot="footer" class="dialog-footer"></span>
@@ -60,9 +60,9 @@
     </div>
     <div >
       <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
-        <el-carousel  type="card" :height="carouselh" >
+        <el-carousel type="card" :height="carouselh">{{data.thumb_map_img_as_div}}
           <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
-            <div class="imgstyle"  v-bind:style="{backgroundImage: 'url('+ item}"  @click="clickhandler(item, $event) "></div> 
+            <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}"  @click="clickhandler(item, $event) "></div> 
           </el-carousel-item>
         </el-carousel>
       </div>
