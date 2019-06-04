@@ -464,7 +464,7 @@ margin: -0.3em -1.4em;
   /*padding: -4.5em 0.5em;*/
   width: 100%;
   @media (--only-xsmall-screen) {
-    margin: -0.4em 0;
+    margin: -0.35em 0;
     align-items: flex-end;
     /*padding: -10.7em 1em;*/
     transform-origin: 50% 100%;
@@ -750,6 +750,11 @@ margin: -0.3em -1.4em;
   margin-left: 0em;
   align-items: flex-end;
   align-self: flex-end;
+  @media (--only-xsmall-screen) {
+    padding-top: 2em;
+    margin: -1.9em 0;
+
+  }
 }
 /*Carousel*/
 .itembg2 {
@@ -838,6 +843,7 @@ margin: -0.3em -1.4em;
   padding:  2.4em 0 0 0em;
   margin: 0em 0;   
   @media (--only-xsmall-screen) {
+ 
     lost-column: 1/1 2 1.2em; 
     padding:  0.4em 0 0 0em;
   }  
