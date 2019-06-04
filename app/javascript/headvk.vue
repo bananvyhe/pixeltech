@@ -17,24 +17,27 @@
         <div class="labelSlide plashka">
           рейтинг:
         </div>
-          <el-slider 
-          class=""
-          :marks='marks'
-          v-model="value"
-          range
-          :max='60'
-          >
-          </el-slider>
-        </div> 
+        <el-slider 
+        class=""
+        :marks='marks'
+        v-model="value"
+        range
+        :max='60'
+        >
+        </el-slider>
         <div class="filterBut">
           <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
         </div>
+        <div class="filterbutton">
+        
+          <el-button size="mini" type="info" icon="el-icon-setting" circle></el-button>
+        </div>
+      </div> 
 
-      </div>  
-      <div class="filterbut">
-        <el-button type="info" icon="el-icon-message" circle></el-button>          
-      </div>
 
+
+    </div>  
+    
 
 
 <!--     <el-select
@@ -421,8 +424,12 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
-.filterbut {
+.filterbutton {
   display: flex;
+  align-items: right;
+  @media (--only-xsmall-screen) {
+    lost-column: 1/1;
+  }
 
 }
 .namewww{
@@ -513,6 +520,7 @@ margin: -0.3em -1.4em;
 }
 .filterBut {
   margin: 0 0 0 2em;
+  align-items: center; 
  
 }
 .sliderRait {
@@ -536,6 +544,9 @@ margin: -0.3em -1.4em;
   .bord {
     display: flex;
     align-items: center;
+      @media (--only-xsmall-screen) {
+    lost-column: 1/1;
+  }
 
   }
 
