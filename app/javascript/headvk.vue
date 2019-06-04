@@ -444,6 +444,7 @@ margin: -0.3em -1.4em;
   }
 }
 .namewww2{
+  z-index: -1;
   transform-origin: 100% 0;
   transform: rotate(-3deg);
   font-size: 4em;
@@ -457,13 +458,13 @@ margin: -0.3em -1.4em;
    height: 100%;
   justify-content: flex-end;
    
-  margin: -0.3em;
+  margin: -0.25em;
    /*background-color: #ada;*/
   /*bottom: 0;*/
   /*padding: -4.5em 0.5em;*/
   width: 100%;
   @media (--only-xsmall-screen) {
-    margin: -0.5em 0;
+    margin: -0.4em 0;
     align-items: flex-end;
     /*padding: -10.7em 1em;*/
     transform-origin: 50% 100%;
