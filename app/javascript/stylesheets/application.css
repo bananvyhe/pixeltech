@@ -175,7 +175,7 @@ body {
   border-right: 0.1em  solid color( $HeadBackColor  shade(46%));*/
   position: relative;
   overflow: hidden;
-  padding: 0.7em 1em 0.7em 0.7em;
+  padding: 0.5em 0.5em 0.7em 0.5em;
   margin: 0.2em;
 
   .namewww2{
@@ -187,7 +187,7 @@ body {
 .vkpost:nth-child(even) {
   position: relative;
   z-index: 1;
-  border: 0.5em solid color( $HeadBackColor  shade(46%));
+  border: 0.3em solid color( $HeadBackColor  shade(46%));
   background-color: color( $HeadBackColor  shade(46%));
   .namewww2{
     color: $bgpost1;
