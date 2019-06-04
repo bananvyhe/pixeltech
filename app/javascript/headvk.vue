@@ -16,20 +16,25 @@
       <div class="bord">
         <div class="labelSlide plashka">
           рейтинг:
-          </div>
-            <el-slider 
-            class=""
-            :marks='marks'
-            v-model="value"
-            range
-            :max='60'
-            >
-            </el-slider>
-          </div> 
-          <div class="filterBut">
-            <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
-          </div>
-        </div>    
+        </div>
+          <el-slider 
+          class=""
+          :marks='marks'
+          v-model="value"
+          range
+          :max='60'
+          >
+          </el-slider>
+        </div> 
+        <div class="filterBut">
+          <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
+        </div>
+
+      </div>  
+      <div class="filterbut">
+        <el-button type="info" icon="el-icon-message" circle></el-button>          
+      </div>
+
 
 
 <!--     <el-select
@@ -416,9 +421,12 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+.filterbut {
+  display: flex;
+
+}
 .namewww{
- 
-/*  -moz-transform: rotate(-4deg);
+  /*  -moz-transform: rotate(-4deg);
   -webkit-transform: rotate(-4deg);
   -o-transform: rotate(-4deg);
   -ms-transform: rotate(-4deg);
@@ -464,7 +472,7 @@ margin: -0.3em -1.4em;
   /*padding: -4.5em 0.5em;*/
   width: 100%;
   @media (--only-xsmall-screen) {
-    margin: -0.35em -0.2em;
+    margin: -0.4em -0.2em;
     align-items: flex-end;
 
     transform-origin: 50% 100%;
@@ -487,6 +495,8 @@ margin: -0.3em -1.4em;
   width: 100%;
 }
 .inputForm {
+  display: flex;
+  flex-direction: row;
   position: relative;
   width: 100%;
   /*lost-column: 2/3;*/
@@ -752,7 +762,7 @@ margin: -0.3em -1.4em;
   align-self: flex-end;
   @media (--only-xsmall-screen) {
     padding-top: 2em;
-    margin: -1.9em 0;
+    margin: -1.6em 0;
 
   }
 }
