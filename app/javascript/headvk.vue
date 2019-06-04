@@ -807,7 +807,7 @@ margin: -0.3em -1.4em;
     display: flex;
     position: absolute;
     right: -0.5em;
-    top: 1.7em;
+    top: 1em;
   }
   .raitingdate {
     position: absolute;
