@@ -432,7 +432,7 @@ export default {
 
 align-items: flex-start;
 justify-content: flex-end;
-margin: -0.3em -1.3em;
+margin: -0.3em -1.4em;
 
   height: 100%;
   display: flex;
@@ -444,30 +444,34 @@ margin: -0.3em -1.3em;
   }
 }
 .namewww2{
-  -moz-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-4deg);
-  transform: rotate(-4deg);
+  transform-origin: 100% 0;
+  transform: rotate(-3deg);
   font-size: 4em;
   font-weight: bold;
   /*color: color( $tuscan shade(67%));*/
-  color: color( #1E1E21 shade(7%));
+  /*color: color( #1E1E21 shade(7%));*/
+
   position: absolute;
 /* */
   display: flex;
- height: 100%;
-justify-content: flex-end;
-align-self: flex-end;
-
- /*background-color: #ada;*/
-/*bottom: 0;*/
-padding: 0.3em 0.5em;
-width: 100%;
+   height: 100%;
+  justify-content: flex-end;
+   
+  margin: -0.3em;
+   /*background-color: #ada;*/
+  /*bottom: 0;*/
+  /*padding: -4.5em 0.5em;*/
+  width: 100%;
   @media (--only-xsmall-screen) {
+    margin: -0.5em 0;
     align-items: flex-end;
-    padding: 0.8em 1em;
+    /*padding: -10.7em 1em;*/
+    transform-origin: 50% 100%;
+    transform: rotate(-6deg);
   }
+}
+.namewww2:nth-child(even){
+  color: color( $HeadBackColor  shade(46%));
 }
 .avatarSect1 {
   display: flex;

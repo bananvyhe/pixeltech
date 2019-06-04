@@ -18,6 +18,17 @@ plugins:
   # postcss-cssnext: {}
   postcss-font-magician: {
     custom: {
+      'elemend': {
+        variants: {
+          normal: {
+            400: {
+              url: {
+                woff2: 'fonts/elemental_end_italic-webfont.woff2'
+              }
+            } 
+          }
+        }
+      },      
       'aprior': {
         variants: {
           normal: {
@@ -62,6 +73,7 @@ plugins:
           }
         }
       },
+
       'RobotoReg': {
         variants: {
           normal: {
