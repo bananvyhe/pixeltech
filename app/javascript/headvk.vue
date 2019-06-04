@@ -521,7 +521,6 @@ margin: -0.3em -1.4em;
 .filterBut {
   margin: 0 0 0 2em;
   align-items: center; 
- 
 }
 .sliderRait {
   /*background-color: color( #1E1E21 shade(30%));*/
@@ -807,8 +806,8 @@ margin: -0.3em -1.4em;
   .mediabutton {
     display: flex;
     position: absolute;
-    right: 0.5em;
-    top: 0.3em;
+    right: -0.5em;
+    top: 1.7em;
   }
   .raitingdate {
     position: absolute;
