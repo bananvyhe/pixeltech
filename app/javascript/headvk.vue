@@ -266,10 +266,10 @@ export default {
         }],
       optionsValue: [],
 
-      value: [20, 60],
+      value: [10, 60],
       marks: {
-        20: '20',
-        40: '60'
+        10: '10',
+        60: '60'
       },
       loading: true,
       scrollTop: '',
@@ -463,8 +463,8 @@ align-self: flex-end;
  /*background-color: #ada;*/
 /*bottom: 0;*/
 padding: 0.3em 0.5em;
-  width: 100%;
-    @media (--only-xsmall-screen) {
+width: 100%;
+  @media (--only-xsmall-screen) {
     align-items: flex-end;
     padding: 0.8em 1em;
   }
