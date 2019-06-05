@@ -25,12 +25,13 @@
         :max='60'
         >
         </el-slider>
+        <!-- кнопка отправки  -->
         <div class="filterBut">
           <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
         </div>
+        <!-- фильтр категорий -->
         <div class="filterbutton">
-        
-          <el-button size="mini" type="info" icon="el-icon-setting" circle></el-button>
+          <filther></filther>
         </div>
       </div> 
 

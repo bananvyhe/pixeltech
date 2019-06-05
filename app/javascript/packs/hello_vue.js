@@ -21,6 +21,7 @@ import Topsidepanel from '../topsidepanel.vue'
 import Request from '../components/request.vue'
 import Hat from '../hat.vue'
 import VmBackTop from '../back-top.vue'
+import Filther from '../components/filther.vue'
 // import Topsection from '../components/topsection.vue'
 // Vue.component('topsection', Topsection)
 // import Currentrole from '../railsvars/currentrole.vue'
@@ -29,6 +30,7 @@ import '../../../public/theme/index.css'
 Vue.component('reg', Reg)
 Vue.component('log', Log)
 Vue.component('request', Request)
+Vue.component('filther', Filther)
 
 Vue.component("temperature", {
   template: "#temperature-template",
