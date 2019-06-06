@@ -111,6 +111,7 @@ function parseCalc() {
 </script>
 
 <style scoped>
+
 @import "stylesheets/_variables";
 .scale {
   -webkit-animation: pulsate-fwd 3s ease-out infinite both;
@@ -253,7 +254,6 @@ function parseCalc() {
   right: 0px;
 }
 .request  {
-  z-index: 6000;
  /* position: absolute;*/
   display: flex;
  /* right: 0;*/

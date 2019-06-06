@@ -387,13 +387,14 @@
 	clear: both;
 }*/
 .voodoo {
+	position: relative;
 	display: flex;
 	
 }
 .basecamp, .basecamp1 {
 	align-self: center;
 }
-.basecamp {
+.basecamp {position: relative;
 	justify-content: center;
 /*  @media (--only-small-screen) {
 		display: none;
@@ -402,7 +403,7 @@
 		display: none;
   }	  */
 }
-.request {
+.request {position: relative;
 /*  -webkit-animation: pulsate-fwd 3s ease-out infinite both;
   animation: pulsate-fwd 3s ease-out infinite both; */
 }
@@ -543,22 +544,22 @@ align-self: center;
 	width: 120px;
 }
 #bpad{
-	position: fixed;
+	position: relative;
 	height: $topBlank;
-	z-index: 3005;
+	/*z-index: 800;*/
 	width: 100%;
 
 	/*background-color: color( #1E1E21 shade(30%));*/
 	/*display: flex;*/
 	align-items: center;
 }
-.bpad {
+.bpad {position: relative;
 	width: 100%;
 	display: flex;
 	/*height: 2.6em;*/
-	position: fixed;
+	/*position: fixed;*/
 	/*height: $topSizePanel;*/
-	z-index: 10;
+	/*z-index: 10;*/
 	lost-center: $lcenter;
 	background-color: color( #1E1E21 shade(30%));
 }
@@ -574,7 +575,7 @@ align-self: center;
 }*/
 .logohead{
 	position: relative;
-	z-index: 50;
+	/*z-index: 50;*/
 	display: flex;
 	align-items: center;
 	lost-column: 1/2 2 0em; 
@@ -589,7 +590,7 @@ align-self: center;
 }
 .maininfo {
 	position: relative;
-	z-index: 49;
+	/*z-index: 49;*/
 	overflow-x: auto;
 	white-space: nowrap;
 	padding: 0 0.4em;
