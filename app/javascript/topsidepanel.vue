@@ -281,17 +281,16 @@
 		    })
 	  	},
     	styleObject: function () {
-       	var tok = this.$store.getters.token
-        if (tok != null) {
-        	return {
-        		position: 'relative'
-        	}
-       	}else{
-         	return {
-        		position: 'relative',
-        		// height: '5em'
-        	}
-       	}
+       	// var tok = this.$store.getters.token
+        // if (tok != null) {
+        // 	return {
+        // 		position: 'relative'
+        // 	}
+       	// }else{
+        //  	return {
+        // 		position: 'relative',
+        // 	}
+       	// }
       }
 	  },
 	  methods: {
@@ -543,8 +542,8 @@ align-self: center;
 /deep/ .expline {
 	width: 120px;
 }
-#bpad{
-	position: relative;
+#bpad{ 
+ 
 	height: $topBlank;
 	/*z-index: 800;*/
 	width: 100%;
@@ -553,11 +552,11 @@ align-self: center;
 	/*display: flex;*/
 	align-items: center;
 }
-.bpad {position: relative;
+.bpad { 
 	width: 100%;
-	display: flex;
+	display: flex;              
 	/*height: 2.6em;*/
-	/*position: fixed;*/
+	
 	/*height: $topSizePanel;*/
 	/*z-index: 10;*/
 	lost-center: $lcenter;

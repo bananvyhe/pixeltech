@@ -31,7 +31,7 @@
         </div>
         <!-- фильтр категорий -->
         <div class="filterbutton">
-          <filther></filther>
+          <!-- <filther></filther> -->
         </div>
       </div> 
 
