@@ -542,7 +542,7 @@ margin: -0.1em -1.4em;
     /*lost-column: 3/4;*/
   }
   @media (--only-xsmall-screen) {
-    /*lost-column: 1/1;*/
+    lost-column: 1/1;
   }
   .bord {
     display: flex;
