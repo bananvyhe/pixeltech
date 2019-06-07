@@ -1,6 +1,6 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
-<div id="app">
+<div id="app" class="app">
   <el-dialog
     class="containerpop"
     :visible.sync="dialogVisible"
@@ -30,9 +30,9 @@
           <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
         </div>
         <!-- фильтр категорий -->
-        <div class="filterbutton">
-          <!-- <filther></filther> -->
-        </div>
+<!--         <div class="filterbutton">
+          <filther></filther>
+        </div> -->
       </div> 
 
 
@@ -529,7 +529,7 @@ margin: -0.1em -1.4em;
 .sliderRait {
   /*background-color: color( #1E1E21 shade(30%));*/
   
-  padding: 0.2em 1.5em 0.2em 1.7em;
+  padding: 0.2em 0em 0.2em 1.7em;
   margin: 0.3em 0em;
   /*height: 4em;*/
   /*width: 25em;*/
@@ -890,8 +890,11 @@ margin: -0.1em -1.4em;
   justify-content: center;
   align-content: center;
 }
+.app {
+  overflow: hidden;
+}
 #app {
-
+  
 }
 h3 {
   margin-bottom: 5px;
