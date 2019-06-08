@@ -2,10 +2,10 @@
   <div class="filther">
         <el-popover
           placement="bottom-start"
-          width="500"
+          width="400"
           trigger="click">
            <el-transfer
-           :titles="['набор в базе', 'ваш набор']"
+           :titles="['наш набор', 'ваш набор']"
             v-model="value"
             :data="data">
           </el-transfer>
