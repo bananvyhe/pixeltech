@@ -43,7 +43,7 @@ $--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
 $--color-text-primary: #EDEBD7 !default;
 $--color-text-regular: #C1BDB3 !default;
 $--color-text-secondary: #C1BDB3 !default;
-$--color-text-placeholder: #C1BDB3 !default;
+$--color-text-placeholder: #2a303a !default;
 
 /* Link
 -------------------------- */
@@ -84,7 +84,7 @@ $--font-path: 'fonts' !default;
 $--font-size-base: 14px !default;
 $--font-size-small: 13px !default;
 $--font-size-large: 18px !default;
-$--font-color-disabled-base: #333 !default;
+$--font-color-disabled-base: #222 !default;
 $--font-weight-primary: 500 !default;
 $--font-line-height-primary: 24px !default;
 
@@ -122,8 +122,8 @@ $--checkbox-input-border: $--border-base !default;
 $--checkbox-input-border-color: $--border-color-base !default;
 $--checkbox-icon-color: $--color-white !default;
 
-$--checkbox-disabled-input-border-color: $--border-color-base !default;
-$--checkbox-disabled-input-fill: #edf2fc !default;
+$--checkbox-disabled-input-border-color: #313638 !default;
+$--checkbox-disabled-input-fill: #1f1e24 !default;
 $--checkbox-disabled-icon-color: $--color-text-placeholder !default;
 
 $--checkbox-disabled-checked-input-fill: $--border-color-extra-light !default;
