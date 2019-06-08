@@ -22,7 +22,7 @@
     	tlwar.from('.warriors', 1.2, {backgroundPositionY: 150, ease: Power2.easeOut}, '+=0.8');
     	 
     	var tl2 = new TimelineMax({repeat:-1});
-			tl2.to('.clouds', 3, {backgroundPositionX: 1149, ease: Expo.easeOut});
+			tl2.to('.clouds', 120, {backgroundPositionX: 903, ease: Power0.easeNone});
 
 			var repDelay = 8;
 			var firsFlash = 0.05;
