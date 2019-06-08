@@ -121,6 +121,12 @@ body {
   /* color: #edeef0;*/
   color: #e7e8ec;
 }
+.plashka2 {
+  font-family: 'RobotoReg';
+}
+.el-transfer-panel__header {
+  font-family: 'aprior';
+}
 html {
   scrollbar-face-color: #646464;
   scrollbar-base-color: #646464;
