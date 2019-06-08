@@ -22,7 +22,7 @@
     	tlwar.from('.warriors', 1.2, {backgroundPositionY: 150, ease: Power2.easeOut}, '+=0.8');
     	 
     	var tl2 = new TimelineMax({repeat:-1});
-			tl2.to('.clouds', 90, {backgroundPositionX: 149, ease: Expo.easeOut});
+			tl2.to('.clouds', 3, {backgroundPositionX: 1149, ease: Expo.easeOut});
 
 			var repDelay = 8;
 			var firsFlash = 0.05;
@@ -41,7 +41,7 @@
 			var tlfl = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tlfl.to('.warriors', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
 			.to('.warriors', 0.05, {css:{className:'-=brightness'}})
-			.to('.warriors', firsFlash, {css:{className:'+=brightness'}}, '+=0.05')
+			.to('.warriors', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
 			.to('.warriors', 0.05, {css:{className:'-=brightness'}})
 			.to('.warriors', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
 			.to('.warriors', 0.05, {css:{className:'-=brightness'}});
@@ -49,7 +49,7 @@
 			var tlfl1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tlfl1.to('.clouds', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
 			.to('.clouds', 0.05, {css:{className:'-=brightness'}})
-			.to('.clouds', firsFlash, {css:{className:'+=brightness'}}, '+=0.05')
+			.to('.clouds', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
 			.to('.clouds', 0.05, {css:{className:'-=brightness'}})
 			.to('.clouds', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
 			.to('.clouds', 0.05, {css:{className:'-=brightness'}});
@@ -58,7 +58,7 @@
 			tldn1.set('.flash', {visibility: "hidden"})
 			.to('.flash', firsFlash, {visibility: "visible"}, '+=2.6')
 			.to('.flash', 0.05, {visibility: "hidden"})
-			.to('.flash', firsFlash, {visibility: "visible"}, '+=0.05')
+			.to('.flash', flashTime, {visibility: "visible"}, '+=0.05')
 			.to('.flash', 0.05, {visibility: "hidden"})
 			.to('.flash', flashTime, {visibility: "visible"}, '+=0.05')
 			.to('.flash', 0.05, {visibility: "hidden"});
