@@ -65,7 +65,7 @@ function parseCalc() {
 
 .el-transfer{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 
 }
 .filther {
