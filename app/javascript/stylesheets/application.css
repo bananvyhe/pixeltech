@@ -126,6 +126,7 @@ body {
 }
 .el-transfer-panel__header {
   font-family: 'aprior';
+  border-bottom: 1px solid color( $str5  shade(60%)) !important;
 }
 html {
   scrollbar-face-color: #646464;
