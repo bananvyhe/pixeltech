@@ -62,7 +62,6 @@ function parseCalc() {
 <style scoped>
 @import "stylesheets/_variables";
 
-
 .el-transfer{
   display: flex;
   justify-content: space-between;
