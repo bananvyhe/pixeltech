@@ -2,7 +2,7 @@
   <div class="filther">
         <el-popover
           placement="bottom-start"
-          width="530"
+          width="500"
           trigger="click">
            <el-transfer
            :titles="['набор в базе', 'ваш набор']"

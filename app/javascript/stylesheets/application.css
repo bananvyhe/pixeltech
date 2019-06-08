@@ -278,6 +278,9 @@ position: fixed;
 .el-dialog__body {
   padding: 5px 25px 3px;
 }
+.el-checkbox:first-child{
+ margin-left: 0em;
+}
 .el-form-item--mini {
   padding-bottom: 0px;
 }
