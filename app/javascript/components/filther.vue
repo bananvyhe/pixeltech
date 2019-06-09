@@ -5,7 +5,7 @@
           width="400"
           trigger="click">
            <el-transfer
-           :titles="['наш набор', 'ваш набор']"
+           :titles="['скрытые', 'видимые']"
             v-model="value"
             :data="data">
           </el-transfer>
