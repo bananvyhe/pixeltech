@@ -30,9 +30,9 @@
           <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
         </div>
         <!-- фильтр категорий -->
-        <div class="filterbutton">
+<!--         <div class="filterbutton">
           <filther></filther>
-        </div>
+        </div> -->
       </div> 
 
 
