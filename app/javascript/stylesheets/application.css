@@ -216,7 +216,7 @@ position: fixed;
 .vkpost:nth-child(even) {
   position: relative;
   z-index: 1;
-  border: 0.3em solid color( $HeadBackColor  shade(46%));
+  border: 0.2em solid color( $HeadBackColor  shade(46%));
   background-color: color( $HeadBackColor  shade(46%));
   .namewww2{
     color: $bgpost1;
