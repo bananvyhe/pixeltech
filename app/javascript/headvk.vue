@@ -465,7 +465,7 @@ margin: -0.1em -1.4em;
 .namewww2{
   z-index: -1;
   transform-origin: 100% 0;
-  transform: perspective(500px) scaleY(0.7) scaleX(0.7) rotateY( 50deg);
+  transform: perspective(500px) scaleY(0.6) scaleX(0.6) rotateY( 60deg);
  
   font-size: 4em;
   font-weight: bold;
@@ -478,7 +478,7 @@ margin: -0.1em -1.4em;
    height: 100%;
   justify-content: flex-end;
    
-  margin: 0.0em -0.2em;
+  margin: 0.1em -0.2em;
    /*background-color: #ada;*/
   /*bottom: 0;*/
   /*padding: -4.5em 0.5em;*/
