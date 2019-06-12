@@ -466,7 +466,7 @@ margin: -0.1em -1.4em;
   z-index: -1;
   transform-origin: 100% 0;
   /*transform: perspective(500px) scaleY(0.6) scaleX(0.6) rotateY( 65deg);*/
- transform: rotate(-0deg);
+ transform: rotate(-3deg);
   font-size: 4em;
   font-weight: bold;
   /*color: color( $tuscan shade(67%));*/

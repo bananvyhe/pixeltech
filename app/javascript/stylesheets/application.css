@@ -208,8 +208,8 @@ position: fixed;
   margin: 0.2em;
 
   .namewww2{
-      font-family: 'elemend';
-      letter-spacing: -0.07em;
+      font-family: 'aprior';
+      /*letter-spacing: -0.07em;*/
     color: color( $HeadBackColor  shade(44%));
   }
 }
