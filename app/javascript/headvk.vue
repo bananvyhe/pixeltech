@@ -465,7 +465,7 @@ margin: -0.1em -1.4em;
 .namewww2{
   z-index: -1;
   transform-origin: 100% 0;
-  transform: perspective(500px) scaleY(0.7) scaleX(0.8) rotateY( 50deg);
+  transform: perspective(500px) scaleY(0.7) scaleX(0.7) rotateY( 50deg);
  
   font-size: 4em;
   font-weight: bold;
