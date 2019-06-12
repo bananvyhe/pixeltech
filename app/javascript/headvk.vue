@@ -448,7 +448,7 @@ export default {
 
 align-items: flex-start;
 justify-content: flex-end;
-margin:  0.1em -1.1em;
+margin:  0.1em -1.2em;
   height: 100%;
   display: flex;
 
