@@ -448,7 +448,7 @@ export default {
 
 align-items: flex-start;
 justify-content: flex-end;
-margin:  0.1em -1.0em;
+margin:  0.1em -1.1em;
   height: 100%;
   display: flex;
 
@@ -478,7 +478,7 @@ margin:  0.1em -1.0em;
    height: 100%;
   justify-content: flex-end;
    
-  margin: 0.0em -0.2em;
+  margin: 0.0em -0.3em;
    /*background-color: #ada;*/
   /*bottom: 0;*/
   /*padding: -4.5em 0.5em;*/
