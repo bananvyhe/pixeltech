@@ -81,7 +81,7 @@
 			var tldn1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tldn1.set('.flash', {visibility: "hidden"})
 			.to('.flash', firsFlash, {visibility: "visible"}, '+=2.6')
-			// .to('.flash', 0.05, {visibility: "hidden"})
+			.to('.flash', 0.05, {visibility: "hidden"})
 			.to('.flash', secondFlash, {visibility: "visible"}, '+=0.05')
 			.to('.flash', 0.05, {visibility: "hidden"})
 			.to('.flash', flashTime, {visibility: "visible"}, '+=0.05')
@@ -90,7 +90,7 @@
 			var tldn5 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tldn5.set('.clouds2', {visibility: "visible"})
 			.to('.clouds2', firsFlash, {visibility: "hidden"}, '+=2.6')
-			// .to('.flash', 0.05, {visibility: "hidden"})
+			.to('.clouds2', 0.05, {visibility: "visible"})
 			.to('.clouds2', secondFlash, {visibility: "hidden"}, '+=0.05')
 			.to('.clouds2', 0.05, {visibility: "visible"})
 			.to('.clouds2', flashTime, {visibility: "hidden"}, '+=0.05')
