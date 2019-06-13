@@ -9,6 +9,7 @@
   	<div class="clouds"></div>
 
   	<div class="warriors"></div>
+  	<div class="warriors brightness"></div>
   	  	<div class="bgshad2"></div>
 	</div>
 </template>
@@ -35,8 +36,8 @@
 
 			var repDelay = 8;
 			var firsFlash = 0.05;
-			var secondFlash = 0.3;
-			var flashTime = 0.1;
+			var secondFlash = 0.2;
+			var flashTime = 0.6;
 
 			// var repDelay = 8;
 			// var self = this;
@@ -73,31 +74,42 @@
 			// .to('.flash', 0.05, {visibility: "hidden"})
 			// .to('.flash', flashTime, {visibility: "visible"}, '+=0.05')
 			// .to('.flash', 0.05, {visibility: "hidden"});
-			var tlfl = new TimelineMax({repeat:-1, repeatDelay: repDelay});
-			tlfl.to('.warriors', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
-			.to('.warriors', 0.05, {css:{className:'-=brightness'}})
-			.to('.warriors', secondFlash, {css:{className:'+=brightness'}}, '+=0.05')
-			.to('.warriors', 0.05, {css:{className:'-=brightness'}})
-			.to('.warriors', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
-			.to('.warriors', 0.05, {css:{className:'-=brightness'}});
+			// var tlfl = new TimelineMax({repeat:-1, repeatDelay: repDelay});
+			// tlfl.to('.warriors', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
+			// .to('.warriors', 0.05, {css:{className:'-=brightness'}})
+			// .to('.warriors', secondFlash, {css:{className:'+=brightness'}}, '+=0.05')
+			// .to('.warriors', 0.05, {css:{className:'-=brightness'}})
+			// .to('.warriors', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
+			// .to('.warriors', 0.55, {css:{className:'-=brightness'}}, '+=0.55');
+			var tldn7 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
+			tldn7.set('.brightness', {opacity: "0"})
+			.to('.brightness', firsFlash, {opacity: "1"}, '+=2.6')
+			.to('.brightness', 0.05, {opacity: "0"})
+			.to('.brightness', secondFlash, {opacity: "1"}, '+=0.05')
+			.to('.brightness', 0.05, {opacity: "0"}, '-=0.1')
+			.to('.brightness', firsFlash, {opacity: "1"}, '+=0.05')
+			.to('.brightness', 3.2, {opacity: "0"});	
+
 
 			var tldn1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
-			tldn1.set('.flash', {visibility: "hidden"})
-			.to('.flash', firsFlash, {visibility: "visible"}, '+=2.6')
-			.to('.flash', 0.05, {visibility: "hidden"})
-			.to('.flash', secondFlash, {visibility: "visible"}, '+=0.05')
-			.to('.flash', 0.05, {visibility: "hidden"})
-			.to('.flash', flashTime, {visibility: "visible"}, '+=0.05')
-			.to('.flash', 0.05, {visibility: "hidden"});	
+			tldn1.set('.flash', {opacity: "0"})
+			.to('.flash', firsFlash, {opacity: "1"}, '+=2.6')
+			.to('.flash', 0.05, {opacity: "0"})
+			.to('.flash', secondFlash, {opacity: "1"}, '+=0.05')
+			.to('.flash', 0.05, {opacity: "0"}, '-=0.1')
+			.to('.flash', firsFlash, {opacity: "1"}, '+=0.05')
+			.to('.flash', 3.2, {opacity: "0"});	
+
+
 
 			var tldn5 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tldn5.set('.clouds2', {visibility: "visible"})
 			.to('.clouds2', firsFlash, {visibility: "hidden"}, '+=2.6')
 			.to('.clouds2', 0.05, {visibility: "visible"})
 			.to('.clouds2', secondFlash, {visibility: "hidden"}, '+=0.05')
-			.to('.clouds2', 0.05, {visibility: "visible"})
-			.to('.clouds2', flashTime, {visibility: "hidden"}, '+=0.05')
-			.to('.clouds2', 0.05, {visibility: "visible"});		
+			.to('.clouds2', 0.05, {visibility: "visible"}, '-=0.1')
+			.to('.clouds2', firsFlash, {visibility: "hidden"}, '+=0.05')
+			.to('.clouds2', 3.2, {visibility: "visible"});		
 
 			// var tldn6 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			// tldn6.set('.clouds', {visibility: "visible"})
@@ -139,6 +151,7 @@
 
 }
 .warriors {
+	position: absolute;
 	z-index: 20;
 	background-repeat: no-repeat;
 	background-position: center bottom;
