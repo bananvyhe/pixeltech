@@ -2,13 +2,14 @@
   <div class="hat">
 
   	<div class="fog"></div>
-  	<div class="bgshad2"></div>
+
   	<div class="flash"></div>
   	<div class="clouds2"></div>
   	  	<div class="bgshad"></div>
   	<div class="clouds"></div>
 
   	<div class="warriors"></div>
+  	  	<div class="bgshad2"></div>
 	</div>
 </template>
 <script>
@@ -239,8 +240,9 @@ background: linear-gradient(0deg,  rgba(9,66,121,0) 0%, rgba(6,45,82,0) 20%, rgb
 	width: 100%;
 }
 .bgshad2 {
+	z-index: 21;
 background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.2) 80%,rgba(0,0,0,0.3) 95%, rgba(0,0,0,0.4) 100%);
+background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.2) 80%,rgba(0,0,0,0.2) 95%, rgba(0,0,0,0.3) 100%);
 	position: absolute;
 	height: 100%;
 	width: 100%;
