@@ -2,7 +2,10 @@
   <div class="hat">
   	<div class="fog"></div>
   	<div class="flash"></div>
+  	<div class="clouds2"></div>
+  	  	<div class="bgshad"></div>
   	<div class="clouds"></div>
+
   	<div class="warriors"></div>
 	</div>
 </template>
@@ -22,7 +25,10 @@
     	tlwar.from('.warriors', 1.2, {backgroundPositionY: 150, ease: Power2.easeOut}, '+=0.8');
     	 
     	var tl2 = new TimelineMax({repeat:-1});
-			tl2.to('.clouds', 250, {backgroundPositionX: 903, ease: Power0.easeNone});
+			tl2.to('.clouds', 1200, {backgroundPositionX: 903, ease: Power0.easeNone});
+
+			var tl3 = new TimelineMax({repeat:-1});
+			tl3.to('.clouds2', 80, {backgroundPositionX: -903, ease: Power0.easeNone});
 
 			var repDelay = 8;
 			var firsFlash = 0.05;
@@ -39,22 +45,23 @@
 			// 	console.log(repDelay)
 			// }
 
-			var tlfl = new TimelineMax({repeat:-1, repeatDelay: repDelay});
-			tlfl.to('.warriors', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
-			.to('.warriors', 0.05, {css:{className:'-=brightness'}})
-			.to('.warriors', secondFlash, {css:{className:'+=brightness'}}, '+=0.05')
-			.to('.warriors', 0.05, {css:{className:'-=brightness'}})
-			.to('.warriors', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
-			.to('.warriors', 0.05, {css:{className:'-=brightness'}});
 
-			var tlfl1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
-			tlfl1.to('.clouds', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
-			.to('.clouds', 0.05, {css:{className:'-=brightness'}})
-			.to('.clouds', secondFlash, {css:{className:'+=brightness'}}, '+=0.05')
-			.to('.clouds', 0.05, {css:{className:'-=brightness'}})
-			.to('.clouds', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
-			.to('.clouds', 0.05, {css:{className:'-=brightness'}});
- 
+
+			// var tlfl1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
+			// tlfl1.to('.clouds', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
+			// .to('.clouds', 0.05, {css:{className:'-=brightness'}})
+			// .to('.clouds', secondFlash, {css:{className:'+=brightness'}}, '+=0.05')
+			// .to('.clouds', 0.05, {css:{className:'-=brightness'}})
+			// .to('.clouds', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
+			// .to('.clouds', 0.05, {css:{className:'-=brightness'}});
+
+ 		// 	var tlfl2 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
+			// tlfl2.to('.clouds2', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
+			// .to('.clouds2', 0.05, {css:{className:'-=brightness'}})
+			// .to('.clouds2', secondFlash, {css:{className:'+=brightness'}}, '+=0.05')
+			// .to('.clouds2', 0.05, {css:{className:'-=brightness'}})
+			// .to('.clouds2', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
+			// .to('.clouds2', 0.05, {css:{className:'-=brightness'}});
 			// var tldn1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			// tldn1.set('.flash', {visibility: "hidden"})
 			// .to('.flash', firsFlash, {visibility: "visible"}, '+=2.6')
@@ -63,6 +70,13 @@
 			// .to('.flash', 0.05, {visibility: "hidden"})
 			// .to('.flash', flashTime, {visibility: "visible"}, '+=0.05')
 			// .to('.flash', 0.05, {visibility: "hidden"});
+			var tlfl = new TimelineMax({repeat:-1, repeatDelay: repDelay});
+			tlfl.to('.warriors', firsFlash, {css:{className:'+=brightness'}}, '+=2.6')
+			.to('.warriors', 0.05, {css:{className:'-=brightness'}})
+			.to('.warriors', secondFlash, {css:{className:'+=brightness'}}, '+=0.05')
+			.to('.warriors', 0.05, {css:{className:'-=brightness'}})
+			.to('.warriors', flashTime, {css:{className:'+=brightness'}}, '+=0.05')
+			.to('.warriors', 0.05, {css:{className:'-=brightness'}});
 
 			var tldn1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tldn1.set('.flash', {visibility: "hidden"})
@@ -71,7 +85,25 @@
 			.to('.flash', secondFlash, {visibility: "visible"}, '+=0.05')
 			.to('.flash', 0.05, {visibility: "hidden"})
 			.to('.flash', flashTime, {visibility: "visible"}, '+=0.05')
-			.to('.flash', 0.05, {visibility: "hidden"});			
+			.to('.flash', 0.05, {visibility: "hidden"});	
+
+			var tldn5 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
+			tldn5.set('.clouds2', {visibility: "visible"})
+			.to('.clouds2', firsFlash, {visibility: "hidden"}, '+=2.6')
+			// .to('.flash', 0.05, {visibility: "hidden"})
+			.to('.clouds2', secondFlash, {visibility: "hidden"}, '+=0.05')
+			.to('.clouds2', 0.05, {visibility: "visible"})
+			.to('.clouds2', flashTime, {visibility: "hidden"}, '+=0.05')
+			.to('.clouds2', 0.05, {visibility: "visible"});		
+
+			// var tldn6 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
+			// tldn6.set('.clouds', {visibility: "visible"})
+			// .to('.clouds', firsFlash, {visibility: "hidden"}, '+=2.6')
+			// // .to('.flash', 0.05, {visibility: "hidden"})
+			// .to('.clouds', secondFlash, {visibility: "hidden"}, '+=0.05')
+			// .to('.clouds', 0.05, {visibility: "visible"})
+			// .to('.clouds', flashTime, {visibility: "hidden"}, '+=0.05')
+			// .to('.clouds', 0.05, {visibility: "visible"});		
     }
 
 
@@ -156,10 +188,11 @@
 	visibility: visible;
 }
 .clouds {  
+	opacity: 0.5;
 	background-repeat: repeat-x;
 	position: absolute;
 	background-image: url('./images/_hat/clouds.png');
-	background-position: center top;
+	background-position: center -15px;
 	background-size: 40%  auto;
 	height: 100%;
 	width: 100%;
@@ -170,7 +203,34 @@
 		background-size: 55%  auto;
   }
   @media (--only-medium-screen) {
-		background-size: 35%  auto;
+		background-size: 45%  auto;
   }
+}
+.clouds2 {  
+	background-repeat: repeat-x;
+	position: absolute;
+	background-image: url('./images/_hat/clouds.png');
+	background-position: center -15px;
+	background-size: 90%  auto;
+	height: 100%;
+	width: 100%;
+	@media (--only-xsmall-screen) {
+		background-position: center 0px;
+		background-size: 100%  auto;
+  }
+  @media (--only-small-screen) {
+  	background-position: center 0px;
+		background-size: 100%  auto;
+  }
+  @media (--only-medium-screen) {
+		background-size: 95%  auto;
+  }
+}
+.bgshad {
+background: rgb(2,0,36);
+background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,66,121,0) 0%, rgba(6,45,82,0) 20%, rgba(0,0,0,0.8071603641456583) 100%);
+	position: absolute;
+	height: 100%;
+	width: 100%;
 }
 </style>
