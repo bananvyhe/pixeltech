@@ -1,6 +1,8 @@
 <template>
   <div class="hat">
+
   	<div class="fog"></div>
+  	<div class="bgshad2"></div>
   	<div class="flash"></div>
   	<div class="clouds2"></div>
   	  	<div class="bgshad"></div>
@@ -116,6 +118,7 @@
 @import "_variables";
 @import "_extends";
 .hat {
+
 	display: flex;
 	align-items: stretch;
 	position: relative;
@@ -123,6 +126,7 @@
 	/*lost-utility: edit;*/
 	height: 162px;
 	background-color: #13151a;
+
 	border-bottom: 4px solid color( #1E1E21 shade(30%));
 	border
 	@media (--only-small-screen) {
@@ -227,8 +231,16 @@
   }
 }
 .bgshad {
-background: rgb(2,0,36);
-background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,66,121,0) 0%, rgba(6,45,82,0) 20%, rgba(0,0,0,0.8071603641456583) 100%);
+background: rgb(0,0,0);
+background: linear-gradient(0deg,  rgba(9,66,121,0) 0%, rgba(6,45,82,0) 20%, rgba(0,0,0,0.8071603641456583) 100%);
+	position: absolute;
+
+	height: 100%;
+	width: 100%;
+}
+.bgshad2 {
+background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.2) 80%,rgba(0,0,0,0.3) 90%, rgba(0,0,0,0.5071603641456583) 100%);
 	position: absolute;
 	height: 100%;
 	width: 100%;
