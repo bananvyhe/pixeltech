@@ -85,20 +85,20 @@
 			tldn7.set('.brightness', {opacity: "0"})
 			.to('.brightness', firsFlash, {opacity: "1"}, '+=2.6')
 			.to('.brightness', 0.05, {opacity: "0"})
-			.to('.brightness', secondFlash, {opacity: "1"}, '+=0.05')
-			.to('.brightness', 0.6, {opacity: "0"}, '-=0.5')
-			.to('.brightness', firsFlash, {opacity: "1"}, '+=0.0')
-			.to('.brightness', 1.6, {opacity: "0"});	
+			.to('.brightness', secondFlash, {opacity: "1"}, '+=0.35')
+			.to('.brightness', 0.6, {opacity: "0", ease: Expo.easeOut}, '-=0.5')
+			.to('.brightness', firsFlash, {opacity: "1"}, '-=0.7')
+			.to('.brightness', 1.0, {opacity: "0"});	
 
 
 			var tldn1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tldn1.set('.flash', {opacity: "0"})
 			.to('.flash', firsFlash, {opacity: "1"}, '+=2.6')
 			.to('.flash', 0.05, {opacity: "0"})
-			.to('.flash', secondFlash, {opacity: "1"}, '+=0.05')
-			.to('.flash', 0.6, {opacity: "0"}, '-=0.5')
-			.to('.flash', firsFlash, {opacity: "1"}, '+=0.0')
-			.to('.flash', 1.6, {opacity: "0"});	
+			.to('.flash', secondFlash, {opacity: "1"}, '+=0.35')
+			.to('.flash', 0.6, {opacity: "0", ease: Expo.easeOut}, '-=0.5')
+			.to('.flash', firsFlash, {opacity: "1"}, '-=0.7')
+			.to('.flash', 1.0, {opacity: "0"});	
 
 
 
@@ -106,10 +106,10 @@
 			tldn5.set('.clouds2', {visibility: "visible"})
 			.to('.clouds2', firsFlash, {visibility: "hidden"}, '+=2.6')
 			.to('.clouds2', 0.05, {visibility: "visible"})
-			.to('.clouds2', secondFlash, {visibility: "hidden"}, '+=0.05')
+			.to('.clouds2', secondFlash, {visibility: "hidden"}, '+=0.35')
 			.to('.clouds2', 0.6, {visibility: "visible"}, '-=0.5')
-			.to('.clouds2', firsFlash, {visibility: "hidden"}, '+=0.0')
-			.to('.clouds2', 1.6, {visibility: "visible"});		
+			.to('.clouds2', firsFlash, {visibility: "hidden"}, '-=0.7')
+			.to('.clouds2', 1.0, {visibility: "visible"});		
 
 			// var tldn6 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			// tldn6.set('.clouds', {visibility: "visible"})
@@ -184,7 +184,7 @@
 	background-image: url('./images/_hat/fog.jpg');
 }
 .brightness{
-	filter: brightness(25%);
+	filter: brightness(35%);
 }
 .flash {
  	/*visibility: hidden;*/
@@ -255,7 +255,7 @@ background: linear-gradient(0deg,  rgba(9,66,121,0) 0%, rgba(6,45,82,0) 20%, rgb
 .bgshad2 {
 	z-index: 21;
 background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.2) 80%,rgba(0,0,0,0.2) 95%, rgba(0,0,0,0.3) 100%);
+background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.2) 80%,rgba(0,0,0,0.3) 95%, rgba(0,0,0,0.4) 100%);
 	position: absolute;
 	height: 100%;
 	width: 100%;
