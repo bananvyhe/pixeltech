@@ -86,9 +86,9 @@
 			.to('.brightness', firsFlash, {opacity: "1"}, '+=2.6')
 			.to('.brightness', 0.05, {opacity: "0"})
 			.to('.brightness', secondFlash, {opacity: "1"}, '+=0.05')
-			.to('.brightness', 0.05, {opacity: "0"}, '-=0.1')
-			.to('.brightness', firsFlash, {opacity: "1"}, '+=0.05')
-			.to('.brightness', 3.2, {opacity: "0"});	
+			.to('.brightness', 0.6, {opacity: "0"}, '-=0.5')
+			.to('.brightness', firsFlash, {opacity: "1"}, '+=0.0')
+			.to('.brightness', 1.6, {opacity: "0"});	
 
 
 			var tldn1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
@@ -96,9 +96,9 @@
 			.to('.flash', firsFlash, {opacity: "1"}, '+=2.6')
 			.to('.flash', 0.05, {opacity: "0"})
 			.to('.flash', secondFlash, {opacity: "1"}, '+=0.05')
-			.to('.flash', 0.05, {opacity: "0"}, '-=0.1')
-			.to('.flash', firsFlash, {opacity: "1"}, '+=0.05')
-			.to('.flash', 3.2, {opacity: "0"});	
+			.to('.flash', 0.6, {opacity: "0"}, '-=0.5')
+			.to('.flash', firsFlash, {opacity: "1"}, '+=0.0')
+			.to('.flash', 1.6, {opacity: "0"});	
 
 
 
@@ -107,9 +107,9 @@
 			.to('.clouds2', firsFlash, {visibility: "hidden"}, '+=2.6')
 			.to('.clouds2', 0.05, {visibility: "visible"})
 			.to('.clouds2', secondFlash, {visibility: "hidden"}, '+=0.05')
-			.to('.clouds2', 0.05, {visibility: "visible"}, '-=0.1')
-			.to('.clouds2', firsFlash, {visibility: "hidden"}, '+=0.05')
-			.to('.clouds2', 3.2, {visibility: "visible"});		
+			.to('.clouds2', 0.6, {visibility: "visible"}, '-=0.5')
+			.to('.clouds2', firsFlash, {visibility: "hidden"}, '+=0.0')
+			.to('.clouds2', 1.6, {visibility: "visible"});		
 
 			// var tldn6 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			// tldn6.set('.clouds', {visibility: "visible"})
