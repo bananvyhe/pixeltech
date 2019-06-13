@@ -36,7 +36,7 @@
 
 			var repDelay = 8;
 			var firsFlash = 0.05;
-			var secondFlash = 0.2;
+			var secondFlash = 0.05;
 			var flashTime = 0.6;
 
 			// var repDelay = 8;
@@ -83,32 +83,32 @@
 			// .to('.warriors', 0.55, {css:{className:'-=brightness'}}, '+=0.55');
 			var tldn7 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tldn7.set('.brightness', {opacity: "0"})
-			.to('.brightness', firsFlash, {opacity: "1"}, '+=2.6')
-			.to('.brightness', 0.05, {opacity: "0"})
-			.to('.brightness', secondFlash, {opacity: "1"}, '+=0.35')
-			.to('.brightness', 1.5, {opacity: "0", ease: Expo.easeOut}, '-=2.5')
-			.to('.brightness', firsFlash, {opacity: "1"}, '-=0.5')
+			// .to('.brightness', firsFlash, {opacity: "1"}, '+=2.6')
+			// .to('.brightness', 0.05, {opacity: "0"})
+			.to('.brightness', secondFlash, {opacity: "1"}, '+=0.0')
+			.to('.brightness', 1.5, {opacity: "0", ease: Expo.easeOut}, '-=0.0')
+			.to('.brightness', firsFlash, {opacity: "1"}, '-=0.0')
 			.to('.brightness', 3.0, {opacity: "0", ease: Expo.easeOut});	
 
 
 			var tldn1 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tldn1.set('.flash', {opacity: "0"})
-			.to('.flash', firsFlash, {opacity: "1"}, '+=2.6')
-			.to('.flash', 0.05, {opacity: "0"})
-			.to('.flash', secondFlash, {opacity: "1"}, '+=0.35')
-			.to('.flash', 1.5, {opacity: "0", ease: Expo.easeOut}, '-=2.5')
-			.to('.flash', firsFlash, {opacity: "1"}, '-=0.5')
+			// .to('.flash', firsFlash, {opacity: "1"}, '+=2.6')
+			// .to('.flash', 0.05, {opacity: "0"})
+			.to('.flash', secondFlash, {opacity: "1"}, '+=0.0')
+			.to('.flash', 1.5, {opacity: "0", ease: Expo.easeOut}, '-=0.0')
+			.to('.flash', firsFlash, {opacity: "1"}, '-=0.0')
 			.to('.flash', 3.0, {opacity: "0", ease: Expo.easeOut});	
 
 
 
 			var tldn5 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
 			tldn5.set('.clouds2', {visibility: "visible"})
-			.to('.clouds2', firsFlash, {visibility: "hidden"}, '+=2.6')
-			.to('.clouds2', 0.05, {visibility: "visible"})
-			.to('.clouds2', secondFlash, {visibility: "hidden"}, '+=0.35')
-			.to('.clouds2', 1.5, {visibility: "visible"}, '-=2.5')
-			.to('.clouds2', firsFlash, {visibility: "hidden"}, '-=0.5')
+			// .to('.clouds2', firsFlash, {visibility: "hidden"}, '+=2.6')
+			// .to('.clouds2', 0.05, {visibility: "visible"})
+			.to('.clouds2', secondFlash, {visibility: "hidden"}, '+=0.0')
+			.to('.clouds2', 1.5, {visibility: "visible"}, '-=0.0')
+			.to('.clouds2', firsFlash, {visibility: "hidden"}, '-=0.0')
 			.to('.clouds2', 3.0, {visibility: "visible"});		
 
 			// var tldn6 = new TimelineMax({repeat:-1, repeatDelay: repDelay});
