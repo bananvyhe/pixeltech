@@ -33,6 +33,10 @@
 <!--         <div class="filterbutton">
           <filther></filther>
         </div> -->
+
+                <div class="addpublic">
+          <addpublic></addpublic>
+        </div>
       </div> 
 
 
@@ -425,7 +429,7 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
-.filterbutton {
+.filterbutton, .addpublic {
   display: flex;
   align-items: right;
   @media (--only-xsmall-screen) {

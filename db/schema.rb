@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_23_165942) do
+ActiveRecord::Schema.define(version: 2019_06_14_180408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,17 @@ ActiveRecord::Schema.define(version: 2019_05_23_165942) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_gameboards_on_user_id"
+  end
+
+  create_table "groupsvks", force: :cascade do |t|
+    t.string "namegroup"
+    t.bigint "vk_id"
+    t.bigint "user_id"
+    t.datetime "groupsvks_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_groupsvks_on_user_id"
+    t.index ["vk_id"], name: "index_groupsvks_on_vk_id"
   end
 
   create_table "inboxes", force: :cascade do |t|
