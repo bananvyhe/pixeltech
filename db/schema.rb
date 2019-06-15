@@ -91,13 +91,9 @@ ActiveRecord::Schema.define(version: 2019_06_14_180408) do
 
   create_table "groupsvks", force: :cascade do |t|
     t.string "namegroup"
-    t.bigint "vk_id"
-    t.bigint "user_id"
     t.datetime "groupsvks_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_groupsvks_on_user_id"
-    t.index ["vk_id"], name: "index_groupsvks_on_vk_id"
   end
 
   create_table "inboxes", force: :cascade do |t|
@@ -185,7 +181,9 @@ ActiveRecord::Schema.define(version: 2019_06_14_180408) do
     t.string "username"
     t.bigint "expirience"
     t.integer "karma"
+    t.bigint "groupsvk_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["groupsvk_id"], name: "index_users_on_groupsvk_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
