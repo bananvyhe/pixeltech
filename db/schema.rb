@@ -181,9 +181,7 @@ ActiveRecord::Schema.define(version: 2019_06_14_180408) do
     t.string "username"
     t.bigint "expirience"
     t.integer "karma"
-    t.bigint "groupsvk_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["groupsvk_id"], name: "index_users_on_groupsvk_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
@@ -200,6 +198,8 @@ ActiveRecord::Schema.define(version: 2019_06_14_180408) do
     t.text "medias_row"
     t.string "wall"
     t.string "url"
+    t.bigint "groupsvk_id"
+    t.index ["groupsvk_id"], name: "index_vks_on_groupsvk_id"
     t.index ["wall"], name: "index_vks_on_wall", unique: true
   end
 

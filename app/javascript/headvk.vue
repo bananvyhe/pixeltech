@@ -34,9 +34,9 @@
           <filther></filther>
         </div> -->
 
-        <div class="addpublic">
+<!--         <div class="addpublic">
           <addpublic></addpublic>
-        </div>
+        </div> -->
       </div> 
 
 
@@ -267,18 +267,6 @@ export default {
     return {
       empid: '',
       dialogVisible: false,
-      options: [{
-          value: 'HTML',
-          label: 'HTML'
-        }, {
-          value: 'CSS',
-          label: 'CSS'
-        }, {
-          value: 'JavaScript',
-          label: 'JavaScript'
-        }],
-      optionsValue: [],
-
       value: [10, 60],
       marks: {
         10: '10',

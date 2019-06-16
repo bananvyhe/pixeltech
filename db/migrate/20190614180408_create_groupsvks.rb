@@ -5,6 +5,6 @@ class CreateGroupsvks < ActiveRecord::Migration[5.2]
       t.datetime :groupsvks_date
       t.timestamps
 	  end
-	  add_reference :users, :groupsvk
+	  add_reference :vks, :groupsvk
   end
 end
