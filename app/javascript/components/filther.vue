@@ -1,5 +1,5 @@
 <template>
-  <div class="filther"> 
+  <div class="filther">{{data}}
         <el-popover
           placement="bottom-start"
           width="400"
@@ -48,11 +48,11 @@ export default {
     };
   },
   watch: {
-    // value(value) {
-    //   if (!value) {
-    //     this.data = []
-    //   }
-    // }
+    value(value) {
+      if (!value) {
+        this.data = []
+      }
+    }
  
   }, 
  

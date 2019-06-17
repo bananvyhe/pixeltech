@@ -3,9 +3,10 @@ class TobdWorker < ApplicationController
  
   def perform (url, wall, like, views, posted_at, thumb_map_img_as_div, title, medias_row)
  		raiting = like.to_f/views.to_f*1000	
-  	@vk = Vk.new({:url => url, :title => title,:medias_row => medias_row,:posted_at => posted_at,:v_views => views, :v_like => like, :thumb_map_img_as_div => thumb_map_img_as_div, :wall => wall})
+    groupsvk = Groupsvk.find_or_create_by(:namegroup => url)
+  	@vk = Vk.new({:url => url, :title => title,:medias_row => medias_row,:posted_at => posted_at,:v_views => views, :v_like => like, :thumb_map_img_as_div => thumb_map_img_as_div, :wall => wall, :groupsvk => groupsvk})
 		df = Vk.find_by(wall: wall.to_s)
-    @vk.groupsvk = Groupsvk.find_or_create_by(:namegroup => url)
+    
 
   	if (df == nil)
   		@vk.save
