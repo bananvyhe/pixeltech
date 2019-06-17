@@ -64,10 +64,10 @@
   <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка...">
   </div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
-    <div class="namewww2">
+    <div class="namewww2" v-if="data.url">
       {{data.url.substr(15).toUpperCase()}}
     </div>
-    <div class="namewww hugetext">
+    <div class="namewww hugetext"  v-if="data.url">
       {{data.url.substr(15).toUpperCase()}}
     </div>
 
