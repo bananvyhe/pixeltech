@@ -9,7 +9,7 @@
             v-model="value"
             :data="data">
           </el-transfer>
-        <el-button slot="reference" size="mini" type="info" icon="el-icon-setting" circle></el-button>
+        <el-button @click="getPublics" slot="reference" size="mini" type="info" icon="el-icon-setting" circle></el-button>
  
         </el-popover>
   </div>
@@ -21,25 +21,26 @@ let screenwidth = {value: ''}
 export default {
 
   data: function () {
-    const generateData = _ => {
-      const data = [];
-      for (let i = 1; i <= 15; i++) {
-        data.push({
-          key: i,
-          label: `Option ${ i }`,
-          disabled: i % 4 === 0
-        });
-      }
-      return data;
-    };
+    // const generateData = _ => {
+    //   const data = [];
+    //   for (let i = 1; i <= 15; i++) {
+    //     data.push({
+    //       key: i,
+    //       label: `Option ${ i }`,
+    //       disabled: i % 4 === 0
+    //     });
+    //   }
+    //   return data;
+    // };
     return {
-      data: generateData(),
+      data: [],
       value: [1, 4],
-      dialogFormVisible: false,
-      form: {
-        email: '',
-        text: '' 
-      },
+      // dialogFormVisible: false,
+      // form: {
+      //   email: '',
+      //   text: '' 
+      // },
+      alldata: [], 
       formLabelWidth: '80px',
       screenwidth: screenwidth
     };
@@ -48,7 +49,40 @@ export default {
  
   methods: {
  
- 
+ getPublics() {
+  axios({
+        method: 'get',
+        url: '/api/v1/vkgrget',
+        // params: {
+        //   rait: this.value,
+        //   pos: this.pos
+        // } 
+      })
+      .then((response) => { 
+        var alld = response.data
+        console.log(response.data)
+
+      
+      // const data = [];
+      var self = this
+      for (let i = 0; alld[i]; i++) {
+        const data = [];
+        const grname = alld[i]
+        data.push({
+          key: i,
+          label: String(grname.namegroup).slice(15),
+          disabled: false
+        });
+        self.data = self.data.concat(data)
+
+      }
+      // return data;
+   
+
+        // this.data = data;
+
+      });
+ }
  
   }
 }

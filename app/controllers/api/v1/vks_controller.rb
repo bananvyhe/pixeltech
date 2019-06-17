@@ -21,7 +21,10 @@ class Api::V1::VksController < ApiController
  
   def edit
   end
+  def grget
+        @vks = Groupsvk.all
 
+  end
   # POST /Vks
   # POST /Vks.json
   def associate
