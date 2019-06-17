@@ -3,10 +3,11 @@
         <el-popover
           placement="bottom-start"
           width="400"
-          trigger="click">
+          trigger="click"
+          v-model="value">
            <el-transfer
            :titles="['скрытые', 'видимые']"
-            v-model="value"
+            
             :data="data">
           </el-transfer>
         <el-button @click="getPublics" slot="reference" size="mini" type="info" icon="el-icon-setting" circle></el-button>
@@ -34,7 +35,7 @@ export default {
     // };
     return {
       data: [],
-      value: [1, 4],
+      value: false,
       // dialogFormVisible: false,
       // form: {
       //   email: '',
@@ -45,7 +46,18 @@ export default {
       screenwidth: screenwidth
     };
   },
- 
+  watch: {
+    value(value) {
+      if (value) {
+        this.data = []
+      }
+    },
+    bottom(bottom) {
+      if (bottom) {
+        this.addBeer()
+      }
+    }
+  }, 
  
   methods: {
  
