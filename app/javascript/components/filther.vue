@@ -1,5 +1,5 @@
 <template>
-  <div class="filther">
+  <div class="filther"> 
         <el-popover
           placement="bottom-start"
           width="400"
@@ -7,7 +7,7 @@
           v-model="value">
            <el-transfer
            :titles="['скрытые', 'видимые']"
-            
+            v-model="datavalue"
             :data="data">
           </el-transfer>
         <el-button @click="getPublics" slot="reference" size="mini" type="info" icon="el-icon-setting" circle></el-button>
@@ -35,6 +35,7 @@ export default {
     // };
     return {
       data: [],
+      datavalue: [],
       value: false,
       // dialogFormVisible: false,
       // form: {
@@ -47,16 +48,12 @@ export default {
     };
   },
   watch: {
-    value(value) {
-      if (value) {
-        this.data = []
-      }
-    },
-    bottom(bottom) {
-      if (bottom) {
-        this.addBeer()
-      }
-    }
+    // value(value) {
+    //   if (!value) {
+    //     this.data = []
+    //   }
+    // }
+ 
   }, 
  
   methods: {
