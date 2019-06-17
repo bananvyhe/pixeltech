@@ -1,5 +1,5 @@
 <template>
-  <div class="filther">{{data}}
+  <div class="filther">
         <el-popover
           placement="bottom-start"
           width="400"
