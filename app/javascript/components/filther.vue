@@ -50,7 +50,11 @@ export default {
   watch: {
     value(value) {
       if (!value) {
-        this.data = []
+        var self = this;
+        setTimeout(function(){
+          self.data = []
+          // self.status = '';
+        },500 );
       }
     }
  
@@ -73,6 +77,7 @@ export default {
 
       
       // const data = [];
+      this.data = []
       var self = this
       for (let i = 0; alld[i]; i++) {
         const data = [];
