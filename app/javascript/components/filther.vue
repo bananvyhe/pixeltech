@@ -35,7 +35,7 @@ export default {
     // };
     return {
       data: [],
-      datavalue: [],
+      datavalue: [1,2],
       value: false,
       // dialogFormVisible: false,
       // form: {
