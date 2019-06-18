@@ -1,18 +1,17 @@
 <template>
   <div class="filther">
-        <el-popover
-          placement="bottom-start"
-          width="400"
-          trigger="click"
-          v-model="value">
-           <el-transfer
-           :titles="['скрытые', 'видимые']"
-            v-model="datavalue"
-            :data="data">
-          </el-transfer>
-        <el-button @click="getPublics" slot="reference" size="mini" type="info" icon="el-icon-setting" circle></el-button>
- 
-        </el-popover>
+    <el-popover
+      placement="bottom-start"
+      width="400"
+      trigger="click"
+      v-model="value">
+       <el-transfer
+       :titles="['скрытые', 'видимые']"
+        v-model="datavalue"
+        :data="data">
+      </el-transfer>
+      <el-button @click="getPublics" slot="reference" size="mini" type="info" icon="el-icon-setting" circle></el-button>
+    </el-popover>
   </div>
 </template>
 
@@ -20,7 +19,6 @@
 import axios from 'axios'
 let screenwidth = {value: ''}
 export default {
-
   data: function () {
     // const generateData = _ => {
     //   const data = [];
@@ -57,19 +55,18 @@ export default {
         },500 );
       }
     }
- 
   }, 
  
   methods: {
  
- getPublics() {
-  axios({
-        method: 'get',
-        url: '/api/v1/vkgrget',
-        // params: {
-        //   rait: this.value,
-        //   pos: this.pos
-        // } 
+    getPublics() {
+    axios({
+      method: 'get',
+      url: '/api/v1/vkgrget',
+      // params: {
+      //   rait: this.value,
+      //   pos: this.pos
+      // } 
       })
       .then((response) => { 
         var alld = response.data
@@ -88,16 +85,11 @@ export default {
           disabled: false
         });
         self.data = self.data.concat(data)
-
       }
       // return data;
-   
-
         // this.data = data;
-
       });
- }
- 
+    }
   }
 }
 function parseCalc() {
@@ -113,13 +105,12 @@ function parseCalc() {
 .el-transfer{
   display: flex;
   justify-content: space-between;
-
 }
 .filther {
   padding: 0 0.5em;
 }
 .el-transfer {
-    position: relative;
+  position: relative;
   z-index: 3000;
 }
 
