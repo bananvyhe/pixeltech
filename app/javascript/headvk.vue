@@ -31,9 +31,9 @@
         </div>
         <!-- фильтр категорий -->
         <div class="filterbutton">
-          <filther></filther>
+          <filther :myFilterInc ="filterInc" @filterRes="filterInc = $event"></filther>
         </div>
-
+      {{filterInc}}
 <!--         <div class="addpublic">
           <addpublic></addpublic>
         </div> -->
@@ -265,6 +265,7 @@ var cmp = {
 export default {
   data: function () {
     return {
+      // filterInc: '',
       empid: '',
       dialogVisible: false,
       value: [10, 60],
@@ -385,13 +386,14 @@ export default {
         method: 'get',
         url: '/api/v1/vks',
         params: {
+          vis: this.filterInc,
           rait: this.value,
           pos: this.pos
         } 
       })
       .then((response) => { 
         var alld = response.data
-        console.log(response.data)
+        console.log(this.filterInc)
         this.alldata = this.alldata.concat(alld);
         this.pos = this.alldata.length
         this.bottom = false

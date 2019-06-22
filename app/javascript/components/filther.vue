@@ -4,7 +4,7 @@
       placement="bottom-start"
       width="400"
       trigger="click"
-      v-model="value">
+      v-model="value"> 
        <el-transfer
        :titles="['скрытые', 'видимые']"
         v-model="datavalue"
@@ -19,6 +19,11 @@
 import axios from 'axios'
 let screenwidth = {value: ''}
 export default {
+  props: {
+    myFilterInc: {
+      type: Array
+    }
+  },
   data: function () {
     // const generateData = _ => {
     //   const data = [];
@@ -33,6 +38,7 @@ export default {
     // };
     return {
       data: [],
+      myFilterInc: this.data,
       datavalue: [1,2],
       value: false,
       // dialogFormVisible: false,
@@ -46,6 +52,9 @@ export default {
     };
   },
   watch: {
+    datavalue() {
+      this.$emit('filterRes', this.datavalue)
+    },
     value(value) {
       if (!value) {
         var self = this;
@@ -56,6 +65,9 @@ export default {
       }
     }
   }, 
+  computed: {
+
+  },
  
   methods: {
  
