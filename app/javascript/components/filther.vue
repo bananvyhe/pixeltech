@@ -19,11 +19,11 @@
 import axios from 'axios'
 let screenwidth = {value: ''}
 export default {
-  props: {
-    myFilterInc: {
-      type: Array
-    }
-  },
+  // props: {
+  //   myFilterInc: {
+  //     type: Array
+  //   }
+  // },
   data: function () {
     // const generateData = _ => {
     //   const data = [];

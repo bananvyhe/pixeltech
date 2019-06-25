@@ -265,7 +265,7 @@ var cmp = {
 export default {
   data: function () {
     return {
-      // filterInc: '',
+      filterInc: [],
       empid: '',
       dialogVisible: false,
       value: [10, 60],
