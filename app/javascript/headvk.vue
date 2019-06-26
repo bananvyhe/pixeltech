@@ -309,7 +309,7 @@ export default {
       }
     },
     filterInc(){
-      this.addBeer()
+
     }
   },
   updated() {
@@ -327,7 +327,10 @@ export default {
       this.bottom = this.bottomVisible()
       // this.bganim.backgroundPosition = "center"
     })
-    // this.addBeer()
+    var self = this
+    setTimeout(function(){
+      self.addBeer()
+    },1500 );
   },
   mounted(){
     
