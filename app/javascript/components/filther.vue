@@ -39,7 +39,7 @@ export default {
     return {
       data: [],
       myFilterInc: this.data,
-      datavalue: [1,2],
+      datavalue: [],
       value: false,
       // dialogFormVisible: false,
       // form: {
@@ -69,6 +69,10 @@ export default {
 
   },
  
+  mounted() {
+    this.getPublics()
+    this.$emit('filterRes', this.datavalue)
+  },
   methods: {
  
     getPublics() {
@@ -87,16 +91,20 @@ export default {
       
       // const data = [];
       this.data = []
+      this.datavalue = []
       var self = this
       for (let i = 0; alld[i]; i++) {
         const data = [];
         const grname = alld[i]
+        console.log(grname)
+
         data.push({
-          key: i,
+          key: grname.id,
           label: String(grname.namegroup).slice(15),
           disabled: false
         });
         self.data = self.data.concat(data)
+        self.datavalue = self.datavalue.concat(grname.id)
       }
       // return data;
         // this.data = data;

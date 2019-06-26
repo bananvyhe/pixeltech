@@ -1,5 +1,6 @@
  
 	json.array! @vks do |vks|
+		json.id vks.id
 		json.namegroup vks.namegroup
 	end
 	# json.id vks.id

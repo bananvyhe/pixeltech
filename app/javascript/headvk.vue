@@ -307,6 +307,9 @@ export default {
       if (bottom) {
         this.addBeer()
       }
+    },
+    filterInc(){
+      this.addBeer()
     }
   },
   updated() {
@@ -324,7 +327,7 @@ export default {
       this.bottom = this.bottomVisible()
       // this.bganim.backgroundPosition = "center"
     })
-    this.addBeer()
+    // this.addBeer()
   },
   mounted(){
     
