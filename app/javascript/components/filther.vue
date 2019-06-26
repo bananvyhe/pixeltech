@@ -10,7 +10,7 @@
         v-model="datavalue"
         :data="data">
       </el-transfer>
-      <el-button @click="getPublics" slot="reference" size="mini" type="info" icon="el-icon-setting" circle></el-button>
+      <el-button  slot="reference" size="mini" type="info" icon="el-icon-setting" circle></el-button>
     </el-popover>
   </div>
 </template>
@@ -55,15 +55,15 @@ export default {
     datavalue() {
       this.$emit('filterRes', this.datavalue)
     },
-    value(value) {
-      if (!value) {
-        var self = this;
-        setTimeout(function(){
-          self.data = []
-          // self.status = '';
-        },500 );
-      }
-    }
+    // value(value) {
+    //   if (!value) {
+    //     var self = this;
+    //     setTimeout(function(){
+    //       self.data = []
+    //       // self.status = '';
+    //     },500 );
+    //   }
+    // }
   }, 
   computed: {
 

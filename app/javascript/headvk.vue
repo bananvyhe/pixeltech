@@ -33,7 +33,7 @@
         <div class="filterbutton">
           <filther :myFilterInc ="filterInc" @filterRes="filterInc = $event"></filther>
         </div>
-<!--       {{filterInc}} -->
+      <!-- {{filterInc}} -->
 
 <!--         <div class="addpublic">
           <addpublic></addpublic>
