@@ -6,6 +6,15 @@
 	<%= render :template => "posts/index" %>
 <% end %>
 
+<% if user_signed_in? %>
+	<div class="lobby">
+		<%= tag.div id: :lobby, 
+			data: { 
+			} 
+		%>
+	</div>
+<% end %>
+
 <!-- Parsed and sorted content from vk-->
 <div class="mediumtext">
 	<%= tag.div id: :headvk, 

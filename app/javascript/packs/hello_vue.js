@@ -4,10 +4,8 @@
 // to the head of your layout file,
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
-
 // import TurbolinksAdapter from 'vue-turbolinks';
 // Vue.use(TurbolinksAdapter)
-
 // import Vue from 'vue/dist/vue.esm.js'
 import Vue from 'vue'
 import axios from 'axios'
@@ -25,6 +23,7 @@ import Hat from '../hat.vue'
 import VmBackTop from '../back-top.vue'
 import Filther from '../components/filther.vue'
 import Addpublic from '../components/addpublic.vue'
+import Lobby from '../lobby.vue'
 // import Topsection from '../components/topsection.vue'
 // Vue.component('topsection', Topsection)
 // import Currentrole from '../railsvars/currentrole.vue'
@@ -107,7 +106,14 @@ document.addEventListener('turbolinks:load', () => {
 	// 	  el: "#users" 
 	// 	})
 	// }
- 
+	var lobby = document.getElementById("lobby") 
+  if (lobby != null) {
+	  new Vue({
+	  	store,
+	    el: '#lobby',
+	    render: h => h(Lobby) 
+	  })
+	} 
 	new Vue({
     el: '#VmBackTop',
     render: h => h(VmBackTop)

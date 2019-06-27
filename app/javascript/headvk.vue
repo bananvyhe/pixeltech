@@ -756,7 +756,8 @@ margin:  0.1em -1.2em;
 .bottom {
   position: relative;
 }
-#app { lost-center: $lostCenter;
+#app { 
+  lost-center: $lostCenter;
   /*padding-top: 1.4em;*/
   overflow: hidden;
   @extend .display;
