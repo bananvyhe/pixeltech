@@ -1,8 +1,13 @@
 class Api::V1::UsersController < Api2Controller
-  before_action :set_users
-  
-	def index
+  # before_action :set_users
+  before_action :set_users, only: [:index, :show, :edit, :update, :destroy]
+	
+  def index
     render json: @user
+  end
+
+  def lobbyall
+    @users = User.all.order(created_at: :desc) 
   end
 
   def show
