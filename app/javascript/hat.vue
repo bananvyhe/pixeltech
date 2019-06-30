@@ -26,7 +26,7 @@
     },
     mounted() {
     	var tlwar = new TimelineMax();
-    	tlwar.from('.warriors', 2.1, {backgroundPositionY: 140, ease: SlowMo.ease.config(0.4, 0.4, false)}, '+=0.5');
+    	tlwar.from('.warriors', 2.1, {backgroundPositionY: 140, ease: SlowMo.ease.config(0.4, 0.6, false)}, '+=0.5');
     	 
     	var tl2 = new TimelineMax({repeat:-1});
 			tl2.to('.clouds', 1200, {backgroundPositionX: 903, ease: Power0.easeNone});
