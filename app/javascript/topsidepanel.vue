@@ -543,7 +543,7 @@ align-self: center;
 	width: 120px;
 }
 #bpad{ 
- 
+
 	height: $topBlank;
 	/*z-index: 800;*/
 	width: 100%;
@@ -553,6 +553,7 @@ align-self: center;
 	align-items: center;
 }
 .bpad { 
+	  
 	width: 100%;
 	display: flex;              
 	/*height: 2.6em;*/

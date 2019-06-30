@@ -147,7 +147,7 @@ html {
 ::-webkit-scrollbar-corner { background-color: #646464;}
 ::-webkit-resizer { background-color: #666;}
 #topsidepanel{
-position: fixed;
+/*position: fixed;*/
 }
 #comment_body {
   background-color: color( $HeadBackColor  shade(46%));
