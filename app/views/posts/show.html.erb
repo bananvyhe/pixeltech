@@ -9,8 +9,8 @@
 		<%#= link_to 'редактировать', edit_post_path(@post) %> <!--  | -->
 		<%= link_to 'назад', '/' %>		
 		</div>
-		<hr>
-		<h4>комментарии:</h4>
+ 
+		<h4 class="comm">комментарии:</h4>
 		<div id="comments" class="mediumtext"> 
 			<%= render @post.comments.where(parent_id: nil), max_nesting: 24 %> 
 			<%= render partial: "comments/form", locals: {commentable: @post} %>

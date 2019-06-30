@@ -1,6 +1,7 @@
 <template>
   <div class="lobby">
-{{users}}
+    {{users}}
+    {{data}}
   </div>
 </template>
 
@@ -8,17 +9,15 @@
 import axios from 'axios'
 export default {
   data: function () {
-
     return {
-      users: ''
+      users: '',
+      data: []
     };
   },
   mounted(){
     this.getUsers()
   },
   watch: {
-
-
   }, 
   computed: {
 
@@ -42,9 +41,19 @@ export default {
         console.log(response.data)
         var alld = response.data
       
-      // const data = [];
-      this.users = alld
-      
+        // const data = [];
+        this.users = alld
+        this.data = []
+        this.datavalue = []
+        var self = this
+        for (let i = 0; alld[i]; i++) {
+          const data = [];
+          const grname = alld[i]
+          console.log(grname)
+ 
+          self.data = self.data.concat(data)
+ 
+        }      
       // return data;
         // this.data = data;
       });

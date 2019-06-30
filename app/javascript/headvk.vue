@@ -331,7 +331,7 @@ export default {
     var self = this
     setTimeout(function(){
       self.addBeer()
-    },1500 );
+    },1000 );
   },
   mounted(){
     
