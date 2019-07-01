@@ -329,9 +329,12 @@ export default {
       // this.bganim.backgroundPosition = "center"
     })
     var self = this
-    setTimeout(function(){
-      self.addBeer()
+    if (this.pos == false) {
+      setTimeout(function(){
+        self.addBeer()
     },1000 );
+    }
+
   },
   mounted(){
     
