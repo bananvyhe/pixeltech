@@ -77,7 +77,7 @@ $warningLine1: #F2AF29;
 $warningLine: #f07d1f;
 $lostCenter: 980px;
 $maincontent: 1560px;
-$lcenter: 1366px;
+$lcenter: 1166px;
 $popwidthvar: 1160px;
 $redorange: #C14953;
 @custom-media --telpanel-small-screen (width <= 720px);
