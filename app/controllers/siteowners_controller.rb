@@ -107,10 +107,15 @@ class SiteownersController < ApplicationController
   # GET /siteowners
   # GET /siteowners.json
   def index 
-    @client =  Client.find_by_user_id(current_user.id)
-    @step = $step
-    # instance_id = YandexMoney::ExternalPayment.get_instance_id(CLIENT_ID)
-    @siteowners = Siteowner.all
+    # => redirect("/")
+    if current_user 
+      @client =  Client.find_by_user_id(current_user.id)
+      @step = $step
+      # instance_id = YandexMoney::ExternalPayment.get_instance_id(CLIENT_ID)
+      @siteowners = Siteowner.all
+    else
+      redirect_to('/')
+    end
   end
 
   # GET /siteowners/1
