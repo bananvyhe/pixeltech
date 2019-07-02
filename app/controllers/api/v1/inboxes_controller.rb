@@ -39,7 +39,6 @@ class Api::V1::InboxesController < ApiController
       @fee.ballance += earn.to_i
       @fee.mescount = ''
       @fee.save
-      Client.
       respond_to do |format|
         format.all { head :ok, content_type: "text/html" }
       end
