@@ -534,13 +534,13 @@
  
 }
 .lvl, .expbar {
-	margin-top: -0.3em;
+	margin-top: -0.2em;
 
 }
 .lvl {
-		padding: 0 0.2em 0 0.7em;
- display: flex;
-align-self: center;
+	padding: 0 0.2em 0 0.3em;
+ 	display: flex;
+	align-self: center;
 }
 .expbar { 
 	 
