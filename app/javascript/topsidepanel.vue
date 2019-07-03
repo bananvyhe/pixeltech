@@ -538,7 +538,7 @@
 
 }
 .lvl {
-	padding: 0 0.2em 0 0.3em;
+	padding: 0 0.2em 0 0.1em;
  	display: flex;
 	align-self: center;
 }
