@@ -30,7 +30,7 @@
 							<game-board ></game-board> 
 						</div> -->
 						<div v-if="$store.getters.role.role == 'voodoo' || $store.getters.role.role == 'user'">
-							<div><span class="largertext">{{$store.getters.role.username}}</span>&nbsp;&nbsp;</div>
+							<div><span class="largertext nikname">{{$store.getters.role.username}}</span>&nbsp;&nbsp;</div>
 							<div class="expbar"> 
 								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
 								<div v-if="$store.getters.gamebo" class="lvl">lvl:{{lvlConversion[0]}}&nbsp;</div>
@@ -530,11 +530,20 @@
             transform: rotate(0deg);
   }
 }
+.nikname {
+ 
+}
+.lvl, .expbar {
+	margin-top: -0.3em;
+
+}
 .lvl {
-display: flex;
+		padding: 0 0.2em 0 0.7em;
+ display: flex;
 align-self: center;
 }
 .expbar { 
+	 
 	adjust-font-size: fs medium;
 	display: flex;
 	width: 220px;
@@ -580,7 +589,7 @@ align-self: center;
 	align-items: center;
 	lost-column: 1/2 2 0em; 
 	/*align-self: center;*/
-	padding: 0 1.3em;
+	padding: 0.1em 1.3em 0em;
 	@media (--only-small-screen) {
 		lost-column: 1/3 2 0em; 
   }
@@ -594,6 +603,7 @@ align-self: center;
 	overflow-x: auto;
 	white-space: nowrap;
 	padding: 0 0.4em;
+
 	/*align-self: center;*/
 	lost-column: 1/2 2 0em; 
 	lost-flex-container: row;
