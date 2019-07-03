@@ -6,6 +6,7 @@
       trigger="click"
       v-model="value"> 
        <el-transfer
+ 
        :titles="['скрытые', 'видимые']"
         v-model="datavalue"
         :data="data">
