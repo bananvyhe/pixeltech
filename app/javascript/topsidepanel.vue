@@ -33,7 +33,7 @@
 							<div><span class="largertext nikname">{{$store.getters.role.username}}</span>&nbsp;&nbsp;</div>
 							<div class="expbar"> 
 								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
-								<div v-if="$store.getters.gamebo" class="lvl">lvl:{{lvlConversion[0]}}&nbsp;</div>
+								<div v-if="$store.getters.gamebo" class="lvl">лвл:{{lvlConversion[0]}}&nbsp;</div>
 								<div class="expline">
 									<el-progress v-if="$store.getters.gamebo" class="elpro" :stroke-width="6" :percentage="Number(lvlConversion[1])"></el-progress>
 								</div>
