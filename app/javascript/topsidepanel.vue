@@ -531,7 +531,7 @@
   }
 }
 .nikname {
- 
+ color: $color-1;
 }
 .lvl, .expbar {
 	margin-top: -0.2em;
