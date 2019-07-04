@@ -4,6 +4,9 @@ class InboxesController < ApplicationController
   # GET /inboxes
   # GET /inboxes.json
   def index
+    unless  current_user 
+      redirect_to('/')
+    end
     @inboxes = Inbox.all.order(created_at: :desc)
   end
 
