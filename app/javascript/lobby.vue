@@ -1,14 +1,11 @@
 <template>
   <div class="lobby"> 
     <h4>Формирование кланов:</h4>
-    <div class="item">
-
+    <div class="item"> 
       <!-- {{users}} -->
-      <div  class="users" v-for="(item, index) in data">
-        <div>
-          {{item.username}}
-        </div> 
-      </div>
+      <el-radio-group class="users" v-for="(item, index) in data" v-model="radio" size="mini" >
+        <el-radio class="user" :label="item.id" border>{{item.username}}</el-radio>
+      </el-radio-group>
     </div>
      <h5>новые пользователи</h5>
   </div>
@@ -19,6 +16,7 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
+      radio: '1',
       users: '',
       data: []
     };
@@ -61,7 +59,7 @@ export default {
           console.log(grname)
         data.push({
           username: grname.username,
- 
+          id: grname.id,
         });
           self.data = self.data.concat(data)
  
@@ -77,6 +75,9 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.user {
+ margin: 0em 0.5em 0 0;
+}
 .users {
   padding: 0em 0.5em;
 }
