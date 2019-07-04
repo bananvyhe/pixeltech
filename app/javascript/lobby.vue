@@ -1,7 +1,16 @@
 <template>
-  <div class="lobby">
-    {{users}}
-    {{data}}
+  <div class="lobby"> 
+    <h4>Формирование кланов:</h4>
+    <div class="item">
+
+      <!-- {{users}} -->
+      <div  class="users" v-for="(item, index) in data">
+        <div>
+          {{item.username}}
+        </div> 
+      </div>
+    </div>
+     <h5>новые пользователи</h5>
   </div>
 </template>
 
@@ -50,7 +59,10 @@ export default {
           const data = [];
           const grname = alld[i]
           console.log(grname)
+        data.push({
+          username: grname.username,
  
+        });
           self.data = self.data.concat(data)
  
         }      
@@ -65,9 +77,16 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
-
+.users {
+  padding: 0em 0.5em;
+}
+.item {
+  display: flex;
+  padding: 0.2em 1em;
+  
+}
 .lobby {
-  padding: 1em;
+  padding: 2em;
   lost-center: $lostCenter;
 }
 

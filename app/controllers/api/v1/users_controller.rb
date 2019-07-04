@@ -7,7 +7,7 @@ class Api::V1::UsersController < Api2Controller
   end
 
   def lobbyall
-    @users = User.all.order(created_at: :desc) 
+    @users = User.where(role: 'user').all.order(created_at: :desc) 
   end
 
   def show
