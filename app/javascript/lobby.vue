@@ -4,10 +4,12 @@
     <div class="item"> 
       <!-- {{users}} -->
       <el-radio-group class="users" v-for="(item, index) in data" v-model="radio" size="mini" >
-        <el-radio class="user" :label="item.id" border>{{item.username}}</el-radio>
+        <!-- <el-badge :value="item.id" class="mark" size="small"> -->
+          <el-radio class="user" :label="item.id" border>{{item.username}}</el-radio>
+        <!-- </el-badge> -->
       </el-radio-group>
     </div>
-     <h5>новые пользователи</h5>
+     <h5>нераспредлеленные пользователи</h5>
   </div>
 </template>
 

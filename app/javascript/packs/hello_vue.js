@@ -68,9 +68,12 @@ Vue.component("temperature", {
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
  
-import {RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
-Vue.prototype.$message = Message; 
+import {Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
+// Vue.prototype.$message = Message; 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 2000 }; 
+// Vue.use(Message);
+
+Vue.use(Badge);
 Vue.use(RadioGroup);
 Vue.use(Radio);
 Vue.use(Transfer);
@@ -92,6 +95,7 @@ Vue.use(Carousel)
 Vue.use(CarouselItem)
 Vue.use(Loading.directive);
 Vue.prototype.$notify = Notification;
+Vue.prototype.$message = Message;
 document.addEventListener('turbolinks:load', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({

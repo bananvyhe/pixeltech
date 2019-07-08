@@ -20,7 +20,7 @@
         <el-slider 
         class=""
         :marks='marks'
-        ладыжников особенн v-model="value"
+        v-model="value"
         range
         :max='60'
         >
@@ -199,6 +199,13 @@ var cmp = {
      var max = 120
      var loa = Math.random() * (max - min) + min;
      loa =  Math.round(loa)
+     loa = Number(loa)
+      this.$notify({
+        // title: 'Опыт',
+        message: 'получено '+loa+ ' опыта',
+        position: 'bottom-left'
+      });
+     // this.$message('получено '+loa+ ' опыта');
       axios({
         method: 'post',
         url: '/gameboards',
@@ -218,6 +225,7 @@ var cmp = {
     makeProceedLink: function() {
       axios({
         method: 'post',
+        //vks#associate
         url: '/api/v1/vkwall',
         data: {
           user_id: this.$store.getters.role.user_id,

@@ -284,6 +284,15 @@ html {
   border-bottom: solid 1px;
   cursor: pointer;
 }
+.el-notification {
+
+  font-family: 'aprior';
+  padding: 0.2em 0.5em 0.5em 0.5em;
+}
+.el-notification__closeBtn {
+  top: 0.7em;
+  right: 0.7em;
+}
 .el-transfer-panel__empty {
   display: none !important;
 }
