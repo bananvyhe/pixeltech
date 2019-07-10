@@ -1,6 +1,6 @@
 <template>
   <div class="lobby"> 
-    <h4>Формирование кланов:</h4>
+    <h4>Выбор лидера:</h4>
     <div class="item"> 
       <!-- {{users}} -->
       <el-radio-group class="users" v-for="(item, index) in data" v-model="radio" size="mini" >
@@ -9,7 +9,7 @@
         <!-- </el-badge> -->
       </el-radio-group>
     </div>
-     <h5>нераспредлеленные пользователи</h5>
+     <!-- <h5>нераспредлеленные пользователи</h5> -->
   </div>
 </template>
 
