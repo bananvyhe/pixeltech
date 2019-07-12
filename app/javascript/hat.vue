@@ -33,7 +33,7 @@
     mounted() {console.log('22222updatedHat')
 
     	var tlwar = new TimelineMax();
-    	tlwar.to('.warriors', 0.1, {opacity: 0, ease: Sine.easeOut}).to('.warriors', 0.3, {opacity: 1, ease: Sine.easeOut}, '+=0.5');
+    	tlwar.to('.warriors', 0.1, {backgroundPositionY: 140, ease: Sine.easeIn}, '+=0.5').to('.warriors', 0.3, {backgroundPositionY: 0, ease: Sine.easeOut}, '+=0.5');
     	 
     	var tl2 = new TimelineMax({repeat:-1});
 			tl2.to('.clouds', 1200, {backgroundPositionX: 903, ease: Power0.easeNone});
