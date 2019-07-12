@@ -129,6 +129,7 @@ body {
   border-bottom: 1px solid color( $str5  shade(60%)) !important;
 }
 html {
+  overflow-y: scroll;
   scrollbar-face-color: #646464;
   scrollbar-base-color: #646464;
   scrollbar-3dlight-color: #646464;
