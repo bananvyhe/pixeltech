@@ -733,7 +733,7 @@ margin:  0.1em -1.2em;
 }
 .linkactive:after {
   background-size: 10px 10px ;
-  content: url('./images/energy29.gif');
+  content: url('./images/29c.gif');
   position: absolute; 
 
   top: -3px; right: 0;
