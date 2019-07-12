@@ -14,7 +14,7 @@
 	</div>
 </template>
 <script>
- 
+
   export default {
     data: function (){
       return {
@@ -24,9 +24,16 @@
     },
     methods: {
     },
-    mounted() {
+    created() { 
+    	console.log('6666updatedHat');
+  
+    		// var tlwar2 = new TimelineMax();		
+    	 //    	tlwar2.to('.warriors', 0.1, {backgroundPositionY: 0, ease: Sine.easeOut}, '-=0.0');
+  	},
+    mounted() {console.log('22222updatedHat')
+
     	var tlwar = new TimelineMax();
-    	tlwar.from('.warriors', 2.4, {backgroundPositionY: 140, ease: Sine.easeOut}, '+=0.5');
+    	tlwar.to('.warriors', 0.1, {opacity: 0, ease: Sine.easeOut}).to('.warriors', 0.3, {opacity: 1, ease: Sine.easeOut}, '+=0.5');
     	 
     	var tl2 = new TimelineMax({repeat:-1});
 			tl2.to('.clouds', 1200, {backgroundPositionX: 903, ease: Power0.easeNone});

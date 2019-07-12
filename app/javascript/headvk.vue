@@ -143,12 +143,13 @@ var cmp = {
 
     }
   },
+
   mounted() {
-      // if (this.userId){
-        if (!this.$store.getters.token){
-         this.status = 'link'
-        }        
-      // }
+  // if (this.userId){
+    if (!this.$store.getters.token){
+     this.status = 'link'
+    }        
+  // }
 
     //jq для открытия нового окна заданных размеров
     $('.js-newWindow').click(function (event) {
