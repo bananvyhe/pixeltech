@@ -1,5 +1,5 @@
 <template>
-	<div id="bpad">{{$store.getters.gamebo}}
+	<div id="bpad"> 
 		<div class="bpad smalltext" v-bind:style="styleObject"> 
 			<div class="logohead">
 				<!-- {{exptime}} -->
