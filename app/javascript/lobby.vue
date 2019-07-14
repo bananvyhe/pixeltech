@@ -78,15 +78,17 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 .user {
-  display: flex;
-  margin: 0em 0.5em 0 0;
+  
+  margin: 0.2em 0.3em;
 }
 .users {
-  padding: 0em 0.5em;
+  display: flex;
+  padding: 0.2em 0.4em;
 }
 .item {
   display: flex;
-  padding: 0.2em 1em;
+  flex-wrap: wrap;
+  padding: 0.5em 1em;
   
 }
 .lobby {

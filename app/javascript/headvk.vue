@@ -134,30 +134,24 @@ var cmp = {
   computed: {
     classlink() {
       // if (this.userId) {
-        if (this.userId && this.userId.length > 0 || this.link == 'visited' || !this.userId) {
-          return 'linkVisited';
-        }else{
-          return 'link';
-        }        
-      // }
-
+      if (this.userId && this.userId.length > 0 || this.link == 'visited' || !this.userId) {
+        return 'linkVisited';
+      }else{
+        return 'link';
+      }        
     }
   },
-
   mounted() {
-    
-        if (checklog == 'unlogged'){
-          this.$store.commit('rolensend', null) 
-          this.$store.commit('tokensend', null) 
-          this.$store.commit('gamesend', null) 
-        }
-      
+  if (checklog == 'unlogged'){
+    this.$store.commit('rolensend', null) 
+    this.$store.commit('tokensend', null) 
+    this.$store.commit('gamesend', null) 
+  } 
   // if (this.userId){
-    if (!this.$store.getters.token){
-     this.status = 'link'
-    }        
+  if (!this.$store.getters.token){
+    this.status = 'link'
+  }        
   // }
-
     //jq для открытия нового окна заданных размеров
     $('.js-newWindow').click(function (event) {
       event.preventDefault();
