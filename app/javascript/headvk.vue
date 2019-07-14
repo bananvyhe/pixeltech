@@ -147,7 +147,9 @@ var cmp = {
   mounted() {
     
         if (checklog == 'unlogged'){
-          this.nulltoken()
+          this.$store.commit('rolensend', null) 
+          this.$store.commit('tokensend', null) 
+          this.$store.commit('gamesend', null) 
         }
       
   // if (this.userId){
