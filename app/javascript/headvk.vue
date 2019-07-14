@@ -145,6 +145,11 @@ var cmp = {
   },
 
   mounted() {
+    
+        if (checklog == 'unlogged'){
+          this.nulltoken()
+        }
+      
   // if (this.userId){
     if (!this.$store.getters.token){
      this.status = 'link'
@@ -338,7 +343,7 @@ export default {
       // this.bganim.backgroundPosition = "center"
     })
     var self = this
-    if (this.pos == false) {
+    if (this.pos == false || this.alldata == nil ) {
       setTimeout(function(){
         self.addBeer()
     },1000 );

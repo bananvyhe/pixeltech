@@ -207,21 +207,21 @@
 		  	}
 		  },
 			nulltoken: function (){
+
 				axios.delete('/users/sign_out', {
 		    }) 
 		    .then((response) => {	 
-		    	if (document.location.pathname != '/'){
-						// window.location.href = '/';
-						// document.location.reload()
-					}else{
+		    	this.$store.commit('tokensend', null) 
+ 				this.$store.commit('rolensend', null) 
 
-					}
+		  	this.$store.commit('gamesend', null) 
+	 
+ 
  				//  this.$store.commit('tokensend', null) 
 		        //   this.$store.commit('tokensend', null) 
 		    })
 	      .then(() => {
-					this.$store.commit('rolensend', null) 
-		  		this.$store.commit('tokensend', null) 
+
 	      	// 
 		      // location.reload(true);
 		    })    

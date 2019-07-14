@@ -1,5 +1,5 @@
 <template>
-	<div id="bpad">
+	<div id="bpad">{{$store.getters.gamebo}}
 		<div class="bpad smalltext" v-bind:style="styleObject"> 
 			<div class="logohead">
 				<!-- {{exptime}} -->
@@ -274,6 +274,9 @@
 	  		axios.delete('/users/sign_out', {
 		    }) 
 		    .then((response) => {	 
+		    	this.$store.commit('rolensend', null) 
+		  		this.$store.commit('tokensend', null) 
+		  		this.$store.commit('gamesend', null) 
 		    	if (document.location.pathname != '/'){
 						// window.location.href = '/';
 						// document.location.reload()
@@ -298,7 +301,7 @@
 	  },
 	  watch: {
 	    exptime() {
-	       	if (this.exptime < 20){
+	       	if ((this.exptime < 20)&&(this.$store.getters.token )){
 
       // setInterval(function(){
 		    	axios({
@@ -380,8 +383,10 @@
 
 	  },
 	  mounted() {
-	  	this.exptimer();
+
+	  
 	  	if (this.$store.getters.token != null) {
+	  			this.exptimer();
 	  		// axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.getters.token.token;
 	  		// let username =  decodedJwtData.username
 				// this.$store.commit('username', username)
@@ -389,8 +394,7 @@
 				// this.$store.commit('expsend', acctokexp)
 				// let usid = decodedJwtData.sub	
 				// console.log(usid) 
-				
-				var self = this;
+ 
 
 				// if (self.$store.getters.token.refresh){
 			

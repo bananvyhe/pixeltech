@@ -78,7 +78,8 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 .user {
- margin: 0em 0.5em 0 0;
+  display: flex;
+  margin: 0em 0.5em 0 0;
 }
 .users {
   padding: 0em 0.5em;
@@ -89,6 +90,7 @@ export default {
   
 }
 .lobby {
+  /*background-color: #ada;*/
   padding: 2em;
   lost-center: $lostCenter;
 }
