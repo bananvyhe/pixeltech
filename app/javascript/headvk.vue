@@ -114,7 +114,7 @@
 </template>
 
 <script>
-  
+
 import axios from 'axios'
 import { mapMutations } from 'vuex';
 
@@ -314,7 +314,7 @@ export default {
       var self = this
       setTimeout(function(){
         self.anim()
-      },30 );
+      },300 );
     },
     bottom(bottom) {
       if (bottom) {
@@ -374,7 +374,7 @@ export default {
       this.scrollBottom = window.scrollY + window.innerHeight;
       window.addEventListener('scroll', _.throttle(this.scrollHandler, 100))
       this.animate = document.querySelectorAll(".vkpost")
-      console.log(this.animate)
+ 
     },
     animHarvest() {
 
@@ -415,7 +415,7 @@ export default {
       })
       .then((response) => { 
         var alld = response.data
- 
+  
         this.alldata = this.alldata.concat(alld);
         this.pos = this.alldata.length
         this.bottom = false
@@ -573,21 +573,25 @@ margin:  0.1em -1.2em;
 }
 .vkpost:nth-child(odd) {
   transition: 0.1s ease-out;
-  left: -1000px;
-  opacity: 0;
+  /*left: -1000px;*/
+  transform: translateX(-100%);
+  /*opacity: 0;*/
 }
 .inview:nth-child(odd) {
-  left: 0px;
-  opacity: 1
+  transform: translateX(0%);
+  /*left: 0px;*/
+  /*opacity: 1*/
 }
 .vkpost:nth-child(even) {
   transition: 0.1s ease-out;
-  right: -1000px;
-  opacity: 0;
+  /*right: -1000px;*/
+  transform: translateX(100%);
+  /*opacity: 0;*/
 }
 .inview:nth-child(even) {
-  right: 0px;
-  opacity: 1
+  transform: translateX(0%);
+  /*right: 0px;*/
+  /*opacity: 1*/
 }
 .link, .linkactive, .linkactive2, .linkVisited {
   white-space: nowrap;
