@@ -314,7 +314,7 @@ export default {
       var self = this
       setTimeout(function(){
         self.anim()
-      },300 );
+      },30 );
     },
     bottom(bottom) {
       if (bottom) {
@@ -348,7 +348,7 @@ export default {
     if (self.pos == false || self.alldata.length < 1 ) {
       setTimeout(function(){
         self.addBeer()
-      },1400 );
+      },1500 );
     }
   },
   updated() {
@@ -574,24 +574,24 @@ margin:  0.1em -1.2em;
 .vkpost:nth-child(odd) {
   transition: 0.1s ease-out;
   /*left: -1000px;*/
-  transform: translateX(-100%);
-  /*opacity: 0;*/
+  transform: translateX(-30%);
+  opacity: 0;
 }
 .inview:nth-child(odd) {
   transform: translateX(0%);
   /*left: 0px;*/
-  /*opacity: 1*/
+  opacity: 1;
 }
 .vkpost:nth-child(even) {
   transition: 0.1s ease-out;
   /*right: -1000px;*/
-  transform: translateX(100%);
-  /*opacity: 0;*/
+  transform: translateX(30%);
+  opacity: 0;
 }
 .inview:nth-child(even) {
   transform: translateX(0%);
   /*right: 0px;*/
-  /*opacity: 1*/
+  opacity: 1;
 }
 .link, .linkactive, .linkactive2, .linkVisited {
   white-space: nowrap;
