@@ -83,12 +83,12 @@ export default {
 }
 .users {
   display: flex;
-  padding: 0.2em 0.4em;
+  padding: 0.2em 0.5em;
 }
 .item {
   display: flex;
   flex-wrap: wrap;
-  padding: 0.5em 1em;
+  padding: 0.2em 1em;
   
 }
 .lobby {

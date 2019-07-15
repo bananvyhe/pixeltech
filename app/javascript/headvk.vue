@@ -1,6 +1,7 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
 <div id="app" class="app"> 
+  <!-- {{alldata}} -->
   <el-dialog
     class="containerpop"
     :visible.sync="dialogVisible"
@@ -113,9 +114,10 @@
 </template>
 
 <script>
+  
 import axios from 'axios'
 import { mapMutations } from 'vuex';
- 
+
 var cmp = {
   props: {
     testString:{
@@ -272,7 +274,7 @@ var cmp = {
     }
   }
 };
- 
+
 export default {
   data: function () {
     return {
@@ -312,7 +314,7 @@ export default {
       var self = this
       setTimeout(function(){
         self.anim()
-      },300 );
+      },30 );
     },
     bottom(bottom) {
       if (bottom) {
@@ -338,16 +340,16 @@ export default {
       this.bottom = this.bottomVisible()
       // this.bganim.backgroundPosition = "center"
     })
-    var self = this
-    if (this.pos == false || this.alldata == nil ) {
-      setTimeout(function(){
-        self.addBeer()
-    },1000 );
-    }
+
 
   },
   mounted(){
-    
+    var self = this
+    if (self.pos == false || self.alldata.length < 1 ) {
+      setTimeout(function(){
+        self.addBeer()
+      },1400 );
+    }
   },
   updated() {
 
@@ -370,7 +372,7 @@ export default {
     anim() {
       this.scrollTop = window.scrollY;
       this.scrollBottom = window.scrollY + window.innerHeight;
-      window.addEventListener('scroll', _.throttle(this.scrollHandler, 300))
+      window.addEventListener('scroll', _.throttle(this.scrollHandler, 100))
       this.animate = document.querySelectorAll(".vkpost")
       console.log(this.animate)
     },
@@ -413,7 +415,7 @@ export default {
       })
       .then((response) => { 
         var alld = response.data
-        console.log(this.filterInc)
+ 
         this.alldata = this.alldata.concat(alld);
         this.pos = this.alldata.length
         this.bottom = false
