@@ -10,7 +10,7 @@
             placement="bottom"
          width=""
             trigger="focus">
-            <div class="userinterface">
+            <div class="userinterface ">
               <div>
                 <el-button label="2" border size="mini">Голосовать</el-button>
               </div>
@@ -102,20 +102,22 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+@import "stylesheets/_typography";
 .poper {
  
 }
 .userinterface {
+  padding: 0 0.2em;
   margin: -0.9em;
   display: flex;
   flex-direction: row;
   div {
-    margin: 0.4em 0.3em ;
+   padding: 0.2em 0.0em ;
   }
 }
 .user {
   
-  /*margin: 0.2em 0.3em;*/
+  margin: 0.2em 0.3em;
 }
 .users {
   display: flex;

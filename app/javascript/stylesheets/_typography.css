@@ -41,6 +41,7 @@ h5 {
 p:first-of-type {
   /*margin-top: spacing(0.5);*/
 } 
+
 .smalltext {
   adjust-font-size: fs small;
 }
