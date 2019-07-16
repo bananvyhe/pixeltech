@@ -386,7 +386,7 @@ export default {
         let element = this.animate[e];
         let elTop = element.offsetTop;
         let elBottom = element.offsetTop + element.scrollHeight;
-        if(this.scrollBottom > (elTop + 20) && (elBottom - 10) > this.scrollTop){
+        if(this.scrollBottom > (elTop + 30) && (elBottom - 30) > this.scrollTop){
           return true;
         } else {
           return false;
@@ -574,9 +574,9 @@ margin:  0.1em -1.2em;
 
 }
 .vkpost:nth-child(odd) {
-  transition: 0.1s ease-out;
+  transition: 0.3s ease-out;
   /*left: -1000px;*/
-  transform: translateX(-30%);
+  transform: translateX(-5%);
   opacity: 0;
 }
 .inview:nth-child(odd) {
@@ -585,9 +585,9 @@ margin:  0.1em -1.2em;
   opacity: 1;
 }
 .vkpost:nth-child(even) {
-  transition: 0.1s ease-out;
+  transition: 0.3s ease-out;
   /*right: -1000px;*/
-  transform: translateX(30%);
+  transform: translateX(5%);
   opacity: 0;
 }
 .inview:nth-child(even) {
