@@ -7,10 +7,21 @@
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
           <el-popover
             placement="bottom"
-            width="100"
+            width=""
             trigger="focus">
-            <div>
-              {{item.id}}тест
+            <div class="userinterface">
+              <div>
+                <el-radio label="2" border>Голосовать</el-radio>
+              </div>
+              <div>
+                <el-radio label="1" border disabled>Убить</el-radio>
+              </div>
+
+              <div>
+                  <!-- <el-radio label="2" border disabled>Option B</el-radio> -->
+            </div> 
+            
+        
             </div>
           <el-radio slot="reference" class="user" :label="item.id" border>{{item.username}}</el-radio>
         </el-popover>
@@ -85,6 +96,14 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.userinterface {
+      display: flex;
+    flex-direction: row;
+  div {
+
+    margin: 0.3em 0.3em;
+  }
+}
 .user {
   
   margin: 0.2em 0.3em;
