@@ -11,17 +11,17 @@
          width=""
             trigger="focus">
             <div class="userinterface ">
-              <div>
-                <el-button label="2" border size="mini">Голосовать</el-button>
+              <div  >
+                <el-button label="2" border size="mini"  class="aprior">Голосовать</el-button>
+              </div>
+              <div >
+                <el-button type="warning"  label="4" border size="mini"  class="aprior"> + </el-button>
               </div>
               <div>
-                <el-button type="warning"  label="3" border size="mini"> + </el-button>
+                <el-button type="warning"  label="3" border size="mini"  class="aprior"> - </el-button>
               </div>
               <div>
-                <el-button type="warning"  label="3" border size="mini"> - </el-button>
-              </div>
-              <div>
-                <el-button type="danger" label="1" border size="mini" disabled> ПК </el-button>
+                <el-button type="danger" label="1" border size="mini" disabled  class="aprior"> ПК </el-button>
               </div>
               <div>
                   <!-- <el-radio label="2" border disabled>Option B</el-radio> -->
