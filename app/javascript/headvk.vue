@@ -101,10 +101,10 @@
 
       <div class="raitingdate" >
         <div class="vkdate">{{data.posted_at}}</div>
-        <div class="vkraiting largertext">{{data.raiting}}</div>        
-      </div>
+        <div class="vkraiting largertext">{{data.raiting}}</div>    
+      </div> 
       <div v-if="data.medias_row" class="mediabutton"> 
-        <energy-button class="js-newWindow" :testString="data.id" :userId="data.user" data-popup="width=780,height=950,top=250,left=150, scrollbars=yes"" v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
+        <energy-button class="js-newWindow" :testString="data.id" :userId="data.user" data-popup='width=780, height=800, top=200, left=950, scrollbars=yes' v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
       </div>
     </div>
     </div>
@@ -129,6 +129,7 @@ var cmp = {
   },
   data: function(){
     return {
+
       status: '',
       link: '',
     };
@@ -278,6 +279,7 @@ var cmp = {
 export default {
   data: function () {
     return {
+            // top: (window.innerWidth - 800)/2,
       filterInc: [],
       empid: '',
       dialogVisible: false,
