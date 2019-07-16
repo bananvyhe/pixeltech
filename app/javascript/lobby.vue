@@ -6,17 +6,23 @@
       <el-radio-group class="users" v-for="(item, index) in data" v-model="radio" size="mini" >
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
           <el-popover
+ 
             placement="bottom"
-            width=""
+         width=""
             trigger="focus">
             <div class="userinterface">
               <div>
-                <el-radio label="2" border>Голосовать</el-radio>
+                <el-button label="2" border size="mini">Голосовать</el-button>
               </div>
               <div>
-                <el-radio label="1" border disabled>Убить</el-radio>
+                <el-button type="warning"  label="3" border size="mini"> + </el-button>
               </div>
-
+              <div>
+                <el-button type="warning"  label="3" border size="mini"> - </el-button>
+              </div>
+              <div>
+                <el-button type="danger" label="1" border size="mini" disabled> ПК </el-button>
+              </div>
               <div>
                   <!-- <el-radio label="2" border disabled>Option B</el-radio> -->
             </div> 
@@ -96,21 +102,24 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.poper {
+ 
+}
 .userinterface {
-      display: flex;
-    flex-direction: row;
+  margin: -0.9em;
+  display: flex;
+  flex-direction: row;
   div {
-
-    margin: 0.3em 0.3em;
+    margin: 0.4em 0.3em ;
   }
 }
 .user {
   
-  margin: 0.2em 0.3em;
+  /*margin: 0.2em 0.3em;*/
 }
 .users {
   display: flex;
-  padding: 0.2em 0.5em;
+  padding: 0.2em 0.3em;
 }
 .item {
   display: flex;
