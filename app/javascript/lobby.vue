@@ -12,7 +12,7 @@
             trigger="focus">
             <div class="userinterface ">
               <div  >
-                <el-button label="2" border size="mini"  class="aprior">Голосовать</el-button>
+                <el-button label="2" border size="mini"  class="aprior">Сообщение</el-button>
               </div>
               <div >
                 <el-button type="warning"  label="4" border size="mini"  class="aprior"> + </el-button>
