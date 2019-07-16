@@ -1,6 +1,7 @@
 <template>
   <div class="lobby"> 
-    <h4>Выбор лидера:</h4>
+    <div class="headlobby"><h4>необходимо 7 голосов для получения прав </h4> </div>
+    
     <div class="item"> 
       <!-- {{users}} -->
       <el-radio-group class="users" v-for="(item, index) in data" v-model="radio" size="mini" >
@@ -125,12 +126,20 @@ export default {
 }
 .item {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 0.2em 1em;
   
 }
+.headlobby {
+  display: flex;
+  justify-content: center;
+}
 .lobby {
   /*background-color: #ada;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 2em;
   lost-center: $lostCenter;
 }
