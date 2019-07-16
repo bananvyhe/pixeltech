@@ -5,7 +5,15 @@
       <!-- {{users}} -->
       <el-radio-group class="users" v-for="(item, index) in data" v-model="radio" size="mini" >
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
-          <el-radio class="user" :label="item.id" border>{{item.username}}</el-radio>
+          <el-popover
+            placement="bottom"
+            width="100"
+            trigger="focus">
+            <div>
+              {{item.id}}тест
+            </div>
+          <el-radio slot="reference" class="user" :label="item.id" border>{{item.username}}</el-radio>
+        </el-popover>
         <!-- </el-badge> -->
       </el-radio-group>
     </div>
