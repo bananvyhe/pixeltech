@@ -6,6 +6,7 @@
     class="containerpop"
     :visible.sync="dialogVisible"
     width="90%"
+    :lock-scroll = "false"
     >
     <a :href='empid.replace(/"/g,"")' target="_blank" >
     <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid.slice(1, -1)}">

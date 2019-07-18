@@ -1,5 +1,6 @@
 <template>
   <div class="lobby"> 
+    <!-- {{users}} -->
     <div class="headlobby"><h4>семь голосов дадут лидеру права</h4> </div>
     
     <div class="item"> 
