@@ -28,12 +28,22 @@ class GameboardsController < ApplicationController
   def create
     @xp =  Gameboard.find_by_user_id(payload['user_id'])
     @earn = params[:expirience]
+    prng = Random.new
+    randomcry = prng.rand(0..2)
+    cry = prng.rand(1..3)
+
     if @xp == nil
       @gameboard = Gameboard.new
       @gameboard.user_id = payload['user_id']
       @gameboard.expirience = @earn
       @gameboard.save
+     
+
     else
+      if  randomcry == 1
+        @xp.cry += cry
+      end
+      
       @xp.expirience += @earn
       @xp.save    
     end
@@ -83,6 +93,6 @@ class GameboardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gameboard_params
-      params.require(:gameboard).permit(:expirience, :karma)
+      params.require(:gameboard).permit(:expirience, :karma, :cry)
     end
 end

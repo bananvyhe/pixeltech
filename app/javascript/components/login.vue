@@ -126,7 +126,7 @@
 			        } 
 		        })
 		        .then((response) => {
-		        	console.log(response.data.expirience)
+		        	console.log(response.data.cry)
 		          this.$store.commit('gamesend', response.data.expirience )
 		        })
 		        .catch(function (error) {
@@ -294,8 +294,8 @@
   window.addEventListener('resize', _.throttle(parseCalc, 100));
 </script>
 <style scoped>
-@import "_variables";
-@import "_extends";
+@import "stylesheets/_variables";
+@import "stylesheets/_extends";
 .bottomField {
 	padding-top: 3em;
 }
