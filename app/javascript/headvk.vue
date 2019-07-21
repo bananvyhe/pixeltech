@@ -228,14 +228,18 @@ var cmp = {
         this.gamesendplus({
           amount: loa
         })
+
         this.crysendplus({
           amount: Number(response.headers.cry)
-        })
-        this.$notify({
-          // title: 'Опыт',
-          message: 'получено кристаллов: '+response.headers.cry,
-          position: 'bottom-left'
-        });        
+        })          
+
+        if (response.headers.cry){
+          this.$notify({
+            // title: 'Опыт',
+            message: 'получено кристаллов: '+response.headers.cry,
+            position: 'bottom-left'
+          });  
+        }      
       })
     },
     makeProceedLink: function() {
