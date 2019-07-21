@@ -12,11 +12,19 @@ export const tokensend = (state,  token ) => {
 	 
 }
 export const gamesend = (state,  game ) => {
-	state.gamebo  = game
+	state.gamebo = game
+	 
+}
+export const crysend = (state,  cry ) => {
+	state.cry = cry
 	 
 }
 export const gamesendplus = (state,  payload ) => {
 	state.gamebo += payload.amount
+	 
+}
+export const crysendplus = (state,  payload ) => {
+	state.cry += payload.amount
 	 
 }
 export const refreshsend = (state,  token ) => {

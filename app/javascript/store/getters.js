@@ -10,7 +10,9 @@ export const token = (state) => {
 export const gamebo = (state) => {
 	return state.gamebo
 }
- 
+ export const cry = (state) => {
+	return state.cry
+}
 export const refreshToken = (state) => {
 	return state.refreshToken
 }

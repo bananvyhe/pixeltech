@@ -8,6 +8,6 @@ export default {
 	// exp2: '',
 	role: '',
 	gamebo: '',
- 
+	cry: '',
 	// username: ''
 }

@@ -176,7 +176,8 @@ var cmp = {
 
   methods: {
     ...mapMutations([
-      'gamesendplus'
+      'gamesendplus',
+      'crysendplus'
     ]),
     overAction: function() {
       if (this.userId && this.userId.length < 1  && this.link != 'visited' ){
@@ -222,11 +223,19 @@ var cmp = {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       }).then((response) => { 
+
         // this.$store.commit('gamesendplus', 100)
         this.gamesendplus({
           amount: loa
         })
-        console.log('headers', response.headers)
+        this.crysendplus({
+          amount: Number(response.headers.cry)
+        })
+        this.$notify({
+          // title: 'Опыт',
+          message: 'получено кристаллов: '+response.headers.cry,
+          position: 'bottom-left'
+        });        
       })
     },
     makeProceedLink: function() {
@@ -333,6 +342,7 @@ export default {
 
   },
   created() {
+    // this.$store.commit('gamesend', null) 
     if(document.body.clientWidth > 980) {
       this.carouselh = "40em"
     }else if(document.body.clientWidth <480){

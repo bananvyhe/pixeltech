@@ -38,12 +38,13 @@ class GameboardsController < ApplicationController
       @gameboard.expirience = @earn
       @gameboard.save     
     else
-      # if  randomcry == 1
+      
+      if  randomcry == 1
         @xp.cry += cry
         crystal = cry.to_s
         #отправка кол-ва полученных кристаллов через заголовок
         response.set_header('cry', crystal)
-      # end
+      end
       @xp.expirience += @earn
       @xp.save    
     end

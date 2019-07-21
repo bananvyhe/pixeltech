@@ -38,6 +38,7 @@
 								<div class="expline">
 									<el-progress v-if="$store.getters.gamebo" class="elpro" :stroke-width="6" :percentage="Number(lvlConversion[1])"></el-progress>
 								</div>
+								<div v-if="$store.getters.cry" class="lvl">кри: &nbsp;{{$store.getters.cry}}</div>
 								<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
 							</div>
 							<!-- <game-board :expresult="lvlConversion"></game-board>   -->
