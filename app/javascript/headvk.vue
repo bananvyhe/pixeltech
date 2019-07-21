@@ -226,6 +226,7 @@ var cmp = {
         this.gamesendplus({
           amount: loa
         })
+        console.log('headers', response.headers)
       })
     },
     makeProceedLink: function() {

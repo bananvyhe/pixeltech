@@ -131,7 +131,7 @@
 		        })
 		        .catch(function (error) {
 		          console.log(error);
-	      	}); 						
+	      		}).then(); 						
 	  		}	
 			//code that causes an error
 				}catch(e){
