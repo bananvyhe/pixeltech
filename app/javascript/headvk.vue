@@ -212,7 +212,7 @@ var cmp = {
         title: loa,
         message: 'получен опыт',
         position: 'bottom-left',
-        duration: 0, 
+        // duration: 0, 
       });
      // this.$message('получено '+loa+ ' опыта');
       axios({
