@@ -209,8 +209,10 @@ var cmp = {
      loa = Number(loa)
       this.$notify({
         // title: 'Опыт',
-        message: 'получено '+loa+ ' опыта',
-        position: 'bottom-left'
+        title: loa,
+        message: 'получен опыт',
+        position: 'bottom-left',
+        duration: 0, 
       });
      // this.$message('получено '+loa+ ' опыта');
       axios({
@@ -233,8 +235,9 @@ var cmp = {
             amount: Number(response.headers.cry)
           })   
           this.$notify({
+            title: response.headers.cry,
             // title: 'Опыт',
-            message: 'получено кристаллов: '+response.headers.cry,
+            message: 'найдена руда',
             position: 'bottom-left'
           });  
         }      
