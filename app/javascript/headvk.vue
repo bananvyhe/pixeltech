@@ -106,6 +106,7 @@
       </div> 
       <div v-if="data.medias_row" class="mediabutton"> 
         <energy-button class="js-newWindow" :testString="data.id" :userId="data.user" data-popup='width=780, height=800, top=200, left=950, scrollbars=yes' v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
+<!--          -->
       </div>
     </div>
     </div>
@@ -235,10 +236,12 @@ var cmp = {
             amount: Number(response.headers.cry)
           })   
           this.$notify({
-            title: response.headers.cry,
-            // title: 'Опыт',
-            message: 'найдена руда',
-            position: 'bottom-left'
+            // title: '<strong>This is <i>HTML</i> string</strong>'+response.headers.cry,
+            // title: 'Опыт',background-image: url('./images/_hat/fog.jpg');
+            message: '<div class="cry">'+response.headers.cry+' </div> <div class="dropmessage">найден камень</div>',
+            position: 'bottom-left',
+            dangerouslyUseHTMLString: true,
+            // duration: 0
           });  
         }      
       })
@@ -289,7 +292,9 @@ var cmp = {
         this.makeProceedLink() 
       }
     }
+
   }
+
 };
 
 export default {
@@ -460,6 +465,7 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
+
 .filterbutton, .addpublic {
   display: flex;
   align-items: right;

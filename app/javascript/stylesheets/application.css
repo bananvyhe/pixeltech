@@ -208,6 +208,17 @@ html {
 .firstpagebg {
  
 }
+.cry {
+  height: 52px; 
+  width: 52px; 
+  display: flex;
+  background-image: url('../images/cry.jpg');
+  background-size: contain;
+  padding: 0.2em 0.5em;
+}
+.dropmessage {
+  display: flex;
+}
 .vkpost {
 /*  border-top: 0.1em  solid color( $HeadBackColor  shade(46%));
   border-right: 0.1em  solid color( $HeadBackColor  shade(46%));*/
@@ -290,11 +301,20 @@ html {
 }
 .el-notification__content {
   margin: 0;
+  p{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    .dropmessage{
+      padding: 0 0 0 0.8em;
+    }
+  }
+
 }
 .el-notification {
   
   font-family: 'aprior';
-  padding: 0.8em 0.5em 0.5em 0.5em;
+  padding: 0.8em 0.5em 0.8em 0.5em;
 }
 .el-notification__closeBtn {
   top: 0.7em;

@@ -38,12 +38,14 @@
 								<div class="expline">
 									<el-progress v-if="$store.getters.gamebo" class="elpro" :stroke-width="6" :percentage="Number(lvlConversion[1])"></el-progress>
 								</div>
-								<div v-if="$store.getters.cry" class="lvl">кри: &nbsp;{{$store.getters.cry}}</div>
+
 								<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
 							</div>
+
 							<!-- <game-board :expresult="lvlConversion"></game-board>   -->
 						</div>
 					</div>
+					<div v-if="$store.getters.cry" class="crytop">камни: &nbsp;{{$store.getters.cry}}</div> 
 					<div v-if="$store.getters.token == null">
 						<div v-if="checklog != 'unlogged' ">
 							{{nulltoken}}
@@ -58,6 +60,7 @@
 					<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}
 					<br> Рефреш токен: {{this.$store.getters.token.refresh}}
 					<br><br> -->
+
 					<div>права: {{$store.getters.role.role}}</div>
 					<div>
 						<!-- &nbsp;&nbsp; Истекает через:  -->
@@ -408,6 +411,12 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
+.crytop {
+ display: flex;
+ justify-content: center;
+ align-self: flex-start;
+ padding: 0.1em;
+}
 /*.hat {
 	height: 440px;
 }*/
@@ -575,7 +584,7 @@
 	 
 	adjust-font-size: fs medium;
 	display: flex;
-	width: 220px;
+	 
 }
 /deep/ .expline {
 	width: 120px;
@@ -620,10 +629,10 @@
 	/*align-self: center;*/
 	padding: 0.1em 1.3em 0em;
 	@media (--only-small-screen) {
-		lost-column: 1/3 2 0em; 
+		lost-column: 1/2 2 0em; 
   }
   @media (--only-xsmall-screen) {
-		lost-column: 1/3 2 0em; 
+		lost-column: 1/2 2 0em; 
   }
 }
 .maininfo {
@@ -639,10 +648,10 @@
 	justify-content: flex-end;
 	align-items: center;
 	@media (--only-small-screen) {
-		lost-column: 2/3 2 0em; 
+		lost-column: 1/2 2 0em; 
   }
   @media (--only-xsmall-screen) {
-		lost-column: 2/3 2 0em; 
+		lost-column: 1/2 2 0em; 
   }
 	.info {
 		display: flex;
