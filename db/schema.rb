@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_20_162357) do
+ActiveRecord::Schema.define(version: 2019_07_24_153707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,10 @@ ActiveRecord::Schema.define(version: 2019_07_20_162357) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.integer "cry", default: 0
+    t.boolean "pk", default: false
+    t.integer "plus", default: 0
+    t.integer "minus", default: 0
+    t.string "message"
     t.index ["user_id"], name: "index_gameboards_on_user_id"
   end
 

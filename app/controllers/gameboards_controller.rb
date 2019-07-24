@@ -94,6 +94,6 @@ class GameboardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gameboard_params
-      params.require(:gameboard).permit(:expirience, :karma, :cry)
+      params.require(:gameboard).permit(:expirience, :karma, :cry, :pk, :plus, :minus, :message)
     end
 end
