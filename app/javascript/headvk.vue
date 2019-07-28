@@ -600,7 +600,7 @@ margin:  0.1em -1.2em;
   transition: 0.2s ease-in;
   /*left: -1000px;*/
   /*transform: translateX(-1%);*/
-  opacity: 0.2;
+  opacity: 0.4;
 }
 .inview:nth-child(odd) {
   /*transform: translateX(0%);*/
@@ -611,7 +611,7 @@ margin:  0.1em -1.2em;
   transition: 0.2s ease-in;
   /*right: -1000px;*/
   /*transform: translateX(1%);*/
-  opacity: 0.2;
+  opacity: 0.4;
 }
 .inview:nth-child(even) {
   /*transform: translateX(0%);*/
