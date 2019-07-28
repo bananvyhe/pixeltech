@@ -408,7 +408,7 @@ export default {
         let element = this.animate[e];
         let elTop = element.offsetTop;
         let elBottom = element.offsetTop + element.scrollHeight;
-        if(this.scrollBottom > (elTop + 230) && (elBottom - 430) > this.scrollTop){
+        if(this.scrollBottom > (elTop + 130) && (elBottom - 230) > this.scrollTop){
           return true;
         } else {
           return false;
