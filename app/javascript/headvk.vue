@@ -396,7 +396,7 @@ export default {
     anim() {
       this.scrollTop = window.scrollY;
       this.scrollBottom = window.scrollY + window.innerHeight;
-      window.addEventListener('scroll', _.throttle(this.scrollHandler, 100))
+      window.addEventListener('scroll', _.throttle(this.scrollHandler, 50))
       this.animate = document.querySelectorAll(".vkpost")
  
     },
@@ -597,7 +597,7 @@ margin:  0.1em -1.2em;
 
 }
 .vkpost:nth-child(odd) {
-  transition: 0.3s ease-in;
+  transition: 0.2s ease-in;
   /*left: -1000px;*/
   /*transform: translateX(-1%);*/
   opacity: 0.2;
@@ -608,7 +608,7 @@ margin:  0.1em -1.2em;
   opacity: 1;
 }
 .vkpost:nth-child(even) {
-  transition: 0.3s ease-in;
+  transition: 0.2s ease-in;
   /*right: -1000px;*/
   /*transform: translateX(1%);*/
   opacity: 0.2;
