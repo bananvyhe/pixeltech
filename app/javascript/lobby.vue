@@ -1,7 +1,7 @@
 <template>
   <div class="lobby"> 
     <!-- {{users}} -->
-    <div class="headlobby"><h4>организация клана</h4> </div>
+    <div class="headlobby"><h4>пул клана</h4> </div>
     
     <div class="item"> 
       <!-- {{users}} -->
