@@ -408,7 +408,7 @@ export default {
         let element = this.animate[e];
         let elTop = element.offsetTop;
         let elBottom = element.offsetTop + element.scrollHeight;
-        if(this.scrollBottom > (elTop + 30) && (elBottom - 30) > this.scrollTop){
+        if(this.scrollBottom > (elTop + 230) && (elBottom - 430) > this.scrollTop){
           return true;
         } else {
           return false;
@@ -597,24 +597,25 @@ margin:  0.1em -1.2em;
 
 }
 .vkpost:nth-child(odd) {
-  transition: 0.3s ease-out;
+  transition: 0.3s ease-in;
   /*left: -1000px;*/
-  transform: translateX(-5%);
-  opacity: 0;
+  /*transform: translateX(-1%);*/
+  opacity: 0.2;
 }
 .inview:nth-child(odd) {
-  transform: translateX(0%);
+  /*transform: translateX(0%);*/
   /*left: 0px;*/
   opacity: 1;
 }
 .vkpost:nth-child(even) {
-  transition: 0.3s ease-out;
+  transition: 0.3s ease-in;
   /*right: -1000px;*/
-  transform: translateX(5%);
-  opacity: 0;
+  /*transform: translateX(1%);*/
+  opacity: 0.2;
 }
 .inview:nth-child(even) {
-  transform: translateX(0%);
+  /*transform: translateX(0%);*/
+
   /*right: 0px;*/
   opacity: 1;
 }

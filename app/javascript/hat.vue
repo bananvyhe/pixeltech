@@ -146,7 +146,7 @@
 	/*lost-utility: edit;*/
 	height: 162px;
 	background-color: #13151a;
-
+	/*border-radius: 0px 0 4em 4em;*/
 	border-bottom: 4px solid color( #1E1E21 shade(30%));
 	border
 	@media (--only-small-screen) {
