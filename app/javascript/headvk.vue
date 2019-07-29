@@ -269,15 +269,16 @@ var cmp = {
       })
     },
     changeStatus: function() {
-                  if (!this.$store.getters.token){
-              this.status = 'link';
-            }
+      if (!this.$store.getters.token){
+        this.status = 'link';
+      }
       if (this.$store.getters.token){
         this.status = 'linkactive2';
       }
 
       if (this.link != 'visited' &&  this.userId.length < 1) {
-        this.exppush() 
+        this.exppush()
+        this.userId = true 
       }
 
       var self = this;
