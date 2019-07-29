@@ -216,7 +216,7 @@ console.log(response.data)
  				this.$store.commit('rolensend', null) 
 
 		  	this.$store.commit('gamesend', null) 
-	 
+	 			this.$store.commit('crysend', null) 
  
  				//  this.$store.commit('tokensend', null) 
 		        //   this.$store.commit('tokensend', null) 

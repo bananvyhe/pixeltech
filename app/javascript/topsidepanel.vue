@@ -4,7 +4,9 @@
 			<div class="logohead">
 				<!-- {{exptime}} -->
 				<div class="voodoo" v-if="!$store.getters.role">
-					<div class="basecamp">Cyber team</div>&nbsp;&nbsp;
+					<div class="basecamp">
+						<!-- Cyber team -->
+					</div>&nbsp;&nbsp;
 					<!-- <div class="swing"> -->
 					<request class="request"></request>
 					<!-- </div> -->
@@ -45,7 +47,9 @@
 							<!-- <game-board :expresult="lvlConversion"></game-board>   -->
 						</div>
 					</div>
-					<div v-if="$store.getters.cry" class="crytop">камни: &nbsp;{{$store.getters.cry}}</div> 
+					<div v-if="$store.getters.cry" class="crytop">
+						<!-- камни: &nbsp;{{$store.getters.cry}} -->
+					</div> 
 					<div v-if="$store.getters.token == null">
 						<div v-if="checklog != 'unlogged' ">
 							{{nulltoken}}
@@ -632,7 +636,8 @@
 		lost-column: 1/2 2 0em; 
   }
   @media (--only-xsmall-screen) {
-		lost-column: 1/2 2 0em; 
+		lost-column: 2/5 2 0em; 
+		padding: 0.1em 0.3em 0em;
   }
 }
 .maininfo {
@@ -651,7 +656,7 @@
 		lost-column: 1/2 2 0em; 
   }
   @media (--only-xsmall-screen) {
-		lost-column: 1/2 2 0em; 
+		lost-column: 3/5 2 0em; 
   }
 	.info {
 		display: flex;
