@@ -209,15 +209,19 @@ html {
  
 }
 .cry {
+
   height: 52px; 
   width: 52px; 
-  display: flex;
+  /*display: flex;*/
   background-image: url('../images/cry.jpg');
   background-size: contain;
   padding: 0.2em 0.5em;
 }
 .dropmessage {
-  display: flex;
+ /* display: flex;*/
+}
+.mes {
+  position: relative;
 }
 .vkpost {
 /*  border-top: 0.1em  solid color( $HeadBackColor  shade(46%));

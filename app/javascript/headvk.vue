@@ -1,6 +1,6 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
-<div id="app" class="app"> 
+<div id="app" class="app" > 
   <!-- {{alldata}} -->
   <el-dialog
     class="containerpop"
@@ -13,6 +13,7 @@
     </div></a>
     <span slot="footer" class="dialog-footer"></span>
   </el-dialog>
+
   <div class="inputForm">
     <div class='sliderRait'>
       <div class="bord">
@@ -36,18 +37,8 @@
           <filther :myFilterInc ="filterInc" @filterRes="filterInc = $event"></filther>
         </div>
       <!-- {{filterInc}} -->
-
-<!--         <div class="addpublic">
-          <addpublic></addpublic>
-        </div> -->
       </div> 
-
-
-
     </div>  
-    
-
-
 <!--     <el-select
       class="elselect"
       v-model="optionsValue"
@@ -64,8 +55,10 @@
       </el-option>
     </el-select> -->
   </div>
+
   <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка...">
   </div>
+
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
     <div class="namewww2" v-if="data.url">
       {{data.url.substr(15).toUpperCase()}}
@@ -74,27 +67,23 @@
       {{data.url.substr(15).toUpperCase()}}
     </div>
 
-    <div >
-      <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
-        <el-carousel type="card" :height="carouselh">
-          <!-- {{data.thumb_map_img_as_div}} -->
-          <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
-            <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}"  @click="clickhandler(item, $event) "></div> 
-          </el-carousel-item>
-        </el-carousel>
-      </div>
+
+    <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
+      <el-carousel type="card" :height="carouselh">
+        <!-- {{data.thumb_map_img_as_div}} -->
+        <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
+          <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}"  @click="clickhandler(item, $event) "></div> 
+        </el-carousel-item>
+      </el-carousel>
+    </div>
 
     <div v-else class="itembg"  v-for="item in data.thumb_map_img_as_div.split(',')" :key="item" @click="clickhandler(item, $event) "> 
       <!-- <el-button @click="dialogVisible = true"  icon="el-icon-search" circle></el-button> -->
       <div v-if="data.thumb_map_img_as_div == 'nil'" class="noimage">
         нет фото
       </div>
-      
-      
-        <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}" > 
-           
-        </div> 
-
+      <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}" > 
+      </div> 
     </div>
 
     <div :class="[data.thumb_map_img_as_div.split(',').length > 1 ? slideInfoClass :  simpleInfoClass]">
@@ -105,13 +94,14 @@
         <div class="vkraiting largertext">{{data.raiting}}</div>    
       </div> 
       <div v-if="data.medias_row" class="mediabutton"> 
-        <energy-button class="js-newWindow" :testString="data.id" :userId="data.user" data-popup='width=780, height=800, top=200, left=950, scrollbars=yes' v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'></energy-button> 
-<!--          -->
+        <energy-button class="js-newWindow" :testString="data.id" :userId="data.user" data-popup='width=780, height=800, top=200, left=950, scrollbars=yes' ></energy-button> 
+<!--  v-bind:href='"https://vk.com"+data.wall.slice(2, -2)'       -->
       </div>
     </div>
-    </div>
+
   </div>
-  <div v-if="this.bottom == true" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка..."></div>
+
+  <div v-if="this.bottom == true && alldata.length != 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка..."></div>
 </div>
 </template>
 
@@ -208,11 +198,15 @@ var cmp = {
      var loa = Math.random() * (max - min) + min;
      loa =  Math.round(loa)
      loa = Number(loa)
+
       this.$notify({
         // title: 'Опыт',
         title: loa,
         message: 'получен опыт',
+        // message: h('i', { style: 'color: teal' }, 'получен опыт'),
         position: 'bottom-left',
+        onClose:  this.destr
+        // showClose: false
         // duration: 0, 
       });
      // this.$message('получено '+loa+ ' опыта');
@@ -235,16 +229,26 @@ var cmp = {
           this.crysendplus({
             amount: Number(response.headers.cry)
           })   
+
           this.$notify({
+
             // title: '<strong>This is <i>HTML</i> string</strong>'+response.headers.cry,
             // title: 'Опыт',background-image: url('./images/_hat/fog.jpg');
-            message: '<div class="cry">'+response.headers.cry+' </div> <div class="dropmessage">найден камень</div>',
+            // message: f('i', { style: 'color: teal' }, 'найден камень'),
+            message: '<div class="mes"><div class="cry">'+response.headers.cry+' </div> <div class="dropmessage">найден камень</div></div>',
             position: 'bottom-left',
             dangerouslyUseHTMLString: true,
+            onClose:  this.destr,
+            // showClose: false
             // duration: 0
           });  
         }      
       })
+    },
+    destr: function() {
+      // console.log('wazababa')
+      // console.log(this.$el)
+ 
     },
     makeProceedLink: function() {
       axios({
@@ -278,13 +282,13 @@ var cmp = {
 
       if (this.link != 'visited' &&  this.userId.length < 1) {
         this.exppush()
-        this.userId = true 
+        this.link = 'visited';
       }
 
       var self = this;
       setTimeout(function(){
         self.status = 'linkVisited';
-        self.link = 'visited';
+ 
         // self.status = '';
       },800 );
 
@@ -928,6 +932,7 @@ margin:  0.1em -1.2em;
 }
 
 .loading {
+
   padding: 0.5em;
   height: 2em;
   color: white;

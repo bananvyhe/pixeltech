@@ -212,7 +212,7 @@ console.log(response.data)
 				axios.delete('/users/sign_out', {
 		    }) 
 		    .then((response) => {	 
-		    	this.$store.commit('tokensend', null) 
+		    this.$store.commit('tokensend', null) 
  				this.$store.commit('rolensend', null) 
 
 		  	this.$store.commit('gamesend', null) 

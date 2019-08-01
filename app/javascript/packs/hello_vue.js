@@ -4,9 +4,8 @@
 // to the head of your layout file,
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
- import TurbolinksAdapter from 'vue-turbolinks';
- Vue.use(TurbolinksAdapter)
-
+// import TurbolinksAdapter from 'vue-turbolinks';
+// Vue.use(TurbolinksAdapter)
 // import Vue from 'vue/dist/vue.esm.js'
 import Vue from 'vue'
 import axios from 'axios'
@@ -71,7 +70,8 @@ import createPersistedState from 'vuex-persistedstate'
  
 import {Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
 // Vue.prototype.$message = Message; 
-Vue.prototype.$ELEMENT = { size: 'small', zIndex: 2000 }; 
+
+Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }; 
 // Vue.use(Message);
 Vue.use(Alert);
 Vue.use(Badge);
@@ -97,7 +97,8 @@ Vue.use(CarouselItem)
 Vue.use(Loading.directive);
 Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
-document.addEventListener('turbolinks:load', () => {
+
+document.addEventListener('DOMContentLoaded', () => {
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({
   //   el,
@@ -165,7 +166,6 @@ document.addEventListener('turbolinks:load', () => {
 	  new Vue({
 	  	store,
 	    el: headvk,
- 
 	    template: "<Headvk/>",
 			components: {Headvk} 
 	  })

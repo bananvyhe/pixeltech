@@ -86,7 +86,6 @@
 <script>
 	import axios from 'axios'
 	let screenwidth = {value: ''}
- 
 	export default {
 		data() {
 			return {
