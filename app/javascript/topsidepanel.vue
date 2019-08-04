@@ -610,8 +610,9 @@
 	align-items: center;
 }
 .bpad { 
-	position: fixed;  
-	z-index: 2000;
+	position: relative;
+	/*position: fixed;  */
+	/*z-index: 2000;*/
 	width: 100%;
 	display: flex;              
 	/*height: 2.6em;*/
@@ -648,11 +649,11 @@
   }
 }
 .invclass {
-	z-index: 4;
+	z-index: 5000;
 	position: relative;
 }
 .maininfo {
-	z-index: 2;
+	z-index: 4000;
 	position: relative;
 	/*z-index: 49;*/
 	overflow-x: auto;
