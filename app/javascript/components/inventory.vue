@@ -13,7 +13,7 @@
       </fieldset>
     </hsc-window>
 
-    <el-button icon="el-icon-goods" @click="isOpen = ! isOpen"  type="info"  size="mini" circle></el-button>
+    <el-button icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" circle></el-button>
 
   </hsc-window-style-black>
 </template>
