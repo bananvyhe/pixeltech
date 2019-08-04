@@ -23,7 +23,7 @@ import VmBackTop from '../back-top.vue'
 import Filther from '../components/filther.vue'
 import Addpublic from '../components/addpublic.vue'
 import Lobby from '../lobby.vue'
-
+// import Inv from '../components/inventory.vue'
 // import Topsection from '../components/topsection.vue'
 // Vue.component('topsection', Topsection)
 // import Currentrole from '../railsvars/currentrole.vue'
@@ -34,6 +34,7 @@ Vue.component('log', Log)
 Vue.component('request', Request)
 Vue.component('filther', Filther)
 Vue.component('addpublic', Addpublic)
+// Vue.component('inv', Inv)
 
 Vue.component("temperature", {
   template: "#temperature-template",
@@ -67,7 +68,9 @@ Vue.component("temperature", {
 });
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
- 
+
+Vue.use(require('@hscmap/vue-window'))
+
 import {Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
 // Vue.prototype.$message = Message; 
 

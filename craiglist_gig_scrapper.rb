@@ -8,7 +8,7 @@ require 'httparty'
 agent = Mechanize.new
 # agent.user_agent_alias = 'Mac Safari'
 
-url='https://vk.com/clevermusic'
+url='https://vk.com/fashionsound'
 
 page = agent.get(url)
 # print page.body 
@@ -21,7 +21,7 @@ page = agent.get(url)
 # parsed_content = Nokogiri::HTML(content)
 
 # show_more = agent.page.link_with(text: 'Show more').click
-show_more = agent.page.link_with(text: 'Show more').click
+show_more = agent.page 
 print show_more.body
 	# timer = rand(1.0 .. 5.0)
  # 			sleep(timer)

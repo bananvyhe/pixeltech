@@ -49,6 +49,8 @@
 					</div>
 					<div v-if="$store.getters.cry" class="crytop">
 						<!-- камни: &nbsp;{{$store.getters.cry}} -->
+
+						<inv class="invclass" v-if="$store.getters.role"></inv>
 					</div> 
 					<div v-if="$store.getters.token == null">
 						<div v-if="checklog != 'unlogged' ">
@@ -84,11 +86,13 @@
 
 </template>
 <script>
+	import Inv from './components/inventory.vue';
 	import axios from 'axios'
 	let screenwidth = {value: ''}
 	export default {
 		data() {
 			return {
+				isOpen: false,
 				exptime: '',
 				checklog: checklog,
 	    	token: '',
@@ -101,6 +105,9 @@
    //  	template: ''
    //  	}
    //  },
+   components: {
+   	'inv': Inv
+   },
 	  computed: {
 
 	  	lvlConversion: function () {
@@ -603,7 +610,8 @@
 	align-items: center;
 }
 .bpad { 
-	  
+	position: fixed;  
+	z-index: 2000;
 	width: 100%;
 	display: flex;              
 	/*height: 2.6em;*/
@@ -639,7 +647,12 @@
 		padding: 0.1em 0.3em 0em;
   }
 }
+.invclass {
+	z-index: 4;
+	position: relative;
+}
 .maininfo {
+	z-index: 2;
 	position: relative;
 	/*z-index: 49;*/
 	overflow-x: auto;
