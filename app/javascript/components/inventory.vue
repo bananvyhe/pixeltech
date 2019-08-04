@@ -1,7 +1,7 @@
 <template>
   <hsc-window-style-black>
 
-    <hsc-window title="Window 1" :closeButton="true" :isOpen.sync="isOpen">
+    <hsc-window title="Инвентарь" :closeButton="true" :isOpen.sync="isOpen">
       Parameters:
       <fieldset>
         <legend>&alpha;</legend>
