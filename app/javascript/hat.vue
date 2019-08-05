@@ -5,7 +5,7 @@
 	  	<div class="fog"></div>
 	  	<div class="flash"></div>
 	  		  	<div class="voodoo font3">
-	  	VooDoo basecamp
+	  	VooDoo &nbsp; basecamp
 	  		 
 	  	</div>
 	  	<div class="clouds2"></div>
@@ -41,7 +41,7 @@
     mounted() {
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
-			vood.to('.voodoo', 1.5, {opacity: 0.8, y: -24, scale: 1.1,  ease: Power4.easeOut}).to('.voodoo', 0.6, {y: -36, scale: 0.5, ease: Power4.easeIn})
+			vood.to('.voodoo', 1.5, {opacity: 0.8, y: -24, scale: 1.1,  ease: Power4.easeOut}).to('.voodoo', 0.6, {y: -35, x: 18, scale: 0.5, ease: Power4.easeIn})
 
     	var tlwar = new TimelineMax();
     	tlwar.to('.warriors', 0.6, {backgroundPositionY: 35, ease: Power4.easeOut}).to('.warriors', 1, {backgroundPositionY: 15, ease: Power4.easeIn});
