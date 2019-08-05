@@ -4,12 +4,13 @@
   	<div class="container">
 	  	<div class="fog"></div>
 	  	<div class="flash"></div>
-	  	<div class="clouds2"></div>
-	  	<div class="bgshad"></div>
-	  	<div class="voodoo ">
-	  		VOODOO TEAM BASECAMP 
+	  		  	<div class="voodoo font3">
+	  	VooDoo basecamp
 	  		 
 	  	</div>
+	  	<div class="clouds2"></div>
+	  	<div class="bgshad"></div>
+
 	  	<div class="clouds"></div>
 
 	  	<div class="warriors"></div>
@@ -19,6 +20,8 @@
 	</div>
 </template>
 <script>
+	// import ScrambleText from 'scramble-text'; 
+	// import { VueTyper } from 'vue-typer'
 
   export default {
     data: function (){
@@ -35,7 +38,10 @@
     		// var tlwar2 = new TimelineMax();		
     	 //    	tlwar2.to('.warriors', 0.1, {backgroundPositionY: 0, ease: Sine.easeOut}, '-=0.0');
   	},
-    mounted() {console.log('22222updatedHat')
+    mounted() {
+    	// console.log('22222updatedHat')
+			var vood = new TimelineMax();
+			vood.to('.voodoo', 1.5, {opacity: 0.8, y: -24, scale: 1.1,  ease: Power4.easeOut}).to('.voodoo', 0.6, {y: -36, scale: 0.5, ease: Power4.easeIn})
 
     	var tlwar = new TimelineMax();
     	tlwar.to('.warriors', 0.6, {backgroundPositionY: 35, ease: Power4.easeOut}).to('.warriors', 1, {backgroundPositionY: 15, ease: Power4.easeIn});
@@ -195,16 +201,20 @@
   }
 }
 .voodoo {
+	opacity: 0;
 	white-space: nowrap;
 	/*background-color: #dad;*/
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	height: 100%;
 	width: 100%;
-	font-family: '../stylesheets/RobotoReg';
-		position: absolute;
-			font-size: 8em;
-			opacity: 0.1;
+ 	/*color: $str5;*/
+ 	color: color( $str5  shade(93%));
+	position: absolute;
+	font-size: 3em;
+	/*transform: perspective(200px) rotateX(-60deg);*/
+	/*opacity: 0.8;*/
 }
 .fog {
 	align-self: flex-end;	
