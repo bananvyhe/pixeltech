@@ -146,7 +146,7 @@
 	height: 60px;
 }
 .container {
-		overflow: hidden;	
+	overflow: hidden;	
 	height: 162px;
 	position: relative;	
 	display: flex;
@@ -195,13 +195,15 @@
   }
 }
 .voodoo {
+	white-space: nowrap;
+	/*background-color: #dad;*/
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	height: 100%;
 	width: 100%;
 	font-family: '../stylesheets/RobotoReg';
 		/*position: absolute;*/
-			font-size: 6em;
+			font-size: 8em;
 			opacity: 0.1;
 }
 .fog {
