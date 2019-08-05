@@ -202,7 +202,7 @@
 	height: 100%;
 	width: 100%;
 	font-family: '../stylesheets/RobotoReg';
-		/*position: absolute;*/
+		position: absolute;
 			font-size: 8em;
 			opacity: 0.1;
 }
