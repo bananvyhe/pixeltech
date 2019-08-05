@@ -424,7 +424,8 @@
 .crytop {
  display: flex;
  justify-content: center;
- align-self: flex-start;
+ /*align-self: flex-start;*/
+ align-items: center;
  padding: 0.1em;
 }
 /*.hat {
@@ -582,9 +583,11 @@
 	width: 100%;
 	color: $color-1;
 	text-align: right;
+	padding-right: 0.4em;
+	padding-bottom: 0.1em;
 }
 .lvl, .expbar {
-	margin-top: -0.3em;
+	margin-top: -0.4em;
 }
 .lvl {
 	display: flex;
@@ -598,7 +601,7 @@
 	background-color: color( #1E1E21 shade(30%));
  	
 	margin-top: 1em;
-	margin-left: -1em;
+	margin-left: -2.8em;
 	/*padding: 0 0.2em 0 0.1em;*/
  	display: flex;
 	align-self: center;
@@ -665,6 +668,7 @@
 .invclass {
 	z-index: 5000;
 	position: relative;
+
 }
 .maininfo {
 	z-index: 4000;
