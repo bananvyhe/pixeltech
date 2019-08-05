@@ -58,9 +58,9 @@ End Hamster setup*/
   @ihamster {
     --font-size: 11px;
     --line-height: 1.6;
-    --to-font-size: 14px;
+    --to-font-size: 12px;
     --to-line-height: 1.6;
-    --viewport: 800px 1919px;
+    --viewport: 800px 1600px;
     --unit: vw;
   }
   @paste full;
@@ -68,11 +68,11 @@ End Hamster setup*/
 }
 @media (--only-1600more-screen){
   @ihamster {
-    --font-size: 14px;
+    --font-size: 12px;
     --line-height: 1.6; 
-    --to-font-size: 22px;
-    --to-line-height: 2;
-    --viewport: 1920px 3840px;
+    --to-font-size: 12px;
+    --to-line-height: 1.6;
+    --viewport: 1601px 3840px;
     --unit: vw;
   }
   @paste full;
@@ -300,6 +300,10 @@ html {
   color: blue;
   border-bottom: solid 1px;
   cursor: pointer;
+}
+.el-progress-bar {
+  padding-right: 10px;
+  margin-right: 50px;
 }
 .el-notification__content {
   margin: 0;

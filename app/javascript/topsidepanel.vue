@@ -33,14 +33,14 @@
 							<game-board ></game-board> 
 						</div> -->
 						<div v-if="$store.getters.role.role == 'voodoo' || $store.getters.role.role == 'user'">
-							<div><span class="largertext nikname">{{$store.getters.role.username}}</span>&nbsp;&nbsp;</div>
+							<div class="largertext nikname">{{$store.getters.role.username}}</div>
 							<div class="expbar"> 
 								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
-								<div v-if="$store.getters.gamebo" class="lvl">лвл:{{lvlConversion[0]}}&nbsp;</div>
+
 								<div class="expline">
 									<el-progress v-if="$store.getters.gamebo" class="elpro" :stroke-width="6" :percentage="Number(lvlConversion[1])"></el-progress>
 								</div>
-
+								<div v-if="$store.getters.gamebo" class="lvl">{{lvlConversion[0]}}&nbsp;</div>
 								<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
 							</div>
 
@@ -579,16 +579,30 @@
   }
 }
 .nikname {
- color: $color-1;
+	width: 100%;
+	color: $color-1;
+	text-align: right;
 }
 .lvl, .expbar {
-	margin-top: -0.2em;
-
+	margin-top: -0.3em;
 }
 .lvl {
-	padding: 0 0.2em 0 0.1em;
+	display: flex;
+	justify-content: flex-end;
+	/*border: 1px solid grey;*/
+	position: relative;
+ 	color: $onyx;
+	border-radius: 0.7em;
+	height: 1.3em;
+	width: 2.3em;
+	background-color: color( #1E1E21 shade(30%));
+ 	
+	margin-top: 1em;
+	margin-left: -1em;
+	/*padding: 0 0.2em 0 0.1em;*/
  	display: flex;
 	align-self: center;
+
 }
 .expbar { 
 	 
@@ -597,11 +611,11 @@
 	 
 }
 /deep/ .expline {
-	width: 120px;
+	width: 8em;
 }
 #bpad{ 
 
-	height: $topBlank;
+	/*height: $topBlank;*/
 	/*z-index: 800;*/
 	width: 100%;
 

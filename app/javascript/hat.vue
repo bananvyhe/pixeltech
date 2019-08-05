@@ -1,16 +1,21 @@
 <template>
   <div class="hat">
+  	<!-- <div class="blank"></div> -->
+  	<div class="container">
+	  	<div class="fog"></div>
+	  	<div class="flash"></div>
+	  	<div class="clouds2"></div>
+	  	<div class="bgshad"></div>
+	  	<div class="voodoo ">
+	  		VOODOO TEAM BASECAMP 
+	  		 
+	  	</div>
+	  	<div class="clouds"></div>
 
-  	<div class="fog"></div>
-
-  	<div class="flash"></div>
-  	<div class="clouds2"></div>
-  	  	<div class="bgshad"></div>
-  	<div class="clouds"></div>
-
-  	<div class="warriors"></div>
-  	<div class="warriors brightness"></div>
-  	  	<div class="bgshad2"></div>
+	  	<div class="warriors"></div>
+	  	<div class="warriors brightness"></div>
+	  	<div class="bgshad2"></div>
+	  </div>
 	</div>
 </template>
 <script>
@@ -137,14 +142,19 @@
 <style scoped>
 @import "_variables";
 @import "_extends";
-.hat {
-
+.blank {
+	height: 60px;
+}
+.container {
+		overflow: hidden;	
+	height: 162px;
+	position: relative;	
 	display: flex;
 	align-items: stretch;
 	position: relative;
 	lost-center: $lcenter;
 	/*lost-utility: edit;*/
-	height: 162px;
+	/*height: 162px;*/
 	background-color: #13151a;
 	/*border-radius: 0px 0 4em 4em;*/
 	border-bottom: 4px solid color( #1E1E21 shade(30%));
@@ -155,6 +165,10 @@
  	@media (--only-xsmall-screen) {
 		height: 100px;
   }
+}
+.hat {
+
+
 
 }
 .warriors {
@@ -180,6 +194,16 @@
     background-position: center 15px;
   }
 }
+.voodoo {
+	display: flex;
+	align-items: flex-end;
+	height: 100%;
+	width: 100%;
+	font-family: '../stylesheets/RobotoReg';
+		/*position: absolute;*/
+			font-size: 6em;
+			opacity: 0.1;
+}
 .fog {
 	align-self: flex-end;	
 	background-repeat: no-repeat;
@@ -188,7 +212,7 @@
 	background-position: center bottom;
 	height: 100%;
 	width: 100%;
-	position: absolute;
+	/*position: absolute;*/
 	background-image: url('./images/_hat/fog.jpg');
 }
 .brightness{
