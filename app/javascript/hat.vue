@@ -8,7 +8,7 @@
 	  	<div class="clouds2"></div>
 	  	<div class="bgshad"></div>
 	  	<div class="voodoo font3">
-	  		VooDoo basecamp	 
+	  		VooDoo power 
 	  	</div>
 	  	<div class="clouds"></div>
 
@@ -42,10 +42,10 @@
     mounted() {
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
-			vood.to('.voodoo', 0.8, { y: -34, scale: 0.1,  ease: Power4.easeOut}, '+=0.4')
+			vood.to('.voodoo', 0.6, { y: -28, scale: 0.11,  ease: Power4.easeIn}).to('.voodoo', 3.6, { y: -22, scale: 0.14,  ease: Expo.easeOut});
 
     	var tlwar = new TimelineMax();
-    	tlwar.to('.warriors', 0.6, {backgroundPositionY: 75, ease: Power4.easeOut}).to('.warriors', 1, {backgroundPositionY: 25, ease: Power4.easeIn});
+    	tlwar.to('.warriors', 0.6, {backgroundPositionY: 25, ease: Power4.easeIn} ).to('.warriors', 3.4, {backgroundPositionY: 7, ease: Expo.easeOut});
     	 
     	var tl2 = new TimelineMax({repeat:-1});
 			tl2.to('.clouds', 1200, {backgroundPositionX: 903, ease: Power0.easeNone});
