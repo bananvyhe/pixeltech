@@ -629,7 +629,7 @@
 	align-items: center;
 }
 .bpad { 
-	padding: 0.3em;
+	padding: 0.2em;
 	/*border-bottom: 2px solid $color-blue;*/
 	position: relative;
 	/*position: fixed;  */
