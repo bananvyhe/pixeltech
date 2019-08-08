@@ -1,26 +1,19 @@
 <template>
-  <hsc-window-style-black>
-
-    <hsc-window title="Инвентарь" :closeButton="true" :isOpen.sync="isOpen">
-      Parameters:
-      <fieldset>
-        <legend>&alpha;</legend>
-        <input type="range" />
-      </fieldset>
-      <fieldset>
-        <legend>&beta;</legend>
-        <input type="range" />
-      </fieldset>
-    </hsc-window>
-
-    <el-button icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" circle></el-button>
-
-  </hsc-window-style-black>
+  <div>
+    <el-popover
+      placement="bottom"
+      width="200"
+      trigger="click"
+      content="this is content, this is content, this is content">
+      <div class="slots">
+        <div class="cry" v-if="$store.getters.cry">{{$store.getters.cry}}</div>
+      </div>
+      
+      <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" circle></el-button>   
+    </el-popover>    
+  </div>
 </template>
-
-
 <script>
-
 export default {
   // props:['isOpen'],
   
@@ -31,3 +24,13 @@ export default {
   }
 }
 </script>
+<style scoped>
+@import "stylesheets/_variables";
+.slots{
+  box-shadow: inset 0px 0px 8px rgba(0,0,0,0.3);
+  padding: 0.5em 0.5em;
+  /*background-color: #dad;*/
+  margin: -0.8em -1em;
+  display: flex;
+}
+</style>

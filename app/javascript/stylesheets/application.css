@@ -210,13 +210,15 @@ html {
  
 }
 .cry {
+  border: 1px solid color( $screenbg shade(56%));; 
+  text-shadow: 0px 1px #222, 1px 0px #222;
 
   height: 52px; 
   width: 52px; 
   /*display: flex;*/
   background-image: url('../images/cry.jpg');
   background-size: contain;
-  padding: 0.2em 0.5em;
+  padding: 0.1em 0.3em;
 }
 .dropmessage {
  /* display: flex;*/

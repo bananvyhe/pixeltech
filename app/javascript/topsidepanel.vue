@@ -33,7 +33,7 @@
 							<game-board ></game-board> 
 						</div> -->
 						<div v-if="$store.getters.role.role == 'voodoo' || $store.getters.role.role == 'user'">
-							<div class="largertext nikname">{{$store.getters.role.username}}</div>
+							<div class="mediumtext nikname">{{$store.getters.role.username}}</div>
 							<div class="expbar"> 
 								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
 
@@ -50,7 +50,7 @@
 					<div v-if="$store.getters.cry" class="crytop">
 						<!-- камни: &nbsp;{{$store.getters.cry}} -->
 
-						<!-- <inv class="invclass" v-if="$store.getters.role"></inv> -->
+						<inv class="invclass" v-if="$store.getters.role"></inv>
 					</div> 
 					<div v-if="$store.getters.token == null">
 						<div v-if="checklog != 'unlogged' ">
