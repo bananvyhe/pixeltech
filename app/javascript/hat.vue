@@ -8,11 +8,13 @@
 	  	<div class="clouds2"></div>
 	  	<div class="bgshad"></div>
 	  	<div class="voodoo font3">
-	  		VooDoo &nbsp; basecamp	 
+	  		VooDoo basecamp	 
 	  	</div>
 	  	<div class="clouds"></div>
 
-	  	<div class="warriors"></div>
+	  	<div class="warriors">
+ 
+	  	</div>
 	  	<div class="warriors brightness"></div>
 	  	<div class="bgshad2"></div>
 	  </div>
@@ -40,10 +42,10 @@
     mounted() {
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
-			vood.to('.voodoo', 1.5, {opacity: 0.6, x: 28, y: -18, scale: 0.11,  ease: Power4.easeOut})
+			vood.to('.voodoo', 0.8, { y: -34, scale: 0.1,  ease: Power4.easeOut}, '+=0.4')
 
     	var tlwar = new TimelineMax();
-    	tlwar.to('.warriors', 0.6, {backgroundPositionY: 35, ease: Power4.easeOut}).to('.warriors', 1, {backgroundPositionY: 15, ease: Power4.easeIn});
+    	tlwar.to('.warriors', 0.6, {backgroundPositionY: 75, ease: Power4.easeOut}).to('.warriors', 1, {backgroundPositionY: 25, ease: Power4.easeIn});
     	 
     	var tl2 = new TimelineMax({repeat:-1});
 			tl2.to('.clouds', 1200, {backgroundPositionX: 903, ease: Power0.easeNone});
@@ -178,17 +180,18 @@
 }
 .warriors {
 	position: absolute;
+	display: flex;
 	z-index: 20;
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: contain;
 	height: 100%;
 	width: 100%;
-	background-position: center 15px;
+	background-position: 43% 12px;
 	background-image: url('./images/_hat/warriors.gif');
 	@media (--only-1600more-screen) {
 		background-size: auto 90%;
-    background-position: center 25px;
+    background-position: 45% 23px;
   }
 /*  @media (--only-medium-screen) {
 		background-size: auto 100%;
@@ -196,11 +199,16 @@
   }*/
   @media (--only-956less-screen) {
 		background-size: auto 100%;
-    background-position: center 15px;
+    background-position: 45% 15px;
   }
 }
+.war1{
+	position: relative;
+	background-color: #dad;
+	/*background-image: url('./images/_hat/warriors.gif');*/
+}
 .voodoo {
-	opacity: 0;
+	opacity: 0.3;
 	white-space: nowrap;
 	/*background-color: #dad;*/
 	display: flex;
@@ -209,7 +217,8 @@
 	height: 100%;
 	width: 100%;
  	/*color: $str5;*/
- 	color: color( $str5  shade(93%));
+ 	color: $screenbg;
+
 	position: absolute;
 	font-size: 20em;
 	/*transform: perspective(200px) rotateX(-60deg);*/
