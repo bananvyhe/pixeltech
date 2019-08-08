@@ -40,7 +40,7 @@
     mounted() {
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
-			vood.to('.voodoo', 1.5, {opacity: 0.6, x: 28, y: -18, scale: 0.7,  ease: Power4.easeOut})
+			vood.to('.voodoo', 1.5, {opacity: 0.6, x: 28, y: -18, scale: 0.1,  ease: Power4.easeOut})
 
     	var tlwar = new TimelineMax();
     	tlwar.to('.warriors', 0.6, {backgroundPositionY: 35, ease: Power4.easeOut}).to('.warriors', 1, {backgroundPositionY: 15, ease: Power4.easeIn});
@@ -211,7 +211,7 @@
  	/*color: $str5;*/
  	color: color( $str5  shade(93%));
 	position: absolute;
-	font-size: 3em;
+	font-size: 20em;
 	/*transform: perspective(200px) rotateX(-60deg);*/
 	/*opacity: 0.8;*/
 }
