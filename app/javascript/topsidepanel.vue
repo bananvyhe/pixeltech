@@ -590,18 +590,20 @@
 	margin-top: -0.4em;
 }
 .lvl {
+	box-shadow: inset 0px 0px 4px rgba(0,0,0,0.8);
+	padding-right: 0.3em;
 	display: flex;
 	justify-content: flex-end;
 	/*border: 1px solid grey;*/
 	position: relative;
  	color: $onyx;
-	border-radius: 0.7em;
+	/*border-radius: 0.7em;*/
 	height: 1.3em;
-	width: 2.3em;
-	background-color: color( #1E1E21 shade(30%));
+	width: 2.6em;
+	background-color: color( #1E1E21 shade(36%));
  	
 	margin-top: 1em;
-	margin-left: -2.8em;
+	margin-left: -3.5em;
 	/*padding: 0 0.2em 0 0.1em;*/
  	display: flex;
 	align-self: center;
@@ -627,6 +629,8 @@
 	align-items: center;
 }
 .bpad { 
+	padding: 0.3em;
+	/*border-bottom: 2px solid $color-blue;*/
 	position: relative;
 	/*position: fixed;  */
 	/*z-index: 2000;*/
@@ -637,7 +641,7 @@
 	/*height: $topSizePanel;*/
 	/*z-index: 10;*/
 	lost-center: $lcenter;
-	background-color: color( #1E1E21 shade(30%));
+	background-color: color( #1E1E21 shade(46%));
 }
 .hiderailsblock {
 	display: none;
