@@ -670,6 +670,7 @@
   }
 }
 .invclass {
+	padding-left: 0.5em;
 	z-index: 5000;
 	position: relative;
 

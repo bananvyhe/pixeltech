@@ -197,6 +197,10 @@
 		background-size: auto 100%;
     background-position: center 25px;
   }*/
+  @media (--only-xsmall-screen) {
+		background-size: 130%;
+    background-position: 45% 15px;
+  }
   @media (--only-956less-screen) {
 		background-size: auto 100%;
     background-position: 45% 15px;
@@ -220,7 +224,7 @@
  	color: $screenbg;
 
 	position: absolute;
-	font-size: 20vh;
+	font-size: 20vw;
 	/*transform: perspective(200px) rotateX(-60deg);*/
 	/*opacity: 0.8;*/
 }
