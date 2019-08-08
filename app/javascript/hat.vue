@@ -190,7 +190,7 @@
 	background-position: 43% 12px;
 	background-image: url('./images/_hat/warriors.gif');
 	@media (--only-1600more-screen) {
-		background-size: auto 90%;
+		background-size: auto 100%;
     background-position: 45% 23px;
   }
 /*  @media (--only-medium-screen) {
