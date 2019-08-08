@@ -220,7 +220,7 @@
  	color: $screenbg;
 
 	position: absolute;
-	font-size: 20em;
+	font-size: 20vh;
 	/*transform: perspective(200px) rotateX(-60deg);*/
 	/*opacity: 0.8;*/
 }

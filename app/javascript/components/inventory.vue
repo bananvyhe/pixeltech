@@ -8,7 +8,7 @@
       <div class="slots">
         <el-tooltip  class="smalltext" effect="light" placement="bottom">
           <div slot="content">
-            <div class="tooldrop">камни вам понадобятся для оплаты специальных действий 
+            <div class="tooldrop">камнями вы можете оплатить некоторые действия 
             </div>
           </div>
           <div class="cry" v-if="$store.getters.cry">{{$store.getters.cry}}</div>
