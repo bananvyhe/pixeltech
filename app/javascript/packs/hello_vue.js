@@ -69,7 +69,9 @@ Vue.component("temperature", {
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
 
-Vue.use(require('@hscmap/vue-window'))
+// Vue.use(require('@hscmap/vue-window'))
+// import * as VueWindow from '@hscmap/vue-window'
+// Vue.use(VueWindow)
 
 import {Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
 // Vue.prototype.$message = Message; 

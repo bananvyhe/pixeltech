@@ -50,7 +50,7 @@
 					<div v-if="$store.getters.cry" class="crytop">
 						<!-- камни: &nbsp;{{$store.getters.cry}} -->
 
-						<inv class="invclass" v-if="$store.getters.role"></inv>
+						<!-- <inv class="invclass" v-if="$store.getters.role"></inv> -->
 					</div> 
 					<div v-if="$store.getters.token == null">
 						<div v-if="checklog != 'unlogged' ">
