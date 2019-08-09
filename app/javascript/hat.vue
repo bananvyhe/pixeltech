@@ -42,7 +42,7 @@
     mounted() {
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
-			vood.to('.voodoo', 0.7, { y: -48, opacity: 1, scale: 0.12,  ease: Expo.easeIn}).to('.voodoo', 2.6, { y:  -25, opacity: 0.4, x: 0, scale: 0.16,  ease: Power4.easeOut}, '+=0.8' );
+			vood.to('.voodoo', 0.7, { y: -48, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=0.3').to('.voodoo', 1.6, { y:  -24, opacity: 0.6, x: 0, scale: 0.18,  ease: Power2.easeOut}, '+=0.8' );
 
     	var tlwar = new TimelineMax();
     	tlwar.to('.warriors', 0.3, {backgroundPositionY: 20, ease: Power0.easeOut} ).to('.warriors', 1.6, {backgroundPositionY: 7, ease: Expo.easeIn});
@@ -105,7 +105,7 @@
 			// .to('.brightness', firsFlash, {opacity: "1"}, '+=2.6')
 			// .to('.brightness', 0.05, {opacity: "0"})
 			.to('.brightness', secondFlash, {opacity: "1"}, '+=0.0')
-			.to('.brightness', 3.5, {opacity: "0", ease: Expo.easeOut}, '+=0.0')
+			.to('.brightness', 4.0, {opacity: "0", ease: Expo.easeOut}, '+=0.0')
 			.to('.brightness', firsFlash, {opacity: "1"}, '-=0.0')
 			.to('.brightness', 4.0, {opacity: "0", ease: Expo.easeOut});	
 
@@ -115,7 +115,7 @@
 			// .to('.flash', firsFlash, {opacity: "1"}, '+=2.6')
 			// .to('.flash', 0.05, {opacity: "0"})
 			.to('.flash', secondFlash, {opacity: "1"}, '+=0.0')
-			.to('.flash', 3.5, {opacity: "0", ease: Expo.easeOut}, '-=0.0')
+			.to('.flash', 4.0, {opacity: "0", ease: Expo.easeOut}, '-=0.0')
 			.to('.flash', firsFlash, {opacity: "1"}, '-=0.0')
 			.to('.flash', 4.0, {opacity: "0", ease: Expo.easeOut});	
 
@@ -126,7 +126,7 @@
 			// .to('.clouds2', firsFlash, {visibility: "hidden"}, '+=2.6')
 			// .to('.clouds2', 0.05, {visibility: "visible"})
 			.to('.clouds2', secondFlash, {visibility: "hidden"}, '+=0.0')
-			.to('.clouds2', 3.5, {visibility: "visible"}, '-=0.0')
+			.to('.clouds2', 4.0, {visibility: "visible"}, '-=0.0')
 			.to('.clouds2', firsFlash, {visibility: "hidden"}, '-=0.0')
 			.to('.clouds2', 4.0, {visibility: "visible"});		
 
@@ -222,9 +222,9 @@
 	width: 100%;
  	/*color: $str5;*/
  	/*color: $screenbg;*/
-	color: color( $screenbg  saturation(92%) shade(52%));
+	color: color( $screenbg  saturation(92%) shade(55%));
 	position: absolute;
-	font-size: 20vw;
+	font-size: 20vh;
 	/*transform: perspective(200px) rotateX(-60deg);*/
 	/*opacity: 0.8;*/
 }
@@ -316,4 +316,5 @@ background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 60%, rgba(
 	height: 100%;
 	width: 100%;
 }
+
 </style>
