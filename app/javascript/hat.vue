@@ -42,7 +42,7 @@
     mounted() {
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
-			vood.to('.voodoo', 0.3, { y: -48, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=0.3').to('.voodoo', 4.6, { y:  -24, opacity: 0.6, x: 0, scale: 0.18,  ease: Expo.easeOut}, '+=0.5' );
+			vood.to('.voodoo', 0.3, { y: -48, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=0.3').to('.voodoo', 2.2, { y:  -24, opacity: 0.6, x: 0, scale: 0.18,  ease: Sine.easeOut}, '+=0.5' );
 
     	var tlwar = new TimelineMax();
     	tlwar.to('.warriors', 0.6, {backgroundPositionY: 22, ease: Power0.easeOut} ).to('.warriors', 1.6, {backgroundPositionY: 7, ease: Power0.easeIn});
