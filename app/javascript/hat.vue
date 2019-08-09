@@ -42,10 +42,10 @@
     mounted() {
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
-			vood.to('.voodoo', 0.3, { y: -48, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=0.3').to('.voodoo', 2.8, { y:  -22, opacity: 0.6, x: 0, scale: 0.18,  ease: Power0.easeIn}, '+=0.3' );
+			vood.to('.voodoo', 0.3, { y: -48, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=0.3').to('.voodoo', 4.6, { y:  -24, opacity: 0.6, x: 0, scale: 0.18,  ease: Expo.easeOut}, '+=0.5' );
 
     	var tlwar = new TimelineMax();
-    	tlwar.to('.warriors', 0.6, {backgroundPositionY: 22, ease: Power0.easeOut} ).to('.warriors', 2.6, {backgroundPositionY: 7, ease: Power0.easeIn});
+    	tlwar.to('.warriors', 0.6, {backgroundPositionY: 22, ease: Power0.easeOut} ).to('.warriors', 1.6, {backgroundPositionY: 7, ease: Power0.easeIn});
     	 
     	var tl2 = new TimelineMax({repeat:-1});
 			tl2.to('.clouds', 1200, {backgroundPositionX: 903, ease: Power0.easeNone});
