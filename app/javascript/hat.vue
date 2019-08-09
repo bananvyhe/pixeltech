@@ -42,10 +42,10 @@
     mounted() {
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
-			vood.to('.voodoo', 0.6, { y: -28, scale: 0.11,  ease: Power4.easeIn}).to('.voodoo', 3.6, { y: -22, scale: 0.14,  ease: Expo.easeOut});
+			vood.to('.voodoo', 0.7, { y: -48, opacity: 1, scale: 0.12,  ease: Expo.easeIn}).to('.voodoo', 2.6, { y:  -18, opacity: 0.2, x: 0, scale: 0.16,  ease: Power4.easeOut}, '+=0.8' );
 
     	var tlwar = new TimelineMax();
-    	tlwar.to('.warriors', 0.6, {backgroundPositionY: 25, ease: Power4.easeIn} ).to('.warriors', 3.4, {backgroundPositionY: 7, ease: Expo.easeOut});
+    	tlwar.to('.warriors', 0.3, {backgroundPositionY: 20, ease: Power0.easeOut} ).to('.warriors', 1.6, {backgroundPositionY: 7, ease: Expo.easeIn});
     	 
     	var tl2 = new TimelineMax({repeat:-1});
 			tl2.to('.clouds', 1200, {backgroundPositionX: 903, ease: Power0.easeNone});
@@ -212,7 +212,7 @@
 	/*background-image: url('./images/_hat/warriors.gif');*/
 }
 .voodoo {
-	opacity: 0.3;
+	opacity: 0.0;
 	white-space: nowrap;
 	/*background-color: #dad;*/
 	display: flex;
@@ -221,8 +221,8 @@
 	height: 100%;
 	width: 100%;
  	/*color: $str5;*/
- 	color: $screenbg;
-
+ 	/*color: $screenbg;*/
+	color: color( $screenbg  saturation(92%) shade(52%));
 	position: absolute;
 	font-size: 20vw;
 	/*transform: perspective(200px) rotateX(-60deg);*/
