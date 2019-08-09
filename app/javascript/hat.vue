@@ -170,7 +170,7 @@
 		height: 120px;
   }
  	@media (--only-xsmall-screen) {
-		height: 100px;
+		height: 120px;
   }
 }
 .hat {
