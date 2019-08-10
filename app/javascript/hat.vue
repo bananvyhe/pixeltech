@@ -43,7 +43,7 @@
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
 			vood.to('.voodoo', 0.4, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -48, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=0.5').to('.voodoo', 3.0, {webkitFilter:"brightness(0.8)",
+          filter:"brightness(1)",y: -48, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=0.5').to('.voodoo', 2.0, {webkitFilter:"brightness(0.8)",
           filter:"brightness(0.1)", y:  -22, opacity: 0.5, x: 0, scale: 0.24, ease: Quart.easeOut}, '+=0.9' );
 
     	var tlwar = new TimelineMax();
