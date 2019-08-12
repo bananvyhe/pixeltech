@@ -10,7 +10,7 @@
           <div slot="content">
             <div class="tooldrop">
               <h5>Камень</h5>
-              камнями вы можете оплатить некоторые действия 
+              <p>камнями вы можете оплатить некоторые действия</p>
             </div>
           </div>
           <div class="cry" v-if="$store.getters.cry">{{$store.getters.cry}}</div>
