@@ -164,7 +164,7 @@ var cmp = {
  
   },
   // template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" target="_blank" ></a>',
-  template: '<a style="cursor: pointer" @click="changeStatus" @mouseover="overAction"  @mouseleave="leaveAction" class="energy" :class="[classlink, status]"></a>',
+  template: '<a style="cursor: pointer" @click="changeStatus" @mouseover="overAction"  @mouseleave="leaveAction" class="energy aprior" :class="[classlink, status]"></a>',
 
   methods: {
     ...mapMutations([
