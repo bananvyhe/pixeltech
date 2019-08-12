@@ -698,7 +698,7 @@ margin:  0.1em -1.2em;
 /*  content: url('./images/energy29.gif');*/
   position: absolute; 
   top: 0px; right: 0;
-  bottom: 0; left: -19px;
+  bottom: 0; left: -0px;
 }
 @-webkit-keyframes pulsate-fwd {
   0% {
