@@ -34,8 +34,8 @@ h4 {
 }
 h5 {
   adjust-font-size: fs base;
-  margin-top: spacing(0.2);
-  margin-bottom: spacing(0.2);
+  margin-top: spacing(0.0);
+  margin-bottom: spacing(0.0);
  
 }
 p:first-of-type {
