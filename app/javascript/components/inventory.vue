@@ -6,7 +6,7 @@
       trigger="click"
       content="this is content, this is content, this is content">
       <div class="slots">
-        <el-tooltip  class="smalltext" effect="light" placement="bottom">
+        <el-tooltip  class="smalltext"  placement="bottom">
           <div slot="content">
             <div class="tooldrop">
               <h5>Камень</h5>
@@ -36,10 +36,16 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 .tooldrop{
-  text-align: center;
+  text-align: left;
   width: 15em;
-  margin: -0.4em -0.2em;
+  margin: -0.3em -0.1em;
   font-size: 0.9em;
+  h5{
+    padding-left: 0.5em;
+  }
+  p{
+    text-align: center;
+  }
 }
 .slots{
   box-shadow: inset 0px 0px 8px rgba(0,0,0,0.3);

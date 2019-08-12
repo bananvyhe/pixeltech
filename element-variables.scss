@@ -512,12 +512,12 @@ $--popover-title-color: $--color-text-primary !default;
 
 /* Tooltip
 -------------------------- */
-$--tooltip-fill: $--color-text-primary !default;
-$--tooltip-color: $--color-white !default;
+$--tooltip-fill: #111 !default;
+$--tooltip-color: $--color-text-secondary !default;
 $--tooltip-font-size: 12px !default;
-$--tooltip-border-color: $--color-text-primary !default;
+$--tooltip-border-color: #111 !default;
 $--tooltip-arrow-size: 6px !default;
-$--tooltip-padding: 10px !default;
+$--tooltip-padding: 7px !default;
 
 /* Tag
 -------------------------- */
