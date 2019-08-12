@@ -43,9 +43,9 @@
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
 			vood.to('.voodoo', 0.4, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -48, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=3.3').to('.voodoo', 2.0, {webkitFilter:"brightness(0.8)",
-          filter:"brightness(0.1)", y:  -20, opacity: 0.5, x: 0, scale: 0.24, ease: Quart.easeOut}, '+=0.9' ).to('.voodoo', 2.0, {webkitFilter:"brightness(0.9)",
-          filter:"brightness(0.9)", y:  -20, opacity: 0, x: 0, ease: Quad.easeIn}, '-=0.0' );
+          filter:"brightness(1)",y: -48, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=2.5').to('.voodoo', 1.0, {webkitFilter:"brightness(0.8)",
+          filter:"brightness(0.1)", y:  -20, opacity: 0.3, x: 0, scale: 0.24, ease: Quart.easeIn}, '+=0.9' ).to('.voodoo', 0.1, {webkitFilter:"brightness(0.9)",
+          filter:"brightness(0.9)", y:  -21, scale: 1, opacity: 0, x: 0, ease: Quad.easeIn}, '+=0.0' );
 
     	var tlwar = new TimelineMax();
     	tlwar.to('.warriors', 0.6, {backgroundPositionY: 22, ease: Power0.easeOut} ).to('.warriors', 1.6, {backgroundPositionY: 7, ease: Power0.easeIn});
