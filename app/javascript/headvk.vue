@@ -164,7 +164,7 @@ var cmp = {
  
   },
   // template: '<a @click="changeStatus" @mouseover="overAction" @mouseleave="leaveAction" class="energy" :class="status" target="_blank" ></a>',
-  template: '<a @click="changeStatus" @mouseover="overAction"  @mouseleave="leaveAction" class="energy" :class="[classlink, status]"></a>',
+  template: '<a style="cursor: pointer" @click="changeStatus" @mouseover="overAction"  @mouseleave="leaveAction" class="energy" :class="[classlink, status]"></a>',
 
   methods: {
     ...mapMutations([
@@ -632,8 +632,8 @@ margin:  0.1em -1.2em;
   content: '';
   display: block;
   position: relative;
-  width: 150px;
-  height: 70px;
+  width: 100px;
+  height: 50px;
    margin-top: -15px;
 }
 
@@ -678,8 +678,9 @@ margin:  0.1em -1.2em;
   content: '';
   display: block;
   position: relative;
-  width: 150px;
-  height: 70px;
+
+  width: 100px;
+  height: 50px;
   margin-top: -15px;
   -webkit-animation: pulsate-fwd 1s ease-out infinite both;
   animation: pulsate-fwd 1s ease-out infinite both;
@@ -732,8 +733,8 @@ margin:  0.1em -1.2em;
   content: '';
   display: block;
   position: relative;
-  width: 150px;
-  height: 70px;
+  width: 100px;
+  height: 50px;
   margin-top: -15px;
 }
 .linkb:before {
@@ -757,8 +758,8 @@ margin:  0.1em -1.2em;
   content: '';
   display: block;
   position: relative;
-  width: 150px;
-  height: 70px;
+  width: 100px;
+  height: 50px;
 }
 .linkactive:hover {
 
@@ -784,8 +785,8 @@ margin:  0.1em -1.2em;
   content: '';
   display: block;
   position: relative;
-  width: 150px;
-  height: 70px;
+  width: 100px;
+  height: 50px;
 
 }
 .linkactive2:before {
