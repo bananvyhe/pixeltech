@@ -8,9 +8,8 @@
       <el-radio-group class="users" v-for="(item, index) in data" v-model="radio" size="mini" >
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
           <el-popover
- 
             placement="bottom"
-         width=""
+            width=""
             trigger="focus">
             <div class="userinterface ">
               <div  >
@@ -23,13 +22,19 @@
                 <el-button type="warning"  label="3" border size="mini"  class="aprior"> - </el-button>
               </div>
               <div>
-                <el-button type="danger" label="1" border size="mini" disabled  class="aprior"> ПК </el-button>
+                <el-tooltip  v-if="$store.getters.cry >= 100" placement="top">
+                  <div slot="content"  class="smalltext notif"> стоимость убийства  100 камней <br> <i>(нейтрализует оппонента на 24 часа)</i> </div>
+                  <el-button type="danger" label="1" border size="mini" class="aprior"> 
+                    ПК 
+                  </el-button>
+                </el-tooltip>
+                <el-button v-else  type="danger" label="1" border size="mini"  disabled class="aprior"> 
+                  ПК 
+                </el-button>
               </div>
               <div>
-                  <!-- <el-radio label="2" border disabled>Option B</el-radio> -->
-            </div> 
-            
-        
+                <!-- <el-radio label="2" border disabled>Option B</el-radio> -->
+              </div>      
             </div>
           <el-radio slot="reference" class="user" :label="item.id" border>{{item.username}}</el-radio>
         </el-popover>
@@ -73,10 +78,8 @@ export default {
       // } 
       })
       .then((response) => { 
-
-        console.log(response.data)
+        // console.log(response.data)
         var alld = response.data
-      
         // const data = [];
         this.users = alld
         this.data = []
@@ -105,8 +108,8 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 @import "stylesheets/_typography";
-.poper {
- 
+.notif {
+  text-align: center;
 }
 .userinterface {
   padding: 0 0.2em;
