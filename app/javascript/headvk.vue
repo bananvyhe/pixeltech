@@ -402,7 +402,7 @@ export default {
     anim() {
       this.scrollTop = window.scrollY;
       this.scrollBottom = window.scrollY + window.innerHeight;
-      window.addEventListener('scroll', _.throttle(this.scrollHandler, 50))
+      window.addEventListener('scroll', _.throttle(this.scrollHandler, 10))
       this.animate = document.querySelectorAll(".vkpost")
  
     },
@@ -414,7 +414,7 @@ export default {
         let element = this.animate[e];
         let elTop = element.offsetTop;
         let elBottom = element.offsetTop + element.scrollHeight;
-        if(this.scrollBottom > (elTop + 130) && (elBottom - 230) > this.scrollTop){
+        if(this.scrollBottom > (elTop + 230) && (elBottom - 230) > this.scrollTop){
           return true;
         } else {
           return false;
