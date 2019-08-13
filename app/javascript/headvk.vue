@@ -203,10 +203,11 @@ var cmp = {
       this.$notify({
         // title: 'Опыт',
         title: loa,
-        message: 'получен опыт',
-        // message: h('i', { style: 'color: teal' }, 'получен опыт'),
+        // message: 'получен опыт',
+        message: '<div class="dropmessage">получен опыт</div>',
         position: 'bottom-left',
-        onClose:  this.destr
+        dangerouslyUseHTMLString: true,
+        onClose:  this.destr,
         // showClose: false
         // duration: 0, 
       });

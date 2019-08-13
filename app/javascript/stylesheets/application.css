@@ -234,12 +234,13 @@ html {
   /*display: flex;*/
   background-image: url('../images/cry.jpg');
   background-size: contain;
-  padding: 0.1em 0.3em;
+  padding: 0.3em 0 0 0.5em;
 }
 .dropmessage {
  /* display: flex;*/
 }
 .mes {
+  padding: 0.5em 0 0 0;
   position: relative;
 }
 .vkpost {
@@ -326,14 +327,17 @@ html {
   padding-right: 10px;
   margin-right: 50px;
 }
+.el-notification {
+  margin: -8px ;
+}
 .el-notification__content {
-  margin: 0;
+  margin: -0.5em;
   p{
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     .dropmessage{
-      padding: 0 0 0 0.8em;
+      padding: 0.5em 0 0.2em 0;
     }
   }
 
