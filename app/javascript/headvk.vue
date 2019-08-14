@@ -1,4 +1,4 @@
-<!-- :class="{ bgclass: activatorclass }" -->
+ff<!-- :class="{ bgclass: activatorclass }" -->
 <template>
 <div id="app" class="app" > 
   <!-- {{alldata}} -->
@@ -643,13 +643,13 @@ margin:  0.1em -1.2em;
   color: color( $str5  blackness(12%));
   content: 'медиа в окне';
   position: absolute; 
-  top: 22px; right: 0;
+  top: 17px; right: 0;
   bottom: 0; left: 5px; z-index: -1;
 }
 .linkVisited:after {
   /*content: url('./images/energy29.gif');*/
   position: absolute; 
-  top: -15px; right: 0;
+  top: -17px; right: 0;
   bottom: 0; left: -19px;
 }
 /*.link {
@@ -682,7 +682,7 @@ margin:  0.1em -1.2em;
 
   width: 100px;
   height: 50px;
-  margin-top: -15px;
+  margin-top: -17px;
   -webkit-animation: pulsate-fwd 1s ease-out infinite both;
   animation: pulsate-fwd 1s ease-out infinite both;
 }
@@ -692,7 +692,7 @@ margin:  0.1em -1.2em;
   color: color( $str5  blackness(12%));
   content: 'медиа в окне';
   position: absolute; 
-  top: 22px; right: 0;
+  top: 17px; right: 0;
   bottom: 0; left: 5px; z-index: -1;
 }
 .link:after {
@@ -736,14 +736,14 @@ margin:  0.1em -1.2em;
   position: relative;
   width: 100px;
   height: 50px;
-  margin-top: -15px;
+  margin-top: -17px;
 }
 .linkb:before {
   adjust-font-size: fs b;
   color: color( $str5  blackness(12%));
   content: 'медиа в окне';
   position: absolute; 
-  top: 22px; right: 0;
+  top: 17px; right: 0;
   bottom: 0; left: 5px; z-index: -1;
 }
  /*content: url('./images/energy_32.gif');*/
@@ -755,7 +755,7 @@ margin:  0.1em -1.2em;
   bottom: 0; left: -19px;
 }
 .linkactive {
-  margin-top: -15px;
+  margin-top: -17px;
   content: '';
   display: block;
   position: relative;
@@ -770,7 +770,7 @@ margin:  0.1em -1.2em;
   color: color( $str5  blackness(12%));
   content: 'медиа в окне';
   position: absolute; 
-  top: 22px; right: 0;
+  top: 17px; right: 0;
   bottom: 0; left: 5px; z-index: -1;
 }
 .linkactive:after {
@@ -782,7 +782,7 @@ margin:  0.1em -1.2em;
   bottom: 0; left: -8px;
 }
 .linkactive2 {
-  margin-top: -15px;
+  margin-top: -17px;
   content: '';
   display: block;
   position: relative;
@@ -797,7 +797,7 @@ margin:  0.1em -1.2em;
   color: color( $str5  blackness(12%));
   content: 'медиа в окне';
   position: absolute; 
-  top: 22px; right: 0;
+  top: 17px; right: 0;
   bottom: 0; left: 5px; z-index: -1;
 }
 .linkactive2:after {
