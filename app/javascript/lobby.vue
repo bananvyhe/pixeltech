@@ -22,9 +22,9 @@
                 <el-button type="warning"  label="3" border size="mini"  class="aprior"> - </el-button>
               </div>
               <div>
-                <el-tooltip  v-if="$store.getters.cry >= 100" placement="top">
-                  <div slot="content"  class="smalltext notif"> стоимость убийства  100 камней <br> <i>(нейтрализует оппонента на 24 часа)</i> </div>
-                  <el-button type="danger" label="1" border size="mini" class="aprior"> 
+                <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
+                  <div slot="content"  class="smalltext notif"> <span style="color: green;">стоимость 100 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> </div>
+                  <el-button type="danger" label="1" border size="mini" class="aprior pk" @click='kill(item)'> 
                     ПК 
                   </el-button>
                 </el-tooltip>
@@ -68,48 +68,65 @@ export default {
     this.getUsers()
   },
   methods: {
-  getUsers() {
-    axios({
-      method: 'get',
-      url: '/api/v1/lobbyall',
-      // params: {
-      //   rait: this.value,
-      //   pos: this.pos
-      // } 
+    kill(event) {
+      // console.log(event.id);
+      axios({
+        method: 'post',
+        url: '/gameboards#kill',
+        data: {
+          killid: event.id
+        },
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      }).then((response) => { 
+
       })
-      .then((response) => { 
-        // console.log(response.data)
-        var alld = response.data
-        // const data = [];
-        this.users = alld
-        this.data = []
-        this.datavalue = []
-        var self = this
-        for (let i = 0; alld[i]; i++) {
-          const data = [];
-          const grname = alld[i]
-          console.log(grname)
-        data.push({
-          username: grname.username,
-          id: grname.id,
+    },
+    getUsers() {
+      axios({
+        method: 'get',
+        url: '/api/v1/lobbyall',
+        // params: {
+        //   rait: this.value,
+        //   pos: this.pos
+        // } 
+        })
+        .then((response) => { 
+          // console.log(response.data)
+          var alld = response.data
+          // const data = [];
+          this.users = alld
+          this.data = []
+          this.datavalue = []
+          var self = this
+          for (let i = 0; alld[i]; i++) {
+            const data = [];
+            const grname = alld[i]
+            console.log(grname)
+            data.push({
+              username: grname.username,
+              id: grname.id,
+            });
+            self.data = self.data.concat(data)
+   
+          }      
+        // return data;
+          // this.data = data;
         });
-          self.data = self.data.concat(data)
- 
-        }      
-      // return data;
-        // this.data = data;
-      });
+      }
     }
   }
-}
 
 </script>
 
 <style scoped>
 @import "stylesheets/_variables";
 @import "stylesheets/_typography";
+
 .notif {
   text-align: center;
+  line-height: 1.4em;
 }
 .userinterface {
   padding: 0 0.2em;
