@@ -5,12 +5,13 @@
     
     <div class="item"> 
       <!-- {{users}} -->
-      <el-radio-group class="users" v-for="(item, index) in data" v-model="radio" size="mini" >
+      <el-button-group class="users" v-for="(item, index) in data" v-model="radio" size="mini" >
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
           <el-popover
             placement="bottom"
             width=""
-            trigger="focus">
+            trigger="hover"
+            openDelay="2">
             <div class="userinterface ">
               <div  >
                 <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
@@ -48,10 +49,10 @@
                 <!-- <el-radio label="2" border disabled>Option B</el-radio> -->
               </div>      
             </div>
-          <el-radio slot="reference" class="user" :label="item.id" border>{{item.username}}</el-radio>
+          <el-button slot="reference" class="user" :label="item.id" border>{{item.username}}</el-button>
         </el-popover>
         <!-- </el-badge> -->
-      </el-radio-group>
+      </el-button-group>
     </div>
      <!-- <h5>нераспредлеленные пользователи</h5> -->
   </div>
@@ -155,7 +156,8 @@ export default {
 }
 .users {
   display: flex;
-  padding: 0.2em 0.3em;
+  padding: 0.2em -0.0em;
+  margin: 0 -0.15em;
 }
 .item {
   display: flex;
