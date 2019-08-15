@@ -51,6 +51,7 @@ Rails.application.routes.draw do
       get :lobbyall, to: "users#lobbyall"
       post :vkwall, to: "vks#associate"
       post :request, to: "request#message"
+      post :kill, to: "gameboards#kill"
       resources :vks
       resources :users
       resources :locations do

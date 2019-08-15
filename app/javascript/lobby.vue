@@ -81,7 +81,7 @@ export default {
       // console.log(event.id);
       axios({
         method: 'post',
-        url: '/gameboards#kill',
+        url: '/api/v1/kill',
         data: {
           killid: event.id
         },
