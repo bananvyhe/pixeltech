@@ -22,7 +22,7 @@ ff<!-- :class="{ bgclass: activatorclass }" -->
         </div>
         <el-slider 
         class=""
-        :marks='marks'
+   
         v-model="value"
         range
         :max='60'
