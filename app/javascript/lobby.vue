@@ -11,14 +11,10 @@
             placement="bottom"
             width=""
             trigger="hover"
-            openDelay="2">
+             >
             <div class="userinterface ">
               <div  >
-                <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
-                  <div slot="content"  class="smalltext notif"> 
-                  </div>
                   <el-button label="2" border size="mini"  class="aprior">Сообщение</el-button>
-                </el-tooltip>
               </div>
               <div >
                 <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
@@ -151,7 +147,6 @@ export default {
   }
 }
 .user {
-  
   margin: 0.2em 0.3em;
 }
 .users {

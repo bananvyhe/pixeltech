@@ -73,11 +73,12 @@ import createPersistedState from 'vuex-persistedstate'
 // import * as VueWindow from '@hscmap/vue-window'
 // Vue.use(VueWindow)
 
-import {Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
+import {ButtonGroup, Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
 // Vue.prototype.$message = Message; 
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }; 
 // Vue.use(Message);
+Vue.use(ButtonGroup);
 Vue.use(Tooltip);
 Vue.use(Alert);
 Vue.use(Badge);
