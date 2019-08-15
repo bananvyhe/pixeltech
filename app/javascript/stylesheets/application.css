@@ -366,6 +366,7 @@ html {
   left: 100%;
   margin-left: -9px;
 }
+
 .el-dialog { 
   font-family: 'aprior';
   padding-left: 0.5em;
@@ -376,7 +377,7 @@ html {
 }
  
 .el-dialog__body {
-  padding: 5px 25px 3px;
+  padding: 5px 20px 3px;
 }
 .el-checkbox:first-child{
  margin-left: 0em;
@@ -414,9 +415,9 @@ html {
    width: 100%;*/
 }
 .el-form-item__label {
-  width: 80px;
+  width: 90px;
   line-height: 1em !important; 
-  padding: 0 0.5em 0px !important; 
+  padding: 0 0.5em 0px 0em !important; 
  display: flex;
  justify-content: flex-end;
  align-self: center;
