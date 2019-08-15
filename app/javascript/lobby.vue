@@ -13,13 +13,25 @@
             trigger="focus">
             <div class="userinterface ">
               <div  >
-                <el-button label="2" border size="mini"  class="aprior">Сообщение</el-button>
+                <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
+                  <div slot="content"  class="smalltext notif">личное сообщение 
+                  </div>
+                  <el-button label="2" border size="mini"  class="aprior">Сообщение</el-button>
+                </el-tooltip>
               </div>
               <div >
-                <el-button type="warning"  label="4" border size="mini"  class="aprior"> + </el-button>
+                <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
+                  <div slot="content"  class="smalltext notif"><i>плюс в карму<br>7 кармы открывают<br> возможности лидера</i> 
+                  </div>
+                  <el-button type="warning"  label="4" border size="mini"  class="aprior"> + </el-button>
+                </el-tooltip>
               </div>
               <div>
-                <el-button type="warning"  label="3" border size="mini"  class="aprior"> - </el-button>
+                <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
+                  <div slot="content"  class="smalltext notif">минус в карму
+                  </div>
+                  <el-button type="warning"  label="3" border size="mini"  class="aprior"> - </el-button>
+                </el-tooltip>
               </div>
               <div>
                 <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
