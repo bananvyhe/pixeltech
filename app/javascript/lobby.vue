@@ -35,7 +35,7 @@
               </div>
               <div>
                 <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
-                  <div slot="content"  class="smalltext notif"> <span style="color: green;">стоимость 100 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> </div>
+                  <div slot="content"  class="smalltext notif"> <span style="color: green;">стоимость 500 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> </div>
                   <el-button type="danger" label="1" border size="mini" class="aprior pk" @click='kill(item)'> 
                     ПК 
                   </el-button>
