@@ -53,6 +53,7 @@ class Api::V1::GameboardsController < ApiController
     end
 
     @addkarmauser = Gameboard.find_by_user_id(payload['user_id'])
+    puts @addkarmauser
     if @addkarmauser.karma > 0
       @addkarmauser.karma += 7000
     elsif @addkarmauser.karma > 10000
@@ -60,6 +61,7 @@ class Api::V1::GameboardsController < ApiController
     else
       @addkarmauser.karma += 3000
     end
+    @addkarmauser.save
 
 
    
