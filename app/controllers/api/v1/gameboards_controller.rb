@@ -5,6 +5,8 @@ class Api::V1::GameboardsController < ApiController
   # GET /gameboards
   # GET /gameboards.json
   def index
+    @gameboards = Gameboard.where(pk: false)
+    render json:  @gameboards, :except => [:created_at, :updated_at]
     # @gameboards = Gameboard.find_by_user_id(payload['user_id'])
     # render json: @gameboards, :except => [:created_at, :updated_at]
   end
@@ -54,12 +56,12 @@ class Api::V1::GameboardsController < ApiController
 
     @addkarmauser = Gameboard.find_by_user_id(payload['user_id'])
     puts @addkarmauser
-    if @addkarmauser.karma > 0
-      @addkarmauser.karma += 7000
+    if @addkarmauser.karma == 0
+      @addkarmauser.karma += 3000
     elsif @addkarmauser.karma > 10000
       @addkarmauser.karma += 10000
     else
-      @addkarmauser.karma += 3000
+      @addkarmauser.karma += 7000
     end
     @addkarmauser.save
 

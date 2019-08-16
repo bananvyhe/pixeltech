@@ -52,6 +52,7 @@ Rails.application.routes.draw do
       post :vkwall, to: "vks#associate"
       post :request, to: "request#message"
       post :kill, to: "gameboards#kill"
+      get :gameboard, to: "gameboards#index"
       resources :vks
       resources :users
       resources :locations do

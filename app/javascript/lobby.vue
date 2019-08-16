@@ -1,11 +1,11 @@
 <template>
-  <div class="lobby"> 
+  <div class="lobby">  {{liveusers}}{{data}}
     <!-- {{users}} -->
     <div class="headlobby"><h4>пул клана</h4> </div>
     
     <div class="item"> 
       <!-- {{users}} -->
-      <el-button-group class="users" v-for="(item, index) in data" v-model="radio" size="mini" >
+      <el-button-group class="users" v-for="(item, index) in liveusers"  size="mini" >
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
           <el-popover
             placement="bottom"
@@ -33,7 +33,7 @@
               <div>
                 <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
                   <div slot="content"  class="smalltext notif"> <span style="color: green;">стоимость 500 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> </div>
-                  <el-button type="danger" label="1" border size="mini" class="aprior pk" @click='kill(item)'> 
+                  <el-button type="danger" label="1" border size="mini" class="aprior pk" @click='kill(item.user_id)'> 
                     ПК 
                   </el-button>
                 </el-tooltip>
@@ -45,7 +45,7 @@
                 <!-- <el-radio label="2" border disabled>Option B</el-radio> -->
               </div>      
             </div>
-          <el-button slot="reference" class="user" :label="item.id" border>{{item.username}}</el-button>
+          <el-button  v-if="username(item.user_id)" slot="reference" class="user" :label="item.user_id" border>{{username(item.user_id)}}</el-button>
         </el-popover>
         <!-- </el-badge> -->
       </el-button-group>
@@ -61,7 +61,8 @@ export default {
     return {
       radio: '1',
       users: '',
-      data: []
+      data: [],
+      liveusers: []
     };
   },
   mounted(){
@@ -71,19 +72,26 @@ export default {
   }, 
   computed: {
 
+
   },
  
-  mounted() {
-    this.getUsers()
-  },
   methods: {
+    username(event) {
+      for (let i = 0; this.data[i]; i++) {
+        if (this.data[i].id == event){
+          return this.data[i].username
+ 
+        }
+       }
+     
+    },
     kill(event) {
       // console.log(event.id);
       axios({
         method: 'post',
         url: '/api/v1/kill',
         data: {
-          killid: event.id
+          killid: event
         },
         headers: {
           'Authorization': 'bearer '+this.$store.getters.token.access
@@ -93,6 +101,23 @@ export default {
       })
     },
     getUsers() {
+      axios({
+        method: 'get',
+        url: '/api/v1/gameboard',
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+        // params: {
+        //   rait: this.value,
+        //   pos: this.pos
+        // } 
+        })
+        .then((response) => { 
+           
+          var total = response.data
+          this.liveusers = total
+        });
+     
       axios({
         method: 'get',
         url: '/api/v1/lobbyall',
