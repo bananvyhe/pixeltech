@@ -42,16 +42,25 @@ class Api::V1::GameboardsController < ApiController
       end
       if pos+@expcounter > @expuser
         @nowexp = @explvling[@lvlcounter]
-       
         @nowexp = @nowexp.to_i   
-            puts @nowexp  
+            # puts @nowexp  
         @minusedexp = @nowexp / 100 * 4
-        puts @minusedexp
+        # puts @minusedexp
         @killeduser.expirience -= @minusedexp 
         @killeduser.save
         break
       end
     end
+
+    @addkarmauser = Gameboard.find_by_user_id(payload['user_id'])
+    if @addkarmauser.karma > 0
+      @addkarmauser.karma += 7000
+    elsif @addkarmauser.karma > 10000
+      @addkarmauser.karma += 10000
+    else
+      @addkarmauser.karma += 3000
+    end
+
 
    
   end

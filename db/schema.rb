@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_153707) do
+ActiveRecord::Schema.define(version: 2019_08_16_144718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,7 +82,6 @@ ActiveRecord::Schema.define(version: 2019_07_24_153707) do
 
   create_table "gameboards", force: :cascade do |t|
     t.bigint "expirience"
-    t.integer "karma"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -91,6 +90,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_153707) do
     t.integer "plus", default: 0
     t.integer "minus", default: 0
     t.string "message"
+    t.integer "karma", default: 0
     t.index ["user_id"], name: "index_gameboards_on_user_id"
   end
 
