@@ -3,7 +3,7 @@
     <div class="headlobby"><h4>пул клана</h4> </div>
     
     <div class="item"> 
-      <!-- {{users}} -->
+      <!-- {{users}} -->{{liveusers}}<br>{{data}}
       <el-button-group class="users" v-for="(item, index) in liveusers"  size="mini" >
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
           <el-popover
