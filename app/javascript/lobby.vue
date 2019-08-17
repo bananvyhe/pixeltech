@@ -1,5 +1,5 @@
 <template>
-  <div class="lobby">  {{liveusers}}{{data}}
+  <div class="lobby">
     <!-- {{users}} -->
     <div class="headlobby"><h4>пул клана</h4> </div>
     
@@ -30,23 +30,41 @@
                   <el-button type="warning"  label="3" border size="mini"  class="aprior"> - </el-button>
                 </el-tooltip>
               </div>
+
               <div>
+
                 <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
                   <div slot="content"  class="smalltext notif"> <span style="color: green;">стоимость 500 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> </div>
-                  <el-button type="danger" label="1" border size="mini" class="aprior pk" @click='kill(item.user_id)'> 
+                  <el-button type="danger" label="1" border size="mini" class="aprior pk" @click='pkconfirm'> 
                     ПК 
                   </el-button>
                 </el-tooltip>
+
                 <el-button v-else  type="danger" label="1" border size="mini"  disabled class="aprior"> 
                   ПК 
                 </el-button>
+
               </div>
               <div>
                 <!-- <el-radio label="2" border disabled>Option B</el-radio> -->
               </div>      
             </div>
-          <el-button  v-if="username(item.user_id)" slot="reference" class="user" :label="item.user_id" border>{{username(item.user_id)}}</el-button>
+
+            <el-button slot="reference" class="user" :label="item.user_id"   border>{{username(item.user_id)}}</el-button>            
+ 
+
         </el-popover>
+        <el-dialog
+          title="Вы уверены?"
+          :visible.sync="dialogVisible"
+          width="40%"
+          >
+          <span class="plashka2">противник теряет 4% опыта</span>
+          <span slot="footer" >
+            <el-button @click="dialogVisible = false">Отмена</el-button>
+            <el-button type="primary" @click="kill(item.user_id)" >Подтвердить</el-button>
+          </span>
+        </el-dialog>
         <!-- </el-badge> -->
       </el-button-group>
     </div>
@@ -59,6 +77,7 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
+      dialogVisible: false,
       radio: '1',
       users: '',
       data: [],
@@ -85,7 +104,11 @@ export default {
        }
      
     },
+    pkconfirm() {
+      this.dialogVisible = true;
+    },
     kill(event) {
+      this.dialogVisible = false;
       // console.log(event.id);
       axios({
         method: 'post',
@@ -100,6 +123,13 @@ export default {
 
       })
     },
+    handleClose(done) {
+        this.$confirm('Are you sure to close this dialog?')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      },
     getUsers() {
       axios({
         method: 'get',
