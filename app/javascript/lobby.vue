@@ -1,6 +1,6 @@
 <template>
   <div class="lobby">
-    <!-- {{users}} -->
+   {{liveusers}}
     <div class="headlobby"><h4>пул клана</h4> </div>
     
     <div class="item"> 
@@ -50,21 +50,22 @@
               </div>      
             </div>
 
-            <el-button slot="reference" class="user" :label="item.user_id"   border>{{username(item.user_id)}}</el-button>            
+            <el-button v-if="item.pk == false" slot="reference" class="user"    border>{{username(item.user_id)}}
+            </el-button>            
  
 
-        </el-popover>
-        <el-dialog
-          title="Вы уверены?"
-          :visible.sync="dialogVisible"
-          width="40%"
-          >
-          <span class="plashka2">противник теряет 4% опыта</span>
-          <span slot="footer" >
-            <el-button @click="dialogVisible = false">Отмена</el-button>
-            <el-button type="primary" @click="kill(item.user_id)" >Подтвердить</el-button>
-          </span>
-        </el-dialog>
+          </el-popover>
+          <el-dialog
+            title="Вы уверены?"
+            :visible.sync="dialogVisible"
+            width="40%"
+            >
+            <span class="plashka2">противник теряет 4% опыта</span>
+            <span slot="footer" >
+              <el-button @click="dialogVisible = false">Отмена</el-button>
+              <el-button :label="item.user_id" type="primary" @click="kill(item.user_id)" >Подтвердить</el-button>
+            </span>
+          </el-dialog>
         <!-- </el-badge> -->
       </el-button-group>
     </div>
@@ -109,6 +110,23 @@ export default {
     },
     kill(event) {
       this.dialogVisible = false;
+      let pos = 0
+      this.liveusers.forEach(function(item, index, object) {
+        // console.log(event);
+        // console.log(item);
+        // console.log(object);
+
+        if (item.user_id == event) {
+          object.splice(pos, 1);
+        }
+        if (item.user_id != event) {
+          pos += 1
+          console.log(pos);
+          console.log(item.user_id);
+          console.log(event);
+        }
+
+      });
       // console.log(event.id);
       axios({
         method: 'post',
