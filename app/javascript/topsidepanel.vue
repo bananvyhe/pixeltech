@@ -398,7 +398,23 @@
 	  },
 	  mounted() {
 
-	  
+	  		if (this.$store.getters.token.access) {
+	  			axios.get('/gameboards', {
+		        method: 'get',
+		        url: '/gameboards',
+			        headers: {
+			          'Authorization': 'bearer '+this.$store.getters.token.access
+			        } 
+		        })
+		        .then((response) => {
+							// console.log(response.data)
+		          this.$store.commit('gamesend', response.data.expirience )
+		          this.$store.commit('crysend', response.data.cry )
+		        })
+		        .catch(function (error) {
+		          console.log(error);
+	      		}).then(); 						
+	  		}	
 	  	if (this.$store.getters.token != null) {
 	  			this.exptimer();
 	  		// axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.getters.token.token;

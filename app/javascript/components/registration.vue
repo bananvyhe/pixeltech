@@ -190,6 +190,14 @@
 			    })
 			    .then(response => {
 			    	this.$store.commit('tokensend', response.data)
+			    	  this.$store.commit('tokensend', response.data)
+	    		  this.token = this.$store.getters.token 
+			  		let jwtData = this.token.access.split('.')[1]
+						let decodedJwtJsonData = window.atob(jwtData)
+						let decodedJwtData = JSON.parse(decodedJwtJsonData)
+						let role = decodedJwtData
+						location.reload(true);
+						this.$store.commit('rolensend', role)
 			    	location.reload(true);
 			    })
 			    .catch(error => {

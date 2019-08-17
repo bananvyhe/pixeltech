@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one :client, dependent: :destroy
+  has_one :gameboard, dependent: :destroy
   has_many :appointments
   has_many :vks, :through => :appointments
   # Include default devise modules. Others available are:

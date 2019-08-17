@@ -118,23 +118,7 @@
 						// window.location.href = '/';
 					}
 				}
-				if (this.$store.getters.token.access) {
-	  			axios.get('/gameboards', {
-		        method: 'get',
-		        url: '/gameboards',
-			        headers: {
-			          'Authorization': 'bearer '+this.$store.getters.token.access
-			        } 
-		        })
-		        .then((response) => {
-console.log(response.data)
-		          this.$store.commit('gamesend', response.data.expirience )
-		          this.$store.commit('crysend', response.data.cry )
-		        })
-		        .catch(function (error) {
-		          console.log(error);
-	      		}).then(); 						
-	  		}	
+
 			//code that causes an error
 				}catch(e){
 			}	  	
