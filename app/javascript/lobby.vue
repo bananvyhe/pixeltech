@@ -17,14 +17,14 @@
                   <el-button label="2" border size="mini"  class="aprior">Сообщение</el-button>
               </div>
               <div >
-                <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
+                <el-tooltip placement="top">
                   <div slot="content"  class="smalltext notif"><i>плюс в карму<br>+7 открывают<br> возможности лидера</i> 
                   </div>
                   <el-button type="warning"  label="4" border size="mini"  class="aprior"> + </el-button>
                 </el-tooltip>
               </div>
               <div>
-                <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
+                <el-tooltip placement="top">
                   <div slot="content"  class="smalltext notif">минус в карму
                   </div>
                   <el-button type="warning"  label="3" border size="mini"  class="aprior"> - </el-button>
@@ -34,15 +34,19 @@
               <div>
 
                 <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
-                  <div slot="content"  class="smalltext notif"> <span style="color: green;">стоимость 500 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> </div>
+                  <div slot="content"  class="smalltext notif"> <span style="color: green;">стоимость 100 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> </div>
                   <el-button type="danger" label="1" border size="mini" class="aprior pk" @click='pkconfirm'> 
                     ПК 
                   </el-button>
                 </el-tooltip>
-
-                <el-button v-else  type="danger" label="1" border size="mini"  disabled class="aprior"> 
-                  ПК 
-                </el-button>
+                <el-tooltip v-else  placement="top">
+                  <div slot="content"  class="smalltext notif"> 
+                    <span style="color: green;">стоимость 100 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> 
+                  </div>
+                  <el-button type="danger" label="1" border size="mini"   class="aprior"> 
+                    ПК 
+                  </el-button>
+                </el-tooltip>
 
               </div>
               <div>
