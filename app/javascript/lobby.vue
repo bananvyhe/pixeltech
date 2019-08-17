@@ -1,6 +1,5 @@
 <template>
   <div class="lobby">
-   {{liveusers}}
     <div class="headlobby"><h4>пул клана</h4> </div>
     
     <div class="item"> 
@@ -121,9 +120,9 @@ export default {
         }
         if (item.user_id != event) {
           pos += 1
-          console.log(pos);
-          console.log(item.user_id);
-          console.log(event);
+          // console.log(pos);
+          // console.log(item.user_id);
+          // console.log(event);
         }
 
       });
