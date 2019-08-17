@@ -3,7 +3,8 @@
     <div class="headlobby"><h4>пул клана</h4> </div>
     
     <div class="item"> 
-      <!-- {{users}} -->{{liveusers}}<br>{{data}}
+      <!-- {{users}} -->
+      <!-- {{liveusers}}<br>{{data}} -->
       <el-button-group class="users" v-for="(item, index) in liveusers"  size="mini" >
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
           <el-popover
@@ -57,7 +58,7 @@
           <el-dialog
             title="Вы уверены?"
             :visible.sync="dialogVisible"
-            width="40%"
+            width="24em"
             >
             <span class="plashka2">противник теряет 4% опыта</span>
             <span slot="footer" >
