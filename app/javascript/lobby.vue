@@ -85,7 +85,11 @@ export default {
     };
   },
   mounted(){
-    this.getUsers()
+    var self = this;
+    setTimeout(function(){
+      self.getUsers()
+    },800 ); 
+
   },
   watch: {
   }, 
