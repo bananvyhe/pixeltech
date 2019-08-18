@@ -5,7 +5,7 @@ class GameboardsController < ApplicationController
   # GET /gameboards
   # GET /gameboards.json
   def index
-    @gameboards = Gameboard.find_by_user_id(payload['user_id'])
+    @gameboards = Gameboard.find_by_user_id(payload['user_id']).order(created_at: :desc)
     render json: @gameboards, :except => [:created_at, :updated_at]
   end
 

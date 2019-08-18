@@ -4,8 +4,9 @@
     
     <div class="item"> 
       <!-- {{users}} -->
-      <!-- {{liveusers}}<br>{{data}} -->
-      <el-button-group class="users" v-for="(item, index) in liveusers"  size="mini" >
+      <!-- {{liveusers}}<br><br>{{data}} -->
+      <el-button-group class="users"  size="mini" >
+        <div v-for="(item, index) in liveusers" >
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
           <el-popover
             placement="bottom"
@@ -13,10 +14,10 @@
             trigger="hover"
              >
             <div class="userinterface ">
-              <div  >
-                  <el-button label="2" border size="mini"  class="aprior">Сообщение</el-button>
+              <div>
+                <el-button label="2" border size="mini"  class="aprior">Сообщение</el-button>
               </div>
-              <div >
+              <div>
                 <el-tooltip placement="top">
                   <div slot="content"  class="smalltext notif"><i>плюс в карму<br>+7 открывают<br> возможности лидера</i> 
                   </div>
@@ -30,12 +31,10 @@
                   <el-button type="warning"  label="3" border size="mini"  class="aprior"> - </el-button>
                 </el-tooltip>
               </div>
-
               <div>
-
                 <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
                   <div slot="content"  class="smalltext notif"> <span style="color: green;">стоимость 100 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> </div>
-                  <el-button type="danger" label="1" border size="mini" class="aprior pk" @click='pkconfirm'> 
+                  <el-button type="danger" label="1" border size="mini" class="aprior pk" @click='pkconfirm(item.user_id)'> 
                     ПК 
                   </el-button>
                 </el-tooltip>
@@ -47,29 +46,24 @@
                     ПК 
                   </el-button>
                 </el-tooltip>
-
-              </div>
-              <div>
-                <!-- <el-radio label="2" border disabled>Option B</el-radio> -->
-              </div>      
+              </div>    
             </div>
 
             <el-button v-if="item.pk == false" slot="reference" class="user"    border>{{username(item.user_id)}}
             </el-button>            
- 
-
           </el-popover>
           <el-dialog
             title="Вы уверены?"
             :visible.sync="dialogVisible"
-            width="24em"
+            width="25em"
             >
             <span class="plashka2">противник теряет 4% опыта</span>
             <span slot="footer" >
               <el-button @click="dialogVisible = false">Отмена</el-button>
-              <el-button :label="item.user_id" type="primary" @click="kill(item.user_id)" >Подтвердить</el-button>
+              <el-button :label="item.user_id" type="primary" @click="kill(pkid)" >Подтвердить</el-button>
             </span>
           </el-dialog>
+          </div>
         <!-- </el-badge> -->
       </el-button-group>
     </div>
@@ -82,6 +76,7 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
+      pkid: '',
       dialogVisible: false,
       radio: '1',
       users: '',
@@ -109,16 +104,17 @@ export default {
        }
      
     },
-    pkconfirm() {
+    pkconfirm(event) {
       this.dialogVisible = true;
+      this.pkid = event
     },
     kill(event) {
       this.dialogVisible = false;
       let pos = 0
       this.liveusers.forEach(function(item, index, object) {
-        // console.log(event);
-        // console.log(item);
-        // console.log(object);
+        console.log(event);
+        console.log(item);
+        console.log(object);
 
         if (item.user_id == event) {
           object.splice(pos, 1);
@@ -195,7 +191,6 @@ export default {
               id: grname.id,
             });
             self.data = self.data.concat(data)
-   
           }      
         // return data;
           // this.data = data;
