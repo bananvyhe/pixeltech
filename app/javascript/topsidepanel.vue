@@ -399,7 +399,7 @@
 	  mounted() {
 
 	  		if (this.$store.getters.token.access) {
-	  			axios.get('/gameboards', {
+	  			axios({
 		        method: 'get',
 		        url: '/gameboards',
 			        headers: {
@@ -413,7 +413,7 @@
 		        })
 		        .catch(function (error) {
 		          console.log(error);
-	      		}).then(); 						
+	      		}); 						
 	  		}	
 	  	if (this.$store.getters.token != null) {
 	  			this.exptimer();
