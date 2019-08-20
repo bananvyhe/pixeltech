@@ -31,9 +31,9 @@
               </div>
               <div>
                 <el-tooltip placement="top">
-                  <div slot="content"  class="smalltext notif">минус в карму
+                  <div slot="content"  class="smalltext notif" >минус в карму
                   </div>
-                  <el-button type="warning"  label="3" border size="mini"  class="aprior"> - </el-button>
+                  <el-button  @click="vote(item.user_id)" type="warning"  label="3" border size="mini"  class="aprior"> - </el-button>
                 </el-tooltip>
               </div>
               <div>
@@ -113,6 +113,23 @@ export default {
   },
  
   methods: {
+    vote(id){
+      axios({
+        method: 'post',
+        url: '/api/v1/vote',
+        data: {
+          minus: id
+        },
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      }).then((response) => { 
+
+ 
+ 
+         
+      })
+    },
     username(event) {
       for (let i = 0; this.data[i]; i++) {
         if (this.data[i].id == event){

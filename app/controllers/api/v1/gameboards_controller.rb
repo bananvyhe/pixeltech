@@ -25,6 +25,17 @@ class Api::V1::GameboardsController < ApiController
   def edit
   end
 
+  def vote
+    minvote =params[:minus]
+    puts minvote
+    @usermin = Gameboard.find_by_user_id(minvote)
+    findnik = User.find(minvote)
+    puts findnik.username
+    # @usermin.minus += 1
+    # @usermin.save
+
+  end
+
   # POST /gameboards
   # POST /gameboards.json
   def kill 
@@ -68,9 +79,6 @@ class Api::V1::GameboardsController < ApiController
       @addkarmauser.karma += 7000
     end
     @addkarmauser.save
-
-
-   
   end
 
   private
