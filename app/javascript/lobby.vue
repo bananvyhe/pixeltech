@@ -4,7 +4,7 @@
     
     <div class="item"> 
       <!-- {{users}} -->
-      <!-- {{liveusers}}<br><br>{{data}} -->
+      {{liveusers}}<br><br>{{data}}
       <el-button-group class="users"  size="mini" >
         <div v-for="(item, index) in liveusers" >
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
@@ -12,8 +12,13 @@
             placement="bottom"
             width=""
             trigger="hover"
-             >
+             >              
+<!--              <div class="userinfo smalltext">
+                голоса: {{item.plus - item.minus}}                
+              </div> -->
             <div class="userinterface ">
+
+
               <div>
                 <el-button label="2" border size="mini"  class="aprior">Сообщение</el-button>
               </div>
@@ -49,8 +54,17 @@
               </div>    
             </div>
 
-            <el-button v-if="item.pk == false" slot="reference" class="user"    border>{{username(item.user_id)}}
-            </el-button>            
+            
+              <el-button v-if="item.pk == false" slot="reference" class="user"    border>
+                <el-badge v-if="item.plus - item.minus != 0":value="item.plus - item.minus" class="item">
+                  {{username(item.user_id)}}
+                </el-badge> 
+                <div v-else class="item">
+                  {{username(item.user_id)}}
+                </div> 
+              </el-button>        
+            
+
           </el-popover>
           <el-dialog
             title="Вы уверены?"
@@ -208,7 +222,15 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 @import "stylesheets/_typography";
-
+.item {
+  margin: -0.5em -1em;
+ 
+}
+.userinfo {
+  display: flex;
+   margin: -0.9em 0;
+  padding: 1em;
+}
 .notif {
   text-align: center;
   line-height: 1.4em;
