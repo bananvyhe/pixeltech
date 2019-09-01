@@ -29,8 +29,9 @@ class Api::V1::GameboardsController < ApiController
     minvote =params[:minus]
     puts minvote
     @usermin = Gameboard.find_by_user_id(minvote)
-    findnik = User.find(minvote)
-    puts findnik.username
+    # findnik = User.find(minvote)
+    # puts findnik.username
+    @usermin.minus
     # @usermin.minus += 1
     # @usermin.save
 
