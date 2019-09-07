@@ -32,7 +32,7 @@ class Api::V1::GameboardsController < ApiController
     @usermin = Gameboard.find_by_user_id(minvote)
     @userfind = User.find(minvote)
     # puts @userfind
-    @usermin.users << @userfind
+    @usermin.users << @userfind 
     puts @usermin.users
     # findnik = User.find(minvote)
     # puts findnik.username
