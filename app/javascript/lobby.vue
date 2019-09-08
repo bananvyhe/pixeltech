@@ -24,9 +24,9 @@
               </div>
               <div>
                 <el-tooltip placement="top">
-                  <div slot="content"  class="smalltext notif"><i>плюс в карму<br>+7 открывают<br> возможности лидера</i> 
+                  <div slot="content" class="smalltext notif"><i>плюс в карму<br>+7 открывают<br> возможности лидера</i> 
                   </div>
-                  <el-button type="warning"  label="4" border size="mini"  class="aprior"> + </el-button>
+                  <el-button @click="voteplus(item.user_id)" type="warning"  label="4" border size="mini"  class="aprior"> + </el-button>
                 </el-tooltip>
               </div>
               <div>
@@ -125,9 +125,20 @@ export default {
         } 
       }).then((response) => { 
 
- 
- 
-         
+      })
+    },
+    voteplus(id){
+      axios({
+        method: 'post',
+        url: '/api/v1/vote',
+        data: {
+          plus: id
+        },
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      }).then((response) => { 
+
       })
     },
     username(event) {

@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_one :gameboard, dependent: :destroy
   has_many :appointments
   has_many :vks, :through => :appointments
-  has_many :gameboards, -> { unscope(:order).distinct  }, :through => :votes
+  has_many :gameboards, -> { distinct }, :through => :votes
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

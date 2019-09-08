@@ -9,7 +9,7 @@
     "css-loader": "^0.28.11",
     "element-theme": "^2.0.1",
     "element-theme-chalk": "^2.4.6",
-    "element-ui": "^2.4.6",
+    "element-ui": "^2.12.0",
     "es6-promise": "^4.2.4",
     "gsap": "^2.0.1",
     "lost": "^8.2.1",
