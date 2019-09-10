@@ -54,6 +54,7 @@ Rails.application.routes.draw do
       post :kill, to: "gameboards#kill"
       post :vote, to: "gameboards#vote"
       get :gameboard, to: "gameboards#index"
+      get :userinfo, to: "gameboards#userinfo"
       resources :vks
       resources :users
       resources :locations do

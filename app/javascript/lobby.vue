@@ -6,19 +6,29 @@
       <!-- {{users}} -->
       {{liveusers}}<br><br>{{data}}
       <el-button-group class="users"  size="mini" >
-        <div v-for="(item, index) in liveusers" >
+        <div v-for="(item, index) in liveusers">
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
           <el-popover
             placement="bottom"
             width=""
             trigger="hover"
-             >              
+            
+            >{{userinfo}}
+            <div class="userinfoplace">
+              <div>
+                за:
+              </div>
+              <div>
+                против:
+              </div>    
+              <div>
+                карма:
+              </div>           
+            </div>
 <!--              <div class="userinfo smalltext">
                 голоса: {{item.plus - item.minus}}                
               </div> -->
             <div class="userinterface ">
-
-
               <div>
                 <el-button label="2" border size="mini"  class="aprior">Сообщение</el-button>
               </div>
@@ -53,17 +63,16 @@
                 </el-tooltip>
               </div>    
             </div>
-
-            
-              <el-button v-if="item.pk == false" slot="reference" class="user"    border>
-                <el-badge v-if="item.plus - item.minus != 0":value="item.plus - item.minus" class="item">
-                  {{username(item.user_id)}}
-                </el-badge> 
-                <div v-else class="item">
-                  {{username(item.user_id)}}
-                </div> 
-              </el-button>        
-            
+   
+            <el-button v-if="item.pk == false" slot="reference" class="user" border>
+              <el-badge v-if="item.plus - item.minus != 0":value="item.plus - item.minus" class="item">
+                {{username(item.user_id)}}
+              </el-badge> 
+              <div v-else class="item" @mouseover="mouseOverUser(item.user_id)">
+                {{username(item.user_id)}}
+              </div> 
+            </el-button>        
+          
 
           </el-popover>
           <el-dialog
@@ -90,6 +99,7 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
+      userinfo: '',
       pkid: '',
       dialogVisible: false,
       radio: '1',
@@ -113,6 +123,28 @@ export default {
   },
  
   methods: {
+    mouseOverUser(id){
+      axios({
+        method: 'get',
+        url: '/api/v1/userinfo',
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        }, 
+        params: {
+          user_id: id
+        }
+        // params: {
+        //   rait: this.value,
+        //   pos: this.pos
+        // } 
+        })
+        .then((response) => { 
+           
+          var total = response.headers.userinfo
+          this.userinfo = total
+      });
+     
+    },
     vote(id){
       axios({
         method: 'post',
@@ -215,6 +247,9 @@ export default {
       axios({
         method: 'get',
         url: '/api/v1/lobbyall',
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
         // params: {
         //   rait: this.value,
         //   pos: this.pos
@@ -250,9 +285,19 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 @import "stylesheets/_typography";
+.userinfoplace {
+  display: flex;
+  flex-direction: row;
+  /*background-color: #dad;*/
+  padding: 0em;
+  margin-bottom: 1em;
+  div {
+    margin: 0em 0.5em;
+    /*background-color: #dad;*/
+  }
+}
 .item {
   margin: -0.5em -1em;
- 
 }
 .userinfo {
   display: flex;

@@ -25,14 +25,24 @@ class Api::V1::GameboardsController < ApiController
   def edit
   end
 
+  def calculateminus id 
+    userminus = Gameboard.find_by_user_id(id)
+    
+  end
+
+  def userinfo
+    userinfo = calculateminus params[:user_id] 
+
+    response.set_header('userinfo', userinfo)
+  end
   def vote
     # захват минусов в карму:
     if params[:minus]
       minvote = params[:minus]
-      # print "--------"
-      # puts minvote 
+      print "--------"
+      puts minvote 
       @usermin = Gameboard.find_by_user_id(minvote)
-      @userfind = User.find(minvote)
+      @userfind = User.find(payload['user_id'])
 
       relations = @usermin.votes.find_by_user_id(minvote)
       relations.vote = false
@@ -45,7 +55,7 @@ class Api::V1::GameboardsController < ApiController
     if params[:plus]
       plusvote = params[:plus]
       @userplus = Gameboard.find_by_user_id(plusvote)
-      @userfind = User.find(plusvote)
+      @userfind = User.find(payload['user_id'])
 
       relations = @userplus.votes.find_by_user_id(plusvote)
       relations.vote = true
@@ -112,6 +122,6 @@ class Api::V1::GameboardsController < ApiController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gameboard_params
-      params.require(:gameboard).permit(:expirience, :karma, :cry, :pk, :plus, :minus, :message, :killid )
+      params.require(:gameboard).permit(:expirience, :karma, :cry, :pk, :plus, :minus, :message, :killid, :user_id )
     end
 end
