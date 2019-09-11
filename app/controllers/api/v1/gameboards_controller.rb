@@ -27,7 +27,7 @@ class Api::V1::GameboardsController < ApiController
 
   def calculateminus id 
     userminus = Gameboard.find_by_user_id(id)
-    
+    userminus.votes.find_by_user_id(id).inspect
   end
 
   def userinfo
@@ -44,7 +44,9 @@ class Api::V1::GameboardsController < ApiController
       @usermin = Gameboard.find_by_user_id(minvote)
       @userfind = User.find(payload['user_id'])
 
-      relations = @usermin.votes.find_by_user_id(minvote)
+      relations = @usermin.votes.find_by_user_id(payload['user_id'])
+      print '------->'
+      puts relations.inspect
       relations.vote = false
       relations.save
       # print '------->'
@@ -57,7 +59,7 @@ class Api::V1::GameboardsController < ApiController
       @userplus = Gameboard.find_by_user_id(plusvote)
       @userfind = User.find(payload['user_id'])
 
-      relations = @userplus.votes.find_by_user_id(plusvote)
+      relations = @userplus.votes.find_by_user_id(payload['user_id'])
       relations.vote = true
       relations.save
       # print '------->'
