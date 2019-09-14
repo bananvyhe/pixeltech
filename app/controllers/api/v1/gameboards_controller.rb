@@ -72,37 +72,43 @@ class Api::V1::GameboardsController < ApiController
       puts minvote 
       @usermin = Gameboard.find_by_user_id(minvote)
       @userfind = User.find(payload['user_id'])
-
-      relations = @usermin.votes.find_by_user_id(payload['user_id'])
-      print '------->'
-      puts relations.inspect
-      relations.vote = false
-      relations.save
+      def relminus
+        relations = @usermin.votes.find_by_user_id(payload['user_id'])
+        relations.vote = false
+        relations.save
+      end
+      if @usermin.votes.find_by_user_id(payload['user_id'])
+        relminus
+      end      
       # print '------->'
       # puts relations.inspect
-        unless  relations
-          @usermin.users << @userfind
-        end
-  
+      unless @usermin.votes.find_by_user_id(payload['user_id'])
+        @usermin.users << @userfind
+        relminus
+      end 
     end
     # захват плюсов в карму:
     if params[:plus]
       plusvote = params[:plus]
       @userplus = Gameboard.find_by_user_id(plusvote)
       @userfind = User.find(payload['user_id'])
-
-      relations = @userplus.votes.find_by_user_id(payload['user_id'])
-      relations.vote = true
-      relations.save
+      def relplus
+        relations = @userplus.votes.find_by_user_id(payload['user_id'])
+        relations.vote = true
+        relations.save
+      end
+      if @userplus.votes.find_by_user_id(payload['user_id'])
+        relplus
+      end
       # print '------->'
       # puts relations.inspect
-      unless  relations
-        @userplus.users << @userfind 
+      unless @userplus.votes.find_by_user_id(payload['user_id'])
+        @userplus.users << @userfind
+        relplus
       end
     end
     # print "---------"
     # puts plusvote
-
   end
 
   # POST /gameboards
