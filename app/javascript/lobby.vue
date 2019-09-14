@@ -21,7 +21,7 @@
               <div>
                 против: {{minusvotes}}
               </div>    
-              <div v-if="userkarma">
+              <div v-if="userkarma != 0">
                 карма: -{{userkarma}}
               </div>           
             </div>
@@ -116,7 +116,7 @@ export default {
     var self = this;
     setTimeout(function(){
       self.getUsers()
-    },7800 ); 
+    },4800 ); 
 
   },
   watch: {
