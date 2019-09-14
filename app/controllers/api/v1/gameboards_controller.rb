@@ -27,25 +27,42 @@ class Api::V1::GameboardsController < ApiController
 
   def calculateminus id 
     userminus = Gameboard.find_by_user_id(id)
-
-    userminall = userminus.votes.where(gameboard_id: userminus.id).to_a
-    puts userminall
-    @allusers = []
+    userminall = userminus.votes.where(gameboard_id: userminus.id).where(vote: false).to_a
+ 
+    @allusersmin = []
     userminall.each do |i|
+      pickupuser = User.find(i.user_id).username
+      @allusersmin << pickupuser
+    end
+     @allusersmin
+  end
+  def calculateplus id 
+    userplus = Gameboard.find_by_user_id(id)
+    userplusall = userplus.votes.where(gameboard_id: userplus.id).where(vote: true).to_a
+ 
+    @allusers = []
+    userplusall.each do |i|
       pickupuser = User.find(i.user_id).username
       @allusers << pickupuser
     end
      @allusers
-
-
-
+  end
+  def getkarma id 
+    userkarma = Gameboard.find_by_user_id(id)
+    userkarma = userkarma.karma.to_i
   end
 
   def userinfo
-    userinfo = calculateminus params[:user_id] 
-    arraysize = userinfo.size
-    response.set_header('userinfo', userinfo)
-    response.set_header('arraysize', arraysize)
+    usermin = calculateminus params[:user_id] 
+    userplus = calculateplus params[:user_id] 
+    userkarma = getkarma params[:user_id]
+    arraysizemin = usermin.size
+    arraysizeplus = userplus.size
+    response.set_header('usermin', usermin)
+    response.set_header('arraysizemin', arraysizemin)
+    response.set_header('userplus', userplus)
+    response.set_header('arraysizeplus', arraysizeplus)
+    response.set_header('userkarma', userkarma)
   end
   def vote
     # захват минусов в карму:

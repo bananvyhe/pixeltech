@@ -16,13 +16,13 @@
             >
             <div class="userinfoplace">
               <div>
-                за:
+                за: {{plusvotes}}
               </div>
               <div>
                 против: {{minusvotes}}
               </div>    
               <div>
-                карма:
+                карма: {{userkarma}}
               </div>           
             </div>
 <!--              <div class="userinfo smalltext">
@@ -99,6 +99,9 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
+      userkarma: '',
+      plusvotes: '',
+      userplus: [],
       minusvotes: '',
       userminus: [],
       pkid: '',
@@ -140,11 +143,16 @@ export default {
         // } 
         })
         .then((response) => {        
-          var total = response.headers.userinfo
-          var arrsize = response.headers.arraysize
- 
-          this.userminus = total
-          this.minusvotes = arrsize
+          var totalplus = response.headers.usermin
+          var arrsizeminus = response.headers.arraysizemin
+          var totalminus = response.headers.userplus
+          var arrsizeplus = response.headers.arraysizeplus
+          var userkarma = response.headers.userkarma
+          this.userminus = totalplus
+          this.minusvotes = arrsizeminus
+          this.userplus = totalplus
+          this.plusvotes = arrsizeplus
+          this.userkarma = userkarma
       });
      
     },
