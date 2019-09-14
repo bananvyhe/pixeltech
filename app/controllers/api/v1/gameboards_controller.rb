@@ -80,7 +80,10 @@ class Api::V1::GameboardsController < ApiController
       relations.save
       # print '------->'
       # puts relations.inspect
-      @usermin.users << @userfind
+        unless  relations
+          @usermin.users << @userfind
+        end
+  
     end
     # захват плюсов в карму:
     if params[:plus]
@@ -93,7 +96,9 @@ class Api::V1::GameboardsController < ApiController
       relations.save
       # print '------->'
       # puts relations.inspect
-      @userplus.users << @userfind 
+      unless  relations
+        @userplus.users << @userfind 
+      end
     end
     # print "---------"
     # puts plusvote
