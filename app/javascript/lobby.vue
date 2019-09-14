@@ -116,7 +116,7 @@ export default {
     var self = this;
     setTimeout(function(){
       self.getUsers()
-    },3800 ); 
+    },7800 ); 
 
   },
   watch: {
