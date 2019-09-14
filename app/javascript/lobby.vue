@@ -13,13 +13,13 @@
             width=""
             trigger="hover"
             
-            >{{userinfo}}
+            >
             <div class="userinfoplace">
               <div>
                 за:
               </div>
               <div>
-                против:
+                против: {{minusvotes}}
               </div>    
               <div>
                 карма:
@@ -99,7 +99,8 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
-      userinfo: '',
+      minusvotes: '',
+      userminus: [],
       pkid: '',
       dialogVisible: false,
       radio: '1',
@@ -138,10 +139,12 @@ export default {
         //   pos: this.pos
         // } 
         })
-        .then((response) => { 
-           
+        .then((response) => {        
           var total = response.headers.userinfo
-          this.userinfo = total
+          var arrsize = response.headers.arraysize
+ 
+          this.userminus = total
+          this.minusvotes = arrsize
       });
      
     },

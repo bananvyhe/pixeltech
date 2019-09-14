@@ -27,13 +27,25 @@ class Api::V1::GameboardsController < ApiController
 
   def calculateminus id 
     userminus = Gameboard.find_by_user_id(id)
-    userminus.votes.find_by_user_id(id).inspect
+
+    userminall = userminus.votes.where(gameboard_id: userminus.id).to_a
+    puts userminall
+    @allusers = []
+    userminall.each do |i|
+      pickupuser = User.find(i.user_id).username
+      @allusers << pickupuser
+    end
+     @allusers
+
+
+
   end
 
   def userinfo
     userinfo = calculateminus params[:user_id] 
-
+    arraysize = userinfo.size
     response.set_header('userinfo', userinfo)
+    response.set_header('arraysize', arraysize)
   end
   def vote
     # захват минусов в карму:
