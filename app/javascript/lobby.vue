@@ -4,7 +4,7 @@
     
     <div class="item"> 
       <!-- {{users}} -->
-      {{liveusers}}<br><br>{{data}}
+ <!--      {{liveusers}}<br><br>{{data}} -->
       <el-button-group class="users"  size="mini" >
         <div v-for="(item, index) in liveusers">
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
@@ -352,7 +352,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2em;
+  padding: 0em 2em 2em;
   lost-center: $lostCenter;
 }
 
