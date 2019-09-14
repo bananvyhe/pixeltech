@@ -4,7 +4,7 @@
     
     <div class="item"> 
       <!-- {{users}} -->
- <!--      {{liveusers}}<br><br>{{data}} -->
+      <!-- {{liveusers}}<br><br>{{data}} -->
       <el-button-group class="users"  size="mini" >
         <div v-for="(item, index) in liveusers">
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
@@ -21,8 +21,8 @@
               <div>
                 против: {{minusvotes}}
               </div>    
-              <div>
-                карма: {{userkarma}}
+              <div v-if="userkarma">
+                карма: -{{userkarma}}
               </div>           
             </div>
 <!--              <div class="userinfo smalltext">
