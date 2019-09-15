@@ -167,7 +167,7 @@ export default {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       }).then((response) => { 
-
+        this.mouseOverUser(id)
       })
     },
     voteplus(id){
@@ -181,7 +181,7 @@ export default {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       }).then((response) => { 
-
+        this.mouseOverUser(id)
       })
     },
     username(event) {
