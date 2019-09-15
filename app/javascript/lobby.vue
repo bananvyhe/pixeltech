@@ -96,6 +96,7 @@
 
 <script>
 import axios from 'axios'
+import { mapMutations } from 'vuex';
 export default {
   data: function () {
     return {
@@ -127,6 +128,9 @@ export default {
   },
  
   methods: {
+    ...mapMutations([
+      'crysendplus'
+    ]),
     mouseOverUser(id){
       axios({
         method: 'get',
@@ -198,6 +202,9 @@ export default {
       this.pkid = event
     },
     kill(event) {
+      this.crysendplus({
+        amount: -100
+      })
       this.dialogVisible = false;
       let pos = 0
       this.liveusers.forEach(function(item, index, object) {
@@ -214,7 +221,6 @@ export default {
           // console.log(item.user_id);
           // console.log(event);
         }
-
       });
       // console.log(event.id);
       axios({
