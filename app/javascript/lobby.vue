@@ -4,7 +4,7 @@
     
     <div class="item"> 
       <!-- {{users}} -->
-      <!-- {{liveusers}}<br><br>{{data}} -->
+      <!-- {{liveusers}}<br><br> {{data}} --> 
       <el-button-group class="users"  size="mini" >
         <div v-for="(item, index) in liveusers">
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
@@ -65,10 +65,10 @@
             </div>
    
             <el-button v-if="item.pk == false" slot="reference" class="user" border>
-              <el-badge v-if="item.plus - item.minus != 0":value="item.plus - item.minus" class="item">
+<!--               <el-badge v-if="item.plus - item.minus != 0":value="item.plus - item.minus" class="item">
                 {{username(item.user_id)}}
-              </el-badge> 
-              <div v-else class="item" @mouseover="mouseOverUser(item.user_id)">
+              </el-badge>  -->
+              <div class="item" @mouseover="mouseOverUser(item.user_id)" v-bind:style="item.karma > 0 ? 'color: red;' : ''">
                 {{username(item.user_id)}}
               </div> 
             </el-button>        
@@ -99,7 +99,7 @@ import axios from 'axios'
 import { mapMutations } from 'vuex';
 export default {
   data: function () {
-    return {
+    return { 
       userkarma: '',
       plusvotes: '',
       userplus: [],
