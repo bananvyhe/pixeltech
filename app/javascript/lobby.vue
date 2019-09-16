@@ -15,12 +15,38 @@
             
             >
             <div class="userinfoplace">
-              <div>
-                за: {{plusvotes}}
+
+              <el-popover
+                v-if="userplus"
+                placement="top"
+                width=""
+                trigger="hover">
+                <div class="tinytext">
+                  {{userplus}}
+                </div>
+                <div slot="reference">
+                    за: {{plusvotes}}
+                </div>
+              </el-popover> 
+              <div v-else>
+                за: 0
               </div>
-              <div>
-                против: {{minusvotes}}
+              <el-popover
+                v-if="userminus"
+                placement="top"
+                width=""
+                trigger="hover">
+                <div class="tinytext">
+                  {{userminus}}                  
+                </div>
+                <div slot="reference">
+                    против: {{minusvotes}}
+                </div>
+              </el-popover>                 
+              <div v-else>
+                против: 0
               </div>    
+
               <div v-if="userkarma != 0">
                 карма: -{{userkarma}}
               </div>           
@@ -147,12 +173,12 @@ export default {
         // } 
         })
         .then((response) => {        
-          var totalplus = response.headers.usermin
+          var totalplus = response.headers.userplus
           var arrsizeminus = response.headers.arraysizemin
-          var totalminus = response.headers.userplus
+          var totalminus = response.headers.usermin
           var arrsizeplus = response.headers.arraysizeplus
           var userkarma = response.headers.userkarma
-          this.userminus = totalplus
+          this.userminus = totalminus
           this.minusvotes = arrsizeminus
           this.userplus = totalplus
           this.plusvotes = arrsizeplus
