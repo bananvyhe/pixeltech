@@ -48,6 +48,9 @@ p:first-of-type {
 .tinytext {
   adjust-font-size: fs tiny;
 }
+.miniheads {
+  color: #666;
+}
 .basetext {
   color: #888;
   adjust-font-size: fs b;
