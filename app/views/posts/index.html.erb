@@ -32,7 +32,14 @@
           <tr data-item_id="<%= post.id %>">
             <td><%= link_to post.title, post, :class => 'posttitlelink' %></td>
            <!--  <td><%= link_to 'Редактировать', edit_post_path(post), :class => 'mediumtext' %></td> -->
-            <td style="width: 10%;"><span class="deleteAction" >Удалить</span></td>
+           <% if post.user == current_user %>
+            <td style="width: 10%;" ><span class="deleteAction" >Удалить</span></td>
+            <% else %>
+              <td style="width: 10%;" class="miniheads">
+                <%= post.user.username  %>
+              </td>
+            <% end %>
+
           </tr>
         <% end %>
       </tbody>
