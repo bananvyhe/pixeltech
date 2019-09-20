@@ -1,8 +1,8 @@
 class LandingPageController < ApplicationController
 	def index
 		@vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
-		@posts = Post.all.order(created_at: :desc)
-		
+		@posts = Post.all.order(created_at: :desc).where(clan_name: 'user')
+		@postsprivate = Post.all.order(created_at: :desc).where(clan_name: current_user.role)
 		if (current_user)
 			@currole = current_user.role
 	    path = case current_user.role

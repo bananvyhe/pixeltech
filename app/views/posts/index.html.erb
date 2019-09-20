@@ -34,7 +34,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @posts.each do |post| %>
+            <% @postsprivate.each do |post| %>
               <tr data-item_id="<%= post.id %>">
                 <td><%= link_to post.title, post, :class => 'posttitlelink' %></td>
                <!--  <td><%= link_to 'Редактировать', edit_post_path(post), :class => 'mediumtext' %></td> -->
@@ -52,7 +52,9 @@
         </table>        
       </div>
     <% end %>
-    
+      <div class="aprior" style="padding: 0em 1.2em 0.7em 0.5em;">
+        <%= link_to 'Новый пост', new_post_path %>
+      </div>
     <h2>Флуд</h2>
     <table style="width: 100%;">
       <thead>
