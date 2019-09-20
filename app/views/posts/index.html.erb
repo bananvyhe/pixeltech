@@ -56,7 +56,7 @@
       </div>
     <% end %>
 
-    <h2>Флуд</h2>
+    <h2>Общий форум</h2>
     <table style="width: 100%;">
       <thead>
         <tr>
@@ -82,9 +82,11 @@
         <% end %>
       </tbody>
     </table>
-    <div class="aprior" style="padding: 0em 1.2em 0.7em 0.5em;">
-      <%= link_to 'Новый пост', new_post_path %>
-    </div>
+    <% if current_user.try(:user?) %>  
+      <div class="aprior" style="padding: 0em 1.2em 0.7em 0.5em;">
+        <%= link_to 'Новый пост', new_post_path %>
+      </div>
+    <% end %>
   </div>
 </div>
 
