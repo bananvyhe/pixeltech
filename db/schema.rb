@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_160653) do
+ActiveRecord::Schema.define(version: 2019_09_21_173255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,10 @@ ActiveRecord::Schema.define(version: 2019_09_21_160653) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["list_id"], name: "index_cards_on_list_id"
+  end
+
+  create_table "clans", force: :cascade do |t|
+    t.string "clan"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -155,10 +159,6 @@ ActiveRecord::Schema.define(version: 2019_09_21_160653) do
     t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "roles", force: :cascade do |t|
-    t.string "role"
   end
 
   create_table "siteowners", force: :cascade do |t|
