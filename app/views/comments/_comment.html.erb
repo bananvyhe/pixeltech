@@ -5,10 +5,11 @@
 	<% if comment.deleted? %>
 		<p>(сообщение удалено)</p>
   	<% else %>
-  		<div style="background-color: #1f242b; padding: 0.5em; margin: 0.5em 0;">
+  		<div style=" display: flex; margin: 0.5em 0;">
+  	  <div style="width: 1.5em; background-color: #1f242b; padding: 0.2em; margin: 0em 0.3em;"><%= comment.id %>
+  	  </div>
+  		<div style="background-color: #1f242b; padding: 0.5em 0.7em;  width: 100%;">
   			<%= simple_format comment.body %>  			
-  		
-
 				<div style="margin: -0.5em 0; display: flex;">
 
 					<div class="basetext">
@@ -30,6 +31,7 @@
 	  		
 	  			</div>
 				</div> 
+			</div>
 			</div>
 		<% end %>
 	<%= tag.div id: "#{dom_id(comment)}_comments" do %>
