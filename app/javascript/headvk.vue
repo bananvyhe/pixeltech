@@ -95,7 +95,8 @@ ff<!-- :class="{ bgclass: activatorclass }" -->
       </div> 
       <div v-if="data.medias_row" class="mediabutton"> 
         <!-- v-bind:href='"https://vk.com"+data.wall.slice(2, -2)' class="js-newWindow" -->
-        <energy-button   :testString="data.id" :userId="data.user" data-popup='width=780, height=800, top=200, left=950, scrollbars=yes' ></energy-button> 
+        <energy-button v-bind:href='"https://vk.com"+data.wall.slice(2, -2)' class="js-newWindow" :testString="data.id" :userId="data.user" data-popup='width=780, height=800, top=200, left=950, scrollbars=yes' ></energy-button>
+<!--         <energy-button   :testString="data.id" :userId="data.user" data-popup='width=780, height=800, top=200, left=950, scrollbars=yes' ></energy-button>  -->
 <!--        -->
       </div>
     </div>
