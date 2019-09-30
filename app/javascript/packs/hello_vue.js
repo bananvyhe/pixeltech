@@ -23,6 +23,7 @@ import VmBackTop from '../back-top.vue'
 import Filther from '../components/filther.vue'
 import Addpublic from '../components/addpublic.vue'
 import Lobby from '../lobby.vue'
+// import CommentVotes from '../components/commentvotes.vue'
 // import Inv from '../components/inventory.vue'
 // import Topsection from '../components/topsection.vue'
 // Vue.component('topsection', Topsection)
@@ -121,6 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 	  el: "#users" 
 	// 	})
 	// }
+	// var commentvotes = document.getElementById("commentvotes") 
+ //  if (commentvotes != null) {
+	//   new Vue({
+	//     el: '#commentvotes',
+	//     render: h => h(CommentV+otes) 
+	//   })
+	// } 
 	var lobby = document.getElementById("lobby") 
   if (lobby != null) {
 	  new Vue({

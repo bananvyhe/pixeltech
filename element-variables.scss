@@ -711,7 +711,3 @@ $--breakpoints-spec: (
   'lg-and-down': (max-width: $--xl - 1),
   'xl-only' : (min-width: $--xl),
 );
-form-item__label {
-	  line-height: 1em;
-    background-color: #ada;
-}

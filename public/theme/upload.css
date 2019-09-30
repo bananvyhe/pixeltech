@@ -111,10 +111,6 @@
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Break-points
  -------------------------- */
 /* Scrollbar
@@ -235,10 +231,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Break-points
  -------------------------- */
 /* Scrollbar
@@ -357,10 +349,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 .el-progress {
   position: relative;
   line-height: 1; }
@@ -565,10 +553,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 .el-upload {
   display: inline-block;
   text-align: center;

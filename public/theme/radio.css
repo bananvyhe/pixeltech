@@ -111,10 +111,6 @@
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Break-points
  -------------------------- */
 /* Scrollbar
@@ -233,10 +229,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Element Chalk Variables */
 /* Transition
 -------------------------- */
@@ -347,10 +339,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 .el-radio {
   color: #C1BDB3;
   font-weight: 500;

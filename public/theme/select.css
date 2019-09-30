@@ -110,10 +110,6 @@
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Break-points
  -------------------------- */
 /* Scrollbar
@@ -232,10 +228,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* BEM support Func
  -------------------------- */
 /* Element Chalk Variables */
@@ -348,10 +340,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Break-points
  -------------------------- */
 /* Scrollbar
@@ -470,10 +458,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* BEM support Func
  -------------------------- */
 /* Element Chalk Variables */
@@ -586,10 +570,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Break-points
  -------------------------- */
 /* Scrollbar
@@ -708,10 +688,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 .el-popper .popper__arrow,
 .el-popper .popper__arrow::after {
   position: absolute;
@@ -948,10 +924,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Break-points
  -------------------------- */
 /* Scrollbar
@@ -1070,10 +1042,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 .el-textarea {
   display: inline-block;
   width: 100%;
@@ -1441,10 +1409,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Break-points
  -------------------------- */
 /* Scrollbar
@@ -1563,10 +1527,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 .el-tag {
   background-color: rgba(39, 156, 29, 0.1);
   display: inline-block;
@@ -1776,10 +1736,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Break-points
  -------------------------- */
 /* Scrollbar
@@ -1898,10 +1854,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 .el-select-dropdown__item {
   font-size: 14px;
   padding: 0 20px;
@@ -2038,10 +1990,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Break-points
  -------------------------- */
 /* Scrollbar
@@ -2160,10 +2108,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 .el-select-group {
   margin: 0;
   padding: 0; }
@@ -2303,10 +2247,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Break-points
  -------------------------- */
 /* Scrollbar
@@ -2425,10 +2365,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 .el-scrollbar {
   overflow: hidden;
   position: relative; }

@@ -110,10 +110,6 @@
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 /* Break-points
  -------------------------- */
 /* Scrollbar
@@ -232,10 +228,6 @@ form-item__label {
 --------------------------*/
 /* Break-point
 --------------------------*/
-form-item__label {
-  line-height: 1em;
-  background-color: #ada; }
-
 .el-tag {
   background-color: rgba(39, 156, 29, 0.1);
   display: inline-block;

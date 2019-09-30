@@ -4,7 +4,7 @@
   unit: em;
   min-line-padding: 1px;
   remove-comments: true;
- /*  Vertical Rythm settings */
+ /*  Vertical Rythm settingssss */
   px-baseline: true; 
   px-fallback: true;
   properties:  extend;
@@ -328,7 +328,7 @@ html {
   margin-right: 50px;
 }
 .el-notification {
-  margin: -8px ;
+  margin: 0px ;
 }
 .el-notification__content {
   margin: -0.5em;
