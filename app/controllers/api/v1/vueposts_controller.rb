@@ -5,8 +5,11 @@ class Api::V1::VuepostsController < ApiController
   # GET /gameboards
   # GET /gameboards.json
   def index
+  	print '==========>'
 		# @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
-		@posts = Post.all.order(created_at: :desc).where(clan_name: 'user')
+		@posts = Post.all.order(created_at: :desc).where(clan_name: 'user').includes(:user)
+        print '------->'
+      puts @posts.inspect
   end
 
   # GET /gameboards/1
@@ -32,6 +35,6 @@ class Api::V1::VuepostsController < ApiController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vuepost_params
-      params.require(:vuepost).permit( :title, :body, :user_id, :clan_name )
+      params.require(:vuepost).permit( :title, :body, :user_id, :clan_name, :username )
     end
 end

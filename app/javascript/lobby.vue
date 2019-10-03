@@ -220,7 +220,7 @@ export default {
           return this.data[i].username
  
         }
-       }
+      }
      
     },
     pkconfirm(event) {
