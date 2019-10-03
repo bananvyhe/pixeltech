@@ -55,6 +55,8 @@ Rails.application.routes.draw do
       post :vote, to: "gameboards#vote"
       get :gameboard, to: "gameboards#index"
       get :userinfo, to: "gameboards#userinfo"
+      get :vuepost, to: "vueposts#index"
+      resources :vueposts
       resources :vks
       resources :users
       resources :locations do
@@ -65,6 +67,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, module: :posts
   end
+
   # resources :discussios do
   #   resources :comments, module: :discussios
   # end

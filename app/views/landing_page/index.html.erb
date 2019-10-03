@@ -1,9 +1,10 @@
 <!-- Hat of site -->
 
-
+<div class="lostcenter">
 <!-- POsts -->
 <% if user_signed_in? %>
 	<%= render :template => "posts/index" %>
+	<div id="posts"></div>
 <% end %>
  
 	<% if user_signed_in? %>
@@ -27,7 +28,7 @@
 <% if !user_signed_in? %>
 	<!-- <div id="head"></div> -->
 <% end %>
-
+</div>	
 <%# if user_signed_in? %>
 <!-- <p style="text-align: center; padding-top: 1em;">
 	Доступ на сайт —  после одобрения аккаунта администратором.
