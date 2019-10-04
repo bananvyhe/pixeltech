@@ -3,15 +3,15 @@
     <el-button type="text" @click="dialogFormVisible = true">Новый пост</el-button>
     <el-dialog title="Создать новый пост" :visible.sync="dialogFormVisible" :width="calcul">
       <el-form :label-position="labelPosition" ref="form" :model="form"  size="mini"  label-width="120px">
-        <el-form-item label="Заголовок поста:">
+        <el-form-item label="Заголовок поста:" prop="title">
           <el-input v-model="form.title" autocomplete="off" ></el-input>
         </el-form-item>
-        <el-form-item label="Пост:" prop="desc">
+        <el-form-item label="Пост:" prop="text">
           <el-input type="textarea" v-model="form.text" rows="10"></el-input>
         </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">Создать</el-button>
-            <el-button @click="resetForm('ruleForm')">Сбросить</el-button>
+            <el-button type="primary" @click="submitForm('form')">Создать</el-button>
+            <el-button @click="resetForm('form')">Сбросить</el-button>
           </el-form-item>
       </el-form>
     </el-dialog>
