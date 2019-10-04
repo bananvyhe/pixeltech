@@ -2,16 +2,19 @@
   <div class=" ">
     {{ userposts }}
     <div v-for="(item, index) in userposts">
-                {{item.title}}
+                {{item.title}} {{item.body}}
     </div>
+    <newpost></newpost>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
- 
+import Newpost from './newpost.vue'
 export default {
-
+  components: {
+    'newpost': Newpost
+  },
   data: function () {
     return {
 			userposts: []

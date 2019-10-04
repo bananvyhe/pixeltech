@@ -415,7 +415,7 @@ html {
    width: 100%;*/
 }
 .el-form-item__label {
-  width: 90px;
+  /*width: 90px;*/
   line-height: 1em !important; 
   padding: 0 0.5em 0px 0em !important; 
  display: flex;
