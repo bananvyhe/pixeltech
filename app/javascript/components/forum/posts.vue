@@ -4,6 +4,7 @@
     <div v-for="(item, index) in userposts">
                 {{item.title}} {{item.body}}
     </div>
+    <showpost :number='number'></showpost>
     <newpost></newpost>
   </div>
 </template>
@@ -11,12 +12,15 @@
 <script>
 import axios from 'axios'
 import Newpost from './newpost.vue'
+import Showpost from './showpost.vue'
 export default {
   components: {
-    'newpost': Newpost
+    'newpost': Newpost,
+    'showpost': Showpost
   },
   data: function () {
     return {
+      number: 2,
 			userposts: []
     };
   },
