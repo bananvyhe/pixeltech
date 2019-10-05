@@ -56,6 +56,7 @@ Rails.application.routes.draw do
       get :gameboard, to: "gameboards#index"
       get :userinfo, to: "gameboards#userinfo"
       get :vuepost, to: "vueposts#index"
+      post :vuepost, to: "vueposts#create"
       resources :vueposts
       resources :vks
       resources :users

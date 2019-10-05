@@ -6,6 +6,7 @@
         <el-form-item label="Заголовок поста:" prop="title">
           <el-input v-model="form.title" autocomplete="off" ></el-input>
         </el-form-item>
+   
         <el-form-item label="Пост:" prop="text">
           <el-input type="textarea" v-model="form.text" rows="10"></el-input>
         </el-form-item>
@@ -31,8 +32,7 @@ export default {
       form: {        
         title: '',
         text: '',
-      },
-			userposts: []
+      }
     };
   },
   computed: {
@@ -44,7 +44,28 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('сохранено!');
+          axios({
+            method: 'post',
+            //vks#associate
+            url: '/api/v1/vuepost',
+            data: {
+              title: this.form.title,
+              body: this.form.text,
+              clan_name: this.$store.getters.role.role
+            },
+            headers: {
+              'Authorization': 'bearer '+this.$store.getters.token.access
+            } 
+          }).then((response) => { 
+
+            this.dialogFormVisible = false
+            // this.link = 'visited'
+            // this.$store.commit('gamesendplus', 100)
+            // this.gamesendplus({
+            //   amount: loa
+            // })
+          })
+
         } else {
           console.log('ошибка!');
           return false;

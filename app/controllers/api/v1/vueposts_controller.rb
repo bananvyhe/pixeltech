@@ -1,5 +1,5 @@
 class Api::V1::VuepostsController < ApiController
-  before_action :set_vuepost, only: [:show, :edit, :update, :destroy]
+  # before_action :set_vuepost, only: [:show, :edit, :update, :destroy]
   before_action :authorize_access_request!
   # before_action :set_gameboard
   # GET /gameboards
@@ -25,7 +25,23 @@ class Api::V1::VuepostsController < ApiController
   # GET /gameboards/1/edit
   def edit
   end
- 
+  def create
+    @post = Post.new(vuepost_params)
+    @post.user = current_user
+    posted = 123
+    if @post.save
+    	response.set_header('posted', posted)
+    end
+    # respond_to do |format|
+    #   if @post.save
+    #     # format.html { redirect_to @post, notice: 'Post was successfully created.' }
+    #     # format.json { render :show, status: :created, location: @post }
+    #   else
+    #     # format.html { render :new }
+    #     format.json { render json: @post.errors, status: :unprocessable_entity }
+    #   end
+    # end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
