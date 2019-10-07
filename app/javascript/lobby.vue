@@ -126,6 +126,7 @@ import { mapMutations } from 'vuex';
 export default {
   data: function () {
     return { 
+      exptime: '',
       userkarma: '',
       plusvotes: '',
       userplus: [],
@@ -140,13 +141,27 @@ export default {
     };
   },
   mounted(){
-    var self = this;
-    setTimeout(function(){
-      self.getUsers()
-    },4800 ); 
+    var self = this;     
+    var timer1 = setInterval(function(){
+      self.checkRelevanceToken()
+      if (self.exptime > 0){
+        var trig = true; 
+        clearInterval(timer1) 
+      }         
+    },50 );  
+    // setTimeout(function(){
 
+    // },4800 ); 
   },
   watch: {
+    exptime() {
+      var trig = false;
+      var self = this;
+      if ((this.exptime > 0)&&(!trig)){
+        self.getUsers()  
+        var trig = true;     
+      }
+    }
   }, 
   computed: {
 
@@ -157,6 +172,9 @@ export default {
     ...mapMutations([
       'crysendplus'
     ]),
+    checkRelevanceToken(){
+      this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
+    },
     mouseOverUser(id){
       axios({
         method: 'get',

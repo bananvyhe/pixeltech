@@ -2,7 +2,8 @@
   <div class=" ">
     {{ userposts }}
     <div v-for="(item, index) in userposts">
-                {{item.title}} {{item.body}}
+      <!-- {{item.title}} {{item.body}} -->
+      <showpost :number='item.id'></showpost>
     </div>
     <showpost :number='number'></showpost>
     <newpost></newpost>
@@ -20,11 +21,15 @@ export default {
   },
   data: function () {
     return {
+      exptime: '',      
       number: 2,
 			userposts: []
     };
   },
   methods: {
+    checkRelevanceToken(){
+      this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
+    },
     getPosts() {
       if (this.$store.getters.token.access) {
         axios({
@@ -45,11 +50,25 @@ export default {
     }
 
   },
-  mounted() {
-    var self = this;
-    setTimeout(function(){
-      self.getPosts()
-    },4800 ); 
+  watch: {
+    exptime() {
+      var trig = false;
+      var self = this;
+      if ((this.exptime > 0)&&(!trig)){
+        self.getPosts()
+        var trig = true;     
+      }
+    }
+  }, 
+  mounted() { 
+    var self = this;     
+    var timer1 = setInterval(function(){
+      self.checkRelevanceToken()
+      if (self.exptime > 0){
+        var trig = true; 
+        clearInterval(timer1) 
+      }         
+    },50 );     
   }
 }
 </script>

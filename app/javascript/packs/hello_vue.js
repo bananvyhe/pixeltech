@@ -11,12 +11,12 @@ import Vue from 'vue'
 import axios from 'axios'
 
 // import App from '../app.vue'
+import Topsidepanel from '../topsidepanel.vue'
 import Reg from '../components/registration.vue'
 import Log from '../components/login.vue'
 import Head from '../head.vue'
 import Headvk from '../headvk.vue'
 import Boar from '../boar.vue'
-import Topsidepanel from '../topsidepanel.vue'
 import Request from '../components/request.vue'
 import Hat from '../hat.vue'
 import VmBackTop from '../back-top.vue'
@@ -130,6 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	//     render: h => h(CommentV+otes) 
 	//   })
 	// } 
+	var topsidepanel = document.getElementById("topsidepanel") 
+  if (topsidepanel != null) {
+	  new Vue({
+	  	store,
+	    el: '#topsidepanel',
+	    render: h => h(Topsidepanel) 
+	  })
+	}	
 	var posts = document.getElementById("posts") 
   if (posts != null) {
 	  new Vue({
@@ -167,14 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	  	store,
 	    el: '#users',
 	    
-	  })
-	}
-	var topsidepanel = document.getElementById("topsidepanel") 
-  if (topsidepanel != null) {
-	  new Vue({
-	  	store,
-	    el: '#topsidepanel',
-	    render: h => h(Topsidepanel) 
 	  })
 	}
 	var head = document.getElementById("head") 

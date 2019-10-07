@@ -1,5 +1,5 @@
 <template>
-	<div id="bpad"> 
+	<div id="bpad"> {{exptime}}
 		<div class="bpad smalltext" v-bind:style="styleObject"> 
 			<div class="logohead">
 				<!-- {{exptime}} -->
@@ -109,7 +109,6 @@
    	'inv': Inv
    },
 	  computed: {
-
 	  	lvlConversion: function () {
 	  		var exp = this.$store.getters.gamebo
 	  		if (exp > 0 && exp <= 68){
@@ -316,45 +315,9 @@
 	  watch: {
 	    exptime() {
 	       	if ((this.exptime < 20)&&(this.$store.getters.token )){
-
+	       		this.refreshToken()
       // setInterval(function(){
-		    	axios({
-	    			method: 'post',
-	    			url: '/api/v1/refr',
-	    			headers: {
-		  				'X-Refresh-Token': this.$store.getters.token.refresh
-						}
-		        }).then((response) => {
-	      		if (response.data.errors) {
-			    		console.log(response.data.errors)
-			    		this.error = response.data.errors;
-		    		}else{
-		    		  this.$store.commit('tokensend', response.data)
-
-		    		  this.token = this.$store.getters.token 
-				  		let jwtData = this.token.access.split('.')[1]
-							let decodedJwtJsonData = window.atob(jwtData)
-							let decodedJwtData = JSON.parse(decodedJwtJsonData)
-							let role = decodedJwtData
-							this.$store.commit('rolensend', role)
-							this.accessToken = this.$store.getters.token.access
-							console.log(this.$store.getters.role.exp) 
-							let jwtData2 = this.accessToken.split('.')[1]
-							let decodedJwtJsonData2 = window.atob(jwtData2)
-							let decodedJwtData2 = JSON.parse(decodedJwtJsonData2)
-							this.accessToken = decodedJwtData2
-							let usid = decodedJwtData2.user_id
-							// let exp2 = decodedJwtData2.exp 
-							// this.$store.commit('expsend2', exp2)
-							console.log(decodedJwtJsonData2) 
-							var current_time = new Date().getTime() / 1000;
-			    		  // var current_time = new Date().getTime() / 1000;
-				  		var millisecremains = this.$store.getters.role.exp - current_time
-				    	// location.reload(true);
-				    }
-		    	})
-
-		  		// this.exptime = this.$store.getters.role.exp - current_time
+	  		// this.exptime = this.$store.getters.role.exp - current_time
 	      //var current_time = new Date().getTime() / 1000;
 	  		// var millisecremains = self.$store.getters.role.exp - current_time
 	  		// self.exptime = millisecremains
@@ -363,13 +326,53 @@
  			}
 	  }, 
 	  methods: {
+	  	refreshToken(){
+	    	axios({
+    			method: 'post',
+    			url: '/api/v1/refr',
+    			headers: {
+	  				'X-Refresh-Token': this.$store.getters.token.refresh
+					}
+	        }).then((response) => {
+      		if (response.data.errors) {
+		    		console.log(response.data.errors)
+		    		this.error = response.data.errors;
+	    		}else{
+	    		  this.$store.commit('tokensend', response.data)
+
+	    		  this.token = this.$store.getters.token 
+			  		let jwtData = this.token.access.split('.')[1]
+						let decodedJwtJsonData = window.atob(jwtData)
+						let decodedJwtData = JSON.parse(decodedJwtJsonData)
+						let role = decodedJwtData
+						this.$store.commit('rolensend', role)
+						this.accessToken = this.$store.getters.token.access
+						console.log(this.$store.getters.role.exp) 
+						let jwtData2 = this.accessToken.split('.')[1]
+						let decodedJwtJsonData2 = window.atob(jwtData2)
+						let decodedJwtData2 = JSON.parse(decodedJwtJsonData2)
+						this.accessToken = decodedJwtData2
+						let usid = decodedJwtData2.user_id
+						// let exp2 = decodedJwtData2.exp 
+						// this.$store.commit('expsend2', exp2)
+						console.log(decodedJwtJsonData2) 
+						var current_time = new Date().getTime() / 1000;
+		    		  // var current_time = new Date().getTime() / 1000;
+			  		var millisecremains = this.$store.getters.role.exp - current_time
+			    	// location.reload(true);
+			    }
+	    	})
+	  	},
 	  	stopTimer() {
       	clearTimeout(this.timer)
+    	},
+    	checkRelevanceToken(){
+    		this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
     	},
 	  	exptimer() {
 	  		var self = this
 		  	setInterval(function(){	
-		  		self.exptime = self.$store.getters.role.exp - new Date().getTime()/1000 
+		  		 self.checkRelevanceToken()
 		  	},4000 );
 	  	},
 	  	timeConversion: function (millisec){
@@ -396,25 +399,31 @@
 	  updated() {
 
 	  },
-	  mounted() {
+	  created() {
 
-	  		if (this.$store.getters.token.access) {
-	  			axios({
-		        method: 'get',
-		        url: '/gameboards',
-			        headers: {
-			          'Authorization': 'bearer '+this.$store.getters.token.access
-			        } 
-		        })
-		        .then((response) => {
-							// console.log(response.data)
-		          this.$store.commit('gamesend', response.data.expirience )
-		          this.$store.commit('crysend', response.data.cry )
-		        })
-		        .catch(function (error) {
-		          console.log(error);
-	      		}); 						
-	  		}	
+	  },
+	  mounted() {
+	  	if (!this.exptime){
+  			this.checkRelevanceToken()
+  		}
+  		if (this.$store.getters.token.access) {
+  			axios({
+	        method: 'get',
+	        url: '/gameboards',
+		        headers: {
+		          'Authorization': 'bearer '+this.$store.getters.token.access
+		        } 
+	        })
+	        .then((response) => {
+						// console.log(response.data)
+	          this.$store.commit('gamesend', response.data.expirience )
+	          this.$store.commit('crysend', response.data.cry )
+	        })
+	        .catch(function (error) {
+	          console.log(error);
+      		}); 						
+  		}	
+
 	  	if (this.$store.getters.token != null) {
 	  			this.exptimer();
 	  		// axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.getters.token.token;
@@ -424,11 +433,7 @@
 				// this.$store.commit('expsend', acctokexp)
 				// let usid = decodedJwtData.sub	
 				// console.log(usid) 
- 
-
 				// if (self.$store.getters.token.refresh){
-			
-
 	  	}
 	  }
 	}
