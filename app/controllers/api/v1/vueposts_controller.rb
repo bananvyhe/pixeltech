@@ -5,16 +5,19 @@ class Api::V1::VuepostsController < ApiController
   # GET /gameboards
   # GET /gameboards.json
   def index
-  	print '==========>'
+  	# print '==========>'
 		# @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
 		@posts = Post.all.order(created_at: :desc).where(clan_name: 'user').includes(:user)
-        print '------->'
-      puts @posts.inspect
+      #   print '------->'
+      # puts @posts.inspect
   end
 
   # GET /gameboards/1
   # GET /gameboards/1.json
   def show
+  	print '==========||||||>'
+  	@post = Post.includes(:user).find(params[:id]) 
+  	puts @post.inspect
   end
 
   # GET /gameboards/new

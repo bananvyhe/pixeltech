@@ -1,11 +1,10 @@
 <template>
   <div class=" ">
-    {{ userposts }}
     <div v-for="(item, index) in userposts">
       <!-- {{item.title}} {{item.body}} -->
       <showpost :number='item.id'></showpost>
     </div>
-    <showpost :number='number'></showpost>
+    <!-- <showpost :number='number'></showpost> -->
     <newpost></newpost>
   </div>
 </template>
@@ -22,7 +21,7 @@ export default {
   data: function () {
     return {
       exptime: '',      
-      number: 2,
+      number: '',
 			userposts: []
     };
   },

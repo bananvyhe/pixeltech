@@ -1,5 +1,6 @@
 <template>
-	<div id="bpad"> {{exptime}}
+	<div id="bpad"> 
+		<!-- {{exptime}} -->
 		<div class="bpad smalltext" v-bind:style="styleObject"> 
 			<div class="logohead">
 				<!-- {{exptime}} -->
