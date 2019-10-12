@@ -1,4 +1,4 @@
-ff<!-- :class="{ bgclass: activatorclass }" -->
+<!-- :class="{ bgclass: activatorclass }" -->
 <template>
 <div id="app" class="app" > 
   <!-- {{alldata}} -->
@@ -11,9 +11,7 @@ ff<!-- :class="{ bgclass: activatorclass }" -->
     <a :href='empid.replace(/"/g,"")' target="_blank" >
     <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid.slice(1, -1)}">
     </div></a>
-    <span slot="footer" class="dialog-footer"></span>
-  </el-dialog>
-
+  </el-dialog> {{alld.length}} 
   <div class="inputForm">
     <div class='sliderRait'>
       <div class="bord">
@@ -22,7 +20,6 @@ ff<!-- :class="{ bgclass: activatorclass }" -->
         </div>
         <el-slider 
         class=""
-   
         v-model="value"
         range
         :max='60'
@@ -36,24 +33,8 @@ ff<!-- :class="{ bgclass: activatorclass }" -->
         <div class="filterbutton">
           <filther :myFilterInc ="filterInc" @filterRes="filterInc = $event"></filther>
         </div>
-      <!-- {{filterInc}} -->
       </div> 
-    </div>  
-<!--     <el-select
-      class="elselect"
-      v-model="optionsValue"
-      multiple
-      filterable
-      allow-create
-      default-first-option
-      placeholder="выбрать контент">
-      <el-option
-        v-for="item in options"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value">
-      </el-option>
-    </el-select> -->
+    </div>
   </div>
 
   <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка...">
@@ -95,8 +76,7 @@ ff<!-- :class="{ bgclass: activatorclass }" -->
       </div> 
       <div v-if="data.medias_row" class="mediabutton"> 
         <!-- v-bind:href='"https://vk.com"+data.wall.slice(2, -2)' class="js-newWindow" -->
-        <energy-button v-bind:href='"https://vk.com"+data.wall.slice(2, -2)' class="js-newWindow" :testString="data.id" :userId="data.user" data-popup='width=780, height=800, top=200, left=950, scrollbars=yes' ></energy-button>
-<!--         <energy-button   :testString="data.id" :userId="data.user" data-popup='width=780, height=800, top=200, left=950, scrollbars=yes' ></energy-button>  -->
+        <energy-button  v-bind:href='"https://vk.com"+data.wall.slice(2, -2)' class="js-newWindow" :testString="data.id" :userId="data.user" data-popup='width=780, height=800, top=200, left=950, scrollbars=yes' ></energy-button> 
 <!--        -->
       </div>
     </div>
@@ -112,7 +92,6 @@ ff<!-- :class="{ bgclass: activatorclass }" -->
 
 import axios from 'axios'
 import { mapMutations } from 'vuex';
-
 var cmp = {
   props: {
     testString:{
@@ -224,7 +203,6 @@ var cmp = {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       }).then((response) => { 
-
         // this.$store.commit('gamesendplus', 100)
         this.gamesendplus({
           amount: loa
@@ -233,9 +211,7 @@ var cmp = {
           this.crysendplus({
             amount: Number(response.headers.cry)
           })   
-
           this.$notify({
-
             // title: '<strong>This is <i>HTML</i> string</strong>'+response.headers.cry,
             // title: 'Опыт',background-image: url('./images/_hat/fog.jpg');
             // message: f('i', { style: 'color: teal' }, 'найден камень'),
@@ -267,8 +243,6 @@ var cmp = {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       }).then((response) => { 
-
-
         // this.link = 'visited'
         // this.$store.commit('gamesendplus', 100)
         // this.gamesendplus({
@@ -283,33 +257,27 @@ var cmp = {
       if (this.$store.getters.token){
         this.status = 'linkactive2';
       }
-
       if (this.link != 'visited' &&  this.userId.length < 1) {
         this.exppush()
         this.link = 'visited';
       }
-
       var self = this;
       setTimeout(function(){
         self.status = 'linkVisited';
- 
         // self.status = '';
       },800 );
-
-
       if (this.userId.length < 1) {
         this.makeProceedLink() 
       }
     }
-
   }
-
 };
-
 export default {
   data: function () {
     return {
-            // top: (window.innerWidth - 800)/2,
+      alld: [],
+      res: '',
+      stop: false,
       filterInc: [],
       empid: '',
       dialogVisible: false,
@@ -342,23 +310,24 @@ export default {
     'energy-button': cmp
   },
   watch: {
+    filterInc() {
+      this.alldata = []
+      this.addBeer()
+    },
     alldata() {
       var self = this
       setTimeout(function(){
         self.anim()
-      },30 );
+      },10 );
     },
     bottom(bottom) {
       if (bottom) {
         this.addBeer()
       }
-    },
-    filterInc(){
-
-    }
+    } 
   },
   updated() {
-
+ 
   },
   created() {
     // this.$store.commit('gamesend', null) 
@@ -373,25 +342,24 @@ export default {
       this.bottom = this.bottomVisible()
       // this.bganim.backgroundPosition = "center"
     })
-
-
+    console.log("headvkcr")
   },
   mounted(){
-    var self = this
-    if (self.pos == false || self.alldata.length < 1 ) {
-      setTimeout(function(){
-        self.addBeer()
-      },1500 );
-    }
-  },
-  updated() {
-
+    // var self = this;
+    // var dtimer = setInterval(function(){
+      // if (self.filterInc = null){
+        // self.addBeer()
+       
+        // }else{
+        //   clearInterval(dtimer) 
+          
+        // }
+      // },620 );
   },
   methods: {
     clickhandler( event) {
       this.dialogVisible = true;
       this.empid = event;
-       
     },
     filterRes() {
       this.alldata = [];
@@ -400,17 +368,12 @@ export default {
       setTimeout(function(){
         self.addBeer()
       },300 );
-      
     },
     anim() {
       this.scrollTop = window.scrollY;
       this.scrollBottom = window.scrollY + window.innerHeight;
       window.addEventListener('scroll', _.throttle(this.scrollHandler, 10))
       this.animate = document.querySelectorAll(".vkpost")
- 
-    },
-    animHarvest() {
-
     },
     checkView(e){
       if(this.animate && this.animate.length == this.alldata.length){
@@ -434,7 +397,6 @@ export default {
       const pageHeight = document.documentElement.scrollHeight
       const bottomOfPage = visible + scrollY+1000 > pageHeight
       return bottomOfPage || pageHeight < visible 
-
     },
     addBeer() {
       axios({
@@ -445,28 +407,16 @@ export default {
           rait: this.value,
           pos: this.pos
         } 
-      })
-      .then((response) => { 
-        var alld = response.data
-  
-        this.alldata = this.alldata.concat(alld);
-        this.pos = this.alldata.length
-        this.bottom = false
+      }).then((response) => { 
+        if (response.data){
 
+          this.alld = response.data
+    
+          this.alldata = this.alldata.concat(this.alld);
+          this.pos = this.alldata.length
+          this.bottom = false
+        }
       });
-      // if (this.$store.getters.token){
-      //   axios({
-      //     method: 'get',
-      //     url: '/api/v1/vks/visited',
-      //     headers: {
-      //       'Authorization': 'bearer '+this.$store.getters.token.access
-      //     } 
-      //   })
-      //   .then((response) => { 
-      //     var vis = response.data
-      //     console.log(response.data)
-      //   });
-      // }
     }
   }
 }

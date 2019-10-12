@@ -145,7 +145,6 @@ export default {
     var timer1 = setInterval(function(){
       self.checkRelevanceToken()
       if (self.exptime > 0){
-        var trig = true; 
         clearInterval(timer1) 
       }         
     },50 );  
