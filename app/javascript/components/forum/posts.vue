@@ -1,8 +1,8 @@
 <template>
   <div class=" ">
     <div v-for="(item, index) in userposts">
-      <!-- {{item.title}} {{item.body}} -->
-      <showpost :number='item.id'></showpost>
+      <!-- {{item.title}} {{item.body}} {{item.username}} -->
+      <showpost :number='item.id' :body='item.body' :title='item.title' :username='item.title'></showpost>
     </div>
     <!-- <showpost :number='number'></showpost> -->
     <newpost></newpost>

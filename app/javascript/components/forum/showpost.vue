@@ -1,29 +1,41 @@
 <template>
-  <div class=" ">
-    {{number}}{{post}}
+  <div class="">
+    <div>
+      <div type="text" @click="handleClick">{{this.title}} {{this.body}} {{this.username}}</div>
+      <el-dialog title="Shipping address" :visible.sync="dialogVisible">
+        {{number}} {{post.title}} {{post.body}} {{post.username}}
+      </el-dialog>
+      
+    </div>
+    
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 export default {
-  props:['number'],
+  props:['number', 'body', 'title', 'username'],
   data: function () {
     return {
+      dialogVisible: false,
 			post: ''
     };
   },
   mounted(){
-    this.getPost()
+    // this.getPost(this.number)
   },
   methods: {
-    getPost() {
+    handleClick(){
+      this.dialogVisible = true 
+      this.getPost(this.number) 
+    },
+    getPost(par) {
       if (this.$store.getters.token.access) {
         axios({
           method: 'get',
           url: '/api/v1/vuepostshow',
           params: {
-            id: this.number
+            id: par
           }, 
           headers: {
             'Authorization': 'bearer '+this.$store.getters.token.access
@@ -31,7 +43,7 @@ export default {
         })
         .then((response) => {
  
-           this.post = response.data
+          this.post = response.data
         })
         .catch(function (error) {
           console.log(error);
