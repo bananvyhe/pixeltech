@@ -2,8 +2,11 @@
   <div class="">
     <div>
       <div type="text" @click="handleClick">{{this.title}} {{this.body}} {{this.username}}</div>
-      <el-dialog title="Shipping address" :visible.sync="dialogVisible">
-        {{number}} {{post.title}} {{post.body}} {{post.username}}
+      <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false">
+        {{post}} ||------||
+        {{postComm}}
+        <!-- {{number}} {{post.title}} {{post.body}} {{post.username}} -->
+        
       </el-dialog>
       
     </div>
@@ -18,7 +21,8 @@ export default {
   data: function () {
     return {
       dialogVisible: false,
-			post: ''
+			post: '',
+      postComm: []
     };
   },
   mounted(){
@@ -28,14 +32,15 @@ export default {
     handleClick(){
       this.dialogVisible = true 
       this.getPost(this.number) 
+      this.getComments(this.number) 
     },
-    getPost(par) {
+    getPost(postId) {
       if (this.$store.getters.token.access) {
         axios({
           method: 'get',
           url: '/api/v1/vuepostshow',
           params: {
-            id: par
+            id: postId
           }, 
           headers: {
             'Authorization': 'bearer '+this.$store.getters.token.access
@@ -49,6 +54,26 @@ export default {
           console.log(error);
         });             
       }       
+    },
+    getComments(postId) {
+      if (this.$store.getters.token.access) {
+        axios({
+          method: 'get',
+          url: '/api/v1/vuecommshow',
+          params: {
+            id: postId
+          }, 
+          headers: {
+            'Authorization': 'bearer '+this.$store.getters.token.access
+          } 
+        })
+        .then((response) => {
+          this.postComm = response.data
+        })
+        .catch(function (error) {
+          console.log(error);
+        });             
+      }             
     }
   }
 }
@@ -56,6 +81,6 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
-
+ 
 
 </style>

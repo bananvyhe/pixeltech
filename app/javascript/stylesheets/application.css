@@ -371,6 +371,7 @@ html {
   font-family: 'aprior';
   padding-left: 0.5em;
   padding-right: 0.5em;
+  padding-bottom: 0.6em;
 }
 .el-dialog__header {
   padding: 25px 30px 7px 30px;
@@ -386,7 +387,7 @@ html {
   padding-bottom: 0px;
 }
 .el-form-item--mini:last-child{
- padding-bottom: 0.2em;
+ padding-bottom: 0.0em;
 }
 .el-button {
   font-family: 'aprior';

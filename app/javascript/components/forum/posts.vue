@@ -1,5 +1,5 @@
 <template>
-  <div class=" ">
+  <div class="posts">
     <div v-for="(item, index) in userposts">
       <!-- {{item.title}} {{item.body}} {{item.username}} -->
       <showpost :number='item.id' :body='item.body' :title='item.title' :username='item.title'></showpost>
@@ -73,6 +73,9 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.posts {
+  padding: 0 0.6em;
+}
 
 
 </style>
