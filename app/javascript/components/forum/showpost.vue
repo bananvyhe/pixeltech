@@ -13,11 +13,11 @@
               {{item.id}} {{item.body}} parent_id:{{item.parent_id}} <br><span style="background: #333;">commentable_id:{{item.commentable_id}}</span> <br>{{item.created_at}}        
             </div>            
           </div>
-          <!-- <div v-if='item.parent_id != null'> -->
-            <div style="background: #115;" v-if="item.comments">
+          <div v-if="item.comments != 0">
+            <div style="background: #115;">
               {{item.comments}}
             </div>
-          <!-- </div> -->
+          </div>
         </div>
       </el-dialog>
     </div>
