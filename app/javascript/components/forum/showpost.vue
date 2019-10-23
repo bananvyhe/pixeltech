@@ -3,12 +3,23 @@
     <div>
       <div type="text" @click="handleClick">{{this.title}} {{this.body}} {{this.username}}</div>
       <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false">
-        {{post}} ||------||
+        <div>{{post}}</div>  
         {{postComm}}
-        <!-- {{number}} {{post.title}} {{post.body}} {{post.username}} -->
-        
+        <br><br>
+
+        <div v-for="(item, index) in postComm">
+          <div v-if='item.parent_id == null'>
+            <div style="background: #222; margin: 0.1em 0;">
+              {{item.id}} {{item.body}} parent_id:{{item.parent_id}} <br><span style="background: #333;">commentable_id:{{item.commentable_id}}</span> <br>{{item.created_at}}        
+            </div>            
+          </div>
+          <!-- <div v-if='item.parent_id != null'> -->
+            <div style="background: #115;" v-if="item.comments">
+              {{item.comments}}
+            </div>
+          <!-- </div> -->
+        </div>
       </el-dialog>
-      
     </div>
     
   </div>

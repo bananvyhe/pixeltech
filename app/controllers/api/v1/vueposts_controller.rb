@@ -15,15 +15,18 @@ class Api::V1::VuepostsController < ApiController
   # GET /gameboards/1
   # GET /gameboards/1.json
   def show
-  	# print '==========||||||>'
+  	# print '==========+++>'
   	@post = Post.includes(:user).includes(:comments).find(params[:id])
   	# puts @post.inspect
   end
 
   def showComments
-    print '==========||||||>'
+    # print '==========||||||>'
     @postComm = Post.find(params[:id]).comments
-    puts @postComm.inspect
+    # render json: @postComm
+    # puts @postComm.inspect
+    # print '===============||>'
+
   end
 
   # GET /gameboards/new
