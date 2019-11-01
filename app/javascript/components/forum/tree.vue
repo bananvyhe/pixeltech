@@ -2,7 +2,7 @@
   <div class="tree"> 
     <div class="tree-list"> 
       <!-- {{typeof treeData}} -->
-      <node-tree :node="treeData"></node-tree>
+      <node-tree :node="treeData" class="tree-Data" ></node-tree>
     
     </div>
   </div>
@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style>
+.tree-Data {
+  /*background-color: #dad;*/
+}
 .tree-list ul {
   padding-left: 16px;
   margin: 6px 0;

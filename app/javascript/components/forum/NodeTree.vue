@@ -2,11 +2,9 @@
   <div class="node-tree">
     <span class="label">{{ node.body  }}</span>
   <!-- {{typeof node }} -->
-  <!--  <ul v-if="node.comments && node.comments.length">
-          <node v-for="child in node.comments" :node="child">
-            
-          </node>
-        </ul> -->
+   <div v-if="node.comments && node.comments.length">
+          <node v-for="child in node.comments" :node="child" class="padding-message"></node>
+        </div>
   </div>
 </template>
 
@@ -18,3 +16,13 @@ export default {
   }
 };
 </script>
+<style>
+.padding-message {
+  padding-left: 16px;
+  margin: 6px 0;
+}
+.label {
+  /*background-color: #dad;*/
+}
+
+</style>
