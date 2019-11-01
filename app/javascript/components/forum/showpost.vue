@@ -4,13 +4,21 @@
       <div type="text" @click="handleClick">{{this.title}} {{this.body}} {{this.username}}</div>
       <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false">
         <div>{{post}}</div>  
-        {{postComm}}
+        <!-- {{postComm}} -->
         <br><br>
+        
+          <div v-for="(item, index) in postComm">
+            <div v-if='item.parent_id == null'>
+              <!-- {{typeof item.comments}} -->
+              <tree :tree-data="item"></tree>
+            </div>
+          </div>
 
-        <div v-for="(item, index) in postComm">
+
+        <!-- <div v-for="(item, index) in postComm">
           <div v-if='item.parent_id == null'>
             <div style="background: #222; margin: 0.1em 0;">
-              {{item.id}} {{item.body}} parent_id:{{item.parent_id}} <br><span style="background: #333;">commentable_id:{{item.commentable_id}}</span> <br>{{item.created_at}}        
+              {{item.id}} {{item.body}} parent_id:{{item.parent_id}} <br><span style="background: #333;">commentable_id:{{item.commentable_id}}</span> <br>{{item.created_at}}
             </div>            
           </div>
           <div v-if="item.comments != 0">
@@ -18,7 +26,7 @@
               {{item.comments}}
             </div>
           </div>
-        </div>
+        </div> -->
       </el-dialog>
     </div>
     
@@ -27,13 +35,14 @@
 
 <script>
 import axios from 'axios'
+import Tree from "./tree";
 export default {
   props:['number', 'body', 'title', 'username'],
   data: function () {
     return {
       dialogVisible: false,
 			post: '',
-      postComm: []
+      postComm: ''
     };
   },
   mounted(){
@@ -58,7 +67,6 @@ export default {
           } 
         })
         .then((response) => {
- 
           this.post = response.data
         })
         .catch(function (error) {
@@ -79,13 +87,19 @@ export default {
           } 
         })
         .then((response) => {
+          // console.log( "тип");
+          // console.log( typeof response.data);
           this.postComm = response.data
+          console.log( this.postComm);
         })
         .catch(function (error) {
           console.log(error);
         });             
       }             
     }
+  },
+  components: {
+    Tree
   }
 }
 </script>
