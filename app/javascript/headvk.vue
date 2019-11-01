@@ -1,6 +1,6 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
-<div id="app" class="app" > 
+<div id="app" class="app"> 
   <!-- {{alldata}} -->
   <el-dialog
     class="containerpop"
@@ -11,7 +11,8 @@
     <a :href='empid.replace(/"/g,"")' target="_blank" >
     <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid.slice(1, -1)}">
     </div></a>
-  </el-dialog> {{alld.length}} 
+  </el-dialog> 
+  <!-- {{alld.length}}  -->
   <div class="inputForm">
     <div class='sliderRait'>
       <div class="bord">
@@ -26,9 +27,9 @@
         >
         </el-slider>
         <!-- кнопка отправки  -->
-        <div class="filterBut">
+<!--         <div class="filterBut">
           <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
-        </div>
+        </div> -->
         <!-- фильтр категорий -->
         <div class="filterbutton">
           <filther :myFilterInc ="filterInc" @filterRes="filterInc = $event"></filther>
@@ -47,8 +48,6 @@
     <div class="namewww hugetext"  v-if="data.url">
       {{data.url.substr(15).toUpperCase()}}
     </div>
-
-
     <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
       <el-carousel type="card" :height="carouselh">
         <!-- {{data.thumb_map_img_as_div}} -->
@@ -76,7 +75,7 @@
       </div> 
       <div v-if="data.medias_row" class="mediabutton"> 
         <!-- v-bind:href='"https://vk.com"+data.wall.slice(2, -2)' class="js-newWindow" -->
-        <energy-button  v-bind:href='"https://vk.com"+data.wall.slice(2, -2)' class="js-newWindow" :testString="data.id" :userId="data.user" data-popup='width=780, height=800, top=200, left=950, scrollbars=yes' ></energy-button> 
+        <energy-button v-bind:href='"https://vk.com"+data.wall.slice(2, -2)' class="js-newWindow"  :testString="data.id" :userId="data.user" data-popup='width=780, height=800, top=200, left=950, scrollbars=yes' ></energy-button> 
 <!--        -->
       </div>
     </div>
@@ -103,7 +102,6 @@ var cmp = {
   },
   data: function(){
     return {
-
       status: '',
       link: '',
     };
@@ -426,6 +424,7 @@ export default {
 @import "_extends";
 
 .filterbutton, .addpublic {
+  padding: 0 1em;
   display: flex;
   align-items: right;
   @media (--only-xsmall-screen) {
@@ -512,8 +511,8 @@ margin:  0.1em -1.2em;
   position: relative;
   width: 100%;
   /*lost-column: 2/3;*/
-  padding: 0.2em 0.5em;
-  margin-bottom: 0.5em;
+  padding: 0.2em 0.5em 0;
+  /*margin-bottom: 0.5em;*/
 }
 /*.optionSlider {
 
@@ -524,7 +523,7 @@ margin:  0.1em -1.2em;
   padding-right: 1em;
 }
 .filterBut {
-  margin: 0 0 0 2em;
+  margin: 0 0 0 0em;
   align-items: center; 
 }
 .sliderRait {

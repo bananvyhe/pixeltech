@@ -43,6 +43,8 @@
 				</el-form-item>
 				 
 		 	</el-form>
+		 	<div slot="footer" >
+      </div>
 		</el-dialog>
 	</div>
 </template>

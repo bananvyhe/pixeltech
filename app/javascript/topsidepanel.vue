@@ -4,7 +4,7 @@
 		<div class="bpad smalltext" v-bind:style="styleObject"> 
 			<div class="logohead">
 				<!-- {{exptime}} -->
-				<div class="voodoo" v-if="!$store.getters.role">
+				<div class="voodoo1" v-if="!$store.getters.role">
 					<div class="basecamp">
 						<!-- Cyber team -->
 					</div>&nbsp;&nbsp;
@@ -456,7 +456,7 @@
 /*.item {
 	clear: both;
 }*/
-.voodoo {
+.voodoo1 {
 	position: relative;
 	display: flex;
 	

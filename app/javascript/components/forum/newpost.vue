@@ -1,7 +1,7 @@
 <template>
   <div class=" ">
     <el-button type="text" @click="dialogFormVisible = true">Новый пост</el-button>
-    <el-dialog title="Создать новый пост" :visible.sync="dialogFormVisible" :width="calcul">
+    <el-dialog title="Создать новый пост" :visible.sync="dialogFormVisible" :width="calcul" :lock-scroll="false">
       <el-form :label-position="labelPosition" ref="form" :model="form"  size="mini"  label-width="120px">
         <el-form-item label="Заголовок поста:" prop="title">
           <el-input v-model="form.title" autocomplete="off" ></el-input>
@@ -15,6 +15,9 @@
             <el-button @click="resetForm('form')">Сбросить</el-button>
           </el-form-item>
       </el-form>
+        <div slot="footer" class="footpostshow basetext font3">
+ 
+        </div>
     </el-dialog>
   </div>
 </template>

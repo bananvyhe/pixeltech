@@ -34,7 +34,7 @@
     methods: {
     },
     created() { 
-    	console.log('6666updatedHat');
+    	// console.log('6666updatedHat');
   
     		// var tlwar2 = new TimelineMax();		
     	 //    	tlwar2.to('.warriors', 0.1, {backgroundPositionY: 0, ease: Sine.easeOut}, '-=0.0');

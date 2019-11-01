@@ -369,16 +369,23 @@ html {
 
 .el-dialog { 
   font-family: 'aprior';
-  padding-left: 0.5em;
+/*  padding-left: 0.5em;
   padding-right: 0.5em;
-  padding-bottom: 0.6em;
+  padding-bottom: 0.6em;*/
 }
 .el-dialog__header {
   padding: 25px 30px 7px 30px;
 }
+.el-dialog__footer {
+    padding: 0.5em 1em 0.6em;
+    padding-top: 0px;
+    text-align: right;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
  
 .el-dialog__body {
-  padding: 5px 20px 3px;
+  padding: 0 1.5em 0 1.7em;
 }
 .el-checkbox:first-child{
  margin-left: 0em;

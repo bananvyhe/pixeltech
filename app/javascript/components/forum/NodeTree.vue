@@ -18,8 +18,8 @@ export default {
 </script>
 <style>
 .padding-message {
-  padding-left: 16px;
-  margin: 6px 0;
+  padding-left: 0.7em;
+  margin: 0 0;
 }
 .label {
   /*background-color: #dad;*/
