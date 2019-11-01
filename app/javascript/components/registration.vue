@@ -1,41 +1,43 @@
 <template>
 	<div class="reg">
-				<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Регистрация</el-button>
-					<el-dialog top="26vh" v-bind:width="screenwidth.value > '350' ? '30'+'em' : '90' +'%'" :visible.sync="dialogFormVisible" :lock-scroll="false">
-						<h1 style="marginTop: -0.2em;">Создать аккаунт:</h1>
-				  <el-form :model="form" :rules="rules" ref="form"> 
-				    <el-form-item 
-				    	prop="email" 
-				    	size="mini" 
-				    	label="Емайл:">
-				      <el-input v-model="form.email" auto-complete="off"></el-input>
-				    </el-form-item>
-				    
-				    <el-form-item prop="password" size="mini" label="Пароль:">
-				      <el-input type="password" v-model="form.password" auto-complete="off"></el-input>
-				    </el-form-item>
-				    <el-form-item  prop="password_confirmation" size="mini" label="">
-				      <el-input type="password" placeholder="Повторите пароль" v-model="form.password_confirmation" auto-complete="off"></el-input>
-				    </el-form-item>
-				    <el-form-item  prop="username" size="mini" label="Никнейм:">
-				      <el-input v-model="form.username" auto-complete="off"></el-input>
-				    </el-form-item>
-	<!-- 			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">
-				      <el-input v-model="form.password" auto-complete="off"></el-input>
-				    </el-form-item> -->
-				   <!--  <el-form-item label="Zones" :label-width="formLabelWidth">
-				      <el-select v-model="form.region" placeholder="Please select a zone">
-				        <el-option label="Zone No.1" value="shanghai"></el-option>
-				        <el-option label="Zone No.2" value="beijing"></el-option>
-				      </el-select>
-				    </el-form-item> -->
-				    <el-form-item size="mini">
-					 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
-						  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
-						</el-form-item>
-				 		</el-form>
-				</el-dialog>	
-			 
+		<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Регистрация</el-button>
+		<el-dialog top="26vh" v-bind:width="screenwidth.value > '350' ? '30'+'em' : '90' +'%'" :visible.sync="dialogFormVisible" :lock-scroll="false">
+			<h1 style="marginTop: -0.2em;">Создать аккаунт:</h1>
+	  	<el-form :model="form" :rules="rules" ref="form"> 
+	    	<el-form-item 
+	    	prop="email" 
+	    	size="mini" 
+	    	label="Емайл:">
+	      	<el-input v-model="form.email" auto-complete="off"></el-input>
+	    	</el-form-item>
+	    
+	    	<el-form-item prop="password" size="mini" label="Пароль:">
+	      	<el-input type="password" v-model="form.password" auto-complete="off"></el-input>
+	    	</el-form-item>
+	    	<el-form-item  prop="password_confirmation" size="mini" label="">
+	      	<el-input type="password" placeholder="Повторите пароль" v-model="form.password_confirmation" auto-complete="off"></el-input>
+	    	</el-form-item>
+	    	<el-form-item  prop="username" size="mini" label="Никнейм:">
+	      	<el-input v-model="form.username" auto-complete="off"></el-input>
+	    	</el-form-item>
+<!-- 			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">
+	      <el-input v-model="form.password" auto-complete="off"></el-input>
+	    </el-form-item> -->
+	   <!--  <el-form-item label="Zones" :label-width="formLabelWidth">
+	      <el-select v-model="form.region" placeholder="Please select a zone">
+	        <el-option label="Zone No.1" value="shanghai"></el-option>
+	        <el-option label="Zone No.2" value="beijing"></el-option>
+	      </el-select>
+	    </el-form-item> -->
+		    <el-form-item size="mini">
+			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
+				  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
+				</el-form-item>
+	 		</el-form>
+  		<div slot="footer" class="footpostshow basetext font3">
+
+  		</div>						 		
+		</el-dialog>		 
 	</div>
 </template>
 

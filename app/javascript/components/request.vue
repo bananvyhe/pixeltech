@@ -26,6 +26,9 @@
           <el-button  @click="dialogFormVisible = false">Отмена</el-button><el-button   type="primary" @click="handle" >Отправить</el-button>
         </el-form-item>    
       </el-form>
+      <div slot="footer" class="footpostshow basetext font3">
+ 
+      </div>
     </el-dialog>
   </div>
 </template>
