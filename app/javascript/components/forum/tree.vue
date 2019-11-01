@@ -1,10 +1,10 @@
 <template>
   <div class="tree"> 
-    <ul class="tree-list"> 
+    <div class="tree-list"> 
       <!-- {{typeof treeData}} -->
       <node-tree :node="treeData"></node-tree>
     
-    </ul>
+    </div>
   </div>
 </template>
 
