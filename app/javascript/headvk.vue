@@ -310,7 +310,10 @@ export default {
   watch: {
     filterInc() {
       this.alldata = []
-      this.addBeer()
+      var self = this
+      setTimeout(function(){
+        self.addBeer()
+      },1110 );
     },
     alldata() {
       var self = this
