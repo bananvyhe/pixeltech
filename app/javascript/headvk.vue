@@ -319,7 +319,7 @@ export default {
       },10 );
     },
     bottom(bottom) {
-      if (bottom) {
+      if ((bottom) && (this.alldata != 0)) {
         this.addBeer()
       }
     } 
