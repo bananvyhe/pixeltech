@@ -319,7 +319,7 @@ export default {
       },10 );
     },
     bottom(bottom) {
-      if ((bottom) && (this.alldata != 0)) {
+      if ((bottom) && (this.alldata != [])) {
         this.addBeer()
       }
     } 
@@ -343,16 +343,7 @@ export default {
     console.log("headvkcr")
   },
   mounted(){
-    // var self = this;
-    // var dtimer = setInterval(function(){
-      // if (self.filterInc = null){
-        // self.addBeer()
-       
-        // }else{
-        //   clearInterval(dtimer) 
-          
-        // }
-      // },620 );
+
   },
   methods: {
     clickhandler( event) {
