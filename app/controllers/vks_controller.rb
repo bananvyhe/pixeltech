@@ -4,7 +4,7 @@ class VksController < ApplicationController
   # GET /vks
   # GET /vks.json
   def index
-    @vks = Vk.all
+    # @vks = Vk.all
   end
 
   # GET /vks/1

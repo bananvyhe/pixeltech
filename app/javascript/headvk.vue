@@ -359,14 +359,14 @@ export default {
       this.dialogVisible = true;
       this.empid = event;
     },
-    filterRes() {
-      this.alldata = [];
-      this.pos = 0;
-      var self = this
-      setTimeout(function(){
-        self.addBeer()
-      },300 );
-    },
+    // filterRes() {
+    //   this.alldata = [];
+    //   this.pos = 0;
+    //   var self = this
+    //   setTimeout(function(){
+    //     self.addBeer()
+    //   },300 );
+    // },
     anim() {
       this.scrollTop = window.scrollY;
       this.scrollBottom = window.scrollY + window.innerHeight;
