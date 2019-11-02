@@ -2,6 +2,7 @@
 <template>
 <div id="app" class="app"> 
   <!-- {{alldata}} -->
+  <!-- {{filterInc}} -->
   <el-dialog
     class="containerpop"
     :visible.sync="dialogVisible"
@@ -309,11 +310,11 @@ export default {
   },
   watch: {
     filterInc() {
-      this.alldata = []
-      var self = this
-      setTimeout(function(){
-        self.addBeer()
-      },1110 );
+        this.alldata = []
+
+          this.addBeer()
+            
+
     },
     alldata() {
       var self = this
@@ -322,7 +323,7 @@ export default {
       },10 );
     },
     bottom(bottom) {
-      if ((bottom) && (this.alldata != [])) {
+      if (bottom)  {
         this.addBeer()
       }
     } 
