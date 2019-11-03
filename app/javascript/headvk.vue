@@ -311,7 +311,7 @@ export default {
   watch: {
     filterInc() {
             
-            if (this.filterInc != [])  {
+            if (this.filterInc != [null])  {
               // var self = this
             // setTimeout(function(){
               this.alldata = []
