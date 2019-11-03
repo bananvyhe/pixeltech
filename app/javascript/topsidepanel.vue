@@ -1,5 +1,5 @@
 <template>
-	<div id="bpad"> 
+	<div id="bpad">  
 		<!-- {{exptime}} -->
 		<div class="bpad smalltext" v-bind:style="styleObject"> 
 			<div class="logohead">
@@ -371,10 +371,10 @@
     		this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
     	},
 	  	exptimer() {
-	  		// var self = this
-		  	// setInterval(function(){	
-		  		this.checkRelevanceToken()
-		  	// },4000 );
+	  		var self = this
+		  	setInterval(function(){	
+		  		self.checkRelevanceToken()
+		  	},4000 );
 	  	},
 	  	timeConversion: function (millisec){
 	  		var current_time = new Date().getTime() / 1000;
