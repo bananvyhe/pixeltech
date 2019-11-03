@@ -310,14 +310,16 @@ export default {
   },
   watch: {
     filterInc() {
-            var self = this
-              setTimeout(function(){
-              self.alldata = []
-
-              self.addBeer()
-            },500 );
- 
             
+            if (this.filterInc != [])  {
+              // var self = this
+            // setTimeout(function(){
+              this.alldata = []
+
+              this.addBeer()
+            // },1000 );
+ 
+            }
 
     },
     alldata() {
