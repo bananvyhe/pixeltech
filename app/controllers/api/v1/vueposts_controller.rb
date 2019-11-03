@@ -21,11 +21,11 @@ class Api::V1::VuepostsController < ApiController
   end
 
   def showComments
-    print '==========||||||>'
+    # print '==========||||||>'
     @postComm = Post.find(params[:id]).comments
     # render json: @postComm
-    puts @postComm.inspect
-    print '===============||>'
+    # puts @postComm.inspect
+    # print '===============||>'
 
   end
 
