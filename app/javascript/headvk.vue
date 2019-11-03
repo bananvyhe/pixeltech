@@ -315,7 +315,7 @@ export default {
               self.alldata = []
 
               self.addBeer()
-            },100 );
+            },500 );
  
             
 
