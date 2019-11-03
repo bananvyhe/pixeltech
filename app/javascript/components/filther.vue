@@ -1,6 +1,8 @@
 <template>
   <div class="filther">
-    <!-- {{datavalue}} -->
+<!--     {{datavalue}}
+    {{data}}
+    <br><br> {{alld}} -->
     <el-popover
       placement="bottom-start"
       width="400"
@@ -73,7 +75,7 @@ export default {
  
   mounted() {
     this.getPublics()
-    this.$emit('filterRes', this.datavalue)
+    // this.$emit('filterRes', this.datavalue)
   },
   methods: {
  
@@ -87,7 +89,7 @@ export default {
       // } 
       })
       .then((response) => { 
-        var alld = response.data
+        this.alld = response.data
         console.log(response.data)
 
       
@@ -95,10 +97,10 @@ export default {
       this.data = []
       this.datavalue = []
       var self = this
-      for (let i = 0; alld[i]; i++) {
+      for (let i = 0; this.alld[i]; i++) {
         const data = [];
-        const grname = alld[i]
-        console.log(grname)
+        const grname = this.alld[i]
+        // console.log(grname)
 
         data.push({
           key: grname.id,
