@@ -371,10 +371,10 @@
     		this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
     	},
 	  	exptimer() {
-	  		var self = this
-		  	setInterval(function(){	
-		  		 self.checkRelevanceToken()
-		  	},4000 );
+	  		// var self = this
+		  	// setInterval(function(){	
+		  		this.checkRelevanceToken()
+		  	// },4000 );
 	  	},
 	  	timeConversion: function (millisec){
 	  		var current_time = new Date().getTime() / 1000;
@@ -404,11 +404,12 @@
 
 	  },
 	  mounted() {
-	  	if (!this.exptime){
+	  	//проверка условий на существования логина 
+	  	if ((!this.exptime)&&(this.token)){
   			this.checkRelevanceToken()
-  		}
-  		if (this.$store.getters.token.access) {
-  			axios({
+  			//проверка условия что имеется доступ и берется запрос
+				if (this.$store.getters.token.access) {
+	  			axios({
 	        method: 'get',
 	        url: '/gameboards',
 		        headers: {
@@ -423,7 +424,9 @@
 	        .catch(function (error) {
 	          console.log(error);
       		}); 						
-  		}	
+		  	}	
+  		}
+  
 
 	  	if (this.$store.getters.token != null) {
 	  			this.exptimer();
