@@ -1,6 +1,6 @@
 <template>
   <div class="filther">
-    <!-- {{datavalue}} -->
+    {{datavalue}}
     <el-popover
       placement="bottom-start"
       width="400"
