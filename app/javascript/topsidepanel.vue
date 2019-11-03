@@ -370,6 +370,7 @@
     	checkRelevanceToken(){
     		this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
     	},
+    	//чекает как там дела со свежестью токена каждые 4сек
 	  	exptimer() {
 	  		var self = this
 		  	setInterval(function(){	
