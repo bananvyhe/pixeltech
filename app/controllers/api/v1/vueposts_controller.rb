@@ -1,5 +1,4 @@
 class Api::V1::VuepostsController < ApiController
-  skip_before_action :authenticate_user!
   # before_action :set_vuepost, only: [:show, :edit, :update, :destroy]
   # before_action :authorize_access_request!
   # before_action :set_gameboard
@@ -23,7 +22,7 @@ class Api::V1::VuepostsController < ApiController
 
   def showComments
     # print '==========||||||>'
-    @postComm = Post.find(params[:id]).comments
+    @postComm = Post.includes(:user).find(params[:id]).comments
     # render json: @postComm
     # puts @postComm.inspect
     # print '===============||>'
