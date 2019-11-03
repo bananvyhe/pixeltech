@@ -311,15 +311,15 @@ export default {
   watch: {
     filterInc() {
             
-            if (this.filterInc != [null])  {
-              // var self = this
-            // setTimeout(function(){
-              this.alldata = []
-              this.alld = []
-              this.addBeer()
-            // },1000 );
- 
-            }
+      if (this.filterInc != [null])  {
+        // var self = this
+      // setTimeout(function(){
+        this.alldata = []
+        this.alld = []
+        this.addBeer()
+      // },1000 );
+
+      }
 
     },
     alldata() {

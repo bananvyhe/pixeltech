@@ -405,7 +405,7 @@
 	  },
 	  mounted() {
 	  	//проверка условий на существования логина 
-	  	if ((!this.exptime)&&(this.token)){
+	  	if (!this.exptime){
   			this.checkRelevanceToken()
   			//проверка условия что имеется доступ и берется запрос
 				if (this.$store.getters.token.access) {
