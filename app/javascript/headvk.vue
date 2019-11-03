@@ -315,7 +315,7 @@ export default {
               // var self = this
             // setTimeout(function(){
               this.alldata = []
-
+              this.alld = []
               this.addBeer()
             // },1000 );
  
