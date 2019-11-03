@@ -1,11 +1,12 @@
 class ApplicationController < ActionController::Base
 # отключение кэширования запросов https://ru.coredump.biz/questions/20366262/disabling-rails-sql-query-caching-globally
-  around_action :disable_active_record_query_cache
-  def disable_active_record_query_cache
-      ActiveRecord::Base.uncached do
-         yield
-      end
-  end
+  # around_action :disable_active_record_query_cache
+  # def disable_active_record_query_cache
+  #     ActiveRecord::Base.uncached do
+  #        yield
+  #     end
+  # end
+  
   # шаг списания 
   $stepcash = 0.38
   protect_from_forgery with: :exception
