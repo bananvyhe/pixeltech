@@ -60,8 +60,8 @@ Rails.application.routes.draw do
       get :vuepostshow, to: "vueposts#show"
       get :vuecommshow, to: "vueposts#showcomments"
       resources :vueposts
-      get :vks, to: "vks#index"
-      # resources :vks
+      # get :vks, to: "vks#index"
+      resources :vks
       resources :users
       resources :locations do
         resources :recordings

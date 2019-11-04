@@ -49,7 +49,7 @@ class VkWorker < ApplicationController
 
 
 		url=['https://vk.com/chillrussia',
-			'https://vk.com/po_jesti'		,
+			'https://vk.com/po_jesti',
 					'https://vk.com/powermetalheads',
 			'https://vk.com/mtblog',
 			'https://vk.com/warm_music',

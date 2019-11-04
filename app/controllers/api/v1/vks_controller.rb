@@ -1,5 +1,6 @@
 class Api::V1::VksController < ApiController
- # require 'pry'
+  # require 'pry'
+  skip_before_action :verify_authenticity_token
 	skip_before_action :authenticate_user!
   before_action :set_vks
   before_action :set_user
