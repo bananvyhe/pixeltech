@@ -12,6 +12,8 @@
     <a :href='empid.replace(/"/g,"")' target="_blank" >
     <div class="avatarSect1" v-bind:style="{backgroundImage: 'url('+ empid.slice(1, -1)}">
     </div></a>
+    <div slot="footer" class="footpostshow basetext font3">
+    </div>
   </el-dialog> 
   <!-- {{alld.length}}  -->
   <div class="inputForm">
