@@ -1,5 +1,5 @@
 <template>
-	<div id="bpad">  
+	<div id="bpad"> 
 		<!-- {{exptime}} -->
 		<div class="bpad smalltext" v-bind:style="styleObject"> 
 			<div class="logohead">
@@ -39,6 +39,7 @@
 								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
 
 								<div class="expline">
+									<!-- v-if="$store.getters.gamebo" -->
 									<el-progress v-if="$store.getters.gamebo" class="elpro" :stroke-width="6" :percentage="Number(lvlConversion[1])"></el-progress>
 								</div>
 								<div v-if="$store.getters.gamebo" class="lvl">{{lvlConversion[0]}}&nbsp;</div>
@@ -368,7 +369,9 @@
       	clearTimeout(this.timer)
     	},
     	checkRelevanceToken(){
-    		this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
+    		if (this.$store.getters.role){
+    			this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
+    		}
     	},
     	//чекает как там дела со свежестью токена каждые 4сек
 	  	exptimer() {
@@ -406,10 +409,10 @@
 	  },
 	  mounted() {
 	  	//проверка условий на существования логина 
-	  	if ((!this.exptime)&&(this.token)){
+	  	if (!this.exptime){
   			this.checkRelevanceToken()
   			//проверка условия что имеется доступ и берется запрос
-				if (this.$store.getters.token.access) {
+				if (this.$store.getters.role) {
 	  			axios({
 	        method: 'get',
 	        url: '/gameboards',
