@@ -54,7 +54,6 @@ class VkWorker < ApplicationController
 			'https://vk.com/mtblog',
 			'https://vk.com/warm_music',
 			'https://vk.com/soundtracks_for_coding',
-			'https://vk.com/lostark',
 			'https://vk.com/e_music_ambient',
 			'https://vk.com/fashionsound',
 			'https://vk.com/joise',

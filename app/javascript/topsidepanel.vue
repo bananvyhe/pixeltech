@@ -22,7 +22,7 @@
 					    	<a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a>
 					    </div>
 		
-							<el-button size="mini" slot="reference">сайты</el-button>
+						<!-- 	<el-button size="mini" slot="reference">сайты</el-button> -->
 						</el-popover>
 					</div>
 				</div>
