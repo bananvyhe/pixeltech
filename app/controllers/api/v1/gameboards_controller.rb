@@ -1,6 +1,6 @@
 class Api::V1::GameboardsController < ApiController
   before_action :set_gameboard, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authorize_access_request!
+  before_action :authorize_access_request!
 
   # before_action :set_gameboard
   # GET /gameboards
