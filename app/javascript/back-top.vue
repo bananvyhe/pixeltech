@@ -45,7 +45,7 @@
       },
       duration: {
         type: Number,
-        default: 100
+        default: 0
       },
       timing: {
         type: String,

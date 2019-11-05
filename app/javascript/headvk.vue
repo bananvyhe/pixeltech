@@ -328,7 +328,7 @@ export default {
       var self = this
       setTimeout(function(){
         self.anim()
-      },10 );
+      },2 );
     },
     bottom(bottom) {
       if (bottom)  {
