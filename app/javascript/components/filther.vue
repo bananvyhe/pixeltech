@@ -13,7 +13,7 @@
        :titles="['скрытые', 'видимые']"
         v-model="datavalue"
         :data="data">
-      </el-transfer>
+      </el-transfer>{{datavalue}}{{data}}
       <el-button  slot="reference" size="mini" type="info" icon="el-icon-setting" circle></el-button>
     </el-popover>
   </div>
@@ -41,6 +41,7 @@ export default {
     //   return data;
     // };
     return {
+      finaldata: '',
       data: [],
       myFilterInc: this.data,
       datavalue: [],
@@ -57,7 +58,7 @@ export default {
   },
   watch: {
     datavalue() {
-      this.$emit('filterRes', this.datavalue)
+      this.$emit('filterRes', this.finaldata)
     },
     // value(value) {
     //   if (!value) {
@@ -110,6 +111,7 @@ export default {
         self.data = self.data.concat(data)
         self.datavalue = self.datavalue.concat(grname.id)
       }
+      this.finaldata = this.datavalue
       // return data;
         // this.data = data;
       });
