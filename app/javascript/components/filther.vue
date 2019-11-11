@@ -11,9 +11,9 @@
        <el-transfer
  
        :titles="['скрытые', 'видимые']"
-        v-model="datavalue"
-        :data="data">
-      </el-transfer>{{datavalue}}{{data}}
+        v-model="finaldata"
+        :data="alld">
+      </el-transfer>{{alld}}{{datavalue}}{{data}}
       <el-button  slot="reference" size="mini" type="info" icon="el-icon-setting" circle></el-button>
     </el-popover>
   </div>
@@ -41,7 +41,8 @@ export default {
     //   return data;
     // };
     return {
-      finaldata: '',
+      alld:[],
+      finaldata: [],
       data: [],
       myFilterInc: this.data,
       datavalue: [],
@@ -57,7 +58,7 @@ export default {
     };
   },
   watch: {
-    datavalue() {
+    finaldata() {
       this.$emit('filterRes', this.finaldata)
     },
     // value(value) {
@@ -91,29 +92,28 @@ export default {
       })
       .then((response) => { 
         this.alld = response.data
-        console.log(response.data)
+      //   console.log(response.data)
 
       
-      // const data = [];
-      this.data = []
+ 
+      // this.data = []
       this.datavalue = []
       var self = this
       for (let i = 0; this.alld[i]; i++) {
-        const data = [];
+        // const data = [];
         const grname = this.alld[i]
-        // console.log(grname)
+     
 
-        data.push({
-          key: grname.id,
-          label: String(grname.namegroup).slice(15),
-          disabled: false
-        });
-        self.data = self.data.concat(data)
-        self.datavalue = self.datavalue.concat(grname.id)
+        // data.push({
+      //     key: grname.id,
+      //     label: String(grname.namegroup).slice(15),
+      //     disabled: false
+      //   });
+      //   self.data = self.data.concat(data)
+        self.datavalue = self.datavalue.concat(grname.key)
       }
       this.finaldata = this.datavalue
-      // return data;
-        // this.data = data;
+ 
       });
     }
   }

@@ -1,7 +1,8 @@
  
 	json.array! @vks do |vks|
-		json.id vks.id
-		json.namegroup vks.namegroup
+		json.key vks.id
+		json.label vks.namegroup.gsub("https://vk.com/", "")
+		json.disabled false
 	end
 	# json.id vks.id
 	# json.title vks.title
