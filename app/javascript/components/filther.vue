@@ -13,7 +13,8 @@
        :titles="['скрытые', 'видимые']"
         v-model="finaldata"
         :data="alld">
-      </el-transfer>{{alld}}{{datavalue}}{{data}}
+      </el-transfer>
+      <!-- {{alld}}{{datavalue}}{{data}} -->
       <el-button  slot="reference" size="mini" type="info" icon="el-icon-setting" circle></el-button>
     </el-popover>
   </div>

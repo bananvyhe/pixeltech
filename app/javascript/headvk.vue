@@ -34,7 +34,8 @@
           <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
         </div> -->
         <!-- фильтр категорий -->
-        <div class="filterbutton">headvk{{filterInc}}
+        <div class="filterbutton">
+          <!-- headvk{{filterInc}} -->
           <filther :myFilterInc ="filterInc" @filterRes="filterInc = $event"></filther>
         </div>
       </div> 
