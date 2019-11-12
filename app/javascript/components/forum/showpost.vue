@@ -1,42 +1,23 @@
 <template>
-  <div >
-    
-      <div type="text" @click="handleClick">{{this.title}} {{this.body}} {{this.username}}</div>
-      <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
-        <div class="dialogframe">
-          <div class="plashka2">{{post.body }}</div>
-          <div></div>  
-          {{postComm}}
-   
-          
-          <div v-for="(item, index) in postComm" class="comm-area plashka2">
-            <div v-if='item.parent_id == null'>
-              <!-- {{typeof item.comments}} -->
-              <tree :tree-data="item"></tree>
-            </div>
+  <div>
+    <div type="text" @click="handleClick">
+      {{this.title}} {{this.body}} {{this.username}}
+    </div>
+    <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
+      <div class="dialogframe">
+        <div class="plashka2">{{post.body }}</div>
+        {{postComm}}
+        <div v-for="(item, index) in postComm" class="comm-area plashka2">
+          <div v-if='item.parent_id == null'>
+            <!-- {{typeof item.comments}} -->
+            <tree :tree-data="item"></tree>
           </div>
-
-
-          <!-- <div v-for="(item, index) in postComm">
-            <div v-if='item.parent_id == null'>
-              <div style="background: #222; margin: 0.1em 0;">
-                {{item.id}} {{item.body}} parent_id:{{item.parent_id}} <br><span style="background: #333;">commentable_id:{{item.commentable_id}}</span> <br>{{item.created_at}}
-              </div>            
-            </div>
-            <div v-if="item.comments != 0">
-              <div style="background: #115;">
-                {{item.comments}}
-              </div>
-            </div>
-          </div> -->
-          </div>
-          <div slot="footer" class="footpostshow basetext font3">
-            {{post.username}}
-          </div>
-        
-      </el-dialog>
-    
-    
+        </div>
+      </div>
+      <div slot="footer" class="footpostshow basetext font3">
+        {{post.username}}
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -72,7 +53,10 @@ export default {
       parseCalc()
       this.dialogVisible = true 
       this.getPost(this.number) 
-      this.getComments(this.number) 
+       // var self = this;
+       // setTimeout(function(){
+        this.getComments(this.number) 
+       // },4800 ); 
     },
     getPost(postId) {
       if (this.$store.getters.token.access) {
