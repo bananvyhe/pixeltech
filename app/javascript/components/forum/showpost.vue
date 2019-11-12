@@ -6,7 +6,7 @@
         <div class="dialogframe">
           <div class="plashka2">{{post.body }}</div>
           <div></div>  
-          <!-- {{postComm}} -->
+          {{postComm}}
    
           
           <div v-for="(item, index) in postComm" class="comm-area plashka2">
@@ -110,7 +110,7 @@ export default {
           // console.log( "тип");
           // console.log( typeof response.data);
           this.postComm = response.data
-          console.log( this.postComm);
+          // console.log( this.postComm);
         })
         .catch(function (error) {
           console.log(error);

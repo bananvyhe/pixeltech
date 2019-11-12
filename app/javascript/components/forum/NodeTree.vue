@@ -1,6 +1,6 @@
 <template>
   <div class="node-tree">
-    <span class="label">{{ node.body  }}</span>
+    <span class="label">{{node.body}}</span><span class="tinytext">{{node.username}}</span>
   <!-- {{typeof node }} -->
    <div v-if="node.comments && node.comments.length">
           <node v-for="child in node.comments" :node="child" class="padding-message"></node>
