@@ -1,11 +1,11 @@
 <template>
   <div>
     <div type="text" @click="handleClick">
-      {{this.title}} {{this.body}} {{this.username}}
+      {{this.title}} {{this.body}} {{this.username}}{{this.number}}
     </div>
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
       <div class="dialogframe">
-        <div class="plashka2">{{post.body }}</div>
+        <div class="plashka2">{{post.body }}{{post.id }}</div>
         {{postComm}}
         <div v-for="(item, index) in postComm" class="comm-area plashka2">
           <div v-if='item.parent_id == null'>
@@ -55,7 +55,7 @@ export default {
       this.getPost(this.number) 
        // var self = this;
        // setTimeout(function(){
-        this.getComments(this.number) 
+      this.getComments(this.number) 
        // },4800 ); 
     },
     getPost(postId) {
@@ -91,10 +91,7 @@ export default {
           } 
         })
         .then((response) => {
-          // console.log( "тип");
-          // console.log( typeof response.data);
           this.postComm = response.data
-          // console.log( this.postComm);
         })
         .catch(function (error) {
           console.log(error);
