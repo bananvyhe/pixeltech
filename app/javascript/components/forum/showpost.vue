@@ -36,8 +36,8 @@ export default {
     return {
       screenwidth: screenwidth,
       dialogVisible: false,
-			post: '',
-      postComm: ''
+			post: [],
+      postComm: []
     };
   },
   computed: {
