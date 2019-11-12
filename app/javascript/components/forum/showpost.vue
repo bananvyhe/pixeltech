@@ -12,7 +12,7 @@
           <div v-for="(item, index) in postComm" class="comm-area plashka2">
             <div v-if='item.parent_id == null'>
               <!-- {{typeof item.comments}} -->
-              <!-- <tree :tree-data="item"></tree> -->
+              <tree :tree-data="item"></tree>
             </div>
           </div>
 
