@@ -9,7 +9,8 @@ class Api::V1::UsersController < Api2Controller
   def lobbyall
     
     @users = User.where(role: 'user').all.order(created_at: :desc) 
- 
+     puts @users.inspect
+    print '++++++++++++++||>'
   end
 
   def show
