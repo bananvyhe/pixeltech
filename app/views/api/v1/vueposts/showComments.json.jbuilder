@@ -7,8 +7,9 @@ if current_user
 	 	json.commentable_type gb.commentable_type 
 	 	json.parent_id gb.parent_id
 	 	json.created_at gb.created_at	
-	 	if gb.comments != []
- 			json.comments gb.comments, partial: './api/v1/vueposts/comment', as: :comment
- 		end
+	 	json.comments gb.comments
+	 	# if gb.comments != []
+ 		# 	json.comments gb.comments, partial: './api/v1/vueposts/comment', as: :comment
+ 		# end
 	end
 end
