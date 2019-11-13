@@ -51,9 +51,10 @@ export default {
   methods: {
     handleClick(){
       parseCalc()
-      this.getComments(this.number) 
+
       this.dialogVisible = true 
-      this.getPost(this.number) 
+      this.getPost(this.number)
+      this.getComments(this.number) 
        // var self = this;
        // setTimeout(function(){
       
