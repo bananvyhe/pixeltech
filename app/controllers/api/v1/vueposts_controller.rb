@@ -25,7 +25,7 @@ class Api::V1::VuepostsController < ApiController
 
     # print '==========||||||>'
     @postComm = Post.includes(:user).find(params[:id]).comments
-    render json: @postComm
+ 
     # render json: @postComm
     # puts @postComm.inspect
     # print '===============||>'
