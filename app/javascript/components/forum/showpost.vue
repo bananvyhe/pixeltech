@@ -6,7 +6,7 @@
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
       <div class="dialogframe">
         <div class="plashka2">{{post.body }}{{post.id }}</div>
-        {{postComm}}
+        postComm{{postComm}}
         <div v-for="(item, index) in postComm" class="comm-area plashka2">
           <div v-if='item.parent_id == null'>
             <!-- {{typeof item.comments}} -->
@@ -51,11 +51,12 @@ export default {
   methods: {
     handleClick(){
       parseCalc()
+      this.getComments(this.number) 
       this.dialogVisible = true 
       this.getPost(this.number) 
        // var self = this;
        // setTimeout(function(){
-      this.getComments(this.number) 
+      
        // },4800 ); 
     },
     getPost(postId) {
