@@ -10,5 +10,5 @@ json.array! @postComm do |gb|
 	 	if gb.comments != []
  			json.comments gb.comments, partial: 'api/v1/vueposts/comment', as: :comment
  		end
-		end
+	end
 end
