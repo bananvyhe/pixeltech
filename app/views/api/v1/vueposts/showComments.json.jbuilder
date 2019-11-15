@@ -7,7 +7,7 @@ json.array! @postComm do |gb|
 	 	json.body gb.body
 	 	# json.username gb.user.username
 	 	json.created_at gb.created_at	
-	 	if gb.comments != '[]'
+	 	if gb.comments != []
  			json.comments gb.comments, partial: 'api/v1/vueposts/comment', as: :comment
  		end
 	end
