@@ -22,7 +22,7 @@ class Api::V1::VuepostsController < ApiController
     print '==========+++>'
   end
 
-  def showcomments
+  def shocomm
 
     # print '==========||||||>'
     # @postComm = Post.find(params[:id]).comments
