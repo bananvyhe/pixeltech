@@ -25,7 +25,7 @@ class Api::V1::VuepostsController < ApiController
   def shocomm
 
     # print '==========||||||>'
-    @postComm = Post.find(params[:id]).comments
+    @postComm = Post.includes(:user).find(params[:id]).comments
         # @postComm = 'dfdfdfdfdf'
 
 # @postComm = @postComm.to_a
