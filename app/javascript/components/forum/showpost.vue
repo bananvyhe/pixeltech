@@ -54,11 +54,11 @@ export default {
 
       this.dialogVisible = true 
       this.getPost(this.number)
+      this.getComments(this.number) 
+       // var self = this;
+       // setTimeout(function(){
       
-       var self = this;
-       setTimeout(function(){
-       self.getComments(self.number)
-       },4800 ); 
+       // },4800 ); 
     },
     getPost(postId) {
       if (this.$store.getters.token.access) {
