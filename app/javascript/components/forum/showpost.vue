@@ -31,7 +31,7 @@ window.addEventListener('resize', _.throttle(parseCalc, 100));
 import axios from 'axios'
 import Tree from "./tree";
 export default {
-  props:['number', 'body', 'title', 'username', 'section'],
+  props:['number', 'body', 'title', 'username'],
   data: function () {
     return {
       screenwidth: screenwidth,
