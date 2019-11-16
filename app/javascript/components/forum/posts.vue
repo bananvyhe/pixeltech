@@ -1,11 +1,19 @@
 <template>
   <div class="posts">
-    <div v-for="(item, index) in userposts">
+    <h2>Форум {{this.$store.getters.role.role}}</h2>
+    <div v-for="(item, index) in clanposts">
       <!-- {{item.title}} {{item.body}} {{item.username}} -->
       <showpost :number='item.id' :body='item.body' :title='item.title' :username='item.title'></showpost>
     </div>
     <!-- <showpost :number='number'></showpost> -->
     <newpost :section='this.$store.getters.role.role'></newpost>
+    <div v-if="this.$store.getters.role.role != 'user'">
+      <h2>Общий доступ</h2>
+      <div v-for="(item, index) in userposts">
+        <showpost :number='item.id' :body='item.body' :title='item.title' :username='item.title'></showpost>
+      </div>
+      <newpost :section='"user"'></newpost>
+    </div>
   </div>
 </template>
 
@@ -22,12 +30,34 @@ export default {
     return {
       exptime: '',      
       number: '',
-			userposts: []
+			clanposts: [],
+      userposts: []
     };
   },
   methods: {
     checkRelevanceToken(){
       this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
+    },
+    getUserPosts() {
+      if (this.$store.getters.token.access) {
+        axios({
+          method: 'get',
+          url: '/api/v1/vuepost',
+          params: {
+            clan_name: 'user'
+          }, 
+            headers: {
+              'Authorization': 'bearer '+this.$store.getters.token.access
+            } 
+          })
+          .then((response) => {
+            console.log(response.data);
+             this.userposts = response.data
+          })
+          .catch(function (error) {
+            console.log(error);
+          });             
+      }       
     },
     getPosts() {
       if (this.$store.getters.token.access) {
@@ -43,7 +73,7 @@ export default {
           })
           .then((response) => {
             console.log(response.data);
-             this.userposts = response.data
+             this.clanposts = response.data
           })
           .catch(function (error) {
             console.log(error);
@@ -58,6 +88,7 @@ export default {
       var self = this;
       if ((this.exptime > 0)&&(!trig)){
         self.getPosts()
+        self.getUserPosts()
         var trig = true;     
       }
     }

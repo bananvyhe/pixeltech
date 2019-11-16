@@ -54,7 +54,7 @@ export default {
             data: {
               title: this.form.title,
               body: this.form.text,
-              clan_name: this.$store.getters.role.role
+              clan_name: this.section
             },
             headers: {
               'Authorization': 'bearer '+this.$store.getters.token.access
