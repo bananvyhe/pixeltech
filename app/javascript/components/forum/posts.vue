@@ -5,7 +5,7 @@
       <showpost :number='item.id' :body='item.body' :title='item.title' :username='item.title'></showpost>
     </div>
     <!-- <showpost :number='number'></showpost> -->
-    <newpost></newpost>
+    <newpost :section='this.$store.getters.role.role'></newpost>
   </div>
 </template>
 
@@ -34,6 +34,9 @@ export default {
         axios({
           method: 'get',
           url: '/api/v1/vuepost',
+          params: {
+            clan_name: this.$store.getters.role.role
+          }, 
             headers: {
               'Authorization': 'bearer '+this.$store.getters.token.access
             } 

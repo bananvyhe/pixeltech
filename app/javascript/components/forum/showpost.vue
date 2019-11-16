@@ -6,7 +6,7 @@
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
       <div class="dialogframe">
         <div class="plashka2">{{post.body }}{{post.id }}</div>
-        postComm{{postComm}}
+        <!-- postComm{{postComm}} -->
         <div v-for="(item, index) in postComm" class="comm-area plashka2">
           <div v-if='item.parent_id == null'>
             <!-- {{typeof item.comments}} -->
@@ -31,7 +31,7 @@ window.addEventListener('resize', _.throttle(parseCalc, 100));
 import axios from 'axios'
 import Tree from "./tree";
 export default {
-  props:['number', 'body', 'title', 'username'],
+  props:['number', 'body', 'title', 'username', 'section'],
   data: function () {
     return {
       screenwidth: screenwidth,

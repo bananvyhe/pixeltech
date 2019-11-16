@@ -26,7 +26,7 @@
 import axios from 'axios'
 let screenwidth = {value: ''} 
 export default {
-
+  props:['section'],
   data: function () {
     return {
       labelPosition: 'top',
