@@ -1,15 +1,17 @@
 <template>
   <div class="posts">
     <h2>Форум {{this.$store.getters.role.role}}</h2>
+    {{clanposts}}
     <div v-for="(item, index) in clanposts">
       <!-- {{item.title}} {{item.body}} {{item.username}} -->
       <showpost :number='item.id' :body='item.body' :title='item.title' :username='item.title'></showpost>
     </div>
     <!-- <showpost :number='number'></showpost> -->
     <newpost :section='this.$store.getters.role.role'></newpost>
-    
+
     <div v-if="this.$store.getters.role.role != 'user'">
       <h2>Общий доступ</h2>
+      {{userposts}}
       <div v-for="(item, index) in userposts">
         <showpost :number='item.id' :body='item.body' :title='item.title' :username='item.title'></showpost>
       </div>
