@@ -1,4 +1,4 @@
-class CommentsController < Api2Controller
+class CommentsController < ApiController
 	#before_action :authenticate_user!
   #before_action :authorize_access_request!
   def index
