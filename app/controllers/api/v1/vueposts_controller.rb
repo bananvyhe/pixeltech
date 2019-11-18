@@ -24,8 +24,8 @@ class Api::V1::VuepostsController < ApiController
 
   def shocomm
 
-    @postComm = Post.includes(:user).find(params[:id]).comments
-
+    # @postComm = Post.includes(:user).find(params[:id]).comments
+    @postComm = ['1','22','3','4','5']
 
   end
 
