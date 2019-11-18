@@ -23,10 +23,8 @@ class Api::V1::VuepostsController < ApiController
   end
 
   def shocomm
-
-    # @postComm = Post.includes(:user).find(params[:id]).comments
-    @postComm = ['1','22','3','4','5']
-
+    @postComm = Post.includes(:user).find(params[:id]).comments
+    # @postComm = ['1','22','3','4','5']
   end
 
   # GET /gameboards/new
