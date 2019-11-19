@@ -9,7 +9,7 @@ class Api::V1::VuepostsController < ApiController
   def index
   	# print '==========>'
 		# @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
-		@posts = Post.all.order(created_at: :desc).where(clan_name: 'user').includes(:user)
+		@posts = Post.all.order(created_at: :desc).where(clan_name: params[:clan_name]).includes(:user)
       #   print '------->'
       # puts @posts.inspect
   end
@@ -26,7 +26,8 @@ class Api::V1::VuepostsController < ApiController
   def shocomm
     # @postComm = Post.includes(:user).find(params[:id]).comments
     # @postComm = ['1','22','3','4','5']
-     getcomm
+    @postComm = Post.includes(:user).find(params[:id]).comments
+
   end
 
   # GET /gameboards/new
@@ -55,9 +56,7 @@ class Api::V1::VuepostsController < ApiController
     # end
   end
   protected
-  def getcomm
-    @postComm = Post.includes(:user).find(params[:id]).comments
-  end
+ 
 
   private
     # Use callbacks to share common setup or constraints between actions.
