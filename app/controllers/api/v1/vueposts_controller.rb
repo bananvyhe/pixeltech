@@ -52,6 +52,10 @@ class Api::V1::VuepostsController < ApiController
     #   end
     # end
   end
+  protected
+  def getcomm
+    # @postComm = Post.includes(:user).find(params[:id]).comments
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
