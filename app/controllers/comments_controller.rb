@@ -1,4 +1,6 @@
-class CommentsController < ApiController
+class CommentsController < Api2Controller
+  # skip_before_action :authenticate_user!, raise: false
+
 	#before_action :authenticate_user!
   #before_action :authorize_access_request!
   def index
