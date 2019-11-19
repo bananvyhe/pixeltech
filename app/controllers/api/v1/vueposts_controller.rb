@@ -1,4 +1,5 @@
 class Api::V1::VuepostsController < ApiController
+  before_action :authorize_access_request!
   # before_action :authorize_access_request!
   # before_action :set_vuepost, only: [:show, :edit, :update, :destroy]
   # before_action :authorize_access_request!
