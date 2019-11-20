@@ -7,28 +7,28 @@ class Api::V1::VuepostsController < ApiController
   # GET /gameboards
   # GET /gameboards.json
   def index
-  	print '==========>'
+  	# print '==========>'
 		# @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
 		@posts = Post.all.order(created_at: :desc).where(clan_name: params[:clan_name]).includes(:user)
        
-      puts @posts.inspect
-       print '-------______------->'
+      # puts @posts.inspect
+       # print '-------______------->'
   end
 
   # GET /gameboards/1
   # GET /gameboards/1.json
   def show
-  	print '||||||||||||>'
+  	# print '||||||||||||>'
   	@post = Post.includes(:user).includes(:comments).find(params[:id])
-  	puts @post.inspect
-    print '||||||||||||>'
+  	# puts @post.inspect
+    # print '||||||||||||>'
   end
 
   def shocomm
     print '000000000000>'
     # @postComm = Post.includes(:user).find(params[:id]).comments
     # @postComm = ['1','22','3','4','5']
-    @postComm = Post.includes(:user).find(params[:id]).comments
+    @postComm = Post.includes("user").find(params[:id]).comments
     puts @postComm.inspect
     print '000000000000>'
 
