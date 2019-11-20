@@ -1,5 +1,7 @@
 class Api::V1::UsersController < Api2Controller
   # before_action :set_users
+    skip_before_action :verify_authenticity_token
+  skip_before_action :authenticate_user!, raise: false
   before_action :set_users, only: [:index, :show, :edit, :update, :destroy]
 	
   def index
