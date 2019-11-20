@@ -1,4 +1,4 @@
-class CommentsController < Api2Controller
+class CommentsController < ApiController
   # skip_before_action :authenticate_user!, raise: false
 
 	#before_action :authenticate_user!
