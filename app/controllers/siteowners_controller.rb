@@ -109,6 +109,12 @@ class SiteownersController < ApplicationController
   def index 
     # => redirect("/")
     if current_user 
+      puk = current_user.id.to_s
+      @inboxes = Inbox.where(label: puk)
+
+      # print '_________+++++++++++++__________'
+      # puts @history
+      # print '_________+++++++++++++__________'
       @client =  Client.find_by_user_id(current_user.id)
       @step = $step
       # instance_id = YandexMoney::ExternalPayment.get_instance_id(CLIENT_ID)

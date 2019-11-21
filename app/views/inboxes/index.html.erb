@@ -9,21 +9,21 @@
   </thead>
     <thead>
       <tr>
-        <td>op_id</td>
-        <td>am</td> 
-        <td>w_am</td>
-        <td>label_id</td>
-        <td>datetime</td> 
+        <!-- <td>op_id</td> -->
+        <!-- <td>сумма</td>  -->
+        <td>сумма</td>
+        <!-- <td>label_id</td> -->
+        <td>время зачисления</td> 
         <!-- <td>sha1_hash</td>
         <td>check</td>  -->
    <!--      <td></td>
         <td></td>  -->
-        <td></td>
+        <!-- <td></td> -->
        <!--  <td>notification_type</td>  -->
-        <td>currency</td> 
-        <td>sender</td> 
-        <td>codepro</td> 
-        <td>unaccepted</td>  
+        <!-- <td>currency</td>  -->
+        <!-- <td>sender</td>  -->
+        <!-- <td>codepro</td>  -->
+        <!-- <td>unaccepted</td>   -->
       </tr>
     </thead>
 
@@ -32,21 +32,21 @@
       
       <tr>
         <!-- <td><%= inbox.body %>1</td> -->
-        <td><%= inbox.operation_id %></td>
-        <td><%= inbox.amount %> </td> 
+        <!-- <td><%= inbox.operation_id %></td> -->
+        <!-- <td><%= inbox.amount %> </td>  -->
         <td><%= inbox.withdraw_amount %> </td>
-        <td><%= inbox.label %> </td> 
+        <!-- <td><%= inbox.label %> </td>  -->
        <!--  <td><%= inbox.sha1_hash %> </td>
         <td><%= inbox.check %> </td> -->
         <td><%= inbox.datetime %> </td>
-  <!--       <td><%= link_to 'Show', inbox %></td>
-        <td><%= link_to 'Edit', edit_inbox_path(inbox) %></td> -->
-        <td><%= link_to 'Destroy', inbox, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= inbox.codepro %> </td> 
-        <td><%= inbox.unaccepted %> </td> 
+  <!--       <td><%#= link_to 'Show', inbox %></td>
+        <td><%#= link_to 'Edit', edit_inbox_path(inbox) %></td> -->
+        <!-- <td><%#= link_to 'Destroy', inbox, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <!-- <td><%= inbox.codepro %> </td>  -->
+        <!-- <td><%= inbox.unaccepted %> </td>  -->
         <!-- <td><%= inbox.notification_type %> </td>  -->
-        <td><%= inbox.currency %> </td> 
-        <td><%= inbox.sender %> </td> 
+        <!-- <td><%= inbox.currency %> </td>  -->
+        <!-- <td><%= inbox.sender %> </td>  -->
           
       </tr>
     <% end %>

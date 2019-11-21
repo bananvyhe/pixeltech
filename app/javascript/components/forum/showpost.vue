@@ -6,7 +6,7 @@
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
       <div class="dialogframe">
         <div class="plashka2">{{post.body }}{{post.id }}</div>
-        postComm{{postComm}}
+        <!-- postComm{{postComm}} -->
         <div v-for="(item, index) in postComm" class="comm-area plashka2">
           <div v-if='item.parent_id == null'>
             <!-- {{typeof item.comments}} -->
@@ -15,7 +15,7 @@
         </div>
       </div>
       <div slot="footer" class="footpostshow basetext font3">
-        {{post.username}}
+        <!-- {{post.username}} -->
       </div>
     </el-dialog>
   </div>

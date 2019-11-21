@@ -8,11 +8,11 @@ class Comment < ApplicationRecord
   end
 
   def destroy
-  	update(user: nil, body: nil)
+  	update( body: nil)
   end
 
   def deleted?
-  	user.nil?
+  	body.nil?
   end
   # def child_comments
   # 	Comment.where(parent: self)
