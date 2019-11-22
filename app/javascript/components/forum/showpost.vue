@@ -1,7 +1,21 @@
 <template>
   <div>
-    <div type="text" @click="handleClick">
-      {{this.title}} {{this.body}} {{this.username}}{{this.number}}
+    <div type="text" >
+      <div class="itempost">
+        <div class="posthead" @click="handleClick">
+          <div>
+            {{this.title}}             
+          </div>
+          <div class="mediumtext">
+            {{this.body}}             
+          </div>
+          <div class="smalltext">
+            {{this.username}}
+          </div>
+          <!-- {{this.number}} -->
+        </div>
+        <el-button type='danger' size='mini' icon="el-icon-delete" circle></el-button>
+      </div>
     </div>
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
       <div class="dialogframe">
@@ -109,6 +123,26 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.itempost{
+  
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  background-color: color( $spacecadet shade(40%));
+  /*background-color: $spacecadet;*/
+}
+.posthead{
+  width: 100%;
+  cursor: pointer;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  margin: 0.2em 0;
+  padding: 0 0.2em;
+  div{
+    padding: 0em 0.3em;
+  }
+}
 .footpostshow{
   color: #dad;
 }
