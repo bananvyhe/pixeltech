@@ -14,7 +14,7 @@
           </div>
           <!-- {{this.number}} -->
         </div>
-        <el-button type='danger' size='mini' icon="el-icon-delete" circle></el-button>
+        <el-button v-if="$store.getters.role.username == this.username" type='danger' size='mini' icon="el-icon-delete" circle @click="delpost"></el-button>
       </div>
     </div>
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div slot="footer" class="footpostshow basetext font3">
-        <!-- {{post.username}} -->
+        {{post.username}}
       </div>
     </el-dialog>
   </div>
@@ -124,7 +124,9 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 .itempost{
-  
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  margin: 0.2em 0;
   justify-content: space-between;
   display: flex;
   flex-direction: row;
@@ -137,7 +139,7 @@ export default {
   align-items: center;
   flex-direction: row;
   display: flex;
-  margin: 0.2em 0;
+
   padding: 0 0.2em;
   div{
     padding: 0em 0.3em;

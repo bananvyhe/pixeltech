@@ -4,7 +4,7 @@
     {{clanposts}}
     <div v-for="(item, index) in clanposts">
       <!-- {{item.title}} {{item.body}} {{item.username}} -->
-      <showpost :number='item.id' :body='item.body' :title='item.title' :username='item.title'></showpost>
+      <showpost :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showpost>
     </div>
     <!-- <showpost :number='number'></showpost> -->
     <newpost :section='this.$store.getters.role.role'></newpost>
