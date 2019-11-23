@@ -1,4 +1,5 @@
 class Api::V1::VuepostsController < ApiController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   # before_action :authorize_access_request!
   # before_action :authorize_access_request!
   # before_action :set_vuepost, only: [:show, :edit, :update, :destroy]
@@ -58,10 +59,17 @@ class Api::V1::VuepostsController < ApiController
     #   end
     # end
   end
+    def destroy
+    @post = Post.find(params[:id])
+     @post.destroy
+   end
   protected
  
 
   private
+      def set_post
+      @post = Post.find(params[:id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     # def set_gameboard
     #   @gameboard = Gameboard.find_by_user_id(payload['user_id'])

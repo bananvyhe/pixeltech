@@ -14,7 +14,7 @@
           </div>
           <!-- {{this.number}} -->
         </div>
-        <el-button v-if="$store.getters.role.username == this.username" type='danger' size='mini' icon="el-icon-delete" circle @click="delpost"></el-button>
+        <el-button v-if="$store.getters.role.username == this.username" @click="delpost(number)" type='danger' size='mini' icon="el-icon-delete" circle ></el-button>
       </div>
     </div>
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
@@ -73,6 +73,22 @@ export default {
        // setTimeout(function(){
       
        // },4800 ); 
+    },
+    delpost(postId) {
+      if (this.$store.getters.token.access) {
+        axios.delete('/api/v1/vueposts/'+postId,{
+ 
+          headers: {
+            'Authorization': 'bearer '+this.$store.getters.token.access
+          } 
+        })
+        .then((response) => {
+          
+        })
+        .catch(function (error) {
+          console.log(error);
+        });             
+      }       
     },
     getPost(postId) {
       if (this.$store.getters.token.access) {

@@ -60,6 +60,7 @@ Rails.application.routes.draw do
       post :vuepost, to: "vueposts#create"
       get :vuepostshow, to: "vueposts#show"
       get :vuecommshow, to: "vueposts#shocomm"
+      # post :vuepost, to: "vueposts#destroy"
       resources :vueposts
       
       resources :vks
