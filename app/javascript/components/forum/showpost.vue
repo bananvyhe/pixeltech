@@ -20,26 +20,25 @@
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
       <div class="dialogframe">
         <div class="plashka2">{{post.body }}{{post.id }}</div>
-        <!-- postComm{{postComm}} -->
-        <el-collapse v-model="activeNames" >
-          <el-collapse-item title="ответить" name="1">
-            <el-input
-              type="textarea"
-              :autosize="{ minRows: 4, maxRows: 8}"
-              placeholder="написать комментарий"
-              v-model="textarea2">
-            </el-input>
-          </el-collapse-item>
-        </el-collapse>
+        <div class="postnikname basetext font3">
+          автор: {{post.username}}
+        </div> 
+        <!-- postComm{{postComm}} --> 
+        <el-input
+          type="textarea"
+          :autosize="{ minRows: 4, maxRows: 8}"
+          placeholder="написать комментарий"
+          v-model="textarea2">
+        </el-input> 
         <div v-for="(item, index) in postComm" class="comm-area plashka2">
           <div v-if='item.parent_id == null'>
-            <!-- {{typeof item.comments}} -->
+            <!-- {{ item}} -->             
             <tree :tree-data="item"></tree>
           </div>
-        </div>
+        </div>        
       </div>
       <div slot="footer" class="footpostshow basetext font3">
-        {{post.username}}
+
       </div>
     </el-dialog>
   </div>
@@ -57,8 +56,7 @@ import Tree from "./tree";
 export default {
   props:['number', 'body', 'title', 'username'],
   data: function () {
-    return {
-      activeNames: ['1'],
+    return { 
       textarea2: '',
       screenwidth: screenwidth,
       dialogVisible: false,
@@ -167,11 +165,14 @@ export default {
   align-items: center;
   flex-direction: row;
   display: flex;
-
   padding: 0 0.2em;
   div{
     padding: 0em 0.3em;
   }
+}
+.postnikname{
+  padding: 0 0 0.5em;
+  float: right;
 }
 .footpostshow{
   color: #dad;
