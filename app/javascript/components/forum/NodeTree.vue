@@ -16,10 +16,11 @@
             placeholder="написать комментарий"
             v-model="textarea">
           </el-input>
-          <el-button size='mini'>отправить</el-button>          
+          {{number}}
+          <el-button size='mini' @click="sendReply(number)">отправить</el-button>          
         </div>
 
-      <div slot="reference" size="mini" class="reply">ответить</div>
+      <div slot="reference" size="mini" class="reply" >ответить</div>
     </el-popover>   
     <div v-if="node.comments && node.comments.length">
       <node v-for="child in node.comments" :node="child" class="padding-message"></node>
@@ -28,14 +29,35 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "node",
   props: {
-    node: Object
+    node: Object,
+    number: Number 
   },
   data: function () {
     return { 
       textarea: ''
+    }
+  },
+  methods: {
+    sendReply(we){
+      axios.post('/posts/'+we+'/comments',{
+        comment: {
+          parent_id: this.node.id,
+          body: this.textarea
+        }, 
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      })
+      .then((response) => {
+        // this.postComm = response.data
+      })
+      .catch(function (error) {
+        console.log(error);
+      });                   
     }
   }
 };

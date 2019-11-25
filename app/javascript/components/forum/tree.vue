@@ -2,7 +2,7 @@
   <div class="tree"> 
     <div class="tree-list"> 
       <!-- {{typeof treeData}} -->
-      <node-tree :node="treeData" class="tree-Data" ></node-tree>
+      <node-tree :node="treeData" :number="number" class="tree-Data" ></node-tree>
     
     </div>
   </div>
@@ -13,7 +13,8 @@ import NodeTree from "./NodeTree";
 
 export default {
   props: {
-    treeData: Object
+    treeData: Object,
+    number: Number 
   },
   components: {
     NodeTree

@@ -4,7 +4,9 @@
       <div class="itempost">
         <div class="posthead" @click="handleClick">
           <div>
+            {{this.number}}
             {{this.title}}             
+            
           </div>
           <div class="mediumtext">
             {{this.body}}             
@@ -30,10 +32,11 @@
           placeholder="написать комментарий"
           v-model="textarea2">
         </el-input> 
+        <el-button size='mini'>отправить</el-button>   
         <div v-for="(item, index) in postComm" class="comm-area plashka2">
           <div v-if='item.parent_id == null'>
             <!-- {{ item}} -->             
-            <tree :tree-data="item"></tree>
+            <tree :tree-data="item" :number="number"></tree>
           </div>
         </div>        
       </div>
