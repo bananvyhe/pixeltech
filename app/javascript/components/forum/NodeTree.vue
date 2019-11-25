@@ -1,7 +1,11 @@
 <template>
   <div class="node-tree">
-    <span class="label">{{node.body}}</span>
-    <div class="tinytext">
+    <div class="bodyComment mediumtext">
+      <span v-if="node.body" class="label">{{node.body}}</span>
+      <span v-else class="label">(сообщение удалено)</span>      
+    </div>
+
+    <div class="tinytext sign">
       <span class="">написал {{node.username}}</span>      
     </div>
   <!-- {{typeof node }} -->
@@ -16,11 +20,11 @@
             placeholder="написать комментарий"
             v-model="textarea">
           </el-input>
-          {{number}}
+          <!-- {{number}} -->
           <el-button size='mini' @click="sendReply(number)">отправить</el-button>          
         </div>
 
-      <div slot="reference" size="mini" class="reply" >ответить</div>
+      <div v-if="node.body" slot="reference" size="mini" class="reply" >ответить</div>
     </el-popover>   
     <div v-if="node.comments && node.comments.length">
       <node v-for="child in node.comments" :node="child" class="padding-message"></node>
@@ -63,7 +67,13 @@ export default {
 };
 </script>
 <style>
- 
+.sign{
+  /*line-height: 0.8em;*/
+}
+.bodyComment{
+  line-height: 0.8em;
+  padding: 0.3em 0 0;
+}
 .replyarea{
   margin: -0.7em;
 }
