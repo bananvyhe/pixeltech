@@ -16,7 +16,7 @@
           </div>
           <!-- {{this.number}} -->
         </div>
-        <el-button v-if="$store.getters.role.username == this.username" @click="delpost(number)" type='danger' size='mini' icon="el-icon-delete" circle ></el-button>
+        <el-button v-if="$store.getters.role.username == this.username"  type='danger' size='mini' icon="el-icon-delete" circle ></el-button>
       </div>
     </div>
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
@@ -30,9 +30,9 @@
           type="textarea"
           :autosize="{ minRows: 4, maxRows: 8}"
           placeholder="написать комментарий"
-          v-model="textarea2">
+          v-model="textarea">
         </el-input> 
-        <el-button size='mini'>отправить</el-button>   
+        <el-button size='mini' @click="sendReply(number)">отправить</el-button>   
         <div v-for="(item, index) in postComm" class="comm-area plashka2">
           <div v-if='item.parent_id == null'>
             <!-- {{ item}} -->             
@@ -41,7 +41,7 @@
         </div>        
       </div>
       <div slot="footer" class="footpostshow basetext font3">
-
+        &nbsp;
       </div>
     </el-dialog>
   </div>
@@ -60,7 +60,7 @@ export default {
   props:['number', 'body', 'title', 'username'],
   data: function () {
     return { 
-      textarea2: '',
+      textarea: '',
       screenwidth: screenwidth,
       dialogVisible: false,
 			post: [],
@@ -76,6 +76,23 @@ export default {
     // this.getPost(this.number)
   },
   methods: {
+    sendReply(we){
+      axios.post('/posts/'+we+'/comments',{
+        comment: {
+          parent_id: "",
+          body: this.textarea
+        }, 
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      })
+      .then((response) => {
+        // this.postComm = response.data
+      })
+      .catch(function (error) {
+        console.log(error);
+      });                   
+    },
     handleClick(){
       parseCalc()
 
