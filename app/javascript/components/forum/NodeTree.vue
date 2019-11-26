@@ -9,23 +9,25 @@
       <span class="">написал {{node.username}}</span>      
     </div>
   <!-- {{typeof node }} -->
-    <el-popover
-      placement="bottom"
-      width="400"
-      trigger="click">
-        <div class="replyarea">
-          <el-input
-            type="textarea"
-            :autosize="{ minRows: 3, maxRows: 5}"
-            placeholder="написать комментарий"
-            v-model="textarea">
-          </el-input>
-          <!-- {{number}} -->
-          <el-button size='mini' @click="sendReply(number)">отправить</el-button>          
-        </div>
-
-      <div v-if="node.body" slot="reference" size="mini" class="reply" >ответить</div>
-    </el-popover>   
+    <div class="replyBlock">
+      <el-popover
+        placement="bottom"
+        width="400"
+        trigger="click">
+          <div class="replyarea">
+            <el-input
+              type="textarea"
+              :autosize="{ minRows: 3, maxRows: 5}"
+              placeholder="написать комментарий"
+              v-model="textarea">
+            </el-input>
+            <!-- {{number}} -->
+            <el-button size='mini' @click="sendReply(number)">отправить</el-button>          
+          </div>
+        <div v-if="node.body" slot="reference" class="reply" >ответить</div>
+      </el-popover>   
+      <div class="del" v-if="$store.getters.role.username == node.username && node.body != nil" @click="destroy(number)">удалить</div>
+    </div>
     <div v-if="node.comments && node.comments.length">
       <node v-for="child in node.comments" :node="child" class="padding-message"></node>
     </div>
@@ -46,6 +48,9 @@ export default {
     }
   },
   methods: {
+    destroy(d){
+
+    },
     sendReply(we){
       axios.post('/posts/'+we+'/comments',{
         comment: {
@@ -77,7 +82,22 @@ export default {
 .replyarea{
   margin: -0.7em;
 }
+.replyBlock{
+  display: flex;
+  flex-direction: row;
+}
+.del{
+  width: 80px;
+  padding: 0 0 0.5em;
+  line-height: 0.8em;
+  cursor: pointer;
+  color: red;
+  /*background-color: #ada;*/
+}
 .reply{
+  /*background-color: #dad;*/
+  flex-direction: row;
+  width: 5em;
   padding: 0 0 0.5em;
   line-height: 0.8em;
   cursor: pointer;
