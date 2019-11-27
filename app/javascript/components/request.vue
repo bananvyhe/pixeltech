@@ -10,7 +10,7 @@
       <el-form :model="form" ref="forma">  
         <el-form-item 
           prop="email" 
-          size="mini" 
+          size="medium" 
           label="Емайл:"
           :rules="[
             { required: true, message: 'Введите обратный адрес', trigger: 'blur' },
@@ -18,16 +18,16 @@
           ]">
           <el-input v-model="form.email" auto-complete="off"></el-input>
         </el-form-item>
-        <el-form-item prop="textarea" size="mini" label="Сообщение:">
+        <el-form-item prop="textarea" size="medium"  label="Сообщение:">
           <el-input type="textarea" v-model="form.text" auto-complete="off">
           </el-input>
         </el-form-item>
-        <el-form-item size="mini"  style="margin-bottom: 1.2em;">
+        <el-form-item size="medium">
           <el-button  @click="dialogFormVisible = false">Отмена</el-button><el-button   type="primary" @click="handle" >Отправить</el-button>
         </el-form-item>    
       </el-form>
       <div slot="footer" class="footpostshow basetext font3">
- 
+        &nbsp;
       </div>
     </el-dialog>
   </div>

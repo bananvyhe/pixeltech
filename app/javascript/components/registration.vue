@@ -6,18 +6,18 @@
 	  	<el-form :model="form" :rules="rules" ref="form"> 
 	    	<el-form-item 
 	    	prop="email" 
-	    	size="mini" 
+	    	size="medium" 
 	    	label="Емайл:">
 	      	<el-input v-model="form.email" auto-complete="off"></el-input>
 	    	</el-form-item>
 	    
-	    	<el-form-item prop="password" size="mini" label="Пароль:">
+	    	<el-form-item prop="password" size="medium" label="Пароль:">
 	      	<el-input type="password" v-model="form.password" auto-complete="off"></el-input>
 	    	</el-form-item>
-	    	<el-form-item  prop="password_confirmation" size="mini" label="">
+	    	<el-form-item  prop="password_confirmation" size="medium" label="">
 	      	<el-input type="password" placeholder="Повторите пароль" v-model="form.password_confirmation" auto-complete="off"></el-input>
 	    	</el-form-item>
-	    	<el-form-item  prop="username" size="mini" label="Никнейм:">
+	    	<el-form-item  prop="username" size="medium" label="Никнейм:">
 	      	<el-input v-model="form.username" auto-complete="off"></el-input>
 	    	</el-form-item>
 <!-- 			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">
@@ -29,13 +29,13 @@
 	        <el-option label="Zone No.2" value="beijing"></el-option>
 	      </el-select>
 	    </el-form-item> -->
-		    <el-form-item size="mini">
+		    <el-form-item size="medium">
 			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
 				  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
 				</el-form-item>
 	 		</el-form>
   		<div slot="footer" class="footpostshow basetext font3">
-
+  			&nbsp;
   		</div>						 		
 		</el-dialog>		 
 	</div>

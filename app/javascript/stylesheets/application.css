@@ -323,30 +323,42 @@ html {
   border-bottom: solid 1px;
   cursor: pointer;
 }
+.el-input-number--medium .el-input__inner{
+  width: 120px !important;
+  height: 20px !important;
+  line-height: 18px !important;
+  padding: 0.3em 0 !important;  
+  margin: 0.4em 0 !important;
+}
+.el-form-item--medium:last-child{
+  padding-bottom: 0.0em;
+}
+.el-form-item--medium{
+  padding-bottom: 0.5em !important;
+}
 .el-input-number--mini .el-input-number__increase, .el-input-number--mini .el-input-number__decrease {
-    width: 14px;
-    height: 14px;
-    font-size: 9px;
-    line-height: 14px;
-        padding-left: 0px !important;
-    padding-right: 0px !important;
+  width: 15px;
+  height: 14px;
+  font-size: 9px;
+  line-height: 14px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 .el-input-number{
-   width: 65px;
-    height: 15px; 
+  width: 65px;
+  height: 15px; 
 }
 .el-input--mini {
   width: 65px;
-    height: 14px;
-    line-height: 14px;
+  height: 14px;
+  line-height: 14px;
 } 
-.el-input__inner {
-    width: 65px !important;
-    height: 16px !important;
-    line-height: 14px !important;
-    padding: 0 0 !important;
+.el-input-number--mini .el-input__inner {
+  width: 65px !important;
+  height: 16px !important;
+  line-height: 14px !important;
+  padding: 0 0 !important;
 }
- 
 .el-progress-bar {
   padding-right: 10px;
   margin-right: 50px;

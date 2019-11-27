@@ -22,7 +22,7 @@
 		  <el-form :model="form" :rules="rules" ref="form">	 
 		    <el-form-item 
 		    	prop="email" 
-		    	size="mini" 
+		    	size="medium"
 		    	label="Емайл:"
 		    	:rules="[
 			      { required: true, message: 'Введите адрес', trigger: 'blur' },
@@ -30,15 +30,15 @@
 			    ]">
 		      <el-input v-model="form.email" auto-complete="off"></el-input>
 		    </el-form-item>
-		    <el-form-item prop="password" size="mini" label="Пароль:"  style="margin-bottom: 0px !important;">
+		    <el-form-item prop="password" size="medium" label="Пароль:"  style="margin-bottom: 0px !important;">
 		      <el-input type="password" v-model="form.password" auto-complete="off">
 		      </el-input><div class="forgetPassword"><a href="/users/password/new">забыли пароль?</a></div>
 		    </el-form-item>
 		    	
-				<el-form-item size="mini"  style="margin-bottom: 10px;" class="bottomField">
+				<el-form-item size="medium" class="bottomField">
 			 		<el-button  @click="dialogFormVisible = false"  >Отмена</el-button><el-button   type="primary" @click="handle" >Подтвердить</el-button>
 			 	</el-form-item>
-				<el-form-item size="mini"   class="lab">
+				<el-form-item size="medium"   class="lab">
 				  <el-switch  inactive-text="короткая сессия" active-text="запомнить" width="25"  size="mini" v-model="checked" ></el-switch>
 				</el-form-item>
 				 
