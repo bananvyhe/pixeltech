@@ -75,11 +75,12 @@ import createPersistedState from 'vuex-persistedstate'
 // import * as VueWindow from '@hscmap/vue-window'
 // Vue.use(VueWindow)
 
-import {Collapse, CollapseItem, ButtonGroup, Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
+import {InputNumber, Collapse, CollapseItem, ButtonGroup, Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
 // Vue.prototype.$message = Message; 
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }; 
 // Vue.use(Message);
+Vue.use(InputNumber);
 Vue.use(Collapse);
 Vue.use(CollapseItem);
 Vue.use(ButtonGroup);

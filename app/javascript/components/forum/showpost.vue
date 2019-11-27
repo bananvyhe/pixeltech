@@ -22,6 +22,9 @@
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
       <div class="dialogframe">
         <div class="plashka2">{{post.body }}{{post.id }}</div>
+        <div>
+          <el-input-number size="mini" v-model="num4"></el-input-number>
+        </div>
         <div class="postnikname basetext font3">
           автор: {{post.username}}
         </div> 
@@ -60,6 +63,7 @@ export default {
   props:['number', 'body', 'title', 'username'],
   data: function () {
     return { 
+      num4: 0,
       textarea: '',
       screenwidth: screenwidth,
       dialogVisible: false,
