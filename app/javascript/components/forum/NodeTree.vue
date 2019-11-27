@@ -26,10 +26,10 @@
           </div>
         <div v-if="node.body" slot="reference" class="reply" >ответить</div>
       </el-popover>   
-      <div class="del" v-if="$store.getters.role.username == node.username && node.body != nil" @click="destroy(number)">удалить</div>
+      <div class="del" v-if="$store.getters.role.username == node.username && node.body != 0" @click="destroy(number )">удалить</div>
     </div>
     <div v-if="node.comments && node.comments.length">
-      <node v-for="child in node.comments" :node="child" class="padding-message"></node>
+      <node v-for="child in node.comments" :node="child" :number="number" class="padding-message"></node>
     </div>
   </div>
 </template>
@@ -49,7 +49,18 @@ export default {
   },
   methods: {
     destroy(d){
+      axios.delete('/api/v1/vueposts/'+postId,{
 
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      })
+      .then((response) => {
+        
+      })
+      .catch(function (error) {
+        console.log(error);
+      });  
     },
     sendReply(we){
       axios.post('/posts/'+we+'/comments',{
