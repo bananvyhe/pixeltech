@@ -4,7 +4,7 @@
       <div class="itempost">
         <div class="posthead" @click="handleClick">
           <div>
-            {{this.number}}
+            <!-- {{this.number}} -->
             {{this.title}}             
             
           </div>

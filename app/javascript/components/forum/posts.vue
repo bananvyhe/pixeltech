@@ -15,7 +15,7 @@
       <div v-for="(item, index) in userposts">
         <showpost :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showpost>
       </div>
-      <!-- <newpost :section='"user"'></newpost> -->
+      <newpost :section='"user"'></newpost>
     </div>
   </div>
 </template>
