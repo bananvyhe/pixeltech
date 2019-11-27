@@ -21,7 +21,8 @@ class CommentsController < ApplicationController
   def destroy
     @comment = @commentable.comments.find(params[:id])
     @comment.destroy
-    redirect_to @commentable
+    # redirect for rails view deleting
+    # redirect_to @commentable
   end
 	private
  		def comment_params
