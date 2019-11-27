@@ -1,7 +1,7 @@
 <template>
 	<div class="reg">
 		<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Регистрация</el-button>
-		<el-dialog top="26vh" v-bind:width="screenwidth.value > '350' ? '30'+'em' : '90' +'%'" :visible.sync="dialogFormVisible" :lock-scroll="false">
+		<el-dialog top="26vh" v-bind:width="screenwidth.value > '350' ? '35'+'em' : '90' +'%'" :visible.sync="dialogFormVisible" :lock-scroll="false">
 			<h1 style="marginTop: -0.2em;">Создать аккаунт:</h1>
 	  	<el-form :model="form" :rules="rules" ref="form"> 
 	    	<el-form-item 
@@ -29,6 +29,8 @@
 	        <el-option label="Zone No.2" value="beijing"></el-option>
 	      </el-select>
 	    </el-form-item> -->
+
+	    &nbsp;
 		    <el-form-item size="medium">
 			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
 				  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
