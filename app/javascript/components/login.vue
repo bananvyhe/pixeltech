@@ -285,7 +285,7 @@
 @import "stylesheets/_variables";
 @import "stylesheets/_extends";
 .bottomField {
-	padding-top: 3em;
+	padding-top: 2em;
 }
 .forgetPassword{
 	padding: 0.2em 0em;

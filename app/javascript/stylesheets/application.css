@@ -325,16 +325,17 @@ html {
 }
 .el-input-number--medium .el-input__inner{
   width: 120px !important;
-  height: 20px !important;
-  line-height: 18px !important;
+  height: 1.1em !important;
+  line-height: 1em !important;
   padding: 0.3em 0 !important;  
-  margin: 0.4em 0 !important;
+  margin: 0em 0 !important;
+}
+
+.el-form-item--medium{
+  padding-bottom: 1.3em !important;
 }
 .el-form-item--medium:last-child{
-  padding-bottom: 0.0em;
-}
-.el-form-item--medium{
-  padding-bottom: 0.5em !important;
+  padding-bottom: 0.0em !important;
 }
 .el-input-number--mini .el-input-number__increase, .el-input-number--mini .el-input-number__decrease {
   width: 15px;

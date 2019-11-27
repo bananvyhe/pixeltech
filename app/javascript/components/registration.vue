@@ -29,8 +29,6 @@
 	        <el-option label="Zone No.2" value="beijing"></el-option>
 	      </el-select>
 	    </el-form-item> -->
-
-	    &nbsp;
 		    <el-form-item size="medium">
 			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
 				  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
