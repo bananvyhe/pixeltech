@@ -27,8 +27,7 @@ class Api::V1::GameboardsController < ApiController
   end
 
   def calculateminus id 
-    userminus = Gameboard.find_by_user_id(id)
-    userminall = userminus.votes.where(gameboard_id: userminus.id).where(vote: false).to_a
+    userminall = User.find(params[:user_id]).votes.where(vote: false).to_a
  
     @allusersmin = []
     userminall.each do |i|
@@ -38,15 +37,22 @@ class Api::V1::GameboardsController < ApiController
      @allusersmin
   end
   def calculateplus id 
-    userplus = Gameboard.find_by_user_id(id)
-    userplusall = userplus.votes.where(gameboard_id: userplus.id).where(vote: true).to_a
- 
+    userplus = User.find(params[:user_id]).votes.where(vote: true).to_a
     @allusers = []
-    userplusall.each do |i|
+    userplus.each do |i|
       pickupuser = User.find(i.user_id).username
       @allusers << pickupuser
     end
-     @allusers
+    @allusers
+    # userplus = Gameboard.find_by_user_id(id)
+    # userplusall = userplus.votes.where(gameboard_id: userplus.id).where(vote: true).to_a
+ 
+    # @allusers = []
+    # userplusall.each do |i|
+    #   pickupuser = User.find(i.user_id).username
+    #   @allusers << pickupuser
+    # end
+    #  @allusers
   end
   def getkarma id 
     userkarma = Gameboard.find_by_user_id(id)
@@ -54,6 +60,7 @@ class Api::V1::GameboardsController < ApiController
   end
 
   def userinfo
+    userplus = calculateplus params[:user_id] 
     usermin = calculateminus params[:user_id] 
     userplus = calculateplus params[:user_id] 
     userkarma = getkarma params[:user_id]
@@ -71,8 +78,9 @@ class Api::V1::GameboardsController < ApiController
       minvote = params[:minus]
       print "--------"
       puts minvote 
-      @usermin = Gameboard.find_by_user_id(minvote)
+      # @usermin = Gameboard.find_by_user_id(minvote)
       @userfind = User.find(payload['user_id'])
+      @usermin = User.find(minvote)
       def relminus
         relations = @usermin.votes.find_by_user_id(payload['user_id'])
         relations.vote = false
@@ -81,8 +89,6 @@ class Api::V1::GameboardsController < ApiController
       if @usermin.votes.find_by_user_id(payload['user_id'])
         relminus
       end      
-      # print '------->'
-      # puts relations.inspect
       unless @usermin.votes.find_by_user_id(payload['user_id'])
         @usermin.users << @userfind
         relminus
@@ -91,8 +97,12 @@ class Api::V1::GameboardsController < ApiController
     # захват плюсов в карму:
     if params[:plus]
       plusvote = params[:plus]
-      @userplus = Gameboard.find_by_user_id(plusvote)
+
+      # @userplus = Gameboard.find_by_user_id(plusvote)
+      # юзер оценивающий пользователя т.е. вы
       @userfind = User.find(payload['user_id'])
+      # оцениваемый юзер
+      @userplus = User.find(plusvote)
       def relplus
         relations = @userplus.votes.find_by_user_id(payload['user_id'])
         relations.vote = true
@@ -104,8 +114,18 @@ class Api::V1::GameboardsController < ApiController
       # print '------->'
       # puts relations.inspect
       unless @userplus.votes.find_by_user_id(payload['user_id'])
-        @userplus.users << @userfind
-        relplus
+        vote = @userplus.votes.create(:vote => true, :user_id => payload['user_id'])
+ 
+         print '---00--->'
+         puts vote.inspect
+         print '---00--->'
+        # @userplus.votes << vote
+         
+         # @userplus.votes << @userfind 
+
+          # @userplus.votes.vote = true
+          # @userplus.save
+        
       end
     end
     # print "---------"

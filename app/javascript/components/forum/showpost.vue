@@ -6,7 +6,7 @@
           <div>
             <!-- {{this.number}} -->
             {{this.title}}             
-            
+
           </div>
           <div class="mediumtext">
             {{this.body}}             
@@ -20,7 +20,7 @@
       </div>
     </div>
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
-      <div class="dialogframe">
+      <div class="dialogframe">            {{postComm}}
         <div class="plashka2">{{post.body }}{{post.id }}</div>
         <div>
           <el-input-number size="mini" v-model="num4"></el-input-number>

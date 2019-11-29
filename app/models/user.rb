@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :gameboards, -> { distinct }, :through => :votes
   has_many :visiblegroups
   has_many :groupsvks, through: :visiblegroups
+  has_many :votes, as: :voteable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

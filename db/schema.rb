@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_08_114733) do
+ActiveRecord::Schema.define(version: 2019_11_29_164231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -193,6 +193,7 @@ ActiveRecord::Schema.define(version: 2019_11_08_114733) do
     t.string "username"
     t.bigint "expirience"
     t.integer "karma"
+    t.integer "vote_weight", default: 1
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
@@ -228,12 +229,14 @@ ActiveRecord::Schema.define(version: 2019_11_08_114733) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "user_id"
     t.boolean "vote"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "gameboard_id"
-    t.index ["user_id", "gameboard_id"], name: "index_votes_on_user_id_and_gameboard_id", unique: true
+    t.string "voteable_type"
+    t.bigint "voteable_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+    t.index ["voteable_type", "voteable_id"], name: "index_votes_on_voteable_type_and_voteable_id"
   end
 
   add_foreign_key "cards", "lists"
