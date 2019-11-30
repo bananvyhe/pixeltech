@@ -90,8 +90,9 @@ class Api::V1::GameboardsController < ApiController
         relminus
       end      
       unless @usermin.votes.find_by_user_id(payload['user_id'])
-        @usermin.users << @userfind
-        relminus
+        vote = @usermin.votes.create(:vote => false, :user_id => payload['user_id'])
+        # @usermin.users << @userfind
+        # relminus
       end 
     end
     # захват плюсов в карму:
@@ -116,9 +117,9 @@ class Api::V1::GameboardsController < ApiController
       unless @userplus.votes.find_by_user_id(payload['user_id'])
         vote = @userplus.votes.create(:vote => true, :user_id => payload['user_id'])
  
-         print '---00--->'
-         puts vote.inspect
-         print '---00--->'
+         # print '---00--->'
+         # puts vote.inspect
+         # print '---00--->'
         # @userplus.votes << vote
          
          # @userplus.votes << @userfind 
