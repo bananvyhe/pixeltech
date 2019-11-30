@@ -1,4 +1,6 @@
 class Api::V1::VuepostsController < ApiController
+    before_action :authorize_access_request!
+
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   # before_action :authorize_access_request!
   # before_action :authorize_access_request!
@@ -11,16 +13,17 @@ class Api::V1::VuepostsController < ApiController
   	# print '==========>'
 		# @vks = Vk.where('raiting > 10.00').order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(10).offset(@pos)
 		@posts = Post.all.order(created_at: :desc).where(clan_name: params[:clan_name]).includes(:user)
-       
+ 
       # puts @posts.inspect
        # print '-------______------->'
   end
 
- 
   def show
   	# print '||||||||||||>'
   	@post = Post.includes(:user).includes(:comments).find(params[:id])
-  	# puts @post.inspect
+  	voteweight = User.find(payload['user_id'])
+    response.set_header('voteweight', voteweight.vote_weight)  
+    # puts @post.inspect
     # print '||||||||||||>'
   end
 

@@ -235,7 +235,6 @@ export default {
       for (let i = 0; this.data[i]; i++) {
         if (this.data[i].id == event){
           return this.data[i].username
- 
         }
       }
      

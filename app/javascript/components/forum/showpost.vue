@@ -20,10 +20,11 @@
       </div>
     </div>
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
-      <div class="dialogframe">            {{postComm}}
+      <div class="dialogframe">            
+        <!-- {{postComm}} -->
         <div class="plashka2">{{post.body }}{{post.id }}</div>
         <div>
-          <el-input-number size="mini" v-model="num4"></el-input-number>
+          <el-input-number size="mini" v-model="num4" :step="this.num"></el-input-number>
         </div>
         <div class="postnikname basetext font3">
           автор: {{post.username}}
@@ -63,6 +64,7 @@ export default {
   props:['number', 'body', 'title', 'username'],
   data: function () {
     return { 
+      num: 0,
       num4: 0,
       textarea: '',
       screenwidth: screenwidth,
@@ -80,6 +82,9 @@ export default {
     // this.getPost(this.number)
   },
   methods: {
+    votePost(){
+
+    },
     sendReply(we){
       axios.post('/posts/'+we+'/comments',{
         comment: {
@@ -138,6 +143,8 @@ export default {
         })
         .then((response) => {
           this.post = response.data
+          var voteweight = response.headers.voteweight
+          this.num = Number(voteweight)
         })
         .catch(function (error) {
           console.log(error);
