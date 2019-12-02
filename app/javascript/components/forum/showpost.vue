@@ -86,10 +86,12 @@ export default {
       this.votePost(curVal, oldVal)
     },
     votePost(curVal, oldVal){
+      var self = this
       axios({
         method: 'post',
         url: '/api/v1/votepost',
         data: {
+          id: self.number,
           oldval: oldVal,
           newval: curVal
         },

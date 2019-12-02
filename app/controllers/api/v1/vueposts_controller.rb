@@ -46,7 +46,18 @@ class Api::V1::VuepostsController < ApiController
   def edit
   end
   def votepost
-    
+    @userfind = User.find(payload['user_id'])
+    @postfind = Post.find(params[:id])
+    if params[:oldval] > params[:newval]
+      unless @postfind.votes.find_by_user_id(payload['user_id'])
+        vote = @postfind.votes.create(:vote => false, :user_id => payload['user_id'])
+      end
+    end
+    if params[:oldval] < params[:newval]
+      unless @postfind.votes.find_by_user_id(payload['user_id'])
+        vote = @postfind.votes.create(:vote => true, :user_id => payload['user_id'])
+      end
+    end    
     # print '||||||||||||>' 
     # puts params[:oldval]
     # print '||||||||||||>' 
