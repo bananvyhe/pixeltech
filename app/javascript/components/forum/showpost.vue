@@ -24,7 +24,7 @@
         <!-- {{postComm}} -->
         <div class="plashka2">{{post.body }}{{post.id }}</div>
         <div>
-          <el-input-number size="mini" v-model="num4" :step="this.num"></el-input-number>
+          <el-input-number @change="handleChange" size="mini" v-model="num4" :step="this.num"></el-input-number>
         </div>
         <div class="postnikname basetext font3">
           автор: {{post.username}}
@@ -82,8 +82,23 @@ export default {
     // this.getPost(this.number)
   },
   methods: {
-    votePost(){
-
+    handleChange(curVal, oldVal){
+      this.votePost(curVal, oldVal)
+    },
+    votePost(curVal, oldVal){
+      axios({
+        method: 'post',
+        url: '/api/v1/votepost',
+        data: {
+          oldval: oldVal,
+          newval: curVal
+        },
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      }).then((response) => { 
+         
+      })      
     },
     sendReply(we){
       axios.post('/posts/'+we+'/comments',{

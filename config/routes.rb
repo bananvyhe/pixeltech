@@ -58,6 +58,7 @@ Rails.application.routes.draw do
       get :userinfo, to: "gameboards#userinfo"
       get :vuepost, to: "vueposts#index"
       post :vuepost, to: "vueposts#create"
+      post :votepost, to: "vueposts#votepost"
       get :vuepostshow, to: "vueposts#show"
       get :vuecommshow, to: "vueposts#shocomm"
       # post :vuepost, to: "vueposts#destroy"

@@ -45,6 +45,14 @@ class Api::V1::VuepostsController < ApiController
   # GET /gameboards/1/edit
   def edit
   end
+  def votepost
+    
+    # print '||||||||||||>' 
+    # puts params[:oldval]
+    # print '||||||||||||>' 
+    # puts params[:newval]
+    # print '||||||||||||>'    
+  end
   def create
     @post = Post.new(vuepost_params)
     @post.user = current_user
@@ -80,6 +88,6 @@ class Api::V1::VuepostsController < ApiController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vuepost_params
-      params.require(:vuepost).permit( :title, :body, :user_id, :clan_name, :username )
+      params.require(:vuepost).permit( :title, :body, :user_id, :clan_name, :username, :oldval, :newval )
     end
 end
