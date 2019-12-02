@@ -85,7 +85,6 @@ export default {
   methods: {
     handleChange(curVal, oldVal){
       this.votePost(curVal, oldVal)
-      this.getRaitPost()
     },
     getRaitPost(){
       axios({
@@ -100,8 +99,12 @@ export default {
       })
       .then((response) => {
         var totalrait = response.headers.totalrait
+        var postmin = response.headers.postmin
+        var postplus = response.headers.postplus
         this.num4 = totalrait
-        
+        // console.log(totalrait)
+        // console.log(postmin)
+        // console.log(postplus)
       })
       .catch(function (error) {
         console.log(error);
@@ -121,7 +124,7 @@ export default {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       }).then((response) => { 
-         
+        this.getRaitPost()         
       })      
     },
     sendReply(we){
