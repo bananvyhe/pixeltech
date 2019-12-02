@@ -80,10 +80,32 @@ export default {
   },
   mounted(){
     // this.getPost(this.number)
+
   },
   methods: {
     handleChange(curVal, oldVal){
       this.votePost(curVal, oldVal)
+      this.getRaitPost()
+    },
+    getRaitPost(){
+      axios({
+        method: 'get',
+        url: '/api/v1/getrait',
+        params: {
+          id: this.number
+        }, 
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      })
+      .then((response) => {
+        var totalrait = response.headers.totalrait
+        this.num4 = totalrait
+        
+      })
+      .catch(function (error) {
+        console.log(error);
+      });         
     },
     votePost(curVal, oldVal){
       var self = this
@@ -121,14 +143,10 @@ export default {
     },
     handleClick(){
       parseCalc()
-
       this.dialogVisible = true 
       this.getPost(this.number)
       this.getComments(this.number) 
-       // var self = this;
-       // setTimeout(function(){
-      
-       // },4800 ); 
+      this.getRaitPost()
     },
     delpost(postId) {
       if (this.$store.getters.token.access) {

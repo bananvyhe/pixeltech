@@ -59,6 +59,7 @@ Rails.application.routes.draw do
       get :vuepost, to: "vueposts#index"
       post :vuepost, to: "vueposts#create"
       post :votepost, to: "vueposts#votepost"
+      get :getrait, to: "vueposts#getrait"
       get :vuepostshow, to: "vueposts#show"
       get :vuecommshow, to: "vueposts#shocomm"
       # post :vuepost, to: "vueposts#destroy"

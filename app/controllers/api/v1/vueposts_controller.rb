@@ -45,6 +45,30 @@ class Api::V1::VuepostsController < ApiController
   # GET /gameboards/1/edit
   def edit
   end
+  def getrait
+    postminall = Post.find(params[:id]).votes.where(vote: false).to_a
+    @allpostmin = []
+    @totalminus = 0
+    postminall.each do |i|
+      pickupuser = User.find(i.user_id).username
+      pickupweight = User.find(i.user_id).vote_weight
+      @allpostmin << [pickupuser, pickupweight]
+      @totalminus += pickupweight
+    end
+    postplusall = Post.find(params[:id]).votes.where(vote: true).to_a
+    @allpostplus = []
+    @totalplus = 0
+    postplusall.each do |i|
+      pickupuser = User.find(i.user_id).username
+      pickupweight = User.find(i.user_id).vote_weight
+      @allpostmin << [pickupuser, pickupweight]
+      @totalplus += pickupweight
+    end  
+    totalrait = 0-@totalminus+@totalplus
+    response.set_header('postplus', @allpostplus)
+    response.set_header('postmin', @allpostmin) 
+    response.set_header('totalrait', totalrait)  
+  end
   def votepost
     @userfind = User.find(payload['user_id'])
     @postfind = Post.find(params[:id])
