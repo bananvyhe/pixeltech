@@ -64,7 +64,7 @@ export default {
   props:['number', 'body', 'title', 'username'],
   data: function () {
     return { 
-      num: 0,
+      num: 1,
       num4: 0,
       textarea: '',
       screenwidth: screenwidth,
@@ -102,9 +102,9 @@ export default {
         var postmin = response.headers.postmin
         var postplus = response.headers.postplus
         this.num4 = totalrait
-        // console.log(totalrait)
-        // console.log(postmin)
-        // console.log(postplus)
+        console.log(totalrait)
+        console.log(postmin)
+        console.log(postplus)
       })
       .catch(function (error) {
         console.log(error);
