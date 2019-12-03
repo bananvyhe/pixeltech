@@ -2,7 +2,7 @@
   <div class="node-tree">
     <div class="bodyComment mediumtext">
       <span v-if="node.body" class="label">{{node.body}}</span>
-      <span v-else class="label">(сообщение удалено)</span>      
+      <span v-else class="label basetext">(сообщение удалено)</span>      
     </div>
 
     <div class="tinytext sign">

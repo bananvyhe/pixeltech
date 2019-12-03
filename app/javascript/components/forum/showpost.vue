@@ -3,7 +3,7 @@
     <div type="text" >
       <div class="itempost">
         <div class="posthead" @click="handleClick">
-          <div>
+          <div class="mediumtext">
             <!-- {{this.number}} -->
             {{this.title}}             
 
@@ -11,12 +11,13 @@
           <div class="mediumtext">
             {{this.body}}             
           </div>
-          <div class="smalltext">
+          <div v-if="this.username != $store.getters.role.username" class="smalltext username">
             {{this.username}}
           </div>
           <!-- {{this.number}} -->
         </div>
-        <el-button v-if="$store.getters.role.username == this.username"  type='danger' size='mini' icon="el-icon-delete" circle ></el-button>
+        <el-button v-if="$store.getters.role.username == this.username"  type='danger' size='mini' icon="el-icon-delete" circle >         
+        </el-button>
       </div>
     </div>
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
@@ -219,16 +220,20 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 .itempost{
+  height: 2em;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
   margin: 0.2em 0;
   justify-content: space-between;
   display: flex;
   flex-direction: row;
-  background-color: color( $spacecadet shade(40%));
-  /*background-color: $spacecadet;*/
+  /*background-color: color( $spacecadet tint(15%));*/
+  background-color: #1b1b20;
 }
+
 .posthead{
+  /*justify-content: space-between;*/
+  position: relative;
   width: 100%;
   cursor: pointer;
   align-items: center;
@@ -238,6 +243,15 @@ export default {
   div{
     padding: 0em 0.3em;
   }
+}
+.username{
+  position: absolute;
+  right: 1em;
+  /*padding: 0 1em;*/
+  display: flex;
+  background-color: #1b1b20;
+  /*width: 100%;*/
+  /*justify-content: flex-end;*/
 }
 .postnikname{
   padding: 0 0 0.5em;
