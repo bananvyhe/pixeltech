@@ -73,6 +73,7 @@ export default {
         } 
       })
       .then((response) => {
+        this.$emit('sendpost', this.textarea);
         // this.postComm = response.data
       })
       .catch(function (error) {
