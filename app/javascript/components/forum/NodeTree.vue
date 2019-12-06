@@ -13,7 +13,8 @@
       <el-popover
         placement="bottom"
         width="400"
-        trigger="click">
+        trigger="manual"
+        v-model="visible">
           <div class="replyarea">
             <el-input
               type="textarea"
@@ -24,12 +25,12 @@
             <!-- {{number}} -->
             <el-button size='mini' @click="sendReply(number)">отправить</el-button>          
           </div>
-        <div v-if="node.body" slot="reference" class="reply" >ответить</div>
+        <div v-if="node.body" slot="reference" class="reply" @click="visible = !visible" >ответить</div>
       </el-popover>   
       <div class="del" v-if="$store.getters.role.username == node.username && node.body != null" @click="destroy(number, node.id )">удалить</div>
     </div>
     <div v-if="node.comments && node.comments.length">
-      <node v-for="child in node.comments" :node="child" :number="number" class="padding-message"></node>
+      <node v-on:sendpost="sendd" v-for="child in node.comments" :node="child" :number="number" class="padding-message"></node>
     </div>
   </div>
 </template>
@@ -44,10 +45,18 @@ export default {
   },
   data: function () {
     return { 
+      blank: '123',
+      visible: false,
       textarea: ''
     }
   },
   methods: {
+        sendd(val){
+       console.log('val')
+      console.log(val)
+      this.$emit('sendpost', val);
+
+    },
     destroy(num, id){
       axios.delete('/posts/'+num+'/comments/'+id,{
 
@@ -73,7 +82,10 @@ export default {
         } 
       })
       .then((response) => {
-        this.$emit('sendpost', this.textarea);
+        this.textarea = ''
+        this.visible = false
+        var rand = Math.random()
+        this.$emit('sendpost',rand );
         // this.postComm = response.data
       })
       .catch(function (error) {

@@ -41,7 +41,7 @@
         <div v-for="(item, index) in postComm" class="comm-area plashka2">
           <div v-if='item.parent_id == null'>
             <!-- {{ item}} -->             
-            <tree :tree-data="item" :number="number"></tree>
+            <tree v-on:sendposttwo="send" :tree-data="item" :number="number"></tree>
           </div>
         </div>        
       </div>
@@ -84,6 +84,11 @@ export default {
 
   },
   methods: {
+    send(val){
+      console.log('val')
+      console.log(val)
+      this.getComments(this.number) 
+    },
     handleChange(curVal, oldVal){
       this.votePost(curVal, oldVal)
     },
@@ -139,6 +144,8 @@ export default {
         } 
       })
       .then((response) => {
+        this.getComments(this.number) 
+        this.textarea = ''
         // this.postComm = response.data
       })
       .catch(function (error) {

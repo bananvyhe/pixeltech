@@ -16,8 +16,11 @@ class CommentsController < ApplicationController
     @comment.user = current_user
  
     @comment.save
+    prng = Random.new
+    random = prng.rand()
+    response.set_header('postcomm', random)
     # respond_with '234'
-    
+
   respond_to do |format|
     format.json { render json: @comment }
   end

@@ -2,7 +2,7 @@
   <div class="tree"> 
     <div class="tree-list"> 
       <!-- {{typeof treeData}} -->
-      <node-tree v-on:sendpost="send" :node="treeData" :number="number" class="tree-Data" ></node-tree>
+      <node-tree v-on:sendpost="sendd" :node="treeData" :number="number" class="tree-Data" ></node-tree>
     
     </div>
   </div>
@@ -20,9 +20,10 @@ export default {
     NodeTree
   },
   methods: {
-    send(val){
+    sendd(val){
        console.log('val')
       console.log(val)
+      this.$emit('sendposttwo', val);
 
     }
   }
