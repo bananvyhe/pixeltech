@@ -62,6 +62,8 @@ export default {
           }).then((response) => { 
 
             this.dialogFormVisible = false
+            var rand = Math.random()
+            this.$emit('newpost', rand);
             // this.link = 'visited'
             // this.$store.commit('gamesendplus', 100)
             // this.gamesendplus({

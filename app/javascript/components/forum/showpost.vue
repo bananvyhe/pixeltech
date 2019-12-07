@@ -16,7 +16,7 @@
           </div>
           <!-- {{this.number}} -->
         </div>
-        <el-button v-if="$store.getters.role.username == this.username"  type='danger' size='mini' icon="el-icon-delete" circle >         
+        <el-button v-if="$store.getters.role.username == this.username"  type='danger' size='mini' icon="el-icon-delete" circle @click="deleting(number)">         
         </el-button>
       </div>
     </div>
@@ -84,6 +84,20 @@ export default {
 
   },
   methods: {
+    deleting(id){
+      // console.log(id)
+      axios.delete('/posts/'+id,{
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      })
+      .then((response) => {
+        
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+    },
     send(val){
       console.log('val')
       console.log(val)

@@ -51,11 +51,10 @@ export default {
     }
   },
   methods: {
-        sendd(val){
-       console.log('val')
+    sendd(val){
+      console.log('val')
       console.log(val)
       this.$emit('sendpost', val);
-
     },
     destroy(num, id){
       axios.delete('/posts/'+num+'/comments/'+id,{
