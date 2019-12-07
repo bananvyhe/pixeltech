@@ -4,7 +4,7 @@
     <!-- {{clanposts}} -->
     <div v-for="(item, index) in clanposts">
       <!-- {{item.title}} {{item.body}} {{item.username}} -->
-      <showpost :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showpost>
+      <showpost v-on:delpost="getPosts" :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showpost>
     </div>
     <!-- <showpost :number='number'></showpost> -->
     <newpost v-on:newpost="getPosts" :section='this.$store.getters.role.role'></newpost>
@@ -13,7 +13,7 @@
       <h2>Общий доступ</h2>
       <!-- {{userposts}} -->
       <div v-for="(item, index) in userposts">
-        <showpost :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showpost>
+        <showpost v-on:delpost="getUserPosts" :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showpost>
       </div>
       <newpost v-on:newpost="getUserPosts" :section='"user"'></newpost>
     </div>

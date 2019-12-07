@@ -85,14 +85,14 @@ export default {
   },
   methods: {
     deleting(id){
-      // console.log(id)
+      console.log(id)
       axios.delete('/posts/'+id,{
         headers: {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       })
       .then((response) => {
-        
+        this.$emit('delpost', id);        
       })
       .catch(function (error) {
         console.log(error);
