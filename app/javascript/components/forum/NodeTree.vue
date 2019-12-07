@@ -64,7 +64,7 @@ export default {
         } 
       })
       .then((response) => {
-        
+        this.$emit('sendpost', num);        
       })
       .catch(function (error) {
         console.log(error);
