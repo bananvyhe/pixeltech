@@ -23,14 +23,14 @@
         <div class="labelSlide plashka">
           рейтинг:
         </div>
-        <el-slider 
-        class=""
-        v-model="value"
-        range
-        :max='60'
-        >
+        <el-slider
+          class=""
+          @change='handlechange'
+          v-model="value"
+          range
+          :max='60'>
         </el-slider>
-        <!-- кнопка отправки  -->
+        <!-- кнопка отправки -->
 <!--         <div class="filterBut">
           <el-button class="plashka" v-on:click="filterRes" size='mini' round type="info" plain>показать</el-button> 
         </div> -->
@@ -314,17 +314,9 @@ export default {
   },
   watch: {
     filterInc() {
-            
       if (this.filterInc != [null])  {
-        // var self = this
-      // setTimeout(function(){
-        this.alldata = []
-        this.alld = []
-        this.addBeer()
-      // },1000 );
-
+        this.getposts()
       }
-
     },
     alldata() {
       var self = this
@@ -360,6 +352,16 @@ export default {
 
   },
   methods: {
+    handlechange(val){
+      console.log(val)
+      this.getposts()
+    },
+    getposts(){
+      this.alldata = []
+      this.alld = []
+      this.pos = []
+      this.addBeer()
+    },
     clickhandler( event) {
       this.dialogVisible = true;
       this.empid = event;
