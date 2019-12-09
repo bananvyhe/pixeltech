@@ -45,7 +45,7 @@
 
   <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка...">
   </div>
-
+  <div v-if="alldata.length === 0" class="blank"></div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
     <div class="namewww2" v-if="data.url">
       {{data.url.substr(15).toUpperCase()}}
@@ -429,7 +429,9 @@ export default {
 <style scoped>
 @import "_variables";
 @import "_extends";
-
+.blank{
+  height: 70em;
+}
 .filterbutton, .addpublic {
   padding: 0 1em;
   display: flex;
