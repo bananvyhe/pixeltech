@@ -167,7 +167,7 @@ class Api::V1::GameboardsController < ApiController
         @minusedexp = @nowexp / 100 * 4
         # puts @minusedexp
         @killeduser.expirience -= @minusedexp 
-
+        @killeduser.starts_at_time_of_pk = Time.now + 3.hours
         @killeduser.save
         break
       end

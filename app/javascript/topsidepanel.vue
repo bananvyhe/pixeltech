@@ -54,6 +54,9 @@
 
 						<inv class="invclass" v-if="$store.getters.role"></inv>
 					</div> 
+					<div v-else>
+						123
+					</div>
 					<div v-if="$store.getters.token == null">
 						<div v-if="checklog != 'unlogged' ">
 							{{nulltoken}}
