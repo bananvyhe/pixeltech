@@ -4,7 +4,8 @@
     
     <div class="item"> 
       <!-- {{users}} -->
-      <!-- {{liveusers}}<br><br> {{data}} --> 
+      {{liveusers}}<br><br>
+      <!-- {{data}}  -->
       <el-button-group class="users"  size="mini" >
         <div v-for="(item, index) in liveusers">
         <!-- <el-badge :value="item.id" class="mark" size="small"> -->
@@ -62,20 +63,20 @@
                 <el-tooltip placement="top">
                   <div slot="content" class="smalltext notif"><i>плюс в карму<br>+7 открывают<br> возможности лидера</i> 
                   </div>
-                  <el-button @click="voteplus(item.user_id)" type="warning"  label="4" border size="mini"  class="aprior"> + </el-button>
+                  <el-button @click="voteplus(item.id)" type="warning"  label="4" border size="mini"  class="aprior"> + </el-button>
                 </el-tooltip>
               </div>
               <div>
                 <el-tooltip placement="top">
                   <div slot="content"  class="smalltext notif" >минус в карму
                   </div>
-                  <el-button  @click="vote(item.user_id)" type="warning"  label="3" border size="mini"  class="aprior"> - </el-button>
+                  <el-button  @click="vote(item.id)" type="warning"  label="3" border size="mini"  class="aprior"> - </el-button>
                 </el-tooltip>
               </div>
               <div>
                 <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
                   <div slot="content"  class="smalltext notif"> <span style="color: green;">стоимость 100 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> </div>
-                  <el-button type="danger" label="1" border size="mini" class="aprior pk" @click='pkconfirm(item.user_id)'> 
+                  <el-button type="danger" label="1" border size="mini" class="aprior pk" @click='pkconfirm(item.id)'> 
                     ПК 
                   </el-button>
                 </el-tooltip>
@@ -94,8 +95,8 @@
 <!--               <el-badge v-if="item.plus - item.minus != 0":value="item.plus - item.minus" class="item">
                 {{username(item.user_id)}}
               </el-badge>  -->
-              <div class="item" @mouseover="mouseOverUser(item.user_id)" v-bind:style="item.karma > 0 ? 'color: red;' : ''">
-                {{username(item.user_id)}}
+              <div class="item" @mouseover="mouseOverUser(item.id)" v-bind:style="item.karma > 0 ? 'color: red;' : ''">
+                {{item.username}}
               </div> 
             </el-button>        
           
@@ -111,6 +112,9 @@
               <el-button @click="dialogVisible = false">Отмена</el-button>
               <el-button :label="item.user_id" type="primary" @click="kill(pkid)" >Подтвердить</el-button>
             </span>
+            <div slot="footer" class="footpostshow basetext font3">
+              &nbsp;
+            </div>
           </el-dialog>
           </div>
         <!-- </el-badge> -->
@@ -231,14 +235,14 @@ export default {
         this.mouseOverUser(id)
       })
     },
-    username(event) {
-      for (let i = 0; this.data[i]; i++) {
-        if (this.data[i].id == event){
-          return this.data[i].username
-        }
-      }
+    // username(event) {
+    //   for (let i = 0; this.data[i]; i++) {
+    //     if (this.data[i].id == event){
+    //       return this.data[i].username
+    //     }
+    //   }
      
-    },
+    // },
     pkconfirm(event) {
       this.dialogVisible = true;
       this.pkid = event
@@ -254,10 +258,10 @@ export default {
         console.log(item);
         console.log(object);
 
-        if (item.user_id == event) {
+        if (item.id == event) {
           object.splice(pos, 1);
         }
-        if (item.user_id != event) {
+        if (item.id != event) {
           pos += 1
           // console.log(pos);
           // console.log(item.user_id);
@@ -303,38 +307,30 @@ export default {
           this.liveusers = total
         });
      
-      axios({
-        method: 'get',
-        url: '/api/v1/lobbyall',
-        headers: {
-          'Authorization': 'bearer '+this.$store.getters.token.access
-        } 
-        // params: {
-        //   rait: this.value,
-        //   pos: this.pos
-        // } 
-        })
-        .then((response) => { 
-          // console.log(response.data)
-          var alld = response.data
-          // const data = [];
-          this.users = alld
-          this.data = []
-          this.datavalue = []
-          var self = this
-          for (let i = 0; alld[i]; i++) {
-            const data = [];
-            const grname = alld[i]
-            console.log(grname)
-            data.push({
-              username: grname.username,
-              id: grname.id,
-            });
-            self.data = self.data.concat(data)
-          }      
-        // return data;
-          // this.data = data;
-        });
+      // axios({
+      //   method: 'get',
+      //   url: '/api/v1/lobbyall',
+      //   headers: {
+      //     'Authorization': 'bearer '+this.$store.getters.token.access
+      //   } 
+      //   })
+      //   .then((response) => { 
+      //     var alld = response.data
+      //     this.users = alld
+      //     this.data = []
+      //     this.datavalue = []
+      //     var self = this
+      //     for (let i = 0; alld[i]; i++) {
+      //       const data = [];
+      //       const grname = alld[i]
+      //       console.log(grname)
+      //       data.push({
+      //         username: grname.username,
+      //         id: grname.id,
+      //       });
+      //       self.data = self.data.concat(data)
+      //     }      
+      //   });
       }
     }
   }

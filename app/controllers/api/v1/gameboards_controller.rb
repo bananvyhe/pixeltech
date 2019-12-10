@@ -6,8 +6,15 @@ class Api::V1::GameboardsController < ApiController
   # GET /gameboards
   # GET /gameboards.json
   def index
-    @gameboards = Gameboard.where(pk: false)
-    render json:  @gameboards, :except => [:created_at, :updated_at]
+    print '---00--->'
+    # @gameboards = Gameboard.where(pk: false) 
+    @gameboards = User.where(role: 'user').joins(:gameboard)
+    # puts gameboards.inspect
+    print '---00--->'
+         # print '---00--->'
+         # puts vote.inspect
+         # print '---00--->'    
+    # render json:  gameboards, :except => [:created_at, :updated_at]
     # @gameboards = Gameboard.find_by_user_id(payload['user_id'])
     # render json: @gameboards, :except => [:created_at, :updated_at]
   end
