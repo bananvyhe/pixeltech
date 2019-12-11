@@ -62,6 +62,8 @@ Rails.application.routes.draw do
       get :getrait, to: "vueposts#getrait"
       get :vuepostshow, to: "vueposts#show"
       get :vuecommshow, to: "vueposts#shocomm"
+      get :getPkStatus, to: "gameboards#getPkStatus"
+      post :ressurect, to: "gameboards#ressurect"
       # post :vuepost, to: "vueposts#destroy"
       resources :vueposts
       

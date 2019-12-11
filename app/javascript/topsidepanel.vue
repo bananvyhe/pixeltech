@@ -45,17 +45,21 @@
 								<div v-if="$store.getters.gamebo" class="lvl">{{lvlConversion[0]}}&nbsp;</div>
 								<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
 							</div>
-
 							<!-- <game-board :expresult="lvlConversion"></game-board>   -->
 						</div>
 					</div>
-					<div v-if="$store.getters.cry" class="crytop">
+					<div v-if="($store.getters.gamebo) && (pkstat.pk == false)" class="crytop">
 						<!-- камни: &nbsp;{{$store.getters.cry}} -->
-
 						<inv class="invclass" v-if="$store.getters.role"></inv>
 					</div> 
 					<div v-else>
-						123
+						<div v-if="($store.getters.gamebo) && ($store.getters.role)">
+							<el-button v-if="pkstat.exptime < nowtime" type="success" size='mini' icon="el-icon-switch-button" circle @click="res">       
+	        		</el-button>
+							<el-button v-else type="success" size='mini' icon="el-icon-switch-button" circle disabled>       
+	        		</el-button>							
+						</div>
+        		<!-- {{pkstat}}{{nowtime}} -->
 					</div>
 					<div v-if="$store.getters.token == null">
 						<div v-if="checklog != 'unlogged' ">
@@ -97,6 +101,8 @@
 	export default {
 		data() {
 			return {
+				nowtime: '',
+				pkstat: '',
 				isOpen: false,
 				exptime: '',
 				checklog: checklog,
@@ -331,6 +337,33 @@
  			}
 	  }, 
 	  methods: {
+	  	res(){
+	      axios({
+	        method: 'post',
+	        url: '/api/v1/ressurect',
+	        headers: {
+	          'Authorization': 'bearer '+this.$store.getters.token.access
+	        } 	        
+	      }).then((response) => { 
+	      });
+	  	},
+	  	getPkStatus(){
+	      axios({
+	        method: 'get',
+	        url: '/api/v1/getPkStatus',
+	        params: {
+	        }, 
+	        headers: {
+	          'Authorization': 'bearer '+this.$store.getters.token.access
+	        } 	        
+	      }).then((response) => { 
+	        if (response.data){
+	          this.pkstat = response.data
+	          var nowtime = response.headers.nowtime
+	          this.nowtime = nowtime
+	        }
+	      });
+	  	},
 	  	refreshToken(){
 	    	axios({
     			method: 'post',
@@ -411,6 +444,7 @@
 
 	  },
 	  mounted() {
+	  	this.getPkStatus()
 	  	//проверка условий на существования логина 
 	  	if (!this.exptime){
   			this.checkRelevanceToken()

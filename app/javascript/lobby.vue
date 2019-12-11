@@ -4,7 +4,7 @@
     
     <div class="item"> 
       <!-- {{users}} -->
-      {{liveusers}}<br><br>
+      <!-- {{liveusers}}<br><br> -->
       <!-- {{data}}  -->
       <el-button-group class="users"  size="mini" >
         <div v-for="(item, index) in liveusers">
@@ -107,11 +107,11 @@
             :visible.sync="dialogVisible"
             width="25em"
             >
-            <span class="plashka2">противник теряет 4% опыта</span>
-            <span slot="footer" >
+            <div class="plashka2">противник теряет 4% опыта</div>
+            <div slot="footer"  class="uiframe">
               <el-button @click="dialogVisible = false">Отмена</el-button>
               <el-button :label="item.user_id" type="primary" @click="kill(pkid)" >Подтвердить</el-button>
-            </span>
+            </div>
             <div slot="footer" class="footpostshow basetext font3">
               &nbsp;
             </div>
@@ -340,6 +340,9 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 @import "stylesheets/_typography";
+.uiframe{
+  padding: 0.5em 0 0;
+}
 .userinfoplace {
   display: flex;
   flex-direction: row;

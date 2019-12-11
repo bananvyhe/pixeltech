@@ -32,7 +32,18 @@ class Api::V1::GameboardsController < ApiController
   # GET /gameboards/1/edit
   def edit
   end
+  def ressurect
+    res = User.joins(:gameboard).find(payload['user_id']) 
 
+    res.gameboard.pk = false
+    puts res.gameboard.inspect
+    res.gameboard.save 
+  end
+  def getPkStatus
+    @pkstat = User.joins(:gameboard).find(payload['user_id'])
+    nowtime = Time.now.to_i
+    response.set_header('nowtime', nowtime)
+  end
   def calculateminus id 
     userminall = User.find(params[:user_id]).votes.where(vote: false).to_a
  
