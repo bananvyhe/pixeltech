@@ -8,7 +8,8 @@
 	  	<div class="clouds2"></div>
 	  	<div class="bgshad"></div>
 	  	<div class="voodoo font3">
-	  		VooDoo power 
+	  		<!-- VooDoo power  -->
+	  		powered by NGINX
 	  	</div>
 	  	<div class="clouds"></div>
 
