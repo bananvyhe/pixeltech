@@ -48,18 +48,18 @@
 							<!-- <game-board :expresult="lvlConversion"></game-board>   -->
 						</div>
 					</div>
-					<div v-if="($store.getters.gamebo) && (pkstat.pk == false)" class="crytop">
+					<div v-if="($store.getters.gamebo) && ($store.getters.pk == false)" class="crytop">
 						<!-- камни: &nbsp;{{$store.getters.cry}} -->
 						<inv class="invclass" v-if="$store.getters.role"></inv>
 					</div> 
 					<div v-else>
-						<div v-if="($store.getters.gamebo) && ($store.getters.role)">
+						<div v-if="($store.getters.gamebo) && ($store.getters.pk == true)">
 							<el-button v-if="pkstat.exptime < nowtime" type="success" size='mini' icon="el-icon-switch-button" circle @click="res">       
 	        		</el-button>
 							<el-button v-else type="success" size='mini' icon="el-icon-switch-button" circle disabled>       
 	        		</el-button>							
 						</div>
-        		<!-- {{pkstat}}{{nowtime}} -->
+        		<!-- {{pkstat}}{{nowtime}}{{$store.getters.pk}} -->
 					</div>
 					<div v-if="$store.getters.token == null">
 						<div v-if="checklog != 'unlogged' ">
@@ -444,10 +444,10 @@
 
 	  },
 	  mounted() {
-	  	this.getPkStatus()
 	  	//проверка условий на существования логина 
 	  	if (!this.exptime){
   			this.checkRelevanceToken()
+  			console.log('mounted checkRelevanceToken')
   			//проверка условия что имеется доступ и берется запрос
 				if (this.$store.getters.role) {
 	  			axios({
@@ -458,9 +458,10 @@
 		        } 
 	        })
 	        .then((response) => {
-						// console.log(response.data)
+						console.log(response.data)
 	          this.$store.commit('gamesend', response.data.expirience )
 	          this.$store.commit('crysend', response.data.cry )
+	          this.$store.commit('pksend', response.data.pk )
 	        })
 	        .catch(function (error) {
 	          console.log(error);
@@ -471,6 +472,7 @@
 
 	  	if (this.$store.getters.token != null) {
 	  			this.exptimer();
+	  			console.log('mounted exptimer')
 	  		// axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.getters.token.token;
 	  		// let username =  decodedJwtData.username
 				// this.$store.commit('username', username)

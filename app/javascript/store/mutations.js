@@ -7,6 +7,10 @@
 // export const expsend2 = (state,  exp2 ) => {
 // 	state.exp2 = exp2
 // }
+export const pksend = (state,  pk ) => {
+	state.pk = pk 
+	 
+}
 export const tokensend = (state,  token ) => {
 	state.token = token 
 	 
