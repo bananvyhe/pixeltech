@@ -1,10 +1,10 @@
 <template>
-  <div class="lobby">
+  <div class="lobby" v-if="$store.getters.pk == false">
     <div class="headlobby"><h4>пул клана</h4> </div>
     
     <div class="item"> 
       <!-- {{users}} -->
-      <!-- {{liveusers}}<br><br> -->
+      {{liveusers}}<br><br>
       <!-- {{data}}  -->
       <el-button-group class="users"  size="mini" >
         <div v-for="(item, index) in liveusers">

@@ -1,5 +1,5 @@
 <template>
-  <div class="posts">
+  <div class="posts" v-if="$store.getters.pk == false">
     <h2>Форум {{this.$store.getters.role.role}}</h2>
     <!-- {{clanposts}} -->
     <div v-for="(item, index) in clanposts">
