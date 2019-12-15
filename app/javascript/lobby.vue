@@ -4,7 +4,7 @@
     
     <div class="item"> 
       <!-- {{users}} -->
-      {{liveusers}}<br><br>
+      <!-- {{liveusers}}<br><br> -->
       <!-- {{data}}  -->
       <el-button-group class="users"  size="mini" >
         <div v-for="(item, index) in liveusers">
