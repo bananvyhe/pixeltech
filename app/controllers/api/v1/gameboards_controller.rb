@@ -36,7 +36,7 @@ class Api::V1::GameboardsController < ApiController
     res = User.joins(:gameboard).find(payload['user_id']) 
 
     res.gameboard.pk = false
-    puts res.gameboard.inspect
+    # puts res.gameboard.inspect
     res.gameboard.save 
   end
   def getPkStatus

@@ -345,6 +345,7 @@
 	          'Authorization': 'bearer '+this.$store.getters.token.access
 	        } 	        
 	      }).then((response) => { 
+	      	this.$store.commit('pksend', false )
 	      });
 	  	},
 	  	getPkStatus(){
@@ -444,6 +445,7 @@
 
 	  },
 	  mounted() {
+	  	this.getPkStatus()
 	  	//проверка условий на существования логина 
 	  	if (!this.exptime){
   			this.checkRelevanceToken()
