@@ -24,6 +24,7 @@ import Filther from '../components/filther.vue'
 import Addpublic from '../components/addpublic.vue'
 import Lobby from '../lobby.vue'
 import Posts from '../components/forum/posts.vue'
+import Chat from '../chat.vue'
 // import CommentVotes from '../components/commentvotes.vue'
 // import Inv from '../components/inventory.vue'
 // import Topsection from '../components/topsection.vue'
@@ -75,11 +76,13 @@ import createPersistedState from 'vuex-persistedstate'
 // import * as VueWindow from '@hscmap/vue-window'
 // Vue.use(VueWindow)
 
-import {InputNumber, Collapse, CollapseItem, ButtonGroup, Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
+import {Container, Main, InputNumber, Collapse, CollapseItem, ButtonGroup, Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
 // Vue.prototype.$message = Message; 
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }; 
 // Vue.use(Message);
+Vue.use(Main);
+Vue.use(Container);
 Vue.use(InputNumber);
 Vue.use(Collapse);
 Vue.use(CollapseItem);
@@ -111,6 +114,16 @@ Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
 
 document.addEventListener('DOMContentLoaded', () => {
+		//pusher implementation
+    var pusher = new Pusher('44697f69f1f93a53365c', {
+      cluster: 'eu',
+      forceTLS: true
+    });
+    var channel = pusher.subscribe('messages');
+    channel.bind('new', function(data) {
+      alert(JSON.stringify(data));
+    }); 
+  //---   
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({
   //   el,
@@ -133,6 +146,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	//     render: h => h(CommentV+otes) 
 	//   })
 	// } 
+	var chat = document.getElementById("chat") 
+  if (chat != null) {
+	  new Vue({
+	  	store,
+	    el: '#chat',
+	    render: h => h(Chat) 
+	  })
+	}	
 	var topsidepanel = document.getElementById("topsidepanel") 
   if (topsidepanel != null) {
 	  new Vue({
