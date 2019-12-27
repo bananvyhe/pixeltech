@@ -115,14 +115,7 @@ Vue.prototype.$message = Message;
 
 document.addEventListener('DOMContentLoaded', () => {
 		//pusher implementation
-    var pusher = new Pusher('44697f69f1f93a53365c', {
-      cluster: 'eu',
-      forceTLS: true
-    });
-    var channel = pusher.subscribe('messages');
-    channel.bind('new', function(data) {
-      alert(JSON.stringify(data));
-    }); 
+
   //---   
   // const el = document.body.appendChild(document.createElement('hello'))
   // const app = new Vue({

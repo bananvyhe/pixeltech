@@ -1,7 +1,13 @@
 <template>
   <div class="chat">
+    <!-- {{chatMessages}} -->
     <el-container class="chatWindow" style="">
-      <el-main>123</el-main>
+      <el-main>
+
+         <div v-for="(item, index) in chatMessages">
+          {{item.text}}
+         </div>
+      </el-main>
     </el-container>
     <!-- <div class='messages'>123</div> -->
     <div class="inputZone" v-on:keyup.enter="postingMes">
@@ -17,7 +23,8 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
-      input: ''
+      input: '',
+      chatMessages: ''
     };
   },
   methods: {
@@ -26,6 +33,10 @@ export default {
         method: 'post',
         //vks#associate
         url: '/api/v1/chat',
+        data: {
+          text: this.input,
+          clan_name: this.$store.getters.role.role
+        },
         headers: {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
@@ -36,16 +47,40 @@ export default {
         //   amount: loa
         // })
       })
+    },
+    getChat(){
+      axios({
+      method: 'get',
+      url: '/api/v1/chat',
+      headers: {
+        'Authorization': 'bearer '+this.$store.getters.token.access
+      } 
+      // params: {
+      //   rait: this.value,
+      //   pos: this.pos
+      // } 
+      })
+      .then((response) => { 
+         
+        var total = response.data
+        this.chatMessages = total
+        console.log(total)
+      });      
     }
-
-
-
   },
   watch: {
 
   }, 
   mounted() { 
-
+    this.getChat()
+    var pusher = new Pusher('44697f69f1f93a53365c', {
+      cluster: 'eu',
+      forceTLS: true
+    });
+    var channel = pusher.subscribe('messages');
+    channel.bind('new', function(data) {
+      alert(JSON.stringify(data));
+    }); 
   }
 }
 </script>
@@ -59,22 +94,25 @@ export default {
   solid #555;
 }
 .inputStroke{
-  padding: 0.2em;
+  padding: 0.2em 0.2em 0 0;
 }
 .inputZone{
+  /*padding: 0.2em;*/
   display: flex;
   flex-direction: row;
 }
 .el-main {
+  padding: 5px 7px;
   /*background-color: #E9EEF3;*/
   /*color: #333;*/
-  text-align: center;
-  line-height: 160px;
+  text-align: left;
+  /*line-height: 160px;*/
 }
 .messages{
   padding: 0.2em 0.5em;
 }
 .chat {
+  padding: 0.2em;
   /*background-color: #dad;*/
 }
 
