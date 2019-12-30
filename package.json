@@ -27,6 +27,7 @@
     "scramble-text": "0.0.8",
     "stimulus": "^1.1.1",
     "vue": "^2.6.10",
+    "vue-chat-scroll": "^1.3.6",
     "vue-loader": "14.2.2",
     "vue-template-compiler": "^2.6.10",
     "vue-turbolinks": "^2.0.4",

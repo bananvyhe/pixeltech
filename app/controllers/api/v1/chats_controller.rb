@@ -19,8 +19,8 @@
     	response.set_header('clname', clname)
     	Pusher.trigger('messages', 'new', {
 	      text: @mes.text,
-	      clname: clname,
-	      
+	      clname: clname.clan,
+	      username: @mes.user.username
 	    })
     end
  		# puts clname.id

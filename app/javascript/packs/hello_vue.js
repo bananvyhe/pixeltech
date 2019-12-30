@@ -71,7 +71,8 @@ Vue.component("temperature", {
 });
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
-
+import VueChatScroll from 'vue-chat-scroll'
+Vue.use(VueChatScroll)
 // Vue.use(require('@hscmap/vue-window'))
 // import * as VueWindow from '@hscmap/vue-window'
 // Vue.use(VueWindow)

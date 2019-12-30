@@ -2,7 +2,7 @@
   <div class="chat">
     <!-- {{chatMessages}} -->
     <el-container class="chatWindow" style="">
-      <el-main>
+      <el-main v-chat-scroll>
 
          <div v-for="(item, index) in chatMessages" class="mediumtext">
           {{item.text}}
@@ -30,6 +30,7 @@ export default {
   methods: {
     addMessage(data){
       console.log(data)
+      this.chatMessages = this.chatMessages.concat(data);
     },
     postingMes: function(){
        axios({
