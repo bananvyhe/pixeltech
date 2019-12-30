@@ -4,7 +4,7 @@
     <el-container class="chatWindow" style="">
       <el-main>
 
-         <div v-for="(item, index) in chatMessages">
+         <div v-for="(item, index) in chatMessages" class="mediumtext">
           {{item.text}}
          </div>
       </el-main>
@@ -28,6 +28,9 @@ export default {
     };
   },
   methods: {
+    addMessage(data){
+      console.log(data)
+    },
     postingMes: function(){
        axios({
         method: 'post',
@@ -41,6 +44,7 @@ export default {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       }).then((response) => { 
+        this.input = ''
         // this.link = 'visited'
         // this.$store.commit('gamesendplus', 100)
         // this.gamesendplus({
@@ -78,8 +82,9 @@ export default {
       forceTLS: true
     });
     var channel = pusher.subscribe('messages');
+    var self = this;
     channel.bind('new', function(data) {
-      alert(JSON.stringify(data));
+      self.addMessage(data);
     }); 
   }
 }

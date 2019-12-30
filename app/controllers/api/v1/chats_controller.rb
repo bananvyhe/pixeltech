@@ -15,8 +15,13 @@
  		print '========='
  		puts @mes.inspect
  		print '========='
- 		    if @mes.save
+ 		if @mes.save
     	response.set_header('clname', clname)
+    	Pusher.trigger('messages', 'new', {
+	      text: @mes.text,
+	      clname: clname,
+	      
+	    })
     end
  		# puts clname.id
  	end
