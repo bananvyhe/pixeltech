@@ -1,5 +1,5 @@
 <template>
-  <div class="chat">
+  <div class="chat" v-if="this.$store.getters.role.role != 'client'">
     <!-- {{chatMessages}} -->
     <el-container class="chatWindow" style="">
       <el-main v-chat-scroll>
