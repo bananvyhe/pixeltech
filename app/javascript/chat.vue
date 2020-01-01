@@ -57,6 +57,9 @@ export default {
       axios({
       method: 'get',
       url: '/api/v1/chat',
+      params: {
+        clan: this.$store.getters.role.role
+      }, 
       headers: {
         'Authorization': 'bearer '+this.$store.getters.token.access
       } 
@@ -84,7 +87,7 @@ export default {
     });
     var channel = pusher.subscribe('messages');
     var self = this;
-    channel.bind('new', function(data) {
+    channel.bind(this.$store.getters.role.role, function(data) {
       self.addMessage(data);
     }); 
   }
