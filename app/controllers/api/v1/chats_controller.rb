@@ -8,7 +8,7 @@
  		@chats = Chat.includes(:clan).where(:clans => {:clan => clan})
  		puts @chats.inspect
  		print '|||===============|||||||'
- 		render json: @chats 
+ 		# render json: @chats 
 
  	end
  	def create
@@ -25,8 +25,9 @@
  		if @mes.save
     	response.set_header('clname', clname)
     	Pusher.trigger('messages', clname.clan, {
+    		id: @mes.id,
 	      text: @mes.text,
-	      clname: clname.clan,
+	      clan: clname.clan,
 	      username: @mes.user.username
 	    })
     end

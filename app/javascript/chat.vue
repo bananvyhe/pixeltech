@@ -4,9 +4,16 @@
     <el-container class="chatWindow" style="">
       <el-main v-chat-scroll>
 
-         <div v-for="(item, index) in chatMessages" class="mediumtext">
-          {{item.text}}
-         </div>
+        <div v-for="(item, index) in chatMessages" class="mediumtext">
+          <div class="chatString">
+            <div class="nickname">
+              {{item.username}}  
+            </div>
+            <div>
+              {{item.text}}            
+            </div>            
+          </div>
+        </div>
       </el-main>
     </el-container>
     <!-- <div class='messages'>123</div> -->
@@ -96,6 +103,14 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+.nickname{
+  color: #666;
+  padding: 0 0.3em 0 0;
+}
+.chatString{
+  display: flex;
+  flex-direction: row;
+}
 .chatWindow{
   margin: 0.0em 0.2em;
   height: 80px; 
