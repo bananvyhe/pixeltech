@@ -101,6 +101,7 @@
 	export default {
 		data() {
 			return {
+				trig: false,
 				nowtime: '',
 				pkstat: '',
 				isOpen: false,
@@ -334,6 +335,13 @@
 	  		// self.exptime = millisecremains
       // },self.exptime*1000 );							
 				}
+	      // var trig = false;
+	      var self = this;
+	      if ((self.exptime > 0)&&(!self.trig)){
+					self.getPkStatus()
+					self.storeCommitGbData()
+	        self.trig = true;     
+	      }				
  			}
 	  }, 
 	  methods: {
@@ -436,21 +444,8 @@
         } else {
           return days + " Days"
         }
-		  }
-	  },
-	  updated() {
-
-	  },
-	  created() {
-
-	  },
-	  mounted() {
-	  	this.getPkStatus()
-	  	//проверка условий на существования логина 
-	  	if (!this.exptime){
-  			this.checkRelevanceToken()
-  			console.log('mounted checkRelevanceToken')
-  			//проверка условия что имеется доступ и берется запрос
+		  },
+		  storeCommitGbData(){
 				if (this.$store.getters.role) {
 	  			axios({
 	        method: 'get',
@@ -467,8 +462,24 @@
 	        })
 	        .catch(function (error) {
 	          console.log(error);
-      		}); 						
-		  	}	
+	    		}); 						
+		  	}		  	
+		  },		  
+	  },
+
+	  updated() {
+
+	  },
+	  created() {
+
+	  },
+	  mounted() {
+	  	//проверка условий на существования логина 
+	  	if (!this.exptime){
+  			this.checkRelevanceToken()
+  			// console.log('mounted checkRelevanceToken')
+  			//проверка условия что имеется доступ и берется запрос
+				
   		}
   
 

@@ -30,11 +30,15 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
+      exptime: '',
       input: '',
       chatMessages: ''
     };
   },
   methods: {
+    checkRelevanceToken(){
+      this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
+    },    
     addMessage(data){
       console.log(data)
       this.chatMessages = this.chatMessages.concat(data);
@@ -84,10 +88,16 @@ export default {
     }
   },
   watch: {
-
+    exptime() {
+      var trig = false;
+      var self = this;
+      if ((this.exptime > 0)&&(!trig)){
+        self.getChat()
+        var trig = true;     
+      }
+    }
   }, 
   mounted() { 
-    this.getChat()
     var pusher = new Pusher('44697f69f1f93a53365c', {
       cluster: 'eu',
       forceTLS: true
@@ -97,6 +107,12 @@ export default {
     channel.bind(this.$store.getters.role.role, function(data) {
       self.addMessage(data);
     }); 
+    var timer1 = setInterval(function(){
+      self.checkRelevanceToken()
+      if (self.exptime > 0){
+        clearInterval(timer1) 
+      }         
+    },50 );       
   }
 }
 </script>
