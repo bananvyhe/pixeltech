@@ -1,8 +1,8 @@
 <template>
-  <div class="chat" v-if="this.$store.getters.role.role != 'client'">
+  <div class="chat" v-if="this.$store.getters.role.role != 'client'" @click="chatHeight = 50" >
     <!-- {{chatMessages}} -->
-    <el-container class="chatWindow" style="">
-      <el-main v-chat-scroll>
+    <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
+      <el-main v-chat-scroll v-click-outside="onClickOutside">
 
         <div v-for="(item, index) in chatMessages" class="mediumtext">
           <div class="chatString">
@@ -26,16 +26,25 @@
 </template>
 
 <script>
+import vClickOutside from 'v-click-outside'
 import axios from 'axios'
 export default {
+  directives: {
+    clickOutside: vClickOutside.directive
+  },
   data: function () {
     return {
+      chatHeight: 14,
       exptime: '',
       input: '',
       chatMessages: ''
     };
   },
   methods: {
+    onClickOutside (event) {
+      console.log('Clicked outside. Event: ', event)
+      this.chatHeight = 14
+    },
     checkRelevanceToken(){
       this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
     },    
@@ -129,7 +138,7 @@ export default {
 }
 .chatWindow{
   margin: 0.0em 0.2em;
-  height: 80px; 
+  /*height: 80px; */
   border: 1px 
   solid #555;
 }
