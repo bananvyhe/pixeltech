@@ -1,25 +1,33 @@
 <template>
   <div class="chat" v-if="this.$store.getters.role.role != 'client'" @click="chatHeight = 50" >
     <!-- {{chatMessages}} -->
-    <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
-      <el-main v-chat-scroll v-click-outside="onClickOutside">
+    <el-tabs type="border-card">
+      <el-tab-pane label="User" v-if="this.$store.getters.role.role != 'user'">User</el-tab-pane>
 
-        <div v-for="(item, index) in chatMessages" class="mediumtext">
-          <div class="chatString">
-            <div class="nickname">
-              {{item.username}}  
+      <el-tab-pane :label="this.$store.getters.role.role">
+        <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
+          <el-main v-chat-scroll v-click-outside="onClickOutside">
+            <div v-for="(item, index) in chatMessages" class="mediumtext">
+              <div class="chatString">
+                <div class="nickname">
+                  {{item.username}}  
+                </div>
+                <div>
+                  {{item.text}}            
+                </div>            
+              </div>
             </div>
-            <div>
-              {{item.text}}            
-            </div>            
-          </div>
-        </div>
-      </el-main>
-    </el-container>
+          </el-main>
+        </el-container>
+      </el-tab-pane>
+
+      <el-tab-pane label="System">System</el-tab-pane>
+    </el-tabs>
+    
     <!-- <div class='messages'>123</div> -->
     <div class="inputZone" v-on:keyup.enter="postingMes">
-      <el-input class="inputStroke" placeholder="сообщение в чат" v-model="input" ></el-input>
-      <el-button size='small' @click="postingMes">отправить</el-button>      
+      <el-input size='mini'class="inputStroke" placeholder="сообщение в чат" v-model="input" ></el-input>
+      <el-button size='mini' @click="postingMes">отправить</el-button>      
     </div>
 
   </div>
@@ -128,6 +136,17 @@ export default {
 
 <style scoped>
 @import "stylesheets/_variables";
+
+.chatHead{
+  display: flex;
+  flex-direction: row;
+  height: 1.6em;
+  div{
+    padding: 0 0.5em;
+    margin: 0 0.1em;
+    background-color: #333;
+  }
+}
 .nickname{
   color: #666;
   padding: 0 0.3em 0 0;
@@ -143,10 +162,10 @@ export default {
   solid #555;
 }
 .inputStroke{
-  padding: 0.2em 0.2em 0 0;
+  padding: 3px 0.0em 0 0;
 }
 .inputZone{
-  /*padding: 0.2em;*/
+  /*padding: 0.2em 0em;*/
   display: flex;
   flex-direction: row;
 }
