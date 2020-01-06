@@ -323,6 +323,13 @@ html {
   border-bottom: solid 1px;
   cursor: pointer;
 }
+.el-tabs__item {
+  padding: 0 0.5em;
+  height: 2.4em;
+}
+.el-tabs__header {
+  margin: 0 0 0.3em !important;
+}
 .el-tabs--border-card>.el-tabs__content {
     padding: 0.4em 0em 0.2em !important;
 }
@@ -363,7 +370,7 @@ html {
   line-height: 14px !important;
   padding: 0 0 !important;
 }
- 
+
 .el-progress-bar {
   padding-right: 10px;
   margin-right: 50px;

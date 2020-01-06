@@ -1,7 +1,7 @@
 <template>
   <div class="chat" v-if="this.$store.getters.role.role != 'client'" @click="chatHeight = 50" >
     <!-- {{chatMessages}} -->
-    <el-tabs type="border-card">
+    <el-tabs  tab-position="top"  >
       <el-tab-pane label="User" v-if="this.$store.getters.role.role != 'user'">User</el-tab-pane>
 
       <el-tab-pane :label="this.$store.getters.role.role">
