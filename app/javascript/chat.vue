@@ -2,7 +2,22 @@
   <div class="chat" v-if="this.$store.getters.role.role != 'client'" @click="chatHeight = 50" >
     <!-- {{chatMessages}} -->
     <el-tabs  tab-position="top"  >
-      <el-tab-pane label="User" v-if="this.$store.getters.role.role != 'user'">User</el-tab-pane>
+      <el-tab-pane label="User" v-if="this.$store.getters.role.role != 'user'">
+        <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
+          <el-main v-chat-scroll v-click-outside="onClickOutside">
+            <div v-for="(item, index) in userChatMessages" class="mediumtext">
+              <div class="chatString">
+                <div class="nickname">
+                  {{item.username}}  
+                </div>
+                <div>
+                  {{item.text}}            
+                </div>            
+              </div>
+            </div>
+          </el-main>
+        </el-container>        
+      </el-tab-pane>
 
       <el-tab-pane :label="this.$store.getters.role.role">
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
@@ -42,9 +57,11 @@ export default {
   },
   data: function () {
     return {
+      chatUserMessages: '',
       chatHeight: 14,
       exptime: '',
       input: '',
+      userChatMessages: '',
       chatMessages: ''
     };
   },
@@ -81,26 +98,36 @@ export default {
         // })
       })
     },
-    getChat(){
+    getUserChat(){
       axios({
       method: 'get',
       url: '/api/v1/chat',
       params: {
-        clan: this.$store.getters.role.role
+        clan: "user"
       }, 
       headers: {
         'Authorization': 'bearer '+this.$store.getters.token.access
       } 
-      // params: {
-      //   rait: this.value,
-      //   pos: this.pos
-      // } 
       })
       .then((response) => { 
-         
+        var total = response.data
+        this.userChatMessages = total
+      });      
+    },    
+    getChat(role){
+      axios({
+      method: 'get',
+      url: '/api/v1/chat',
+      params: {
+        clan: role
+      }, 
+      headers: {
+        'Authorization': 'bearer '+this.$store.getters.token.access
+      } 
+      })
+      .then((response) => { 
         var total = response.data
         this.chatMessages = total
-        console.log(total)
       });      
     }
   },
@@ -109,7 +136,8 @@ export default {
       var trig = false;
       var self = this;
       if ((this.exptime > 0)&&(!trig)){
-        self.getChat()
+        self.getChat(this.$store.getters.role.role)
+        self.getUserChat()
         var trig = true;     
       }
     }
