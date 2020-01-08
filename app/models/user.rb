@@ -23,15 +23,15 @@ class User < ApplicationRecord
   # validates_confirmation_of :password, if: :password_required?
   # validates_length_of       :password, within: password_length, allow_blank: true
   
-    enum role: [:user, :voodoo, :admin, :superadmin, :client]
+    # enum role: [:user, :voodoo, :admin, :superadmin, :client]
     # необходимо вначале задеплоить таблицу кланы, с закоменченной моделью и кодом ниже
     # внести первую роль user и после можно раскомменыивать код парсящий кланы в массив
-  # clans = Clan.all
-  # @roles =[]
-  # clans.each do |i|
-  #   @roles << i.clan
-  # end
-  # enum role: @roles
+  clans = Clan.all
+  @roles =[]
+  clans.each do |i|
+    @roles << i.clan
+  end
+  enum role: @roles
 
   after_initialize :set_default_role, :if => :new_record?
  
