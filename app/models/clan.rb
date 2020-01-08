@@ -1,3 +1,3 @@
-class Clan < ApplicationRecord
-	 has_many :chats
-end
+# class Clan < ApplicationRecord
+# 	 has_many :chats
+# end
