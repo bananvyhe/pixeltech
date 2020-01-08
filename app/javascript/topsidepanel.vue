@@ -710,7 +710,7 @@
 	align-items: center;
 }
 .bpad { 
-	padding: 0.2em;
+	padding: 0.1em;
 	/*border-bottom: 2px solid $color-blue;*/
 	position: relative;
 	/*position: fixed;  */

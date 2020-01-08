@@ -17,8 +17,8 @@
         Войти
       </el-button>
     </div>
-  		<el-dialog class="pos" top="18vh" :width="calcul" :visible.sync="dialogFormVisible" :lock-scroll="false">
-  			<h1 style="marginTop: -0.2em;">Войти:</h1>
+  		<el-dialog title="Войти:" class="pos" top="18vh" :width="calcul" :visible.sync="dialogFormVisible" :lock-scroll="false">
+  			<!-- <h1 style="marginTop: -0.2em;">Войти:</h1> -->
 		  <el-form :model="form" :rules="rules" ref="form">	 
 		    <el-form-item 
 		    	prop="email" 
@@ -95,7 +95,7 @@
 	  },
 	  computed: {
 	  	calcul: function(){
-	  		return screenwidth.value > 400 ? '35'+'em' : '90' +'%'
+	  		return screenwidth.value > 400 ? '19'+'em' : '90' +'%'
 	  	},
 	  	magicWidth: function(){
         // console.log("computed");

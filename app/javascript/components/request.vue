@@ -50,7 +50,7 @@ export default {
   },
   computed: {
     calcul: function(){
-      return screenwidth.value > 400 ? '35'+'em' : '90' +'%'
+      return screenwidth.value > 400 ? '22'+'em' : '90' +'%'
     }
   },
   mounted() {
