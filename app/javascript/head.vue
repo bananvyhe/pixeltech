@@ -214,8 +214,8 @@ export default {
 }
 </script>
 <style scoped>
-@import "_variables";
-@import "_extends";
+@import "stylesheets/_variables";
+@import "stylesheets/_extends";
 .test {
   background: #dad;
 }

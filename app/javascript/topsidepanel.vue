@@ -500,8 +500,8 @@
 	//подсчет ширины вьюпорта и отправление в переменную
 </script>
 <style scoped>
-@import "_variables";
-@import "_extends";
+@import "stylesheets/_variables";
+@import "stylesheets/_extends";
 .crytop {
  display: flex;
  justify-content: center;
