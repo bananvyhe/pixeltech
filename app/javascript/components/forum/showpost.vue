@@ -23,7 +23,7 @@
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
       <div class="dialogframe">            
         <!-- {{postComm}} -->
-        <div class="plashka2">{{post.body }}{{post.id }}</div>
+        <div class="plashka2">{{post.body }}</div>
         <div>
           <el-input-number @change="handleChange" size="mini" v-model="num4" :step="this.num"></el-input-number>
         </div>
