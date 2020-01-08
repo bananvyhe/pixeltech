@@ -220,8 +220,8 @@
  	window.addEventListener('resize', _.throttle(parseCalc, 100));
 </script>
 <style scoped>
-@import "_variables";
-@import "_extends";
+@import "stylesheets/_variables";
+@import "stylesheets/_extends";
 /*.el-form-item{
 	height: 2.7em;
 },*/
