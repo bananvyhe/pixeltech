@@ -1,10 +1,10 @@
 <template>
-  <div class="chat" v-if="this.$store.getters.role.role != 'client'" @click="chatHeight = 50" >
+  <div class="chat" v-if="this.$store.getters.role.role != 'client'" @click="chatHeight = 50" v-click-outside="onClickOutside">
     <!-- {{chatMessages}} -->
     <el-tabs  tab-position="top"  >
       <el-tab-pane label="User" v-if="this.$store.getters.role.role != 'user'">
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
-          <el-main v-chat-scroll v-click-outside="onClickOutside">
+          <el-main v-chat-scroll  >
             <div v-for="(item, index) in userChatMessages" class="mediumtext">
               <div class="chatString">
                 <div class="nickname">
@@ -21,7 +21,7 @@
 
       <el-tab-pane :label="this.$store.getters.role.role">
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
-          <el-main v-chat-scroll v-click-outside="onClickOutside">
+          <el-main v-chat-scroll >
             <div v-for="(item, index) in chatMessages" class="mediumtext">
               <div class="chatString">
                 <div class="nickname">
