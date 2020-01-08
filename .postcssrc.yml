@@ -14,7 +14,7 @@ plugins:
     basePath: 'public',
     cachebuster: true,
   }
-  postcss-hamster: {}
+  # postcss-hamster: {}
   # postcss-cssnext: {}
   postcss-font-magician: {
     custom: {
