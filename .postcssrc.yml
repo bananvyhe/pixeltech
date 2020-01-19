@@ -1,4 +1,8 @@
 plugins:
+  postcss-typography: {
+    baseFontSize: "14px",
+    baseLineHeight: 1.45,      
+  }  
   postcss-import: {}
   postcss-extend: {}
   postcss-nested: {}
@@ -16,6 +20,7 @@ plugins:
   }
   # postcss-hamster: {}
   # postcss-cssnext: {}
+
   postcss-font-magician: {
     custom: {
       'elemend': {

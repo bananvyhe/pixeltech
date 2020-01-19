@@ -115,7 +115,7 @@ Vue.use(CarouselItem)
 Vue.use(Loading.directive);
 Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
-
+ 
 document.addEventListener('DOMContentLoaded', () => {
 		//pusher implementation
 

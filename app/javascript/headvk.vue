@@ -463,10 +463,10 @@ margin:  0.1em -1.2em;
   width: 100%;
   @media (--only-xsmall-screen) {
     align-items: flex-end;
-    padding: 0.6em 1em;
+    padding: 2.8em 1em;
   }
     @media (--only-small-screen) {
-      margin: -0.7em -1.4em;
+      margin: -0.2em -1.2em;
 
     }
 }
@@ -486,7 +486,7 @@ margin:  0.1em -1.2em;
    height: 100%;
   justify-content: flex-end;
    
-  margin: 0.0em -0.3em;
+  margin: -0.3em -0.3em;
    /*background-color: #ada;*/
   /*bottom: 0;*/
   /*padding: -4.5em 0.5em;*/

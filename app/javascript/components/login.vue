@@ -95,7 +95,7 @@
 	  },
 	  computed: {
 	  	calcul: function(){
-	  		return screenwidth.value > 400 ? '19'+'em' : '90' +'%'
+	  		return screenwidth.value > 400 ? '22'+'em' : '90' +'%'
 	  	},
 	  	magicWidth: function(){
         // console.log("computed");

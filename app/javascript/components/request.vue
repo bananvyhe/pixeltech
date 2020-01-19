@@ -27,7 +27,7 @@
         </el-form-item>    
       </el-form>
       <div slot="footer" class="footpostshow basetext font3">
-        &nbsp;
+         
       </div>
     </el-dialog>
   </div>
@@ -50,7 +50,7 @@ export default {
   },
   computed: {
     calcul: function(){
-      return screenwidth.value > 400 ? '22'+'em' : '90' +'%'
+      return screenwidth.value > 400 ? '24'+'em' : '90' +'%'
     }
   },
   mounted() {

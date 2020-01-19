@@ -21,6 +21,7 @@
     "postcss-import": "^7.1.3",
     "postcss-nested": "^3.0.0",
     "postcss-simple-vars": "^4.1.0",
+    "postcss-typography": "^1.0.0",
     "precss": "^1.4.0",
     "punycode": "^2.1.1",
     "scramble-text": "0.0.8",

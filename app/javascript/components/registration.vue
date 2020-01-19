@@ -1,7 +1,7 @@
 <template>
 	<div class="reg">
 		<el-button type="primary" plain size="small"  @click="dialogFormVisible = true">Регистрация</el-button>
-		<el-dialog title="Создать аккаунт:" top="26vh" v-bind:width="screenwidth.value > '350' ? '19'+'em' : '90' +'%'" :visible.sync="dialogFormVisible" :lock-scroll="false">
+		<el-dialog title="Создать аккаунт:" top="26vh" v-bind:width="screenwidth.value > '350' ? '22'+'em' : '90' +'%'" :visible.sync="dialogFormVisible" :lock-scroll="false">
 			<!-- <h1 style="marginTop: -0.2em;">Создать аккаунт:</h1> -->
 	  	<el-form :model="form" :rules="rules" ref="form"> 
 	    	<el-form-item 
@@ -35,7 +35,7 @@
 				</el-form-item>
 	 		</el-form>
   		<div slot="footer" class="footpostshow basetext font3">
-  			&nbsp;
+  			 
   		</div>						 		
 		</el-dialog>		 
 	</div>
