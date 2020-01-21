@@ -1,7 +1,7 @@
 class Api::V1::InboxesController < ApiController
   #before_action :set_inbox, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, :only => "create", raise: false
-  
+  skip_before_action :verify_authenticity_token, :only => "create", raise: false
  
   # GET /inboxes
   # GET /inboxes.json
