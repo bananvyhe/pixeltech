@@ -35,7 +35,7 @@ class Api::V1::InboxesController < ApiController
     @check = Digest::SHA1.hexdigest("#{@inbox.notification_type}&#{@inbox.operation_id}&#{@inbox.amount}&#{@inbox.currency}&#{@inbox.datetime}&#{@inbox.sender}&#{@inbox.codepro}&#{@secret_key}&#{@inbox.label}")
     @inbox.check = @check
     
-    # if @check == @inbox.sha1_hash 
+    if @check == @inbox.sha1_hash 
       @inbox.save
       @fee =  Client.find_by_user_id(params[:label])
       earn = params[:withdraw_amount]
@@ -49,7 +49,7 @@ class Api::V1::InboxesController < ApiController
       #   format.html { status: :ok }
       #   format.json {  status: :ok }
       # end
-    # end 
+    end 
     
     #@inbox = Inbox.new({:amount => params[:amount], :operation_id => params[:operation_id]})
     # respond_to do |format|
