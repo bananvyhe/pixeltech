@@ -9,7 +9,7 @@ class Api::V1::InboxesController < ApiController
     unless current_user 
       redirect_to('/')
     end
-    @inboxes = Inbox.all
+    @inboxes = Inbox.all.order(created_at: :desc)
   end
 
   # GET /inboxes/1
