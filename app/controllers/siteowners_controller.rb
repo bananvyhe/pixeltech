@@ -110,7 +110,7 @@ class SiteownersController < ApplicationController
     # => redirect("/")
     if current_user 
       puk = current_user.id.to_s
-      @inboxes = Inbox.where(label: puk)
+      @inboxes = Inbox.where(label: puk).order(created_at: :desc)
 
       # print '_________+++++++++++++__________'
       # puts @history
