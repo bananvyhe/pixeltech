@@ -7,7 +7,7 @@ class InboxesController < ApplicationController
     unless  current_user 
       redirect_to('/')
     end
-    @inboxes = Inbox.all.order(created_at: :asc)
+    @inboxes = Inbox.all.order(created_at: :desc)
   end
 
   # GET /inboxes/1
