@@ -109,7 +109,7 @@ export default {
 </script>
 
 <style scoped>
-@import "stylesheets/_variables";
+/*@import "../../stylesheets/_variables";*/
 .posts {
   padding: 0 0.6em;
 }

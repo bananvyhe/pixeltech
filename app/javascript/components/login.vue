@@ -188,6 +188,7 @@
 		  	elem.style.display = "none"
 		  	// var elem = document.querySelector('.railsblock')
 		  	// elem.style.display = "none"
+ window.location.replace('localhost');
 		  	if (document.location.pathname == '/'){
 		  	// 	setTimeout(function tick() {
  				// 		window.location.reload();
