@@ -2,6 +2,7 @@ module.exports = {
  
   map: false,
   plugins: {
+     'postcss-import': {},
     'postcss-typography': {
  
     baseFontSize: "14px",
@@ -19,17 +20,17 @@ module.exports = {
 					LineHeight: 1,  
 			    marginBottom: rhythm(0.2),
 			    marginTop: rhythm(0.5),
-			    color: "hsla(0,0%,0%,0.7)",
+			    // color: "hsla(0,0%,0%,0.7)",
 				},
 			  'h2,h3,h4': {
 			  	LineHeight: 1,  
 			    marginBottom: rhythm(0.2),
 			    marginTop: rhythm(0.5),
-			    color: "hsla(0,0%,0%,0.7)",
+		 
 			  }
 			})
     },
- 'postcss-import': {},
+
   'postcss-extend': {},
   'postcss-nested': {},
   'postcss-simple-vars': {},

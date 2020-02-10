@@ -30,7 +30,8 @@
       <div class="del" v-if="$store.getters.role.username == node.username && node.body != null" @click="destroy(number, node.id )">удалить</div>
     </div>
     <div v-if="node.comments && node.comments.length">
-      <node v-on:sendpost="sendd" v-for="child in node.comments" :node="child" :number="number" class="padding-message"></node>
+      <node v-on:sendpost="sendd" v-for="child in node.comments" :key="child.id" :node="child" :number="number" class="padding-message"></node>
+
     </div>
   </div>
 </template>
