@@ -1,32 +1,51 @@
-plugins:
-  postcss-typography: {
+module.exports = {
+ 
+  map: false,
+  plugins: {
+    'postcss-typography': {
+ 
     baseFontSize: "14px",
     baseLineHeight: 1.45,  
     scaleRatio: 2,
     blockMarginBottom: 0.8,
     includeNormalize: true,
- 
- 
-  }  
-  postcss-import: {}
-  postcss-extend: {}
-  postcss-nested: {}
-  postcss-simple-vars: {}
-  postcss-custom-media: {}
+			overrideThemeStyles: ({ rhythm }, options, styles) => ({
+				'p': {
 
-  #precss: {'lookup': false}
-  postcss-cssnext: {features: {'rem': false}}
-  lost: {}
+			    marginBottom: rhythm(0.2),
+			    marginTop: rhythm(0.0),
+				},
+				'h5': {
+					LineHeight: 1,  
+			    marginBottom: rhythm(0.2),
+			    marginTop: rhythm(0.5),
+			    color: "hsla(0,0%,0%,0.7)",
+				},
+			  'h2,h3,h4': {
+			  	LineHeight: 1,  
+			    marginBottom: rhythm(0.2),
+			    marginTop: rhythm(0.5),
+			    color: "hsla(0,0%,0%,0.7)",
+			  }
+			})
+    },
+ 'postcss-import': {},
+  'postcss-extend': {},
+  'postcss-nested': {},
+  'postcss-simple-vars': {},
+  'postcss-custom-media': {},
+
   
-  postcss-assets: {
+  'postcss-cssnext': {features: {'rem': false}},
+  'lost': {},
+  
+  'postcss-assets': {
     loadPaths: ['images/'],
     basePath: 'public',
     cachebuster: true,
-  }
-  # postcss-hamster: {}
-  # postcss-cssnext: {}
-
-  postcss-font-magician: {
+  },
+ 
+  'postcss-font-magician': {
     custom: {
       'elemend': {
         variants: {
@@ -99,4 +118,10 @@ plugins:
     protocol: 'https:'
   }
 
- 
+
+  }
+}
+
+
+
+
