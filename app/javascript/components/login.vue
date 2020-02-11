@@ -289,7 +289,7 @@
 	padding-top: 2em;
 }
 .forgetPassword{
-	padding: 0.2em 0em;
+	padding: 0.0em 0em;
 /*	display: flex; 
 	justify-content: flex-end;*/
 

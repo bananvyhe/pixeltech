@@ -13,7 +13,7 @@
   }
   a:visited {
    
-    color: color( $deeptaupe   saturation(15%));
+    color: color( $deeptaupe lightness(35%)saturation(35%));
   }  
   a:hover {
     /*background: #786b59;*/
