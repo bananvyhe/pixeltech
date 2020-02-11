@@ -98,7 +98,7 @@ window.addEventListener('resize', _.throttle(parseCalc, 100));
 </script>
 
 <style scoped>
-@import "stylesheets/_variables";
+ 
  .el-form-item {
   display: block; 
  }
