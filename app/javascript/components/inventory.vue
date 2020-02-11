@@ -34,7 +34,7 @@ export default {
 }
 </script>
 <style scoped>
-@import "stylesheets/_variables";
+ 
 .tooldrop{
   text-align: left;
   width: 15em;

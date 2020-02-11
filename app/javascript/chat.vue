@@ -8,9 +8,9 @@
             <div v-for="(item, index) in userChatMessages" class="mediumtext">
               <div class="chatString">
                 <div class="nickname">
-                  {{item.username}}  
+                   {{item.username}} 
                 </div>
-                <div>
+                <div class="smalltext">
                   {{item.text}}            
                 </div>            
               </div>
@@ -27,7 +27,7 @@
                 <div class="nickname">
                   {{item.username}}  
                 </div>
-                <div>
+                <div class="smalltext">
                   {{item.text}}            
                 </div>            
               </div>
@@ -176,12 +176,15 @@ export default {
   }
 }
 .nickname{
+
+  font-size: 12px;
   color: #666;
   padding: 0 0.3em 0 0;
 }
 .chatString{
   display: flex;
   flex-direction: row;
+
 }
 .chatWindow{
   margin: 0.0em 0.2em;

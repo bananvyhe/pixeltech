@@ -127,7 +127,7 @@ function parseCalc() {
 </script>
 
 <style scoped>
-@import "stylesheets/_variables";
+ 
 
 .el-transfer{
   display: flex;

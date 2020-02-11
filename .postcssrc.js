@@ -114,6 +114,17 @@ module.exports = {
             } 
           }
         }
+      },
+      'OpenSans': {
+        variants: {
+          light: {
+            300: {
+              url: {
+                woff2: 'fonts/opensans-light-webfont.woff2'
+              }
+            }             
+          }
+        }
       }
     },
     protocol: 'https:'

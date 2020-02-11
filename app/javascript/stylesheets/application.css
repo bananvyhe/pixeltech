@@ -68,6 +68,9 @@ body {
   /* color: #edeef0;*/
   color: #e7e8ec;
 }
+.opensans {
+  font-family: 'OpenSans';
+}
 .aprior {
   font-family: 'aprior';
 }
