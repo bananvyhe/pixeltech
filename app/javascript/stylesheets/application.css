@@ -3,7 +3,13 @@
 @import "_variables";
 @import "_extends";
 /* postcss-typography */
-@typography {}
+@typography {
+
+  h1,h2,h3,h4,h5 {
+    /*color: $redorange;*/
+    color: color( $str5  lightness(50%)blackness(40%))
+  }
+}
 /*  ***  */
 
 .maincontainer { 

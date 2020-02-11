@@ -22,11 +22,11 @@ module.exports = {
 			    marginTop: rhythm(0.5),
 			    // color: "hsla(0,0%,0%,0.7)",
 				},
-			  'h2,h3,h4': {
-			  	LineHeight: 1,  
-			    marginBottom: rhythm(0.2),
-			    marginTop: rhythm(0.5),
-		 
+			  'h1,h2,h3,h4': {
+			  	LineHeight: 1.2,  
+			    marginBottom: rhythm(0.3),
+			    marginTop: rhythm(0.4),
+		      
 			  }
 			})
     },

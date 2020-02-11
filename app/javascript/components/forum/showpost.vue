@@ -241,7 +241,7 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 .itempost{
-  height: 2em;
+  height: 2.4em;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
   margin: 0.2em 0;
