@@ -1,5 +1,5 @@
 <template>
-  <div class="chat" v-if="this.$store.getters.role.role != 'client'" @click="chatHeight = 50" v-click-outside="onClickOutside">
+  <div class="chat" v-if="this.$store.getters.role.role != 'client'" @click="chatHeight = 30" v-click-outside="onClickOutside">
     <!-- {{chatMessages}} -->
     <el-tabs  tab-position="top"  >
       <el-tab-pane label="User" v-if="this.$store.getters.role.role != 'user'">
@@ -58,7 +58,7 @@ export default {
   data: function () {
     return {
       chatUserMessages: '',
-      chatHeight: 14,
+      chatHeight: 12,
       exptime: '',
       input: '',
       userChatMessages: '',
@@ -68,7 +68,7 @@ export default {
   methods: {
     onClickOutside (event) {
       console.log('Clicked outside. Event: ', event)
-      this.chatHeight = 14
+      this.chatHeight = 12
     },
     checkRelevanceToken(){
       this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
