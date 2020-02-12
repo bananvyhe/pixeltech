@@ -239,7 +239,7 @@ export default {
 </script>
 
 <style scoped>
-@import "stylesheets/_variables";
+ 
 .itempost{
   height: 2.4em;
   border-top-right-radius: 1em;

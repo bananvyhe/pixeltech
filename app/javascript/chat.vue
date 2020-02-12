@@ -10,7 +10,7 @@
                 <div class="nickname">
                    {{item.username}} 
                 </div>
-                <div class="smalltext">
+                <div class="smalltext chatstroke">
                   {{item.text}}            
                 </div>            
               </div>
@@ -27,7 +27,7 @@
                 <div class="nickname">
                   {{item.username}}  
                 </div>
-                <div class="smalltext">
+                <div class="smalltext chatstroke">
                   {{item.text}}            
                 </div>            
               </div>
@@ -175,16 +175,24 @@ export default {
     background-color: #333;
   }
 }
+.chatstroke {
+    font-weight: 300;
+    color: $color-5;
+}
 .nickname{
-
+  margin: 0.0em 0.3em 0 0;
+  border-radius: 0.4em;
+  /*background-color: $HeadBackColor;*/
+  background-color: color( $HeadBackColor  blackness(80%));
   font-size: 12px;
-  color: #666;
-  padding: 0 0.3em 0 0;
+  color: $str2;
+
+  padding: 0 0.3em 0 0.4em;
 }
 .chatString{
   display: flex;
   flex-direction: row;
-
+  margin-top: 0.3em;
 }
 .chatWindow{
   margin: 0.0em 0.2em;

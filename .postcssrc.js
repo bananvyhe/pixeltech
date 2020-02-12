@@ -112,9 +112,17 @@ module.exports = {
                 woff2: 'fonts/roboto-regular-webfont.woff2'
               }
             } 
-          }
+          },
+          light: {
+            300: {
+              url: {
+                woff2: 'fonts/roboto-light-webfont.woff2'
+              }
+            } 
+          }          
         }
       },
+
       'OpenSans': {
         variants: {
           light: {
