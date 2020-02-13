@@ -677,7 +677,7 @@
 	justify-content: flex-end;
 	/*border: 1px solid grey;*/
 	position: relative;
- 	color: $onyx;
+ 	color: $str5;
 	/*border-radius: 0.7em;*/
 	height: 1.3em;
 	width: 2.6em;

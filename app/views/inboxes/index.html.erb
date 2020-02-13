@@ -1,13 +1,11 @@
 <div class="mainframe">
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%#= notice %></p> -->
 
-<h1>Платежи</h1>
+<h3>Платежи</h3>
 <%#= link_to 'Назад',  siteowners_path %>
 <table>
-  <thead>
-   
-  </thead>
-    <thead>
+ 
+    
       <tr>
         <!-- <td>op_id</td> -->
         <!-- <td>сумма</td>  -->
@@ -25,9 +23,9 @@
         <!-- <td>codepro</td>  -->
         <!-- <td>unaccepted</td>   -->
       </tr>
-    </thead>
+   
 
-  <tbody>
+  
     <% @inboxes.each do |inbox| %>
       
       <tr>
@@ -50,9 +48,7 @@
           
       </tr>
     <% end %>
-  </tbody>
+  
 </table>
-
-<br>
 
 </div>
