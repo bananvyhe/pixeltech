@@ -1,7 +1,7 @@
 <!-- <p id="notice"><%= notice %></p> -->
 <!-- <iframe src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D1%85%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3&targets-hint=&default-sum=10&button-text=11&payment-type-choice=on&hint=&successURL=&quickpay=shop&account=410013909808332" width="100%" height="222"  frameborder="0" allowtransparency="true" scrolling="no"></iframe>
  -->
- <div class="mainframe lostcenter">
+ <div class=" lostcenter">
    <div class="mainframe" style="padding: 1em;">
     <div class="basetext">
       баланс: <%= @client.ballance%> руб.
@@ -26,33 +26,11 @@
       <input type="hidden" name="need-address" value="false">  -->   <br><br>
       <label><input type="radio" name="paymentType" value="PC">Яндекс.Деньгами</label>  <br>  <label><input type="radio" name="paymentType" value="AC" checked="checked">Банковской картой</label>  <br><br>  <input type="submit" value="Оплатить"></form>
 
-    <table>
-      <thead>
-        <tr>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-       
-
-    <br>
-
     <% if current_user.try(:admin?) or  current_user.try(:superadmin?) %>
       <%= link_to 'зачисления',  inboxes_path %>
     <% end %>
      ~ <%=  (@client.ballance/$stepcash/24).round %> дней 
-    <%#= link_to 'New Siteowner', new_siteowner_path %>
-  <!--   <table>
-      <tr>
-                 <%# @siteowners.each do |siteowner| %>
-                <td>
-                  списание pf: <%#= siteowner.spent %>
-                </td>
-            <%# end %>  
-       
-      </tr>
-     
-    </table> -->
+    <br><br>
   <%= render :template => "inboxes/index" %>
    </div>
  </div>  
