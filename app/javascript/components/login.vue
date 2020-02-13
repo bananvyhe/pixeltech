@@ -183,17 +183,29 @@
         })
 		  },
 		  handler: function () {
-		  	this.nulltoken();
+ 
+		  	// alert(addr)
+		  	this.nulltoken();  
+ 
+ 						window.location.href = "https://pixeltech.ru"
+ 						console.log(fds)	
+		  	
+		  	
+		  	
 		  	var elem = document.querySelector('.railsblockhide')
-		  	elem.style.display = "none"
+
+		  	// elem.style.display = "none"
+
 		  	// var elem = document.querySelector('.railsblock')
 		  	// elem.style.display = "none"
- window.location.replace('localhost');
-		  	if (document.location.pathname == '/'){
+ 
+		  	// if (document.location.pathname == '/'){
 		  	// 	setTimeout(function tick() {
- 				// 		window.location.reload();
+
+
+		  		// }
 					// }, 200);
-		  	}
+		  	// }
 		  },
 			nulltoken: function (){
 
