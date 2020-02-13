@@ -327,9 +327,8 @@
 	  watch: {
 	    exptime() {
 	       	if ((this.exptime < 20)&&(this.$store.getters.token )){
-	       		if (!this.refreshToken()){
-	       			location.reload(false);
-	       			}
+	     this.refreshToken() 
+	        
       // setInterval(function(){
 	  		// this.exptime = this.$store.getters.role.exp - current_time
 	      //var current_time = new Date().getTime() / 1000;
@@ -384,8 +383,9 @@
 					}
 	        }).then((response) => {
       		if (response.data.errors) {
-		    		console.log(response.data.errors)
-		    		this.error = response.data.errors;
+		    		// console.log(response.data.errors)
+		    		// this.error = response.data.errors; 
+
 	    		}else{
 	    		  this.$store.commit('tokensend', response.data)
 
@@ -411,6 +411,9 @@
 			    	// location.reload(true);
 			    }
 	    	})
+	      .catch(function (error) {
+	          location.reload(true);
+	    	}); 
 	  	},
 	  	stopTimer() {
       	clearTimeout(this.timer)
