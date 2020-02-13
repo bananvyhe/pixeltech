@@ -2,9 +2,14 @@
 .headertext {
 	
 }
+.normaltext{
+	font-size: 14px;
+	font-weight:300;
+	line-height: 1.35;
+}
 .smalltext {
 	/*font-family: 'OpenSans';*/
   font-weight:300; 
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.1;
 }

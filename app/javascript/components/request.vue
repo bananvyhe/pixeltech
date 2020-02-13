@@ -115,7 +115,7 @@ function parseCalc() {
 
 <style scoped>
 
-@import "stylesheets/_variables";
+
 .scale {
   -webkit-animation: pulsate-fwd 3s ease-out infinite both;
   animation: pulsate-fwd 3s ease-out infinite both; 

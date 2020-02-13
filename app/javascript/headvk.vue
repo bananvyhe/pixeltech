@@ -47,7 +47,7 @@
   </div>
   <div v-if="alldata.length === 0" class="blank"></div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >
-    <div class="namewww2" v-if="data.url">
+    <div class="namewww2 " v-if="data.url">
       {{data.url.substr(15).toUpperCase()}}
     </div>
     <div class="namewww hugetext"  v-if="data.url">
@@ -72,11 +72,11 @@
     </div>
 
     <div :class="[data.thumb_map_img_as_div.split(',').length > 1 ? slideInfoClass :  simpleInfoClass]">
-      {{data.title}}
+     <div class=" normaltext">{{data.title}}</div>
 
       <div class="raitingdate" >
-        <div class="vkdate">{{data.posted_at}}</div>
-        <div class="vkraiting largertext">{{data.raiting}}</div>    
+        <div class="vkdate smalltext">{{data.posted_at}}1</div>
+        <div class="vkraiting">{{data.raiting}}</div>    
       </div> 
       <div v-if="data.medias_row" class="mediabutton"> 
         <!-- v-bind:href='"https://vk.com"+data.wall.slice(2, -2)' class="js-newWindow" -->

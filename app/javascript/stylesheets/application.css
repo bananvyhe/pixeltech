@@ -219,8 +219,8 @@ html {
   padding: 0.5em 0em; 
 }
 .vkdate {
-  font-style: italic;
-  adjust-font-size: fs tiny;
+  /*font-style: italic;*/
+  /*adjust-font-size: fs tiny;*/
   padding: 1.0em 1em 0em 0em;  
 }
 .vkraiting{
