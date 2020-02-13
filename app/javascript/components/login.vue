@@ -109,7 +109,7 @@
 	  	parseCalc()
 	  	try{
 	  		if (checklog == 'unlogged'){
-					this.nulltoken()
+					// this.nulltoken()
 				}
 				if (!this.$store.getters.token.refresh  ) {
 		  		 
@@ -183,14 +183,14 @@
         })
 		  },
 		  handler: function () {
- window.location.reload()
+
 		  	// alert(addr)
 		  	this.nulltoken();  
  
  						
  						 
 		  	
-		  	
+		  	 // window.location.reload()
 		  	
 		  	// var elem = document.querySelector('.railsblockhide')
 
@@ -224,7 +224,7 @@
 	      .then(() => {
 
 	      	// 
-		      // location.reload(true);
+		      location.reload(true);
 		    })    
 		    // setTimeout(function(){
 		    //   // self.cropText();

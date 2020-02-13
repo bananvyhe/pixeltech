@@ -1,14 +1,14 @@
 <h4>Платежи</h4>
 <table>
-  <th>
+  <tr>
     <td>сумма</td>
     <td>время зачисления</td> 
-  </th>     
+  </tr>     
   <% @inboxes.each do |inbox| %>
-    <th>
+    <tr>
       <td><%= inbox.withdraw_amount %> </td>
       <td><%= inbox.datetime %> </td>
-    </th>
+    </tr>
   <% end %>
 </table>
 
