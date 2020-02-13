@@ -188,13 +188,13 @@
 		  	this.nulltoken();  
  
  						window.location.href = "https://pixeltech.ru"
- 						console.log(fds)	
+ 						 
 		  	
 		  	
 		  	
 		  	var elem = document.querySelector('.railsblockhide')
 
-		  	// elem.style.display = "none"
+		  	elem.style.display = "none"
 
 		  	// var elem = document.querySelector('.railsblock')
 		  	// elem.style.display = "none"
