@@ -183,11 +183,11 @@
         })
 		  },
 		  handler: function () {
- 
+ window.location.reload()
 		  	// alert(addr)
 		  	this.nulltoken();  
  
- 						window.location.reload()
+ 						
  						 
 		  	
 		  	
