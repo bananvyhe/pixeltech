@@ -327,7 +327,9 @@
 	  watch: {
 	    exptime() {
 	       	if ((this.exptime < 20)&&(this.$store.getters.token )){
-	       		this.refreshToken()
+	       		if (!this.refreshToken()){
+	       			location.reload(false);
+	       			}
       // setInterval(function(){
 	  		// this.exptime = this.$store.getters.role.exp - current_time
 	      //var current_time = new Date().getTime() / 1000;
