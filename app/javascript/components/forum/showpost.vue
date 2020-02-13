@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div type="text" >
+    <div type="text" class="text">
       <div class="itempost">
         <div class="posthead" @click="handleClick">
           <div class="mediumtext">
@@ -11,14 +11,16 @@
           <div class="mediumtext">
             {{this.body}}             
           </div>
-          <div v-if="this.username != $store.getters.role.username" class="smalltext username">
-            {{this.username}}
-          </div>
+
           <!-- {{this.number}} -->
         </div>
+
+      </div>
+                <div v-if="this.username != $store.getters.role.username" class="smalltext username">
+            {{this.username}}
+          </div>
         <el-button v-if="$store.getters.role.username == this.username"  type='danger' size='mini' icon="el-icon-delete" circle @click="deleting(number)">         
         </el-button>
-      </div>
     </div>
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
       <div class="dialogframe">            
@@ -239,17 +241,30 @@ export default {
 </script>
 
 <style scoped>
- 
+@import "../../stylesheets/_variables";
+.text {
+/*  outline: 6px solid #1E1E21;
+  outline-offset:-6px;*/
+  margin: 0.3em 0;
+  /*background-color: $earthyellow;*/
+  background-color: color(#1E1E21 shade(6%));
+  display: flex;
+  flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
 .itempost{
-  height: 2.4em;
+  color: $navajowhite; 
+  height: 2.0em;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
-  margin: 0.2em 0;
+  margin: 0.0em 0;
   justify-content: space-between;
   display: flex;
   flex-direction: row;
   /*background-color: color( $spacecadet tint(15%));*/
-  background-color: #1b1b20;
+  background-color: color($spacecadet shade(15%));
+  padding: 0 0.4em 0 0.2em;
 }
 
 .posthead{
@@ -270,7 +285,7 @@ export default {
   right: 1em;
   /*padding: 0 1em;*/
   display: flex;
-  background-color: #1b1b20;
+ 
   /*width: 100%;*/
   /*justify-content: flex-end;*/
 }
