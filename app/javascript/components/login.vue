@@ -187,14 +187,14 @@
 		  	// alert(addr)
 		  	this.nulltoken();  
  
- 						window.location.href = "https://pixeltech.ru"
+ 						window.location.reload()
  						 
 		  	
 		  	
 		  	
-		  	var elem = document.querySelector('.railsblockhide')
+		  	// var elem = document.querySelector('.railsblockhide')
 
-		  	elem.style.display = "none"
+		  	// elem.style.display = "none"
 
 		  	// var elem = document.querySelector('.railsblock')
 		  	// elem.style.display = "none"
