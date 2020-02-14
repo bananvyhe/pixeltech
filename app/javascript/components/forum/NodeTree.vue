@@ -9,7 +9,7 @@
       <span class="">написал {{node.username}}</span>      
     </div>
   <!-- {{typeof node }} -->
-    <div class="replyBlock">
+    <div class="replyBlock" v-click-outside="onClickOutside">
       <el-popover
         placement="bottom"
         width="400"
@@ -37,8 +37,12 @@
 </template>
 
 <script>
+  import vClickOutside from 'v-click-outside'  
 import axios from 'axios'
 export default {
+  directives: {
+    clickOutside: vClickOutside.directive
+  },  
   name: "node",
   props: {
     node: Object,
@@ -46,12 +50,17 @@ export default {
   },
   data: function () {
     return { 
+
       blank: '123',
       visible: false,
       textarea: ''
     }
   },
   methods: {
+    onClickOutside(event) {
+      console.log('Clicked outside. Event: ', event)
+      this.visible = false
+    },    
     sendd(val){
       console.log('val')
       console.log(val)

@@ -55,6 +55,7 @@
 </template>
 
 <script>
+
 let screenwidth = {value: ''}
 function parseCalc() {
   let screenw = document.body.clientWidth;
