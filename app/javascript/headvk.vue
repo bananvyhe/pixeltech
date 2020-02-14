@@ -75,7 +75,7 @@
      <div class=" normaltext">{{data.title}}</div>
 
       <div class="raitingdate" >
-        <div class="vkdate smalltext">{{data.posted_at}}1</div>
+        <div class="vkdate smalltext">{{data.posted_at}}</div>
         <div class="vkraiting">{{data.raiting}}</div>    
       </div> 
       <div v-if="data.medias_row" class="mediabutton"> 

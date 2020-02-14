@@ -13,7 +13,7 @@
       </el-button> -->
     </div>
     <div v-else>
-      <el-button type="primary" plain size="small"  @click="dialogFormVisible = true">
+      <el-button type="primary" plain size="mini"  @click="dialogFormVisible = true">
         Войти
       </el-button>
     </div>
@@ -32,11 +32,13 @@
 		    </el-form-item>
 		    <el-form-item prop="password" size="medium" label="Пароль:"  style="margin-bottom: 0px !important;">
 		      <el-input type="password" v-model="form.password" auto-complete="off">
-		      </el-input><div class="forgetPassword"><a href="/users/password/new">забыли пароль?</a></div>
+		      </el-input>
+		      <div class="forgetPassword"><a href="/users/password/new">забыли пароль?</a></div>
 		    </el-form-item>
 		    	
 				<el-form-item size="medium" class="bottomField">
-			 		<el-button  @click="dialogFormVisible = false"  >Отмена</el-button><el-button   type="primary" @click="handle" >Подтвердить</el-button>
+			 		<el-button  @click="dialogFormVisible = false"  >Отмена</el-button>
+			 		<el-button   type="primary" @click="handle" >Подтвердить</el-button>
 			 	</el-form-item>
 				<el-form-item size="medium"   class="lab">
 				  <el-switch  inactive-text="короткая сессия" active-text="запомнить" width="25"  size="mini" v-model="checked" ></el-switch>
@@ -95,7 +97,7 @@
 	  },
 	  computed: {
 	  	calcul: function(){
-	  		return screenwidth.value > 400 ? '22'+'em' : '90' +'%'
+	  		return screenwidth.value > 400 ? '26'+'em' : '90' +'%'
 	  	},
 	  	magicWidth: function(){
         // console.log("computed");

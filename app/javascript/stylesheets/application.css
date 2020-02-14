@@ -8,20 +8,20 @@
     text-decoration: none;
   }
   a {
-    color:  color( $str6  shade(10%)saturation(90%));
+    color:  color( $str6 shade(15%)saturation(90%));
     text-decoration: none;
   }
   a:visited {
    
-    color: color( $deeptaupe lightness(35%)saturation(35%));
+    color: color( $deeptaupe lightness(30%)saturation(45%));
   }  
   a:hover {
-    /*background: #786b59;*/
-    color: color( $str6  blackness(25%)lightness(30%));
+
+    color: color( $str6 shade(0%)saturation(90%));
   }   
   h1,h2,h3,h4,h5 {
     /*color: $redorange;*/
-    color: color( $str5  lightness(50%)blackness(40%))
+    color: color( $str5 lightness(50%)blackness(40%))
   }
 }
 /*  ***  */
