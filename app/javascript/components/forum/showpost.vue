@@ -256,8 +256,8 @@ export default {
 .itempost{
   color: $navajowhite; 
   height: 2.0em;
-  border-top-right-radius: 1em;
-  border-bottom-right-radius: 1em;
+  border-top-right-radius: 0.3em;
+  border-bottom-right-radius: 0.3em;
   margin: 0.0em 0;
   justify-content: space-between;
   display: flex;
