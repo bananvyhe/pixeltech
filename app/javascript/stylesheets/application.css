@@ -373,7 +373,7 @@ html {
   color: $screenbg;
 }
 .el-dialog__header {
-  padding: 20px 30px 12px 30px;
+  padding: 25px 30px 12px 30px;
 }
 .el-dialog__footer {
     padding: 0.5em 1em 0.6em;
