@@ -8,7 +8,7 @@
     text-decoration: none;
   }
   a {
-    color:  color( $str6 shade(15%)saturation(90%));
+    color:  color( $str6 shade(15s%)saturation(90%));
     text-decoration: none;
   }
   a:visited {
@@ -369,8 +369,11 @@ html {
   padding-right: 0.5em;
   padding-bottom: 0.6em;*/
 }
+.el-dialog__title {
+  color: $screenbg;
+}
 .el-dialog__header {
-  padding: 25px 30px 7px 30px;
+  padding: 20px 30px 12px 30px;
 }
 .el-dialog__footer {
     padding: 0.5em 1em 0.6em;
@@ -379,7 +382,7 @@ html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
- 
+
 .el-dialog__body {
   padding: 0 2em 0 2em;
 }
