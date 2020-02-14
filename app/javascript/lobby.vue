@@ -376,7 +376,8 @@ export default {
   }
 }
 .user {
-  margin: 0.2em 0.3em;
+  padding: 0.9em;
+  margin: 0.2em 0.2em;
 }
 .users {
   display: flex;
