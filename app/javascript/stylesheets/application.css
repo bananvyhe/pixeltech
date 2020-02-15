@@ -409,7 +409,8 @@ html {
 }
 .bpad{
   .el-button {
-    margin: 0.25em 0.15em 0.15em 0.15em;
+    padding: 7px;
+    margin: 0.25em 0.25em 0.25em 0.25em;
   }
 }
 .el-checkbox{
