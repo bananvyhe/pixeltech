@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="inv">
     <el-popover
       placement="bottom"
       width="200"
@@ -18,7 +18,7 @@
        
       </div>
       
-      <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" circle></el-button>   
+      <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" ></el-button>   
     </el-popover>    
   </div>
 </template>
@@ -34,6 +34,9 @@ export default {
 }
 </script>
 <style scoped>
+.inv {
+   
+}
  
 .tooldrop{
   text-align: left;

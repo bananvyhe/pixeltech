@@ -26,7 +26,7 @@
 }
 /*  ***  */
 #topsidepanel {
- 
+
 }
 .maincontainer { 
   
@@ -403,6 +403,7 @@ html {
  padding-bottom: 0.0em;
 }
 .el-button {
+  padding: 4px;
   font-family: 'aprior';
   margin: 0.25em 0.25em 0.25em 0.25em;
 }

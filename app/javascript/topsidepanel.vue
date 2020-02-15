@@ -55,9 +55,9 @@
 					</div> 
 					<div v-else>
 						<div v-if="($store.getters.gamebo) && ($store.getters.pk == true)">
-							<el-button v-if="pkstat.exptime < nowtime" type="success" size='mini' icon="el-icon-switch-button" circle @click="res">       
+							<el-button v-if="pkstat.exptime < nowtime" type="success" size='mini' icon="el-icon-switch-button"   @click="res">       
 	        		</el-button>
-							<el-button v-else type="success" size='mini' icon="el-icon-switch-button" circle disabled>       
+							<el-button v-else type="success" size='mini' icon="el-icon-switch-button"   disabled>       
 	        		</el-button>							
 						</div>
         		<!-- {{pkstat}}{{nowtime}}{{$store.getters.pk}} -->
@@ -785,7 +785,7 @@
 }
 .invclass {
 	/*background-color: #dad;*/
-	padding-left: 0.5em;
+	padding-left: 0.0em;
 	z-index: 5000;
 	position: relative;
 
