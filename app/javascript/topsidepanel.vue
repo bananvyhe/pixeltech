@@ -40,7 +40,7 @@
 
 								<div class="expline">
 									<!-- v-if="$store.getters.gamebo" -->
-									<el-progress v-if="$store.getters.gamebo" class="elpro aprior " :stroke-width="6" :percentage="Number(lvlConversion[1])"></el-progress>
+									<el-progress v-if="$store.getters.gamebo" class="elpro aprior " :stroke-width="3" :percentage="Number(lvlConversion[1])"></el-progress>
 								</div>
 								<div v-if="$store.getters.gamebo" class="lvl">{{lvlConversion[0]}}&nbsp;</div>
 								<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
@@ -675,13 +675,13 @@
 	color: $color-1;
 	text-align: right;
 	padding-right: 0.4em;
-	padding-bottom: 0.1em;
+	padding-bottom: 0.2em;
 }
 .lvl, .expbar {
 	margin-top: -0.4em;
 }
 .lvl {
-	line-height: 1.3;
+	line-height: 1.1;
 	box-shadow: inset 0px 0px 4px rgba(0,0,0,0.8);
 	padding-right: 0.3em;
 	display: flex;
@@ -690,11 +690,11 @@
 	position: relative;
  	color: $str5;
 	/*border-radius: 0.7em;*/
-	height: 1.2em;
+	height: 1.1em;
 	width: 2.6em;
 	background-color: color( #1E1E21 shade(6%));
  	
-	margin-top: 0.9em;
+	margin-top: 0.7em;
 	margin-left: -3.5em;
 	/*padding: 0 0.2em 0 0.1em;*/
  	display: flex;
