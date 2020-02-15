@@ -229,7 +229,7 @@
  	width: 30px;
  }
 .reg  {
-  z-index: 4000;
+  z-index: 5000;
  /* position: absolute;*/
  /* right: 4.6em;*/
 }

@@ -323,8 +323,8 @@
 	right: 0px;
 }
 .log  {
-  z-index: 4000;
- /* position: absolute;*/
+  z-index: 5000;
+
   display: flex;
  /*	right: 0;*/
 } 

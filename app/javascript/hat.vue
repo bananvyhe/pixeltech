@@ -12,7 +12,7 @@
 	  		powered by NGINX
 	  	</div>
 	  	<div class="clouds"></div>
-
+<!-- <div class="plashken"></div> -->
 	  	<div class="warriors">
  
 	  	</div>
@@ -44,12 +44,12 @@
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
 			vood.to('.voodoo', 0.4, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -48, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=1.3').to('.voodoo', 1.0, {webkitFilter:"brightness(0.8)",
+          filter:"brightness(1)",y: -32, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=1.3').to('.voodoo', 1.0, {webkitFilter:"brightness(0.8)",
           filter:"brightness(0.1)", y:  -20, opacity: 0.3, x: 0, scale: 0.24, ease: Quart.easeIn}, '+=0.9' ).to('.voodoo', 0.1, {webkitFilter:"brightness(0.9)",
           filter:"brightness(0.9)", y:  -21, scale: 1, opacity: 0, x: 0, ease: Quad.easeIn}, '+=0.0' );
 
     	var tlwar = new TimelineMax();
-    	tlwar.to('.warriors', 0.6, {backgroundPositionY: 22, ease: Power0.easeOut} ).to('.warriors', 1.6, {backgroundPositionY: 7, ease: Power0.easeIn});
+    	tlwar.to('.warriors', 0.6, {backgroundPositionY: 32, ease: Power0.easeOut} ).to('.warriors', 1.6, {backgroundPositionY: 5, ease: Power0.easeIn});
     	 
     	var tl2 = new TimelineMax({repeat:-1});
 			tl2.to('.clouds', 1200, {backgroundPositionX: 903, ease: Power0.easeNone});
@@ -153,12 +153,18 @@
 <style scoped>
 @import "stylesheets/_variables";
 @import "stylesheets/_extends";
+.plashken {
+	position: absolute;
+	width: 100%;
+	/*background-color: $siteBG;*/
+	height: 0.4em;
+}
 .blank {
 	height: 60px;
 }
 .container {
 	overflow: hidden;	
-	height: 162px;
+	height: 115px;
 	position: relative;	
 	display: flex;
 	align-items: stretch;
@@ -189,14 +195,15 @@
 	z-index: 20;
 	background-repeat: no-repeat;
 	background-position: center bottom;
-	background-size: contain;
+	/*background-size: cover;*/
 	height: 100%;
 	width: 100%;
 	background-position: 43% 12px;
+	background-size: auto 150%;
 	background-image: url('./images/_hat/warriors.gif');
 
 	@media (--only-1600more-screen) {
-		background-size: auto 100%;
+		background-size: auto 155%;
     background-position: 45% 23px;
   }
 /*  @media (--only-medium-screen) {
@@ -208,7 +215,7 @@
     background-position: 45% 15px;
   }
   @media (--only-956less-screen) {
-		background-size: auto 100%;
+		background-size: auto 130%;
     background-position: 45% 15px;
   }
 }

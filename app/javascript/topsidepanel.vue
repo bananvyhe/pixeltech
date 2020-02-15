@@ -1,9 +1,10 @@
 <template>
 	<div id="bpad"> 
+		<div class="overbpad">
 		<!-- {{exptime}} -->
 		<div class="bpad smalltext" v-bind:style="styleObject"> 
 			<div class="logohead">
-				<!-- {{exptime}} -->
+				<!-- {{exptime}} --> 
 				<div class="voodoo1" v-if="!$store.getters.role">
 					<div class="basecamp">
 						<!-- Cyber team -->
@@ -26,14 +27,14 @@
 						</el-popover>
 					</div>
 				</div>
-					<div v-if="$store.getters.role">
+					<div v-if="$store.getters.role" >
 						<div v-if="$store.getters.role.role == 'client'">
 							Site-hosting
 						</div>
 <!-- 						<div v-if="$store.getters.role.role == 'user'">
 							<game-board ></game-board> 
 						</div> -->
-						<div v-if="$store.getters.role.role == 'voodoo' || $store.getters.role.role == 'user'">
+						<div class="backbar"  v-if="$store.getters.role.role == 'voodoo' || $store.getters.role.role == 'user'">
 							<div class="mediumtext nikname">{{$store.getters.role.username}}</div>
 							<div class="expbar"> 
 								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
@@ -90,6 +91,7 @@
 					<log class="wrap"></log>
 				</div>
 			</div>
+	  </div>
 	  </div>
   </div>
 
@@ -507,6 +509,12 @@
 <style scoped>
 @import "stylesheets/_variables";
 @import "stylesheets/_extends";
+.backbar {
+
+	background-color: color( #1E1E21 shade(6%));
+	padding: 0.2em 0.5em;
+	margin: 0.2em 0;
+}
 .elpro {
 	/*padding: 0.5em 0 0;*/
 	font-size: 11px;
@@ -517,7 +525,7 @@
  justify-content: center;
  /*align-self: flex-start;*/
  align-items: center;
- padding: 0.1em;
+ /*padding: 0.1em;*/
 }
 /*.hat {
 	height: 440px;
@@ -711,29 +719,42 @@
 	width: 8em;
 }
 #bpad{ 
-
+	/*position: relative;*/
+	overflow: visible;
+	position: sticky;
+	z-index: 6000;
+	margin-bottom: -3.3em;
+	
+   top: 0;
 	/*height: $topBlank;*/
 	/*z-index: 800;*/
-	width: 100%;
+ 
 
 	/*background-color: color( #1E1E21 shade(30%));*/
 	/*display: flex;*/
-	align-items: center;
+ justify-content: space-between;
+		lost-center: $lcenter;
+}
+.overbpad{
+	width: 100%;
+	display: flex;
 }
 .bpad { 
+	width: 100%;
 	padding: 0.1em;
 	/*border-bottom: 2px solid $color-blue;*/
-	position: relative;
-	/*position: fixed;  */
-	/*z-index: 2000;*/
-	width: 100%;
-	display: flex;              
+ 	display: flex;
+	/*position: sticky;*/
+	/*top: 0em;  */
+	z-index: 6000;
+	
+            
 	/*height: 2.6em;*/
 	
 	/*height: $topSizePanel;*/
 	/*z-index: 10;*/
-	lost-center: $lcenter;
-	background-color: color( #1E1E21 shade(46%));
+
+	/*background-color: color( #1E1E21 shade(46%));*/
 }
 .hiderailsblock {
 	display: none;
@@ -746,6 +767,7 @@
 	align-items: center;
 }*/
 .logohead{
+
 	position: relative;
 	/*z-index: 50;*/
 	display: flex;
@@ -762,14 +784,17 @@
   }
 }
 .invclass {
+	/*background-color: #dad;*/
 	padding-left: 0.5em;
 	z-index: 5000;
 	position: relative;
 
 }
 .maininfo {
-	z-index: 4000;
-	position: relative;
+	z-index: 5000;
+	/*position: fixed;*/
+/*	top: 0.5em;
+	right: 0.5em;*/
 	/*z-index: 49;*/
 	overflow-x: auto;
 	white-space: nowrap;
@@ -788,8 +813,8 @@
   }
 	.info {
 		display: flex;
-
-		padding: 0 1em;
+		 background-color: color( #1E1E21 shade(6%));
+		padding: 0.3em 0.5em;
 	}
 
 }
