@@ -24,7 +24,7 @@ module.exports = {
 				},
 			  'h1,h2,h3,h4': {
 			  	LineHeight: 1.2,  
-			    marginBottom: rhythm(0.3),
+			    marginBottom: rhythm(0.4),
 			    marginTop: rhythm(0.4),
 		      
 			  }

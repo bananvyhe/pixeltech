@@ -40,7 +40,7 @@
 
 								<div class="expline">
 									<!-- v-if="$store.getters.gamebo" -->
-									<el-progress v-if="$store.getters.gamebo" class="elpro" :stroke-width="6" :percentage="Number(lvlConversion[1])"></el-progress>
+									<el-progress v-if="$store.getters.gamebo" class="elpro aprior " :stroke-width="6" :percentage="Number(lvlConversion[1])"></el-progress>
 								</div>
 								<div v-if="$store.getters.gamebo" class="lvl">{{lvlConversion[0]}}&nbsp;</div>
 								<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
@@ -507,6 +507,11 @@
 <style scoped>
 @import "stylesheets/_variables";
 @import "stylesheets/_extends";
+.elpro {
+	/*padding: 0.5em 0 0;*/
+	font-size: 11px;
+	color: $str5;
+}
 .crytop {
  display: flex;
  justify-content: center;
@@ -676,6 +681,7 @@
 	margin-top: -0.4em;
 }
 .lvl {
+	line-height: 1.3;
 	box-shadow: inset 0px 0px 4px rgba(0,0,0,0.8);
 	padding-right: 0.3em;
 	display: flex;
@@ -684,11 +690,11 @@
 	position: relative;
  	color: $str5;
 	/*border-radius: 0.7em;*/
-	height: 1.3em;
+	height: 1.2em;
 	width: 2.6em;
-	background-color: color( #1E1E21 shade(36%));
+	background-color: color( #1E1E21 shade(6%));
  	
-	margin-top: 1em;
+	margin-top: 0.9em;
 	margin-left: -3.5em;
 	/*padding: 0 0.2em 0 0.1em;*/
  	display: flex;
