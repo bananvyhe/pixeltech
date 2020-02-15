@@ -412,6 +412,7 @@ html {
 }
 .bpad{
   .el-button {
+
     padding: 5px;
     margin: 0.25em 0.25em 0.25em 0.25em;
   }

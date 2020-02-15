@@ -510,9 +510,9 @@
 @import "stylesheets/_variables";
 @import "stylesheets/_extends";
 .backbar {
-
+	    border-radius: 0.3em;
 	background-color: color( #1E1E21 shade(6%));
-	padding: 0.2em 0.5em;
+	padding: 0.3em 0.4em 0.3em;
 	margin: 0.2em 0;
 }
 .elpro {
@@ -683,10 +683,10 @@
 	color: $color-1;
 	text-align: right;
 	padding-right: 0.4em;
-	padding-bottom: 0.2em;
+	/*padding-bottom: 0.2em;*/
 }
 .lvl, .expbar {
-	margin-top: -0.4em;
+	margin-top: -0.2em;
 }
 .lvl {
 	line-height: 1.1;
@@ -702,7 +702,7 @@
 	width: 2.6em;
 	background-color: color( #1E1E21 shade(6%));
  	
-	margin-top: 0.7em;
+	margin-top: 0.9em;
 	margin-left: -3.5em;
 	/*padding: 0 0.2em 0 0.1em;*/
  	display: flex;
