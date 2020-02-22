@@ -1,5 +1,6 @@
 <template>
 	<div id="bpad"> 
+	 <!-- {{exp}} -->
 		<div class="overbpad">
 		<!-- {{exptime}} -->
 		<div class="bpad smalltext" v-bind:style="styleObject"> 
@@ -34,7 +35,7 @@
 <!-- 						<div v-if="$store.getters.role.role == 'user'">
 							<game-board ></game-board> 
 						</div> -->
-						<div class="backbar"  v-if="$store.getters.role.role == 'voodoo' || $store.getters.role.role == 'user'">
+						<div class="backbar "  v-if="$store.getters.role.role == 'voodoo' || $store.getters.role.role == 'user'">
 							<div class="mediumtext nikname">{{$store.getters.role.username}}</div>
 							<div class="expbar"> 
 								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
@@ -111,6 +112,7 @@
 				checklog: checklog,
 	    	token: '',
 	    	accessToken: '',
+	   		exp: this.$store.getters.gamebo
 	    } 
 	  },
 	  // components: {
@@ -123,7 +125,9 @@
    	'inv': Inv
    },
 	  computed: {
+ 
 	  	lvlConversion: function () {
+
 	  		var exp = this.$store.getters.gamebo
 	  		if (exp > 0 && exp <= 68){
 	  			var total = 68;
@@ -327,6 +331,9 @@
       }
 	  },
 	  watch: {
+ 	exp() {
+ 		console.log('exp')
+ 	},
 	    exptime() {
 	       	if ((this.exptime < 20)&&(this.$store.getters.token )){
 	     this.refreshToken() 
@@ -466,6 +473,7 @@
 	          this.$store.commit('gamesend', response.data.expirience )
 	          this.$store.commit('crysend', response.data.cry )
 	          this.$store.commit('pksend', response.data.pk )
+
 	        })
 	        .catch(function (error) {
 	          console.log(error);
@@ -827,5 +835,7 @@
 	right: 0;
 	padding: 0.35em;
 }*/
+ 
 
+ 
 </style>

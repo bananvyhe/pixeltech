@@ -297,8 +297,8 @@
   window.addEventListener('resize', _.throttle(parseCalc, 100));
 </script>
 <style scoped>
-@import "stylesheets/_variables";
-@import "stylesheets/_extends";
+@import "../stylesheets/_variables";
+@import "../stylesheets/_extends";
 .bottomField {
 	padding-top: 2em;
 }

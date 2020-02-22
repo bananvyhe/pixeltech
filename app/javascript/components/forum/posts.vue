@@ -4,7 +4,9 @@
     <!-- {{clanposts}} -->
     <div v-for="(item, index) in clanposts">
       <!-- {{item.title}} {{item.body}} {{item.username}} -->
-      <showpost class="headertext" v-on:delpost="getPosts" :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showpost>
+      <showpost class="headertext" v-on:delpost="getPosts" :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showpost> 
+
+      <vembed  :options="options">{{item.body}}</vembed>
     </div>
     <!-- <showpost :number='number'></showpost> -->
     <newpost v-on:newpost="getPosts" :section='this.$store.getters.role.role'></newpost>
@@ -21,16 +23,29 @@
 </template>
 
 <script>
+import Vembed from 'vue-embed';    
 import axios from 'axios'
 import Newpost from './newpost.vue'
 import Showpost from './showpost.vue'
 export default {
   components: {
     'newpost': Newpost,
-    'showpost': Showpost
+    'showpost': Showpost,
+    'vembed': Vembed,
   },
   data: function () {
     return {
+      options: {
+        plugins: [{
+          name: 'emoji',
+          options: {
+            // regex: /emojiRegex/gi, // in case you want to define a custom regex
+            // template(emojiName) {
+            //   // optional template
+            // }
+          }
+        }]
+      },      
       exptime: '',      
       number: '',
 			clanposts: [],

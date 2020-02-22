@@ -32,43 +32,64 @@ import Chat from '../chat.vue'
 // import Currentrole from '../railsvars/currentrole.vue'
 // Vue.component('currentrole', Currentrole)
 import '../../../public/theme/index.css'
+// import Vembed from 'vue-embed';
+
 Vue.component('reg', Reg)
 Vue.component('log', Log)
 Vue.component('request', Request)
 Vue.component('filther', Filther)
 Vue.component('addpublic', Addpublic)
 // Vue.component('inv', Inv)
+// Vue.component('vembed', vembed)
+// Vue.component('vembed', {
+// 	data: function () {
+//     return {
+//      options: {
+//         plugins: [{
+//           name: 'emoji',
+//           options: {
+ 
+//           }
+//         }]
+//       },      
+//     }
+//   },	
+// 	template:  "<vembed/>"
+// })
 
-Vue.component("temperature", {
-  template: "#temperature-template",
-  data: function() {
-    return {temp: '123', location: null};
-  },
-  created: function() {
-    // this.fetchData();
-  },
-  methods: {
-  	reload: function() {
-  		location.reload(true);
-  		// window.location.href = window.location.href;
-  	},
-  	deleteuser: function(id ) {
-  		axios.delete('/users/'+id, {
-  		// 	headers: {
-  		// 		'Authorization': "bearer " + this.$store.getters.token 
-				// } 
-  		})
-  		.then(response => {
-  			var ids = String(id)
-  			var dd = ".userstring.del"+ids 
-  			console.log(dd)
-  			$(dd).fadeOut(200);
-		    // location.reload(true);
-		  })
-  	}
 
-  }
-});
+
+
+// Vue.component("temperature", {
+//   template: "#temperature-template",
+//   data: function() {
+//     return {temp: '123', location: null};
+//   },
+//   created: function() {
+//     // this.fetchData();
+//   },
+//   methods: {
+//   	reload: function() {
+//   		location.reload(true);
+//   		// window.location.href = window.location.href;
+//   	},
+//   	deleteuser: function(id ) {
+//   		axios.delete('/users/'+id, {
+//   		// 	headers: {
+//   		// 		'Authorization': "bearer " + this.$store.getters.token 
+// 				// } 
+//   		})
+//   		.then(response => {
+//   			var ids = String(id)
+//   			var dd = ".userstring.del"+ids 
+//   			console.log(dd)
+//   			$(dd).fadeOut(200);
+// 		    // location.reload(true);
+// 		  })
+//   	}
+
+//   }
+// });
 import store from 'store'
 import createPersistedState from 'vuex-persistedstate'
 import VueChatScroll from 'vue-chat-scroll'

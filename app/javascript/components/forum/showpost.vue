@@ -8,7 +8,7 @@
             {{this.title}}             
 
           </div>
-          <div class="mediumtext">
+          <div   class="mediumtext">
             {{this.body}}             
           </div>
 
@@ -23,9 +23,11 @@
         </el-button>
     </div>
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
-      <div class="dialogframe">            
+      <div class="dialogframe plashka3">            
         <!-- {{postComm}} -->
-        <v-embed class="plashka2">{{post.body }}</v-embed> 
+        {{post.body }}
+        <!-- <v-embed :options="options">{{post.body }}</v-embed>  -->
+        <!-- <v-embed :options="options">:smile:</v-embed> -->
         <div>
           <el-input-number @change="handleChange" size="mini" v-model="num4" :step="this.num"></el-input-number>
         </div>
@@ -55,7 +57,7 @@
 </template>
 
 <script>
-  import VEmbed from 'vue-embed'
+  // import VEmbed from 'vue-embed'
 let screenwidth = {value: ''}
 function parseCalc() {
   let screenw = document.body.clientWidth;
@@ -65,40 +67,24 @@ window.addEventListener('resize', _.throttle(parseCalc, 100));
 import axios from 'axios'
 import Tree from "./tree";
 export default {
-  components: {
-    VEmbed,
-  },  
+ // name: 'Hello',
+  // components: {
+  //   'v-embed': VEmbed,
+  // },  
   props:['number', 'body', 'title', 'username'],
   data: function () {
     return {
-      options: {
-      plugins: [{ 
-        name: 'youtube',
-          options: {
-            regex: /youtubeVideoRegex/gi, // in case you want to define a custom regex,
-
-            // If set to false, it doesn't make API calls to Youtube for video details. Instead it just embeds the video.
-            details: true,
-
-            // This is a mandatory field.
-            gAuthKey: '',
-
-            // height of video iframe
-            height: 300,
-
-            // This is the class on clicking which the details view changes to embedded video.
-            // This is only required if you providing a custom template for the details view.
-            clickClass: "ejs-video-thumb",
-
-            template(args, options, pluginOptions, dataFromApi) {
-              // dataFromApi is undefined if details is set to false
-            },
-
-            // executes when element is rendered
-            onLoad(options, pluginOptions) {}
-          }
-        }],
-      },       
+      // options: {
+      //   plugins: [{
+      //     name: 'emoji',
+      //     options: {
+      //       // regex: /emojiRegex/gi, // in case you want to define a custom regex
+      //       // template(emojiName) {
+      //       //   // optional template
+      //       // }
+      //     }
+      //   }]
+      // },  
       num: 1,
       num4: 0,
       textarea: '',
@@ -274,6 +260,9 @@ export default {
 
 <style scoped>
 @import "../../stylesheets/_variables";
+.plashka3{
+  /*background-color: #dad;*/
+}
 .text {
 /*  outline: 6px solid #1E1E21;
   outline-offset:-6px;*/

@@ -1,7 +1,7 @@
 <template>
   <div class="node-tree">
     <div class="bodyComment mediumtext"> 
-      <v-embed v-if="node.body" class="label">{{node.body}}</v-embed>
+      <div :options="options" v-if="node.body" class="label">{{node.body}}</div>
       <span v-else class="label basetext">(сообщение удалено)</span>      
     </div>
 
@@ -38,16 +38,17 @@
 
 <script>
   import vClickOutside from 'v-click-outside'  
-  import VEmbed from 'vue-embed'
+  // import VEmbed from 'vue-embed'
 import axios from 'axios'
 export default {
-  components: {
-    VEmbed,
-  },
+
   directives: {
     clickOutside: vClickOutside.directive
   },  
   name: "node",
+  // components: {
+  //   VEmbed,
+  // },
   props: {
     node: Object,
     number: Number 
