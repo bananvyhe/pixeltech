@@ -6,7 +6,7 @@ module.exports = {
     'postcss-typography': {
  
     baseFontSize: "14px",
-    baseLineHeight: 1.45,  
+    baseLineHeight: 1.35,  
     scaleRatio: 2,
     blockMarginBottom: 0.8,
     includeNormalize: true,

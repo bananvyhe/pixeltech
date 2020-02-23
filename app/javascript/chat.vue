@@ -187,7 +187,7 @@ export default {
   font-size: 12px;
   color: $str2;
 
-  padding: 0 0.3em 0 0.4em;
+  padding: 0 0.3em 0.1em 0.4em;
 }
 .chatString{
   display: flex;
