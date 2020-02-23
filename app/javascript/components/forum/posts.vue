@@ -6,7 +6,7 @@
       <!-- {{item.title}} {{item.body}} {{item.username}} -->
       <showposta class="headertext" v-on:delpost="getPosts" :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showposta> 
 
-      <v-embed  :options="options">{{item.body}}</v-embed>
+<!--       <v-embed  :options="options">{{item.body}}</v-embed> -->
     </div>
     <!-- <showpost :number='number'></showpost> -->
     <newposta v-on:newpost="getPosts" :section='this.$store.getters.role.role'></newposta>
@@ -32,10 +32,11 @@ export default {
   components: {
     'newposta': Newpost,
     'showposta': Showpost,
-    'v-embed': Vembed,
+    // 'v-embed': Vembed,
   },
   data: function () {
     return {
+       
       options: {
         plugins: [{
           name: 'emoji',

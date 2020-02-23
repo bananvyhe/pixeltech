@@ -9,7 +9,7 @@
               {{this.title}}             
             </div>
          
-          <v-embed  :options="options">
+          <v-embed  :options="options2">
             <div class="mediumtext">
               {{this.body}}             
             </div>
@@ -30,9 +30,9 @@
         <v-embed :options="options" v-if="post.body">
          {{post.body }} 
       </v-embed>
-
-        <!-- <v-embed :options="options">{{post.body }}</v-embed>  -->
-        <!-- <v-embed :options="options">:smile:</v-embed> -->
+<!-- <div v-else class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка...">
+  </div> -->
+ 
         <div>
           <el-input-number @change="handleChange" size="mini" v-model="num4" :step="this.num"></el-input-number>
         </div>
@@ -79,6 +79,7 @@ export default {
   props:['number', 'body', 'title', 'username'],
   data: function () {
     return {
+      loading: true,
       options: {
         plugins: [{
           name: 'emoji',
@@ -93,7 +94,19 @@ export default {
           name: 'noembed',
         }
         ]
-      },  
+      },
+      options2: {
+        plugins: [{
+          name: 'emoji',
+          options: {
+            // regex: /emojiRegex/gi, // in case you want to define a custom regex
+            // template(emojiName) {
+            //   // optional template
+            // }
+          }
+        },
+]
+      },           
       num: 1,
       num4: 0,
       textarea: '',
