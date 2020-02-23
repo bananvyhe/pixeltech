@@ -4,20 +4,20 @@
     <!-- {{clanposts}} -->
     <div v-for="(item, index) in clanposts">
       <!-- {{item.title}} {{item.body}} {{item.username}} -->
-      <showpost class="headertext" v-on:delpost="getPosts" :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showpost> 
+      <showposta class="headertext" v-on:delpost="getPosts" :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showposta> 
 
-      <vembed  :options="options">{{item.body}}</vembed>
+      <v-embed  :options="options">{{item.body}}</v-embed>
     </div>
     <!-- <showpost :number='number'></showpost> -->
-    <newpost v-on:newpost="getPosts" :section='this.$store.getters.role.role'></newpost>
+    <newposta v-on:newpost="getPosts" :section='this.$store.getters.role.role'></newposta>
 
     <div v-if="this.$store.getters.role.role != 'user'">
       <h2>Общий доступ</h2>
       <!-- {{userposts}} -->
       <div v-for="(item, index) in userposts">
-        <showpost class="headertext" v-on:delpost="getUserPosts" :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showpost>
+        <showposta class="headertext" v-on:delpost="getUserPosts" :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showposta>
       </div>
-      <newpost v-on:newpost="getUserPosts" :section='"user"'></newpost>
+      <newposta v-on:newpost="getUserPosts" :section='"user"'></newposta>
     </div>
   </div>
 </template>
@@ -28,10 +28,11 @@ import axios from 'axios'
 import Newpost from './newpost.vue'
 import Showpost from './showpost.vue'
 export default {
+  name: 'post',
   components: {
-    'newpost': Newpost,
-    'showpost': Showpost,
-    'vembed': Vembed,
+    'newposta': Newpost,
+    'showposta': Showpost,
+    'v-embed': Vembed,
   },
   data: function () {
     return {

@@ -3,22 +3,24 @@
     <div type="text" class="text">
       <div class="itempost">
         <div class="posthead" @click="handleClick">
-          <div class="mediumtext">
-            <!-- {{this.number}} -->
-            {{this.title}}             
 
-          </div>
-          <div   class="mediumtext">
-            {{this.body}}             
-          </div>
-
+            <div class="mediumtext">
+              <!-- {{this.number}} -->
+              {{this.title}}             
+            </div>
+         
+          <v-embed  :options="options">
+            <div class="mediumtext">
+              {{this.body}}             
+            </div>
+          </v-embed>
           <!-- {{this.number}} -->
         </div>
 
       </div>
-                <div v-if="this.username != $store.getters.role.username" class="smalltext username">
-            {{this.username}}
-          </div>
+        <div v-if="this.username != $store.getters.role.username" class="smalltext username">
+          {{this.username}}
+        </div>
         <el-button v-if="$store.getters.role.username == this.username"  type='danger' size='mini' icon="el-icon-delete" circle @click="deleting(number)">         
         </el-button>
     </div>
@@ -57,7 +59,7 @@
 </template>
 
 <script>
-  // import VEmbed from 'vue-embed'
+
 let screenwidth = {value: ''}
 function parseCalc() {
   let screenw = document.body.clientWidth;
@@ -66,25 +68,25 @@ function parseCalc() {
 window.addEventListener('resize', _.throttle(parseCalc, 100));
 import axios from 'axios'
 import Tree from "./tree";
+import VEmbed from 'vue-embed'
 export default {
- // name: 'Hello',
-  // components: {
-  //   'v-embed': VEmbed,
-  // },  
+  name: 'showpost',
+  
+
   props:['number', 'body', 'title', 'username'],
   data: function () {
     return {
-      // options: {
-      //   plugins: [{
-      //     name: 'emoji',
-      //     options: {
-      //       // regex: /emojiRegex/gi, // in case you want to define a custom regex
-      //       // template(emojiName) {
-      //       //   // optional template
-      //       // }
-      //     }
-      //   }]
-      // },  
+      options: {
+        plugins: [{
+          name: 'emoji',
+          options: {
+            // regex: /emojiRegex/gi, // in case you want to define a custom regex
+            // template(emojiName) {
+            //   // optional template
+            // }
+          }
+        }]
+      },  
       num: 1,
       num4: 0,
       textarea: '',
@@ -253,7 +255,8 @@ export default {
     }
   },
   components: {
-    Tree
+    Tree,
+    VEmbed, 
   }
 }
 </script>

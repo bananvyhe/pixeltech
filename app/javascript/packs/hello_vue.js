@@ -24,6 +24,7 @@ import Filther from '../components/filther.vue'
 import Addpublic from '../components/addpublic.vue'
 import Lobby from '../lobby.vue'
 import Posts from '../components/forum/posts.vue'
+
 import Chat from '../chat.vue'
 // import CommentVotes from '../components/commentvotes.vue'
 // import Inv from '../components/inventory.vue'
@@ -41,8 +42,9 @@ Vue.component('filther', Filther)
 Vue.component('addpublic', Addpublic)
 // Vue.component('inv', Inv)
 // Vue.component('vembed', vembed)
-// Vue.component('vembed', {
-// 	data: function () {
+// Vue.component('v-embed', {
+// 	// name: 'v-embed',
+// 	data: function() {
 //     return {
 //      options: {
 //         plugins: [{
@@ -54,7 +56,7 @@ Vue.component('addpublic', Addpublic)
 //       },      
 //     }
 //   },	
-// 	template:  "<vembed/>"
+// 	template:  '<v-embed :options="options"></v-embed>'
 // })
 
 
