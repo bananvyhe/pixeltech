@@ -27,7 +27,10 @@
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
       <div class="dialogframe plashka3">            
         <!-- {{postComm}} -->
-        {{post.body }}
+        <v-embed :options="options" v-if="post.body">
+         {{post.body }} 
+      </v-embed>
+
         <!-- <v-embed :options="options">{{post.body }}</v-embed>  -->
         <!-- <v-embed :options="options">:smile:</v-embed> -->
         <div>
@@ -85,7 +88,11 @@ export default {
             //   // optional template
             // }
           }
-        }]
+        },
+        {
+          name: 'noembed',
+        }
+        ]
       },  
       num: 1,
       num4: 0,

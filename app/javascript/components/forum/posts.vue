@@ -45,7 +45,8 @@ export default {
             //   // optional template
             // }
           }
-        }]
+        },
+]
       },      
       exptime: '',      
       number: '',
