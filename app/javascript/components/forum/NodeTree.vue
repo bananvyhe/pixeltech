@@ -6,7 +6,7 @@
     </div>
 
     <div class="tinytext sign">
-      <span class="">написал {{node.username}}</span>      
+      <span class="smalltext">написал {{node.username}}</span>      
     </div>
   <!-- {{typeof node }} -->
     <div class="replyBlock" v-click-outside="onClickOutside">
@@ -144,7 +144,7 @@ export default {
 }
 .bodyComment{
   line-height: 0.8em;
-  padding: 0.3em 0 0;
+  padding: 0.7em 0 0.2em;
 }
 .replyarea{
   margin: -0.7em;
