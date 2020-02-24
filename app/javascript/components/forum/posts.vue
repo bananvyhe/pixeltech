@@ -38,15 +38,16 @@ export default {
     return {
        
       options: {
-        plugins: [{
-          name: 'emoji',
-          options: {
-            // regex: /emojiRegex/gi, // in case you want to define a custom regex
-            // template(emojiName) {
-            //   // optional template
-            // }
-          }
-        },
+        plugins: [
+        // {
+        //   name: 'emoji',
+        //   options: {
+        //     // regex: /emojiRegex/gi, // in case you want to define a custom regex
+        //     // template(emojiName) {
+        //     //   // optional template
+        //     // }
+        //   }
+        // },
 ]
       },      
       exptime: '',      

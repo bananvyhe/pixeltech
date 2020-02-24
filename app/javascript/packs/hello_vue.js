@@ -34,7 +34,8 @@ import Chat from '../chat.vue'
 // Vue.component('currentrole', Currentrole)
 import '../../../public/theme/index.css'
 // import Vembed from 'vue-embed';
-
+import { EmojiPickerPlugin } from 'vue-emoji-picker'
+Vue.use(EmojiPickerPlugin)
 Vue.component('reg', Reg)
 Vue.component('log', Log)
 Vue.component('request', Request)
