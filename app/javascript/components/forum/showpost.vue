@@ -67,7 +67,7 @@
                 <div>
                   <div v-for="(emojiGroup, category) in emojis" :key="category">
                     <!-- <h5>{{ category }}</h5> -->
-                    <br/>
+
                     <div class="emojis">
                       <span
                         v-for="(emoji, emojiName) in emojiGroup"
@@ -76,6 +76,7 @@
                         :title="emojiName"
                       >{{ emoji }}</span>
                     </div>
+                    <br/>
                   </div>
                 </div>
               </div>
