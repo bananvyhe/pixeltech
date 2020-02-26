@@ -31,7 +31,7 @@
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
       <div class="dialogframe plashka3">            
         <!-- {{postComm}} -->
-        <v-embed :options="options" v-if="post.body">
+        <v-embed :options="options" v-if="post.body" class="postbody">
          {{post.body }} 
         </v-embed>
 <!-- <div v-else class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка...">
@@ -344,6 +344,9 @@ export default {
 
 <style scoped>
 @import "../../stylesheets/_variables";
+.postbody{
+  overflow: hidden;
+}
 .mainst{
   justify-content: space-between;
   width: 100%;
