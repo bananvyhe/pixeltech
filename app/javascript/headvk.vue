@@ -192,7 +192,7 @@ var cmp = {
         dangerouslyUseHTMLString: true,
         onClose:  this.destr,
         // showClose: false
-        duration: 0, 
+        // duration: 0, 
       });
      // this.$message('получено '+loa+ ' опыта');
       axios({
