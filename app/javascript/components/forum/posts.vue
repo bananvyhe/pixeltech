@@ -129,7 +129,16 @@ export default {
 
 <style scoped>
 /*@import "../../stylesheets/_variables";*/
+.headertext{
+  lost-utility: edit;
+  display: flex;
+   width: 100%;
+  /*white-space: nowrap;*/
+  overflow: hidden;
+}
 .posts {
+
+   width: 100%;
   padding: 0 0.6em;
 }
 

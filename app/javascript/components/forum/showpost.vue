@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mainst">
     <div type="text" class="text">
       <div class="itempost">
         <div class="posthead" @click="handleClick">
@@ -9,21 +9,25 @@
               {{this.title}}             
             </div>
          
-          <v-embed  :options="options2">
+          <!-- <v-embed  :options="options2"> -->
             <div class="mediumtext">
               {{this.body}}             
             </div>
-          </v-embed>
+          <!-- </v-embed> -->
           <!-- {{this.number}} -->
         </div>
 
       </div>
+
+    </div>
+    <div class="rightpad">
         <div v-if="this.username != $store.getters.role.username" class="smalltext username">
           {{this.username}}
         </div>
         <el-button v-if="$store.getters.role.username == this.username"  type='danger' size='mini' icon="el-icon-delete" circle @click="deleting(number)">         
-        </el-button>
+        </el-button>      
     </div>
+
     <el-dialog :title="this.title" :visible.sync="dialogVisible" :lock-scroll="false" :width="calcul">
       <div class="dialogframe plashka3">            
         <!-- {{postComm}} -->
@@ -340,38 +344,56 @@ export default {
 
 <style scoped>
 @import "../../stylesheets/_variables";
+.mainst{
+  justify-content: space-between;
+  width: 100%;
+  background-color: color(#1E1E21 shade(6%));
+  margin: 0.1em 0;
+  /*lost-utility: edit;*/
+  /*lost-column: 1/1;*/
+  display: flex;
+    flex-direction: row;
+}
+.rightpad{
+  display: flex;
+  align-items: flex-end;
+  padding: 0.1em 0.4em 0.1em 0.2em; 
+}
 .plashka3{
   /*background-color: #dad;*/
 }
 .text {
+  /*word-break: normal;*/
 /*  outline: 6px solid #1E1E21;
   outline-offset:-6px;*/
-  margin: 0.3em 0;
+  margin: 0.2em 0;
   /*background-color: $earthyellow;*/
   background-color: color(#1E1E21 shade(6%));
   display: flex;
   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 .itempost{
   color: $navajowhite; 
-  height: 2.0em;
+  /*height: 2.0em;*/
   border-top-right-radius: 0.3em;
   border-bottom-right-radius: 0.3em;
-  margin: 0.0em 0;
+ 
   justify-content: space-between;
   display: flex;
   flex-direction: row;
   /*background-color: color( $spacecadet tint(15%));*/
   background-color: color($spacecadet shade(15%));
-  padding: 0 0.4em 0 0.2em;
+  padding: 0.2em 0.4em 0.3em 0.2em;
 }
 
 .posthead{
+/*  white-space: nowrap;
+  overflow: hidden;*/
   /*justify-content: space-between;*/
   position: relative;
-  width: 100%;
+   
   cursor: pointer;
   align-items: center;
   flex-direction: row;
