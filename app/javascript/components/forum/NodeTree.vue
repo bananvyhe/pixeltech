@@ -1,7 +1,7 @@
 <template>
   <div class="node-tree">
     <div class="bodyComment mediumtext"> 
-      <div :options="options" v-if="node.body" class="label">{{node.body}}</div>
+      <v-embed :options="options" v-if="node.body" class="label">{{node.body}}</v-embed>
       <span v-else class="label basetext">(сообщение удалено)</span>      
     </div>
 
@@ -15,7 +15,7 @@
         width="400"
         trigger="manual"
         v-model="visible">
-          <div class="replyarea" :options="options">
+          <v-embed class="replyarea" :options="options">
             <el-input
               type="textarea"
               :autosize="{ minRows: 3, maxRows: 5}"
@@ -24,7 +24,7 @@
             </el-input>
             <!-- {{number}} -->
             <el-button size='mini' @click="sendReply(number)">отправить</el-button>          
-          </div>
+          </v-embed>
         <div v-if="node.body" slot="reference" class="reply" @click="visible = !visible" >ответить</div>
       </el-popover>   
       <div class="del" v-if="$store.getters.role.username == node.username && node.body != null" @click="destroy(number, node.id )">удалить</div>
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+  import VEmbed from 'vue-embed'
   import vClickOutside from 'v-click-outside'  
   // import VEmbed from 'vue-embed'
 import axios from 'axios'
@@ -58,37 +59,20 @@ export default {
  
     return { 
       options: {
-      plugins: [{ 
-        name: 'youtube',
-          options: {
-            regex: /youtubeVideoRegex/gi, // in case you want to define a custom regex,
-
-            // If set to false, it doesn't make API calls to Youtube for video details. Instead it just embeds the video.
-            details: true,
-
-            // This is a mandatory field.
-            gAuthKey: '',
-
-            // height of video iframe
-            height: 300,
-
-            // This is the class on clicking which the details view changes to embedded video.
-            // This is only required if you providing a custom template for the details view.
-            clickClass: "ejs-video-thumb",
-
-            template(args, options, pluginOptions, dataFromApi) {
-              // dataFromApi is undefined if details is set to false
-            },
-
-            // executes when element is rendered
-            onLoad(options, pluginOptions) {}
-          }
-        }],
-      },  
+        plugins: [
+ 
+        {
+          name: 'noembed',
+        }
+        ]
+      },
       blank: '123',
       visible: false,
       textarea: ''
     }
+  },
+  components: {
+    VEmbed, 
   },
   methods: {
     onClickOutside(event) {
