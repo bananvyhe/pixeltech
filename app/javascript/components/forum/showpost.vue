@@ -40,13 +40,14 @@
           автор: {{post.username}}
         </div> 
         <!-- postComm{{postComm}} --> 
-        <!-- <v-embed :options="options"  > -->
+<!--         <v-embed :options="options"  > -->
           <el-input
           type="textarea"
           :autosize="{ minRows: 4, maxRows: 8}"
           placeholder="написать комментарий"
-          v-model="textarea">
+          v-model="textarea"> 
           </el-input> 
+<!--         </v-embed > -->
           <emoji-picker @emoji="insert" >
             <div
               class="emoji-invoker"
