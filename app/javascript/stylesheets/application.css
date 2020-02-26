@@ -119,6 +119,10 @@
 #topsidepanel {
 
 }
+.loa{
+  color: $str5;
+
+}
 .loading {
 
   padding: 0.5em;
@@ -289,6 +293,7 @@ html {
  /* display: flex;*/
 }
 .mes {
+  font-family: 'aprior';
   padding: 0.5em 0 0 0;
   position: relative;
 }
@@ -438,8 +443,12 @@ html {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    .loa{
+      margin-right: 0.7em;
+      padding: 0.3em 0 0.3em 0;
+    }
     .dropmessage{
-      padding: 0.5em 0 0.2em 0;
+      padding: 0.3em 0 0.3em 0;
     }
   }
 

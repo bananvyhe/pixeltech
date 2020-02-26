@@ -130,7 +130,7 @@ export default {
 <style scoped>
 /*@import "../../stylesheets/_variables";*/
 .headertext{
-  lost-utility: edit;
+  /*lost-utility: edit;*/
   display: flex;
    width: 100%;
   /*white-space: nowrap;*/

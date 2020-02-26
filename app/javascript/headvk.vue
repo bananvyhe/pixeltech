@@ -186,14 +186,13 @@ var cmp = {
 
       this.$notify({
         // title: 'Опыт',
-        title: loa,
         // message: 'получен опыт',
-        message: '<div class="dropmessage">получен опыт</div>',
+        message: '<div class="loa">'+loa+'</div> <div class="dropmessage">получен опыт</div>',
         position: 'bottom-left',
         dangerouslyUseHTMLString: true,
         onClose:  this.destr,
         // showClose: false
-        // duration: 0, 
+        duration: 0, 
       });
      // this.$message('получено '+loa+ ' опыта');
       axios({
@@ -429,6 +428,7 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 @import "stylesheets/_extends";
+
 .blank{
   height: 70em;
 }
