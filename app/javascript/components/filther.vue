@@ -1,6 +1,6 @@
 <template>
   <div class="filther">
-<!--     {{datavalue}}
+    <!-- {{datavalue}}
     {{data}}
     <br><br> {{alld}} -->
     <el-popover
@@ -8,8 +8,8 @@
       width="400"
       trigger="click"
       v-model="value"> 
-       <el-transfer
- 
+      {{finaldata}}
+      <el-transfer
        :titles="['скрытые', 'видимые']"
         v-model="finaldata"
         :data="alld">
@@ -24,23 +24,7 @@
 import axios from 'axios'
 let screenwidth = {value: ''}
 export default {
-  // props: {
-  //   myFilterInc: {
-  //     type: Array
-  //   }
-  // },
   data: function () {
-    // const generateData = _ => {
-    //   const data = [];
-    //   for (let i = 1; i <= 15; i++) {
-    //     data.push({
-    //       key: i,
-    //       label: `Option ${ i }`,
-    //       disabled: i % 4 === 0
-    //     });
-    //   }
-    //   return data;
-    // };
     return {
       alld:[],
       finaldata: [],
@@ -48,11 +32,6 @@ export default {
       myFilterInc: this.data,
       datavalue: [],
       value: false,
-      // dialogFormVisible: false,
-      // form: {
-      //   email: '',
-      //   text: '' 
-      // },
       alldata: [], 
       formLabelWidth: '80px',
       screenwidth: screenwidth
@@ -62,59 +41,28 @@ export default {
     finaldata() {
       this.$emit('filterRes', this.finaldata)
     },
-    // value(value) {
-    //   if (!value) {
-    //     var self = this;
-    //     setTimeout(function(){
-    //       self.data = []
-    //       // self.status = '';
-    //     },500 );
-    //   }
-    // }
   }, 
   computed: {
 
   },
- 
   mounted() {
     this.getPublics()
-    // this.$emit('filterRes', this.datavalue)
   },
   methods: {
- 
     getPublics() {
     axios({
       method: 'get',
       url: '/api/v1/vkgrget',
-      // params: {
-      //   rait: this.value,
-      //   pos: this.pos
-      // } 
       })
       .then((response) => { 
         this.alld = response.data
-      //   console.log(response.data)
-
-      
- 
-      // this.data = []
-      this.datavalue = []
-      var self = this
-      for (let i = 0; this.alld[i]; i++) {
-        // const data = [];
-        const grname = this.alld[i]
-     
-
-        // data.push({
-      //     key: grname.id,
-      //     label: String(grname.namegroup).slice(15),
-      //     disabled: false
-      //   });
-      //   self.data = self.data.concat(data)
-        self.datavalue = self.datavalue.concat(grname.key)
-      }
-      this.finaldata = this.datavalue
- 
+        this.datavalue = []
+        var self = this
+        for (let i = 0; this.alld[i]; i++) {
+          const grname = this.alld[i]
+          self.datavalue = self.datavalue.concat(grname.key)
+        }
+        this.finaldata = this.datavalue
       });
     }
   }
@@ -125,9 +73,7 @@ function parseCalc() {
 }
 // window.addEventListener('resize', _.throttle(parseCalc, 100));
 </script>
-
 <style scoped>
- 
 
 .el-transfer{
   display: flex;
