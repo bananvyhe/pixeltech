@@ -49,6 +49,7 @@ Rails.application.routes.draw do
       post :inb, to: "inboxes#create"
       post :vk, to: "vks#create"
       get :vkgrget, to: "vks#grget"
+      # post :vkgrpost , to: "vks#grpost"      
       get :lobbyall, to: "users#lobbyall"
       post :vkwall, to: "vks#associate"
       post :request, to: "request#message"

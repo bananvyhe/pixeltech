@@ -40,6 +40,7 @@ export default {
   watch: {
     finaldata() {
       this.$emit('filterRes', this.finaldata)
+      // this.putPublics()
     },
   }, 
   computed: {
@@ -49,6 +50,21 @@ export default {
     this.getPublics()
   },
   methods: {
+    // putPublics(){
+    //   axios({
+    //     method: 'post',
+    //     url: '/api/v1/vkgrpost',
+    //     data: {
+    //       vkgrpost: finaldata
+    //     },
+    //     headers: {
+    //       'Authorization': 'bearer '+this.$store.getters.token.access
+    //     } 
+    //   }).then((response) => { 
+ 
+      
+    //   })
+    // },
     getPublics() {
     axios({
       method: 'get',

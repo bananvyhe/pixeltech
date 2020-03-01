@@ -10,9 +10,19 @@ class Api::V1::VksController < ApiController
     # @app = current_user.vk_ids
     # Pry.start(binding)
     # render json: @vks, :include => :appointments, :except => [:created_at, :updated_at]
-
+    send :grpost
+    # @vis.each do |d|
+    #   Visiblegroup.find_or_create_by(groupsvk_id: d, user_id: payload['user_id'])
+    # end
+    # @putgr = Visiblegroup.find_or_create_by({namegroup: @vis})
   end
- 
+
+  def grpost
+    print '6666666666'
+    print @vis
+    print '6666666666'
+  end  
+
   def show
   end
  
@@ -22,10 +32,13 @@ class Api::V1::VksController < ApiController
  
   def edit
   end
-  def grget
-        @vks = Groupsvk.all
 
+  def grget
+    @vks = Groupsvk.all
+    vkgrpost = params[:vkgrpost]
+    # print vkgrpost
   end
+
   # POST /Vks
   # POST /Vks.json
   def associate
@@ -81,4 +94,5 @@ class Api::V1::VksController < ApiController
     end
       
   end 
+
 end
