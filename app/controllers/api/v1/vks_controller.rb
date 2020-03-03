@@ -5,32 +5,21 @@ class Api::V1::VksController < ApiController
   before_action :set_vks
   before_action :set_user
   before_action :authorize_access_request!, only: [:associate, :grpost]
+ 
 	def index
-    
+
     @vks = Vk.where(groupsvk_id: @vis).where('raiting > ? AND raiting < ?', @rait[0], @rait[1]).order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(25).offset(@pos)
     # @app = current_user.vk_ids
     # Pry.start(binding)
     # render json: @vks, :include => :appointments, :except => [:created_at, :updated_at]
-     # grpost 
+    
     # @vis.each do |d|
     #   Visiblegroup.find_or_create_by(groupsvk_id: d, user_id: payload['user_id'])
     # end
     # @putgr = Visiblegroup.find_or_create_by({namegroup: @vis})
   end
 
-  def grpost
-    print '6666666666'
-    print @vis
-    print '6666666666'
-    @vis.each do |d|
-      unless Visiblegroup.where(groupsvk_id: d, user_id: payload['user_id']).exists?
-        # Visiblegroup.create(:groupsvk_id => d, :user_id => payload['user_id'])
-        print d
-      end
-      # Visiblegroup.find_or_create_by(groupsvk_id: d, user_id: payload['user_id'])
-    end
-
-  end  
+  
 
   def show
   end
@@ -41,7 +30,23 @@ class Api::V1::VksController < ApiController
  
   def edit
   end
+  def grpost
+        user_id = current_user.id
+    print '6666666666'
+    print @vis
+    puts '444444'
+    print user_id
+    print '6666666666'
 
+
+     # gro = Visiblegroup.where(user_id: payload['user_id']) 
+    @vis.each do |d|
+
+      
+      gro = Visiblegroup.find_or_create_by!(groupsvk_id: d, user_id: user_id)
+    end
+
+  end  
   def grget
     @vks = Groupsvk.all
     # vkgrpost = params[:vkgrpost]
@@ -87,13 +92,14 @@ class Api::V1::VksController < ApiController
   end
 
   def vk_params
-    params.require(:vk).permit(:url, :wall, :medias_row, :raiting, :title, :posted_at, :v_views, :v_like, :thumb_map_img_as_div)
+    params.require(:vk).permit(:user_id, :groupsvk_id, :url, :wall, :medias_row, :raiting, :title, :posted_at, :v_views, :v_like, :thumb_map_img_as_div)
   end
 
   def set_vks
     # @user = User.find_by(username: params[:username])
     if (params[:vis])
       @vis = params[:vis]
+       grpost
     end
     if (params[:pos])
       @pos = params[:pos]

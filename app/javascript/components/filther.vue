@@ -69,7 +69,9 @@ export default {
     axios({
       method: 'get',
       url: '/api/v1/vkgrget',
-          
+          headers: {
+            'Authorization': 'bearer '+this.$store.getters.token.access
+          }         
       })
       .then((response) => { 
         this.alld = response.data
