@@ -4,13 +4,14 @@ class Api::V1::VksController < ApiController
 	skip_before_action :authenticate_user!
   before_action :set_vks
   before_action :set_user
-  before_action :authorize_access_request!, only: [:associate]
+  before_action :authorize_access_request!, only: [:associate, :grpost]
 	def index
+    
     @vks = Vk.where(groupsvk_id: @vis).where('raiting > ? AND raiting < ?', @rait[0], @rait[1]).order(created_at: :desc, medias_row: :desc,  raiting: :desc, v_like: :desc).limit(25).offset(@pos)
     # @app = current_user.vk_ids
     # Pry.start(binding)
     # render json: @vks, :include => :appointments, :except => [:created_at, :updated_at]
-    send :grpost
+     # grpost 
     # @vis.each do |d|
     #   Visiblegroup.find_or_create_by(groupsvk_id: d, user_id: payload['user_id'])
     # end
@@ -21,6 +22,14 @@ class Api::V1::VksController < ApiController
     print '6666666666'
     print @vis
     print '6666666666'
+    @vis.each do |d|
+      unless Visiblegroup.where(groupsvk_id: d, user_id: payload['user_id']).exists?
+        # Visiblegroup.create(:groupsvk_id => d, :user_id => payload['user_id'])
+        print d
+      end
+      # Visiblegroup.find_or_create_by(groupsvk_id: d, user_id: payload['user_id'])
+    end
+
   end  
 
   def show
@@ -35,7 +44,7 @@ class Api::V1::VksController < ApiController
 
   def grget
     @vks = Groupsvk.all
-    vkgrpost = params[:vkgrpost]
+    # vkgrpost = params[:vkgrpost]
     # print vkgrpost
   end
 

@@ -367,21 +367,24 @@
 	      });
 	  	},
 	  	getPkStatus(){
-	      axios({
-	        method: 'get',
-	        url: '/api/v1/getPkStatus',
-	        params: {
-	        }, 
-	        headers: {
-	          'Authorization': 'bearer '+this.$store.getters.token.access
-	        } 	        
-	      }).then((response) => { 
-	        if (response.data){
-	          this.pkstat = response.data
-	          var nowtime = response.headers.nowtime
-	          this.nowtime = nowtime
-	        }
-	      });
+	  		if (this.$store.getters.gamebo){
+		      axios({
+		        method: 'get',
+		        url: '/api/v1/getPkStatus',
+		        params: {
+		        }, 
+		        headers: {
+		          'Authorization': 'bearer '+this.$store.getters.token.access
+		        } 	        
+		      }).then((response) => { 
+		        if (response.data){
+		          this.pkstat = response.data
+		          var nowtime = response.headers.nowtime
+		          this.nowtime = nowtime
+		        }
+		      });	  			
+	  		}
+
 	  	},
 	  	refreshToken(){
 	    	axios({

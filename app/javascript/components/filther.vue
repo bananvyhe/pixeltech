@@ -69,6 +69,7 @@ export default {
     axios({
       method: 'get',
       url: '/api/v1/vkgrget',
+          
       })
       .then((response) => { 
         this.alld = response.data
