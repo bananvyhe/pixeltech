@@ -329,7 +329,7 @@ DEPENDENCIES
   nokogiri
   pg (>= 0.18, < 2.0)
   pry
-  puma (~> 3.11)
+  puma (~> 3.12)
   pusher
   rails (~> 5.2.0)
   rails-i18n (~> 5.1)
