@@ -8,8 +8,9 @@
       width="400"
       trigger="click"
       v-model="value"> 
-      {{finaldata}}
+      <!-- {{finaldata}} -->
       <el-transfer
+      @change='leftside'
        :titles="['скрытые', 'видимые']"
         v-model="finaldata"
         :data="alld">
@@ -50,6 +51,9 @@ export default {
     this.getPublics()
   },
   methods: {
+    leftside(val){
+      console.log(val)
+    },
     // putPublics(){
     //   axios({
     //     method: 'post',
@@ -81,7 +85,21 @@ export default {
           const grname = this.alld[i]
           self.datavalue = self.datavalue.concat(grname.key)
         }
-        this.finaldata = this.datavalue
+        // this.finaldata = this.datavalue
+        var now  = response.headers.findata 
+
+        // let arr = now.split(',');
+        // let sum = [];
+        // for (let i = 0; i < arr.length; i++) {
+        //    sum.push(Number(arr[i]))
+        //   // sum << Number(arr[i]);
+        // }
+        // this.alld  = response.headers.all
+              // this.finaldata = Array.from(now)
+
+                this.finaldata =  now.split(",").map(function(n) {return Number(n);})
+              // console.log(sum)
+
       });
     }
   }

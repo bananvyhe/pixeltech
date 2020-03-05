@@ -4,7 +4,7 @@ class Api::V1::VksController < ApiController
 	skip_before_action :authenticate_user!
   before_action :set_vks
   before_action :set_user
-  before_action :authorize_access_request!, only: [:associate, :grpost]
+  before_action :authorize_access_request!, only: [:associate, :grpost, :grget]
  
 	def index
 
@@ -31,26 +31,54 @@ class Api::V1::VksController < ApiController
   def edit
   end
   def grpost
-        user_id = current_user.id
-    print '6666666666'
-    print @vis
-    puts '444444'
-    print user_id
-    print '6666666666'
+    user_id = current_user.id
+    # print '6666666666'
+    # print @vis
+    # puts '444444'
+    # print user_id
+    # print '6666666666'
+    # gro = Visiblegroup.where(user_id: payload['user_id']) 
 
-
-     # gro = Visiblegroup.where(user_id: payload['user_id']) 
+    Visiblegroup.where(user_id: user_id).destroy_all
     @vis.each do |d|
-
-      
       gro = Visiblegroup.find_or_create_by!(groupsvk_id: d, user_id: user_id)
     end
-
   end  
   def grget
-    @vks = Groupsvk.all
+    user_id = current_user.id
+    tot = []
+    print '6666666666'
+    findata = User.find(current_user.id).visiblegroups
+    # findata = Groupsvk.includes(:visiblegroup).where(:visiblegroup => {user_id: user_id})
+    # findata = findata.to_a
+    # @findata = @findata.to_a    
+    # Visiblegroup.where(user_id: user_id).find_each do |d|
+    #    print 'wdfqafqawqwfqwfqwfqwfqwfqwfqwfqwf'
+    #    print d
+    # end  
+    # print '6666666666'
+
+    # print @findata.inspect
+
+    @vks =Groupsvk.all 
+
+    @all = []
+    findata.each do |i|
+      pickup = i.groupsvk_id
+      @all << pickup.to_i
+    end
+
+     response.set_header('findata', @all.to_a )
+     response.set_header('all', @vks )
+     
+      #     print '555555555'
+      # print @all 
+      # print '555555555'
+    # print  @all.inspect
+    # print '6666666666'
     # vkgrpost = params[:vkgrpost]
     # print vkgrpost
+
   end
 
   # POST /Vks

@@ -80,7 +80,7 @@ class Api::V1::GameboardsController < ApiController
   def userinfo
     userplus = calculateplus params[:user_id] 
     usermin = calculateminus params[:user_id] 
-    userplus = calculateplus params[:user_id] 
+    # userplus = calculateplus params[:user_id] 
     userkarma = getkarma params[:user_id]
     arraysizemin = usermin.size
     arraysizeplus = userplus.size
