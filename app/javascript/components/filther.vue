@@ -65,17 +65,15 @@ export default {
     //       'Authorization': 'bearer '+this.$store.getters.token.access
     //     } 
     //   }).then((response) => { 
- 
-      
     //   })
     // },
     getPublics() {
     axios({
       method: 'get',
       url: '/api/v1/vkgrget',
-          headers: {
-            'Authorization': 'bearer '+this.$store.getters.token.access
-          }         
+          // headers: {
+          //     // 'Authorization': 'bearer '+this.$store.getters.token.access
+          // }         
       })
       .then((response) => { 
         this.alld = response.data
@@ -96,12 +94,10 @@ export default {
         // }
         // this.alld  = response.headers.all
               // this.finaldata = Array.from(now)
-
-                this.finaldata =  now.split(",").map(function(n) {return Number(n);})
+        this.finaldata =  now.split(",").map(function(n) {return Number(n);})
               // console.log(sum)
-
       });
-    }
+    },
   }
 }
 function parseCalc() {

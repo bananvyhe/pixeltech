@@ -4,7 +4,7 @@ class Api::V1::VksController < ApiController
 	skip_before_action :authenticate_user!
   before_action :set_vks
   before_action :set_user
-  before_action :authorize_access_request!, only: [:associate, :grpost, :grget]
+  before_action :authorize_access_request!, only: [:associate, :grpost ]
  
 	def index
 
@@ -45,10 +45,33 @@ class Api::V1::VksController < ApiController
     end
   end  
   def grget
-    user_id = current_user.id
-    tot = []
-    print '6666666666'
-    findata = User.find(current_user.id).visiblegroups
+    @all = []
+    if current_user 
+      user_id = current_user.id
+      findata = User.find(current_user.id).visiblegroups
+      findata.each do |i|
+        pickup = i.groupsvk_id
+        @all << pickup.to_i
+      end  
+    else
+       @sca =Groupsvk.all 
+      # print '6666666666'
+      # print @sca.inspect
+      # print '6666666666'
+        @sca.each do |i|
+          pickup = i.id
+          @all << pickup.to_i
+        end   
+      #   print 'sssssssssss'
+      # print @all.inspect
+      # print 'ccccccccccccc'      
+    end
+
+    # tot = []
+    # print '6666666666'
+    #  print @all
+    #  print '6666666666'
+    # findata = User.find(current_user.id).visiblegroups
     # findata = Groupsvk.includes(:visiblegroup).where(:visiblegroup => {user_id: user_id})
     # findata = findata.to_a
     # @findata = @findata.to_a    
@@ -59,19 +82,11 @@ class Api::V1::VksController < ApiController
     # print '6666666666'
 
     # print @findata.inspect
-
     @vks =Groupsvk.all 
-
-    @all = []
-    findata.each do |i|
-      pickup = i.groupsvk_id
-      @all << pickup.to_i
-    end
-
      response.set_header('findata', @all.to_a )
      response.set_header('all', @vks )
-     
-      #     print '555555555'
+
+      # print '555555555'
       # print @all 
       # print '555555555'
     # print  @all.inspect
@@ -127,7 +142,9 @@ class Api::V1::VksController < ApiController
     # @user = User.find_by(username: params[:username])
     if (params[:vis])
       @vis = params[:vis]
-       grpost
+      if current_user
+        grpost
+      end
     end
     if (params[:pos])
       @pos = params[:pos]
