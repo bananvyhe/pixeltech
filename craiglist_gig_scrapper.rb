@@ -8,7 +8,7 @@ require 'httparty'
 agent = Mechanize.new
 # agent.user_agent_alias = 'Mac Safari'
 
-url='https://vk.com/fashionsound'
+url='https://vk.com/mmorpg.russia'
 
 page = agent.get(url)
 # print page.body 

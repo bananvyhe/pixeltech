@@ -56,7 +56,7 @@
     <div class="itembg2" :style="{height: carouselh}" v-if="data.thumb_map_img_as_div.split(',').length > 1">
       <el-carousel type="card" :height="carouselh">
         <!-- {{data.thumb_map_img_as_div}} -->
-        <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item">
+        <el-carousel-item v-for="item in data.thumb_map_img_as_div.split(',')" :key="item.id">
           <div class="imgstyle" v-bind:style="{backgroundImage: 'url('+ item}"  @click="clickhandler(item, $event) "></div> 
         </el-carousel-item>
       </el-carousel>
