@@ -5,7 +5,12 @@
  		# print '|||+++++++|||||||'
  		# puts clan
  		# @chats = Clan.where(clan: clan).joins(:chats) 
+ 		# chid =  params['checkid']
+ 		 		# print '|||+++++++|||||||'
+ 		# puts clan
  		@chats = Chat.includes(:clan).where(:clans => {:clan => clan})
+ 			# @chats = Chat.where( :user_id => payload['user_id']).includes(:clan).where(:clans => {:clan => clan}) 
+
  		# puts @chats.inspect
  		# print '|||===============|||||||'
  		# render json: @chats 

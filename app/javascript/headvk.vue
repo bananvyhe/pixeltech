@@ -403,24 +403,28 @@ export default {
       return bottomOfPage || pageHeight < visible 
     },
     addBeer() {
-      axios({
-        method: 'get',
-        url: '/api/v1/vks',
-        params: {
-          vis: this.filterInc,
-          rait: this.value,
-          pos: this.pos
-        } 
-      }).then((response) => { 
-        if (response.data){
+      if (this.filterInc != 0) {
 
-          this.alld = response.data
-    
-          this.alldata = this.alldata.concat(this.alld);
-          this.pos = this.alldata.length
-          this.bottom = false
-        }
-      });
+
+        axios({
+          method: 'get',
+          url: '/api/v1/vks',
+          params: {
+            vis: this.filterInc,
+            rait: this.value,
+            pos: this.pos
+          } 
+        }).then((response) => { 
+          if (response.data){
+
+            this.alld = response.data
+      
+            this.alldata = this.alldata.concat(this.alld);
+            this.pos = this.alldata.length
+            this.bottom = false
+          }
+        });
+      }
     }
   }
 }

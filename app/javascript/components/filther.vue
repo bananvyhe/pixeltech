@@ -1,8 +1,9 @@
 <template>
   <div class="filther">
-    <!-- {{datavalue}}
-    {{data}}
-    <br><br> {{alld}} -->
+<!--     {{datavalue}}
+    {{data}} -->
+    <!-- {{finaldata}} -->
+    <!-- <br><br> {{alld}} -->
     <el-popover
       placement="bottom-start"
       width="400"
@@ -94,7 +95,12 @@ export default {
         // }
         // this.alld  = response.headers.all
               // this.finaldata = Array.from(now)
-        this.finaldata =  now.split(",").map(function(n) {return Number(n);})
+
+        var finaldata =  now.split(",").map(function(n) {return Number(n);})
+        if (finaldata != 0) {
+          this.finaldata = finaldata
+        }
+        
               // console.log(sum)
       });
     },

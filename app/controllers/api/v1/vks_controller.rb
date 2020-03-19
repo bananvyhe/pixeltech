@@ -41,7 +41,7 @@ class Api::V1::VksController < ApiController
 
     Visiblegroup.where(user_id: user_id).destroy_all
     @vis.each do |d|
-      gro = Visiblegroup.find_or_create_by!(groupsvk_id: d, user_id: user_id)
+      gro = Visiblegroup.find_or_create_by!(groupsvk_id: d.to_i, user_id: user_id)
     end
   end  
   def grget
