@@ -49,7 +49,7 @@
           filter:"brightness(0.9)", y:  -21, scale: 1, opacity: 0, x: 0, ease: Quad.easeIn}, '+=0.0' );
 
     	var tlwar = new TimelineMax();
-    	tlwar.to('.warriors', 0.6, {backgroundPositionY: 32, ease: Power0.easeOut} ).to('.warriors', 1.6, {backgroundPositionY: 5, ease: Power0.easeIn});
+    	tlwar.to('.warriors', 0.6, {backgroundPositionY: 32, ease: Power0.easeOut} ).to('.warriors', 1.6, {backgroundPositionY: 0, ease: Power0.easeIn});
     	 
     	var tl2 = new TimelineMax({repeat:-1});
 			tl2.to('.clouds', 1200, {backgroundPositionX: 903, ease: Power0.easeNone});
