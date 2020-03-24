@@ -8,13 +8,17 @@
  		# chid =  params['checkid']
  		 		# print '|||+++++++|||||||'
  		# puts clan
- 		@chats = Chat.includes(:clan).where(:clans => {:clan => clan})
- 			# @chats = Chat.where( :user_id => payload['user_id']).includes(:clan).where(:clans => {:clan => clan}) 
 
+ 		if (params[:user_id])
+ 			usid = params[:user_id]
+ 			@chats = Chat.includes(:clan).where(:clans => {:clan => clan}).includes(:user).where(:users => {:id => usid} )
+ 		else
+ 			@chats = Chat.includes(:clan).where(:clans => {:clan => clan})
+ 		end
+ 		# @chats = Chat.where( :user_id => payload['user_id']).includes(:clan).where(:clans => {:clan => clan}) 
  		# puts @chats.inspect
  		# print '|||===============|||||||'
  		# render json: @chats 
-
  	end
  	def create
  		# puts params[:text]
