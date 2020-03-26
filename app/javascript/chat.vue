@@ -36,7 +36,30 @@
         </el-container>
       </el-tab-pane>
 
-      <el-tab-pane label="System">System</el-tab-pane>
+      <el-tab-pane label="входящие">
+        <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
+          <el-main v-chat-scroll > 
+<!--             {{inboxMessages}}
+            {{this.$store.getters.role.user_id}} -->
+            <div v-for="(item, index) in inboxMessages" class="mediumtext">
+              <div class="chatString">
+                <div class="nickname">
+                  <div v-if="item.clan == 'superadmin'">
+                    *инф*
+                  </div>
+                  <div v-else>
+                    {{item.clan }} 
+                  </div>
+                   
+                </div>
+                <div class="smalltext chatstroke">
+                  {{item.text}}            
+                </div>            
+              </div>
+            </div>
+          </el-main>
+        </el-container>
+      </el-tab-pane>
     </el-tabs>
     
     <!-- <div class='messages'>123</div> -->
@@ -57,7 +80,8 @@ export default {
   },
   data: function () {
     return {
-      chatUserMessages: '',
+      inboxMessages: '',
+      // chatUserMessages: '',
       chatHeight: 12,
       exptime: '',
       input: '',
@@ -75,7 +99,11 @@ export default {
     },    
     addMessage(data){
       console.log(data)
-      this.chatMessages = this.chatMessages.concat(data);
+      if (data.username == 'system'){
+        this.inboxMessages = this.inboxMessages.concat(data);   
+      }else{
+        this.chatMessages = this.chatMessages.concat(data);        
+      }
     },
     postingMes: function(){
        axios({
@@ -98,6 +126,23 @@ export default {
         // })
       })
     },
+    getSystemChat(){
+      axios({
+      method: 'get',
+      url: '/api/v1/chat',
+      params: {
+        clan: 'superadmin',
+        user_id: this.$store.getters.role.user_id
+      }, 
+      headers: {
+        'Authorization': 'bearer '+this.$store.getters.token.access
+      } 
+      })
+      .then((response) => { 
+        var total = response.data
+        this.inboxMessages = total
+      });      
+    },      
     getUserChat(){
       axios({
       method: 'get',
@@ -138,6 +183,7 @@ export default {
       if ((this.exptime > 0)&&(!trig)){
         self.getChat(this.$store.getters.role.role)
         self.getUserChat()
+        self.getSystemChat()
         var trig = true;     
       }
     }
@@ -147,9 +193,13 @@ export default {
       cluster: 'eu',
       forceTLS: true
     });
-    var channel = pusher.subscribe('messages');
+    var channel = pusher.subscribe('messages' );
+    var channel1 = pusher.subscribe( 'system');
     var self = this;
     channel.bind(this.$store.getters.role.role, function(data) {
+      self.addMessage(data);
+    }); 
+    channel1.bind(this.$store.getters.role.user_id, function(data) {
       self.addMessage(data);
     }); 
     var timer1 = setInterval(function(){

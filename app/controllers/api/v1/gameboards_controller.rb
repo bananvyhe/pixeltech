@@ -45,7 +45,7 @@ class Api::V1::GameboardsController < ApiController
     response.set_header('nowtime', nowtime)
   end
   def calculateminus id 
-    userminall = User.find(params[:user_id]).votes.where(vote: false).to_a
+    userminall = User.find(id ).votes.where(vote: false).to_a
  
     @allusersmin = []
     userminall.each do |i|
@@ -55,7 +55,8 @@ class Api::V1::GameboardsController < ApiController
      @allusersmin
   end
   def calculateplus id 
-    userplus = User.find(params[:user_id]).votes.where(vote: true).to_a
+    userplus = User.find(id).votes.where(vote: true).to_a
+
     @allusers = []
     userplus.each do |i|
       pickupuser = User.find(i.user_id).username
@@ -122,10 +123,41 @@ class Api::V1::GameboardsController < ApiController
       @userfind = User.find(payload['user_id'])
       # оцениваемый юзер
       @userplus = User.find(plusvote)
+
+      plusi = calculateplus @userplus.id
+      
+        if plusi.count == 2 &&  @userplus.role == 'user' 
+   
+          clname = Clan.find_by(clan: "superadmin")
+          @adname = User.find_by(role: "superadmin")
+          # puts 'sssssssssssss'
+          # puts clname.inspect
+          # puts 'sssssssssssss'   
+          @mes = Chat.new     
+          @mes.text = "У вас появились сторонники. Добавлен итем для получения прав на создание/управление кланом."
+          @mes.user_id = @userplus.id
+          @mes.clan_id = clname.id
+          if @mes.save!
+          # @mes.user_id = 0
+           
+              Pusher.trigger('system', @userplus.id.to_s, {
+              id: @userplus.id,
+              text: @mes.text,
+              clan: clname.clan,
+              username: "system"
+            })
+              # puts @mes
+          end
+        end
+      
+
       def relplus
         relations = @userplus.votes.find_by_user_id(payload['user_id'])
         relations.vote = true
         relations.save
+        # if relations.save
+ 
+        # end
       end
       if @userplus.votes.find_by_user_id(payload['user_id'])
         relplus
