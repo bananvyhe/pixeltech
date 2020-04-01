@@ -348,6 +348,7 @@ export default {
   overflow: hidden;
 }
 .mainst{
+  position: relative;
   justify-content: space-between;
   width: 100%;
   background-color: color(#1E1E21 shade(6%));
@@ -360,7 +361,7 @@ export default {
 .rightpad{
   display: flex;
   align-items: flex-end;
-  padding: 0.1em 0.4em 0.1em 0.2em; 
+  padding: 0.1em 0.4em 0.4em 0.2em; 
 }
 .plashka3{
   /*background-color: #dad;*/
