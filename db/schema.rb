@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_04_113933) do
+ActiveRecord::Schema.define(version: 2020_04_04_120441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -135,14 +135,21 @@ ActiveRecord::Schema.define(version: 2020_04_04_113933) do
     t.string "check"
   end
 
-  create_table "items", force: :cascade do |t|
+  create_table "item_attributes", force: :cascade do |t|
     t.string "item_name"
+    t.string "description"
+    t.string "image"
+  end
+
+  create_table "items", force: :cascade do |t|
     t.integer "qty", default: 0
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "description"
+    t.bigint "item_attribute_id"
+    t.index ["item_attribute_id"], name: "index_items_on_item_attribute_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -268,6 +275,7 @@ ActiveRecord::Schema.define(version: 2020_04_04_113933) do
   add_foreign_key "clients", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "gameboards", "users"
+  add_foreign_key "items", "item_attributes"
   add_foreign_key "items", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "recordings", "locations"
