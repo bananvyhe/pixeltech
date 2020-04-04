@@ -66,7 +66,7 @@ export default {
 }
 </script>
 <style scoped>
-@import "_variables";
+@import "../stylesheets/_variables";
 .rock{
   display: flex;
   flex-direction: row;
