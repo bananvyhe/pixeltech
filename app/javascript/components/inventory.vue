@@ -6,6 +6,7 @@
       trigger="click"
       content="this is content, this is content, this is content">
       <div class="slots">
+        <draggable v-model="items"  @end="itemMoved">
         <el-tooltip  class="smalltext"  placement="bottom">
           <div slot="content">
             <div class="tooldrop">
@@ -15,6 +16,7 @@
           </div>
           <div class="cry" v-if="$store.getters.cry">{{$store.getters.cry}}</div>
         </el-tooltip>
+        </draggable>
       </div>
       
       <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" ></el-button>   
@@ -29,16 +31,41 @@ export default {
   
   data() {
     return {
+      items: '',
       isOpen: false,
     }
+  },
+  methods: {
+    itemMoved: function(event) {
+      var data = new FormData
+      console.log(data)
+      data.append("item[position]", event.newIndex + 1)
+      axios({
+        method: 'PATCH',
+        url: `/employees/${this.employees[event.newIndex].id}/move`,
+        // type: "PATCH",
+        data: data,
+        // dataType: "json",
+        // success: this.getemps()
+      }).then((response) => { 
+
+        this.input = ''
+        this.getemps()
+        // this.link = 'visited'
+        // this.$store.commit('gamesendplus', 100)
+        // this.gamesendplus({
+        //   amount: loa
+        // })
+      }) 
+
+ 
+    },            
   }
 }
 </script>
 <style scoped>
 @import "_variables";
-.inv {
-   
-}
+
 .cry {
   border: 1px solid color( $screenbg shade(56%));; 
   text-shadow: 0px 1px #222, 1px 0px #222;

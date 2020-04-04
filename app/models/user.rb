@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_one :client, dependent: :destroy
   has_one :gameboard 
+  has_many :items
   has_many :appointments
   has_many :vks, :through => :appointments
   has_many :gameboards, -> { distinct }, :through => :votes
