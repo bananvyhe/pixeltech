@@ -72,18 +72,16 @@ export default {
   flex-direction: row;
   align-items: center;
 }
-.cry {
+/*.cry {
   border: 1px solid color( $screenbg shade(56%));; 
   text-shadow: 0px 1px #222, 1px 0px #222;
-
   height: 18px; 
   width: 18px; 
-  /*display: flex;*/
   background-image: url('../images/cry.jpg');
   background-size: contain;
   padding: 0.3em 0 0 0.5em;
   margin-right: 0.3em;
-} 
+} */
 .tooldrop{
   text-align: left;
   width: 15em;

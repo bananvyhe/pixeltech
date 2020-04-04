@@ -217,7 +217,7 @@ var cmp = {
             // title: '<strong>This is <i>HTML</i> string</strong>'+response.headers.cry,
             // title: 'Опыт',background-image: url('./images/_hat/fog.jpg');
             // message: f('i', { style: 'color: teal' }, 'найден камень'),
-            message: '<div class="mes"><div class="cry">'+response.headers.cry+' </div> <div class="dropmessage">найден камень</div></div>',
+            message: '<div class="mes"><div class="cry" style="height: 44px; width: 44px;">'+response.headers.cry+' </div> <div class="dropmessage">найден камень</div></div>',
             position: 'bottom-left',
             dangerouslyUseHTMLString: true,
             onClose:  this.destr,
@@ -432,7 +432,7 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 @import "stylesheets/_extends";
-
+ 
 .blank{
   height: 70em;
 }
