@@ -6,7 +6,7 @@
       trigger="click"
       content="this is content, this is content, this is content">
       <div class="slots">
-        <draggable v-model="items"  @end="itemMoved">
+        <!-- <draggable v-model="items"  @end="itemMoved"> -->
         <el-tooltip  class="smalltext"  placement="bottom">
           <div slot="content">
             <div class="tooldrop">
@@ -14,9 +14,11 @@
               <p>камнями вы можете оплатить некоторые действия</p>
             </div>
           </div>
-          <div class="cry" v-if="$store.getters.cry">{{$store.getters.cry}}</div>
+          <div v-if="$store.getters.cry" class="rock">
+            <div class="cry"></div>{{$store.getters.cry}}
+          </div>    
         </el-tooltip>
-        </draggable>
+        <!-- </draggable> -->
       </div>
       
       <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" ></el-button>   
@@ -65,17 +67,22 @@ export default {
 </script>
 <style scoped>
 @import "_variables";
-
+.rock{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .cry {
   border: 1px solid color( $screenbg shade(56%));; 
   text-shadow: 0px 1px #222, 1px 0px #222;
 
-  height: 52px; 
-  width: 52px; 
+  height: 18px; 
+  width: 18px; 
   /*display: flex;*/
   background-image: url('../images/cry.jpg');
   background-size: contain;
   padding: 0.3em 0 0 0.5em;
+  margin-right: 0.3em;
 } 
 .tooldrop{
   text-align: left;
