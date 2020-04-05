@@ -2,9 +2,10 @@
   <div class="chat" v-if="this.$store.getters.role.role != 'client'" @click="chatHeight = 30" v-click-outside="onClickOutside">
     <!-- {{chatMessages}} -->
     <el-tabs  tab-position="top" @tab-click="tabclick" >
+      <!-- таб для чтения чата юзеров тех кто вступил в клан -->
       <el-tab-pane label="User" v-if="this.$store.getters.role.role != 'user'">
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
-          <el-main v-chat-scroll  >
+          <el-main v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}" >
             <div v-for="(item, index) in userChatMessages" class="mediumtext">
               <div class="chatString">
                 <div class="nickname">
@@ -12,16 +13,18 @@
                 </div>
                 <div class="smalltext chatstroke">
                   {{item.text}}            
-                </div>            
+                </div>           
               </div>
             </div>
+            <!-- костыль для скролла чата вниз при переключении табов -->
+            <div v-if="this.blank == true"></div> 
           </el-main>
         </el-container>        
       </el-tab-pane>
 
       <el-tab-pane :label="this.$store.getters.role.role">
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
-          <el-main v-chat-scroll >
+          <el-main v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}"  >
             <div v-for="(item, index) in chatMessages" class="mediumtext">
               <div class="chatString">
                 <div class="nickname">
@@ -32,13 +35,15 @@
                 </div>            
               </div>
             </div>
+            <!-- костыль для скролла чата вниз при переключении табов -->
+            <div v-if="this.blank == true"></div> 
           </el-main>
         </el-container>
       </el-tab-pane>
 
       <el-tab-pane label="системные" >
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
-          <el-main v-chat-scroll > 
+          <el-main v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}" > 
 <!--             {{inboxMessages}}
             {{this.$store.getters.role.user_id}} -->
             <div v-for="(item, index) in inboxMessages" class="mediumtext">
@@ -54,9 +59,11 @@
                 </div>
                 <div class="smalltext chatstroke">
                   {{item.text}}            
-                </div>            
+                </div>        
               </div>
             </div>
+            <!-- костыль для скролла чата вниз при переключении табов -->
+            <div v-if="this.blank == true"></div> 
           </el-main>
         </el-container>
       </el-tab-pane>
@@ -80,6 +87,8 @@ export default {
   },
   data: function () {
     return {
+      blank: false,
+      // scroll: false,
       tabinput: true,
       inboxMessages: '',
       // chatUserMessages: '',
@@ -92,6 +101,17 @@ export default {
   },
   methods: {
     tabclick(targetName){
+      //костыль для скролла чата при переключении табов
+      var self = this
+      setTimeout(function(){
+        // self.cropText();
+        self.blank = true
+        // console.log('true')
+        setTimeout(function(){
+          self.blank = false
+          // console.log('false')
+        },5 );
+      },10 );   
 
       // console.log(targetName.label)
       if(targetName.label == 'системные'){
