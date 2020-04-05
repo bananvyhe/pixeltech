@@ -36,7 +36,7 @@
         </el-container>
       </el-tab-pane>
 
-      <el-tab-pane label="входящие" >
+      <el-tab-pane label="системные" >
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
           <el-main v-chat-scroll > 
 <!--             {{inboxMessages}}
@@ -94,7 +94,7 @@ export default {
     tabclick(targetName){
 
       // console.log(targetName.label)
-      if(targetName.label == 'входящие'){
+      if(targetName.label == 'системные'){
         this.tabinput = false
       }else{
         this.tabinput = true
