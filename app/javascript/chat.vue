@@ -1,7 +1,7 @@
 <template>
   <div class="chat" v-if="this.$store.getters.role.role != 'client'" @click="chatHeight = 30" v-click-outside="onClickOutside">
     <!-- {{chatMessages}} -->
-    <el-tabs  tab-position="top"  >
+    <el-tabs  tab-position="top" @tab-click="tabclick" >
       <el-tab-pane label="User" v-if="this.$store.getters.role.role != 'user'">
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
           <el-main v-chat-scroll  >
@@ -36,7 +36,7 @@
         </el-container>
       </el-tab-pane>
 
-      <el-tab-pane label="входящие">
+      <el-tab-pane label="входящие" >
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
           <el-main v-chat-scroll > 
 <!--             {{inboxMessages}}
@@ -63,8 +63,8 @@
     </el-tabs>
     
     <!-- <div class='messages'>123</div> -->
-    <div class="inputZone" v-on:keyup.enter="postingMes">
-      <el-input size='mini'class="inputStroke" placeholder="сообщение в чат" v-model="input" ></el-input>
+    <div class="inputZone" v-on:keyup.enter="postingMes" v-if="tabinput == true">
+      <el-input size='mini'class="inputStroke" placeholder="сообщение в чат" v-model="input"></el-input>
       <el-button size='mini' @click="postingMes">отправить</el-button>      
     </div>
 
@@ -80,6 +80,7 @@ export default {
   },
   data: function () {
     return {
+      tabinput: true,
       inboxMessages: '',
       // chatUserMessages: '',
       chatHeight: 12,
@@ -90,6 +91,15 @@ export default {
     };
   },
   methods: {
+    tabclick(targetName){
+
+      // console.log(targetName.label)
+      if(targetName.label == 'входящие'){
+        this.tabinput = false
+      }else{
+        this.tabinput = true
+      }
+    },
     onClickOutside (event) {
       console.log('Clicked outside. Event: ', event)
       this.chatHeight = 12
