@@ -127,7 +127,7 @@ class Api::V1::GameboardsController < ApiController
       plusi = calculateplus @userplus.id
       
         if plusi.count == 2 &&  @userplus.role == 'user' 
-   
+          @make_clan_item =  ItemAttribute.find_or_create_by(item_name: 'Права лидера', description: 'Позволяет создать клан', image: '../images/clanbuild.jpg') 
           clname = Clan.find_by(clan: "superadmin")
           @adname = User.find_by(role: "superadmin")
           # puts 'sssssssssssss'
@@ -139,7 +139,6 @@ class Api::V1::GameboardsController < ApiController
           @mes.clan_id = clname.id
           if @mes.save!
           # @mes.user_id = 0
-           
               Pusher.trigger('system', @userplus.id.to_s, {
               id: @userplus.id,
               text: @mes.text,
