@@ -128,6 +128,9 @@ class Api::V1::GameboardsController < ApiController
       
         if plusi.count == 2 &&  @userplus.role == 'user' 
           @make_clan_item =  ItemAttribute.find_or_create_by(item_name: 'Права лидера', description: 'Позволяет создать клан', image: '../images/clanbuild.jpg') 
+          @items = Item.new(item_attribute: @make_clan_item, user_id: payload['user_id'],qty: 1)
+          # @items.item_attribute << @make_clan_item
+          @items.save
           clname = Clan.find_by(clan: "superadmin")
           @adname = User.find_by(role: "superadmin")
           # puts 'sssssssssssss'
