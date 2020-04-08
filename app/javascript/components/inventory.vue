@@ -19,13 +19,16 @@
           </div>    
         </el-tooltip>
         <!-- </draggable> -->
+        <div v-for="(item, index) in items"> 
+          <div v-bind:style="{backgroundImage: `url('items${item.image.slice(9)}')`}" class="item-inv" > </div>
+        </div>
       </div>
-      
-      <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" ></el-button>   
+    <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" ></el-button>   
     </el-popover>    
   </div>
 </template>
 <script>
+import axios from 'axios'  
 import draggable from "vuedraggable"
 export default {
   components: { draggable },
@@ -37,7 +40,34 @@ export default {
       isOpen: false,
     }
   },
+  watch: {
+    isOpen(){
+      if (this.isOpen == true) {
+        this.ItemsGet()
+      }
+    }
+
+  },
   methods: {
+    ItemsGet(){
+      // console.log('true')
+      axios({
+        method: 'get',
+        url: '/items',
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+        // params: {
+        //   rait: this.value,
+        //   pos: this.pos
+        // } 
+        })
+        .then((response) => { 
+           console.log(response)
+          var total = response.data
+          this.items = total
+        });      
+    },
     itemMoved: function(event) {
       var data = new FormData
       console.log(data)
@@ -100,5 +130,6 @@ export default {
   /*background-color: #dad;*/
   margin: -0.8em -1em;
   display: flex;
+  flex-direction: column;
 }
 </style>

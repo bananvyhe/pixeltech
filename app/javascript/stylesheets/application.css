@@ -44,7 +44,6 @@
 .cry {
   border: 1px solid color( $screenbg shade(56%));; 
   text-shadow: 0px 1px #222, 1px 0px #222;
-
   height: 18px; 
   width: 18px; 
   /*display: flex;*/
@@ -53,6 +52,17 @@
   padding: 0.3em 0 0 0.5em;
   margin-right: 0.3em;
 } 
+.item-inv {
+  border: 1px solid color( $screenbg shade(56%));; 
+  text-shadow: 0px 1px #222, 1px 0px #222;
+  height: 44px; 
+  width: 44px; 
+  /*display: flex;*/
+   
+  background-size: contain;
+  padding: 0.3em 0 0 0.5em;
+  margin-right: 0.3em;
+}
 .emoji-invoker {
   /*position: absolute;*/
   /*box-shadow: 4px 3px 6px $screenbg;*/
