@@ -221,7 +221,7 @@
 </script>
 <style scoped>
 /*@import "stylesheets/_variables";*/
-@import "stylesheets/_extends";
+/*@import "stylesheets/_extends";*/
 /*.el-form-item{
 	height: 2.7em;
 },*/
