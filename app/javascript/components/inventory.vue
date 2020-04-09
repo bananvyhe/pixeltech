@@ -6,24 +6,31 @@
       trigger="click"
       content="this is content, this is content, this is content">
       <div class="slots">
-        <!-- <draggable v-model="items"  @end="itemMoved"> -->
-        <el-tooltip  class="smalltext"  placement="bottom">
-          <div slot="content">
-            <div class="tooldrop">
-              <h5>Камень</h5>
-              <p>камнями вы можете оплатить некоторые действия</p>
-            </div>
-          </div>
-          <div v-if="$store.getters.cry" class="rock">
-            <div class="cry"></div>{{$store.getters.cry}}
-          </div>    
-        </el-tooltip>
-        <!-- </draggable> -->
-        <div v-for="(item, index) in items" class="inv"> 
+        <div class="cash">
           <el-tooltip  class="smalltext"  placement="bottom">
-            <div slot="content"><h5 style="padding-left: 0.5em;">{{item.item_name}}</h5><p>{{item.description}}</p></div>
-            <div v-bind:style="{backgroundImage: `url('items${item.image.slice(9)}')`}" class="item-inv" > </div>
-          </el-tooltip>
+            <div slot="content">
+              <div class="tooldrop">
+                <h5>Камень</h5>
+                <p>камнями вы можете оплатить некоторые действия</p>
+              </div>
+            </div>
+            <div v-if="$store.getters.cry" class="rock">
+              <div class="cry"></div>{{$store.getters.cry}}
+            </div>    
+          </el-tooltip>          
+        </div>
+        <!-- <draggable v-model="items"  @end="itemMoved"> -->
+
+        <!-- </draggable> -->
+        <div class="inv">
+          <div v-for="(item, index) in items" class="one-item"> 
+            <el-tooltip  class="smalltext"  placement="bottom">
+              <div slot="content">
+                <h5 style="padding-left: 0.5em;">{{item.item_name}}</h5><p>{{item.description}}</p>
+              </div>
+              <div v-bind:style="{backgroundImage: `url('items${item.image.slice(9)}')`}" class="item-inv" >{{item.qty}}</div>
+            </el-tooltip>
+          </div>          
         </div>
       </div>
     <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" ></el-button>   
@@ -100,8 +107,17 @@ export default {
 </script>
 <style scoped>
 @import "../stylesheets/_variables";
+.cash {
+  display: flex;
+}
+
+.one-item {
+  padding: 0.1em;
+}
 .inv {
-  padding: 0.5em 0 0;
+  padding: 0.3em 0 0;
+  display: flex;
+  flex-direction: row;
 }
 .rock{
   display: flex;
