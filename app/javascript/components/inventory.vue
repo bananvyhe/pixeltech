@@ -28,7 +28,7 @@
               <div slot="content">
                 <h5 style="padding-left: 0.5em;">{{item.item_name}}</h5><p>{{item.description}}</p>
               </div>
-              <div v-bind:style="{backgroundImage: `url('items${item.image.slice(9)}')`}" class="item-inv" >{{item.qty}}</div>
+              <div v-bind:style="{backgroundImage: `url('items${item.image.slice(9)}')`}" class="item-inv"><div v-if="item.qty != 0">{{item.qty}}</div></div>
             </el-tooltip>
           </div>          
         </div>
