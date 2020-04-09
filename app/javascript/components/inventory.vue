@@ -19,8 +19,11 @@
           </div>    
         </el-tooltip>
         <!-- </draggable> -->
-        <div v-for="(item, index) in items"> 
-          <div v-bind:style="{backgroundImage: `url('items${item.image.slice(9)}')`}" class="item-inv" > </div>
+        <div v-for="(item, index) in items" class="inv"> 
+          <el-tooltip  class="smalltext"  placement="bottom">
+            <div slot="content"><h5 style="padding-left: 0.5em;">{{item.item_name}}</h5><p>{{item.description}}</p></div>
+            <div v-bind:style="{backgroundImage: `url('items${item.image.slice(9)}')`}" class="item-inv" > </div>
+          </el-tooltip>
         </div>
       </div>
     <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" ></el-button>   
@@ -97,6 +100,9 @@ export default {
 </script>
 <style scoped>
 @import "../stylesheets/_variables";
+.inv {
+  padding: 0.5em 0 0;
+}
 .rock{
   display: flex;
   flex-direction: row;
