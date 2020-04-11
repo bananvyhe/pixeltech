@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_08_103114) do
+ActiveRecord::Schema.define(version: 2020_04_11_011056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -141,18 +141,6 @@ ActiveRecord::Schema.define(version: 2020_04_08_103114) do
     t.string "image"
   end
 
-  create_table "items", force: :cascade do |t|
-    t.integer "qty", default: 0
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.string "description"
-    t.bigint "item_attribute_id"
-    t.index ["item_attribute_id"], name: "index_items_on_item_attribute_id", unique: true
-    t.index ["user_id"], name: "index_items_on_user_id"
-  end
-
   create_table "lists", force: :cascade do |t|
     t.string "name"
     t.integer "position"
@@ -164,6 +152,18 @@ ActiveRecord::Schema.define(version: 2020_04_08_103114) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "my_items", force: :cascade do |t|
+    t.integer "qty", default: 0
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.string "description"
+    t.bigint "item_attribute_id"
+    t.index ["item_attribute_id"], name: "index_my_items_on_item_attribute_id", unique: true
+    t.index ["user_id"], name: "index_my_items_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -275,8 +275,8 @@ ActiveRecord::Schema.define(version: 2020_04_08_103114) do
   add_foreign_key "clients", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "gameboards", "users"
-  add_foreign_key "items", "item_attributes"
-  add_foreign_key "items", "users"
+  add_foreign_key "my_items", "item_attributes"
+  add_foreign_key "my_items", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "recordings", "locations"
   add_foreign_key "siteowners", "users"

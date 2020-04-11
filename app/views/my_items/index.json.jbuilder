@@ -1,5 +1,6 @@
 json.array! @items do |i|
 	if current_user 
+		json.id i.id
 		json.qty i.qty
 		json.position i.position
 		json.user_id i.user_id

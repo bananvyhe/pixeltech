@@ -1,3 +1,3 @@
 class ItemAttribute < ApplicationRecord
-	has_many :items
+	has_many :my_items
 end

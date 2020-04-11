@@ -22,7 +22,8 @@
         <!-- <draggable v-model="items"  @end="itemMoved"> -->
 
         <!-- </draggable> -->
-        <div class="inv">
+        <draggable class="inv" v-model="Array.from(items)"  @end="itemMoved">
+        <!-- <div class="inv"> -->
           <div v-for="(item, index) in items" class="one-item"> 
             <el-tooltip  class="smalltext"  placement="bottom">
               <div slot="content">
@@ -31,7 +32,8 @@
               <div v-bind:style="{backgroundImage: `url('items${item.image.slice(9)}')`}" class="item-inv"><div v-if="item.qty != 0">{{item.qty}}</div></div>
             </el-tooltip>
           </div>          
-        </div>
+        <!-- </div> -->
+        </draggable>
       </div>
     <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" ></el-button>   
     </el-popover>    
@@ -63,14 +65,10 @@ export default {
       // console.log('true')
       axios({
         method: 'get',
-        url: '/items',
+        url: '/my_items',
         headers: {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
-        // params: {
-        //   rait: this.value,
-        //   pos: this.pos
-        // } 
         })
         .then((response) => { 
            console.log(response)
@@ -80,27 +78,15 @@ export default {
     },
     itemMoved: function(event) {
       var data = new FormData
-      console.log(data)
-      data.append("item[position]", event.newIndex + 1)
+      console.log(event.newIndex)
+      data.append("my_item[position]", event.newIndex + 1)
       axios({
         method: 'PATCH',
-        url: `/employees/${this.employees[event.newIndex].id}/move`,
-        // type: "PATCH",
+        url: `/my_items/${this.items[event.newIndex].id}/move`,
         data: data,
-        // dataType: "json",
-        // success: this.getemps()
       }).then((response) => { 
-
-        this.input = ''
-        this.getemps()
-        // this.link = 'visited'
-        // this.$store.commit('gamesendplus', 100)
-        // this.gamesendplus({
-        //   amount: loa
-        // })
+        this.ItemsGet()
       }) 
-
- 
     },            
   }
 }
