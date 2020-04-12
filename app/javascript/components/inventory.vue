@@ -23,7 +23,7 @@
         <!-- </draggable> -->
         <draggable class="inv" v-model="Array.from(items)"  @end="itemMoved">
         <!-- <div class="inv"> -->
-          <div v-for="(item, index) in items" class="one-item" v-on:click="oneClick"> 
+          <div v-for="(item, index) in items" class="one-item" v-on:click="oneClick(item.item_name)"> 
             <el-tooltip  class="smalltext"  placement="bottom">
               <div slot="content">
                 <h5 style="padding-left: 0.5em;">{{item.item_name}}</h5><p>{{item.description}}</p>
@@ -81,7 +81,7 @@ export default {
             self.clicks = 0
           }, this.delay);
         } else {
-          console.log('dblclick')
+          console.log(event)
           clearTimeout(this.timer);
           this.result.push('dblclick');
           this.clicks = 0;
