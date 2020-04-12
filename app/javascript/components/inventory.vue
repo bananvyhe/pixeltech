@@ -23,7 +23,7 @@
         <!-- </draggable> -->
         <draggable class="inv" v-model="Array.from(items)"  @end="itemMoved">
         <!-- <div class="inv"> -->
-          <div v-for="(item, index) in items" class="one-item"> 
+          <div v-for="(item, index) in items" class="one-item" v-on:click="oneClick"> 
             <el-tooltip  class="smalltext"  placement="bottom">
               <div slot="content">
                 <h5 style="padding-left: 0.5em;">{{item.item_name}}</h5><p>{{item.description}}</p>
@@ -49,18 +49,22 @@ export default {
   
   data() {
     return {
+      //doubleClick realise     
+      result: [],
+      delay: 500,
+      clicks: 0,
+      timer: null,  
+          
       items: '',
       isOpen: false,
     }
   },
-
   watch: {
     isOpen(){
       if (this.isOpen == true) {
         this.ItemsGet()
       }
     }
-
   },
   computed: {
     ...mapGetters([
@@ -68,6 +72,21 @@ export default {
     ]),    
   },
   methods: {
+    oneClick: function(event) {
+      this.clicks++
+        if (this.clicks === 1) {
+          var self = this
+          this.timer = setTimeout(function() {
+            self.result.push(event.type);
+            self.clicks = 0
+          }, this.delay);
+        } else {
+          console.log('dblclick')
+          clearTimeout(this.timer);
+          this.result.push('dblclick');
+          this.clicks = 0;
+        }
+    },    
     ItemsGet(){
       // console.log('true')
       axios({
