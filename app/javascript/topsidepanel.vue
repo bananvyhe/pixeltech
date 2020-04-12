@@ -1,5 +1,5 @@
 <template>
-	<div id="bpad"> 
+	<div id="bpad">
 	 <!-- {{exp}} -->
 		<div class="overbpad">
 		<!-- {{exptime}} -->
@@ -98,6 +98,7 @@
 
 </template>
 <script>
+
 	import Inv from './components/inventory.vue';
 	import axios from 'axios'
 	let screenwidth = {value: ''}

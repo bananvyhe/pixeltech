@@ -20,7 +20,6 @@
           </el-tooltip>          
         </div>
         <!-- <draggable v-model="items"  @end="itemMoved"> -->
-
         <!-- </draggable> -->
         <draggable class="inv" v-model="Array.from(items)"  @end="itemMoved">
         <!-- <div class="inv"> -->
@@ -29,7 +28,8 @@
               <div slot="content">
                 <h5 style="padding-left: 0.5em;">{{item.item_name}}</h5><p>{{item.description}}</p>
               </div>
-              <div v-bind:style="{backgroundImage: `url('items${item.image.slice(9)}')`}" class="item-inv"><div v-if="item.qty != 0">{{item.qty}}</div></div>
+              <div v-bind:style="{backgroundImage: `url('items${item.image.slice(9)}')`}" class="item-inv"><div v-if="item.qty != 0">{{item.qty}}</div>
+              </div>
             </el-tooltip>
           </div>          
         <!-- </div> -->
@@ -40,6 +40,7 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 import axios from 'axios'  
 import draggable from "vuedraggable"
 export default {
@@ -52,6 +53,7 @@ export default {
       isOpen: false,
     }
   },
+
   watch: {
     isOpen(){
       if (this.isOpen == true) {
@@ -60,6 +62,11 @@ export default {
     }
 
   },
+  computed: {
+    ...mapGetters([
+      'token' 
+    ]),    
+  },
   methods: {
     ItemsGet(){
       // console.log('true')
@@ -67,24 +74,29 @@ export default {
         method: 'get',
         url: '/my_items',
         headers: {
-          'Authorization': 'bearer '+this.$store.getters.token.access
+          'Authorization': 'bearer '+this.token.access
         } 
         })
         .then((response) => { 
-           console.log(response)
+           // console.log(response)
+          this.items= ''
           var total = response.data
           this.items = total
         });      
     },
     itemMoved: function(event) {
       var data = new FormData
-      console.log(event.newIndex)
+      console.log(this.token.access)
       data.append("my_item[position]", event.newIndex + 1)
       axios({
         method: 'PATCH',
         url: `/my_items/${this.items[event.newIndex].id}/move`,
         data: data,
+        headers: {
+          'Authorization': 'bearer '+this.token.access
+        }
       }).then((response) => { 
+        this.items= ''
         this.ItemsGet()
       }) 
     },            

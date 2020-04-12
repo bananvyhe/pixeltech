@@ -3,4 +3,5 @@ class MyItem < ApplicationRecord
 	acts_as_list
 	belongs_to :user 
 	belongs_to :item_attribute 
+	scope :sorted, ->{ order(position: :asc) }
 end
