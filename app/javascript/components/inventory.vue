@@ -23,7 +23,7 @@
         <!-- </draggable> -->
         <draggable class="inv" v-model="Array.from(items)"  @end="itemMoved">
         <!-- <div class="inv"> -->
-          <div v-for="(item, index) in items" class="one-item" v-on:click="oneClick(item.item_name)"> 
+          <div v-for="(item, index) in items" class="one-item" v-on:click="oneClick(item.item_name, item.id)"> 
             <el-tooltip  class="smalltext"  placement="bottom">
               <div slot="content">
                 <h5 style="padding-left: 0.5em;">{{item.item_name}}</h5><p>{{item.description}}</p>
@@ -31,6 +31,9 @@
               <div v-bind:style="{backgroundImage: `url('items${item.image.slice(9)}')`}" class="item-inv"><div v-if="item.qty != 0">{{item.qty}}</div>
               </div>
             </el-tooltip>
+
+            <!-- <div class="smalltext">{{item}}</div> -->
+
           </div>          
         <!-- </div> -->
         </draggable>
@@ -72,7 +75,7 @@ export default {
     ]),    
   },
   methods: {
-    oneClick: function(event) {
+    oneClick: function(event, id) {
       this.clicks++
         if (this.clicks === 1) {
           var self = this
@@ -81,12 +84,29 @@ export default {
             self.clicks = 0
           }, this.delay);
         } else {
-          console.log(event)
+          // console.log(event)
           clearTimeout(this.timer);
           this.result.push('dblclick');
           this.clicks = 0;
+          this.itemUse(event, id)
         }
-    },    
+    },  
+    itemUse(name, id){
+      console.log(name)
+      console.log(id)
+      axios({
+        method: 'post',
+        url: `/my_items/${id}/use_item`,
+        data: {
+          name: name
+        },
+        headers: {
+          'Authorization': 'bearer '+this.token.access
+        } 
+      }).then((response) => { 
+         
+      })
+    },
     ItemsGet(){
       // console.log('true')
       axios({
