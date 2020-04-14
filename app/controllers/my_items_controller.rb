@@ -12,6 +12,8 @@ class MyItemsController < ApplicationController
 
   def use_item
     # puts 'test '*20
+    puts params[:name]
+    puts params[:id]
   end
 
   private
@@ -21,7 +23,7 @@ class MyItemsController < ApplicationController
     @item = MyItem.find_by_user_id(payload['user_id'])
   end
   def my_item_params
-    params.require(:my_item).permit(:position, :qty, :user_id, :item_attribute_id, :description)
+    params.require(:my_item).permit(:name, :position, :qty, :user_id, :item_attribute_id, :description)
   end
 
 end

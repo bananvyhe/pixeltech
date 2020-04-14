@@ -90,18 +90,13 @@
                 </el-tooltip>
               </div>    
             </div>
-   
             <el-button v-if="item.pk == false" slot="reference" class="user" border>
-<!--               <el-badge v-if="item.plus - item.minus != 0":value="item.plus - item.minus" class="item">
-                {{username(item.user_id)}}
-              </el-badge>  -->
               <div class="item" @mouseover="mouseOverUser(item.id)" v-bind:style="item.karma > 0 ? 'color: red;' : ''">
                 {{item.username}}
               </div> 
             </el-button>        
-          
-
           </el-popover>
+
           <el-dialog
             title="Вы уверены?"
             :visible.sync="dialogVisible"
@@ -116,11 +111,10 @@
               &nbsp;
             </div>
           </el-dialog>
+
           </div>
-        <!-- </el-badge> -->
       </el-button-group>
     </div>
-     <!-- <h5>нераспредлеленные пользователи</h5> -->
   </div>
 </template>
 

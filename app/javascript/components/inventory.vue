@@ -40,6 +40,20 @@
       </div>
     <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" ></el-button>   
     </el-popover>    
+          <el-dialog
+            title="Создать клан"
+            :visible.sync="dialogBuildClan"
+            width="25em"
+            >
+            <div class="plashka2">подберите название:</div>
+            <div slot="footer"  class="uiframe">
+              <el-button @click="dialogBuildClan = false">Отмена</el-button>
+              <el-button   type="primary" @click="kill(pkid)" >Подтвердить</el-button>
+            </div>
+            <div slot="footer" class="footpostshow basetext font3">
+              &nbsp;
+            </div>
+          </el-dialog>   
   </div>
 </template>
 <script>
@@ -52,6 +66,7 @@ export default {
   
   data() {
     return {
+      dialogBuildClan: false,
       //doubleClick realise     
       result: [],
       delay: 500,
@@ -92,8 +107,12 @@ export default {
         }
     },  
     itemUse(name, id){
-      console.log(name)
-      console.log(id)
+      // console.log(name)
+      // console.log(id)
+      if (name == 'Права лидера'){
+        this.dialogBuildClan = true;
+        // console.log('123')
+      }
       axios({
         method: 'post',
         url: `/my_items/${id}/use_item`,
