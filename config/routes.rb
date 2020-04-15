@@ -80,11 +80,9 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, module: :posts
   end
-  resources :my_items  do
+  resources :my_items  do 
     member do
       post :use_item
-    end    
-    member do
       patch :move
     end
   end 
