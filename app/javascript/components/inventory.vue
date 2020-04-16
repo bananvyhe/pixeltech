@@ -45,7 +45,13 @@
             :visible.sync="dialogBuildClan"
             width="25em"
             >
-            <div class="plashka2">подберите название:</div>
+            <!-- <div class="plashka2">подберите название:</div> -->
+          <el-form :model="form" :rules="rules" ref="form">             
+            <el-form-item  prop="clan" size="medium">
+              <el-input v-model="form.clan" auto-complete="off"></el-input>
+            </el-form-item>
+          </el-form>
+            <!-- <el-input placeholder="подберите название" v-model="inputClan"></el-input> -->
             <div slot="footer"  class="uiframe">
               <el-button @click="dialogBuildClan = false">Отмена</el-button>
               <el-button   type="primary" @click="kill(pkid)" >Подтвердить</el-button>
@@ -65,7 +71,28 @@ export default {
   // props:['isOpen'],
   
   data() {
+    var validateClanname = (rule, value, callback) => {
+      var self = this;
+      setTimeout(function(){
+        if (value === self.responseClan) {
+          callback(new Error('Имя занято')); 
+        } else if (value == '') {
+          callback(new Error('Введите название клана'));
+        } else {
+          callback();
+        }
+      },100 );  
+    };    
     return {
+      responseClan: false,
+      rules: {
+        clan: [
+          { required: true, validator: validateClanname, trigger: ['blur', 'change']   }
+        ]
+      },      
+      form: {
+        clan: ''
+      },
       dialogBuildClan: false,
       //doubleClick realise     
       result: [],
@@ -78,6 +105,27 @@ export default {
     }
   },
   watch: {
+    'form.clan': function(val){
+      console.log(val)
+      axios({
+        method: 'get',
+        url:'/my_items/check_clan',
+        params: {
+          name: val
+        },
+        headers: {
+          'Authorization': 'bearer '+this.token.access
+        } 
+      })
+      .then((response) => {    
+        this.responseClan =  response.data.clan
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+      // console.log("clanname check")
+    },    
     isOpen(){
       if (this.isOpen == true) {
         this.ItemsGet()

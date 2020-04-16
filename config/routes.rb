@@ -86,6 +86,10 @@ Rails.application.routes.draw do
       patch :move
     end
   end 
+  # namespace :my_items do 
+  #   get :check_clan, to: "my_items#check_clan"
+  # end
+  get 'my_item/check_clan', to: 'my_items#check_clan'
   # resources :discussios do
   #   resources :comments, module: :discussios
   # end
