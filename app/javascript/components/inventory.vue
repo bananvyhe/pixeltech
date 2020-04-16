@@ -54,11 +54,12 @@
             <!-- <el-input placeholder="подберите название" v-model="inputClan"></el-input> -->
             <div slot="footer"  class="uiframe">
               <el-button @click="dialogBuildClan = false">Отмена</el-button>
-              <el-button   type="primary" @click="kill(pkid)" >Подтвердить</el-button>
+              <el-button v-if="responseClan == false" type="primary" @click="proceed" >Подтвердить</el-button>
+              <el-button v-else type="primary" disabled >Подтвердить</el-button>
             </div>
             <div slot="footer" class="footpostshow basetext font3">
               &nbsp;
-            </div>
+            </div> 
           </el-dialog>   
   </div>
 </template>
@@ -117,8 +118,14 @@ export default {
           'Authorization': 'bearer '+this.token.access
         } 
       })
-      .then((response) => {    
-        this.responseClan =  response.data.clan
+      .then((response) => {  
+        console.log(response.data );
+        if (response.data == null) {
+          this.responseClan = false;
+        }else{
+          this.responseClan =  response.data.clan          
+        }
+
 
       })
       .catch(function (error) {
@@ -138,6 +145,21 @@ export default {
     ]),    
   },
   methods: {
+   proceed() {
+ 
+      axios({
+        method: 'post',
+        url: '/my_items/paste_clan',
+        data: {
+          name: this.form.clan
+        },
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      }).then((response) => { 
+
+      })
+    },    
     oneClick: function(event, id) {
       this.clicks++
         if (this.clicks === 1) {

@@ -90,6 +90,7 @@ Rails.application.routes.draw do
   #   get :check_clan, to: "my_items#check_clan"
   # end
   get 'my_item/check_clan', to: 'my_items#check_clan'
+  post 'my_items/paste_clan', to: 'my_items#paste_clan'
   # resources :discussios do
   #   resources :comments, module: :discussios
   # end

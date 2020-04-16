@@ -24,13 +24,15 @@ class MyItemsController < ApplicationController
     puts params[:name]
     puts params[:id]
   end
-  def check_clan
-    puts 'test '*20
-    puts params[:name]
-    puts 'test '*20    
-    @clan = Clan.find_by( clan: params[:name])
 
+  def check_clan
      
+    @clan = Clan.find_by( clan: params[:name])
+  end
+  def paste_clan
+    puts 'test '*20
+      puts params[:name]
+    puts 'test '*20      
   end
 
   private
