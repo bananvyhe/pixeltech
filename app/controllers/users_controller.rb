@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
       @user.update_attribute :role, :admin
-      @user.add_role :admin   
+      @user.add_role :admin  
     	# @user.update_attribute :admin, true
       redirect_to action: :index
     end
@@ -39,6 +39,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @user.update_attribute :role, :user
       @user.add_role :user
+      @user.remove_role :admin
       redirect_to action: :index
     end
   end
@@ -51,11 +52,12 @@ class UsersController < ApplicationController
       redirect_to action: :index
     end
   end
-  def devoodootion
+  def devoodooation
     if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
       @user.update_attribute :role, :user
       @user.add_role :user
+      @user.remove_role :voodoo
       redirect_to action: :index
     end
   end
@@ -75,6 +77,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @user.update_attribute :role, :user
       @user.add_role :user
+      @user.remove_role :client
       redirect_to action: :index
     end
   end
