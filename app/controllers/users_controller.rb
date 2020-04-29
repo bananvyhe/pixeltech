@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
       @user.update_attribute :role, :admin
+      @user.add_role :admin   
     	# @user.update_attribute :admin, true
       redirect_to action: :index
     end
@@ -36,7 +37,8 @@ class UsersController < ApplicationController
   def deadmination 
     if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
-       @user.update_attribute :role, :user
+      @user.update_attribute :role, :user
+      @user.add_role :user
       redirect_to action: :index
     end
   end
@@ -44,6 +46,7 @@ class UsersController < ApplicationController
     if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
       @user.update_attribute :role, :voodoo
+      @user.add_role :voodoo
       # @user.update_attribute :admin, true
       redirect_to action: :index
     end
@@ -51,7 +54,8 @@ class UsersController < ApplicationController
   def devoodootion
     if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
-       @user.update_attribute :role, :user
+      @user.update_attribute :role, :user
+      @user.add_role :user
       redirect_to action: :index
     end
   end
@@ -62,6 +66,7 @@ class UsersController < ApplicationController
         @user.create_client(ballance: "0")
       end
       @user.update_attribute :role, :client
+      @user.add_role :client
       redirect_to action: :index
     end
   end
@@ -69,6 +74,7 @@ class UsersController < ApplicationController
     if current_user.superadmin? || current_user.admin?
       @user = User.find(params[:id])
       @user.update_attribute :role, :user
+      @user.add_role :user
       redirect_to action: :index
     end
   end
