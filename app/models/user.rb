@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
   has_one :client, dependent: :destroy
   has_one :gameboard 
   has_many :my_items

@@ -43,6 +43,7 @@ gem 'nokogiri'
 gem 'mechanize'
 gem 'httparty'
 gem 'pusher'
+gem "rolify"
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
