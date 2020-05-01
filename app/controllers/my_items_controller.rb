@@ -30,8 +30,16 @@ class MyItemsController < ApplicationController
     @clan = Clan.find_by( clan: params[:name])
   end
   def paste_clan
-    current_user.add_role params[:name].to_sym    
 
+    current_user.add_role params[:name].to_sym   
+    # allroles = current_user.roles 
+    # @roles =[]
+    # allroles.each do |i|
+    #   @roles << i.name
+    # end
+ 
+
+    # binding.pry
     # puts 'test '*20
     #   puts current_user.has_role? :voodoo
     # puts 'test '*20      
