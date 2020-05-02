@@ -4,26 +4,39 @@ class LandingPageController < ApplicationController
 		@posts = Post.all.order(created_at: :desc).where(clan_name: 'user')
 
 		if (current_user)
-			@currole = current_user.role
-			@postsprivate = Post.all.order(created_at: :desc).where(clan_name: current_user.role)
-	    path = case current_user.role
-	    	when 'superadmin'
+			@roles = current_user.roles      
+      @currole =[]
+      @roles.each do |i|
+        @currole << i.name
+      end
+     	# @currole.delete('user')
+     	@currole.delete('superadmin')
+     	@currole.delete('admin')
+     	@currole.delete('elder')
+		 # binding.pry
+			@postsprivate = Post.all.order(created_at: :desc).where(clan_name: @currole)
+			
+			# path = case current_user.role
+	    path = case @currole
+	    	when ['superadmin']
 	        users_path
-	      when 'admin'
+	      when ['admin']
 	        users_path
-	      when 'user'
+	      when ['user']
 	        posts_path
-	      when 'voodoo'
+	      when ['voodoo']
 	        # voodoo_index_path
 	        posts_path
-	      when 'client'
+	      when ['client']
 	        siteowners_path
 	      else
 	      
 	      	# If you want to raise an exception or have a default root for users without roles
 	    end
-	    if current_user.role != "user" &&  current_user.role != "voodoo"
-	    	redirect_to path  
+	    
+	    # if current_user.roles != "user" &&  current_user.role != "voodoo"
+	    if @currole != ["user"] &&  @currole != ["voodoo"]
+	    	redirect_to path 
 	    end 
 	  else
 	    

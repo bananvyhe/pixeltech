@@ -28,19 +28,19 @@ class User < ApplicationRecord
     # enum role: [:user, :voodoo, :admin, :superadmin, :client]
     # необходимо вначале задеплоить таблицу кланы, с закоменченной моделью и кодом ниже
     # внести первую роль user и после можно раскомменыивать код парсящий кланы в массив
-  clans = Clan.all
-  @roles =[]
-  clans.each do |i|
-    @roles << i.clan
-  end
-  enum role: @roles
+  # clans = Clan.all
+  # @roles =[]
+  # clans.each do |i|
+  #   @roles << i.clan
+  # end
+  # enum role: @roles
 
   after_initialize :set_default_role, :if => :new_record?
  
 
   def set_default_role
-    self.role ||= :user
-    self.add_role :user
+    # self.role ||= :user
+    current_user.add_role :user
   end
   protected
   # From Devise module Validatable
