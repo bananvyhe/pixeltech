@@ -10,7 +10,7 @@ class LandingPageController < ApplicationController
         @currole << i.name
       end
      	# @currole.delete('user')
-     	@currole.delete('superadmin')
+     	# @currole.delete('superadmin')
      	@currole.delete('admin')
      	@currole.delete('elder')
 		 # binding.pry

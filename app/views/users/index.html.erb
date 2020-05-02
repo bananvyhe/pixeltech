@@ -1,7 +1,7 @@
 <!-- <div id="users">
   <temperature></temperature>
 </div> -->
-<% if current_user.user? %>
+<% if current_user.has_role? :user %>
 	<p style="text-align: center; padding-top: 1em;">
 		Доступ на сайт —  после одобрения аккаунта администратором.
 	</p>
@@ -20,45 +20,45 @@
  				<div>
 				 	<%= user.id %>
 				</div> 
-				<% if user.client? %> 
+				<% if user.has_role? :client? %> 
           <div style="background-color: green;">
 						<%= user.client.ballance %>
 					</div> 
 				<% end %>
 				<div v-on:click="reload">
-				<%  if user.user? %>
+				<%  if user.has_role? :user %>
 					<%= link_to "дать права админа", admination_user_path(user) %> 
 				<% end %>
 				</div> 
 			 <div v-on:click="reload">
-				<% if user.user? %>
+				<% if user.has_role? :user %>
 					<%= link_to "дать права клиента", clientation_user_path(user) %> 
 				<% end %>
 				</div> 
 				<div v-on:click="reload">
-				 	<%  if  user.client? %>
+				 	<%  if  user.has_role? :client %>
 						<%= link_to "забрать права", declientation_user_path(user) %> 
 					<% end %>
 				</div>
 				<div v-on:click="reload">
-				 	<%  if  !user.voodoo? && !user.superadmin? && !user.admin? && !user.client? %>
+				 	<%  if  !user.has_any_role? :voodoo, :superadmin, :admin, :client%>
 						<%= link_to "вудуизировать", voodooation_user_path(user) %> 
 						<% end %>
 					</div>
 				<div v-on:click="reload">
-					<%  if user.voodoo? %>
+					<%  if user.has_role? :voodoo %>
 						-=Вуду=-
 						<%= link_to "забрать права", devoodooation_user_path(user) %> 
 					<% end %>
 				</div>
 				<div v-on:click="reload">
-					<%  if  user.admin? %>
+					<%  if  user.has_role? :admin %>
 					  -=Админ=-
 					   <%= link_to "забрать права", deadmination_user_path(user) %> 
 					<% end %>
 				</div> 
 				<div>
-					<%  if  user.superadmin? %>
+					<%  if  user.has_role? :superadmin %>
 					  -=СуперАдмин=-
 					 <% end %>
 				</div> 
