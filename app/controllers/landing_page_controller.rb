@@ -22,12 +22,9 @@ class LandingPageController < ApplicationController
 	        users_path
 	      when ['admin']
 	        users_path
-	      when ['user']
+	      when ['user','voodoo']
 	        posts_path
-	      when ['voodoo']
-	        # voodoo_index_path
-	        posts_path
-	      when ['client']
+	      when ['user','client']
 	        siteowners_path
 	      else
 	      

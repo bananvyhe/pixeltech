@@ -9,9 +9,15 @@ class Api::V1::RefreshController < ApiController
 
   end
   def access_payload
+
     # payload here stands for refresh token payload
      user = User.find_by!(id: payload['user_id'])
-    { user_id: user.id, role: user.role, username: user.username}
+    allroles = user.roles 
+    @roles =[]
+    allroles.each do |i|
+      @roles << i.name
+    end
+    { user_id: user.id, role: @roles[0], username: user.username}
   end
   def refresh_payload
     # payload here stands for refresh token payload

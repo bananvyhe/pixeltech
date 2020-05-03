@@ -20,7 +20,7 @@
  				<div>
 				 	<%= user.id %>
 				</div> 
-				<% if user.has_role? :client? %> 
+				<% if user.has_role? :client %> 
           <div style="background-color: green;">
 						<%= user.client.ballance %>
 					</div> 
@@ -31,17 +31,17 @@
 				<% end %>
 				</div> 
 			 <div v-on:click="reload">
-				<% if user.has_role? :user %>
+				<% if !user.has_role? :client %>
 					<%= link_to "дать права клиента", clientation_user_path(user) %> 
 				<% end %>
 				</div> 
 				<div v-on:click="reload">
 				 	<%  if  user.has_role? :client %>
-						<%= link_to "забрать права", declientation_user_path(user) %> 
+						<%= link_to "забрать права клиента", declientation_user_path(user) %> 
 					<% end %>
 				</div>
 				<div v-on:click="reload">
-				 	<%  if  !user.has_any_role? :voodoo, :superadmin, :admin, :client%>
+				 	<%  if  !user.has_any_role? :voodoo, :superadmin %>
 						<%= link_to "вудуизировать", voodooation_user_path(user) %> 
 						<% end %>
 					</div>
