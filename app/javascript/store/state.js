@@ -7,7 +7,7 @@ export default {
 	refreshToken: '',
 	// exp: '',
 	// exp2: '',
-	role: '',
+	role: [],
 	gamebo: '',
 	cry: '',
 	// username: ''

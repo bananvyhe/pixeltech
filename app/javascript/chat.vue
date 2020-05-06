@@ -1,9 +1,9 @@
 <template>
-  <div class="chat" v-if="this.$store.getters.role.role != 'client'" @click="chatHeight = 30" v-click-outside="onClickOutside">
+  <div class="chat" v-if="this.$store.getters.role.role.find(item => item  == 'client') != 'client'" @click="chatHeight = 30" v-click-outside="onClickOutside">
     <!-- {{chatMessages}} -->
     <el-tabs  tab-position="top" @tab-click="tabclick" >
       <!-- таб для чтения чата юзеров тех кто вступил в клан -->
-      <el-tab-pane label="User" v-if="this.$store.getters.role.role != 'user'">
+<!--       <el-tab-pane label="User" v-if="this.$store.getters.role.role != 'user'">
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
           <el-main v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}" >
             <div v-for="(item, index) in userChatMessages" class="mediumtext">
@@ -13,16 +13,16 @@
                 </div>
                 <div class="smalltext chatstroke">
                   {{item.text}}            
-                </div>           
+                </div>             
               </div>
             </div>
-            <!-- костыль для скролла чата вниз при переключении табов -->
+            
             <div v-if="this.blank == true"></div> 
           </el-main>
         </el-container>        
-      </el-tab-pane>
+      </el-tab-pane> -->
 
-      <el-tab-pane :label="this.$store.getters.role.role">
+<!--       <el-tab-pane :label="this.$store.getters.role.role">
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
           <el-main v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}"  >
             <div v-for="(item, index) in chatMessages" class="mediumtext">
@@ -35,17 +35,36 @@
                 </div>            
               </div>
             </div>
-            <!-- костыль для скролла чата вниз при переключении табов -->
+            
             <div v-if="this.blank == true"></div> 
           </el-main>
         </el-container>
-      </el-tab-pane>
+      </el-tab-pane> -->
+<template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext">
 
+            <el-tab-pane :label="item">
+        <el-container class="chatWindow" v-bind:style="{height: chatHeight +'vh'}" >
+          <el-main v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}"  >
+            <div v-for="(itemch, index) in AllMessages" class="mediumtext" v-if="itemch.clan == item">
+              <div class="chatString">
+                <div class="nickname">
+                  {{itemch.username}}  
+                </div>
+                <div class="smalltext chatstroke">
+                  {{itemch.text}}            
+                </div>            
+              </div>
+            </div>
+            
+            <div v-if="blank == true"></div> 
+          </el-main>
+        </el-container>
+      </el-tab-pane>
+</template>
       <el-tab-pane label="системные" >
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
           <el-main v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}" > 
-<!--             {{inboxMessages}}
-            {{this.$store.getters.role.user_id}} -->
+ 
             <div v-for="(item, index) in inboxMessages" class="mediumtext">
               <div class="chatString">
                 <div class="nickname">
@@ -62,7 +81,7 @@
                 </div>        
               </div>
             </div>
-            <!-- костыль для скролла чата вниз при переключении табов -->
+  
             <div v-if="this.blank == true"></div> 
           </el-main>
         </el-container>
@@ -96,7 +115,8 @@ export default {
       exptime: '',
       input: '',
       userChatMessages: '',
-      chatMessages: ''
+      chatMessages: '',
+      AllMessages: ''
     };
   },
   methods: {
@@ -172,7 +192,23 @@ export default {
         var total = response.data
         this.inboxMessages = total
       });      
-    },      
+    },  
+    getAllChat(role){
+      axios({
+      method: 'get',
+      url: '/api/v1/chat',
+      params: {
+        clan: role
+      }, 
+      headers: {
+        'Authorization': 'bearer '+this.$store.getters.token.access
+      } 
+      })
+      .then((response) => { 
+        var total = response.data
+        this.AllMessages = total
+      });      
+    },            
     getUserChat(){
       axios({
       method: 'get',
@@ -189,31 +225,32 @@ export default {
         this.userChatMessages = total
       });      
     },    
-    getChat(role){
-      axios({
-      method: 'get',
-      url: '/api/v1/chat',
-      params: {
-        clan: role
-      }, 
-      headers: {
-        'Authorization': 'bearer '+this.$store.getters.token.access
-      } 
-      })
-      .then((response) => { 
-        var total = response.data
-        this.chatMessages = total
-      });      
-    }
+    // getChat(role){
+    //   axios({
+    //   method: 'get',
+    //   url: '/api/v1/chat',
+    //   params: {
+    //     clan: role
+    //   }, 
+    //   headers: {
+    //     'Authorization': 'bearer '+this.$store.getters.token.access
+    //   } 
+    //   })
+    //   .then((response) => { 
+    //     var total = response.data
+    //     this.chatMessages = total
+    //   });      
+    // }
   },
   watch: {
     exptime() {
       var trig = false;
       var self = this;
       if ((this.exptime > 0)&&(!trig)){
-        self.getChat(this.$store.getters.role.role)
+        // self.getChat(this.$store.getters.role.role)
         self.getUserChat()
         self.getSystemChat()
+        self.getAllChat(this.$store.getters.role.role)
         var trig = true;     
       }
     }

@@ -14,8 +14,9 @@ class Api::V1::AuthenticationController < Api2Controller
             allroles.each do |i|
               @roles << i.name
             end
+            # binding.pry
         # payload = { user_id: user.id, role: user.role, username: user.username }
-        payload = { user_id: user.id, role: @roles[0], username: user.username }
+        payload = { user_id: user.id, role: @roles, username: user.username }
         refresh_payload = { user_id: user.id }
         session = JWTSessions::Session.new(payload: payload, refresh_payload:  refresh_payload )
         tokens = session.login 

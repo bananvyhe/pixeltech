@@ -9,12 +9,12 @@ class LandingPageController < ApplicationController
       @roles.each do |i|
         @currole << i.name
       end
-     	# @currole.delete('user')
-     	# @currole.delete('superadmin')
-     	@currole.delete('admin')
-     	@currole.delete('elder')
+     	postrole = @currole.delete('user')
+     	postrole = @currole.delete('superadmin')
+     	postrole = @currole.delete('admin')
+     	postrole = @currole.delete('elder')
 		 # binding.pry
-			@postsprivate = Post.all.order(created_at: :desc).where(clan_name: @currole)
+			@postsprivate = Post.all.order(created_at: :desc).where(clan_name: postrole)
 			
 			# path = case current_user.role
 	    path = case @currole

@@ -17,7 +17,7 @@ class Api::V1::RefreshController < ApiController
     allroles.each do |i|
       @roles << i.name
     end
-    { user_id: user.id, role: @roles[0], username: user.username}
+    { user_id: user.id, role: @roles, username: user.username}
   end
   def refresh_payload
     # payload here stands for refresh token payload

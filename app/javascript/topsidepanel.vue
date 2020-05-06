@@ -35,7 +35,7 @@
 <!-- 						<div v-if="$store.getters.role.role == 'user'">
 							<game-board ></game-board> 
 						</div> -->
-						<div class="backbar "  v-if="$store.getters.role.role == 'voodoo' || $store.getters.role.role == 'user'">
+						<div class="backbar "  v-if="$store.getters.role.role.find(item => item  == 'voodoo') == 'voodoo' || $store.getters.role.role.find(item => item  == 'user') == 'user'">
 							<div class="mediumtext nikname">{{$store.getters.role.username}}</div>
 							<div class="expbar"> 
 								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
@@ -116,19 +116,11 @@
 	   		exp: this.$store.getters.gamebo
 	    } 
 	  },
-	  // components: {
-   //  'game-board': {
-   //  	props: ['expresult'],
-   //  	template: ''
-   //  	}
-   //  },
-   components: {
-   	'inv': Inv
-   },
+		components: {
+			'inv': Inv
+		},
 	  computed: {
- 
 	  	lvlConversion: function () {
-
 	  		var exp = this.$store.getters.gamebo
 	  		if (exp > 0 && exp <= 68){
 	  			var total = 68;
@@ -310,48 +302,29 @@
 		  		this.$store.commit('tokensend', null) 
 		  		this.$store.commit('gamesend', null) 
 		    	if (document.location.pathname != '/'){
-						// window.location.href = '/';
-						// document.location.reload()
+
 					}else{
 						document.location.reload()
 					}
- 				//  this.$store.commit('tokensend', null) 
 		    })
 	  	},
     	styleObject: function () {
-       	// var tok = this.$store.getters.token
-        // if (tok != null) {
-        // 	return {
-        // 		position: 'relative'
-        // 	}
-       	// }else{
-        //  	return {
-        // 		position: 'relative',
-        // 	}
-       	// }
       }
 	  },
 	  watch: {
- 	exp() {
- 		console.log('exp')
- 	},
+		 	exp() {
+		 		console.log('exp')
+		 	},
 	    exptime() {
-	       	if ((this.exptime < 20)&&(this.$store.getters.token )){
-	     this.refreshToken() 
-	        
-      // setInterval(function(){
-	  		// this.exptime = this.$store.getters.role.exp - current_time
-	      //var current_time = new Date().getTime() / 1000;
-	  		// var millisecremains = self.$store.getters.role.exp - current_time
-	  		// self.exptime = millisecremains
-      // },self.exptime*1000 );							
-				}
-	      // var trig = false;
+	    	if ((this.exptime < 20)&&(this.$store.getters.token )){
+	    		this.refreshToken() 
+ 				}
 	      var self = this;
 	      if ((self.exptime > 0)&&(!self.trig)){
-					self.getPkStatus()
 					self.storeCommitGbData()
-	        self.trig = true;     
+					self.getPkStatus()
+	        self.trig = true; 
+	         console.log('gamebo')   
 	      }				
  			}
 	  }, 
@@ -385,7 +358,6 @@
 		        }
 		      });	  			
 	  		}
-
 	  	},
 	  	refreshToken(){
 	    	axios({
@@ -396,12 +368,9 @@
 					}
 	        }).then((response) => {
       		if (response.data.errors) {
-		    		// console.log(response.data.errors)
-		    		// this.error = response.data.errors; 
 
 	    		}else{
 	    		  this.$store.commit('tokensend', response.data)
-
 	    		  this.token = this.$store.getters.token 
 			  		let jwtData = this.token.access.split('.')[1]
 						let decodedJwtJsonData = window.atob(jwtData)
@@ -415,13 +384,12 @@
 						let decodedJwtData2 = JSON.parse(decodedJwtJsonData2)
 						this.accessToken = decodedJwtData2
 						let usid = decodedJwtData2.user_id
-						// let exp2 = decodedJwtData2.exp 
-						// this.$store.commit('expsend2', exp2)
+
 						console.log(decodedJwtJsonData2) 
 						var current_time = new Date().getTime() / 1000;
-		    		  // var current_time = new Date().getTime() / 1000;
+
 			  		var millisecremains = this.$store.getters.role.exp - current_time
-			    	// location.reload(true);
+
 			    }
 	    	})
 	      .catch(function (error) {
@@ -498,10 +466,7 @@
   			this.checkRelevanceToken()
   			// console.log('mounted checkRelevanceToken')
   			//проверка условия что имеется доступ и берется запрос
-				
   		}
-  
-
 	  	if (this.$store.getters.token != null) {
 	  			this.exptimer();
 	  			console.log('mounted exptimer')
