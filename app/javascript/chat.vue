@@ -91,7 +91,7 @@
     <!-- <div class='messages'>123</div> -->
     <div class="inputZone" v-on:keyup.enter="postingMes" v-if="tabinput == true">
       <el-input size='mini'class="inputStroke" placeholder="сообщение в чат" v-model="input"></el-input>
-      <el-button size='mini' @click="postingMes">отправить</el-button>      
+      <el-button size='mini' @click="postingMes()">отправить</el-button>      
     </div>
 
   </div>
@@ -155,14 +155,14 @@ export default {
         this.chatMessages = this.chatMessages.concat(data);        
       }
     },
-    postingMes: function(){
+    postingMes: function(item){
        axios({
         method: 'post',
         //vks#associate
         url: '/api/v1/chat',
         data: {
           text: this.input,
-          clan_name: this.$store.getters.role.role
+          clan_name: item
         },
         headers: {
           'Authorization': 'bearer '+this.$store.getters.token.access

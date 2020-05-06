@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_074629) do
+ActiveRecord::Schema.define(version: 2020_05_06_120342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 2020_04_29_074629) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "clan_id"
-    t.index ["clan_id"], name: "index_chats_on_clan_id"
+    t.bigint "role_id"
+    t.index ["role_id"], name: "index_chats_on_role_id"
     t.index ["user_id"], name: "index_chats_on_user_id"
   end
 
@@ -288,7 +288,7 @@ ActiveRecord::Schema.define(version: 2020_04_29_074629) do
   end
 
   add_foreign_key "cards", "lists"
-  add_foreign_key "chats", "clans"
+  add_foreign_key "chats", "roles"
   add_foreign_key "chats", "users"
   add_foreign_key "clients", "users"
   add_foreign_key "comments", "users"
