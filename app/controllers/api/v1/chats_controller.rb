@@ -23,12 +23,14 @@
  	end
  	def create
  		# puts params[:text]
- 		# puts params[:clan_name]
- 		clname = Clan.find_by_clan(params[:clan_name])
+ 		puts params[:clan_name]
+ 		# clname = Clan.find_by_clan(params[:clan_name])
+ 		clname = Role.find_by_name(params[:clan_name])
  		@mes = Chat.new
  		@mes.text = params[:text]
  		@mes.user_id = payload['user_id']
- 		@mes.clan_id = clname.id
+ 		# @mes.clan_id = clname.id
+ 		@mes.add_role = clname.to_sym
  		# print '========='
  		# puts @mes.inspect
  		# print '========='

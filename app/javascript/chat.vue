@@ -1,7 +1,7 @@
 <template>
   <div class="chat" v-if="this.$store.getters.role.role.find(item => item  == 'client') != 'client'" @click="chatHeight = 30" v-click-outside="onClickOutside">
     <!-- {{chatMessages}} -->
-    <el-tabs  tab-position="top" @tab-click="tabclick" >
+    <el-tabs  v-model="editableTabsValue" tab-position="top" @tab-click="tabclick" >{{editableTabsValue}}
       <!-- таб для чтения чата юзеров тех кто вступил в клан -->
 <!--       <el-tab-pane label="User" v-if="this.$store.getters.role.role != 'user'">
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
@@ -40,9 +40,9 @@
           </el-main>
         </el-container>
       </el-tab-pane> -->
-<template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext">
+    <template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext">
 
-            <el-tab-pane :label="item">
+      <el-tab-pane :label="item" >  
         <el-container class="chatWindow" v-bind:style="{height: chatHeight +'vh'}" >
           <el-main v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}"  >
             <div v-for="(itemch, index) in AllMessages" class="mediumtext" v-if="itemch.clan == item">
@@ -60,7 +60,13 @@
           </el-main>
         </el-container>
       </el-tab-pane>
-</template>
+    </template>
+
+    <div class="inputZone" v-on:keyup.enter="postingMes" v-if="tabinput == true">
+      <el-input size='mini'class="inputStroke" placeholder="сообщение в чат" v-model="input"></el-input>
+      <el-button size='mini' @click="postingMes">отправить</el-button>      
+    </div>
+    
       <el-tab-pane label="системные" >
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
           <el-main v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}" > 
@@ -89,10 +95,7 @@
     </el-tabs>
     
     <!-- <div class='messages'>123</div> -->
-    <div class="inputZone" v-on:keyup.enter="postingMes" v-if="tabinput == true">
-      <el-input size='mini'class="inputStroke" placeholder="сообщение в чат" v-model="input"></el-input>
-      <el-button size='mini' @click="postingMes()">отправить</el-button>      
-    </div>
+
 
   </div>
 </template>
@@ -106,6 +109,7 @@ export default {
   },
   data: function () {
     return {
+      editableTabsValue: '0', 
       blank: false,
       // scroll: false,
       tabinput: true,
@@ -155,26 +159,24 @@ export default {
         this.chatMessages = this.chatMessages.concat(data);        
       }
     },
-    postingMes: function(item){
-       axios({
-        method: 'post',
-        //vks#associate
-        url: '/api/v1/chat',
-        data: {
-          text: this.input,
-          clan_name: item
-        },
-        headers: {
-          'Authorization': 'bearer '+this.$store.getters.token.access
-        } 
-      }).then((response) => { 
-        this.input = ''
-        // this.link = 'visited'
-        // this.$store.commit('gamesendplus', 100)
-        // this.gamesendplus({
-        //   amount: loa
-        // })
-      })
+    postingMes: function(event){
+      let tabIdent = this.$store.getters.role.role[this.editableTabsValue]
+
+      console.log(tabIdent)
+      //  axios({
+      //   method: 'post',
+      //   //vks#associate
+      //   url: '/api/v1/chat',
+      //   data: {
+      //     text: this.input,
+      //     clan_name: event
+      //   },
+      //   headers: {
+      //     'Authorization': 'bearer '+this.$store.getters.token.access
+      //   } 
+      // }).then((response) => { 
+      //   this.input = ''
+      // })
     },
     getSystemChat(){
       axios({
