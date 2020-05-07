@@ -30,9 +30,9 @@
  		@mes = Chat.new
  		@mes.text = params[:text]
  		@mes.user_id = payload['user_id']
- 		# @mes.clan_id = clname.id
+ 		@mes.role_id = rolename.id
  		@mes.role = rolename
- 		@mes.add_role clname.to_sym
+ 		# @mes.add_role clname.to_sym
  		print '========='
  		puts @mes.inspect
  		print '========='
