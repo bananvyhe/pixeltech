@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_120342) do
+ActiveRecord::Schema.define(version: 2020_05_07_055338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(version: 2020_05_06_120342) do
     t.bigint "role_id"
     t.index ["role_id"], name: "index_chats_on_role_id"
     t.index ["user_id"], name: "index_chats_on_user_id"
+  end
+
+  create_table "chats_roles", id: false, force: :cascade do |t|
+    t.bigint "chat_id"
+    t.bigint "role_id"
+    t.index ["chat_id", "role_id"], name: "index_chats_roles_on_chat_id_and_role_id"
+    t.index ["chat_id"], name: "index_chats_roles_on_chat_id"
+    t.index ["role_id"], name: "index_chats_roles_on_role_id"
   end
 
   create_table "clans", force: :cascade do |t|

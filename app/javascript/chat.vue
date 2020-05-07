@@ -1,7 +1,7 @@
 <template>
   <div class="chat" v-if="this.$store.getters.role.role.find(item => item  == 'client') != 'client'" @click="chatHeight = 30" v-click-outside="onClickOutside">
     <!-- {{chatMessages}} -->
-    <el-tabs  v-model="editableTabsValue" tab-position="top" @tab-click="tabclick" >{{editableTabsValue}}
+    <el-tabs  v-model="editableTabsValue" tab-position="top" @tab-click="tabclick">
       <!-- таб для чтения чата юзеров тех кто вступил в клан -->
 <!--       <el-tab-pane label="User" v-if="this.$store.getters.role.role != 'user'">
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
@@ -66,7 +66,7 @@
       <el-input size='mini'class="inputStroke" placeholder="сообщение в чат" v-model="input"></el-input>
       <el-button size='mini' @click="postingMes">отправить</el-button>      
     </div>
-    
+
       <el-tab-pane label="системные" >
         <el-container class="chatWindow" v-bind:style="{height: this.chatHeight +'vh'}" >
           <el-main v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}" > 
@@ -156,27 +156,27 @@ export default {
       if (data.username == 'system'){
         this.inboxMessages = this.inboxMessages.concat(data);   
       }else{
-        this.chatMessages = this.chatMessages.concat(data);        
+        this.AllMessages = this.AllMessages.concat(data);        
       }
     },
     postingMes: function(event){
       let tabIdent = this.$store.getters.role.role[this.editableTabsValue]
 
-      console.log(tabIdent)
-      //  axios({
-      //   method: 'post',
-      //   //vks#associate
-      //   url: '/api/v1/chat',
-      //   data: {
-      //     text: this.input,
-      //     clan_name: event
-      //   },
-      //   headers: {
-      //     'Authorization': 'bearer '+this.$store.getters.token.access
-      //   } 
-      // }).then((response) => { 
-      //   this.input = ''
-      // })
+      // console.log(tabIdent)
+       axios({
+        method: 'post',
+        //vks#associate
+        url: '/api/v1/chat',
+        data: {
+          text: this.input,
+          clan_name: tabIdent
+        },
+        headers: {
+          'Authorization': 'bearer '+this.$store.getters.token.access
+        } 
+      }).then((response) => { 
+        this.input = ''
+      })
     },
     getSystemChat(){
       axios({
@@ -265,9 +265,17 @@ export default {
     var channel = pusher.subscribe('messages' );
     var channel1 = pusher.subscribe( 'system');
     var self = this;
-    channel.bind(this.$store.getters.role.role, function(data) {
-      self.addMessage(data);
-    }); 
+ 
+    this.$store.getters.role.role.forEach(function(entry) {
+        console.log(entry);
+ 
+        channel.bind(entry, function(data) {
+          self.addMessage(data);
+        }); 
+
+    });
+ 
+
     channel1.bind(this.$store.getters.role.user_id, function(data) {
       self.addMessage(data);
     }); 
