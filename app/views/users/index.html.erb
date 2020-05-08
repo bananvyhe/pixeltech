@@ -1,11 +1,11 @@
 <!-- <div id="users">
   <temperature></temperature>
 </div> -->
-<% if current_user.has_role? :user %>
-	<p style="text-align: center; padding-top: 1em;">
+<%# if current_user.has_role? :user %>
+<!-- 	<p style="text-align: center; padding-top: 1em;">
 		Доступ на сайт —  после одобрения аккаунта администратором.
-	</p>
-<% end %>
+	</p> -->
+<%# end %>
 <!-- <script type="text/x-template" id="temperature-template"> -->
 	<div class="usersblock" v-if="this.$store.getters.role.role == 'superadmin' || this.$store.getters.role.role == 'admin' ">
 		 <!-- {{ this.$store.getters.role }} -->
@@ -26,7 +26,7 @@
 					</div> 
 				<% end %>
 				<div v-on:click="reload">
-				<%  if user.has_role? :user %>
+				<%  if !user.has_role? :admin %>
 					<%= link_to "дать права админа", admination_user_path(user) %> 
 				<% end %>
 				</div> 
