@@ -40,7 +40,7 @@ class User < ApplicationRecord
 
   def set_default_role
     # self.role ||= :user
-    current_user.add_role :user
+    self.add_role :user
   end
   protected
   # From Devise module Validatable

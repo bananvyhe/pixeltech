@@ -442,9 +442,12 @@
 	        })
 	        .then((response) => {
 						console.log(response.data)
-	          this.$store.commit('gamesend', response.data.expirience )
-	          this.$store.commit('crysend', response.data.cry )
-	          this.$store.commit('pksend', response.data.pk )
+						if (response.data){
+		          this.$store.commit('gamesend', response.data.expirience )
+		          this.$store.commit('crysend', response.data.cry )
+		          this.$store.commit('pksend', response.data.pk )							
+						}
+
 
 	        })
 	        .catch(function (error) {
