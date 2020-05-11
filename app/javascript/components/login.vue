@@ -224,9 +224,11 @@
 		        //   this.$store.commit('tokensend', null) 
 		    })
 	      .then(() => {
-
+	      	// var adress = window.location.hostname
+	      	window.location.replace('/');
+	      	// location=window.location.host
 	      	// 
-		      location.reload(true);
+		      // location.reload(true);
 		    })    
 		    // setTimeout(function(){
 		    //   // self.cropText();
