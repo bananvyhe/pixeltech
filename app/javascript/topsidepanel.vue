@@ -302,9 +302,9 @@
 		  		this.$store.commit('tokensend', null) 
 		  		this.$store.commit('gamesend', null) 
 		    	if (document.location.pathname != '/'){
-
+		    		window.location.replace('/');
 					}else{
-						document.location.reload()
+						
 					}
 		    })
 	  	},
