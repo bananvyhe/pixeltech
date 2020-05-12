@@ -318,6 +318,8 @@
 	    exptime() {
 	    	if ((this.exptime < 20)&&(this.$store.getters.token.refresh )){
 	    		this.refreshToken() 
+ 				}else if ((this.exptime < 20)&&(!this.$store.getters.token.refresh )){
+ 					this.nulltoken
  				}
 	      var self = this;
 	      if ((self.exptime > 0)&&(!self.trig)){
