@@ -304,7 +304,7 @@
 		    	if (document.location.pathname != '/'){
 		    		window.location.replace('/');
 					}else{
-						
+						document.location.reload()
 					}
 		    })
 	  	},

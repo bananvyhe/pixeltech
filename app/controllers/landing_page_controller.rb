@@ -21,21 +21,23 @@ class LandingPageController < ApplicationController
 	    path = case true
 	    	when @currole.include?('superadmin')
 	        users_path
-	      when @currole.include?('admin')
-	        users_path
+	      # when @currole.include?('admin')
+	      #   users_path
 	      # when @currole.include?('user','voodoo')
 	        # posts_path
 	      when @currole.include?('client')
 	        siteowners_path
 	      else
-	      	posts_path
+	      	
 	      	# If you want to raise an exception or have a default root for users without roles
 	    end
 	    
 	    # if current_user.roles != "user" &&  current_user.role != "voodoo"
-	    if @currole != ["user"] &&  @currole != ["voodoo"]
+	    # if @currole != ["user"] &&  @currole != ["voodoo"]
+	    if path
 	    	redirect_to path 
-	    end 
+	    end
+	    # end 
 	  else
 	    
 	  end
