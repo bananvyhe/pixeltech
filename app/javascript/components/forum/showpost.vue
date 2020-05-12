@@ -361,7 +361,7 @@ export default {
 .rightpad{
   display: flex;
   align-items: flex-end;
-  padding: 0.1em 0.4em 0.4em 0.2em; 
+  padding: 0.1em 0.4em 0.1em 0.2em; 
 }
 .plashka3{
   /*background-color: #dad;*/

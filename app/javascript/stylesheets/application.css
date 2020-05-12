@@ -531,7 +531,8 @@ html {
   margin: 0.25em 0.25em 0.25em 0.25em;
 }
 .el-button--mini.is-circle {
-    padding: 4px;
+    padding: 3px;
+    margin: 1px;
 }
 .bpad{
   .el-button {
