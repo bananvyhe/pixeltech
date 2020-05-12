@@ -1,24 +1,22 @@
 <template>
+
+
   <div class="posts" v-if="$store.getters.pk == false">
-    <h2>Форум {{this.$store.getters.role.role}}</h2>
-    <!-- {{clanposts}} -->
-    <div v-for="(item, index) in clanposts">
-      <!-- {{item.title}} {{item.body}} {{item.username}} -->
-      <showposta class="headertext" v-on:delpost="getPosts" :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showposta> 
-
-<!--       <v-embed  :options="options">{{item.body}}</v-embed> -->
-    </div>
-    <!-- <showpost :number='number'></showpost> -->
-    <newposta v-on:newpost="getPosts" :section='this.$store.getters.role.role'></newposta>
-
-    <div v-if="this.$store.getters.role.role != 'user'">
+    <template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext">
+      <h2>Форум {{item}}</h2>
+      <div v-for="(itemch, index) in clanposts" v-if="itemch.clan_name == item">
+        <showposta class="headertext" v-on:delpost="getPosts" :number='itemch.id' :body='itemch.body' :title='itemch.title' :username='itemch.username'></showposta>
+      </div>
+      <newposta v-on:newpost="getPosts" :section='item'></newposta>
+    </template>
+<!--     <div v-if="this.$store.getters.role.role != 'user'">
       <h2>Общий доступ</h2>
-      <!-- {{userposts}} -->
       <div v-for="(item, index) in userposts">
         <showposta class="headertext" v-on:delpost="getUserPosts" :number='item.id' :body='item.body' :title='item.title' :username='item.username'></showposta>
       </div>
       <newposta v-on:newpost="getUserPosts" :section='"user"'></newposta>
-    </div>
+    </div> -->
+
   </div>
 </template>
 
