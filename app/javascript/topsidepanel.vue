@@ -316,7 +316,7 @@
 		 		console.log('exp')
 		 	},
 	    exptime() {
-	    	if ((this.exptime < 20)&&(this.$store.getters.token )){
+	    	if ((this.exptime < 20)&&(this.$store.getters.token.refresh )){
 	    		this.refreshToken() 
  				}
 	      var self = this;
