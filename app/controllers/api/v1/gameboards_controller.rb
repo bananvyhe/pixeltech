@@ -126,15 +126,16 @@ class Api::V1::GameboardsController < ApiController
 
       plusi = calculateplus @userplus.id
       
-        if plusi.count == 2 &&  @userplus.role == 'user' 
+        if plusi.count == 2 &&  (@userplus.has_any_role? :user)
           @make_clan_item =  ItemAttribute.find_or_create_by(item_name: 'Права лидера', description: 'Позволяет создать клан', image: '../images/clanbuild.jpg') 
           @make_res_item =  ItemAttribute.find_or_create_by(item_name: 'Воскрешение', description: 'Позволяет воскресить союзника', image: '../images/res.jpg') 
-          @items = Item.new(item_attribute: @make_clan_item, user: @userplus, qty: 1)
-          @items1 = Item.new(item_attribute: @make_res_item, user: @userplus, qty: 0)
+          @items = MyItem.new(item_attribute: @make_clan_item, user: @userplus, qty: 1)
+          @items1 = MyItem.new(item_attribute: @make_res_item, user: @userplus, qty: 0)
           # @items.item_attribute << @make_clan_item
-          @items.save
-          @items1.save
-          clname = Clan.find_by(clan: "superadmin")
+          @items.save!
+          @items1.save!
+          # clname = Clan.find_by(clan: "superadmin")
+          clname = Role.find_by(name: "superadmin")
           @adname = User.find_by(role: "superadmin")
           # puts 'sssssssssssss'
           # puts clname.inspect
@@ -142,13 +143,14 @@ class Api::V1::GameboardsController < ApiController
           @mes = Chat.new     
           @mes.text = "У вас появились сторонники. Добавлен итем для получения прав на создание/управление кланом."
           @mes.user_id = @userplus.id
-          @mes.clan_id = clname.id
+          @mes.role_id = clname.id
+          # @mes.add_role :superadmin
           if @mes.save!
           # @mes.user_id = 0
               Pusher.trigger('system', @userplus.id.to_s, {
               id: @userplus.id,
               text: @mes.text,
-              clan: clname.clan,
+              clan: clname.name,
               username: "system"
             })
               # puts @mes

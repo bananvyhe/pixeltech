@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_055338) do
+ActiveRecord::Schema.define(version: 2020_05_13_101025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -170,7 +170,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_055338) do
     t.bigint "user_id"
     t.string "description"
     t.bigint "item_attribute_id"
-    t.index ["item_attribute_id"], name: "index_my_items_on_item_attribute_id", unique: true
+    t.index ["item_attribute_id"], name: "index_my_items_on_item_attribute_id"
     t.index ["user_id"], name: "index_my_items_on_user_id"
   end
 
@@ -301,7 +301,6 @@ ActiveRecord::Schema.define(version: 2020_05_07_055338) do
   add_foreign_key "clients", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "gameboards", "users"
-  add_foreign_key "my_items", "item_attributes"
   add_foreign_key "my_items", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "recordings", "locations"
