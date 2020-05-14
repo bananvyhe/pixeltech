@@ -6,12 +6,12 @@ class MyItemsController < ApplicationController
 		@items = MyItem.where(user_id: payload['user_id']).joins(:item_attribute).sorted
   end
   def show
-        puts 'test '*20
-    puts params[:name]
-    puts 'test '*20 
+        # puts 'test '*20
+    # puts params[:name]
+    # puts 'test '*20 
  
     @clan = Clan.find_by( clan: params[:name])
-    puts @clan
+    # puts @clan
     render json: @clan
   end
   
@@ -27,7 +27,7 @@ class MyItemsController < ApplicationController
 
   def check_clan
      
-    @clan = Clan.find_by( clan: params[:name])
+    @clan = Role.find_by( name: params[:name])
   end
   def paste_clan
 
