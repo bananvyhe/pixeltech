@@ -10,9 +10,9 @@ class MyItemsController < ApplicationController
     # puts params[:name]
     # puts 'test '*20 
  
-    @clan = Clan.find_by( clan: params[:name])
+    @role = Role.find_by( name: params[:name])
     # puts @clan
-    render json: @clan
+    render json: @role
   end
   
   def move

@@ -123,7 +123,7 @@ export default {
         if (response.data == null) {
           this.responseClan = false;
         }else{
-          this.responseClan =  response.data.clan          
+          this.responseClan =  response.data.name         
         }
 
 
