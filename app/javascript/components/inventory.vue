@@ -54,7 +54,7 @@
             <!-- <el-input placeholder="подберите название" v-model="inputClan"></el-input> -->
             <div slot="footer"  class="uiframe">
               <el-button @click="dialogBuildClan = false">Отмена</el-button>
-              <el-button v-if="responseClan == false" type="primary" @click="proceed" >Подтвердить</el-button>
+              <el-button v-if="dis == false" type="primary" @click="proceed" >Подтвердить</el-button>
               <el-button v-else type="primary" disabled >Подтвердить</el-button>
             </div>
             <div slot="footer" class="footpostshow basetext font3">
@@ -75,16 +75,20 @@ export default {
     var validateClanname = (rule, value, callback) => {
       var self = this;
       setTimeout(function(){
-        if (value === self.responseClan) {
+        if (value.trim() == self.responseClan) {
           callback(new Error('Имя занято')); 
+          self.dis = true
         } else if (value == '') {
+          self.dis = false
           callback(new Error('Введите название клана'));
         } else {
+          self.dis = false
           callback();
         }
-      },100 );  
+      },400 );  
     };    
     return {
+      dis: false,
       responseClan: false,
       rules: {
         clan: [
@@ -112,7 +116,7 @@ export default {
         method: 'get',
         url:'/my_items/check_clan',
         params: {
-          name: val
+          name: val.trim()
         },
         headers: {
           'Authorization': 'bearer '+this.token.access
@@ -233,6 +237,9 @@ export default {
 </script>
 <style scoped>
 @import "../stylesheets/_variables";
+.uiframe{
+  padding-top: 0.25em;
+}
 .cash {
   display: flex;
 }
