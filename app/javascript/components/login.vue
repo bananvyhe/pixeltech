@@ -28,7 +28,7 @@
 			      { required: true, message: 'Введите адрес', trigger: 'blur' },
 			      { type: 'email', message: 'Неправильный адрес почты', trigger: ['blur', 'change'] }
 			    ]">
-		      <el-input v-model="form.email" auto-complete="off"></el-input>
+		      <el-input v-model="form.email" ></el-input>
 		    </el-form-item>
 		    <el-form-item prop="password" size="medium" label="Пароль:"  style="margin-bottom: 0px !important;">
 		      <el-input type="password" v-model="form.password" auto-complete="off">
