@@ -47,17 +47,22 @@ class Api::V1::VksController < ApiController
   def grget
     @all = []
     if current_user 
+
       user_id = current_user.id
       findata = User.find(current_user.id).visiblegroups
       findata.each do |i|
         pickup = i.groupsvk_id
         @all << pickup.to_i
       end  
+      if @all == []
+        @sca =Groupsvk.all 
+        @sca.each do |i|
+          pickup = i.id
+          @all << pickup.to_i
+        end   
+      end
     else
        @sca =Groupsvk.all 
-      # print '6666666666'
-      # print @sca.inspect
-      # print '6666666666'
         @sca.each do |i|
           pickup = i.id
           @all << pickup.to_i
