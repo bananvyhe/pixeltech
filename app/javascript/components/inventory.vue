@@ -162,7 +162,7 @@ export default {
           'Authorization': 'bearer '+this.$store.getters.token.access
         } 
       }).then((response) => { 
-
+        this.dialogBuildClan = false
       })
     },    
     oneClick: function(event, id) {

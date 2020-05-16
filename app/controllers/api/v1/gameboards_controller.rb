@@ -127,12 +127,13 @@ class Api::V1::GameboardsController < ApiController
       plusi = calculateplus @userplus.id
         
         if plusi.count == 2 &&  (@userplus.has_any_role? :applicant)
+
             @make_clan_item =  ItemAttribute.find_or_create_by(item_name: 'Права лидера', description: 'Позволяет создать клан', image: '../images/clanbuild.jpg') 
+            #проверка на существование книги в инвентаре
             @check_book = MyItem.find_by(item_attribute: @make_clan_item, user: @userplus)
-puts '10'*20
-puts @check_book.inspect
-puts '10'*20
+
           if @check_book == nil
+            #если не существует - создаем
             # @make_res_item =  ItemAttribute.find_or_create_by(item_name: 'Воскрешение', description: 'Позволяет воскресить союзника', image: '../images/res.jpg') 
             @items = MyItem.new(item_attribute: @make_clan_item, user: @userplus, qty: 1)
             # @items1 = MyItem.new(item_attribute: @make_res_item, user: @userplus, qty: 0)
@@ -141,7 +142,7 @@ puts '10'*20
           end
           # clname = Clan.find_by(clan: "superadmin")
           clname = Role.find_by(name: "superadmin")
-          @adname = User.find_by(role: "superadmin")
+          # @adname = User.find_by(role: "superadmin")
           # puts 'sssssssssssss'
           # puts clname.inspect
           # puts 'sssssssssssss'   

@@ -45,7 +45,7 @@ class MyItemsController < ApplicationController
     @items.save!
     @items1.save!
     @make_clan_item =  ItemAttribute.find_by(item_name: 'Права лидера') 
-    @items2 = MyItem.find_by(item_attribute: @make_clan_item).destroy
+    @items2 = MyItem.find_by(item_attribute: @make_clan_item, user: current_user).destroy
 
 
     current_user.add_role params[:name].to_sym 
