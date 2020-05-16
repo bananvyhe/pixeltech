@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   rolify
+  # has_and_belongs_to_many :roles
   has_one :client, dependent: :destroy
   has_one :gameboard 
   has_many :my_items
@@ -36,11 +37,21 @@ class User < ApplicationRecord
   # enum role: @roles
 
   after_initialize :set_default_role, :if => :new_record?
- 
-
+  after_create :gboard
+  def gboard
+    @gameboard = Gameboard.new
+        
+    @gameboard.user_id = self.id
+    @gameboard.expirience = 1
+    puts 'sssssssssssss'*10 
+    puts @gameboard.inspect
+    puts 'sssssssssssss'*10 
+    @gameboard.save!
+  end
   def set_default_role
     # self.role ||= :user
     self.add_role :user
+
   end
   protected
   # From Devise module Validatable

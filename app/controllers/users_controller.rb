@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
-  
+ 
     # before_action :authenticate_user!
 		before_action :set_user, only: [:show, :edit, :update, :destroy]
   def index
   	@users = User.all.order(created_at: :desc)
      
   end
+
   def create
+
 
   end
   def edit

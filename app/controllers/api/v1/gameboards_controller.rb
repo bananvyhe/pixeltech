@@ -6,11 +6,11 @@ class Api::V1::GameboardsController < ApiController
   # GET /gameboards
   # GET /gameboards.json
   def index
-    print '---00--->'
+    puts '---00--->'*20
     # @gameboards = Gameboard.where(pk: false) 
-    @gameboards = User.where(role: 'user').joins(:gameboard)
-    # puts gameboards.inspect
-    print '---00--->'
+    @gameboards = User.joins(:gameboard).joins(:roles).where(roles: {name: 'user'})
+    puts @gameboards.inspect
+    puts '---00--->'*20
          # print '---00--->'
          # puts vote.inspect
          # print '---00--->'    
@@ -126,7 +126,7 @@ class Api::V1::GameboardsController < ApiController
 
       plusi = calculateplus @userplus.id
       
-        if plusi.count == 2 &&  (@userplus.has_any_role? :user)
+        if plusi.count == 2 &&  (@userplus.has_role? :user)
           @make_clan_item =  ItemAttribute.find_or_create_by(item_name: 'Права лидера', description: 'Позволяет создать клан', image: '../images/clanbuild.jpg') 
           # @make_res_item =  ItemAttribute.find_or_create_by(item_name: 'Воскрешение', description: 'Позволяет воскресить союзника', image: '../images/res.jpg') 
           @items = MyItem.new(item_attribute: @make_clan_item, user: @userplus, qty: 1)

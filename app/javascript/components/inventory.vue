@@ -41,6 +41,7 @@
     <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" ></el-button>   
     </el-popover>    
           <el-dialog
+            :lock-scroll="false"
             title="Создать клан"
             :visible.sync="dialogBuildClan"
             width="25em"

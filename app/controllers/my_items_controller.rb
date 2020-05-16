@@ -31,7 +31,40 @@ class MyItemsController < ApplicationController
   end
   def paste_clan
 
-    current_user.add_role params[:name].to_sym   
+    # current_user.add_role params[:name].to_sym
+    #создаем права лидера
+    leader = params[:name] + '_lead'
+    elder = params[:name] + '_elder'
+    # puts leader; puts elder;
+    current_user.add_role leader.to_sym
+    current_user.add_role elder.to_sym
+    @make_res_item =  ItemAttribute.find_or_create_by(item_name: 'Воскрешение', description: 'Позволяет воскресить союзника', image: '../images/res.jpg') 
+    @items = MyItem.new(item_attribute: @make_res_item, user: current_user, qty: 0)
+    @make_ind_item =  ItemAttribute.find_or_create_by(item_name: 'Индульгенция', description: 'Позволяет смыть 100 кармы', image: '../images/carma.jpg') 
+    @items1 = MyItem.new(item_attribute: @make_ind_item, user: current_user, qty: 50)
+    @items.save!
+    @items1.save!
+    @make_clan_item =  ItemAttribute.find_by(item_name: 'Права лидера') 
+    @items2 = MyItem.find_by(item_attribute: @make_clan_item).destroy
+
+
+    current_user.add_role params[:name].to_sym 
+      clname = Role.find_by(name: "superadmin")
+      @mes = Chat.new     
+      @mes.text = "Вы создали клан #{params[:name]}"
+      @mes.user_id = current_user.id
+      @mes.role_id = clname.id
+      # @mes.add_role :superadmin
+      if @mes.save!
+      # @mes.user_id = 0
+          Pusher.trigger('system', current_user.id.to_s, {
+          id: current_user.id,
+          text: @mes.text,
+          clan: clname.name,
+          username: "system"
+        })
+          # puts @mes
+      end
     # allroles = current_user.roles 
     # @roles =[]
     # allroles.each do |i|
