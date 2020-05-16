@@ -49,6 +49,7 @@ class MyItemsController < ApplicationController
 
 
     current_user.add_role params[:name].to_sym 
+    current_user.remove_role :applicant
       clname = Role.find_by(name: "superadmin")
       @mes = Chat.new     
       @mes.text = "Вы создали клан #{params[:name]}"

@@ -8,7 +8,7 @@ class Api::V1::GameboardsController < ApiController
   def index
     puts '---00--->'*20
     # @gameboards = Gameboard.where(pk: false) 
-    @gameboards = User.joins(:gameboard).joins(:roles).where(roles: {name: 'user'})
+    @gameboards = User.joins(:gameboard).joins(:roles).where(roles: {name: 'applicant'})
     puts @gameboards.inspect
     puts '---00--->'*20
          # print '---00--->'
