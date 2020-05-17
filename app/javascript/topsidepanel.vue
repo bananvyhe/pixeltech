@@ -29,9 +29,9 @@
 					</div>
 				</div>
 					<div v-if="$store.getters.role" >
-						<div v-if="$store.getters.role.role == 'client'">
+<!-- 						<div v-if="$store.getters.role.role == 'client'">
 							Site-hosting
-						</div>
+						</div> -->
 <!-- 						<div v-if="$store.getters.role.role == 'user'">
 							<game-board ></game-board> 
 						</div> -->

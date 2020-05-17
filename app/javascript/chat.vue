@@ -40,7 +40,7 @@
           </el-main>
         </el-container>
       </el-tab-pane> -->
-    <template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext">
+    <template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext" v-if="item.indexOf('_lead') == -1 && item.indexOf('_elder') == -1">
 
       <el-tab-pane :label="item" >  
         <el-container class="chatWindow" v-bind:style="{height: chatHeight +'vh'}" >
