@@ -85,7 +85,7 @@ class MyItemsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_my_item
     # binding.pry
-    # @item = MyItem.find_by_user_id(payload['user_id'])
+     @item = MyItem.find_by_user_id(payload['user_id'])
   end
   def my_item_params
     params.require(:my_item).permit( :name, :position, :qty, :user_id, :item_attribute_id, :description)

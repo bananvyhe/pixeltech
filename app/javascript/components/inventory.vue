@@ -79,6 +79,9 @@ export default {
         if (value.trim() == self.responseClan) {
           callback(new Error('Имя занято')); 
           self.dis = true
+        } else if (value.trim() == 'elder' || value.trim() == 'lead') {
+          self.dis = true
+          callback(new Error('недопустимое имя'));       
         } else if (value == '') {
           self.dis = false
           callback(new Error('Введите название клана'));
