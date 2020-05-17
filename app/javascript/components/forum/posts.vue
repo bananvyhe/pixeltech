@@ -2,7 +2,7 @@
 
 
   <div class="posts" v-if="$store.getters.pk == false">
-    <template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext" v-if="item.indexOf('_lead') == -1 && item.indexOf('_elder') == -1">
+    <template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext" v-if="item != 'lead' && item != 'elder'">
       <h2>Форум {{item}}</h2>
       <div v-for="(itemch, index) in clanposts" v-if="itemch.clan_name == item">
         <showposta class="headertext" v-on:delpost="getPosts" :number='itemch.id' :body='itemch.body' :title='itemch.title' :username='itemch.username'></showposta>

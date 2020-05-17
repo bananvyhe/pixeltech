@@ -33,11 +33,11 @@ class MyItemsController < ApplicationController
 
     # current_user.add_role params[:name].to_sym
     #создаем права лидера
-    leader = params[:name] + '_lead'
-    elder = params[:name] + '_elder'
+    # leader = params[:name] + '_lead'
+    # elder = params[:name] + '_elder'
     # puts leader; puts elder;
-    current_user.add_role leader.to_sym
-    current_user.add_role elder.to_sym
+    current_user.add_role :lead
+    current_user.add_role :elder 
     @make_res_item =  ItemAttribute.find_or_create_by(item_name: 'Воскрешение', description: 'Позволяет воскресить союзника', image: '../images/res.jpg') 
     @items = MyItem.new(item_attribute: @make_res_item, user: current_user, qty: 0)
     @make_ind_item =  ItemAttribute.find_or_create_by(item_name: 'Индульгенция', description: 'Позволяет смыть 100 кармы', image: '../images/carma.jpg') 
