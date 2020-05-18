@@ -19,10 +19,8 @@
             </div>    
           </el-tooltip>          
         </div>
-        <!-- <draggable v-model="items"  @end="itemMoved"> -->
-        <!-- </draggable> -->
+
         <draggable class="inv" v-model="Array.from(items)"  @end="itemMoved">
-        <!-- <div class="inv"> -->
           <div v-for="(item, index) in items" class="one-item" v-on:click="oneClick(item.item_name, item.id)"> 
             <el-tooltip  class="smalltext"  placement="bottom">
               <div slot="content">
@@ -31,37 +29,35 @@
               <div v-bind:style="{backgroundImage: `url('items${item.image.slice(9)}')`}" class="item-inv"><div v-if="item.qty != 0">{{item.qty}}</div>
               </div>
             </el-tooltip>
-
-            <!-- <div class="smalltext">{{item}}</div> -->
-
           </div>          
-        <!-- </div> -->
         </draggable>
+
       </div>
-    <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" ></el-button>   
+      <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" >
+      </el-button>   
     </el-popover>    
-          <el-dialog
-            :lock-scroll="false"
-            title="Создать клан"
-            :visible.sync="dialogBuildClan"
-            width="25em"
-            >
-            <!-- <div class="plashka2">подберите название:</div> -->
-          <el-form :model="form" :rules="rules" ref="form">             
-            <el-form-item  prop="clan" size="medium">
-              <el-input v-model="form.clan" auto-complete="off"></el-input>
-            </el-form-item>
-          </el-form>
-            <!-- <el-input placeholder="подберите название" v-model="inputClan"></el-input> -->
-            <div slot="footer"  class="uiframe">
-              <el-button @click="dialogBuildClan = false">Отмена</el-button>
-              <el-button v-if="dis == false" type="primary" @click="proceed" >Подтвердить</el-button>
-              <el-button v-else type="primary" disabled >Подтвердить</el-button>
-            </div>
-            <div slot="footer" class="footpostshow basetext font3">
-              &nbsp;
-            </div> 
-          </el-dialog>   
+    <el-dialog
+      :lock-scroll="false"
+      title="Создать клан"
+      :visible.sync="dialogBuildClan"
+      width="25em"
+      >
+      <el-form :model="form" :rules="rules" ref="form">             
+        <el-form-item  prop="clan" size="medium">
+          <el-input v-model="form.clan" auto-complete="off"></el-input>
+        </el-form-item>
+      </el-form>
+
+      <div slot="footer"  class="uiframe">
+        <el-button @click="dialogBuildClan = false">Отмена</el-button>
+        <el-button v-if="dis == false" type="primary" @click="proceed" >Подтвердить</el-button>
+        <el-button v-else type="primary" disabled >Подтвердить</el-button>
+      </div>
+      <div slot="footer" class="footpostshow basetext font3">
+        &nbsp;
+      </div> 
+
+    </el-dialog>   
   </div>
 </template>
 <script>
