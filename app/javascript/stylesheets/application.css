@@ -21,7 +21,7 @@
   }   
   h1,h2,h3,h4,h5 {
     /*color: $redorange;*/
-    color: color( $str5 lightness(50%)blackness(40%))
+    color: color( $str5 lightness(60%)shade(25%)saturation(10%))
   }
 }
 .wrapper {
@@ -389,10 +389,12 @@ html {
   cursor: pointer;
 }
 .el-tabs__item {
+  color: #2b5523;
   padding: 0 0.5em;
   height: 2.4em;
 }
 .el-tabs__header {
+ 
   margin: 0 0 0.3em !important;
 }
 .el-tabs--border-card>.el-tabs__content {
