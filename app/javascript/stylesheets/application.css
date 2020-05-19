@@ -21,7 +21,7 @@
   }   
   h1,h2,h3,h4,h5 {
     /*color: $redorange;*/
-    color: color( $str5 lightness(60%)shade(25%))
+    color: color( $str5 lightness(42%)saturation(10%))
   }
 }
 .wrapper {
