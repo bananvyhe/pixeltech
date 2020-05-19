@@ -15,7 +15,7 @@ class Api::V1::AuthenticationController < Api2Controller
  
                 @roles << i.name
  
-       
+            end
             # binding.pry
         # payload = { user_id: user.id, role: user.role, username: user.username }
         payload = { user_id: user.id, role: @roles, username: user.username }
