@@ -78,7 +78,7 @@
 					<br> Рефреш токен: {{this.$store.getters.token.refresh}}
 					<br><br> -->
 
-					<div v-for="(item, index) in $store.getters.role.role"> {{item}}&nbsp;</div>
+			<!-- 		<div v-for="(item, index) in $store.getters.role.role"> {{item}}&nbsp;</div> -->
 					<div>
 						<!-- &nbsp;&nbsp; Истекает через:  -->
 						<!-- {{timeConversion(this.$store.getters.role.exp)}} -->
