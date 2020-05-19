@@ -77,7 +77,7 @@
 					<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}
 					<br> Рефреш токен: {{this.$store.getters.token.refresh}}
 					<br><br> -->
-
+					права:&nbsp;
 					<div v-for="(item, index) in $store.getters.role.role"> {{item}}&nbsp;</div>
 					<div>
 						<!-- &nbsp;&nbsp; Истекает через:  -->
@@ -705,7 +705,7 @@
 	overflow: visible;
 	position: sticky;
 	z-index: 6000;
-	margin-bottom: -3.3em;
+	margin-bottom: -3.8em;
 	
    top: 0;
 	/*height: $topBlank;*/

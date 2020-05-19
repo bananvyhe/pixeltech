@@ -44,7 +44,7 @@
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
 			vood.to('.voodoo', 0.4, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -32, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=1.3').to('.voodoo', 1.0, {webkitFilter:"brightness(0.8)",
+          filter:"brightness(1)",y: -18, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=1.3').to('.voodoo', 1.0, {webkitFilter:"brightness(0.8)",
           filter:"brightness(0.1)", y:  -20, opacity: 0.3, x: 0, scale: 0.24, ease: Quart.easeIn}, '+=0.9' ).to('.voodoo', 0.1, {webkitFilter:"brightness(0.9)",
           filter:"brightness(0.9)", y:  -21, scale: 1, opacity: 0, x: 0, ease: Quad.easeIn}, '+=0.0' );
 
@@ -164,7 +164,7 @@
 }
 .container {
 	overflow: hidden;	
-	height: 115px;
+	height: 6em;
 	position: relative;	
 	display: flex;
 	align-items: stretch;
@@ -174,7 +174,7 @@
 	/*height: 162px;*/
 	background-color: #13151a;
 	/*border-radius: 0px 0 4em 4em;*/
-	border-bottom: 4px solid color( #1E1E21 shade(30%));
+	border-bottom: 2px solid color( #1E1E21 shade(40%));
 	border
 	@media (--only-small-screen) {
 		height: 120px;
