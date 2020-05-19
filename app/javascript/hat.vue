@@ -43,10 +43,10 @@
     mounted() {
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
-			vood.to('.voodoo', 0.4, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -18, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=1.3').to('.voodoo', 1.0, {webkitFilter:"brightness(0.8)",
-          filter:"brightness(0.1)", y:  -20, opacity: 0.3, x: 0, scale: 0.24, ease: Quart.easeIn}, '+=0.9' ).to('.voodoo', 0.1, {webkitFilter:"brightness(0.9)",
-          filter:"brightness(0.9)", y:  -21, scale: 1, opacity: 0, x: 0, ease: Quad.easeIn}, '+=0.0' );
+			vood.to('.voodoo', 0.9, { webkitFilter:"brightness(1)",
+          filter:"brightness(1)",y: -18, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '-=0.4').to('.voodoo', 1.0, {webkitFilter:"brightness(0.8)",
+          filter:"brightness(0.1)", y:  +10, opacity: 0.3, x: 0, scale: 0.24, ease: Quart.easeIn}, '+=0.9' ).to('.voodoo', 0.1, {webkitFilter:"brightness(0.9)",
+          filter:"brightness(0.9)", y:  +41, scale: 1, opacity: 0, x: 0, ease: Quad.easeIn}, '+=0.0' );
 
     	var tlwar = new TimelineMax();
     	tlwar.to('.warriors', 0.6, {backgroundPositionY: 32, ease: Power0.easeOut} ).to('.warriors', 1.6, {backgroundPositionY: 0, ease: Power0.easeIn});
@@ -163,8 +163,9 @@
 	height: 60px;
 }
 .container {
+
 	overflow: hidden;	
-	height: 6em;
+	height: 8em;
 	position: relative;	
 	display: flex;
 	align-items: stretch;
