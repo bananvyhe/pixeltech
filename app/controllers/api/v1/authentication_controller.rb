@@ -12,8 +12,10 @@ class Api::V1::AuthenticationController < Api2Controller
             allroles = user.roles 
             @roles =[]
             allroles.each do |i|
-              @roles << i.name
-            end
+ 
+                @roles << i.name
+ 
+       
             # binding.pry
         # payload = { user_id: user.id, role: user.role, username: user.username }
         payload = { user_id: user.id, role: @roles, username: user.username }
