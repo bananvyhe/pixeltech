@@ -2,12 +2,12 @@
 
 
   <div class="posts" v-if="$store.getters.pk == false">
-    <template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext" v-if="item != 'lead' && item != 'elder'">
-      <h2>Форум {{item}}</h2>
+    <template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext" v-if="item != 'lead' && item != 'elder'"> 
+       <div class="headblock">   <div><h2 > &bull; {{item}} </h2></div></div>
       <div v-for="(itemch, index) in clanposts" v-if="itemch.clan_name == item">
         <showposta class="headertext" v-on:delpost="getPosts" :number='itemch.id' :body='itemch.body' :title='itemch.title' :username='itemch.username'></showposta>
       </div>
-      <newposta v-on:newpost="getPosts" :section='item'></newposta>
+      <newposta v-on:newpost="getPosts" :section='item'></newposta> 
     </template>
 <!--     <div v-if="this.$store.getters.role.role != 'user'">
       <h2>Общий доступ</h2>
@@ -127,6 +127,7 @@ export default {
 
 <style scoped>
 /*@import "../../stylesheets/_variables";*/
+
 .headertext{
   /*lost-utility: edit;*/
   display: flex;
