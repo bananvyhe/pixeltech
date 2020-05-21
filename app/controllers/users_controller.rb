@@ -32,6 +32,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       # @user.update_attribute :role, :admin
       @user.add_role :admin  
+      @user.remove_role :applicant
     	# @user.update_attribute :admin, true
       redirect_to action: :index
     end
@@ -50,6 +51,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       # @user.update_attribute :role, :voodoo
       @user.add_role :voodoo
+      @user.remove_role :applicant
       # @user.update_attribute :admin, true
       redirect_to action: :index
     end
@@ -71,6 +73,7 @@ class UsersController < ApplicationController
       end
       # @user.update_attribute :role, :client
       @user.add_role :client
+      @user.remove_role :applicant
       redirect_to action: :index
     end
   end
