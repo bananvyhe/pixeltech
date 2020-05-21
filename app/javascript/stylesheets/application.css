@@ -503,13 +503,14 @@ html {
 }
 
 .el-dialog { 
-  font-family: 'aprior';
+  font-family: 'RobotoReg';
 /*  padding-left: 0.5em;
   padding-right: 0.5em;
   padding-bottom: 0.6em;*/
 }
 .el-dialog__title {
   color: $screenbg;
+  font-family: 'aprior' !important;
 }
 .el-dialog__header {
   padding: 25px 30px 12px 30px;
@@ -547,7 +548,7 @@ html {
  
 }
 .hat{
-  
+
 }
 .bpad{
   .el-button {
@@ -555,6 +556,12 @@ html {
     padding: 5px;
     margin: 0.25em 0.25em 0.25em 0.25em;
   }
+}
+.el-switch__label {
+    font-family: 'aprior';
+    line-height: 1;
+    font-size: 14px;
+    display: inline-block;
 }
 .el-checkbox{
   padding-top: 0.1em;
