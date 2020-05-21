@@ -43,7 +43,7 @@
     </div>
   </div>
 
-  <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка...">
+  <div v-if="alldata.length === 0" class="loading" v-loading="loading"  element-loading-background="#1E1E21" element-loading-spinner="el-icon-loading" element-loading-text="Загрузка">
   </div>
   <div v-if="alldata.length === 0" class="blank"></div>
   <div v-for="(data, index) in alldata" class="vkpost" :class="{inview: checkView(index)}" >

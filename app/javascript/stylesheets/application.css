@@ -501,19 +501,22 @@ html {
   left: 100%;
   margin-left: -9px;
 }
-
+.el-loading-text{
+ font-family: 'aprior';
+}
 .el-dialog { 
-  font-family: 'RobotoReg';
+  font-family: 'aprior';
 /*  padding-left: 0.5em;
   padding-right: 0.5em;
   padding-bottom: 0.6em;*/
 }
+ 
 .el-dialog__title {
   color: $screenbg;
   font-family: 'aprior' !important;
 }
 .el-dialog__header {
-  padding: 25px 30px 12px 30px;
+  padding: 25px 30px 22px 30px;
 }
 .el-dialog__footer {
     padding: 0.5em 1em 0.6em;
@@ -581,6 +584,9 @@ html {
    width: 100%;*/
 }
 .el-form-item__label {
+  color: color( $x11gray  shade(54%)saturation(100%));
+  font-size: 1em;
+ font-family: 'RobotoReg';
   /*width: 90px;*/
   line-height: 1em !important; 
   padding: 0 0.5em 0px 0em !important; 
