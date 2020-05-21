@@ -584,7 +584,7 @@ html {
    width: 100%;*/
 }
 .el-form-item__label {
-  color: color( $x11gray  shade(54%)saturation(100%));
+  color: color( $x11gray  shade(54%));
   font-size: 1em;
  font-family: 'RobotoReg';
   /*width: 90px;*/
