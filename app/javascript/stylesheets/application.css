@@ -25,7 +25,7 @@ body {
   }   
   h1,h2,h3,h4,h5 {
     /*color: $redorange;*/
-    color: color( $str5 lightness(24%)saturation(42%));
+    color: color( $str5 lightness(32%)saturation(42%));
     text-shadow:  0 0 13px rgba(0,0,0,0.4), 0 0 3px rgba(0,0,0,0.2), 0 0 25px rgba(0,0,0,0.2);
  
   }
