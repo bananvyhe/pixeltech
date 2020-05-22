@@ -1,7 +1,7 @@
 <template>
 
 
-  <div class="posts" v-if="$store.getters.pk == false">
+  <div class="posts"  >
     <template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext" v-if="item != 'lead' && item != 'elder'"> 
        <div class="headblock">   <div><h2 > &bull; {{item}} </h2></div></div>
       <div v-for="(itemch, index) in clanposts" v-if="itemch.clan_name == item">

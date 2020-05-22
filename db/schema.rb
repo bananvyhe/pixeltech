@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_13_101025) do
+ActiveRecord::Schema.define(version: 2020_05_21_120728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,13 +108,10 @@ ActiveRecord::Schema.define(version: 2020_05_13_101025) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.integer "cry", default: 0
-    t.boolean "pk", default: false
     t.string "message"
     t.integer "karma", default: 0
     t.bigint "expirience", default: 0
-    t.string "minus"
-    t.string "plus"
-    t.datetime "starts_at_time_of_pk"
+    t.integer "pk"
     t.index ["user_id"], name: "index_gameboards_on_user_id"
   end
 
@@ -147,6 +144,14 @@ ActiveRecord::Schema.define(version: 2020_05_13_101025) do
     t.string "item_name"
     t.string "description"
     t.string "image"
+  end
+
+  create_table "kills", force: :cascade do |t|
+    t.bigint "gameboard_id"
+    t.datetime "starts_at_time_of_pk"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gameboard_id"], name: "index_kills_on_gameboard_id"
   end
 
   create_table "lists", force: :cascade do |t|

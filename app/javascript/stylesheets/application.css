@@ -23,9 +23,9 @@ body {
 
     color: color( $str6 shade(0%)saturation(90%));
   }   
-  h1,h2,h3,h4,h5 {
-    /*color: $redorange;*/
-    color: color( $str5 lightness(32%)saturation(42%));
+  h1,h2,h3,h4,h5 {    /*color: $redorange;*/
+    font-family: "aprior";
+    color: color( $warningLine lightness(40%)saturation(42%));
     text-shadow:  0 0 13px rgba(0,0,0,0.4), 0 0 3px rgba(0,0,0,0.2), 0 0 25px rgba(0,0,0,0.2);
  
   }
