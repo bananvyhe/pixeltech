@@ -172,7 +172,7 @@
 .container {
 
 	overflow: hidden;	
-	height: 8em !important;
+	height: 110px !important;
 	position: relative;	
 	display: flex;
 	align-items: stretch;
