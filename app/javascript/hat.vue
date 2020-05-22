@@ -43,9 +43,9 @@
     mounted() {
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
-			vood.to('.voodoo', 0.6, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -32, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=0.3')
-			.to('.voodoo', 0.8, { webkitFilter:"brightness(1)",
+			vood.to('.voodoo', 0.3, { webkitFilter:"brightness(1)",
+          filter:"brightness(1)",y: -32, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=0.2')
+			.to('.voodoo', 1.2, { webkitFilter:"brightness(1)",
           filter:"brightness(1)",y: -32, opacity: 1, scale: 0.12, ease: "none"}, '-=0.0')	
 			.to('.voodoo', 1.8, { webkitFilter:"brightness(1)",
           filter:"brightness(1)",y: -15, opacity: 1, scale: 0.12, ease: "none"}, '-=0.0')	          		
@@ -53,7 +53,7 @@
           filter:"brightness(0.1)", y:  -20, opacity: 0.3, x: 0, scale: 0.24, ease: Quad.easeOut}, '+=0.5' )
  		
 			.to('.voodoo', 0.1, {webkitFilter:"brightness(0.9)",
-          filter:"brightness(0.9)", y:  -70, scale: 1, opacity: 0, x: 0, ease: Quad.easeOut}, '-=0.0' );
+          filter:"brightness(0.9)", y:  -60, scale: 1, opacity: 0, x: 0, ease: Quad.easeOut}, '-=0.0' );
 
     	var tlwar = new TimelineMax();
     	tlwar.to('.warriors', 0.4, {backgroundPositionY: 22, ease: Power0.easeOut} ).to('.warriors', 1.0, {backgroundPositionY: 0, ease: Expo.easeIn}, '+=0.6');
