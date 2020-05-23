@@ -551,7 +551,7 @@ html {
  
 }
 .hat{
-  height: 120px;
+  height: 9em !important;
 }
 .bpad{
   .el-button {
