@@ -44,11 +44,11 @@
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
 			vood.to('.voodoo', 0.3, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -32, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=0.2')
+          filter:"brightness(1)",y: -28, opacity: 1, scale: 0.12,  ease: Expo.easeIn}, '+=0.2')
 			.to('.voodoo', 1.2, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -32, opacity: 1, scale: 0.12, ease: "none"}, '-=0.0')	
-			.to('.voodoo', 1.8, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -15, opacity: 1, scale: 0.12, ease: "none"}, '-=0.0')	          		
+          filter:"brightness(1)",y: -28, opacity: 1, scale: 0.12, ease: "none"}, '-=0.0')	
+			.to('.voodoo', 1.6, { webkitFilter:"brightness(1)",
+          filter:"brightness(1)",y: -10, opacity: 1, scale: 0.12, ease: "none"}, '-=0.0')	          		
 			.to('.voodoo', 0.1, {webkitFilter:"brightness(0.8)",
           filter:"brightness(0.1)", y:  -20, opacity: 0.3, x: 0, scale: 0.24, ease: Quad.easeOut}, '+=0.5' )
  		
@@ -170,9 +170,9 @@
 	height: 60px;
 }
 .container {
-
+	height: 100%;
 	overflow: hidden;	
-	height: 110px !important;
+	/*height: 110px !important;*/
 	position: relative;	
 	display: flex;
 	align-items: stretch;
