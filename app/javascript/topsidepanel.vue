@@ -50,12 +50,14 @@
 							<!-- <game-board :expresult="lvlConversion"></game-board>   -->
 						</div>
 					</div>
-					<div v-if="($store.getters.gamebo) && ($store.getters.pk == false)" class="crytop">
+					<!-- <div v-if="($store.getters.gamebo) && ($store.getters.pk == false)" class="crytop"> -->
+						<div v-if="($store.getters.gamebo)" class="crytop">
 						<!-- камни: &nbsp;{{$store.getters.cry}} -->
 						<inv class="invclass" v-if="$store.getters.role"></inv>
 					</div> 
 					<div v-else>
-						<div v-if="($store.getters.gamebo) && ($store.getters.pk == true)">
+						<!-- <div v-if="($store.getters.gamebo) && ($store.getters.pk == true)"> -->
+							<div v-if="($store.getters.gamebo) ">
 							<el-button v-if="pkstat.exptime < nowtime" type="success" size='mini' icon="el-icon-switch-button"   @click="res">       
 	        		</el-button>
 							<el-button v-else type="success" size='mini' icon="el-icon-switch-button"   disabled>       
