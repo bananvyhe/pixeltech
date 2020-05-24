@@ -44,13 +44,13 @@
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
 			vood.to('.voodoo', 0.3, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -43, opacity: 1, scale: 0.12,  ease: Expo.easeOut}, '+=0.2')
-			.to('.voodoo', 1.2, { webkitFilter:"brightness(1)",
+          filter:"brightness(1)",y: -43, opacity: 1, scale: 0.12,  ease: Expo.easeOut}, '+=0.0')
+			.to('.voodoo', 0.4, { webkitFilter:"brightness(1)",
           filter:"brightness(1)",y: -43, opacity: 1, scale: 0.12, ease: "none"}, '+=0.5')	
-			.to('.voodoo', 2.2, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -10, opacity: 1, scale: 0.12, ease: Power4.easeOut}, '-=0.7')	          		
-			.to('.voodoo', 0.1, {webkitFilter:"brightness(0.8)",
-          filter:"brightness(0.1)", y:  -20, opacity: 0.3, x: 0, scale: 0.24, ease: Quad.easeOut}, '+=0.5' )
+			.to('.voodoo', 2.8, { webkitFilter:"brightness(1)",
+          filter:"brightness(1)",y: -10, opacity: 1, scale: 0.18, ease: Expo.easeOut}, '-=0.2')	          		
+			// .to('.voodoo', 0.1, {webkitFilter:"brightness(0.8)",
+   //        filter:"brightness(0.1)", y:  -20, opacity: 0.3, x: 0, scale: 0.24, ease: Quad.easeOut}, '+=0.5' )
  		
 			.to('.voodoo', 0.1, {webkitFilter:"brightness(0.9)",
           filter:"brightness(0.9)", y:  -50, scale: 1, opacity: 0, x: 0, ease: Quad.easeOut}, '-=0.0' );
