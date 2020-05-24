@@ -62,8 +62,8 @@
 					  -=СуперАдмин=-
 					 <% end %>
 				</div> 
-				<div v-on:click="deleteuser(<%=user.id.to_s %>)">
-					удалить
+				<div data-item_id="<%= user.id %>">
+					<span class="deleteAction">Удалить</span>
 				</div>	
 			<br> 
 			</div>

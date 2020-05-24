@@ -2,14 +2,14 @@ class User < ApplicationRecord
   rolify
   # has_and_belongs_to_many :roles
   has_one :client, dependent: :destroy
-  has_one :gameboard 
-  has_many :my_items
-  has_many :appointments
+  has_one :gameboard, :dependent => :delete
+  has_many :my_items, dependent: :destroy
+  has_many :appointments, dependent: :destroy
   has_many :vks, :through => :appointments
   has_many :gameboards, -> { distinct }, :through => :votes
-  has_many :visiblegroups
+  has_many :visiblegroups, dependent: :destroy
   has_many :groupsvks, :through => :visiblegroups
-  has_many :votes, as: :voteable
+  has_many :votes, as: :voteable, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
