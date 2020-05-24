@@ -185,10 +185,10 @@
 	border-bottom: 2px solid color( #1E1E21 shade(40%));
 	border
 	@media (--only-small-screen) {
-		height: 120px;
+		/*height: 9em;*/
   }
  	@media (--only-xsmall-screen) {
-		height: 120px;
+		/*height: 9em;*/
   }
 }
 .hat {
