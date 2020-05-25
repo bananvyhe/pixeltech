@@ -25,6 +25,7 @@
 <script>
 import axios from 'axios'
 let screenwidth = {value: ''} 
+
 export default {
   props:['section'],
   data: function () {
@@ -86,7 +87,7 @@ export default {
 
   },
   mounted() {
- 
+    parseCalc()
   }
 }
 //подсчет ширины вьюпорта и отправление в переменную
