@@ -7,7 +7,7 @@
       <div v-for="(itemch, index) in clanposts" v-if="itemch.clan_name == item">
         <showposta class="headertext" v-on:delpost="getPosts" :number='itemch.id' :body='itemch.body' :title='itemch.title' :username='itemch.username'></showposta>
       </div>
-      <newposta v-on:newpost="getPosts" :section='item'></newposta> 
+      <newposta class="headertext" v-on:newpost="getPosts" :section='item'></newposta> 
     </template>
 <!--     <div v-if="this.$store.getters.role.role != 'user'">
       <h2>Общий доступ</h2>

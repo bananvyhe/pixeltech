@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     calcul: function(){
-      return screenwidth.value > 900 ? '48'+'em' : '90' +'%'
+      return screenwidth.value < 700 ? '90' +'%' : '70'+'em'
     },
   },
   methods: {

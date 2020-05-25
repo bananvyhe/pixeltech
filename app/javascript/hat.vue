@@ -48,7 +48,7 @@
 			.to('.voodoo', 0.4, { webkitFilter:"brightness(1)",
           filter:"brightness(1)",y: -43, opacity: 1, scale: 0.12, ease: "none"}, '+=0.5')	
 			.to('.voodoo', 2.8, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -10, opacity: 1, scale: 0.18, ease: Expo.easeOut}, '-=0.2')	          		
+          filter:"brightness(1)",y: -20, opacity: 1, scale: 0.18, ease: Expo.easeOut}, '-=0.2')	          		
 			// .to('.voodoo', 0.1, {webkitFilter:"brightness(0.8)",
    //        filter:"brightness(0.1)", y:  -20, opacity: 0.3, x: 0, scale: 0.24, ease: Quad.easeOut}, '+=0.5' )
  		
