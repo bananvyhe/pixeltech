@@ -24,6 +24,7 @@ body {
     color: color( $str6 shade(0%)saturation(90%));
   }   
   h1,h2,h3,h4,h5 {    /*color: $redorange;*/
+    margin-bottom: 0.2em;
     font-family: "aprior";
     color: color($sunglow lightness(52%)saturation(42%));
     text-shadow:  0 0 13px rgba(0,0,0,0.4), 0 0 3px rgba(0,0,0,0.2), 0 0 25px rgba(0,0,0,0.2);
@@ -424,6 +425,9 @@ html {
 .el-form-item--medium{
   padding-bottom: 1.3em !important;
 }
+.el-form-item--label{
+  padding-bottom: 1.3em !important;
+}
 .el-form-item--medium:last-child{
   padding-bottom: 0.0em !important;
 }
@@ -587,12 +591,13 @@ html {
    width: 100%;*/
 }
 .el-form-item__label {
+
   color: color( $tuscan shade(67%));
   font-size: 1em;
  font-family: 'RobotoReg';
   /*width: 90px;*/
   line-height: 1em !important; 
-  padding: 0 0.5em 0px 0em !important; 
+  padding: 0 0.5em 0.3em 0em !important; 
  display: flex;
  justify-content: flex-end;
  align-self: center;
