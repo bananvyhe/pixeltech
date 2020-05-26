@@ -1,6 +1,7 @@
 <template>
   <div class=" ">
-    <el-button type="text" @click="dialogFormVisible = true">Новый пост</el-button>
+    <el-button v-if="$store.getters.pk == 1" type="text"  disabled >Новый пост</el-button>
+    <el-button v-else type="text" @click="dialogFormVisible = true">Новый пост</el-button>
     <el-dialog title="Создать новый пост" :visible.sync="dialogFormVisible" :width="calcul" :lock-scroll="false">
       <el-form :label-position="labelPosition" ref="form" :model="form"  size="mini"  label-width="120px">
         <el-form-item  class="aprior" size="medium" label="Заголовок поста:" prop="title">

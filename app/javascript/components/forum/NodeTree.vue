@@ -60,10 +60,12 @@
             <!-- {{number}} -->
             <el-button size='mini' @click="sendReply(number)">отправить</el-button>          
           <!-- </v-embed> -->
-        <div v-if="node.body" slot="reference" class="reply" @click="visible = !visible" >ответить</div>
+        <div v-if="node.body && $store.getters.pk != 1" slot="reference" class="reply" @click="visible = !visible" >ответить</div>
       </el-popover>   
-      <div class="del" v-if="$store.getters.role.username == node.username && node.body != null" @click="destroy(number, node.id )">удалить</div>
+      <div class="del" v-if="$store.getters.role.username == node.username && node.body != null && $store.getters.pk != 1" @click="destroy(number, node.id )">удалить</div>
+       
     </div>
+
     <div v-if="node.comments && node.comments.length">
       <node v-on:sendpost="sendd" v-for="child in node.comments" :key="child.id" :node="child" :number="number" class="padding-message"></node>
 
@@ -187,6 +189,14 @@ export default {
   line-height: 0.8em;
   cursor: pointer;
   color: red;
+  /*background-color: #ada;*/
+}
+.pked{
+  width: 80px;
+  padding: 0 0 0.5em;
+  line-height: 0.8em;
+  cursor: pointer;
+  color: gray;
   /*background-color: #ada;*/
 }
 .reply{

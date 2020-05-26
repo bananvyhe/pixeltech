@@ -36,7 +36,8 @@
         </div>
 
 
-        <el-input
+        <el-input 
+        class="plashka2"
         type="textarea"
         :autosize="{ minRows: 4, maxRows: 8}"
         placeholder="написать комментарий"
@@ -77,7 +78,8 @@
             </div>
           </div>
         </emoji-picker>
-        <el-button style="margin-top: 0.8em;" @click="sendReply(number)">отправить</el-button>   
+        <el-button v-if="$store.getters.pk == 1" style="margin-top: 0.8em;" disabled>отправить</el-button> 
+        <el-button  v-else style="margin-top: 0.8em;" @click="sendReply(number)">отправить</el-button>   
         <div v-for="(item, index) in postComm" class="comm-area plashka2">
           <div v-if='item.parent_id == null'>
             <!-- {{ item}} -->             

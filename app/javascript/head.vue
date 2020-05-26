@@ -1,4 +1,4 @@
-мос<!-- :class="{ bgclass: activatorclass }" -->
+<!-- :class="{ bgclass: activatorclass }" -->
 <template>
 	<div class="firstpagebg">
     <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }">

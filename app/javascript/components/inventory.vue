@@ -33,8 +33,10 @@
         </draggable>
 
       </div>
-      <el-button slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" >
+      <el-button  v-if="$store.getters.pk == 1" slot="reference" icon="el-icon-menu"    type="info"  size="mini" disabled>
       </el-button>   
+      <el-button  v-else slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" >
+      </el-button>          
     </el-popover>    
     <el-dialog
       :lock-scroll="false"
