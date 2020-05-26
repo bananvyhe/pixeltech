@@ -44,10 +44,10 @@
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
 			vood.to('.voodoo', 0.3, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -19, opacity: 1, scale: 0.08,  ease: Expo.easeOut}, '+=0.0')
+          filter:"brightness(1)",y: -19, opacity: 1, scale: 0.08,  ease: Expo.easeOut}, '-=0.2')
 			.to('.voodoo', 0.4, { webkitFilter:"brightness(1)",
           filter:"brightness(1)",y: -19, opacity: 1, scale: 0.08, ease: "none"}, '+=0.5')	
-			.to('.voodoo', 2.8, { webkitFilter:"brightness(1)",
+			.to('.voodoo', 3.8, { webkitFilter:"brightness(1)",
           filter:"brightness(1)",y: -10, opacity: 1, scale: 0.13, ease: Expo.easeOut}, '-=0.2')	          		
 			// .to('.voodoo', 0.1, {webkitFilter:"brightness(0.8)",
    //        filter:"brightness(0.1)", y:  -20, opacity: 0.3, x: 0, scale: 0.24, ease: Quad.easeOut}, '+=0.5' )
@@ -193,7 +193,7 @@
 }
 .hat {
 
-
+ top: 0;
 
 }
 .warriors {
