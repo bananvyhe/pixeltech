@@ -204,12 +204,14 @@ class Api::V1::GameboardsController < ApiController
     @explvling = [68, 295, 805, 1716, 3154, 5249, 8136, 11955, 16851, 22973, 30475, 39516, 50261, 62876, 77537, 94421, 113712, 135596, 160266, 84495, 95074, 107905, 123472, 142427, 165669, 194509, 231086, 279822, 374430, 209536, 248781, 296428, 354546, 425860]
     pksend =params[:killid]
     @crysubtract =  Gameboard.find_by_user_id(payload['user_id'])
-     # @crysubtract.cry -= 100
+     @crysubtract.cry -= 100
     @crysubtract.save
-    @killeduser = Gameboard.find_by_user_id(pksend).includes(:kill)
-    binding.pry
+    @killeduser = Gameboard.find_by_user_id(pksend)
+    # binding.pry
     # puts @killeduser.kill
     @killeduser.pk = true
+    kill = Kill.new
+    @killeduser.kill = kill
     @expuser = @killeduser.expirience
     @lvlcounter = 0
     @expcounter = 0
