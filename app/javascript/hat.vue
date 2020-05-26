@@ -45,10 +45,10 @@
 			var vood = new TimelineMax();
 			vood.to('.voodoo', 0.2, { webkitFilter:"brightness(1)",
           filter:"brightness(1)",y: -26, opacity: 1, scale: 0.08,  ease: Expo.easeIn}, '-=0.2')
-			.to('.voodoo', 0.8, { webkitFilter:"brightness(1)",
+			.to('.voodoo', 0.6, { webkitFilter:"brightness(1)",
           filter:"brightness(1)",y: -22, opacity: 1, scale: 0.08, ease: "none"}, '+=0.0')	
 			.to('.voodoo', 3.5, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -10, opacity: 1, scale: 0.13, ease: Expo.easeInOut}, '-=0.2')	          		
+          filter:"brightness(1)",y: -10, opacity: 1, scale: 0.13, ease: Expo.easeInOut}, '-=0.0')	          		
 			// .to('.voodoo', 0.1, {webkitFilter:"brightness(0.8)",
    //        filter:"brightness(0.1)", y:  -20, opacity: 0.3, x: 0, scale: 0.24, ease: Quad.easeOut}, '+=0.5' )
  		
@@ -246,7 +246,10 @@
 	color: color( $screenbg  saturation(92%) shade(65%) tint(10%) blackness(70%));
 	position: absolute;
 	font-size: 22vh;
-	padding-right: 3em;
+	padding-right: 2em;
+	@media (--only-956less-screen) {
+		padding-right: 0em;
+	}
 	/*transform: perspective(200px) rotateX(-60deg);*/
 	/*opacity: 0.8;*/
 }
