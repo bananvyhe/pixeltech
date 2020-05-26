@@ -76,9 +76,10 @@
                 </el-tooltip>
               </div>
               <div>
-                <el-tooltip  v-if="$store.getters. cry >= 100" placement="top">
-                  <div slot="content"  class="smalltext notif"> <span style="color: green;">стоимость 100 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> </div>
-                  <el-button type="danger" label="1" border size="mini" class="aprior pk" @click='pkconfirm(item.id)'> 
+
+                <el-tooltip  v-if="$store.getters.cry >= 100" placement="top">
+                  <div slot="content"  class="smalltext notif plashka2"> <span style="color: green;">стоимость 100 камней</span> <br>   нейтрализует оппонента <br> <span style="color: red;"><i>ваша карма будет испорчена</i></span>   </div>
+                  <el-button type="danger" label="1" bordser size="mini" class="aprior pk" @click='pkconfirm(item.id)'> 
                     ПК 
                   </el-button>
                 </el-tooltip>
@@ -86,12 +87,13 @@
                   <div slot="content"  class="smalltext notif"> 
                     <span style="color: green;">стоимость 100 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> 
                   </div>
-                  <el-button type="danger" label="1" border size="mini"   class="aprior"> 
+                  <el-button disabled type="danger" label="1" border size="mini" class="aprior"> 
                     ПК 
                   </el-button>
                 </el-tooltip>
               </div>    
             </div>
+
             <el-button v-if="item.pk == null" slot="reference" class="user" border>
               <div class="item" @mouseover="mouseOverUser(item.id)" v-bind:style="item.karma > 0 ? 'color: red;' : ''">
                 {{item.username}}
@@ -359,6 +361,7 @@ export default {
   padding: 1em;
 }
 .notif {
+  font-weight: 300;
   text-align: center;
   line-height: 1.4em;
 }

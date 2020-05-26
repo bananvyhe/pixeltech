@@ -1,5 +1,5 @@
 <template>
-	<div id="bpad">
+	<div id="bpad"> 
 	 <!-- {{exp}} -->
 		<div class="overbpad">
 		<!-- {{exptime}} -->
@@ -446,7 +446,7 @@
 						if (response.data){
 		          this.$store.commit('gamesend', response.data.expirience )
 		          this.$store.commit('crysend', response.data.cry )
-		          this.$store.commit('pksend', response.data.pk )							
+		          this.$store.commit('pksend', response.data.kill )							
 						}
 
 
