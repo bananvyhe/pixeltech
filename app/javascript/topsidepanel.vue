@@ -702,7 +702,7 @@
 }
 #bpad{ 
 	/*position: relative;*/
-
+display: flex;
 	overflow: visible;
 	position: relative;
 	z-index: 6000;
@@ -723,20 +723,21 @@
 .overbpad{
 top: 0;
 	position: fixed;
-	float: left;
 	width: 100%;
+	/*float: left;*/
+/*display: flex;*/
 	/*display: flex;*/
-
+lost-center: $lcenter;
 }
 .bpad { 
-	width: 100%;
+	
 	padding: 0.1em;
 	/*border-bottom: 2px solid $color-blue;*/
  	display: flex;
 	/*position: sticky;*/
 	/*top: 0em;  */
 	z-index: 6000;
-	
+	justify-content: space-between;
             
 	/*height: 2.6em;*/
 	
@@ -758,17 +759,17 @@ top: 0;
 .logohead{
 
 	position: relative;
-	/*z-index: 50;*/
+ 
 	display: flex;
 	align-items: center;
-	lost-column: 1/2 2 0em; 
-	/*align-self: center;*/
+	/*lost-column: 1/2 2 0em; */
+ 
 	padding: 0.1em 1.3em 0em;
 	@media (--only-small-screen) {
-		lost-column: 1/2 2 0em; 
+		/*lost-column: 1/2 2 0em; */
   }
   @media (--only-xsmall-screen) {
-		lost-column: 2/5 2 0em; 
+		/*lost-column: 2/5 2 0em; */
 		padding: 0.1em 0.3em 0em;
   }
 }
@@ -781,24 +782,20 @@ top: 0;
 }
 .maininfo {
 	z-index: 5000;
-	/*position: fixed;*/
-/*	top: 0.5em;
-	right: 0.5em;*/
-	/*z-index: 49;*/
+ 
 	overflow-x: auto;
 	white-space: nowrap;
 	padding: 0 0.4em;
-
-	/*align-self: center;*/
-	lost-column: 1/2 2 0em; 
+ 
+	/*lost-column: 1/2 2 0em; */
 	lost-flex-container: row;
 	justify-content: flex-end;
 	align-items: center;
 	@media (--only-small-screen) {
-		lost-column: 1/2 2 0em; 
+		/*lost-column: 1/2 2 0em; */
   }
   @media (--only-xsmall-screen) {
-		lost-column: 3/5 2 0em; 
+		/*lost-column: 3/5 2 0em; */
   }
 	.info {
 		display: flex;

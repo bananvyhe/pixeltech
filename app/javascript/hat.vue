@@ -9,7 +9,7 @@
 	  	<div class="bgshad"></div>
 	  	<div class="voodoo font3">
 	  		<!-- VooDoo power  -->
-	  		powered by NGINX
+	  		powered by NGINX 
 	  	</div>
 	  	<div class="clouds"></div>
 <!-- <div class="plashken"></div> -->
@@ -43,17 +43,17 @@
     mounted() {
     	// console.log('22222updatedHat')
 			var vood = new TimelineMax();
-			vood.to('.voodoo', 0.3, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -19, opacity: 1, scale: 0.08,  ease: Expo.easeOut}, '-=0.2')
-			.to('.voodoo', 0.4, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -19, opacity: 1, scale: 0.08, ease: "none"}, '+=0.5')	
-			.to('.voodoo', 3.8, { webkitFilter:"brightness(1)",
-          filter:"brightness(1)",y: -10, opacity: 1, scale: 0.13, ease: Expo.easeOut}, '-=0.2')	          		
+			vood.to('.voodoo', 0.2, { webkitFilter:"brightness(1)",
+          filter:"brightness(1)",y: -26, opacity: 1, scale: 0.08,  ease: Expo.easeIn}, '-=0.2')
+			.to('.voodoo', 0.8, { webkitFilter:"brightness(1)",
+          filter:"brightness(1)",y: -22, opacity: 1, scale: 0.08, ease: "none"}, '+=0.0')	
+			.to('.voodoo', 3.5, { webkitFilter:"brightness(1)",
+          filter:"brightness(1)",y: -10, opacity: 1, scale: 0.13, ease: Expo.easeInOut}, '-=0.2')	          		
 			// .to('.voodoo', 0.1, {webkitFilter:"brightness(0.8)",
    //        filter:"brightness(0.1)", y:  -20, opacity: 0.3, x: 0, scale: 0.24, ease: Quad.easeOut}, '+=0.5' )
  		
 			.to('.voodoo', 0.1, {webkitFilter:"brightness(0.9)",
-          filter:"brightness(0.9)", y:  -50, scale: 1, opacity: 0, x: 0, ease: Quad.easeOut}, '-=0.0' );
+          filter:"brightness(0.9)", y:  -50, scale: 1, opacity: 0, x: 0, ease: Quad.easeOut}, '-=0.3' );
 
     	var tlwar = new TimelineMax();
     	tlwar.to('.warriors', 0.4, {backgroundPositionY: 22, ease: Power0.easeOut} ).to('.warriors', 5.0, {backgroundPositionY: 0, ease: Power4.easeOut}, '+=0.2');
@@ -246,6 +246,7 @@
 	color: color( $screenbg  saturation(92%) shade(65%) tint(10%) blackness(70%));
 	position: absolute;
 	font-size: 22vh;
+	padding-right: 3em;
 	/*transform: perspective(200px) rotateX(-60deg);*/
 	/*opacity: 0.8;*/
 }
@@ -273,10 +274,10 @@
 	background-size: cover;
 	background-image: url('./images/_hat/flash.jpg');
 	@media (--only-1600more-screen) {
-    background-position: center -20px;
+    background-position: center -70px;
   }
   @media (--only-medium-screen) {
-    background-position: center -20px;
+    background-position: center -50px;
   }
 }
 .dvis {
