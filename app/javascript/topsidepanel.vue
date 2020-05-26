@@ -6,71 +6,68 @@
 		<div class="bpad smalltext" v-bind:style="styleObject"> 
 			<div class="logohead">
 				<!-- {{exptime}} --> 
-				<div class="voodoo1" v-if="!$store.getters.role">
+<!-- 				<div class="voodoo1" v-if="!$store.getters.role">
 					<div class="basecamp">
-						<!-- Cyber team -->
+ 
 					</div>&nbsp;&nbsp;
-					<!-- <div class="swing"> -->
+ 
 					<request class="request"></request>
-					<!-- </div> -->
+ 
 					&nbsp;&nbsp;
 					<div class="basecamp1">
 						<el-popover
 				    placement="bottom"
 				    width="100"
 				    trigger="click">
-
 					    <div style="text-align: center;">
 					    	<a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a>
 					    </div>
-		
-						<!-- 	<el-button size="mini" slot="reference">сайты</el-button> -->
+ 
 						</el-popover>
 					</div>
+				</div> -->
+				<div class="voodoo1" v-if="!$store.getters.role">
+					<request class="request"></request>
 				</div>
-					<div v-if="$store.getters.role" >
-<!-- 						<div v-if="$store.getters.role.role == 'client'">
-							Site-hosting
-						</div> -->
-<!-- 						<div v-if="$store.getters.role.role == 'user'">
-							<game-board ></game-board> 
-						</div> -->
-						<div class="backbar "  v-if="$store.getters.role.role.find(item => item  == 'voodoo') == 'voodoo' || $store.getters.role.role.find(item => item  == 'user') == 'user'">
-							<div class="mediumtext nikname">{{$store.getters.role.username}}</div>
-							<div class="expbar"> 
-								<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
-
-								<div class="expline">
-									<!-- v-if="$store.getters.gamebo" -->
-									<el-progress v-if="$store.getters.gamebo" class="elpro aprior " :stroke-width="3" :percentage="Number(lvlConversion[1])"></el-progress>
-								</div>
-								<div v-if="$store.getters.gamebo" class="lvl">{{lvlConversion[0]}}&nbsp;</div>
-								<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
+				<div v-if="$store.getters.role" >
+					<!-- <div v-if="1==2" > -->
+					<!-- <div class="backbar "  v-if="$store.getters.role.role.find(item => item  == 'voodoo') == 'voodoo' || $store.getters.role.role.find(item => item  == 'user') == 'user'"> -->
+					<div class="backbar" v-if="$store.getters.token">
+						<div class="mediumtext nikname">{{$store.getters.role.username}}</div>
+						<div class="expbar"> 
+							<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
+							<div class="expline">
+								<el-progress v-if="$store.getters.gamebo" class="elpro aprior " :stroke-width="3" :percentage="Number(lvlConversion[1])"></el-progress>
 							</div>
-							<!-- <game-board :expresult="lvlConversion"></game-board>   -->
+							<div v-if="$store.getters.gamebo" class="lvl">{{lvlConversion[0]}}&nbsp;</div>
+							<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
 						</div>
-					</div>
-					<!-- <div v-if="($store.getters.gamebo) && ($store.getters.pk == false)" class="crytop"> -->
-						<div v-if="($store.getters.gamebo)" class="crytop">
-						<!-- камни: &nbsp;{{$store.getters.cry}} -->
-						<inv class="invclass" v-if="$store.getters.role"></inv>
-					</div> 
-					<div v-else>
-						<!-- <div v-if="($store.getters.gamebo) && ($store.getters.pk == true)"> -->
-							<div v-if="($store.getters.gamebo) ">
-							<el-button v-if="pkstat.exptime < nowtime" type="success" size='mini' icon="el-icon-switch-button"   @click="res">       
-	        		</el-button>
-							<el-button v-else type="success" size='mini' icon="el-icon-switch-button"   disabled>       
-	        		</el-button>							
-						</div>
-        		<!-- {{pkstat}}{{nowtime}}{{$store.getters.pk}} -->
-					</div>
-					<div v-if="$store.getters.token == null">
-						<div v-if="checklog != 'unlogged' ">
-							{{nulltoken}}
-						</div>
+						<!-- <game-board :expresult="lvlConversion"></game-board>   -->
 					</div>
 				</div>
+				<div v-else>
+ 
+				</div>
+					<!-- <div v-if="($store.getters.gamebo) && ($store.getters.pk == false)" class="crytop"> -->
+				<div v-if="($store.getters.gamebo)" class="crytop">
+					<!-- камни: &nbsp;{{$store.getters.cry}} -->
+					<inv class="invclass" v-if="$store.getters.role"></inv>
+				</div> 
+				<div v-else>
+					<!-- <div v-if="($store.getters.gamebo) && ($store.getters.pk == true)"> -->
+					<div v-if="($store.getters.gamebo) ">
+						<el-button v-if="pkstat.exptime < nowtime" type="success" size='mini' icon="el-icon-switch-button"   @click="res">       
+        		</el-button>
+						<el-button v-else type="success" size='mini' icon="el-icon-switch-button"   disabled>       
+        		</el-button>							
+					</div>
+				</div>
+				<div v-if="$store.getters.token == null">
+					<div v-if="checklog != 'unlogged' ">
+						{{nulltoken}}
+					</div>
+				</div>
+			</div>
 			<div class="maininfo">
 				<div v-if="$store.getters.token != null" class="info wrap">
 					<!-- {{this.$store.getters.role.username}} 
@@ -494,10 +491,11 @@
 @import "stylesheets/_variables";
 @import "stylesheets/_extends";
 .backbar {
+	float: left;
 	    border-radius: 0.3em;
 	background-color: color( #1E1E21 shade(6%));
-	padding: 0.3em 0.4em 0.3em;
-	margin: 0.2em 0;
+	/*padding: 0.3em 0.4em 0.3em;*/
+	padding: 0.5em 0;
 }
 .elpro {
 	/*padding: 0.5em 0 0;*/
@@ -704,11 +702,14 @@
 }
 #bpad{ 
 	/*position: relative;*/
+
 	overflow: visible;
-	position: sticky;
+	position: relative;
 	z-index: 6000;
-	margin-bottom: -3.8em;
-	
+	/*display: block;*/
+/*float: left;*/
+	/*margin-bottom: -3.8em;*/
+ 
    top: 0;
 	/*height: $topBlank;*/
 	/*z-index: 800;*/
@@ -720,8 +721,12 @@
 		lost-center: $lcenter;
 }
 .overbpad{
+top: 0;
+	position: fixed;
+	float: left;
 	width: 100%;
-	display: flex;
+	/*display: flex;*/
+
 }
 .bpad { 
 	width: 100%;
