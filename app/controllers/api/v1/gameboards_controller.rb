@@ -36,7 +36,7 @@ class Api::V1::GameboardsController < ApiController
   def ressurect
     res = User.joins(:gameboard).find(payload['user_id']) 
 
-    res.gameboard.pk = false
+    res.gameboard.pk = ""
     # puts res.gameboard.inspect
     res.gameboard.save 
   end

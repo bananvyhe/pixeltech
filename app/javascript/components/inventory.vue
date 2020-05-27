@@ -1,5 +1,6 @@
 <template>
   <div class="inv">
+    <!-- {{$store.getters.kill}}{{$store.getters.pk}} -->
     <el-popover
       placement="bottom"
       width="200"
@@ -33,10 +34,16 @@
         </draggable>
 
       </div>
-      <el-button  v-if="$store.getters.pk != null" slot="reference" icon="el-icon-menu"    type="info"  size="mini" disabled>
-      </el-button>   
-      <el-button  v-else slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" >
-      </el-button>          
+      <template  v-if="$store.getters.pk != null && $store.getters.kill == null">
+        <el-button   slot="reference" type="success" size='mini' icon="el-icon-switch-button" @click="res">
+        </el-button> 
+      </template>
+      <template v-else>
+        <el-button  v-if="$store.getters.pk != false && $store.getters.kill == true" slot="reference" icon="el-icon-menu"    type="info"  size="mini" disabled>
+        </el-button>   
+        <el-button  v-else slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" >
+        </el-button>  
+      </template>        
     </el-popover>    
     <el-dialog
       :lock-scroll="false"
@@ -151,6 +158,21 @@ export default {
     ]),    
   },
   methods: {
+ 
+  
+ 
+      res(){
+        axios({
+          method: 'post',
+          url: '/api/v1/ressurect',
+          headers: {
+            'Authorization': 'bearer '+this.$store.getters.token.access
+          }           
+        }).then((response) => { 
+ 
+          $emit('my-event')
+        });
+      },    
    proceed() {
  
       axios({

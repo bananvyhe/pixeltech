@@ -6,7 +6,7 @@ class GameboardsController < ApplicationController
   # GET /gameboards.json
   def index
     @gameboards = Gameboard.find_by_user_id(payload['user_id']) 
-    render json: @gameboards, :include => [:kill], :except => [:pk, :created_at, :updated_at]
+    render json: @gameboards, :include => [:kill], :except => [  :created_at, :updated_at]
 
   end
 

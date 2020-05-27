@@ -51,16 +51,16 @@
 					<!-- <div v-if="($store.getters.gamebo) && ($store.getters.pk == false)" class="crytop"> -->
 				<div v-if="($store.getters.gamebo)" class="crytop">
 					<!-- камни: &nbsp;{{$store.getters.cry}} -->
-					<inv class="invclass" v-if="$store.getters.role"></inv>
+					<inv class="invclass" v-if="$store.getters.role" @my-event="storeCommitGbData"></inv>
 				</div> 
 				<div v-else>
 					<!-- <div v-if="($store.getters.gamebo) && ($store.getters.pk == true)"> -->
-					<div v-if="($store.getters.gamebo) ">
-						<el-button v-if="pkstat.exptime < nowtime" type="success" size='mini' icon="el-icon-switch-button"   @click="res">       
+					<!-- <div v-if="$store.getters.gamebo ">
+						<el-button v-if="$store.getters.kill == null " type="success" size='mini' icon="el-icon-switch-button"   @click="res">       
         		</el-button>
 						<el-button v-else type="success" size='mini' icon="el-icon-switch-button"   disabled>       
         		</el-button>							
-					</div>
+					</div> -->
 				</div>
 				<div v-if="$store.getters.token == null">
 					<div v-if="checklog != 'unlogged' ">
@@ -330,17 +330,17 @@
  			}
 	  }, 
 	  methods: {
-	  	res(){
-	      axios({
-	        method: 'post',
-	        url: '/api/v1/ressurect',
-	        headers: {
-	          'Authorization': 'bearer '+this.$store.getters.token.access
-	        } 	        
-	      }).then((response) => { 
-	      	this.$store.commit('pksend', false )
-	      });
-	  	},
+	  	// res(){
+	   //    axios({
+	   //      method: 'post',
+	   //      url: '/api/v1/ressurect',
+	   //      headers: {
+	   //        'Authorization': 'bearer '+this.$store.getters.token.access
+	   //      } 	        
+	   //    }).then((response) => { 
+	   //    	this.$store.commit('pksend', false )
+	   //    });
+	  	// },
 	  	getPkStatus(){
 	  		if (this.$store.getters.gamebo){
 		      axios({
@@ -446,7 +446,8 @@
 						if (response.data){
 		          this.$store.commit('gamesend', response.data.expirience )
 		          this.$store.commit('crysend', response.data.cry )
-		          this.$store.commit('pksend', response.data.kill )							
+		          this.$store.commit('pksend', response.data.pk )	
+		           this.$store.commit('killsend', response.data.kill )							
 						}
 
 

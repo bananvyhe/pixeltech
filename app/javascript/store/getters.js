@@ -4,6 +4,9 @@
 // export const exp2 = (state) => {
 // 	return state.exp2
 // }
+export const kill = (state) => {
+	return state.kill
+}
 export const pk = (state) => {
 	return state.pk
 }
