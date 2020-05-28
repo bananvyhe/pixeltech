@@ -11,8 +11,8 @@ export const killsend = (state,  kill ) => {
 	state.kill = kill 
 	 
 }
-export const pksend = (state,  pk ) => {
-	state.pk = pk 
+export const deadsend = (state,  dead ) => {
+	state.dead = dead 
 	 
 }
 export const tokensend = (state,  token ) => {

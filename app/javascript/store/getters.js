@@ -7,8 +7,8 @@
 export const kill = (state) => {
 	return state.kill
 }
-export const pk = (state) => {
-	return state.pk
+export const dead = (state) => {
+	return state.dead
 }
 export const token = (state) => {
 	return state.token

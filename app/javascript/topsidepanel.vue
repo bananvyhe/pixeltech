@@ -446,7 +446,7 @@
 						if (response.data){
 		          this.$store.commit('gamesend', response.data.expirience )
 		          this.$store.commit('crysend', response.data.cry )
-		          this.$store.commit('pksend', response.data.pk )	
+		          this.$store.commit('deadsend', response.data.dead )	
 		           this.$store.commit('killsend', response.data.kill )							
 						}
 

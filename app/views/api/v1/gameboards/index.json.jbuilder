@@ -3,7 +3,9 @@ json.array! @gameboards do |gb|
 	json.id gb.id
 	json.username gb.username
 	# json.pk gb.gameboard.kill.starts_at_time_of_pk
-	json.pk gb.gameboard.kill
+	# json.kill gb.gameboard.kill.starts_at_time_of_pk
+
+	json.dead gb.gameboard.dead
  	json.karma gb.gameboard.karma
 	end
 end

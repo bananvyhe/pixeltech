@@ -78,7 +78,7 @@
             </div>
           </div>
         </emoji-picker>
-        <el-button v-if="$store.getters.pk != null" style="margin-top: 0.8em;" disabled>отправить</el-button> 
+        <el-button v-if="$store.getters.dead == true" style="margin-top: 0.8em;" disabled>отправить</el-button> 
         <el-button  v-else style="margin-top: 0.8em;" @click="sendReply(number)">отправить</el-button>   
         <div v-for="(item, index) in postComm" class="comm-area plashka2">
           <div v-if='item.parent_id == null'>

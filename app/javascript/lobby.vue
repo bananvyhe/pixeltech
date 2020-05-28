@@ -1,6 +1,6 @@
 <template>
   <!-- <div class="lobby" v-if="$store.getters.pk == false"> -->
-    <div class="lobby" v-if="$store.getters.pk == null">
+    <div class="lobby" v-if="$store.getters.dead == false">
       <!-- {{liveusers}} -->
     <div class="headlobby"><h4>пул клана</h4> </div>
     
@@ -93,8 +93,7 @@
                 </el-tooltip>
               </div>    
             </div>
-
-            <el-button v-if="item.pk == null" slot="reference" class="user" border>
+            <el-button v-if="item.dead == false" slot="reference" class="user" border>
               <div class="item" @mouseover="mouseOverUser(item.id)" v-bind:style="item.karma > 0 ? 'color: red;' : ''">
                 {{item.username}}
               </div> 

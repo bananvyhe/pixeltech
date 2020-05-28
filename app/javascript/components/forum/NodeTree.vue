@@ -60,9 +60,9 @@
             <!-- {{number}} -->
             <el-button size='mini' @click="sendReply(number)">отправить</el-button>          
           <!-- </v-embed> -->
-        <div v-if="node.body && $store.getters.pk == null" slot="reference" class="reply" @click="visible = !visible" >ответить</div>
+        <div v-if="node.body && $store.getters.dead == false" slot="reference" class="reply" @click="visible = !visible" >ответить</div>
       </el-popover>   
-      <div class="del" v-if="$store.getters.role.username == node.username && node.body != null && $store.getters.pk != null" @click="destroy(number, node.id )">удалить</div>
+      <div class="del" v-if="$store.getters.role.username == node.username && node.body != null && $store.getters.dead == false" @click="destroy(number, node.id )">удалить</div>
        
     </div>
 

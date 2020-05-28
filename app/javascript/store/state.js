@@ -1,5 +1,5 @@
 export default {
-	pk: '',
+	dead: '',
 	kill: '',
 	number: 10,
 	// token: !!localStorage.getItem('token'),

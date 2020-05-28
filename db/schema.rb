@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_120728) do
+ActiveRecord::Schema.define(version: 2020_05_28_105632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,7 +111,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_120728) do
     t.string "message"
     t.integer "karma", default: 0
     t.bigint "expirience", default: 0
-    t.integer "pk"
+    t.boolean "dead", default: false
+    t.integer "pk", default: 0
     t.index ["user_id"], name: "index_gameboards_on_user_id"
   end
 

@@ -1,6 +1,6 @@
 <template>
   <div class="inv">
-    <!-- {{$store.getters.kill}}{{$store.getters.pk}} -->
+    <!-- {{$store.getters.kill}}|{{$store.getters.dead}} -->
     <el-popover
       placement="bottom"
       width="200"
@@ -34,12 +34,12 @@
         </draggable>
 
       </div>
-      <template  v-if="$store.getters.pk != null && $store.getters.kill == null">
+      <template  v-if="$store.getters.dead == true && $store.getters.kill == null">
         <el-button   slot="reference" type="success" size='mini' icon="el-icon-switch-button" @click="res">
         </el-button> 
       </template>
       <template v-else>
-        <el-button  v-if="$store.getters.pk != false && $store.getters.kill == true" slot="reference" icon="el-icon-menu"    type="info"  size="mini" disabled>
+        <el-button  v-if="$store.getters.dead == true && $store.getters.kill == true" slot="reference" icon="el-icon-menu"    type="info"  size="mini" disabled>
         </el-button>   
         <el-button  v-else slot="reference" icon="el-icon-menu" @click="isOpen = ! isOpen"  type="info"  size="mini" >
         </el-button>  
