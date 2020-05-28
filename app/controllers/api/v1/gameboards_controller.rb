@@ -36,7 +36,7 @@ class Api::V1::GameboardsController < ApiController
   def ressurect
     res = User.joins(:gameboard).find(payload['user_id']) 
 
-    res.gameboard.pk = ""
+    res.gameboard.dead = false
     # puts res.gameboard.inspect
     res.gameboard.save 
   end
@@ -220,15 +220,16 @@ class Api::V1::GameboardsController < ApiController
     deaduser = User.find(pksend)
     clname = Role.find_by(name: "superadmin")
     @mes = Chat.new  
-    @mes.text = "Вы были убиты #{deaduser.username}, потеряно 4% опыта"
-    @mes.user_id = current_user.id
+    @mes.text = "Вы были убиты пользователем #{deaduser.username}, потеряно 4% опыта"
+    @mes.user_id = deaduser.id
     @mes.role_id = clname.id    
     if @mes.save!
         Pusher.trigger('system', deaduser.id.to_s, {
           id: current_user.id,
           text: @mes.text,
           clan: clname.name,
-          username: "system"
+          username: "system",
+          code: "dead"
         })
     end
 
