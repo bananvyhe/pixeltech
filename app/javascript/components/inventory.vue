@@ -169,6 +169,7 @@ export default {
             'Authorization': 'bearer '+this.$store.getters.token.access
           }           
         }).then((response) => { 
+          this.$store.commit('deadsend', false )
  
           $emit('my-event')
         });
