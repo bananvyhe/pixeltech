@@ -216,11 +216,11 @@ class Api::V1::GameboardsController < ApiController
     @expuser = @killeduser.expirience
     @lvlcounter = 0
     @expcounter = 0
-
+    killer = User.find(payload['user_id'])
     deaduser = User.find(pksend)
     clname = Role.find_by(name: "superadmin")
     @mes = Chat.new  
-    @mes.text = "Вы были убиты пользователем #{deaduser.username}, потеряно 4% опыта"
+    @mes.text = "Вы были убиты пользователем #{killer.username}, потеряно 4% опыта, #{kill.created_at}"
     @mes.user_id = deaduser.id
     @mes.role_id = clname.id    
     if @mes.save!
@@ -229,7 +229,8 @@ class Api::V1::GameboardsController < ApiController
           text: @mes.text,
           clan: clname.name,
           username: "system",
-          code: "dead"
+          code: "dead",
+          exptime: kill
         })
     end
 

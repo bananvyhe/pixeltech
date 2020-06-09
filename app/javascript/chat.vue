@@ -267,16 +267,21 @@ export default {
     var self = this;
  
     this.$store.getters.role.role.forEach(function(entry) {
-        console.log(entry);
- 
-        channel.bind(entry, function(data) {
-          self.addMessage(data);
-        }); 
+      // console.log(entry);
 
+      channel.bind(entry, function(data) {
+        // console.log(data);
+
+        self.addMessage(data);
+      }); 
     });
  
 
     channel1.bind(this.$store.getters.role.user_id, function(data) {
+       if (data.code == 'dead'){
+         self.$store.commit('deadsend', true )
+         self.$store.commit('killsend', data.exptime )
+        }
       self.addMessage(data);
     }); 
     var timer1 = setInterval(function(){

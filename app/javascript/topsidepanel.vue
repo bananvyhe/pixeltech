@@ -446,11 +446,9 @@
 						if (response.data){
 		          this.$store.commit('gamesend', response.data.expirience )
 		          this.$store.commit('crysend', response.data.cry )
-		          this.$store.commit('deadsend', response.data.dead )	
-		           this.$store.commit('killsend', response.data.kill )							
+		          this.$store.commit('deadsend', response.data.dead )
+		          this.$store.commit('killsend', response.data.kill )
 						}
-
-
 	        })
 	        .catch(function (error) {
 	          console.log(error);
