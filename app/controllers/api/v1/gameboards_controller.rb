@@ -232,6 +232,14 @@ class Api::V1::GameboardsController < ApiController
           code: "dead",
           exptime: kill
         })
+        Pusher.trigger('system', 'world', {
+          id: current_user.id,
+          text: '#{current_user.username} убивает #{deaduser.username}',
+          clan: clname.name,
+          username: "system",
+          code: "dead",
+          exptime: kill
+        })        
     end
 
     @explvling.each do |pos|

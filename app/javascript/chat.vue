@@ -276,7 +276,12 @@ export default {
       }); 
     });
  
+     channel1.bind('world', function(data) {
+       if (data.code == 'dead'){
+        console.log('KILL')
+        }
 
+     });
     channel1.bind(this.$store.getters.role.user_id, function(data) {
        if (data.code == 'dead'){
          self.$store.commit('deadsend', true )
