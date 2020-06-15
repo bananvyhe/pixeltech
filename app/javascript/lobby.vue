@@ -15,7 +15,6 @@
             placement="bottom"
             width=""
             trigger="hover"
-            
             >
             <div class="userinfoplace">
 
@@ -123,8 +122,10 @@
 
 <script>
 import axios from 'axios'
-import { mapMutations } from 'vuex';
+import userinfo from './components/userinfo.vue'
+
 export default {
+
   data: function () {
     return { 
       exptime: '',
@@ -141,6 +142,7 @@ export default {
       liveusers: []
     };
   },
+
   mounted(){
     var self = this;     
     var timer1 = setInterval(function(){
@@ -153,6 +155,9 @@ export default {
 
     // },4800 ); 
   },
+  components: {
+      'userinfo': userinfo
+  },  
   watch: {
     exptime() {
       var trig = false;
@@ -169,9 +174,9 @@ export default {
   },
  
   methods: {
-    ...mapMutations([
-      'crysendplus'
-    ]),
+    // ...mapMutations([
+    //   'crysendplus'
+    // ]),
     checkRelevanceToken(){
       this.exptime = this.$store.getters.role.exp - new Date().getTime()/1000
     },
