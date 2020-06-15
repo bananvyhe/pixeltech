@@ -234,7 +234,7 @@ class Api::V1::GameboardsController < ApiController
         })
         Pusher.trigger('system', 'world', {
           id: current_user.id,
-          text: '#{current_user.username} убивает #{deaduser.username}',
+          text: "#{current_user.username} убивает #{deaduser.username}",
           clan: clname.name,
           username: "system",
           code: "dead",

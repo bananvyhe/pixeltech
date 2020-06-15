@@ -279,6 +279,7 @@ export default {
      channel1.bind('world', function(data) {
        if (data.code == 'dead'){
         console.log('KILL')
+        console.log(data.text)
         }
 
      });
