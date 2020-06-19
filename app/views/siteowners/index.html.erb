@@ -30,7 +30,16 @@
       <%= link_to 'зачисления',  inboxes_path %>
     <% end %>
      ~ <%=  (@client.ballance/$stepcash/24).round %> дней 
-    <br><br>
+    <br>
+      <div >
+        <br>
+        <hr>
+        <div>Обсуждение задач, ошибки, обратная связь с разработчиком</div>
+        <div id="posts"></div>   
+        <hr>     
+      </div>
+
+    <br>
   <%= render :template => "inboxes/index" %>
    </div>
  </div>  
