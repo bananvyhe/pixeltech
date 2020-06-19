@@ -1,6 +1,6 @@
 <template>
   <!-- <div class="lobby" v-if="$store.getters.pk == false"> -->
-    <div class="lobby" v-if="$store.getters.dead == false">
+    <div class="lobby" >
       <!-- {{liveusers}} -->
     <div class="headlobby"><h4>пул клана</h4> </div>
     

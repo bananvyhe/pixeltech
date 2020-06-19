@@ -38,7 +38,7 @@
   </div>
   <div class="userinterface ">
     <div>
-      <el-button label="2" border size="mini"  class="aprior">Сообщение</el-button>
+      <el-button label="2" border size="mini"  class="aprior" v-if="$store.getters.dead == false ">Сообщение</el-button>
     </div>
     <div>
       <el-tooltip placement="top">
@@ -56,9 +56,9 @@
     </div>
     <div>
 
-      <el-tooltip  v-if="$store.getters.cry >= 100" placement="top">
+      <el-tooltip  v-if="$store.getters.cry >= 100 " placement="top">
         <div slot="content"  class="smalltext notif plashka2"> <span style="color: green;">стоимость 100 камней</span> <br>   нейтрализует оппонента <br> <span style="color: red;"><i>ваша карма будет испорчена</i></span>   </div>
-        <el-button type="danger" label="1" bordser size="mini" class="aprior pk" @click='pkconfirm(item.id)'> 
+        <el-button v-if="$store.getters.dead == false" type="danger" label="1" bordser size="mini" class="aprior pk" @click='pkconfirm(item.id)'> 
           ПК 
         </el-button>
       </el-tooltip>
@@ -66,7 +66,7 @@
         <div slot="content"  class="smalltext notif"> 
           <span style="color: green;">стоимость 100 камней</span> <br> <i> нейтрализует оппонента <br> <span style="color: red;">ваша карма будет испорчена</span> </i> 
         </div>
-        <el-button disabled type="danger" label="1" border size="mini" class="aprior"> 
+        <el-button  v-if="$store.getters.dead == false" disabled type="danger" label="1" border size="mini" class="aprior"> 
           ПК 
         </el-button>
       </el-tooltip>
@@ -90,7 +90,7 @@ export default {
     };
   },
   watch: {
-    
+
   }, 
   computed: {
 
