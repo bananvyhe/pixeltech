@@ -494,7 +494,7 @@
 	    border-radius: 0.3em;
 	background-color: color( #1E1E21 shade(6%));
 	/*padding: 0.3em 0.4em 0.3em;*/
-	padding: 0.5em 0;
+	padding: 0.5em 0.5em;
 }
 .elpro {
 	/*padding: 0.5em 0 0;*/
