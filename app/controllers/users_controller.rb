@@ -74,6 +74,7 @@ class UsersController < ApplicationController
       # @user.update_attribute :role, :client
       @user.add_role :client
       @user.remove_role :applicant
+      @user.remove_role :user
       redirect_to action: :index
     end
   end

@@ -2,14 +2,14 @@
 
 
   <div class="posts"  >
-    <template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext" v-if="item != 'lead' && item != 'elder'"> 
-      <div v-if="$store.getters.role.role != 'client' && item != 'user'">
+    <template v-for="(item, index) in this.$store.getters.role.role" class="mediumtext" v-if="item != 'lead' && item != 'elder '"> 
+ 
         <div class="headblock">   <div><h2 > &bull; {{item}} </h2></div></div>
         <div v-for="(itemch, index) in clanposts" v-if="itemch.clan_name == item">
           <showposta class="headertext" v-on:delpost="getPosts" :number='itemch.id' :body='itemch.body' :title='itemch.title' :username='itemch.username'></showposta>
         </div>
         <newposta class="headertext" v-on:newpost="getPosts" :section='item'></newposta>         
-      </div>
+ 
 
     </template>
 <!--     <div v-if="this.$store.getters.role.role != 'user'">
