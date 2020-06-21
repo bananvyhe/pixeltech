@@ -79,13 +79,17 @@ class Api::V1::GameboardsController < ApiController
     userkarma = userkarma.karma.to_i
   end
 
+
   def userinfo
     userplus = calculateplus params[:user_id] 
     usermin = calculateminus params[:user_id] 
     # userplus = calculateplus params[:user_id] 
     userkarma = getkarma params[:user_id]
+    deaduser = Gameboard.find_by_user_id(params[:user_id])
+
     arraysizemin = usermin.size
     arraysizeplus = userplus.size
+    response.set_header('dead', deaduser.dead)
     response.set_header('usermin', usermin)
     response.set_header('arraysizemin', arraysizemin)
     response.set_header('userplus', userplus)

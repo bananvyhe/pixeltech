@@ -58,9 +58,12 @@
 
       <el-tooltip  v-if="$store.getters.cry >= 100 " placement="top">
         <div slot="content"  class="smalltext notif plashka2"> <span style="color: green;">стоимость 100 камней</span> <br>   нейтрализует оппонента <br> <span style="color: red;"><i>ваша карма будет испорчена</i></span>   </div>
-        <el-button v-if="$store.getters.dead == false" type="danger" label="1" bordser size="mini" class="aprior pk" @click='pkconfirm(item.id)'> 
-          ПК 
+        <el-button v-if="$store.getters.dead == false && dead == false " type="danger" label="1" bordser size="mini" class="aprior pk" @click='pkconfirm(item.id)'> 
+          ПК {{dead}}
         </el-button>
+       <el-button v-else disabled type="danger" label="1" bordser size="mini" class="aprior pk"> 
+          rip
+        </el-button>        
       </el-tooltip>
       <el-tooltip v-else  placement="top">
         <div slot="content"  class="smalltext notif"> 
@@ -82,6 +85,7 @@ export default {
   data: function () {
     return {
       visible: false,
+      dead: '',
       userkarma: '',
       plusvotes: '',
       userplus: [],
@@ -116,6 +120,8 @@ export default {
         var totalminus = response.headers.usermin
         var arrsizeplus = response.headers.arraysizeplus
         var userkarma = response.headers.userkarma
+        var dead = response.headers.dead
+        this.dead = dead      
         this.userminus = totalminus
         this.minusvotes = arrsizeminus
         this.userplus = totalplus
