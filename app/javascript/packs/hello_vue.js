@@ -24,7 +24,7 @@ import Filther from '../components/filther.vue'
 import Addpublic from '../components/addpublic.vue'
 import Lobby from '../lobby.vue'
 import Posts from '../components/forum/posts.vue'
-
+import Callboard from '../components/callboard/callboard.vue'
 import Chat from '../chat.vue'
 // import CommentVotes from '../components/commentvotes.vue'
 // import Inv from '../components/inventory.vue'
@@ -167,6 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	//     render: h => h(CommentV+otes) 
 	//   })
 	// } 
+	var callboard = document.getElementById("callboard") 
+  if (callboard != null) {
+	  new Vue({
+	  	store,
+	    el: '#callboard',
+	    render: h => h(Callboard) 
+	  })
+	}		
 	var chat = document.getElementById("chat") 
   if (chat != null) {
 	  new Vue({
