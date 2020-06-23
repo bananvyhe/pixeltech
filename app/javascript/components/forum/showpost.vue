@@ -16,7 +16,7 @@
       <div v-if="this.username != $store.getters.role.username" class="smalltext username">
         {{this.username}}
       </div>
-      <el-button v-if="$store.getters.role.username == this.username"  type='danger' size='mini' icon="el-icon-delete" circle @click="deleting(number)">         
+      <el-button v-if="$store.getters.role.username == this.username"  type='danger' size='mini' icon="el-icon-delete" circle @click="deleting(number)" class="delbutt">         
       </el-button>      
     </div>
 
@@ -416,6 +416,10 @@ export default {
  
   /*width: 100%;*/
   /*justify-content: flex-end;*/
+}
+.delbutt{
+  display: flex;
+  align-self: center; 
 }
 .postnikname{
   /**/
