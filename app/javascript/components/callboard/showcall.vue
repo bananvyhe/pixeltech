@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div >
-      {{this.title}}      
+    <div class="callpost">
+      {{this.title}}{{this.body}}{{this.username}}       
     </div>
 
   </div>
@@ -40,11 +40,17 @@ export default {
 
   }
 }
-
-// window.addEventListener('resize', _.throttle(parseCalc, 100));
+ 
 </script>
 <style scoped>
-
+@import "../../stylesheets/_variables";
+ 
+.callpost{
+  height: 10em;
+  background-color: $bgcol;
+  margin: 0.5em ;
+  padding: 0.5em;
+}
 
 
 </style>

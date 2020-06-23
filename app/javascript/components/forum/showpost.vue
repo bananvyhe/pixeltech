@@ -412,6 +412,7 @@ export default {
   right: 1em;
   /*padding: 0 1em;*/
   display: flex;
+  align-self: center;
  
   /*width: 100%;*/
   /*justify-content: flex-end;*/

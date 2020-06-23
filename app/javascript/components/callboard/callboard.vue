@@ -42,7 +42,7 @@ export default {
   }
 }
 
-// window.addEventListener('resize', _.throttle(parseCalc, 100));
+ 
 </script>
 <style scoped>
 
