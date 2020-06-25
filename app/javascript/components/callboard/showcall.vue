@@ -2,7 +2,7 @@
   <div>
     <div class="callpost">
       <div class="flexcontainer">
-        <div class="top">
+        <div class="calltop">
           <div class="img">
             img
           </div>
@@ -17,7 +17,7 @@
      
         </div>
 
-        <div class="bottom">
+        <div class="callbottom">
           bot
         </div>        
       </div>  
@@ -65,19 +65,31 @@ export default {
 </script>
 <style scoped>
 @import "../../stylesheets/_variables";
+.callpost{
+  /*display: flex;*/
+  /*flex-direction: column;*/
+
+  /*align-items: stretch;*/
+/* lost-utility: edit;*/
+  height: 10em;
+  background-color: $bgcol2;
+  margin: 0.5em ;
+  padding: 0.5em;
+}
 .flexcontainer{
   height: 100%;
+  lost-utility: clearfix;
 
 }
-.top{
+.calltop{
   width: 100%;
   display: flex;
   flex-direction: row;
-  lost-row: 2/3; 
+  lost-row: 2/3 0; 
   /*background-color: #ada; */
 }
-.bottom{
-  lost-row: 1/3;
+.callbottom{
+  lost-row: 1/3 0;
   /*background-color: #dad; */
 }
 .img{
@@ -94,17 +106,7 @@ width: 100%;
 .end{
   lost-column: 1/2 2 0em;
 }
-.callpost{
-  /*display: flex;*/
-  /*flex-direction: column;*/
 
-  /*align-items: stretch;*/
- lost-utility: edit;
-  height: 10em;
-  background-color: $bgcol;
-  margin: 0.5em ;
-  padding: 0.5em;
-}
 
 
 </style>
