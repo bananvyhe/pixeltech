@@ -18,7 +18,12 @@
         </div>
 
         <div class="callbottom">
-          bot
+          <div class="botleft">
+            left
+          </div>
+          <div class="botright">
+            right
+          </div>
         </div>        
       </div>  
 
@@ -92,6 +97,12 @@ export default {
   lost-row: 1/3 0;
   /*background-color: #dad; */
 }
+.botleft{
+  lost-column: 4/5 2 0em;
+}
+.botright{
+  lost-column: 1/5 2 0em;
+}
 .img{
  
   /*height: 6em;*/
@@ -101,10 +112,10 @@ export default {
 width: 100%;
 }
 .middle{
-  lost-column: 1/2 2 0em;
+  lost-column: 2/3 2 0em;
 }
 .end{
-  lost-column: 1/2 2 0em;
+  lost-column: 1/3 2 0em;
 }
 
 
