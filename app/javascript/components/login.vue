@@ -41,7 +41,7 @@
 			 		<el-button   type="primary" @click="handle" >Подтвердить</el-button>
 			 	</el-form-item>
 				<el-form-item size="medium"   class="lab">
-				  <el-switch  inactive-text="короткая сессия" active-text="запомнить" width="25"  size="mini" v-model="checked" ></el-switch>
+				  <el-switch  inactive-text="Короткая сессия" active-text="Запомнить" width="23"  size="mini" v-model="checked" ></el-switch>
 				</el-form-item>
 				 
 		 	</el-form>

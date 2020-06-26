@@ -496,7 +496,7 @@ html {
 .el-transfer-panel__empty {
   display: none !important;
 }
-.el-switch__core {
+/*.el-switch__core {
   height: 12px;
   border-radius: 5px;
 }
@@ -507,7 +507,7 @@ html {
 .el-switch.is-checked .el-switch__core::after {
   left: 100%;
   margin-left: -9px;
-}
+}*/
 .el-loading-text{
  font-family: 'aprior';
 }
