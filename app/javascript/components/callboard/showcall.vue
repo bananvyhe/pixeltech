@@ -25,7 +25,7 @@
             reward
           </div>
           <div class="botright">
-            join
+            <el-switch active-text="заявка" width="23"  size="mini" v-model="checked" ></el-switch>
           </div>
         </div>        
       </div>  
@@ -43,6 +43,7 @@ export default {
   props:['number', 'body', 'title', 'username'], 
   data: function () {
     return {
+      checked: false
       // callpost: [
       //   {id: 1},
       //   {title: 'Заголовок поста'},
@@ -105,6 +106,8 @@ export default {
 }
 .botright{
   lost-column: 1/5 2 0em;
+  display: flex;
+  justify-content: flex-end;
 }
 .img{
  
