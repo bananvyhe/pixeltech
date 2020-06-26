@@ -101,11 +101,12 @@ Vue.use(VueChatScroll)
 // import * as VueWindow from '@hscmap/vue-window'
 // Vue.use(VueWindow)
 
-import {Divider, TabPane, Tabs, Container, Main, InputNumber, Collapse, CollapseItem, ButtonGroup, Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
+import {Tag, Divider, TabPane, Tabs, Container, Main, InputNumber, Collapse, CollapseItem, ButtonGroup, Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
 // Vue.prototype.$message = Message; 
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }; 
 // Vue.use(Message);
+Vue.use(Tag);
 Vue.use(Divider);
 Vue.use(TabPane);
 Vue.use(Tabs);

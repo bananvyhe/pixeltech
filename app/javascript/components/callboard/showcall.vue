@@ -14,7 +14,7 @@
               time
             </div>
             <div class="end">
-              users
+              <el-tag>user1</el-tag><el-tag>user2</el-tag>
             </div>               
           </div>
      
@@ -25,7 +25,9 @@
             reward
           </div>
           <div class="botright">
-            <el-switch active-text="заявка" width="23"  size="mini" v-model="checked" ></el-switch>
+            <div>
+              <el-switch active-text="Заявка" width="23"  size="mini" v-model="checked" ></el-switch>              
+            </div>
           </div>
         </div>        
       </div>  
@@ -74,6 +76,9 @@ export default {
 </script>
 <style scoped>
 @import "../../stylesheets/_variables";
+.el-tag{
+  margin: 0.3em;
+}
 .callpost{
   /*display: flex;*/
   /*flex-direction: column;*/
@@ -108,6 +113,8 @@ export default {
   lost-column: 1/5 2 0em;
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 0.5em;
 }
 .img{
  
