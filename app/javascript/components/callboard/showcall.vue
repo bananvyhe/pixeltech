@@ -8,10 +8,13 @@
           </div>
           <div class="info">
             <div class="middle">
-              {{this.title}}{{this.body}}{{this.username}}            
+              <h5>{{this.title}}</h5>{{this.body}}{{this.username}}            
+            </div>
+            <div class="middle_b">
+              time
             </div>
             <div class="end">
-              234
+              users
             </div>               
           </div>
      
@@ -19,10 +22,10 @@
 
         <div class="callbottom">
           <div class="botleft">
-            left
+            reward
           </div>
           <div class="botright">
-            right
+            join
           </div>
         </div>        
       </div>  
@@ -90,11 +93,11 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: row;
-  lost-row: 2/3 0; 
+  lost-row: 4/5 0; 
   /*background-color: #ada; */
 }
 .callbottom{
-  lost-row: 1/3 0;
+  lost-row: 1/5 0;
   /*background-color: #dad; */
 }
 .botleft{
@@ -106,16 +109,19 @@ export default {
 .img{
  
   /*height: 6em;*/
-  width: 6em;
+  width: 7em;
 }
 .info{
 width: 100%;
 }
 .middle{
-  lost-column: 2/3 2 0em;
+  lost-column: 4/7 3 0em;
+}
+.middle_b{
+  lost-column: 1/7 3 0em;
 }
 .end{
-  lost-column: 1/3 2 0em;
+  lost-column: 2/7 3 0em;
 }
 
 
