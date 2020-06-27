@@ -8,26 +8,24 @@
           </div>
           <div class="info">
             <div class="middle">
-              <h5>{{this.title}}</h5>{{this.body}}{{this.username}}            
-            </div>
-            <div class="middle_b">
- 
-    <el-date-picker
-      v-model="value1"
-      type="datetime"
-      placeholder="Select date and time">
-    </el-date-picker>
+              <h5>{{this.title}}</h5>{{this.body}}{{this.username}}
             </div>
             <div class="end">
               <el-tag>user1</el-tag><el-tag>user2</el-tag>
             </div>               
           </div>
-     
         </div>
-
         <div class="callbottom">
           <div class="botleft">
             reward
+          </div>
+          <div class="botmid">
+            <el-date-picker
+              size="mini"
+              v-model="value1"
+              type="datetime"
+              placeholder="дата и время">
+            </el-date-picker>                 
           </div>
           <div class="botright">
             <div>
@@ -36,10 +34,7 @@
           </div>
         </div>        
       </div>  
-
-   
     </div>
-
   </div>
 </template>
 
@@ -86,11 +81,6 @@ export default {
   margin: 0.3em;
 }
 .callpost{
-  /*display: flex;*/
-  /*flex-direction: column;*/
-
-  /*align-items: stretch;*/
-/* lost-utility: edit;*/
   height: 10em;
   background-color: $bgcol2;
   margin: 0.5em ;
@@ -99,47 +89,44 @@ export default {
 .flexcontainer{
   height: 100%;
   lost-utility: clearfix;
-
 }
 .calltop{
   width: 100%;
   display: flex;
   flex-direction: row;
-  lost-row: 4/5 0; 
-  /*background-color: #ada; */
+  lost-row: 5/7 0; 
 }
 .callbottom{
-  lost-row: 1/5 0;
-  /*background-color: #dad; */
+  lost-row: 2/7 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.3em;
 }
 .botleft{
-  lost-column: 4/5 2 0em;
+  lost-column: 1/5 3 0em;
+}
+.botmid{
+  lost-column: 3/5 3 0em;
 }
 .botright{
-  lost-column: 1/5 2 0em;
+  lost-column: 1/5 3 0em;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding-right: 0.5em;
 }
 .img{
- 
-  /*height: 6em;*/
-  width: 7em;
+  width: 7.5em;
 }
 .info{
 width: 100%;
 }
 .middle{
-  lost-column: 4/7 3 0em;
+  lost-column: 5/7 3 0em;
 }
-.middle_b{
-  lost-column: 1/7 3 0em;
+.calldate{
+  align-self: flex-end;
 }
 .end{
   lost-column: 2/7 3 0em;
 }
-
-
-
 </style>
