@@ -101,11 +101,13 @@ Vue.use(VueChatScroll)
 // import * as VueWindow from '@hscmap/vue-window'
 // Vue.use(VueWindow)
 
-import {Tag, Divider, TabPane, Tabs, Container, Main, InputNumber, Collapse, CollapseItem, ButtonGroup, Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
+import {DatePicker, TimePicker, Tag, Divider, TabPane, Tabs, Container, Main, InputNumber, Collapse, CollapseItem, ButtonGroup, Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
 // Vue.prototype.$message = Message; 
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }; 
 // Vue.use(Message);
+Vue.use(DatePicker);
+Vue.use(TimePicker);
 Vue.use(Tag);
 Vue.use(Divider);
 Vue.use(TabPane);
@@ -141,7 +143,9 @@ Vue.use(CarouselItem)
 Vue.use(Loading.directive);
 Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
- 
+ import lang from 'element-ui/lib/locale/lang/ru-RU'
+ import locale from 'element-ui/lib/locale'
+ locale.use(lang)
 document.addEventListener('DOMContentLoaded', () => {
 		//pusher implementation
 

@@ -11,7 +11,12 @@
               <h5>{{this.title}}</h5>{{this.body}}{{this.username}}            
             </div>
             <div class="middle_b">
-              time
+ 
+    <el-date-picker
+      v-model="value1"
+      type="datetime"
+      placeholder="Select date and time">
+    </el-date-picker>
             </div>
             <div class="end">
               <el-tag>user1</el-tag><el-tag>user2</el-tag>
@@ -45,7 +50,8 @@ export default {
   props:['number', 'body', 'title', 'username'], 
   data: function () {
     return {
-      checked: false
+      checked: false,
+      value1: '',
       // callpost: [
       //   {id: 1},
       //   {title: 'Заголовок поста'},
