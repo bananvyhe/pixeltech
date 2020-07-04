@@ -11,9 +11,9 @@ end
 every 1.hours do
   sidekiq 'push DayWorker'
 end
-every 15.minutes do
-  sidekiq 'push VkWorker'
-end
+# every 15.minutes do
+#   sidekiq 'push VkWorker'
+# end
 # every 1.day, at: '12:00'  do
 #   sidekiq 'push DayWorker'
 # end
