@@ -24,13 +24,8 @@ require "capistrano/passenger"
 require 'capistrano/sidekiq'
 require "whenever/capistrano"
 require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano3_type, :user
-require 'redis-namespace'
-redis_connection = Redis.new
-# => #<Redis client v3.1.0 for redis://127.0.0.1:6379/0>
-namespaced_redis = Redis::Namespace.new(:ns, redis: redis_connection)
-# => #<Redis::Namespace v1.5.0 with client v3.1.0 for redis://127.0.0.1:6379/0/ns>
-
  
+
 set :rbenv_ruby, '2.5.1'
 set :linked_files, %w{config/master.key}
 set :init_system, :systemd
