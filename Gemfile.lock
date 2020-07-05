@@ -162,7 +162,7 @@ GEM
     mime-types-data (3.2018.0812)
     mimemagic (0.3.2)
     mini_mime (1.0.0)
-    mini_portile2 (2.3.0)
+    mini_portile2 (2.4.0)
     minitest (5.12.2)
     msgpack (1.2.4)
     multi_json (1.13.1)
@@ -174,8 +174,8 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (5.0.2)
     nio4r (2.3.1)
-    nokogiri (1.8.4)
-      mini_portile2 (~> 2.3.0)
+    nokogiri (1.10.8)
+      mini_portile2 (~> 2.4.0)
     ntlm-http (0.1.1)
     orm_adapter (0.5.0)
     pg (1.0.0)
@@ -228,6 +228,8 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redis (4.0.3)
+    redis-namespace (1.7.0)
+      redis (>= 3.0.4)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -334,6 +336,7 @@ DEPENDENCIES
   pusher
   rails (~> 5.2.0)
   rails-i18n (~> 5.1)
+  redis-namespace
   rolify
   sass-rails (~> 5.0)
   selenium-webdriver
