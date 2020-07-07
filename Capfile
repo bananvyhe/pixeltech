@@ -30,7 +30,7 @@ set :rbenv_ruby, '2.5.1'
 set :linked_files, %w{config/master.key}
 set :init_system, :systemd
 set :init_system, :upstart
-set :upstart_service_name, 'sidekiq'
+set :upstart_service_name, 'sidekiq_pxtech'
 set :sidekiq_processes, 5
 set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
 # set :sidekiq_user, 'deploy'
