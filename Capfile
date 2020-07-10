@@ -25,7 +25,7 @@ require 'capistrano/sidekiq'
 require "whenever/capistrano"
 require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano3_type, :user
  
-set :sidekiq_service_unit_name 'pxtech'
+set :sidekiq_service_unit_name, 'pxtech'
 set :rbenv_ruby, '2.5.1'
 set :linked_files, %w{config/master.key}
 set :init_system, :systemd
