@@ -5,26 +5,26 @@
 <% if user_signed_in? %>
 	<%#= render :template => "posts/index" %>
 	<div id="posts"></div>
-	<div id="chat"></div>	
+	<!-- <div id="chat"></div>	 -->
 <% end %>
- <div id="callboard"></div>
-	<% if user_signed_in? %>
-		<div class="lobby smalltext">
-			<%= tag.div id: :lobby, 
+ <!-- <div id="callboard"></div> -->
+	<%# if user_signed_in? %>
+		<!-- <div class="lobby smalltext"> -->
+			<%#= tag.div id: :lobby, 
 				data: { 
 				} 
 			%>
-		</div>
-	<% end %>
+		<!-- </div> -->
+	<%# end %>
  
 <!-- Parsed and sorted content from vk-->
-<div class="mediumtext">
+<!-- <div class="mediumtext"> -->
 	<!-- <div id="headvk" data-turbolinks="false"></div> -->
-	<%= tag.div id: :headvk, 
+	<%#= tag.div id: :headvk, 
 		data: { 
 		} 
 	%>
-</div>
+<!-- </div> -->
 
 <%# if !user_signed_in? %>
 	<!-- <div id="head"></div> -->
