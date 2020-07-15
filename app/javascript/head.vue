@@ -64,9 +64,9 @@ export default {
   data: function () {
     return {
     	activatorclass: false,
-    	subj: 'Development, Programming, Interface UX Design Ruby on Rails + Vue.js',
+    	subj: 'Разработка умных сайтов, автоматизация бизнеса, индивидуальный поход, очень простая система администрирования',
       title: "Pixeltech",
-      cont: " Voodoo power"
+      cont: " опыт разработки с 2001г."
     }
   },
   
@@ -87,7 +87,7 @@ export default {
   var cont = document.querySelector(".overpla");
   var scrambleText = new ScrambleText( cont,
 		{
-			timeOffset : 100,
+			timeOffset : 150,
 			// chars: [
 			// 	'安','以','宇','衣','於',
 			// 	'加','幾','久','計','己',
@@ -111,7 +111,7 @@ export default {
     setTimeout(function(){
       // self.cropText();
        scrambleText.start();
-    },4000 );
+    },8000 );
 
 
   },
@@ -341,7 +341,7 @@ export default {
 	font-size: 1.7em;
 	text-align: left;
 	line-height: 1.2em;
-	padding: 0.1em 0.4em;
+	padding: 0.2em 0.4em;
 	vertical-align: top;
 	margin-bottom: spacing(0.1); 
   
@@ -352,7 +352,7 @@ export default {
 
 }
 .subj {
-  line-height: 1.5em;
+  line-height: 1.2em;
   /*min-height: 5.5em;*/
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset,
   0 0 30px rgba(0, 0, 0, 0.1) inset,
@@ -361,9 +361,9 @@ export default {
 	border: 1px solid color($paleaqua shade(40%));
 	border-radius: 0.2em; 
 	/*background-color: color($isabelline shade(10%));*/
-	margin-bottom: spacing(0);
+	/*margin-bottom: spacing(0);*/
 /*	margin: 0.3em 0 0.1em 0;*/
-	padding: 0.5em 0.5em 0.5em 0.8em;
+	padding: 0.5em 0.5em 0.6em 0.8em;
   color:  color($warningLine blackness(80%));
 }
 .offsubj{
@@ -390,9 +390,9 @@ export default {
   /*background-color: color($spacecadet blackness(20%));*/
   text-align: left;
 	/*margin: 0 5em 0 5em;*/
-	width: 8.4em;
+	width: 13.4em;
 /*@extend %screenbg;*/
-	margin: 0.20em 0.4em 0 0em;
+	margin: 0.00em 0.4em 0 0em;
 	p {
 		margin-bottom: spacing(0);
 		color: color($str4 shade(5%));
@@ -406,7 +406,7 @@ export default {
 }
 .overpla { 
   overflow: hidden;
-  width: 7.4em;
+  width: 14.4em;
 }
 .dotted {
   

@@ -212,7 +212,7 @@ input:focus, textarea:focus {
 
 }
 body {
-  background-color: #1E1E21;
+  background-color: $siteBG;
   font-family: 'RobotoReg';
   /*color: color($str3 shade(8%));*/
   /* color: #777;*/
