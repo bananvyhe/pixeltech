@@ -352,6 +352,7 @@ export default {
 
 }
 .subj {
+  margin-bottom: 0px;
   line-height: 1.2em;
   /*min-height: 5.5em;*/
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset,
@@ -367,7 +368,7 @@ export default {
   color:  color($warningLine blackness(80%));
 }
 .offsubj{
-  background:  $siteBG;
+  /*background:  $siteBG;*/
   border-radius: 0.2em; 
   border: 1px solid color($HeadBackColor shade(0%));
 }
