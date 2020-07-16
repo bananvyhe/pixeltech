@@ -1,6 +1,6 @@
 <!-- :class="{ bgclass: activatorclass }" -->
 <template>
-	<div class="firstpagebg">
+	<div class="firstpagebg"  :style="{'background-image': 'url('+require('./images/96.png')+'?id='+Math.random()+')'}" >
     <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }">
       <div class="formsZone">
         <div v-if="$store.getters.token != null" >
@@ -237,6 +237,8 @@ export default {
 }*/
 .firstpagebg { 
   height: 100vh; display: flex;align-items: center;
+  background-repeat: no-repeat;
+  background-position: center; 
  
 }
 .login { 
@@ -355,11 +357,11 @@ export default {
   margin-bottom: 0px;
   line-height: 1.2em;
   /*min-height: 5.5em;*/
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset,
-  0 0 30px rgba(0, 0, 0, 0.1) inset,
-  0 0 20px rgba(0, 0, 0, 0.2) inset; 
-  background: radial-gradient(at top, #FFFEFF, #A7CECC);
-	border: 1px solid color($paleaqua shade(40%));
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) inset,
+  0 0 60px rgba(0, 0, 0, 0.1) inset,
+  0 0 30px rgba(0, 0, 0, 0.2) inset; 
+  /*background: radial-gradient(at top, #FFFEFF, #A7CECC);*/
+	border: 1px solid color($paleaqua shade(10%));
 	border-radius: 0.2em; 
 	/*background-color: color($isabelline shade(10%));*/
 	/*margin-bottom: spacing(0);*/
@@ -368,9 +370,10 @@ export default {
   color:  color($warningLine blackness(80%));
 }
 .offsubj{
+  background: radial-gradient(at top, $gainsboro, #A7CECC);
   /*background:  $siteBG;*/
   border-radius: 0.2em; 
-  border: 1px solid color($HeadBackColor shade(0%));
+  border: 1px solid color($fds shade(20%));
 }
 
 .borcon {
@@ -404,6 +407,8 @@ export default {
 }
 .plashka {
  padding-bottom: 0.2em;
+ text-shadow:  0 0 3px rgba(255,255,255,0.9);
+ color: #000;
  /* border: 1px solid color($diamond shade(50%));*/
 }
 .overpla { 
