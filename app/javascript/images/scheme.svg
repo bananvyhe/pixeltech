@@ -354,7 +354,7 @@
 		<path class="shape" d="m106.1 58.8v16.3l7.8 7.8v12.1l3.9 3.9v8l-3.7 3.7v11.9l-12.4 12.4h-27.7l-3.8-3.8h-8.4l-11.6-12" stroke-linejoin="round"/>
 		<polyline class="shape" points="25.8 155.2 50.1 155.2 53.9 159" stroke-linejoin="round"/>
 	</g>
-<g class="dots" fill="#1f1e24" stroke="#4E5E73" stroke-width=".5">
+<g class="dots" fill="#DBDFAC" stroke="#4E5E73" stroke-width=".5">
 	<circle cx="142.1" cy="22.9" r="1.1"/>
 	<circle cx="134" cy="31" r="1.1"/>
 	<circle cx="142.1" cy="39" r="1.1"/>

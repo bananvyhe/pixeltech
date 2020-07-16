@@ -217,7 +217,7 @@ body {
   /*color: color($str3 shade(8%));*/
   /* color: #777;*/
   /* color: #edeef0;*/
-  color: #e7e8ec;
+  /*color: $siteBG;*/
 }
 .opensans {
   font-family: 'OpenSans';
@@ -369,7 +369,8 @@ html {
 .title { 
   font-family: 'aprior';
   .vue-typer .custom.char.typed{
-    color: color( $isabelline shade(10%));
+    /*color: color( $isabelline shade(10%));*/
+    color: color($str5 shade(10%));
   }
   .vue-typer .custom.caret.typing {
     color: $teagreen;

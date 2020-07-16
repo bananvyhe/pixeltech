@@ -87,7 +87,7 @@ export default {
   var cont = document.querySelector(".overpla");
   var scrambleText = new ScrambleText( cont,
 		{
-			timeOffset : 150,
+			timeOffset : 100,
 			// chars: [
 			// 	'安','以','宇','衣','於',
 			// 	'加','幾','久','計','己',
@@ -396,7 +396,8 @@ export default {
 	margin: 0.00em 0.4em 0 0em;
 	p {
 		margin-bottom: spacing(0);
-		color: color($str4 shade(5%));
+		/*color: color($str4 shade(5%));*/
+    color: str5;
 		padding: 0.2em 0em 0em 1.1em;
 	}
 	min-width: 7em;
