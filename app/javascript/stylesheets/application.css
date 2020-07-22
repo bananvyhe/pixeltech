@@ -212,7 +212,7 @@ input:focus, textarea:focus {
 
 }
 body {
-  background-color:color( $x11gray shade(0%));
+  background-color:color( $spacecadet shade(0%));
   font-family: 'RobotoReg';
   /*color: color($str3 shade(8%));*/
   /* color: #777;*/
@@ -370,8 +370,8 @@ html {
   font-family: 'aprior';
   .vue-typer .custom.char.typed{
     /*color: color( $isabelline shade(10%));*/
-    color: color($spacecadet shade(0%));
-    text-shadow:  0 0 3px rgba(255,255,255,1);
+    color: color(#E8D6CB shade(0%));
+    /*text-shadow:  0 0 3px rgba(255,255,255,1);*/
   }
   .vue-typer .custom.caret.typing {
     color: $teagreen;

@@ -343,10 +343,9 @@ export default {
 	font-size: 1.7em;
 	text-align: left;
 	line-height: 1.2em;
-	padding: 0.2em 0.4em;
+	padding: 0.1em 0.4em;
 	vertical-align: top;
-	margin-bottom: spacing(0.1); 
-  
+	 
 }
 
 .oversubj {z-index: 1000;
@@ -407,8 +406,8 @@ export default {
 }
 .plashka {
  padding-bottom: 0.2em;
- text-shadow:  0 0 3px rgba(255,255,255,0.9);
- color: #000;
+ text-shadow:  0 0 5px rgba(0,0,0,1);
+ color: #E8D6CB;
  /* border: 1px solid color($diamond shade(50%));*/
 }
 .overpla { 
