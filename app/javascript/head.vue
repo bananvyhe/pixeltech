@@ -64,9 +64,9 @@ export default {
   data: function () {
     return {
     	activatorclass: false,
-    	subj: 'Разработка умных сайтов, автоматизация бизнеса, индивидуальный поход, очень простая система администрирования',
+    	subj: 'Разработка сайтов, автоматизация бизнеса, индивидуальный поход, простая система управления',
       title: "Pixeltech",
-      cont: " опыт разработки с 2001г."
+      cont: " опыт разработки с 2003г."
     }
   },
   
@@ -373,7 +373,7 @@ export default {
   background: radial-gradient(at top, $gainsboro, #A7CECC);
   /*background:  $siteBG;*/
   border-radius: 0.2em; 
-  border: 1px solid color($fds shade(20%));
+  border: 1px solid color($fds shade(10%));
 }
 
 .borcon {
