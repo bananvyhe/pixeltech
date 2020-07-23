@@ -141,7 +141,7 @@ export default {
 .posts {
 
    width: 100%;
-  padding: 0 0.6em;
+  padding: 0.3em 0.6em;
 }
 
 

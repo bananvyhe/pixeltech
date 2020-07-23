@@ -12,9 +12,6 @@ body {
     color: $isabelline;
   }
   a {
-    text-decoration: none;
-  }
-  a {
     color:  color( $str6 shade(15s%)saturation(90%));
     text-decoration: none;
   }

@@ -491,10 +491,11 @@
 @import "stylesheets/_extends";
 .backbar {
 	float: left;
-	    border-radius: 0.3em;
-	background-color: color( #1E1E21 shade(6%));
+	border-radius: 0.3em;
+	/*background-color: color( #1E1E21 shade(6%));*/
 	/*padding: 0.3em 0.4em 0.3em;*/
 	padding: 0.5em 0.5em;
+	margin-right: 0.3em;
 }
 .elpro {
 	/*padding: 0.5em 0 0;*/
@@ -661,7 +662,7 @@
 }
 .nikname {
 	width: 100%;
-	color: $color-1;
+	/*color: $color-1;*/
 	text-align: right;
 	padding-right: 0.4em;
 	/*padding-bottom: 0.2em;*/
@@ -677,11 +678,11 @@
 	justify-content: flex-end;
 	/*border: 1px solid grey;*/
 	position: relative;
- 	color: $str5;
+ 	/*color: $str5;*/
 	/*border-radius: 0.7em;*/
 	height: 1.1em;
 	width: 2.6em;
-	background-color: color( #1E1E21 shade(6%));
+	/*background-color: color( #1E1E21 shade(6%));*/
  	
 	margin-top: 0.9em;
 	margin-left: -3.5em;
@@ -798,7 +799,7 @@ lost-center: $lcenter;
   }
 	.info {
 		display: flex;
-		 background-color: color( #1E1E21 shade(6%));
+		 /*background-color: color( #1E1E21 shade(6%));*/
 		padding: 0.3em 0.5em;
 	}
 

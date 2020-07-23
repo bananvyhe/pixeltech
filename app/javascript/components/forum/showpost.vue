@@ -351,12 +351,14 @@ export default {
   position: relative;
   justify-content: space-between;
   width: 100%;
-  background-color: color(#1E1E21 shade(6%));
-  margin: 0.1em 0;
+  background-color: color($almond shade(15%));    
+  margin: 0.2em 0;
   /*lost-utility: edit;*/
   /*lost-column: 1/1;*/
   display: flex;
-    flex-direction: row;
+  flex-direction: row;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
 }
 .rightpad{
   display: flex;
@@ -370,16 +372,16 @@ export default {
   /*word-break: normal;*/
 /*  outline: 6px solid #1E1E21;
   outline-offset:-6px;*/
-  margin: 0.2em 0;
+  margin: 0.1em 0;
   /*background-color: $earthyellow;*/
-  background-color: color(#1E1E21 shade(6%));
+  /*background-color: color(#1E1E21 shade(6%));*/
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 .itempost{
-  color: $navajowhite; 
+  color: $HeadBackColor; 
   /*height: 2.0em;*/
   border-top-right-radius: 0.3em;
   border-bottom-right-radius: 0.3em;
@@ -388,7 +390,7 @@ export default {
   display: flex;
   flex-direction: row;
   /*background-color: color( $spacecadet tint(15%));*/
-  background-color: color($spacecadet shade(15%));
+  /*background-color: color($spacecadet shade(0%));*/
   padding: 0.2em 0.4em 0.3em 0.2em;
 }
 
