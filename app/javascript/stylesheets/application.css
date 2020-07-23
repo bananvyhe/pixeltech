@@ -8,6 +8,9 @@ body {
 }
 
 @typography {
+  body {
+    color: $isabelline;
+  }
   a {
     text-decoration: none;
   }

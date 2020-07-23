@@ -3,33 +3,6 @@ module.exports = {
   map: false,
   plugins: {
      'postcss-import': {},
-    'postcss-typography': {
- 
-    baseFontSize: "14px",
-    baseLineHeight: 1.35,  
-    scaleRatio: 2,
-    blockMarginBottom: 0.8,
-    includeNormalize: true,
-			overrideThemeStyles: ({ rhythm }, options, styles) => ({
-				'p': {
-
-			    marginBottom: rhythm(0.2),
-			    marginTop: rhythm(0.0),
-				},
-				'h5': {
-					LineHeight: 1,  
-			    marginBottom: rhythm(0.2),
-			    marginTop: rhythm(0.5),
-			    // color: "hsla(0,0%,0%,0.7)",
-				},
-			  'h1,h2,h3,h4': {
-			  	LineHeight: 1.2,  
-			    marginBottom: rhythm(0.4),
-			    marginTop: rhythm(0.4),
-		      
-			  }
-			})
-    },
 
   'postcss-extend': {},
   'postcss-nested': {},
@@ -45,7 +18,38 @@ module.exports = {
     basePath: 'public',
     cachebuster: true,
   },
+     'postcss-typography': {
  
+    baseFontSize: "14px",
+    baseLineHeight: 1.35,  
+    scaleRatio: 2,
+    blockMarginBottom: 0.8,
+    includeNormalize: true,
+    bodyColor: "",
+      overrideThemeStyles: ({ rhythm }, options, styles) => ({
+        
+           
+       
+        'p': {
+
+          marginBottom: rhythm(0.2),
+          marginTop: rhythm(0.0),
+        },
+        'h5': {
+          LineHeight: 1,  
+          marginBottom: rhythm(0.2),
+          marginTop: rhythm(0.5),
+          // color: "hsla(0,0%,0%,0.7)",
+        },
+        'h1,h2,h3,h4': {
+          LineHeight: 1.2,  
+          marginBottom: rhythm(0.4),
+          marginTop: rhythm(0.4),
+          
+        }
+      })
+    },
+
   'postcss-font-magician': {
     custom: {
       'elemend': {
