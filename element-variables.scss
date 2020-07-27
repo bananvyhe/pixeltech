@@ -11,10 +11,10 @@ $--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 
 /* Colors
 -------------------------- */
-$--color-white: #E8D6CB !default;
+$--color-white: #CBB8AF !default;
 $--color-black: #b3ddad !default;
 
-$--color-primary: #279c1d !default;
+$--color-primary: #2a83ce !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
@@ -40,9 +40,9 @@ $--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
 $--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
 $--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
 
-$--color-text-primary: #EDEBD7 !default;
-$--color-text-regular: #C1BDB3 !default;
-$--color-text-secondary: #C1BDB3 !default;
+$--color-text-primary: #2a303a !default;
+$--color-text-regular: #2a303a !default;
+$--color-text-secondary: #2a303a !default;
 $--color-text-placeholder: #2a303a !default;
 
 /* Link

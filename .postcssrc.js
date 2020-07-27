@@ -25,7 +25,7 @@ module.exports = {
     scaleRatio: 2,
     blockMarginBottom: 0.8,
     includeNormalize: true,
-    bodyColor: "",
+ 
       overrideThemeStyles: ({ rhythm }, options, styles) => ({
         
            
