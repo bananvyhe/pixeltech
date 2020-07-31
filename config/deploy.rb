@@ -6,7 +6,6 @@ lock "~> 3.11.0"
 # set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
 
 
-set :application, "pxtech"
 set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 # set :init_system, :systemd
 # set :upstart_service_name, 'sidekiq'
@@ -34,9 +33,7 @@ SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
 #   end
 # end
  
-after 'deploy:starting', 'sidekiq:quiet'
-after 'deploy:reverted', 'sidekiq:restart'
-after 'deploy:published', 'sidekiq:restart'
+
 # after "deploy:updated",  "whenever:update_crontab"
 # after "deploy:reverted", "whenever:update_crontab"
 # set :init_system, :upstart
@@ -55,6 +52,7 @@ after 'deploy:published', 'sidekiq:restart'
 # Default deploy_to directory is /var/www/my_app_name
  set :deploy_to, "/home/deploy/apps/pxtech"
 
+set :application, "pixeltech"
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -76,12 +74,22 @@ set :host, "46.161.39.175"
 namespace :deploy do
 	desc "Update cron jobs"
   task :update_crontab do
-  	on roles(:app) do
-  		run "cd #{current_path} && whenever --update-crontab #{(:application)}"
+  	on roles(:deploy) do
+  		run "cd #{release_path} && whenever --update-crontab pixeltech"
+  	end
+  end
+    desc "Clear cron jobs"
+  task :clear_crontab do
+  	on roles(:deploy) do
+    	run "cd #{release_path} && whenever --clear-crontab pixeltech"
   	end
   end
 end
+after 'deploy:starting', 'deploy:clear_crontab'
 after 'deploy:starting', 'deploy:update_crontab'
+after 'deploy:starting', 'sidekiq:quiet'
+after 'deploy:reverted', 'sidekiq:restart'
+after 'deploy:published', 'sidekiq:restart'
 # set :upstart_service_name, 'sidekiq'
 
 # namespace :sidekiq do
