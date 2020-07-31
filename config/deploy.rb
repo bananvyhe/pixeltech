@@ -77,7 +77,7 @@ namespace :deploy do
 	desc "Update cron jobs"
   task :update_crontab do
   	on roles(:app) do
-  		run "cd #{current_path} && whenever --update-crontab #{:application}"
+  		run "cd #{current_path} && whenever --update-crontab #{(:application)}"
   	end
   end
 end
