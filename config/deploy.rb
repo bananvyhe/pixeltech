@@ -75,11 +75,13 @@ set :host, "46.161.39.175"
 # role :app, host
 namespace :deploy do
 	desc "Update cron jobs"
-  task :update_crontab, :roles => :app do
-  	run "cd #{current_path} && whenever --update-crontab #{application}"
+  task :update_crontab do
+  	on roles(:app) do
+  		run "cd #{current_path} && whenever --update-crontab #{application}"
+  	end
   end
 end
-
+after 'deploy:starting', 'deploy:update_crontab'
 # set :upstart_service_name, 'sidekiq'
 
 # namespace :sidekiq do
