@@ -397,7 +397,7 @@ export default {
 /*@extend %screenbg;*/
 	margin: 0.00em 0.4em 0 0em;
 	p {
-		margin-bottom: spacing(0);
+		/*margin-bottom: spacing(0);*/
 		/*color: color($str4 shade(5%));*/
     color: str5;
 		padding: 0.2em 0em 0em 1.1em;
