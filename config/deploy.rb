@@ -71,7 +71,14 @@ after 'deploy:published', 'sidekiq:restart'
 # Default value for linked_dirs is []
  append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads"
 # role :all, %w{deploy@46.161.39.175}
-
+set :host, "46.161.39.175"
+role :app, host
+namespace :deploy do
+	desc "Update cron jobs"
+  task :update_crontab, :roles => :app do
+  	run "cd #{current_path} && whenever --update-crontab #{application}"
+  end
+end
 
 # set :upstart_service_name, 'sidekiq'
 

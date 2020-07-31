@@ -24,7 +24,8 @@ require "capistrano/passenger"
 require 'capistrano/sidekiq'
 require "whenever/capistrano"
 require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano3_type, :user
- 
+
+# set :whenever_command, 'bundle exec whenever'
 set :sidekiq_service_unit_name, 'pxtech'
 set :rbenv_ruby, '2.5.1'
 set :linked_files, %w{config/master.key}
