@@ -6,7 +6,7 @@ lock "~> 3.11.0"
 # set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
 
 
-set :application, "pixeltech"
+set :application, "pxtech"
 set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
 # set :init_system, :systemd
 # set :upstart_service_name, 'sidekiq'
@@ -77,7 +77,7 @@ namespace :deploy do
 	desc "Update cron jobs"
   task :update_crontab do
   	on roles(:app) do
-  		run "cd #{current_path} && whenever --update-crontab"
+  		run "cd #{current_path} && whenever --update-crontab #{application}"
   	end
   end
 end
