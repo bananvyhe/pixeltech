@@ -28,6 +28,19 @@
 				</div> -->
 				<div class="voodoo1" v-if="!$store.getters.role">
 					<request class="request"></request>
+					<!-- <div class="basecamp1"> -->
+						<el-popover
+				    placement="bottom"
+				    width="100"
+				    trigger="click">
+					    <div style="text-align: center;">
+					    	<a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a><br>
+					    	<a target="_blank" href="https://farmspot.ru">farmspot.ru</a>
+					    </div>
+					    <el-button slot="reference" class="user" border>сайты</el-button>
+ 							<!-- <div slot="reference" class="folio">фолио</div> -->
+						</el-popover>
+					<!-- </div> -->
 				</div>
 				<div v-if="$store.getters.role" >
 					<!-- <div v-if="1==2" > -->
@@ -489,6 +502,9 @@
 <style scoped>
 @import "stylesheets/_variables";
 @import "stylesheets/_extends";
+.folio{
+
+}
 .backbar {
 	float: left;
 	border-radius: 0.3em;
