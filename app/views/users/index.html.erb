@@ -9,6 +9,7 @@
 <!-- <script type="text/x-template" id="temperature-template"> -->
 	<div class="usersblock" v-if="this.$store.getters.role.role == 'superadmin' || this.$store.getters.role.role == 'admin' ">
 		 <!-- {{ this.$store.getters.role }} -->
+		 <div style="height: 80px;"></div>
 		<% @users.each do |user| %>
 			<div class="userstring del<%= user.id %>" >
 				<div>
