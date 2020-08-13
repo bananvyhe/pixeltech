@@ -246,7 +246,7 @@ export default {
   height: 100px;
 }
 #head { 
-
+  z-index: 4000;
   position: relative;
   
   /*lost-utility: edit;*/
