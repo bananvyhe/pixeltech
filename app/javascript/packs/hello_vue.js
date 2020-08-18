@@ -26,6 +26,11 @@ import Lobby from '../lobby.vue'
 import Posts from '../components/forum/posts.vue'
 import Callboard from '../components/callboard/callboard.vue'
 import Chat from '../chat.vue'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+Vue.use(Vuetify)
+ 
+
 // import CommentVotes from '../components/commentvotes.vue'
 // import Inv from '../components/inventory.vue'
 // import Topsection from '../components/topsection.vue'
