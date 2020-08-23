@@ -23,15 +23,15 @@ body {
 
     color: color( $str6 shade(0%)saturation(90%));
   }   
-  h1,h2,h3,h4,h5 {    /*color: $redorange;*/
+  h1,h2,h3 {    /*color: $redorange;*/
     margin-bottom: 0.2em;
     font-family: "aprior";
     color: color($sunglow lightness(52%)saturation(62%));
     /*text-shadow:  0 0 13px rgba(0,0,0,0.4), 0 0 3px rgba(0,0,0,0.2), 0 0 25px rgba(0,0,0,0.2);*/
  
   }
-  h4 {
-    /*color: color($sunglow lightness(32%)saturation(22%));*/
+  h4,h5 {
+    color: color($sunglow lightness(32%)saturation(22%));
   }
 }
 .wrapper {

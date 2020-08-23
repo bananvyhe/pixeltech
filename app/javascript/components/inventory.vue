@@ -20,7 +20,7 @@
             </div>    
           </el-tooltip>          
         </div>
-        <div v-if="items == 0" ><h4>пустой инвентарь</h4></div>
+        <div v-if="items == 0" style="text-align:  center;"> пустой инвентарь </div>
         <draggable class="inv" v-model="Array.from(items)"  @end="itemMoved">
           <div v-for="(item, index) in items" class="one-item" v-on:click="oneClick(item.item_name, item.id)"> 
             <el-tooltip  class="smalltext"  placement="bottom">
