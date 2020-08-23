@@ -36,7 +36,7 @@ gem 'sidekiq'
 gem 'whenever'
 gem 'sidekiq-client-cli'
 # gem 'yandex-money-sdk'
-gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
+gem 'capistrano-sidekiq', group: :development
 gem 'redis-namespace'
 gem 'ed25519'  
 gem 'bcrypt_pbkdf'  
