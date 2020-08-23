@@ -2,7 +2,6 @@
     "name": "pixeltech",
     "private": true,
     "preinstall": "npx npm-force-resolutions",
- 
     "dependencies": {
         "@rails/webpacker": "3.5",
         "animate.css": "^3.7.2",
@@ -42,18 +41,13 @@
         "vue-typer": "^1.2.0",
         "vuedraggable": "^2.16.0",
         "vuelidate": "^0.7.4",
-        "vuetify": "^2.3.8",
         "vuex": "^3.0.1",
         "vuex-persistedstate": "^2.5.4"
     },
     "devDependencies": {
-        "deepmerge": "^4.2.2",
         "element-theme": "^2.0.1",
         "element-theme-chalk": "git+https://github.com/ElementUI/theme-chalk.git",
         "element-themex": "^1.0.3",
-        "fibers": "^5.0.0",
-        "sass": "^1.26.10",
-        "sass-loader": "^9.0.3",
         "webpack-dev-server": "2.11.2"
     },
     "optionalDependencies": {
