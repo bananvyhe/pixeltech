@@ -407,7 +407,7 @@
 			    }
 	    	})
 	      .catch(function (error) {
-	          location.reload(true);
+	          // location.reload(true);
 	    	}); 
 	  	},
 	  	stopTimer() {
@@ -501,7 +501,7 @@
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-@import "stylesheets/_extends";
+/*@import "stylesheets/_extends";*/
 .folio{
 
 }

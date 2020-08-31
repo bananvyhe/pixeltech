@@ -1,11 +1,13 @@
 
-@import "_typography";
+/*@import "_typography";*/
 @import "_variables";
-@import "_extends";
+/*@import "_extends";*/
 /* postcss-typography */
 body {
   margin: 0;
+/*  color:#dad;*/
 }
+
 
 @typography {
   body {
@@ -355,7 +357,7 @@ html {
   padding: 0.1em;
 }
 .posttitlelink {
-  @extend %textcolor;
+  /*@extend %textcolor;*/
   adjust-font-size: fs medium;
 }
 .posttitlelink:hover {
