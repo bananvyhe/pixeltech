@@ -1,10 +1,11 @@
 module.exports = {
   plugins: [
     require('postcss-import'),
+        require('postcss-simple-vars'),
+    require('postcss-color-function'),
     require('postcss-extend'),
     require('postcss-flexbugs-fixes'),
     require('postcss-nested'),
-    require('postcss-simple-vars'),
     require('postcss-custom-media'),
     require('lost'),
     require('postcss-assets')({
