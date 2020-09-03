@@ -59,7 +59,7 @@ module.exports = {
           normal: {
             400: {
               url: {
-                woff2: 'fonts/elemental_end_italic-webfont.woff2'
+                woff2: '../fonts/elemental_end_italic-webfont.woff2'
               }
             } 
           }
@@ -70,7 +70,7 @@ module.exports = {
           normal: {
             400: {
               url: {
-                woff2: 'fonts/aprior_normal-webfont.woff2'
+                woff2: '../fonts/aprior_normal-webfont.woff2'
               }
             } 
           }
@@ -81,7 +81,7 @@ module.exports = {
           normal: {
             400: {
               url: {
-                woff2: 'fonts/bulgaria_fantastica_cyr-webfont.woff2'
+                woff2: '../fonts/bulgaria_fantastica_cyr-webfont.woff2'
               }
             } 
           }
@@ -92,7 +92,7 @@ module.exports = {
           normal: {
             400: {
               url: {
-                woff2: 'fonts/telidon_con_it.woff2'
+                woff2: '../fonts/telidon_con_it.woff2'
               }
             } 
           }
@@ -103,7 +103,7 @@ module.exports = {
           normal: {
             400: {
               url: {
-                woff2: 'fonts/telidon_reg.woff2'
+                woff2: '../fonts/telidon_reg.woff2'
               }
             } 
           }
@@ -115,14 +115,14 @@ module.exports = {
           normal: {
             400: {
               url: {
-                woff2: 'fonts/roboto-regular-webfont.woff2'
+                woff2: '../fonts/roboto-regular-webfont.woff2'
               }
             } 
           },
           light: {
             300: {
               url: {
-                woff2: 'fonts/roboto-light-webfont.woff2'
+                woff2: '../fonts/roboto-light-webfont.woff2'
               }
             } 
           }          
@@ -134,7 +134,7 @@ module.exports = {
           light: {
             300: {
               url: {
-                woff2: 'fonts/opensans-light-webfont.woff2'
+                woff2: '/fonts/opensans-light-webfont.woff2'
               }
             }             
           }

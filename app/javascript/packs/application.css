@@ -1,7 +1,7 @@
-@import "_variables";
-@import "_typography";
+@import "../stylesheets/_variables";
+@import "../stylesheets/_typography";
 
-@import "_extends";
+@import "../stylesheets/_extends";
  
 body {
   margin: 0;

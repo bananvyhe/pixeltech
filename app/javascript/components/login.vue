@@ -301,6 +301,7 @@
 <style scoped>
 @import "../stylesheets/_variables";
 @import "../stylesheets/_extends";
+
 .bottomField {
 	padding-top: 2em;
 }
