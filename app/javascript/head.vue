@@ -111,7 +111,7 @@ export default {
     setTimeout(function(){
       // self.cropText();
        scrambleText.start();
-    },8000 );
+    },6000 );
 
 
   },
@@ -208,7 +208,7 @@ export default {
       }, {
          autoAlpha:1,yPercent: 0,
          // xPercent: 0,
-        ease: Elastic.easeOut.config(0.3, 0.18),}, 0, "-=3.2");
+        ease: Elastic.easeOut.config(0.3, 0.18),}, 0, "-=1.2");
   	}
   }
 }
