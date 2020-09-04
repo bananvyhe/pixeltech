@@ -100,7 +100,9 @@ Vue.use(VueChatScroll)
 // Vue.use(require('@hscmap/vue-window'))
 // import * as VueWindow from '@hscmap/vue-window'
 // Vue.use(VueWindow)
+import Vuex from 'vuex';
 
+Vue.use(Vuex);
 import {DatePicker, TimePicker, Tag, Divider, TabPane, Tabs, Container, Main, InputNumber, Collapse, CollapseItem, ButtonGroup, Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
 // Vue.prototype.$message = Message; 
 

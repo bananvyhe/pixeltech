@@ -1,5 +1,4 @@
 # Be sure to restart your server when you modify this file.
-
 # Define an application-wide content security policy
 # For further information see the following documentation
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
@@ -23,3 +22,10 @@
 # For further information see the following documentation:
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only
 # Rails.application.config.content_security_policy_report_only = true
+
+  # if Rails.env.development?
+  #   p.connect_src :self, :https, 'http://localhost:3035'
+  #   p.script_src :self, :https, :unsafe_eval, :unsafe_inline
+  # else
+  #   p.script_src :self, :https
+  # end

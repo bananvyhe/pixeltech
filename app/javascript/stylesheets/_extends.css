@@ -1,3 +1,4 @@
+ @import "_variables";
 %minimalradius {
   border-radius: 0.3em; 
 }
@@ -7,5 +8,5 @@
   background:  color($str2 shade(0%));
 }
 %textcolor {
-	color: color( $ghostwhite  shade(12%) saturation(+0%));
+	color: color( $ghostwhite shade(12%)  );
 }

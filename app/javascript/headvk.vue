@@ -432,7 +432,7 @@ export default {
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-@import "stylesheets/_extends";
+ 
  
 .blank{
   height: 70em;
@@ -778,7 +778,7 @@ margin:  0.1em -1.2em;
   lost-center: $lostCenter;
   /*padding-top: 1.4em;*/
   overflow: hidden;
-  @extend .display;
+  /*@extend .display;*/
   flex-direction: column;
   @media (--only-1600more-screen) {
     lost-center: $lostCenter;

@@ -124,8 +124,8 @@
 		  stroke-dashoffset: 280;
 		  animation: dash 8.6s forwards;
 		  -webkit-animation: dash 8.6s forwards;
-		  animation-timing-function: cubic-bezier(0.195, 0.010, 0.940, 1.030);
-		  -webkit-animation-timing-function: cubic-bezier(0.195, 0.010, 0.940, 1.030);
+		  animation-timing-function: cubic-bezier(.98,.06,.7,.51);
+		  -webkit-animation-timing-function: cubic-bezier(.98,.06,.7,.51);
 		  animation-delay: 0.25s;
 		  -webkit-animation-delay: 0.25s;
 		}
