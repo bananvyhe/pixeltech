@@ -1,14 +1,5 @@
 Sidekiq::Extensions.enable_delay!
-	if Rails.env.development? 
-		Sidekiq.configure_server do |config|
-			config.redis = { url: 'redis://127.0.0.1:6379/sidekiq_test', namespace: "sidekiq_pixeltech" }
-		end
-
-		Sidekiq.configure_client do |config|
-			config.redis = { url: 'redis://127.0.0.1:6379/sidekiq_test', namespace: "sidekiq_pixeltech" }
-		end
-	end
-		if Rails.env.production? 
+ 
 		Sidekiq.configure_server do |config|
 			config.redis = { url: 'redis://127.0.0.1:6380/sidekiq_test', namespace: "sidekiq_pixeltech" }
 		end
@@ -16,4 +7,13 @@ Sidekiq::Extensions.enable_delay!
 		Sidekiq.configure_client do |config|
 			config.redis = { url: 'redis://127.0.0.1:6380/sidekiq_test', namespace: "sidekiq_pixeltech" }
 		end
-	end
+ 
+	# 	if ENV['RAILS_ENV']=='production'
+	# 	Sidekiq.configure_server do |config|
+	# 		config.redis = { url: 'redis://127.0.0.1:6380/sidekiq_test', namespace: "sidekiq_pixeltech" }
+	# 	end
+
+	# 	Sidekiq.configure_client do |config|
+	# 		config.redis = { url: 'redis://127.0.0.1:6380/sidekiq_test', namespace: "sidekiq_pixeltech" }
+	# 	end
+	# end
