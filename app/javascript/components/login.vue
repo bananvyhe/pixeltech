@@ -5,22 +5,22 @@
       <el-button type="primary" plain size="mini" @click="handler">
       	Выйти
       </el-button>
-     <!--  <el-button type="primary" plain size="mini"   @click="moneypush">
-      	плюсануть
-      </el-button>
-      <el-button type="primary" plain size="mini"   @click="moneymin">
-      	минуснуть
-      </el-button> -->
+							     <!--  <el-button type="primary" plain size="mini"   @click="moneypush">
+							      	плюсануть
+							      </el-button>
+							      <el-button type="primary" plain size="mini"   @click="moneymin">
+							      	минуснуть
+							      </el-button> -->
     </div>
     <div v-else>
       <el-button type="primary" plain size="mini"  @click="dialogFormVisible = true">
         Войти
       </el-button>
     </div>
-  		<el-dialog title="Войти:" class="pos" top="18vh" :width="calcul" :visible.sync="dialogFormVisible" :lock-scroll="false">
-  			<!-- <h1 style="marginTop: -0.2em;">Войти:</h1> -->
-		  <el-form :model="form" :rules="rules" ref="form">	 
-		    <el-form-item 
+		<el-dialog title="Войти:" class="pos" top="18vh" :width="calcul" :visible.sync="dialogFormVisible" :lock-scroll="false">
+
+	  	<el-form :model="form" :rules="rules" ref="form">	 
+		  	<el-form-item 
 		    	prop="email" 
 		    	size="medium"
 		    	label="Емайл:"
@@ -28,8 +28,9 @@
 			      { required: true, message: 'Введите адрес', trigger: 'blur' },
 			      { type: 'email', message: 'Неправильный адрес почты', trigger: ['blur', 'change'] }
 			    ]">
-		      <el-input v-model="form.email" ></el-input>
-		    </el-form-item>
+		    	<el-input v-model="form.email" ></el-input>
+		  	</el-form-item>
+
 		    <el-form-item prop="password" size="medium" label="Пароль:"  style="margin-bottom: 0px !important;">
 		      <el-input type="password" v-model="form.password" auto-complete="off">
 		      </el-input>
@@ -243,11 +244,11 @@
 	  	handle: function () {
 	  		this.onSubmit();
 	  		this.dialogFormVisible = false
-	  		var contain = $('.contain');
-	  		contain.addClass('hidden');
-	  		var bg = $('#bg');
-	  		bg.addClass('hidden');
-	  		// this.dialogFormVisible = false
+	  		// var contain = $('.contain');
+	  		// contain.addClass('hidden');
+	  		// var bg = $('#bg');
+	  		// bg.addClass('hidden');
+ 
 	  	},
 		  onSubmit: function () {
 				axios.post('/api/v1/auth', {

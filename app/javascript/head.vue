@@ -6,12 +6,10 @@
         <div v-if="$store.getters.token != null" >
         <!--   <el-button type="primary" plain size="small"   @click="nulltoken">Выйти</el-button> -->
         </div>
-        <div v-else>
-          <!-- <log class="log"></log>  -->
-        </div> 
       </div>
     </div>
-    <div id="head">	
+
+    <div class="head">	
     	<div class="contain ">
     		<div class="screen">  
       		<div class="title largetext" :class="{flickerin1: activatorclass}">
@@ -24,21 +22,18 @@
       		</div>
     		</div>  
         <div class="offsubj">
-           <div class="oversubj">
-             <p class="subj basetext">{{subj}}
-              <!-- <vue-typer 
-              :pre-type-delay= '1000'
-              :repeat='0'
-              :text= "subj"
-              :shuffle='true'>
-              </vue-typer> -->
+          <div class="oversubj">
+            <p class="subj basetext">{{subj}}
             </p> 
           </div>
         </div>
        
       	<div class="borcon">
       		<div  class="cont">
-  					<div class="plashka tada"><div class="overpla"><p>{{cont}}</p></div></div>
+  					<div class="plashka tada">
+              <div class="overpla"><p>{{cont}}</p>
+              </div>
+            </div>
   				</div> 
           <div class="formsZone">
             <div v-if="$store.getters.token == null" >
@@ -50,6 +45,7 @@
       	</div>
       </div>
     </div>
+    
 	</div>
 </template>
 
@@ -245,7 +241,7 @@ export default {
   background: #dad;
   height: 100px;
 }
-#head { 
+.head { 
 
   position: relative;
   
