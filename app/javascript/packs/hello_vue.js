@@ -148,6 +148,38 @@ Vue.prototype.$message = Message;
  import lang from 'element-ui/lib/locale/lang/ru-RU'
  import locale from 'element-ui/lib/locale'
  locale.use(lang)
+
+import Vuetify, {
+	VCard,
+	VCardActions,
+	VBtn,
+	VListItem,
+	VListItemContent,
+	VListItemTitle,
+	VListItemSubtitle,
+	VListItemAvatar,
+} from 'vuetify/lib'
+
+// import 'vuetify/dist/vuetify.min.css'
+Vue.use(Vuetify, {
+	components: {
+		VCard,
+		VCardActions,
+		VBtn,
+		VListItem,
+		VListItemContent,
+		VListItemTitle,
+		VListItemSubtitle,
+		VListItemAvatar,
+	},
+}) 
+
+export default new Vuetify({
+  theme: {
+    dark: true,
+  },
+})
+ 
 document.addEventListener('DOMContentLoaded', () => {
 		//pusher implementation
 

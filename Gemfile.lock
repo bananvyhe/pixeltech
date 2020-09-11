@@ -349,7 +349,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier
   web-console (>= 3.3.0)
-  webpacker
+  webpacker (~> 5.x)
   whenever
 
 RUBY VERSION
