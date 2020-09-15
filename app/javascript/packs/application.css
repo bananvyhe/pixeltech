@@ -368,9 +368,11 @@ html {
     font-family: 'RobotoReg';
   }
 }
-.title { 
-  font-family: 'aprior';
+.titlepix { 
+      font-family: 'aprior';
   .vue-typer .custom.char.typed{
+    font-size: 24px;
+
     /*color: color( $isabelline shade(10%));*/
     color: color(#E8D6CB shade(0%));
     /*text-shadow:  0 0 3px rgba(255,255,255,1);*/

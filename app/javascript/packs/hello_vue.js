@@ -26,6 +26,7 @@ import Lobby from '../lobby.vue'
 import Posts from '../components/forum/posts.vue'
 import Callboard from '../components/callboard/callboard.vue'
 import Chat from '../chat.vue'
+import App from '../app.vue'
 // import CommentVotes from '../components/commentvotes.vue'
 // import Inv from '../components/inventory.vue'
 // import Topsection from '../components/topsection.vue'
@@ -147,9 +148,18 @@ Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
  import lang from 'element-ui/lib/locale/lang/ru-RU'
  import locale from 'element-ui/lib/locale'
+ import 'vuetify/dist/vuetify.min.css'
  locale.use(lang)
-
+// import 'vuetify/dist/vuetify.min.css'
 import Vuetify, {
+	VIcon,
+	VSpacer,
+	VToolbarTitle,
+	VAppBarNavIcon,
+	VAppBar,
+	VMain,
+	VApp,
+	VAlert,
 	VCard,
 	VCardActions,
 	VBtn,
@@ -160,9 +170,17 @@ import Vuetify, {
 	VListItemAvatar,
 } from 'vuetify/lib'
 
-// import 'vuetify/dist/vuetify.min.css'
+
 Vue.use(Vuetify, {
 	components: {
+		VIcon,
+		VSpacer,
+		VToolbarTitle,
+		VAppBarNavIcon,
+		VAppBar,
+		VMain,
+		VApp,
+		VAlert,
 		VCard,
 		VCardActions,
 		VBtn,
@@ -174,12 +192,11 @@ Vue.use(Vuetify, {
 	},
 }) 
 
-export default new Vuetify({
-  theme: {
-    dark: true,
-  },
-})
+Vue.component("topsidepanel", Topsidepanel);
+Vue.component("heado", Head);
+ // const vuetify = new Vuetify({
  
+ // })
 document.addEventListener('DOMContentLoaded', () => {
 		//pusher implementation
 
@@ -206,6 +223,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	//     render: h => h(CommentV+otes) 
 	//   })
 	// } 
+	 new Vue({
+  	store,
+    el: '#app',
+    vuetify: new Vuetify({
+		  theme: {
+		    dark: true,
+		  },
+		}),
+    render: h => h(App) 
+	  })
 	var callboard = document.getElementById("callboard") 
   if (callboard != null) {
 	  new Vue({
@@ -222,14 +249,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	    render: h => h(Chat) 
 	  })
 	}	
-	var topsidepanel = document.getElementById("topsidepanel") 
-  if (topsidepanel != null) {
-	  new Vue({
-	  	store,
-	    el: '#topsidepanel',
-	    render: h => h(Topsidepanel) 
-	  })
-	}	
+	// var topsidepanel = document.getElementById("topsidepanel") 
+ //  if (topsidepanel != null) {
+	//   new Vue({
+ 
+	//   	store,
+	//     el: '#topsidepanel',
+
+	//     render: h => h(Topsidepanel) 
+	//   })
+	// }	
 	var posts = document.getElementById("posts") 
   if (posts != null) {
 	  new Vue({
@@ -269,14 +298,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	    
 	  })
 	}
-	var head = document.getElementById("head") 
-  if (head != null) {
-	  new Vue({
-	  	store,
-	    el: '#head',
-	    render: h => h(Head) 
-	  })
-	}
+	// var head = document.getElementById("head") 
+ //  if (head != null) {
+	//   new Vue({
+	//   	store,
+	//     el: '#head',
+	//     render: h => h(Head) 
+	//   })
+	// }
 	var headvk = document.querySelector('#headvk')
   if (headvk != null) {
 	  new Vue({

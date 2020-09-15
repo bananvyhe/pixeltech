@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
- <v-card
+ <!-- <v-card
     class="mx-auto"
     max-width="344"
     outlined
@@ -35,11 +35,11 @@
       <v-btn text>Button</v-btn>
       <v-btn text>Button</v-btn>
     </v-card-actions>
-  </v-card>
+  </v-card> -->
     <div class="head">	
     	<div class="contain ">
     		<div class="screen">  
-      		<div class="title largetext" :class="{flickerin1: activatorclass}">
+      		<div class="titlepix largetext" :class="{flickerin1: activatorclass}">
       			<vue-typer 
               caret-animation='smooth'
       				:text='[" Пикселтех","Pixeltech.ru"]'
@@ -88,7 +88,7 @@ export default {
     return {
     	activatorclass: false,
     	subj: 'Разработка сайтов, автоматизация бизнеса, индивидуальный поход, простая система управления',
-      title: "Pixeltech",
+ 
       cont: " опыт разработки с 2003г."
     }
   },
@@ -188,7 +188,7 @@ export default {
       //   // autoAlpha:1,
       //   // xPercent: 0,
       //   ease: Expo.easeOut}, 0.3, "+=0.1")
-      .staggerFromTo('.title', 0.4, {
+      .staggerFromTo('.titlepix', 0.4, {
 	      // autoAlpha:0,
         // scaleX: 0.8,
        	scaleY: 0, 
@@ -361,7 +361,8 @@ export default {
 	justify-content: center;
 }
 
-.title { 
+.titlepix { 
+
   width: 6.3em;
 	font-size: 1.7em;
 	text-align: left;

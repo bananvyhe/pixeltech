@@ -1,34 +1,10 @@
 <template>
 	<div id="bpad"> 
-	 <!-- {{exp}} -->
 		<div class="overbpad">
-		<!-- {{exptime}} -->
-		<div class="bpad smalltext" v-bind:style="styleObject"> 
-			<div class="logohead">
-				<!-- {{exptime}} --> 
-<!-- 				<div class="voodoo1" v-if="!$store.getters.role">
-					<div class="basecamp">
- 
-					</div>&nbsp;&nbsp;
- 
-					<request class="request"></request>
- 
-					&nbsp;&nbsp;
-					<div class="basecamp1">
-						<el-popover
-				    placement="bottom"
-				    width="100"
-				    trigger="click">
-					    <div style="text-align: center;">
-					    	<a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a>
-					    </div>
- 
-						</el-popover>
-					</div>
-				</div> -->
-				<div class="voodoo1" v-if="!$store.getters.role">
-					<request class="request"></request>
-					<!-- <div class="basecamp1"> -->
+			<div class="bpad smalltext" v-bind:style="styleObject"> 
+				<div class="logohead">
+					<div class="voodoo1" v-if="!$store.getters.role">
+						<request class="request"></request>
 						<el-popover
 				    placement="bottom"
 				    width="100"
@@ -38,79 +14,55 @@
 					    	<a target="_blank" href="https://farmspot.ru">farmspot.ru</a>
 					    </div>
 					    <el-button slot="reference" class="user" border>сайты</el-button>
- 							<!-- <div slot="reference" class="folio">фолио</div> -->
 						</el-popover>
-					<!-- </div> -->
-				</div>
-				<div v-if="$store.getters.role" >
-					<!-- <div v-if="1==2" > -->
-					<!-- <div class="backbar "  v-if="$store.getters.role.role.find(item => item  == 'voodoo') == 'voodoo' || $store.getters.role.role.find(item => item  == 'user') == 'user'"> -->
-					<div class="backbar" v-if="$store.getters.token">
-						<div class="mediumtext nikname">{{$store.getters.role.username}}</div>
-						<div class="expbar"> 
-							<!-- <span v-if="$store.getters.gamebo.expirience != null">&nbsp;Loa:&nbsp;{{$store.getters.gamebo.expirience}}</span>&nbsp;&nbsp; -->
-							<div class="expline">
-								<el-progress v-if="$store.getters.gamebo" class="elpro aprior " :stroke-width="3" :percentage="Number(lvlConversion[1])"></el-progress>
+					</div>
+					<div v-if="$store.getters.role" >
+						<div class="backbar" v-if="$store.getters.token">
+							<div class="mediumtext nikname">{{$store.getters.role.username}}</div>
+							<div class="expbar"> 
+								<div class="expline">
+									<el-progress v-if="$store.getters.gamebo" class="elpro aprior " :stroke-width="3" :percentage="Number(lvlConversion[1])"></el-progress>
+								</div>
+								<div v-if="$store.getters.gamebo" class="lvl">{{lvlConversion[0]}}&nbsp;</div>
+								<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
 							</div>
-							<div v-if="$store.getters.gamebo" class="lvl">{{lvlConversion[0]}}&nbsp;</div>
-							<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>
 						</div>
-						<!-- <game-board :expresult="lvlConversion"></game-board>   -->
 					</div>
-				</div>
-				<div v-else>
- 
-				</div>
-					<!-- <div v-if="($store.getters.gamebo) && ($store.getters.pk == false)" class="crytop"> -->
-				<div v-if="($store.getters.gamebo)" class="crytop">
-					<!-- камни: &nbsp;{{$store.getters.cry}} -->
-					<inv class="invclass" v-if="$store.getters.role" @my-event="storeCommitGbData"></inv>
-				</div> 
-				<div v-else>
-					<!-- <div v-if="($store.getters.gamebo) && ($store.getters.pk == true)"> -->
-					<!-- <div v-if="$store.getters.gamebo ">
-						<el-button v-if="$store.getters.kill == null " type="success" size='mini' icon="el-icon-switch-button"   @click="res">       
-        		</el-button>
-						<el-button v-else type="success" size='mini' icon="el-icon-switch-button"   disabled>       
-        		</el-button>							
-					</div> -->
-				</div>
-				<div v-if="$store.getters.token == null">
-					<div v-if="checklog != 'unlogged' ">
-						{{nulltoken}}
-					</div>
-				</div>
-			</div>
-			<div class="maininfo">
-				<div v-if="$store.getters.token != null" class="info wrap">
-					<!-- {{this.$store.getters.role.username}} 
-					&nbsp;&nbsp;Ваш текущий статус: {{this.$store.getters.role.role}}
-					<br>Ацесс токен: {{this.$store.getters.token.access}}
-					<br> -- Истекает через: {{ this.$store.getters.token.refresh_expires_at }}
-					<br> Рефреш токен: {{this.$store.getters.token.refresh}}
-					<br><br> -->
-					права:&nbsp;
-					<div v-for="(item, index) in $store.getters.role.role"> {{item}}&nbsp;</div>
-					<div>
-						<!-- &nbsp;&nbsp; Истекает через:  -->
-						<!-- {{timeConversion(this.$store.getters.role.exp)}} -->
-					</div>
-					<!-- {{exptime}} -->
-				</div> 
-				<div class="wrap" v-if="$store.getters.token == null" > 
-			    <reg></reg>
-			  </div>
-				<div class="wrap">
-					<log class="wrap"></log>
-				</div>
-			</div>
-	  </div>
-	  </div>
-  </div>
+					<div v-else>
 
+					</div>
+					<div v-if="($store.getters.gamebo)" class="crytop">
+ 
+						<inv class="invclass" v-if="$store.getters.role" @my-event="storeCommitGbData"></inv>
+					</div> 
+					<div v-else>
+
+					</div>
+					<div v-if="$store.getters.token == null">
+						<div v-if="checklog != 'unlogged' ">
+						{{nulltoken}}
+						</div>
+					</div>
+				</div>
+				<div class="maininfo">
+					<div v-if="$store.getters.token != null" class="info wrap">
+					права:&nbsp;
+						<div v-for="(item, index) in $store.getters.role.role"> {{item}}&nbsp;</div>
+						<div>
+						</div>
+					</div> 
+					<div class="wrap" v-if="$store.getters.token == null" > 
+			    	<reg></reg>
+			  	</div>
+					<div class="wrap">
+					<log class="wrap"></log>
+					</div>
+				</div>
+	  	</div>
+	  </div>
+  </div> 
 </template>
 <script>
-
 	import Inv from './components/inventory.vue';
 	import axios from 'axios'
 	let screenwidth = {value: ''}

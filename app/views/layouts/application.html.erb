@@ -19,9 +19,14 @@
     <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link  href="https://unpkg.com/emoji.css/dist/emoji.min.css" media="all" rel="stylesheet"/>
+    <!-- vuetify fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+
   </head>
   <body>
-        <div id="topsidepanel"></div>
+    <div id="app"></div>
+       
 <!-- <div id="topsidepanel" class="topsidepanel"></div> -->
     <!-- <div class="topBlank smalltext"></div> -->
     <%# if current_user.try(:admin?) or  current_user.try(:superadmin?) or  current_user.try(:client?)%>
@@ -69,7 +74,7 @@
       <!-- </div>   -->
     <% else %>
         <!-- </div> -->
-<div id="head"></div>
+<!-- <div id="head"></div> -->
     <%#= link_to "Войти", new_user_session_path %>
       <script>
         var checklog = "unlogged"
