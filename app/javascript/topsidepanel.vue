@@ -1,5 +1,6 @@
 <template>
 	<div id="bpad"> 
+<!-- 		{{checklog}}&nbsp;{{exptime}} -->
 		<div class="overbpad">
 			<div class="bpad smalltext" v-bind:style="styleObject"> 
 				<div class="logohead">
@@ -38,11 +39,13 @@
 					<div v-else>
 
 					</div>
-					<div v-if="$store.getters.token == null">
+ 
+ 
+<!-- 					<div v-if="$store.getters.token == null">
 						<div v-if="checklog != 'unlogged' ">
 						{{nulltoken}}
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="maininfo">
 					<div v-if="$store.getters.token != null" class="info wrap">
@@ -284,6 +287,8 @@
 	    		this.refreshToken() 
  				}else if ((this.exptime < 20)&&(!this.$store.getters.token.refresh )){
  					this.nulltoken
+ 				}else if ((this.exptime < 0)&&( checklog == 'unlogged')){
+ 					this.nulltoken
  				}
 	      var self = this;
 	      if ((self.exptime > 0)&&(!self.trig)){
@@ -334,6 +339,7 @@
 					}
 	        }).then((response) => {
       		if (response.data.errors) {
+
 
 	    		}else{
 	    		  this.$store.commit('tokensend', response.data)
