@@ -1,13 +1,14 @@
 <template>
   <div>
-    <v-app class="vmain">
+    <v-app class="vmain" >
       <v-main >
         <topsidepanel ></topsidepanel>
         <div v-if="!$store.getters.role">
           <heado ></heado>
         </div>
-        <posts class="topsidepanel "></posts>app
-      </v-main>
+        <posts class="topsidepanel "></posts>siteowners
+
+      </v-main> 
     </v-app>
   </div>
 </template>

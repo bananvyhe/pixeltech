@@ -27,6 +27,7 @@ import Posts from '../components/forum/posts.vue'
 import Callboard from '../components/callboard/callboard.vue'
 import Chat from '../chat.vue'
 import App from '../app.vue'
+import Siteown from '../siteown.vue'
 // import CommentVotes from '../components/commentvotes.vue'
 // import Inv from '../components/inventory.vue'
 // import Topsection from '../components/topsection.vue'
@@ -194,6 +195,7 @@ Vue.use(Vuetify, {
 
 Vue.component("topsidepanel", Topsidepanel);
 Vue.component("heado", Head);
+Vue.component("posts", Posts);
  // const vuetify = new Vuetify({
  
  // })
@@ -223,16 +225,34 @@ document.addEventListener('DOMContentLoaded', () => {
 	//     render: h => h(CommentV+otes) 
 	//   })
 	// } 
+	var app = document.getElementById("app") 
+  if (app != null) {
 	 new Vue({
   	store,
     el: '#app',
     vuetify: new Vuetify({
 		  theme: {
 		    dark: true,
+		    
 		  },
 		}),
     render: h => h(App) 
 	  })
+	}
+	var siteown = document.getElementById("siteown") 
+  if (siteown != null) {
+	 		 new Vue({
+  	store,
+    el: '#siteown',
+    vuetify: new Vuetify({
+		  theme: {
+		    dark: true,
+		    
+		  },
+		}),
+    render: h => h(Siteown) 
+	  })
+	}
 	var callboard = document.getElementById("callboard") 
   if (callboard != null) {
 	  new Vue({
@@ -259,14 +279,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	//     render: h => h(Topsidepanel) 
 	//   })
 	// }	
-	var posts = document.getElementById("posts") 
-  if (posts != null) {
-	  new Vue({
-	  	store,
-	    el: '#posts',
-	    render: h => h(Posts) 
-	  })
-	} 
+	// var posts = document.getElementById("posts") 
+ //  if (posts != null) {
+	//   new Vue({
+	//   	store,
+	//     el: '#posts',
+	//     render: h => h(Posts) 
+	//   })
+	// } 
 	var lobby = document.getElementById("lobby") 
   if (lobby != null) {
 	  new Vue({
