@@ -25,6 +25,9 @@
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+#app{
+  background-color: var(--v-background-base);
+}
 .vmain{
   lost-center: $lcenter;
 }

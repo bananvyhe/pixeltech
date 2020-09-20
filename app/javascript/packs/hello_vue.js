@@ -153,44 +153,44 @@ Vue.prototype.$message = Message;
  locale.use(lang)
 // import 'vuetify/dist/vuetify.min.css'
 import Vuetify, {
-	VIcon,
-	VSpacer,
-	VToolbarTitle,
-	VAppBarNavIcon,
-	VAppBar,
-	VMain,
-	VApp,
-	VAlert,
-	VCard,
-	VCardActions,
-	VBtn,
-	VListItem,
-	VListItemContent,
-	VListItemTitle,
-	VListItemSubtitle,
-	VListItemAvatar,
+	// VIcon,
+	// VSpacer,
+	// VToolbarTitle,
+	// VAppBarNavIcon,
+	// VAppBar,
+	// VMain,
+	// VApp,
+	// VAlert,
+	// VCard,
+	// VCardActions,
+	// VBtn,
+	// VListItem,
+	// VListItemContent,
+	// VListItemTitle,
+	// VListItemSubtitle,
+	// VListItemAvatar,
 } from 'vuetify/lib'
 
 
 Vue.use(Vuetify, {
-	components: {
-		VIcon,
-		VSpacer,
-		VToolbarTitle,
-		VAppBarNavIcon,
-		VAppBar,
-		VMain,
-		VApp,
-		VAlert,
-		VCard,
-		VCardActions,
-		VBtn,
-		VListItem,
-		VListItemContent,
-		VListItemTitle,
-		VListItemSubtitle,
-		VListItemAvatar,
-	},
+	// components: {
+	// 	VIcon,
+	// 	VSpacer,
+	// 	VToolbarTitle,
+	// 	VAppBarNavIcon,
+	// 	VAppBar,
+	// 	VMain,
+	// 	VApp,
+	// 	VAlert,
+	// 	VCard,
+	// 	VCardActions,
+	// 	VBtn,
+	// 	VListItem,
+	// 	VListItemContent,
+	// 	VListItemTitle,
+	// 	VListItemSubtitle,
+	// 	VListItemAvatar,
+	// },
 }) 
 
 Vue.component("topsidepanel", Topsidepanel);
@@ -246,7 +246,9 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#siteown',
     vuetify: new Vuetify({
 		  theme: {
-		    dark: true,
+		    dark: {
+		    	background: '#3f51b5',
+		    }
 		    
 		  },
 		}),
