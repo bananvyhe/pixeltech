@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     vuetify: new Vuetify({
 		  theme: {
 		    dark: {
-		    	background: '#3f51b5',
+		    	background: '#3B4DAC',
 		    }
 		    
 		  },

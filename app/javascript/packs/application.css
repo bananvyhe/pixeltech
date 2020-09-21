@@ -145,23 +145,23 @@ body {
   align-content: center;
   align-items: center;
 }
-input, textarea {
+/*input, textarea {
   padding: 5px;
   border: 1px solid #999;
   border-radius: 3px;
   box-shadow: 0 0 1px 1px rgba(0,0,0,0);
   transition: .17s linear;
-}
-input:focus, textarea:focus {
+}*/
+/*input:focus, textarea:focus {
   outline: none;
   box-shadow: 0 0 1px 1px $warningLine1;
 
-}
-.field textarea, input {
+}*/
+/*.field textarea, input {
   background-color: $bones;
   font-family: 'RobotoReg';
 
-}
+}*/
 body {
   background-color:color( $spacecadet shade(0%));
   font-family: 'RobotoReg';
