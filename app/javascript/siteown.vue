@@ -2,38 +2,49 @@
   <div>
     <v-app class="vmain" >
       <v-main >
- 
         <topsidepanel ></topsidepanel>
         <div style="height: 4em;"></div>
         <div v-if="!$store.getters.role">
           <heado ></heado>
         </div>
-    <div class="basetext pay">
+        <div class="basetext pay">
 <!--       баланс: <%= @client.ballance%>  руб. -->
-      <br>
-     пополнить счет:
-<v-form v-model="valid">
-    <v-container>
-      <v-row>
-        <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="firstname"
-            :rules="nameRules"
-          
-            label="Сумма к оплате"
-            required
-          ></v-text-field>
-        </v-col>
+          <br>
+     
+          <v-form v-model="valid">
+            <v-container>
+              <h3>пополнить счет:</h3>
+              <v-row >
+                <v-col
+                class="py-0"
+                  cols="4"
+                   >
+                  <v-text-field
+                    v-model="firstname"
+                    :rules="nameRules"
+                    label="введите сумму"
+                    required
+                  ></v-text-field> 
+                </v-col>
+              </v-row>
 
- 
-
- 
-      </v-row>
-    </v-container>
-  </v-form>
+              <v-radio-group v-model="radios" class="my-0">
+                <v-radio 
+                  label="Яндекс деньгами"
+                  value="PC"
+                >
+                </v-radio>
+                <v-radio
+                  label="Банковской картой"
+                  value="AC"
+                >                
+                </v-radio>
+              </v-radio-group>
+              <v-row class="px-3">
+                <v-btn small>Оплатить</v-btn>
+              </v-row>
+            </v-container>
+          </v-form>
 <!--        <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">    
       <input type="hidden" name="receiver" value="410013909808332">
        <input type="hidden" name="label" value="<%=current_user.id %>">    
@@ -41,7 +52,7 @@
       <input type="hidden" name="targets" value="хостинг">    
       <input   name="sum" value="2" data-type="number"> руб.    -->
 
-    </div>        
+        </div>        
         <posts class="topsidepanel "></posts> 
  
       </v-main> 
@@ -54,12 +65,13 @@
     
     data: function (){
       return {
- valid: false,
-      firstname: '',
-      nameRules: [
-        v => !!v || 'необходимо ввести сумму',
-        v => isNaN(v) == false || 'допускается только ввод чисел',
-      ],
+        radios: 'AC',
+        valid: false,
+        firstname: '',
+        nameRules: [
+          v => !!v || 'необходимо ввести сумму',
+          v => isNaN(v) == false || 'допускается только ввод чисел',
+        ],
      
       }
     },

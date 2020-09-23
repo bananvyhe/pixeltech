@@ -4,13 +4,14 @@ class Api::V1::RefreshController < Api2Controller
    # skip_before_action :authenticate_user!, raise: false
   def create
  
-     puts 'create--------------'
+ 
     tokens = JWTSessions::Session.new(payload: access_payload , refresh_payload:  refresh_payload  )
     render json: tokens.login
 
   end
+  
   def access_payload
-    puts 'access_payload--------------'
+ 
     # payload here stands for refresh token payload
      user = User.find_by!(id: payload['user_id'])
     allroles = user.roles 
@@ -21,16 +22,16 @@ class Api::V1::RefreshController < Api2Controller
     { user_id: user.id, role: @roles, username: user.username}
   end
   def refresh_payload
-    puts 'refresh_payload--------------'
+ 
     # payload here stands for refresh token payload
      user = payload['user_id']
     { user_id: user}
   end
       def current_user
-        puts 'current_user--------------'
+ 
     @current_user ||= User.find(payload['user_id'])
   end
 
-
+ 
   
  end

@@ -1,6 +1,6 @@
 <template>
 	<div id="bpad"> 
-<!-- 		{{checklog}}&nbsp;{{exptime}} -->
+		<!-- {{checklog}}&nbsp;{{exptime}}&nbsp;{{this.$store.getters.token.refresh}} -->
 		<div class="overbpad">
 			<div class="bpad smalltext" v-bind:style="styleObject"> 
 				<div class="logohead">
@@ -365,7 +365,7 @@
 			    }
 	    	})
 	      .catch(function (error) {
-	          // location.reload(true);
+	      	 
 	    	}); 
 	  	},
 	  	stopTimer() {
