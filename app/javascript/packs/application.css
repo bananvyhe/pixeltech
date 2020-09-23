@@ -6,7 +6,9 @@
 body {
   margin: 0;
 }
-
+.v-application{
+  font-size: 14px;
+}
 
 @typography {
   body {

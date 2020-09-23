@@ -24,7 +24,7 @@
                     :rules="nameRules"
                     label="введите сумму"
                     required
-                  ></v-text-field> 
+                  ></v-text-field> ascasc
                 </v-col>
               </v-row>
 

@@ -149,50 +149,72 @@ Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
  import lang from 'element-ui/lib/locale/lang/ru-RU'
  import locale from 'element-ui/lib/locale'
- import 'vuetify/dist/vuetify.min.css'
+ // import 'vuetify/dist/vuetify.min.css'
  locale.use(lang)
 // import 'vuetify/dist/vuetify.min.css'
 import Vuetify, {
-	// VIcon,
-	// VSpacer,
-	// VToolbarTitle,
-	// VAppBarNavIcon,
-	// VAppBar,
-	// VMain,
-	// VApp,
-	// VAlert,
-	// VCard,
-	// VCardActions,
-	// VBtn,
-	// VListItem,
-	// VListItemContent,
-	// VListItemTitle,
-	// VListItemSubtitle,
-	// VListItemAvatar,
+	VRadio,
+	VRadioGroup,
+	VTextField,
+	VCol,
+	VRow,
+	VContainer,
+	VForm,
+	VIcon,
+	VSpacer,
+	VToolbarTitle,
+	VAppBarNavIcon,
+	VAppBar,
+	VMain,
+	VApp,
+	VAlert,
+	VCard,
+	VCardActions,
+	VBtn,
+	VListItem,
+	VListItemContent,
+	VListItemTitle,
+	VListItemSubtitle,
+	VListItemAvatar,
 } from 'vuetify/lib'
 
 
 Vue.use(Vuetify, {
-	// components: {
-	// 	VIcon,
-	// 	VSpacer,
-	// 	VToolbarTitle,
-	// 	VAppBarNavIcon,
-	// 	VAppBar,
-	// 	VMain,
-	// 	VApp,
-	// 	VAlert,
-	// 	VCard,
-	// 	VCardActions,
-	// 	VBtn,
-	// 	VListItem,
-	// 	VListItemContent,
-	// 	VListItemTitle,
-	// 	VListItemSubtitle,
-	// 	VListItemAvatar,
-	// },
+	components: {
+		VRadio,
+		VRadioGroup,
+		VTextField,
+		VCol,
+		VRow,
+		VContainer,
+		VForm,
+		VIcon,
+		VSpacer,
+		VToolbarTitle,
+		VAppBarNavIcon,
+		VAppBar,
+		VMain,
+		VApp,
+		VAlert,
+		VCard,
+		VCardActions,
+		VBtn,
+		VListItem,
+		VListItemContent,
+		VListItemTitle,
+		VListItemSubtitle,
+		VListItemAvatar,
+	},
 }) 
-
+const opts = {
+	 theme: {
+		    dark: {
+		    	background: '#3B4DAC',
+		    	
+		    }
+		    
+		  },
+}
 Vue.component("topsidepanel", Topsidepanel);
 Vue.component("heado", Head);
 Vue.component("posts", Posts);
@@ -230,12 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	 new Vue({
   	store,
     el: '#app',
-    vuetify: new Vuetify({
-		  theme: {
-		    dark: true,
-		    
-		  },
-		}),
+    vuetify: new Vuetify(opts),
     render: h => h(App) 
 	  })
 	}
@@ -244,14 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	 		 new Vue({
   	store,
     el: '#siteown',
-    vuetify: new Vuetify({
-		  theme: {
-		    dark: {
-		    	background: '#3B4DAC',
-		    }
-		    
-		  },
-		}),
+    vuetify: new Vuetify(opts),
     render: h => h(Siteown) 
 	  })
 	}
