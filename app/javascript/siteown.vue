@@ -11,7 +11,7 @@
 <!--       баланс: <%= @client.ballance%>  руб. -->
           <br>
      
-          <v-form v-model="valid">
+          <v-form v-model="valid" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
             <v-container>
               <h3>пополнить счет:</h3>
               <v-row >
@@ -19,7 +19,7 @@
                 class="py-0"
                   cols="4"
                    >
-                  <v-text-field
+                  <v-text-field name="sum" 
                     v-model="firstname"
                     :rules="nameRules"
                     label="введите сумму"
@@ -40,8 +40,12 @@
                 >                
                 </v-radio>
               </v-radio-group>
+               <input type="hidden" name="receiver" value="410013909808332">
+       <input type="hidden" name="label" value="<%=current_user.id %>">    
+      <input type="hidden" name="quickpay-form" value="donate">    
+      <input type="hidden" name="targets" value="хостинг">    
               <v-row class="px-3">
-                <v-btn small>Оплатить</v-btn>
+                <v-btn type="submit" small>Оплатить</v-btn>
               </v-row>
             </v-container>
           </v-form>
