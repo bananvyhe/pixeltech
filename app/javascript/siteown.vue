@@ -57,6 +57,7 @@
       <input   name="sum" value="2" data-type="number"> руб.    -->
 
         </div>        
+        {{ballance}}
         <posts class="topsidepanel "></posts> 
  
       </v-main> 
@@ -64,11 +65,12 @@
   </div>
 </template>
 <script>
-  
+  import axios from 'axios' 
   export default {
     
     data: function (){
       return {
+        ballance:"",
         radios: 'AC',
         valid: false,
         firstname: '',
@@ -79,6 +81,31 @@
      
       }
     },
+    mounted() {
+      this.getBallance()
+    },
+    methods: {
+      getBallance(){
+        if (this.$store.getters.role) {
+          axios({
+          method: 'get',
+          url: '/clients',
+            headers: {
+              'Authorization': 'bearer '+this.$store.getters.token.access
+            } 
+          })
+          .then((response) => {
+            console.log(response.data)
+            if (response.data){
+              this.ballance == response.data 
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });             
+        }       
+      }
+    }
      
   }
 </script>
