@@ -27,14 +27,90 @@
                   ></v-text-field> ascasc
                 </v-col>
               </v-row>
+    <v-btn
+      v-if="!chip1 && !chip2 && !chip3 && !chip4"
+      close
+      color="primary"
+      dark
+      @click="chip1 = true, chip2 = true, chip3 = true, chip4= true"
+    >
+      Reset Chips
+    </v-btn>
 
-              <v-radio-group v-model="radios" class="my-0">
-                <v-radio 
+    <v-chip
+      v-if="chip1"
+      class="ma-2"
+      close
+      @click:close="chip1 = false"
+    >
+      Closable
+    </v-chip>
+<v-chip
+      v-if="chip2"
+      class="ma-2"
+      close
+      color="primary"
+      text-color="white"
+      @click:close="chip2 = false"
+    >
+      Remove
+    </v-chip>
+
+    <v-chip
+      v-if="chip3"
+      class="ma-2"
+      close
+      color="success"
+      outlined
+      @click:close="chip3 = false"
+    >
+      Success
+    </v-chip>
+
+    <v-chip
+      v-if="chip4"
+      class="ma-2"
+      close
+      color="orange"
+      label
+      outlined
+      @click:close="chip4 = false"
+    >
+      Complete
+    </v-chip> 
+     <v-row
+    align="center"
+    justify="space-around"
+  >
+    <v-btn depressed>
+      Normal
+    </v-btn>
+    <v-btn
+      depressed
+      color="primary"
+    >
+      Primary
+    </v-btn>
+    <v-btn
+      depressed
+      color="error"
+    >
+      Error
+    </v-btn>
+    <v-btn
+      depressed
+      disabled
+    >
+      Disabled
+    </v-btn>
+  </v-row>
+              <v-radio-group v-model="radios" class="my-0" >
+                <v-radio  
                   label="Яндекс деньгами"
                   value="PC"
                 >
                 </v-radio>
-                <v-radio
+                <v-radio   
                   label="Банковской картой"
                   value="AC"
                 >                
@@ -70,6 +146,10 @@
     
     data: function (){
       return {
+        chip1: true,
+         chip2: true,
+        chip3: true,
+        chip4: true,
         ballance:"",
         radios: 'AC',
         valid: false,
@@ -97,7 +177,7 @@
           .then((response) => {
             console.log(response.data)
             if (response.data){
-              this.ballance == response.data 
+              this.ballance = response.data 
             }
           })
           .catch(function (error) {
@@ -112,7 +192,7 @@
 <style scoped>
 @import "stylesheets/_variables";
 #app{
-  background-color: var(--v-background-base);
+  /*background-color: var(--v-background-base);*/
 }
 .pay{
   padding: 0.3em 0.6em;

@@ -1,7 +1,27 @@
  $font-size-root: 14px !important;
  $icon-size: 16px !default;
  $radio-group-padding: 2px;
- // $radio-margin-right: 12px  !important;
+ 
  $label-font-size: 14px;
 
  $label-line-height: 1.2  !important;
+ 
+ // $color-pack: false;
+ // 
+//  $material-dark-elevation-colors: (
+//   '0': #000000,
+//   '1': #1E1E1E,
+//   '2': #222222,
+//   '3': #252525,
+//   '4': #FFC107,
+//   '6': #2C2C2C,
+//   '8': #2E2E2E,
+//   '12': #333333,
+//   '16': #363636,
+//   '24': #373737
+// );
+$material-dark: (
+  'background': #303030,
+ 'regular': #E0E0E0,
+);
+$color-pack: false

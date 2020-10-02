@@ -5,8 +5,8 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     @users = User.all
-    @clients = Client.all
-     render json: @clients
+    @client = User.joins(:inboxe).find_by(payload['user_id'])
+     render json: @client
   end
 
   # GET /clients/1

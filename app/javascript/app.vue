@@ -26,7 +26,8 @@
 <style scoped>
 @import "stylesheets/_variables";
 #app{
-  background-color: var(--v-background-base);
+  /*background-color: #dad;*/
+  /*background-color: var(--v-background-base) !important;*/
 }
 .vmain{
   lost-center: $lcenter;

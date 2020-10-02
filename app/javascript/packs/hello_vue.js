@@ -149,6 +149,39 @@ Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
  import lang from 'element-ui/lib/locale/lang/ru-RU'
  import locale from 'element-ui/lib/locale'
+ import colors from 'vuetify/lib/util/colors'
+
+
+ // import  VuetifyPreset  from 'vuetify/types/services/presets'
+ Vue.use(Vuetify, {
+	components: {
+		// VRadio,
+		// VRadioGroup,
+		// VTextField,
+		// VCol,
+		// VRow,
+		// VContainer,
+		// VForm,
+		// VIcon,
+		// VSpacer,
+		// VToolbarTitle,
+		// VAppBarNavIcon,
+		// VAppBar,
+		// VMain,
+		// VApp,
+		// VAlert,
+		// VCard,
+		// VCardActions,
+		// VBtn,
+		// VListItem,
+		// VListItemContent,
+		// VListItemTitle,
+		// VListItemSubtitle,
+		// VListItemAvatar,
+	},
+}) 
+
+
  // import 'vuetify/dist/vuetify.min.css'
  locale.use(lang)
 // import 'vuetify/dist/vuetify.min.css'
@@ -178,43 +211,53 @@ import Vuetify, {
 	// VListItemAvatar,
 } from 'vuetify/lib'
 
+ const opts = {
+ 
+// 			options: {
+//       customProperties: true,
+//     },
+// 	// customVariables: ['~/app/scss/variables.scss'],
+	
+// 	 theme: {
 
-Vue.use(Vuetify, {
-	components: {
-		// VRadio,
-		// VRadioGroup,
-		// VTextField,
-		// VCol,
-		// VRow,
-		// VContainer,
-		// VForm,
-		// VIcon,
-		// VSpacer,
-		// VToolbarTitle,
-		// VAppBarNavIcon,
-		// VAppBar,
-		// VMain,
-		// VApp,
-		// VAlert,
-		// VCard,
-		// VCardActions,
-		// VBtn,
-		// VListItem,
-		// VListItemContent,
-		// VListItemTitle,
-		// VListItemSubtitle,
-		// VListItemAvatar,
-	},
-}) 
-const opts = {
-	 theme: {
-		    dark: {
-		    	background: '#3B4DAC',
+// 		    dark: {
+
+ 	theme: {
+    		dark: true,
+    	 themes: {
+    	 	
+      dark: {
+      	
+ normal:'#b0bec5',
+      	surface: '#FFC107',
+      	depressed: '#FFC107',
+      	// base: '#2196F3',
+      	// default: '#FFC107',
+      	// normal: '#FFC107',
+      	 info: '#2196F3',
+      	accent: '#82B1FF',
+      	success: '#FFC107',
+      	error: '#FF5252',
+        primary: '#3f51b5',
+        secondary: '#b0bec5',
+        anchor: '#8c9eff',
+        depressed: '#FFC107',
+        warning: '#FFC107',
+      },
+    },
+  },
+      
+// 		    // 	// background: '#3B4DAC',
+		 
+
 		    	
 		    }
 		    
-		  },
-}
+ 
+		 
+// 		  },
+// }
+
 Vue.component("topsidepanel", Topsidepanel);
 Vue.component("heado", Head);
 Vue.component("posts", Posts);
@@ -247,6 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//     render: h => h(CommentV+otes) 
 	//   })
 	// } 
+
 	var app = document.getElementById("app") 
   if (app != null) {
 	 new Vue({
@@ -261,7 +305,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	 		 new Vue({
   	store,
     el: '#siteown',
-    vuetify: new Vuetify(opts),
+    vuetify: new Vuetify( 
+    
+    opts),
     render: h => h(Siteown) 
 	  })
 	}
