@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_105632) do
+ActiveRecord::Schema.define(version: 2020_09_28_170824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,6 +139,8 @@ ActiveRecord::Schema.define(version: 2020_05_28_105632) do
     t.string "currency"
     t.string "sender"
     t.string "check"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_inboxes_on_user_id"
   end
 
   create_table "item_attributes", force: :cascade do |t|
@@ -197,12 +199,6 @@ ActiveRecord::Schema.define(version: 2020_05_28_105632) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["location_id"], name: "index_recordings_on_location_id"
-  end
-
-  create_table "resources", force: :cascade do |t|
-    t.integer "rank"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "roles", force: :cascade do |t|
@@ -277,7 +273,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_105632) do
     t.float "raiting"
     t.string "v_like"
     t.string "v_views"
-    t.text "medias_row"
+    t.string "medias_row"
     t.string "wall"
     t.string "url"
     t.bigint "groupsvk_id"
@@ -307,6 +303,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_105632) do
   add_foreign_key "clients", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "gameboards", "users"
+  add_foreign_key "inboxes", "users"
   add_foreign_key "my_items", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "recordings", "locations"

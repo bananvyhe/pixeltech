@@ -2,6 +2,7 @@ class User < ApplicationRecord
   rolify
   # has_and_belongs_to_many :roles
   has_one :client, dependent: :destroy
+  has_one :inboxe, :dependent => :delete
   has_one :gameboard, :dependent => :delete
   has_many :my_items, dependent: :destroy
   has_many :appointments, dependent: :destroy
