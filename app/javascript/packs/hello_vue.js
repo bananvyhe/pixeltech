@@ -225,21 +225,17 @@ import Vuetify, {
  	theme: {
     		dark: true,
     	 themes: {
-    	 	
+
       dark: {
-      	
- normal:'#b0bec5',
-      	surface: '#FFC107',
-      	depressed: '#FFC107',
-      	// base: '#2196F3',
-      	// default: '#FFC107',
-      	// normal: '#FFC107',
+       
+ 
+ 
       	 info: '#2196F3',
       	accent: '#82B1FF',
       	success: '#FFC107',
       	error: '#FF5252',
         primary: '#3f51b5',
-        secondary: '#b0bec5',
+        secondary:'#ffb700',
         anchor: '#8c9eff',
         depressed: '#FFC107',
         warning: '#FFC107',

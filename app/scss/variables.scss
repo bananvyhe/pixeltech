@@ -5,7 +5,7 @@
  $label-font-size: 14px;
 
  $label-line-height: 1.2  !important;
- 
+
  // $color-pack: false;
  // 
 //  $material-dark-elevation-colors: (
@@ -21,7 +21,12 @@
 //   '24': #373737
 // );
 $material-dark: (
+	// 'app-bar': #373737,
+	 // 'status-bar': (
+  //     'regular': #373737,
+  //     'lights-out': #000000
+  //   ),
   'background': #303030,
- 'regular': #E0E0E0,
+ 
 );
-$color-pack: false
+ 

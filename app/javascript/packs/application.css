@@ -9,7 +9,7 @@ body {
 .v-application{
   /*font-size: 14px;*/
 }
-
+ 
 @typography {
   body {
     color: $isabelline;
