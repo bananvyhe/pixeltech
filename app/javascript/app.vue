@@ -1,12 +1,24 @@
 <template>
-  <div>
+  <div  >
     <v-app class="vmain">
+      <v-app-bar app>
+ 
+      </v-app-bar>
       <v-main >
-        <topsidepanel ></topsidepanel>
-        <div v-if="!$store.getters.role">
-          <heado ></heado>
+        <topsidepanel></topsidepanel>
+
+        <div v-if="$store.getters.role">
+          <div v-if="$store.getters.role.role == 'client'">
+            <siteown></siteown>
+          </div>
         </div>
-        <posts class="topsidepanel "></posts>app
+
+        <div v-if="!$store.getters.role">
+          <heado></heado>
+        </div>
+
+        <posts class="topsidepanel "></posts>
+
       </v-main>
     </v-app>
   </div>
@@ -20,7 +32,7 @@
         
       }
     },
-     
+
   }
 </script>
 <style scoped>
@@ -29,7 +41,8 @@
   /*background-color: #dad;*/
   /*background-color: var(--v-background-base) !important;*/
 }
-.vmain{
+.vmain, .v-app-bar{
+  /*float: left;*/
   lost-center: $lcenter;
 }
 .topsidepanel{

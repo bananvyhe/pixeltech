@@ -1,12 +1,13 @@
 <template>
-  <div>
-    <v-app class="vmain" >
-      <v-main >
-        <topsidepanel ></topsidepanel>
-        <div style="height: 4em;"></div>
-        <div v-if="!$store.getters.role">
+  <div >
+    <!-- <v-app class="vmain" > -->
+ 
+      <!-- <v-main > -->
+        <!-- <topsidepanel ></topsidepanel> -->
+        <!-- <div style="height: 4em;"></div> -->
+       <!--  <div v-if="!$store.getters.role">
           <heado ></heado>
-        </div>
+        </div> -->
         <div class="basetext pay">
 <!--       баланс: <%= @client.ballance%>  руб. -->
           <br>
@@ -136,8 +137,8 @@
         {{ballance}}
         <posts class="topsidepanel "></posts> 
  
-      </v-main> 
-    </v-app>
+      <!-- </v-main>  -->
+    <!-- </v-app> -->
   </div>
 </template>
 <script>
@@ -161,6 +162,10 @@
      
       }
     },
+     beforeCreate () {
+    document.querySelectorAll('[data-app="true"]')[0].removeAttribute('data-app')
+  },    
+     
     mounted() {
       this.getBallance()
     },
@@ -191,6 +196,7 @@
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+
 #app{
   /*background-color: var(--v-background-base);*/
 }

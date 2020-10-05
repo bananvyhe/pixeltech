@@ -257,6 +257,7 @@ import Vuetify, {
 Vue.component("topsidepanel", Topsidepanel);
 Vue.component("heado", Head);
 Vue.component("posts", Posts);
+Vue.component("siteown", Siteown);
  // const vuetify = new Vuetify({
  
  // })
