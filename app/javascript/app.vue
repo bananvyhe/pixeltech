@@ -1,7 +1,44 @@
 <template>
-  <div  >
-    <v-app class="vmain">
-      <v-app-bar app>
+  <div  class="vmain">
+    <v-app >
+      <v-app-bar app
+      dense>
+        <v-app-bar-nav-icon>
+        </v-app-bar-nav-icon>
+      <v-toolbar-title>
+        Page title
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+        <v-btn icon>
+          <v-icon>mdi-heart</v-icon>
+        </v-btn>
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>     
+      <v-menu
+        left
+        bottom
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            icon
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item
+            v-for="n in 5"
+            :key="n"
+            @click="() => {}"
+          >
+            <v-list-item-title>Option {{ n }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>         
       </v-app-bar>
       <v-main>
         
@@ -18,14 +55,15 @@
         <!-- <posts class="topsidepanel "></posts> -->
       </v-main>
       <v-footer
+
       v-bind="localAttrs"
       :padless="padless"
        >
         <v-card
           flat
-          tile
+          tiless
           width="100%"
-          class="red lighten-1 text-center"
+          class=" text-center"
         >
           <v-card-text>
             <v-btn
@@ -34,7 +72,7 @@
               class="mx-4"
               icon
             >
-              <v-icon size="24px">
+              <v-icon size="20px">
                 {{ icon }}
               </v-icon>
             </v-btn>
@@ -56,20 +94,20 @@
     
     data: function (){
       return {
-         icons: [
-        'mdi-home',
-        'mdi-email',
-        'mdi-calendar',
-        'mdi-delete',
-      ],
-      items: [
-        'default',
-        'absolute',
-        'fixed',
-      ],
-      padless: false,
-      variant: 'default',
-        
+        icons: [
+          'mdi-home',
+          'mdi-email',
+          'mdi-calendar',
+          'mdi-delete',
+        ],
+        items: [
+          'default',
+          'absolute',
+          'fixed',
+        ],
+        padless: false,
+        variant: 'default',
+          
       }
     },
     computed: {
@@ -85,11 +123,13 @@
         return attrs
       },
     },
-
   }
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+.vmain{
+  lost-center: $lcenter;
+}
 .heado{
   display: flex;
   /*overflow: visible;*/
@@ -114,7 +154,7 @@
 }
   .v-app-bar{
   /*float: left;*/
-  lost-center: $lcenter;
+  
 }
 .topsidepanel{
   margin-top: 4em;

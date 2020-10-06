@@ -20,13 +20,18 @@
 //   '16': #363636,
 //   '24': #373737
 // );
+
 $material-dark: (
-	// 'app-bar': #373737,
+	'app-bar': #313638,
 	 // 'status-bar': (
   //     'regular': #373737,
   //     'lights-out': #000000
   //   ),
   'background': #303030,
- 
+ // 'surface': #FFC107,
+ // 'bottom-navigation': #FFC107,
+ 'cards': #1f1e24,
 );
- 
+// $line-height-root: 1.5;
+// $toolbar-btn-icon-size: 24px;
+$card-actions-padding: 8px !important,

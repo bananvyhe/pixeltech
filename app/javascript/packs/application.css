@@ -12,7 +12,9 @@ body {
 .v-application{
   /*font-size: 14px;*/
 }
- 
+.footer-color{
+  background-color: $str2;
+}
 @typography {
   body {
     color: $isabelline;
