@@ -71,7 +71,7 @@
             <v-btn
               v-for="icon in icons"
               :key="icon"
-              class="mx-4"
+              class="mx-3"
               icon
             >
               <v-icon size="20px">

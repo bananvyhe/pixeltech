@@ -1,11 +1,11 @@
  $font-size-root: 14px !important;
- $icon-size: 16px !default;
+ $icon-size: 20px !important;
  $radio-group-padding: 2px;
  
  $label-font-size: 14px;
 
- $label-line-height: 1.2  !important;
-
+ $label-line-height: 1.2 !important;
+$card-subtitle-padding: 9px !important;
  // $color-pack: false;
  // 
 //  $material-dark-elevation-colors: (
@@ -18,11 +18,11 @@
 //   '8': #2E2E2E,
 //   '12': #333333,
 //   '16': #363636,
-//   '24': #373737
+//ё   '24': #373737
 // );
 
 $material-dark: (
-	'app-bar': #313638,
+	'app-bar': #495566,
 	 // 'status-bar': (
   //     'regular': #373737,
   //     'lights-out': #000000
@@ -30,8 +30,10 @@ $material-dark: (
   'background': #303030,
  // 'surface': #FFC107,
  // 'bottom-navigation': #FFC107,
- 'cards': #1f1e24,
+ 'cards':  #C2AE7F,
 );
 // $line-height-root: 1.5;
 // $toolbar-btn-icon-size: 24px;
-$card-actions-padding: 8px !important,
+$card-actions-padding: 8px !important;
+$footer-border-radius: 3px;
+$footer-padding:0px 0px;
