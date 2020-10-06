@@ -2,6 +2,7 @@
   <div  class="vmain">
     <v-app >
       <v-app-bar app
+      class="appbar"
       dense>
         <v-app-bar-nav-icon>
         </v-app-bar-nav-icon>
@@ -55,7 +56,8 @@
         <!-- <posts class="topsidepanel "></posts> -->
       </v-main>
       <v-footer
-
+      width="100%"
+      class="appbar"
       v-bind="localAttrs"
       :padless="padless"
        >
@@ -127,8 +129,11 @@
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-.vmain{
+.appbar{
   lost-center: $lcenter;
+}
+.vmain{
+  /*lost-center: $lcenter;*/
 }
 .heado{
   display: flex;
@@ -136,6 +141,7 @@
   align-items: justify;
   justify-content: center;
   height: 100%;
+
   /*background-color: #dad;*/
 }
 
@@ -148,7 +154,7 @@
   position: relative;
  height: 100%;
 }
-#app{
+.app{
   /*background-color: #dad;*/
   /*background-color: var(--v-background-base) !important;*/
 }

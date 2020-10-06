@@ -283,8 +283,8 @@ export default {
 }
 .bgan { 
   /*height: 100%;*/
-  display: flex;
-  align-items: stretch;
+  /*display: flex;*/
+  /*align-items: stretch;*/
   /*opacity: 0.20;*/
   background-position: 50% 50%;
   background-repeat: no-repeat;
