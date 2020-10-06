@@ -1,53 +1,25 @@
-<!-- :class="{ bgclass: activatorclass }" -->
 <template>
-	<div class="firstpagebg"  :style="{'background-image': 'url('+require('./images/96.png')+'?id='+Math.random()+')'}" >
-
  
+    <div class="firstpagebg " :style="{'background-image': 'url('+require('./images/96.png')+'?id='+Math.random()+')'}" >
+    <div :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan scheme " :class="{ bgclass: activatorclass }">
 
-    
-    <div  id="bg " :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan " :class="{ bgclass: activatorclass }">
-      <div class="formsZone">
-        <div v-if="$store.getters.token != null" >
-        <!--   <el-button type="primary" plain size="small"   @click="nulltoken">Выйти</el-button> -->
-        </div>
-      </div>
-    </div>
- <!-- <v-card
-    class="mx-auto"
-    max-width="344"
-    outlined
-  >
-    <v-list-item three-line>
-      <v-list-item-content>
-        <div class="overline mb-4">OVERLINE</div>
-        <v-list-item-title class="headline mb-1">Headline 5</v-list-item-title>
-        <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-      </v-list-item-content>
+   
 
-      <v-list-item-avatar
-        tile
-        size="80"
-        color="grey"
-      ></v-list-item-avatar>
-    </v-list-item>
 
-    <v-card-actions>
-      <v-btn text>Button</v-btn>
-      <v-btn text>Button</v-btn>
-    </v-card-actions>
-  </v-card> -->
-    <div class="head">	
-    	<div class="contain ">
-    		<div class="screen">  
-      		<div class="titlepix largetext" :class="{flickerin1: activatorclass}">
-      			<vue-typer 
+
+    </div> 
+ <div class="headm" >  
+      <div class="contain ">
+        <div class="screen ">  
+          <div class="titlepix largetext" :class="{flickerin1: activatorclass}">
+            <vue-typer 
               caret-animation='smooth'
-      				:text='[" Пикселтех","Pixeltech.ru"]'
-      				:repeat='0' 
-      				:pre-type-delay='1600'>
-      			</vue-typer> 
-      		</div>
-    		</div>  
+              :text='[" Пикселтех","Pixeltech.ru"]'
+              :repeat='0' 
+              :pre-type-delay='1600'>
+            </vue-typer> 
+          </div>
+        </div>  
         <div class="offsubj">
           <div class="oversubj">
             <p class="subj basetext">{{subj}}
@@ -55,13 +27,13 @@
           </div>
         </div>
        
-      	<div class="borcon">
-      		<div  class="cont">
-  					<div class="plashka tada">
+        <div class="borcon">
+          <div  class="cont">
+            <div class="plashka tada">
               <div class="overpla"><p>{{cont}}</p>
               </div>
             </div>
-  				</div> 
+          </div> 
           <div class="formsZone">
             <div v-if="$store.getters.token == null" >
               <transition name="fade" appear>
@@ -69,11 +41,13 @@
               </transition> 
             </div>
           </div>
-      	</div>
+        </div>
       </div>
     </div>
     
+
 	</div>
+ 
 </template>
 
 <script>
@@ -239,49 +213,41 @@ export default {
 <style scoped>
 @import "stylesheets/_variables";
 @import "stylesheets/_extends";
-.test {
-  background: #dad;
+.upper{  
+  lost-utility: edit;
+  position: relative;
+
+  /*background-color: #dad;*/
+  /*height: 100%;*/
+
 }
-/*.bganjs {
-  background: url('./images/scheme.svg?id="+Math.random()');
-}*/
-.bganjs1 {
-  background: url('./images/bg.png');
-}
-.formsZone{
-   
-}
-/*.reg{
-  margin-bottom: 0.0em;
-  padding: 0.40em 0em 0 0em;
-}*/
-/*.log{
-   padding: 0.5em 0.5em 0 0em;
-}*/
-.firstpagebg { 
-  height: 100vh; display: flex;align-items: center;
+.firstpagebg {   
+  width: 100%;
+  display: flex;
+  align-content: center;
+  position: relative;
+  /*background-color: #dad;*/
+/*  height: 100vh; */
+  /*height: 100%;*/
+ 
   background-repeat: no-repeat;
   background-position: center; 
  
 }
-.login { 
-  background: #dad;
-  height: 100px;
-}
-.head { 
-
+.headm { 
+  /*background-color: #dad;
+  /*height: 100%;*/
   position: relative;
-  
-  /*lost-utility: edit;*/
   lost-center: 20em;
-  /*height: 100vh;*/
-
   display: flex;
-  align-items: stretch;
+  align-self: center;
+/* 
+  display: flex;
+  align-items: stretch;*/
   @media (--only-xsmall-screen) {
     .screen { margin: 0 ;} 
      h2 {
-      adjust-font-size: fs medium;
+      /*adjust-font-size: fs medium;*/
      }
   }
   @media (--only-small-screen) {
@@ -290,7 +256,7 @@ export default {
   @media (--only-medium-screen) {
  
     h1 {
-      margin-top: spacing(0);
+      /*margin-top: spacing(0);*/
     }
   }
   @media (--only-1600more-screen) {
@@ -301,16 +267,31 @@ export default {
     }
   }
 }
+.contain {
+/*  display: flex;
+  justify-content: center;*/
+  /*height: 100%;*/
+  margin-bottom: 0%;
+  width: 100%;
+  padding-left: 0.6em; 
+  padding-right: 0.6em; 
+  /*overflow: hidden;*/
+  position: relative;
+}
+.scheme{
+  height: 100%;
+}
 .bgan { 
-	/*opacity: 0.20;*/
-	
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
- 
-	background-size: 130% auto;
-	position: absolute;
-	height: 100vh;
-	width: 100%;
+  /*height: 100%;*/
+  display: flex;
+  align-items: stretch;
+  /*opacity: 0.20;*/
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 130% auto;
+  position: absolute;
+  /*height: 100vh;*/
+  width: 100%;
   @media (--only-1600more-screen) {
     background-size: 75% auto;
     background-position: 49% calc(50% + 25px);
@@ -319,15 +300,56 @@ export default {
     background-size: 1350px auto;
     background-position: 52% calc(50% + 25px);
   }
-	@media (--only-small-screen) {
- 		background-size: 200% auto;
+  @media (--only-small-screen) {
+    background-size: 200% auto;
     background-position: 51% calc(50% + 25px);
   }
   @media (--only-xsmall-screen) {
- 		background-size: 300% auto;
- 		background-position: 50% calc(50% + 25px);
+    background-size: 300% auto;
+    background-position: 50% calc(50% + 25px);
   }
 }
+.screen { 
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.titlepix { 
+  width: 6.3em;
+  font-size: 1.7em;
+  text-align: left;
+  line-height: 1.2em;
+  padding: 0.1em 0.4em;
+  vertical-align: top;
+}
+
+.test {
+  background: #dad;
+}
+/*.bganjs {
+  background: url('./images/scheme.svg?id="+Math.random()');
+}*/
+.bganjs1 {
+  background: url('./images/bg.png');
+}
+.formsZone{
+  display: flex;
+  align-items: stretch;
+}
+/*.reg{
+  margin-bottom: 0.0em;
+  padding: 0.40em 0em 0 0em;
+}*/
+/*.log{
+   padding: 0.5em 0.5em 0 0em;
+}*/
+
+.login { 
+  background: #dad;
+  height: 100px;
+}
+
+
 .bgclass  {
   background-image: radial-gradient(ellipse 30% 70% at 50% top,rgba(255, 255, 255, 0.99) 0%,rgba(142, 212, 241, 0) 100.1%);
 }
@@ -337,41 +359,6 @@ export default {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fcffffff",endColorstr="#008ed4f1",GradientType=0);
   }
 }
-
-.contain {
-  margin-bottom: 0%;
-	width: 100%;
-	padding-left: 0.6em; 
-	padding-right: 0.6em; 
-	/*overflow: hidden;*/
-	position: relative;
-}
-.screen { 
- /* color: $isabelline;*/
-  /* color: color($warningLine shade(80%));*/
-	/*margin: 0 1em 0 1em;*/
-	/*border-top-left-radius: 0.3em;
-	border-top-right-radius: 0.3em;
-	border-bottom-left-radius: 0.3em;
-	border-bottom-right-radius: 0.3em;
-	overflow: hidden;
-	@extend %screenbg;
-	padding: 0em 1em 0.2em 0em;*/
-	display: flex;
-	justify-content: center;
-}
-
-.titlepix { 
-
-  width: 6.3em;
-	font-size: 1.7em;
-	text-align: left;
-	line-height: 1.2em;
-	padding: 0.1em 0.4em;
-	vertical-align: top;
-	 
-}
-
 .oversubj {z-index: 1000;
   position: relative;
 
@@ -450,7 +437,6 @@ export default {
 }
 .tada {
   animation: tada 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
- 
 }
 
 @-webkit-keyframes tada {
@@ -518,8 +504,6 @@ export default {
     transform: scale3d(1, 1, 1);
   }
 }
-
-
 
 
 .shake-bottom {
