@@ -2,9 +2,9 @@
 	<div class="log"> 
 		<!-- {{this.$store.getters.token.access}}<br>{{this.$store.getters.token.refresh}} -->
 		<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
-      <el-button type="primary" plain size="mini" @click="handler">
+      <v-btn type="primary" @click="handler">
       	Выйти
-      </el-button>
+      </v-btn>
 							     <!--  <el-button type="primary" plain size="mini"   @click="moneypush">
 							      	плюсануть
 							      </el-button>
@@ -13,13 +13,85 @@
 							      </el-button> -->
     </div>
     <div v-else>
-      <el-button type="primary" plain size="mini"  @click="dialogFormVisible = true">
+<!--       <v-btn color="primary" @click="dialogFormVisible = true" >
         Войти
-      </el-button>
-    </div>
-		<el-dialog title="Войти:" class="pos" top="18vh" :width="calcul" :visible.sync="dialogFormVisible" :lock-scroll="false">
+      </v-btn> -->
+    
+		<v-dialog :width="calcul" v-model="dialogFormVisible" >
+			<template v-slot:activator="{ on, attrs }">
+        <v-btn
+          v-bind="attrs"
+          v-on="on"
+        >
+          Click Me
+        </v-btn>
+      </template>
+            <v-card>
+        <v-card-title class="headline grey lighten-2">
+          Вход
+        </v-card-title>
+<v-card-actions>
+	<v-form v-model="valid">
+    <v-container>
+      <v-row>
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field
+            v-model="firstname"
+            :rules="nameRules"
+            :counter="10"
+            label="First name"
+            required
+          ></v-text-field>
+        </v-col>
 
-	  	<el-form :model="form" :rules="rules" ref="form">	 
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field
+            v-model="lastname"
+            :rules="nameRules"
+            :counter="10"
+            label="Last name"
+            required
+          ></v-text-field>
+        </v-col>
+
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field
+            v-model="email"
+            :rules="emailRules"
+            label="E-mail"
+            required
+          ></v-text-field>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-form>
+<!--         <v-card-text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </v-card-text> -->
+</v-card-actions>
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="dialog = false"
+          >
+            I accept
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+<!-- 	  	<el-form :model="form" :rules="rules" ref="form">	 
 		  	<el-form-item 
 		    	prop="email" 
 		    	size="medium"
@@ -47,8 +119,8 @@
 				 
 		 	</el-form>
 		 	<div slot="footer" >
-      </div>
-		</el-dialog>
+      </div> -->
+		</v-dialog></div>
 	</div>
 </template>
 

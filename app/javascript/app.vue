@@ -10,6 +10,12 @@
         Page title
       </v-toolbar-title>
       <v-spacer></v-spacer>
+      <div class="wrap" v-if="$store.getters.token == null" > 
+            <reg></reg>
+          </div>
+          <div class="wrap">
+          <log class="wrap"></log>
+          </div>
         <v-btn icon>
           <v-icon>mdi-heart</v-icon>
         </v-btn>
