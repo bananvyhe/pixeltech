@@ -14,7 +14,7 @@
             <reg></reg>
           </div>
           <div class="wrap">
-          <log class="wrap"></log>
+          <log ></log>
           </div>
         <v-btn icon>
           <v-icon>mdi-heart</v-icon>
