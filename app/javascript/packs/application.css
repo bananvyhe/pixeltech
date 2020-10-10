@@ -330,7 +330,7 @@ html {
   border-bottom: solid 1px;
   cursor: pointer;
 }
-.el-tabs__item {
+/*.el-tabs__item {
   color: #2b5523;
   padding: 0 0.5em;
   height: 2.4em;
@@ -558,7 +558,7 @@ html {
 }
 .el-transfer__buttons{
   padding: 0 10px;
-}
+}*/
 
 .formzone {
   display: flex;

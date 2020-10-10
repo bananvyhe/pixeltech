@@ -13,68 +13,51 @@
           v-bind="attrs"
           v-on="on"
         	>
-          Click Me
+          Войти
         	</v-btn>
       	</template>
         <v-card>
-        <v-card-title class="headline grey darken-2">
-          Вход
-        </v-card-title>
-<v-card-actions>
-	<v-form v-model="valid">
-    <v-container>
-      <v-row>
-        <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="firstname"
-            :rules="nameRules"
-            :counter="10"
-            label="First name"
-            required
-          ></v-text-field>
-        </v-col>
-
-        <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="lastname"
-            :rules="nameRules"
-            :counter="10"
-            label="Last name"
-            required
-          ></v-text-field>
-        </v-col>
-
-        <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            label="E-mail"
-            required
-          ></v-text-field>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-form>
-</v-card-actions>
+	        <v-card-title class="headline grey darken-2">
+	          Вход
+	        </v-card-title>
+					<v-card-actions>
+						<v-form v-model="valid">
+					    <v-container>
+					      <v-row>
+        					<v-col
+				          cols="12"
+				          md="4">
+				          	<v-text-field
+				            v-model="form.email"
+				            :rules="emailRules"
+				            label="E-mail">
+				          	</v-text-field>
+				        	</v-col>
+				        	<v-col
+				          cols="12"
+				          md="4">
+				          	<v-text-field
+				          	:append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+				          	type="password"
+				          	@click:append="show1 = !show1"
+				            v-model="form.password"
+				            :rules="passRules"
+				            label="Пароль">
+				          </v-text-field>
+				        </v-col>        
+				      </v-row>
+				    </v-container>
+				  </v-form>
+				</v-card-actions>
         <v-divider></v-divider>
-
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
             color="primary"
             text
-            @click="dialog = false"
+            @click="handle" 
           >
-            I accept
+            Подтвердить
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -136,17 +119,20 @@
         }
       };
 	    return {
+	    show1: false,
       valid: false,
       firstname: '',
       lastname: '',
-      nameRules: [
-        v => !!v || 'Name is required',
-        v => v.length <= 10 || 'Name must be less than 10 characters',
+      passRules: [
+        v => !!v || 'нужно ввести пароль',
+        v => v.length >= 5 || 'Пароль должен содержать более 6 символов',
+                    // v => (v || '').indexOf(' ') < 0 ||  'Пробелов не должно быть'
       ],
       email: '',
       emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid',
+        v => !!v || 'Обязательно к заполнению',
+        v => /.+@.+/.test(v) || 'E-mail не валиден ',
+         // v => (v || '').indexOf(' ') < 0 ||  'Пробелов не должно быть'
       ],	    	
 	    	checked: false,
 	    	// token: state,

@@ -105,48 +105,48 @@ Vue.use(VueChatScroll)
 import Vuex from 'vuex';
 
 Vue.use(Vuex);
-import {DatePicker, TimePicker, Tag, Divider, TabPane, Tabs, Container, Main, InputNumber, Collapse, CollapseItem, ButtonGroup, Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
-// Vue.prototype.$message = Message; 
+// import {DatePicker, TimePicker, Tag, Divider, TabPane, Tabs, Container, Main, InputNumber, Collapse, CollapseItem, ButtonGroup, Tooltip, Alert, Badge, RadioGroup, Radio, Transfer, Card, Slider, Icon, Popover, Notification, Progress, Button, Switch, Dialog, Select, Form, FormItem, Input, Option, Message, Checkbox, Carousel, CarouselItem, Loading} from 'element-ui';
+// // Vue.prototype.$message = Message; 
 
-Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }; 
-// Vue.use(Message);
-Vue.use(DatePicker);
-Vue.use(TimePicker);
-Vue.use(Tag);
-Vue.use(Divider);
-Vue.use(TabPane);
-Vue.use(Tabs);
-Vue.use(Main);
-Vue.use(Container);
-Vue.use(InputNumber);
-Vue.use(Collapse);
-Vue.use(CollapseItem);
-Vue.use(ButtonGroup);
-Vue.use(Tooltip);
-Vue.use(Alert);
-Vue.use(Badge);
-Vue.use(RadioGroup);
-Vue.use(Radio);
-Vue.use(Transfer);
-Vue.use(Card);
-Vue.use(Slider)
-Vue.use(Icon)
-Vue.use(Popover)
-Vue.use(Progress) 
-Vue.use(Button) 
-Vue.use(Dialog)  
-Vue.use(Form)  
-Vue.use(FormItem)  
-Vue.use(Input)  
-Vue.use(Select)
-Vue.use(Option)
-Vue.use(Checkbox)
-Vue.use(Switch)
-Vue.use(Carousel)
-Vue.use(CarouselItem)
-Vue.use(Loading.directive);
-Vue.prototype.$notify = Notification;
-Vue.prototype.$message = Message;
+// Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }; 
+// // Vue.use(Message);
+// Vue.use(DatePicker);
+// Vue.use(TimePicker);
+// Vue.use(Tag);
+// Vue.use(Divider);
+// Vue.use(TabPane);
+// Vue.use(Tabs);
+// Vue.use(Main);
+// Vue.use(Container);
+// Vue.use(InputNumber);
+// Vue.use(Collapse);
+// Vue.use(CollapseItem);
+// Vue.use(ButtonGroup);
+// Vue.use(Tooltip);
+// Vue.use(Alert);
+// Vue.use(Badge);
+// Vue.use(RadioGroup);
+// Vue.use(Radio);
+// Vue.use(Transfer);
+// Vue.use(Card);
+// Vue.use(Slider)
+// Vue.use(Icon)
+// Vue.use(Popover)
+// Vue.use(Progress) 
+// Vue.use(Button) 
+// Vue.use(Dialog)  
+// Vue.use(Form)  
+// Vue.use(FormItem)  
+// Vue.use(Input)  
+// Vue.use(Select)
+// Vue.use(Option)
+// Vue.use(Checkbox)
+// Vue.use(Switch)
+// Vue.use(Carousel)
+// Vue.use(CarouselItem)
+// Vue.use(Loading.directive);
+// Vue.prototype.$notify = Notification;
+// Vue.prototype.$message = Message;
  import lang from 'element-ui/lib/locale/lang/ru-RU'
  import locale from 'element-ui/lib/locale'
  import colors from 'vuetify/lib/util/colors'
