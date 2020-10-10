@@ -1,9 +1,9 @@
 <template>
 	<div class="reg">
-		<el-button type="primary" plain size="mini"  @click="dialogFormVisible = true">Регистрация</el-button>
-		<el-dialog title="Создать аккаунт:" top="26vh" v-bind:width="screenwidth.value > '350' ? '26'+'em' : '90' +'%'" :visible.sync="dialogFormVisible" :lock-scroll="false">
+		<v-btn type="primary"  @click="dialogFormVisible = true">Регистрация</v-btn>
+		<v-dialog v-bind:width="screenwidth.value > '350' ? '26'+'em' : '90' +'%'" :visible.sync="dialogFormVisible" >
 			<!-- <h1 style="marginTop: -0.2em;">Создать аккаунт:</h1> -->
-	  	<el-form :model="form" :rules="rules" ref="form"> 
+<!-- 	  	<el-form :model="form" :rules="rules" ref="form"> 
 	    	<el-form-item 
 	    	prop="email" 
 	    	size="medium" 
@@ -20,15 +20,7 @@
 	    	<el-form-item  prop="username" size="medium" label="Никнейм:">
 	      	<el-input v-model="form.username" auto-complete="off"></el-input>
 	    	</el-form-item>
-<!-- 			    <el-form-item size="mini" label="Пароль еще раз:" :label-width="formLabelWidth">
-	      <el-input v-model="form.password" auto-complete="off"></el-input>
-	    </el-form-item> -->
-	   <!--  <el-form-item label="Zones" :label-width="formLabelWidth">
-	      <el-select v-model="form.region" placeholder="Please select a zone">
-	        <el-option label="Zone No.1" value="shanghai"></el-option>
-	        <el-option label="Zone No.2" value="beijing"></el-option>
-	      </el-select>
-	    </el-form-item> -->
+ 
 		    <el-form-item size="medium">
 			 		<el-button  @click="dialogFormVisible = false">Отмена</el-button>
 				  <el-button   type="primary" @click="handle" >Подтвердить</el-button>
@@ -36,8 +28,8 @@
 	 		</el-form>
   		<div slot="footer" class="footpostshow basetext font3">
   			 
-  		</div>						 		
-		</el-dialog>		 
+  		</div>		 -->				 		
+		</v-dialog>		 
 	</div>
 </template>
 

@@ -5,28 +5,18 @@
       <v-btn type="primary" @click="handler">
       	Выйти
       </v-btn>
-							     <!--  <el-button type="primary" plain size="mini"   @click="moneypush">
-							      	плюсануть
-							      </el-button>
-							      <el-button type="primary" plain size="mini"   @click="moneymin">
-							      	минуснуть
-							      </el-button> -->
     </div>
     <div v-else>
-<!--       <v-btn color="primary" @click="dialogFormVisible = true" >
-        Войти
-      </v-btn> -->
-    
-		<v-dialog :width="calcul" v-model="dialogFormVisible" >
-			<template v-slot:activator="{ on, attrs }">
-        <v-btn
+			<v-dialog :width="calcul" v-model="dialogFormVisible" >
+				<template v-slot:activator="{ on, attrs }">
+        	<v-btn
           v-bind="attrs"
           v-on="on"
-        >
+        	>
           Click Me
-        </v-btn>
-      </template>
-            <v-card>
+        	</v-btn>
+      	</template>
+        <v-card>
         <v-card-title class="headline grey darken-2">
           Вход
         </v-card-title>
@@ -74,9 +64,6 @@
       </v-row>
     </v-container>
   </v-form>
-<!--         <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </v-card-text> -->
 </v-card-actions>
         <v-divider></v-divider>
 
@@ -137,6 +124,7 @@
 	export default {
 		data() {
 
+
 			 var validatePass = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('Введите пароль'));
@@ -148,6 +136,18 @@
         }
       };
 	    return {
+      valid: false,
+      firstname: '',
+      lastname: '',
+      nameRules: [
+        v => !!v || 'Name is required',
+        v => v.length <= 10 || 'Name must be less than 10 characters',
+      ],
+      email: '',
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+/.test(v) || 'E-mail must be valid',
+      ],	    	
 	    	checked: false,
 	    	// token: state,
 	    	error: '',
