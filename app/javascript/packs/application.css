@@ -2,9 +2,18 @@
 @import "../stylesheets/_typography";
 
 @import "../stylesheets/_extends";
+
+input:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 50px $cards inset; /* можно изменить на любой вариант цвета */
+  -webkit-text-fill-color: #333;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 50px #393e41 inset;
+  -webkit-text-fill-color: $str4;
+}
+
 #siteown{
   top: 0;
-
 }
 body {
   margin: 0;

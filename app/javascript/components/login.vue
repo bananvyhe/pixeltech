@@ -30,6 +30,7 @@
 				          	<v-text-field
 				            v-model="form.email"
 				            :rules="emailRules"
+				            type="text"
 				            label="E-mail">
 				          	</v-text-field>
 				        	</v-col>
@@ -37,8 +38,8 @@
 				          cols="12"
 				          md="4">
 				          	<v-text-field
-				          	:append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-				          	type="password"
+					          type="password"
+					          name="input-10-1"
 				          	@click:append="show1 = !show1"
 				            v-model="form.password"
 				            :rules="passRules"
@@ -55,8 +56,7 @@
           <v-btn
             color="primary"
             text
-            @click="handle" 
-          >
+            @click="handle">
             Подтвердить
           </v-btn>
         </v-card-actions>

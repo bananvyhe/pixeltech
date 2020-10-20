@@ -1,4 +1,5 @@
 {
+  "browserslist": "last 2 versions",
   "name": "pixeltech",
   "private": true,
   "dependencies": {
