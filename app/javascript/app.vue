@@ -73,7 +73,7 @@
           width="100%"
           class=" text-center"
         >
-          <v-card-text>
+<!--           <v-card-text>
             <v-btn
               v-for="icon in icons"
               :key="icon"
@@ -86,7 +86,7 @@
             </v-btn>
           </v-card-text>
 
-          <v-divider></v-divider>
+          <v-divider></v-divider> -->
 
           <v-card-text class="white--text">
             {{ new Date().getFullYear() }} — <strong>Pixeltech</strong>

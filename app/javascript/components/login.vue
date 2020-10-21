@@ -49,6 +49,10 @@
 				          </v-text-field>
 				        </v-col>        
 				      </v-row>
+				      <v-switch
+			      		v-model="switch1"
+			      		:label="`${switch1 == false ? 'короткая сессия':'запомнить'}`">
+			      	</v-switch>
 				    </v-container>
 				  </v-form>
 				</v-card-actions>
@@ -121,6 +125,7 @@
         }
       };
 	    return {
+	    switch1: false,	
 	    show1: false,
       valid: false,
       firstname: '',
