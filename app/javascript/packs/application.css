@@ -11,16 +11,44 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 50px #393e41 inset;
   -webkit-text-fill-color: $str4;
 }
+html {
+  overflow-y: auto !important;
+  scrollbar-face-color: #646464;
+  scrollbar-base-color: #646464;
+  scrollbar-3dlight-color: #646464;
+  scrollbar-highlight-color: #646464;
+  scrollbar-track-color: #222;
+  scrollbar-arrow-color: #222;
+  scrollbar-shadow-color: #646464;
+  scrollbar-dark-shadow-color: #646464;
+}
 
+::-webkit-scrollbar { width: 8px; height: 3px;}
+::-webkit-scrollbar-button {  background-color: #666; }
+::-webkit-scrollbar-track {  background-color: #646464;}
+::-webkit-scrollbar-track-piece { background-color: #222;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: #646464;}
+::-webkit-resizer { background-color: #666;}
+body {
+ /* background-color:color( $spacecadet shade(0%));*/
+  font-family: 'RobotoReg';
+ 
+}
+.opensans {
+  font-family: 'OpenSans';
+}
+.aprior {
+  font-family: 'aprior';
+}
+.font3 {
+  font-family: 'elemend';
+}
 #siteown{
   top: 0;
 }
-body {
-  margin: 0;
-}
-.v-application{
-  /*font-size: 14px;*/
-}
+ 
+ 
 .footer-color{
   background-color: $str2;
 }
@@ -132,10 +160,7 @@ body {
 .emoji-picker .emojis span:hover {
   cursor: pointer;
 }
-
-#topsidepanel {
-
-}
+ 
 .loa{
   color: $str5;
 
@@ -178,19 +203,7 @@ body {
   font-family: 'RobotoReg';
 
 }*/
-body {
-  background-color:color( $spacecadet shade(0%));
-  font-family: 'RobotoReg';
-}
-.opensans {
-  font-family: 'OpenSans';
-}
-.aprior {
-  font-family: 'aprior';
-}
-.font3 {
-  font-family: 'elemend';
-}
+
 .plashka2 {
   font-family: 'RobotoReg';
 }
@@ -198,25 +211,7 @@ body {
   font-family: 'aprior';
   border-bottom: 1px solid color( $str5  shade(60%)) !important;
 }
-html {
-  overflow-y: scroll;
-  scrollbar-face-color: #646464;
-  scrollbar-base-color: #646464;
-  scrollbar-3dlight-color: #646464;
-  scrollbar-highlight-color: #646464;
-  scrollbar-track-color: #222;
-  scrollbar-arrow-color: #222;
-  scrollbar-shadow-color: #646464;
-  scrollbar-dark-shadow-color: #646464;
-}
 
-::-webkit-scrollbar { width: 8px; height: 3px;}
-::-webkit-scrollbar-button {  background-color: #666; }
-::-webkit-scrollbar-track {  background-color: #646464;}
-::-webkit-scrollbar-track-piece { background-color: #222;}
-::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
-::-webkit-scrollbar-corner { background-color: #646464;}
-::-webkit-resizer { background-color: #666;}
  
 #comment_body {
   background-color: color( $HeadBackColor  shade(46%));
@@ -331,9 +326,7 @@ html {
   height: 1.2em;
   @extend %roundbgstrw;
 }
-.railsblockhide {
-
-}
+ 
 .deleteAction {
   color: blue;
   border-bottom: solid 1px;
