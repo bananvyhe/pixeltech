@@ -24,31 +24,26 @@
       </v-btn>     
       <v-menu
         left
-        bottom
-      >
+        bottom>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             icon
             v-bind="attrs"
-            v-on="on"
-          >
+            v-on="on">
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
         </template>
-
         <v-list>
           <v-list-item
             v-for="n in 5"
             :key="n"
-            @click="() => {}"
-          >
+            @click="() => {}">
             <v-list-item-title>Option {{ n }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>         
       </v-app-bar>
       <v-main>
-        
         <div v-if="!$store.getters.role"  class="heado">
           <heado></heado>
         </div>
@@ -58,21 +53,18 @@
             <siteown></siteown>
           </div>
         </div>
-        
         <!-- <posts class="topsidepanel "></posts> -->
       </v-main>
       <v-footer
       width="100%"
       class="appbar"
       v-bind="localAttrs"
-      :padless="padless"
-       >
+      :padless="padless">
         <v-card
           flat
           tiless
           width="100%"
-          class=" text-center"
-        >
+          class=" text-center">
 <!--           <v-card-text>
             <v-btn
               v-for="icon in icons"

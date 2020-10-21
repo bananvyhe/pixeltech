@@ -2,7 +2,7 @@
 	<div class="log"> 
 		<!-- {{this.$store.getters.token.access}}<br>{{this.$store.getters.token.refresh}} -->
 		<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
-      <v-btn type="primary" @click="handler">
+      <v-btn type="primary" @click="handler" class="ma-2">
       	Выйти
       </v-btn>
     </div>
@@ -12,6 +12,7 @@
         	<v-btn
           v-bind="attrs"
           v-on="on"
+          class="ma-2"
         	>
           Войти
         	</v-btn>
@@ -47,11 +48,12 @@
 				            :rules="passRules"
 				            label="Пароль">
 				          </v-text-field>
-				        </v-col>        
+				        </v-col> 
 				      </v-row>
+<!-- 				        			      <div class="forgetPassword"><a href="/users/password/new">забыли пароль?</a></div> -->
 				      <v-switch
-			      		v-model="switch1"
-			      		:label="`${switch1 == false ? 'короткая сессия':'запомнить'}`">
+			      		v-model="checked"
+			      		:label="`${checked == false ? 'короткая сессия':'запомнить'}`">
 			      	</v-switch>
 				    </v-container>
 				  </v-form>
@@ -125,7 +127,6 @@
         }
       };
 	    return {
-	    switch1: false,	
 	    show1: false,
       valid: false,
       firstname: '',
@@ -372,12 +373,12 @@
 	padding-top: 2em;
 }
 .forgetPassword{
-	padding: 0.0em 0em;
+	/*padding: 0.0em 0em;*/
 /*	display: flex; 
 	justify-content: flex-end;*/
 
-	position: absolute;
-	right: 0;
+	/*position: absolute;*/
+	float: right;
 }
 .el-input--mini {
 	width: 16em;
