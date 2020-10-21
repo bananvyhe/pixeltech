@@ -1,7 +1,23 @@
 <template>
 	<div class="reg">
-		<v-btn type="primary"  @click="dialogFormVisible = true">Регистрация</v-btn>
-		<v-dialog v-bind:width="screenwidth.value > '350' ? '26'+'em' : '90' +'%'" :visible.sync="dialogFormVisible" >
+		<v-dialog :width="calcul" v-model="dialogFormVisible" >
+			<template v-slot:activator="{ on, attrs }">
+				<v-btn type="primary"  @click="dialogFormVisible = true">Регистрация</v-btn>
+			</template>
+			<v-card>
+        <v-card-title class="headline grey darken-2">
+          Регистрация
+        </v-card-title>
+				<v-card-actions>	
+					<v-form 
+					v-model="valid"
+					class="mb-0">
+					  <v-container>
+					  	
+					  </v-container>
+					</v-form>			
+				</v-card-actions>
+			</v-card>		
 			<!-- <h1 style="marginTop: -0.2em;">Создать аккаунт:</h1> -->
 <!-- 	  	<el-form :model="form" :rules="rules" ref="form"> 
 	    	<el-form-item 
@@ -88,6 +104,7 @@
 	      },100 );  
       };
 	    return {
+	    	valid: false,
 	    	responseEmail: false,
 	    	responseName: false,
 	      dialogFormVisible: false,
@@ -149,6 +166,9 @@
 	  	}
 	  },
 	  computed: {
+	  	calcul: function(){
+	  		return screenwidth.value > 400 ? '26'+'em' : '90' +'%'
+	  	},	  	
 	  	magicWidth: function(){
         console.log("computed");
         if(this.age > 17)
