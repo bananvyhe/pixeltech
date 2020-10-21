@@ -21,12 +21,14 @@
 	          Вход
 	        </v-card-title>
 					<v-card-actions>
-						<v-form v-model="valid">
+						<v-form 
+							v-model="valid"
+							class="mb-0">
 					    <v-container>
 					      <v-row>
         					<v-col
 				          cols="12"
-				          md="4">
+				          md="12">
 				          	<v-text-field
 				            v-model="form.email"
 				            :rules="emailRules"
@@ -36,7 +38,7 @@
 				        	</v-col>
 				        	<v-col
 				          cols="12"
-				          md="4">
+				          md="12">
 				          	<v-text-field
 					          type="password"
 					          name="input-10-1"
