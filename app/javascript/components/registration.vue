@@ -13,7 +13,43 @@
 					v-model="valid"
 					class="mb-0">
 					  <v-container>
-					  	
+					      <v-row>
+        					<v-col
+				          cols="12"
+				          md="12">
+				          	<v-text-field
+				            v-model="form.email"
+				            :rules="emailRules"
+				            type="text"
+				            label="E-mail">
+				          	</v-text-field>
+				        	</v-col>
+				        	<v-col
+				          cols="12"
+				          md="12">
+				          	<v-text-field
+					          type="password"
+					          name="input-10-1"
+				          	@click:append="show1 = !show1"
+				            v-model="form.password"
+				            :rules="passRules"
+				            label="Пароль">
+				          </v-text-field>
+				        	</v-col> 
+				        	<v-col
+				          cols="12"
+				          md="12">
+				          	<v-text-field
+					          type="password"
+					          name="input-10-1"
+				          	@click:append="show1 = !show1"
+				            v-model="form.password_confirmation"
+				            :rules="passRulesConf"
+				            label="Повторите пароль">
+				          </v-text-field>
+				        </v-col> 				          
+
+				      </v-row>					  	
 					  </v-container>
 					</v-form>			
 				</v-card-actions>
@@ -104,6 +140,22 @@
 	      },100 );  
       };
 	    return {
+      passRulesConf: [
+        v => !!v || 'нужно ввести пароль',
+        v => v.length >= 5 || 'Пароль должен содержать более 6 символов',
+                    // v => (v || '').indexOf(' ') < 0 ||  'Пробелов не должно быть'
+        v => v == this.form.password || "Пароли не совпадают"
+      ],	 	    	
+      passRules: [
+        v => !!v || 'нужно ввести пароль',
+        v => v.length >= 5 || 'Пароль должен содержать более 6 символов',
+                    // v => (v || '').indexOf(' ') < 0 ||  'Пробелов не должно быть'
+      ],	    	
+	      emailRules: [
+	        v => !!v || 'Обязательно к заполнению',
+	        v => /.+@.+/.test(v) || 'E-mail не валиден ',
+	         // v => (v || '').indexOf(' ') < 0 ||  'Пробелов не должно быть'
+	      ],		    	
 	    	valid: false,
 	    	responseEmail: false,
 	    	responseName: false,
