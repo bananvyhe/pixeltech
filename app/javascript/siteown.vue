@@ -135,8 +135,9 @@
 
         </div>        
         {{ballance}}
-        <posts class="topsidepanel "></posts> 
- 
+        <v-container>
+        <posts  ></posts> 
+ </v-container>
       <!-- </v-main>  -->
     <!-- </v-app> -->
   </div>

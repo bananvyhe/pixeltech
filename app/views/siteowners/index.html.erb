@@ -1,8 +1,4 @@
-<!-- <p id="notice"><%= notice %></p> -->
-<!-- <iframe src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D1%85%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3&targets-hint=&default-sum=10&button-text=11&payment-type-choice=on&hint=&successURL=&quickpay=shop&account=410013909808332" width="100%" height="222"  frameborder="0" allowtransparency="true" scrolling="no"></iframe>
- -->
- <!-- <div id="siteown"></div> -->
- <!-- <div style="height: 4em;"></div> -->
+<!--  
  <div class=" lostcenter">
    <div class="mainframe" style="padding: 1em;">
     <div class="basetext">
@@ -10,22 +6,15 @@
     </div>
     <br>
      пополнить счет:
-
-
-    <!--  <%= @amount %> -->
+ 
     <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">    
       <input type="hidden" name="receiver" value="410013909808332">
-    <!--   <input type="hidden" name="formcomment" value="Проект «Железный человек»: реактор холодного ядерного синтеза">
-      <input type="hidden" name="short-dest" value="Проект «Железный человек»: реактор холодного ядерного синтеза">   -->  
+ 
       <input type="hidden" name="label" value="<%=current_user.id %>">    
       <input type="hidden" name="quickpay-form" value="donate">    
       <input type="hidden" name="targets" value="хостинг">    
       <input   name="sum" value="2" data-type="number"> руб.   
-    <!--   <input type="hidden" name="comment" value="Хотелось бы получить дистанционное управление.">     -->
-    <!--   <input type="hidden" name="need-fio" value="true">    
-      <input type="hidden" name="need-email" value="true">    
-      <input type="hidden" name="need-phone" value="false">    
-      <input type="hidden" name="need-address" value="false">  -->   <br><br>
+ <br><br>
       <label><input type="radio" name="paymentType" value="PC">&nbsp;&nbsp;Яндекс.Деньгами</label>  <br>  <label><input type="radio" name="paymentType" value="AC" checked="checked">&nbsp;&nbsp;Банковской картой</label>  <br><br>  <input type="submit" value="Оплатить"></form>
 
     <% if current_user.try(:admin?) or  current_user.try(:superadmin?) %>
@@ -44,4 +33,4 @@
     <br>
   <%= render :template => "inboxes/index" %>
    </div>
- </div>  
+ </div>   -->
