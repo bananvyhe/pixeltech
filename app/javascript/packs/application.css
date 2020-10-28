@@ -626,3 +626,6 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.v-toolbar__content, .v-toolbar__extension {
+    padding: 0.1em 0.1em;
+}

@@ -2,8 +2,9 @@
   <div  class="vmain">
     <v-app >
       <v-container
-      class="pb-0 px-1 pt-1">
+      class="py-0 px-0">
         <v-app-bar 
+
         hide-on-scroll
         dense>
 <!--           <v-app-bar-nav-icon>
@@ -11,7 +12,7 @@
 <!--           <v-toolbar-title>
             Page title
           </v-toolbar-title> -->
-          <v-spacer></v-spacer>
+          <v-spacer ></v-spacer>
           <div class="wrap" v-if="$store.getters.token == null" > 
             <reg></reg>
           </div>
