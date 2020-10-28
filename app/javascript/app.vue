@@ -5,11 +5,11 @@
         <v-app-bar 
         hide-on-scroll
         dense>
-          <v-app-bar-nav-icon>
-          </v-app-bar-nav-icon>
-          <v-toolbar-title>
+<!--           <v-app-bar-nav-icon>
+          </v-app-bar-nav-icon> -->
+<!--           <v-toolbar-title>
             Page title
-          </v-toolbar-title>
+          </v-toolbar-title> -->
           <v-spacer></v-spacer>
           <div class="wrap" v-if="$store.getters.token == null" > 
             <reg></reg>
@@ -17,13 +17,13 @@
           <div class="wrap">
             <log ></log>
           </div>
-          <v-btn icon>
+        <!--   <v-btn icon>
             <v-icon>mdi-heart</v-icon>
           </v-btn>
           <v-btn icon>
             <v-icon>mdi-magnify</v-icon>
-          </v-btn>     
-          <v-menu
+          </v-btn>      -->
+<!--           <v-menu
             >
             <template v-slot:activator="{ on, attrs }">
               <v-btn
@@ -41,7 +41,7 @@
                 <v-list-item-title>Option {{ n }}</v-list-item-title>
               </v-list-item>
             </v-list>
-          </v-menu>         
+          </v-menu>     -->     
         </v-app-bar>
       </v-container>
       <v-main>
