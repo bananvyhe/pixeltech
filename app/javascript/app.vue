@@ -11,20 +11,19 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <div class="wrap" v-if="$store.getters.token == null" > 
-            <reg></reg>
-          </div>
-          <div class="wrap">
-          <log ></log>
-          </div>
-        <v-btn icon>
-          <v-icon>mdi-heart</v-icon>
-        </v-btn>
+        <reg></reg>
+      </div>
+      <div class="wrap">
+        <log ></log>
+      </div>
+      <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>     
       <v-menu
-        left
-        bottom>
+        >
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             icon
@@ -128,7 +127,7 @@
 <style scoped>
 @import "stylesheets/_variables";
 .appbar{
-  lost-center: $lcenter;
+  /*lost-center: $lcenter;*/
 }
 .vmain{
   /*lost-center: $lcenter;*/
