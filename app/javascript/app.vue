@@ -1,7 +1,8 @@
 <template>
   <div  class="vmain">
     <v-app >
-      <v-container>
+      <v-container
+      class="pb-0 px-1 pt-1">
         <v-app-bar 
         hide-on-scroll
         dense>

@@ -10,9 +10,12 @@
         </div> -->
         <div class="basetext pay">
 <!--       баланс: <%= @client.ballance%>  руб. -->
-          <br>
+   
      
-          <v-form v-model="valid" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+          <v-form 
+
+            v-model="valid" 
+            method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
             <v-container>
               <h3>пополнить счет:</h3>
               <v-row >
@@ -202,7 +205,8 @@
   /*background-color: var(--v-background-base);*/
 }
 .pay{
-  padding: 0.3em 0.6em;
+
+  padding: 0.0em 0.4em;
 }
 .vmain{
   lost-center: $lcenter;
