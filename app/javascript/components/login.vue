@@ -2,7 +2,7 @@
 	<div class="log"> 
 		<!-- {{this.$store.getters.token.access}}<br>{{this.$store.getters.token.refresh}} -->
 		<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
-      <v-btn type="primary" @click="handler" class="ma-2">
+      <v-btn small type="primary" @click="handler" class="ma-2">
       	Выйти
       </v-btn>
     </div>
@@ -10,6 +10,7 @@
 			<v-dialog :width="calcul" v-model="dialogFormVisible" >
 				<template v-slot:activator="{ on, attrs }">
         	<v-btn
+        	small
           v-bind="attrs"
           v-on="on"
           class="ma-2"

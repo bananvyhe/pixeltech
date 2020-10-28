@@ -4,7 +4,7 @@
       <v-container
       class="py-0 px-0">
         <v-app-bar 
-
+          height="42px"
         hide-on-scroll
         dense>
 <!--           <v-app-bar-nav-icon>
