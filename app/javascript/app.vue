@@ -6,7 +6,7 @@
         <v-app-bar 
           height="42px"
         hide-on-scroll
-        dense>
+        dense><topsidepanel></topsidepanel>
 <!--           <v-app-bar-nav-icon>
           </v-app-bar-nav-icon> -->
 <!--           <v-toolbar-title>

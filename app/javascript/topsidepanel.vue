@@ -2,27 +2,28 @@
 	<div id="bpad"> 
 		<!-- {{checklog}}&nbsp;{{exptime}}&nbsp;{{this.$store.getters.token.refresh}} -->
 		<div class="overbpad">
-			<div class="bpad smalltext" v-bind:style="styleObject"> 
+			<div class="  smalltext" v-bind:style="styleObject"> 
 				<div class="logohead">
 					<div class="voodoo1" v-if="!$store.getters.role">
-						<request class="request"></request>
-						<el-popover
-				    placement="bottom"
-				    width="100"
-				    trigger="click">
+						<!-- <request class="request"></request> -->
+						 <v-button v-popover:topside >сайты</v-button>
+						<popover
+						name="topside"
+				     >
 					    <div style="text-align: center;">
 					    	<a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a><br>
 					    	<a target="_blank" href="https://farmspot.ru">farmspot.ru</a>
 					    </div>
-					    <el-button slot="reference" class="user" border>сайты</el-button>
-						</el-popover>
+					   
+						</popover>
+
 					</div>
 					<div v-if="$store.getters.role" >
 						<div class="backbar" v-if="$store.getters.token">
 							<div class="mediumtext nikname">{{$store.getters.role.username}}</div>
 							<div class="expbar"> 
 								<div class="expline">
-									<el-progress v-if="$store.getters.gamebo" class="elpro aprior " :stroke-width="3" :percentage="Number(lvlConversion[1])"></el-progress>
+									<v-progress-linear v-if="$store.getters.gamebo" class="elpro aprior " :stroke-width="3" :value="Number(lvlConversion[1])"></v-progress-linear>
 								</div>
 								<div v-if="$store.getters.gamebo" class="lvl">{{lvlConversion[0]}}&nbsp;</div>
 								<span v-if="$store.getters.role.karma != null">карма:{{$store.getters.role.karma}}</span>

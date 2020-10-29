@@ -38,11 +38,14 @@ import '../../../public/theme/index.css'
 // import Vembed from 'vue-embed';
 import { EmojiPickerPlugin } from 'vue-emoji-picker'
 Vue.use(EmojiPickerPlugin)
+import Popover from 'vue-js-popover'
+Vue.use(Popover)
 Vue.component('reg', Reg)
 Vue.component('log', Log)
 Vue.component('request', Request)
 Vue.component('filther', Filther)
 Vue.component('addpublic', Addpublic)
+Vue.component('topsidepanel', Topsidepanel)
 // Vue.component('inv', Inv)
 // Vue.component('vembed', vembed)
 // Vue.component('v-embed', {
