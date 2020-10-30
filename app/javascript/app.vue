@@ -59,7 +59,7 @@
         <!-- <posts class="topsidepanel "></posts> -->
       </v-main>
       <v-container
-      class="py-0 pb-0  px-0">
+      class="py-1 pb-0  px-0">
         <v-footer
         width="100%"
         class="appbar"

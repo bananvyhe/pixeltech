@@ -674,12 +674,12 @@
 display: flex;
 	overflow: visible;
 	position: relative;
-	z-index: 6000;
+	/*z-index: 6000;*/
 	/*display: block;*/
 /*float: left;*/
 	/*margin-bottom: -3.8em;*/
  
-   top: 0;
+   /*top: 0;*/
 	/*height: $topBlank;*/
 	/*z-index: 800;*/
  
@@ -690,13 +690,13 @@ display: flex;
 		lost-center: $lcenter;
 }
 .overbpad{
-top: 0;
+/*top: 0;
 	position: fixed;
-	width: 100%;
+	width: 100%;*/
 	/*float: left;*/
 /*display: flex;*/
 	/*display: flex;*/
-lost-center: $lcenter;
+/*lost-center: $lcenter;*/
 }
 .bpad { 
 	
@@ -705,7 +705,7 @@ lost-center: $lcenter;
  	display: flex;
 	/*position: sticky;*/
 	/*top: 0em;  */
-	z-index: 6000;
+	/*z-index: 6000;*/
 	justify-content: space-between;
             
 	/*height: 2.6em;*/
@@ -729,7 +729,7 @@ lost-center: $lcenter;
 
 	position: relative;
  
-	display: flex;
+	/*display: flex;*/
 	align-items: center;
 	/*lost-column: 1/2 2 0em; */
  
