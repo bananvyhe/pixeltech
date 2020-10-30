@@ -2,7 +2,7 @@
   <div  class="vmain">
     <v-app >
       <v-container
-      class="py-0 px-0">
+      class="py-1 px-0">
         <v-app-bar 
           height="42px"
         hide-on-scroll
@@ -58,7 +58,8 @@
         </div>
         <!-- <posts class="topsidepanel "></posts> -->
       </v-main>
-      <v-container>
+      <v-container
+      class="py-0 pb-0  px-0">
         <v-footer
         width="100%"
         class="appbar"

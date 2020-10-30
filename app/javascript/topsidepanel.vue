@@ -41,12 +41,6 @@
 
 					</div>
  
- 
-<!-- 					<div v-if="$store.getters.token == null">
-						<div v-if="checklog != 'unlogged' ">
-						{{nulltoken}}
-						</div>
-					</div> -->
 				</div>
 				<div class="maininfo">
 					<div v-if="$store.getters.token != null" class="info wrap">
@@ -56,10 +50,10 @@
 						</div>
 					</div> 
 					<div class="wrap" v-if="$store.getters.token == null" > 
-			    	<reg></reg>
+			    	<!-- <reg></reg> -->
 			  	</div>
 					<div class="wrap">
-					<log class="wrap"></log>
+					<!-- <log class="wrap"></log> -->
 					</div>
 				</div>
 	  	</div>
