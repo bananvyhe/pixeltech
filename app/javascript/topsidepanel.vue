@@ -5,18 +5,28 @@
 			<div class="  smalltext" v-bind:style="styleObject"> 
 				<div class="logohead">
 					<div class="voodoo1" v-if="!$store.getters.role">
+ 
 						<!-- <request class="request"></request> -->
-						 <v-button v-popover:topside >сайты</v-button>
-						<popover
-						name="topside"
-				     >
+						<!-- <v-btn small v-popover.right="{ name: 'topside' }" >сайты</v-btn> -->
+						<!-- <popover
+							name="topside">
 					    <div style="text-align: center;">
 					    	<a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a><br>
 					    	<a target="_blank" href="https://farmspot.ru">farmspot.ru</a>
 					    </div>
-					   
-						</popover>
+			   		</popover> -->
 
+ 	
+ 
+      <v-btn
+        fab
+        dark
+        x-small
+        color="red"
+      >
+        <v-icon>mdi-delete</v-icon>
+      </v-btn>
+ 	   		
 					</div>
 					<div v-if="$store.getters.role" >
 						<div class="backbar" v-if="$store.getters.token">
@@ -67,6 +77,17 @@
 	export default {
 		data() {
 			return {
+				 direction: 'top',
+      fab: false,
+      fling: false,
+      hover: true,
+      tabs: null,
+      top: false,
+      right: true,
+      bottom: false,
+      left: false,
+      transition: 'slide-y-reverse-transition',
+ 
 				trig: false,
 				nowtime: '',
 				pkstat: '',
@@ -485,8 +506,9 @@
 	clear: both;
 }*/
 .voodoo1 {
-	position: relative;
-	display: flex;
+	/*z-index: 8000;*/
+	/*position: relative;*/
+	/*display: flex;*/
 	
 }
 .basecamp, .basecamp1 {
@@ -745,12 +767,12 @@ display: flex;
 .invclass {
 	/*background-color: #dad;*/
 	padding-left: 0.0em;
-	z-index: 5000;
+	/*z-index: 5000;*/
 	position: relative;
 
 }
 .maininfo {
-	z-index: 5000;
+	/*z-index: 5000;*/
  
 	overflow-x: auto;
 	white-space: nowrap;

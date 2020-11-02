@@ -1,14 +1,8 @@
 <template>
- 
-    <div class="firstpagebg " :style="{'background-image': 'url('+require('./images/96.png')+'?id='+Math.random()+')'}" >
+  <div class="firstpagebg " :style="{'background-image': 'url('+require('./images/96.png')+'?id='+Math.random()+')'}" >
     <div :style="{'background-image': 'url('+require('./images/scheme.svg')+'?id='+Math.random()+')'}" class="bgan scheme " :class="{ bgclass: activatorclass }">
-
-   
-
-
-
     </div> 
- <div class="headm" >  
+    <div class="headm" >  
       <div class="contain ">
         <div class="screen ">  
           <div class="titlepix largetext" :class="{flickerin1: activatorclass}">

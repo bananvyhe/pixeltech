@@ -394,7 +394,7 @@
 	right: 0px;
 }
 .log  {
-  z-index: 5000;
+  /*z-index: 5000;*/
 
   display: flex;
  /*	right: 0;*/

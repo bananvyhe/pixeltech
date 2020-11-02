@@ -6,7 +6,8 @@
         <v-app-bar 
           height="42px"
         hide-on-scroll
-        dense><topsidepanel></topsidepanel>
+        dense>
+          <topsidepanel></topsidepanel>
 <!--           <v-app-bar-nav-icon>
           </v-app-bar-nav-icon> -->
 <!--           <v-toolbar-title>
@@ -56,6 +57,19 @@
             <siteown></siteown>
           </div>
         </div>
+<!--   <hsc-window-style-metal>
+      <hsc-window title="Window 1" >
+          Parameters:
+          <fieldset>
+              <legend>&alpha;</legend>
+              <input type="range" />
+          </fieldset>
+          <fieldset>
+              <legend>&beta;</legend>
+              <input type="range" />
+          </fieldset>
+      </hsc-window>
+    </hsc-window-style-metal> -->
         <!-- <posts class="topsidepanel "></posts> -->
       </v-main>
       <v-container
