@@ -15,10 +15,24 @@
 					    	<a target="_blank" href="https://farmspot.ru">farmspot.ru</a>
 					    </div>
 			   		</popover> -->
+ 
+			   		  <v-btn small ref="popoverReference"" @click="openPopover">сайты</v-btn>
+ <VueSlickPopover
+      v-if="isPopoverVisible"
+      :popover-options="popoverOptions"
+      @closePopover="closePopover">
 
+
+      <VueSlickPopoverContent>
+     <div class="popover-content">
+     	<a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a><br>
+			<a target="_blank" href="https://farmspot.ru">farmspot.ru</a>
+     </div>
+      </VueSlickPopoverContent>
+    </VueSlickPopover>
  	
  
-      <v-btn
+<!--       <v-btn
         fab
         dark
         x-small
@@ -26,7 +40,7 @@
       >
         <v-icon>mdi-delete</v-icon>
       </v-btn>
- 	   		
+ 	   		 -->
 					</div>
 					<div v-if="$store.getters.role" >
 						<div class="backbar" v-if="$store.getters.token">
@@ -77,7 +91,14 @@
 	export default {
 		data() {
 			return {
-				 direction: 'top',
+ 			isPopoverVisible: false,
+	    popoverOptions: {
+	      animation: "scale-fade",
+	      popoverReference: null,
+	      placement: "top",
+	      offset: "0,0"
+	    },
+			direction: 'top',
       fab: false,
       fling: false,
       hover: true,
@@ -316,6 +337,14 @@
  			}
 	  }, 
 	  methods: {
+
+	  	   closePopover() {
+    this.isPopoverVisible = false
+  },
+    
+  openPopover() {
+    this.isPopoverVisible = true
+  },
 	  	// res(){
 	   //    axios({
 	   //      method: 'post',
@@ -451,6 +480,7 @@
 
 	  },
 	  mounted() {
+	  		  	  this.popoverOptions.popoverReference = this.$refs.popoverReference
 	  	//проверка условий на существования логина 
 	  	if (!this.exptime){
   			this.checkRelevanceToken()
@@ -475,6 +505,10 @@
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+.popover-content {
+	background-color:  $str5;
+	padding: 0.5em 0.8em;
+}
 /*@import "stylesheets/_extends";*/
 .folio{
 
