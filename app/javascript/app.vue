@@ -2,17 +2,12 @@
   <div  class="vmain">
     <v-app >
       <v-container
-      class="py-1 px-0">
+        class="py-1 px-0 app">
         <v-app-bar 
           height="42px"
-        hide-on-scroll
-        dense>
-          <topsidepanel></topsidepanel>
-<!--           <v-app-bar-nav-icon>
-          </v-app-bar-nav-icon> -->
-<!--           <v-toolbar-title>
-            Page title
-          </v-toolbar-title> -->
+          hide-on-scroll
+          dense>
+          <port></port>
           <v-spacer ></v-spacer>
           <div class="wrap" v-if="$store.getters.token == null" > 
             <reg></reg>
@@ -20,31 +15,6 @@
           <div class="wrap">
             <log ></log>
           </div>
-        <!--   <v-btn icon>
-            <v-icon>mdi-heart</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon>mdi-magnify</v-icon>
-          </v-btn>      -->
-<!--           <v-menu
-            >
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                icon
-                v-bind="attrs"
-                v-on="on">
-                <v-icon>mdi-dots-vertical</v-icon>
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item
-                v-for="n in 5"
-                :key="n"
-                @click="() => {}">
-                <v-list-item-title>Option {{ n }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>     -->     
         </v-app-bar>
       </v-container>
       <v-main>
@@ -57,20 +27,6 @@
             <siteown></siteown>
           </div>
         </div>
-<!--   <hsc-window-style-metal>
-      <hsc-window title="Window 1" >
-          Parameters:
-          <fieldset>
-              <legend>&alpha;</legend>
-              <input type="range" />
-          </fieldset>
-          <fieldset>
-              <legend>&beta;</legend>
-              <input type="range" />
-          </fieldset>
-      </hsc-window>
-    </hsc-window-style-metal> -->
-        <!-- <posts class="topsidepanel "></posts> -->
       </v-main>
       <v-container
       class="py-1 pb-0  px-0">
@@ -84,21 +40,6 @@
             tiless
             width="100%"
             class=" text-center">
-  <!--           <v-card-text>
-              <v-btn
-                v-for="icon in icons"
-                :key="icon"
-                class="mx-3"
-                icon
-              >
-                <v-icon size="20px">
-                  {{ icon }}
-                </v-icon>
-              </v-btn>
-            </v-card-text>
-
-            <v-divider></v-divider> -->
-
             <v-card-text class="white--text">
               {{ new Date().getFullYear() }} — <strong>Pixeltech</strong>
             </v-card-text>
@@ -147,6 +88,10 @@
 </script>
 <style scoped>
 @import "stylesheets/_variables";
+.app{
+  position: relative;
+  z-index: 9999;
+}
 .appbar{
   /*lost-center: $lcenter;*/
 }

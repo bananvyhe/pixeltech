@@ -28,6 +28,7 @@ import Callboard from '../components/callboard/callboard.vue'
 import Chat from '../chat.vue'
 import App from '../app.vue'
 import Siteown from '../siteown.vue'
+import Port from '../components/port.vue'
 // import CommentVotes from '../components/commentvotes.vue'
 // import Inv from '../components/inventory.vue'
 // import Topsection from '../components/topsection.vue'
@@ -55,6 +56,7 @@ Vue.component('filther', Filther)
 Vue.component('addpublic', Addpublic)
 Vue.component('topsidepanel', Topsidepanel)
 Vue.component('VueSlickPopover', VueSlickPopover)
+Vue.component('port', Port)
 // Vue.component('inv', Inv)
 // Vue.component('vembed', vembed)
 // Vue.component('v-embed', {
