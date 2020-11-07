@@ -45,9 +45,9 @@ Vue.use(EmojiPickerPlugin)
 // import * as VueWindow from '@hscmap/vue-window'
 
 // Vue.use(VueWindow)
-// import VTooltip from 'v-tooltip'
+import VTooltip from 'v-tooltip'
 
-// Vue.use(VTooltip)
+Vue.use(VTooltip)
 
 
 Vue.component('reg', Reg)

@@ -1,52 +1,97 @@
 <template>
   <div class="port" id="port">
     <div class=" " v-if="!$store.getters.role">
+  <v-menu
+      v-model="menu"
+      :close-on-content-click="false"
+      :nudge-width="200"
+      offset-x
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn 
+        class="mx-2"
+        fab
+          x-small
+          color="indigo"
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+         <!-- <v-icon>mdi-collage</v-icon> -->
+          <v-icon>mdi-view-dashboard</v-icon>
+        </v-btn>
+      </template>
 
-      <v-tooltip bottom
-          v-model="show"
-          top>
-        <template v-slot:activator="{ on, attrs }">
-                <v-btn 
-        @click="show = !show">
-        
-                    <v-icon color="grey lighten-1">
-                mdi-view-carousel-outline
-            </v-icon>
-      </v-btn>
-<!--           <v-btn
-            icon
-            v-bind="attrs"
-            v-on="on">
-            <v-icon color="grey lighten-1">
-                mdi-cart
-            </v-icon>
-          </v-btn> -->
-        </template>
+      <v-card>
+        <v-list>
+          <v-list-item>
+            <v-list-item-avatar>
+              <img
+                src="https://cdn.vuetifyjs.com/images/john.jpg"
+                alt="John"
+              >
+            </v-list-item-avatar>
 
-        <v-card
-  elevation="2"
-> <v-list-item three-line>
-      <v-list-item-content>
-        <div class="overline mb-4">
-          OVERLINE
-        </div>
-        <v-list-item-title class="headline mb-1">
-          Headline 5
-        </v-list-item-title>
-        <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-      </v-list-item-content>
+            <v-list-item-content>
+              <v-list-item-title>John Leider</v-list-item-title>
+              <v-list-item-subtitle>Founder of Vuetify</v-list-item-subtitle>
+            </v-list-item-content>
 
-      <v-list-item-avatar
-        tile
-        size="80"
-        color="grey"
-      ></v-list-item-avatar>
-    </v-list-item>
-           <a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a><br>
-            <a target="_blank" href="https://farmspot.ru">farmspot.ru</a> 
-</v-card>
+            <v-list-item-action>
+              <v-btn
+                :class="fav ? 'red--text' : ''"
+                icon
+                @click="fav = !fav"
+              >
+                <v-icon>mdi-heart</v-icon>
+              </v-btn>
+            </v-list-item-action>
+          </v-list-item>
+        </v-list>
 
-      </v-tooltip>
+        <v-divider></v-divider>
+
+        <v-list>
+          <v-list-item>
+            <v-list-item-action>
+              <v-switch
+                v-model="message"
+                color="purple"
+              ></v-switch>
+            </v-list-item-action>
+            <v-list-item-title>Enable messages</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-action>
+              <v-switch
+                v-model="hints"
+                color="purple"
+              ></v-switch>
+            </v-list-item-action>
+            <v-list-item-title>Enable hints</v-list-item-title>
+          </v-list-item>
+        </v-list>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn
+            text
+            @click="menu = false"
+          >
+            Cancel
+          </v-btn>
+          <v-btn
+            color="primary"
+            text
+            @click="menu = false"
+          >
+            Save
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-menu>
 <!--       <v-btn small ref="popoverReference" @click="openPopover">сайты</v-btn>
       <VueSlickPopover
         v-if="isPopoverVisible"
