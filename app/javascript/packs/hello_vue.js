@@ -45,9 +45,10 @@ Vue.use(EmojiPickerPlugin)
 // import * as VueWindow from '@hscmap/vue-window'
 
 // Vue.use(VueWindow)
- 
-import { VueSlickPopover, VueSlickPopoverContent } from "vue-slick-popover"
-import "vue-slick-popover/dist/vue-slick-popover.css"
+// import VTooltip from 'v-tooltip'
+
+// Vue.use(VTooltip)
+
 
 Vue.component('reg', Reg)
 Vue.component('log', Log)
@@ -55,7 +56,7 @@ Vue.component('request', Request)
 Vue.component('filther', Filther)
 Vue.component('addpublic', Addpublic)
 Vue.component('topsidepanel', Topsidepanel)
-Vue.component('VueSlickPopover', VueSlickPopover)
+ 
 Vue.component('port', Port)
 // Vue.component('inv', Inv)
 // Vue.component('vembed', vembed)
@@ -161,9 +162,9 @@ Vue.use(Vuex);
 // Vue.use(Loading.directive);
 // Vue.prototype.$notify = Notification;
 // Vue.prototype.$message = Message;
- import lang from 'element-ui/lib/locale/lang/ru-RU'
- import locale from 'element-ui/lib/locale'
- import colors from 'vuetify/lib/util/colors'
+import lang from 'element-ui/lib/locale/lang/ru-RU'
+import locale from 'element-ui/lib/locale'
+import colors from 'vuetify/lib/util/colors'
 
 
  // import  VuetifyPreset  from 'vuetify/types/services/presets'
