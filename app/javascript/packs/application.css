@@ -73,6 +73,10 @@ body {
     color: color($sunglow lightness(52%)saturation(62%)); 
   }
 }
+.app{
+  position: relative;
+  z-index: 9999;
+}
 .wrapper {
   position: relative;
   display: inline-block;

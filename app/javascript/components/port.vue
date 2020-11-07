@@ -22,8 +22,30 @@
             </v-icon>
           </v-btn> -->
         </template>
-        <span><a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a><br>
-            <a target="_blank" href="https://farmspot.ru">farmspot.ru</a></span>
+
+        <v-card
+  elevation="2"
+> <v-list-item three-line>
+      <v-list-item-content>
+        <div class="overline mb-4">
+          OVERLINE
+        </div>
+        <v-list-item-title class="headline mb-1">
+          Headline 5
+        </v-list-item-title>
+        <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
+      </v-list-item-content>
+
+      <v-list-item-avatar
+        tile
+        size="80"
+        color="grey"
+      ></v-list-item-avatar>
+    </v-list-item>
+           <a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a><br>
+            <a target="_blank" href="https://farmspot.ru">farmspot.ru</a> 
+</v-card>
+
       </v-tooltip>
 <!--       <v-btn small ref="popoverReference" @click="openPopover">сайты</v-btn>
       <VueSlickPopover

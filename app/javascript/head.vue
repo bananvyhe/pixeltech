@@ -353,7 +353,7 @@ export default {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fcffffff",endColorstr="#008ed4f1",GradientType=0);
   }
 }
-.oversubj {z-index: 1000;
+.oversubj {z-index: 100;
   position: relative;
 
 }

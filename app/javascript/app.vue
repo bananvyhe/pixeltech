@@ -88,10 +88,10 @@
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-.app{
+/*.app{
   position: relative;
   z-index: 9999;
-}
+}*/
 .appbar{
   /*lost-center: $lcenter;*/
 }
