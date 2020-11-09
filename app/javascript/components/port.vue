@@ -1,97 +1,52 @@
 <template>
   <div class="port" id="port">
     <div class=" " v-if="!$store.getters.role">
-  <v-menu
+      <v-menu
       v-model="menu"
       :close-on-content-click="false"
       :nudge-width="200"
-      offset-x
-    >
+      offset-x>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn 
-        class="mx-2"
-        fab
-          x-small
-          color="indigo"
+        <v-btn icon
           dark
           v-bind="attrs"
-          v-on="on"
+          v-on="on">
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+      </template>    
+      <v-card
+        max-width="450"
+        class="mx-auto">
+    <v-list three-line>
+      <template v-for="(item, index) in items">
+        <v-subheader
+          v-if="item.header"
+          :key="item.header"
+          v-text="item.header"
+        ></v-subheader>
+
+        <v-divider
+          v-else-if="item.divider"
+          :key="index"
+          :inset="item.inset"
+        ></v-divider>
+
+        <v-list-item
+          v-else
+          :key="item.title"
         >
-         <!-- <v-icon>mdi-collage</v-icon> -->
-          <v-icon>mdi-view-dashboard</v-icon>
-        </v-btn>
+          <v-list-item-avatar>
+            <v-img :src="item.avatar"></v-img>
+          </v-list-item-avatar>
+
+          <v-list-item-content>
+            <v-list-item-title v-html="item.title"></v-list-item-title>
+            <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
       </template>
-
-      <v-card>
-        <v-list>
-          <v-list-item>
-            <v-list-item-avatar>
-              <img
-                src="https://cdn.vuetifyjs.com/images/john.jpg"
-                alt="John"
-              >
-            </v-list-item-avatar>
-
-            <v-list-item-content>
-              <v-list-item-title>John Leider</v-list-item-title>
-              <v-list-item-subtitle>Founder of Vuetify</v-list-item-subtitle>
-            </v-list-item-content>
-
-            <v-list-item-action>
-              <v-btn
-                :class="fav ? 'red--text' : ''"
-                icon
-                @click="fav = !fav"
-              >
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
-            </v-list-item-action>
-          </v-list-item>
-        </v-list>
-
-        <v-divider></v-divider>
-
-        <v-list>
-          <v-list-item>
-            <v-list-item-action>
-              <v-switch
-                v-model="message"
-                color="purple"
-              ></v-switch>
-            </v-list-item-action>
-            <v-list-item-title>Enable messages</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-action>
-              <v-switch
-                v-model="hints"
-                color="purple"
-              ></v-switch>
-            </v-list-item-action>
-            <v-list-item-title>Enable hints</v-list-item-title>
-          </v-list-item>
-        </v-list>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-
-          <v-btn
-            text
-            @click="menu = false"
-          >
-            Cancel
-          </v-btn>
-          <v-btn
-            color="primary"
-            text
-            @click="menu = false"
-          >
-            Save
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-menu>
+    </v-list>
+  </v-card></v-menu>
 <!--       <v-btn small ref="popoverReference" @click="openPopover">сайты</v-btn>
       <VueSlickPopover
         v-if="isPopoverVisible"
@@ -120,6 +75,38 @@ export default {
     // },
   data: function () {
     return {
+       items: [
+        { header: 'Разработка сайтов' },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+          title: 'Impuls-psy.ru',
+          subtitle: `<span class="text--primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
+        },
+        { divider: true, inset: true },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+          title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
+          subtitle: `<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
+        },
+        { divider: true, inset: true },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+          title: 'Oui oui',
+          subtitle: '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
+        },
+        { divider: true, inset: true },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
+          title: 'Birthday gift',
+          subtitle: '<span class="text--primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
+        },
+        { divider: true, inset: true },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
+          title: 'Recipe to try',
+          subtitle: '<span class="text--primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
+        },
+      ],
       show: false,
       // isPopoverVisible: false,
       // popoverOptions: {
