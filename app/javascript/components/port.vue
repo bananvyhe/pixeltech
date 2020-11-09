@@ -1,12 +1,12 @@
 <template>
   <div class="port" id="port">
     <div class=" " v-if="!$store.getters.role">
-      <v-menu
+      <v-menu 
       v-model="menu"
       :close-on-content-click="false"
       :nudge-width="200"
       offset-x>
-      <template v-slot:activator="{ on, attrs }">
+      <template v-slot:activator="{ on, attrs }" >
         <v-btn icon
           dark
           v-bind="attrs"
@@ -17,8 +17,9 @@
       <v-card
         max-width="450"
         class="mx-auto">
-    <v-list three-line>
-      <template v-for="(item, index) in items">
+    <v-list three-line 
+    >
+      <template v-for="(item, index) in items" class="py-0 ">
         <v-subheader
           v-if="item.header"
           :key="item.header"
@@ -29,9 +30,10 @@
           v-else-if="item.divider"
           :key="index"
           :inset="item.inset"
+          class="mb-0 "
         ></v-divider>
 
-        <v-list-item
+        <v-list-item 
           v-else
           :key="item.title"
         >
@@ -76,36 +78,19 @@ export default {
   data: function () {
     return {
        items: [
-        { header: 'Разработка сайтов' },
+        { header: 'Разработаны сайты:' },
         {
           avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
           title: 'Impuls-psy.ru',
-          subtitle: `<span class="text--primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
+          subtitle: `<span class="text--primary">Психологический центр</span> &mdash; Сайт с админ-панелью для редактирования контента.`,
         },
         { divider: true, inset: true },
         {
           avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-          title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
-          subtitle: `<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
+          title: 'Farmspot.ru',
+          subtitle: `<span class="text--primary">Игровой форум</span> &mdash; форум для групп с настраиваемыми уровнями доступа и внутренними механиками соц взаимодейставия.`,
         },
-        { divider: true, inset: true },
-        {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
-          title: 'Oui oui',
-          subtitle: '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
-        },
-        { divider: true, inset: true },
-        {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-          title: 'Birthday gift',
-          subtitle: '<span class="text--primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
-        },
-        { divider: true, inset: true },
-        {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
-          title: 'Recipe to try',
-          subtitle: '<span class="text--primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
-        },
+        
       ],
       show: false,
       // isPopoverVisible: false,
