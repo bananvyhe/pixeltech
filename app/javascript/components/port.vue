@@ -6,44 +6,46 @@
       :close-on-content-click="false"
       :nudge-width="200"
       offset-y>
-      <template v-slot:activator="{ on, attrs }" >
-        <v-btn icon
-          v-bind="attrs"
-          v-on="on">
-          <v-icon x-large>mdi-language-ruby-on-rails</v-icon>
-        </v-btn>
-      </template>    
-      <v-card
-        max-width="450"
-        class="mx-auto">
-        <v-list two-line>
-          <template v-for="(item, index) in items" class="py-0  " >
-            <v-subheader
-              v-if="item.header"
-              :key="item.header"
-              v-text="item.header">
-            </v-subheader>
-            <v-divider
-              v-else-if="item.divider"
-              :key="index"
-              :inset="item.inset"
-              class="mb-0 "
-            ></v-divider>
-            <v-list-item 
-              v-else
-              :key="item.title">
-<!--           <v-list-item-avatar>
-            <v-img :src="item.avatar"></v-img>
-          </v-list-item-avatar> -->
-
-              <v-list-item-content class="py-0 ">
-                <v-list-item-title v-html="item.title"></v-list-item-title>
-                <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
-              </v-list-item-content>
-              </v-list-item> 
+        <template v-slot:activator="{ on, attrs }" >
+          <v-btn icon
+            v-bind="attrs"
+            v-on="on">
+            <v-icon x-large>mdi-language-ruby-on-rails</v-icon>
+          </v-btn>
+        </template>    
+        <v-list two-line >
+          <v-row>    
+            <template v-for="(item, index) in items" class="py-0 listit" > 
+              <v-card 
+                class="mx-auto ">
+                <v-col
+                  cols="12"
+                  md="4"> 
+                  <v-subheader
+                    v-if="item.header"
+                    :key="item.header"
+                    v-text="item.header">
+                  </v-subheader>
+                  <v-divider
+                    v-else-if="item.divider"
+                    :key="index"
+                    :inset="item.inset"
+                    class="mb-0 "
+                  ></v-divider>
+                  <v-list-item 
+                    v-else
+                    :key="item.title">
+                    <v-list-item-content class="py-0 ">
+                      <v-list-item-title v-html="item.title">                  
+                      </v-list-item-title>
+                      <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+                    </v-list-item-content>
+                  </v-list-item> 
+                </v-col>
+              </v-card>
             </template> 
-          </v-list>
-        </v-card>
+          </v-row>
+        </v-list>
       </v-menu>
     </div>
   </div>
@@ -61,6 +63,7 @@ export default {
     // },
   data: function () {
     return {
+      menu: false,
        items: [
         { header: 'Разработано на: Ruby on Rails 5.2 + Vue.js 2.0:' },
         {
@@ -103,6 +106,12 @@ export default {
 </script>
 <style scoped>
 @import "../stylesheets/_variables";
+.list{
+  lost-masonry-wrap: no-flex;
+}
+.listit {
+  lost-masonry-column: 1/3;
+}
 .port{
   /*position: relative;*/
 
