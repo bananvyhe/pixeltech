@@ -5,62 +5,46 @@
       v-model="menu"
       :close-on-content-click="false"
       :nudge-width="200"
-      offset-x>
+      offset-y>
       <template v-slot:activator="{ on, attrs }" >
         <v-btn icon
-          dark
           v-bind="attrs"
           v-on="on">
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+          <v-icon x-large>mdi-language-ruby-on-rails</v-icon>
+        </v-btn>
       </template>    
       <v-card
         max-width="450"
         class="mx-auto">
-    <v-list three-line 
-    >
-      <template v-for="(item, index) in items" class="py-0 ">
-        <v-subheader
-          v-if="item.header"
-          :key="item.header"
-          v-text="item.header"
-        ></v-subheader>
-
-        <v-divider
-          v-else-if="item.divider"
-          :key="index"
-          :inset="item.inset"
-          class="mb-0 "
-        ></v-divider>
-
-        <v-list-item 
-          v-else
-          :key="item.title"
-        >
-          <v-list-item-avatar>
+        <v-list two-line>
+          <template v-for="(item, index) in items" class="py-0  " >
+            <v-subheader
+              v-if="item.header"
+              :key="item.header"
+              v-text="item.header">
+            </v-subheader>
+            <v-divider
+              v-else-if="item.divider"
+              :key="index"
+              :inset="item.inset"
+              class="mb-0 "
+            ></v-divider>
+            <v-list-item 
+              v-else
+              :key="item.title">
+<!--           <v-list-item-avatar>
             <v-img :src="item.avatar"></v-img>
-          </v-list-item-avatar>
+          </v-list-item-avatar> -->
 
-          <v-list-item-content>
-            <v-list-item-title v-html="item.title"></v-list-item-title>
-            <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-      </template>
-    </v-list>
-  </v-card></v-menu>
-<!--       <v-btn small ref="popoverReference" @click="openPopover">сайты</v-btn>
-      <VueSlickPopover
-        v-if="isPopoverVisible"
-        :popover-options="popoverOptions"
-        @closePopover="closePopover">
-        <VueSlickPopoverContent>
-          <div class="popover-content">
-            <a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a><br>
-            <a target="_blank" href="https://farmspot.ru">farmspot.ru</a>
-          </div>
-        </VueSlickPopoverContent>
-      </VueSlickPopover> -->
+              <v-list-item-content class="py-0 ">
+                <v-list-item-title v-html="item.title"></v-list-item-title>
+                <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+              </v-list-item-content>
+              </v-list-item> 
+            </template> 
+          </v-list>
+        </v-card>
+      </v-menu>
     </div>
   </div>
 </template>
@@ -78,17 +62,17 @@ export default {
   data: function () {
     return {
        items: [
-        { header: 'Разработаны сайты:' },
+        { header: 'Разработано на: Ruby on Rails 5.2 + Vue.js 2.0:' },
         {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-          title: 'Impuls-psy.ru',
+          avatar: '20k',
+          title: '<a href="https:impuls-psy.ru">Impuls-psy.ru</a>',
           subtitle: `<span class="text--primary">Психологический центр</span> &mdash; Сайт с админ-панелью для редактирования контента.`,
         },
         { divider: true, inset: true },
         {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-          title: 'Farmspot.ru',
-          subtitle: `<span class="text--primary">Игровой форум</span> &mdash; форум для групп с настраиваемыми уровнями доступа и внутренними механиками соц взаимодейставия.`,
+          avatar: '50k',
+          title: '<a href="https:farmspot.ru">Farmspot.ru</span>',
+          subtitle: `<span class="text--primary">Игровой форум</span> &mdash; форум для групп с управлением уровнями доступа и внутренними механиками соц взаимодейставия.`,
         },
         
       ],
