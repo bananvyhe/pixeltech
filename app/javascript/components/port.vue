@@ -2,10 +2,10 @@
   <div class="port" id="port">
     <div class=" " v-if="!$store.getters.role">
       <v-menu 
-      v-model="menu"
-      :close-on-content-click="false"
-      :nudge-width="200"
-      offset-y>
+        v-model="menu"
+        :close-on-content-click="false"
+        :nudge-width="200"
+        offset-x>
         <template v-slot:activator="{ on, attrs }" >
           <v-btn icon
             v-bind="attrs"
@@ -13,39 +13,32 @@
             <v-icon x-large>mdi-language-ruby-on-rails</v-icon>
           </v-btn>
         </template>    
-        <v-list two-line >
-          <v-row>    
-            <template v-for="(item, index) in items" class="py-0 listit" > 
-              <v-card 
-                class="mx-auto ">
-                <v-col
-                  cols="12"
-                  md="4"> 
-                  <v-subheader
-                    v-if="item.header"
-                    :key="item.header"
-                    v-text="item.header">
-                  </v-subheader>
-                  <v-divider
-                    v-else-if="item.divider"
-                    :key="index"
-                    :inset="item.inset"
-                    class="mb-0 "
-                  ></v-divider>
-                  <v-list-item 
-                    v-else
-                    :key="item.title">
-                    <v-list-item-content class="py-0 ">
-                      <v-list-item-title v-html="item.title">                  
-                      </v-list-item-title>
-                      <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
-                    </v-list-item-content>
-                  </v-list-item> 
-                </v-col>
-              </v-card>
-            </template> 
-          </v-row>
-        </v-list>
+         <v-item-group  cols="12">
+          <template v-for="(item, index) in items" class="py-0 listit" > 
+           
+              <v-subheader
+                v-if="item.header"
+                :key="item.header"
+                v-text="item.header">
+              </v-subheader>
+              
+              <v-row v-if="item.title"  >  
+              
+                <v-col  cols="4">
+                  <v-item>  
+                  <v-card 
+                    class="mx-auto  align-center">
+                    <v-card-title v-html="item.title">                  
+                    </v-card-title>
+                    <v-card-subtitle v-html="item.subtitle"></v-card-subtitle>
+                  </v-card>
+                  </v-item>
+                </v-col>  
+              
+              </v-row>
+          
+          </template>    
+        </v-item-group>
       </v-menu>
     </div>
   </div>
@@ -71,7 +64,7 @@ export default {
           title: '<a href="https:impuls-psy.ru">Impuls-psy.ru</a>',
           subtitle: `<span class="text--primary">Психологический центр</span> &mdash; Сайт с админ-панелью для редактирования контента.`,
         },
-        { divider: true, inset: true },
+ 
         {
           avatar: '50k',
           title: '<a href="https:farmspot.ru">Farmspot.ru</span>',
@@ -107,10 +100,10 @@ export default {
 <style scoped>
 @import "../stylesheets/_variables";
 .list{
-  lost-masonry-wrap: no-flex;
+   
 }
 .listit {
-  lost-masonry-column: 1/3;
+ 
 }
 .port{
   /*position: relative;*/
