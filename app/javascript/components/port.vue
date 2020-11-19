@@ -6,14 +6,41 @@
         :close-on-content-click="false"
         :nudge-width="200"
         offset-x>
-        <template v-slot:activator="{ on, attrs }" >
+        <template v-slot:activator="{ on, attrs }"  >
           <v-btn icon
+            small
             v-bind="attrs"
             v-on="on">
             <v-icon x-large>mdi-language-ruby-on-rails</v-icon>
           </v-btn>
         </template>    
-         <v-item-group  cols="12">
+        <div v-for="(item, index) in items" class="py-0 port" > 
+          <v-card 
+            class="mx-auto  align-center">
+            <v-card-title v-html="item.title">                  
+            </v-card-title>
+            <v-card-subtitle v-html="item.subtitle"></v-card-subtitle>
+          </v-card> 
+        <!--   <div class="port">
+            123
+          </div>
+           <div class="port">
+            124
+          </div>
+          <div class="port">
+            124
+          </div>
+          <div class="port">
+            123
+          </div>
+           <div class="port">
+            124
+          </div>
+          <div class="port">
+            124
+          </div>           -->
+        </div>
+        <!--  <v-item-group  cols="12">
           <template v-for="(item, index) in items" class="py-0 listit" > 
            
               <v-subheader
@@ -38,7 +65,7 @@
               </v-row>
           
           </template>    
-        </v-item-group>
+        </v-item-group> -->
       </v-menu>
     </div>
   </div>
@@ -58,7 +85,7 @@ export default {
     return {
       menu: false,
        items: [
-        { header: 'Разработано на: Ruby on Rails 5.2 + Vue.js 2.0:' },
+        
         {
           avatar: '20k',
           title: '<a href="https:impuls-psy.ru">Impuls-psy.ru</a>',
@@ -106,8 +133,7 @@ export default {
  
 }
 .port{
-  /*position: relative;*/
-
+   lost-column: 1/4 4 0.5em;     
 }
 .popover-content {
   /*background-color:  $str5;*/

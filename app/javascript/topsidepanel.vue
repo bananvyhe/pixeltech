@@ -505,10 +505,7 @@
 </script>
 <style scoped>
 @import "stylesheets/_variables";
-.popover-content {
-	background-color:  $str5;
-	padding: 0.5em 0.8em;
-}
+ 
 /*@import "stylesheets/_extends";*/
 .folio{
 
