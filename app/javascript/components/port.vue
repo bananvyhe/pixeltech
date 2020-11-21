@@ -7,40 +7,29 @@
         :nudge-width="200"
         offset-x>
         <template v-slot:activator="{ on, attrs }"  >
-          <v-btn icon
+          <v-btn 
+            icon
             small
             v-bind="attrs"
             v-on="on">
             <v-icon x-large>mdi-language-ruby-on-rails</v-icon>
           </v-btn>
         </template>    
-        <div v-for="(item, index) in items" class="py-0 port" > 
-          <v-card 
-            class="mx-auto  align-center">
-            <v-card-title v-html="item.title">                  
-            </v-card-title>
-            <v-card-subtitle v-html="item.subtitle"></v-card-subtitle>
-          </v-card> 
-        <!--   <div class="port">
-            123
+        <v-card 
+          class="mx-auto  
+          align-center">
+          <v-list>
+            <v-list-item>
+          <div v-for="(item, index) in items" class="py-0 port" > 
+
+              <v-card-title v-html="item.title">                  
+              </v-card-title>
+              <v-card-subtitle v-html="item.subtitle"></v-card-subtitle>
+
+ 
           </div>
-           <div class="port">
-            124
-          </div>
-          <div class="port">
-            124
-          </div>
-          <div class="port">
-            123
-          </div>
-           <div class="port">
-            124
-          </div>
-          <div class="port">
-            124
-          </div>           -->
-        </div>
-        <!--  <v-item-group  cols="12">
+          </v-list-item>
+          <!--  <v-item-group  cols="12">
           <template v-for="(item, index) in items" class="py-0 listit" > 
            
               <v-subheader
@@ -66,6 +55,8 @@
           
           </template>    
         </v-item-group> -->
+            </v-list>
+          </v-card> 
       </v-menu>
     </div>
   </div>
