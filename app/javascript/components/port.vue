@@ -19,14 +19,14 @@
           class="mx-auto  
           align-center">
           <v-list>
-            <v-list-item>
-          <div v-for="(item, index) in items" class="py-0 port" > 
-
+            <v-list-item class="lostedit">
+          <div v-for="(item, index) in items" class="py-0 port" >
+              <div class="price text-h6 text--disabled"><div>{{item.price}}</div>
+              </div>
               <v-card-title v-html="item.title">                  
               </v-card-title>
               <v-card-subtitle v-html="item.subtitle"></v-card-subtitle>
 
- 
           </div>
           </v-list-item>
           <!--  <v-item-group  cols="12">
@@ -78,15 +78,17 @@ export default {
        items: [
         
         {
-          avatar: '20k',
+          avatar: '',
+          price: '20', 
           title: '<a href="https:impuls-psy.ru">Impuls-psy.ru</a>',
           subtitle: `<span class="text--primary">Психологический центр</span> &mdash; Сайт с админ-панелью для редактирования контента.`,
         },
  
         {
-          avatar: '50k',
+          avatar: '',
+          price: '120', 
           title: '<a href="https:farmspot.ru">Farmspot.ru</span>',
-          subtitle: `<span class="text--primary">Игровой форум</span> &mdash; форум для групп с управлением уровнями доступа и внутренними механиками соц взаимодейставия.`,
+          subtitle: `<span class="text--primary">Игровой форум</span> &mdash; форум для групп с управлением уровнями доступа и внутренними механиками соц взаимодейставия. Парсер-робот выполняющий функцию в заданное время`,
         },
         
       ],
@@ -117,6 +119,22 @@ export default {
 </script>
 <style scoped>
 @import "../stylesheets/_variables";
+.price{
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  font-weight: 300;
+  /*opacity: 50%;*/
+  display: flex;
+  /*align-self: center;*/
+  div{
+    padding: 0.1em 0.4em;
+    display: flex;
+  }
+}
 .list{
    
 }
@@ -124,7 +142,8 @@ export default {
  
 }
 .port{
-   lost-column: 1/4 4 0.5em;     
+  lost-column: 1/4 4 0.5em;   
+  position: relative;  
 }
 .popover-content {
   /*background-color:  $str5;*/
