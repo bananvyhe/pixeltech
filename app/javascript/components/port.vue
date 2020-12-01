@@ -1,6 +1,6 @@
 <template>
-  <div class="port" >
-    <div   v-if="!$store.getters.role">
+  <div class="port">
+    <div v-if="!$store.getters.role">
       <v-menu 
         v-model="menu"
         :close-on-content-click="false"
@@ -12,7 +12,8 @@
             small
             v-bind="attrs"
             v-on="on">
-            <v-icon x-large>mdi-language-ruby-on-rails</v-icon>
+            <!-- <v-icon x-large>mdi-language-ruby-on-rails</v-icon> -->
+            <v-icon x-large>mdi-content-copy</v-icon>
           </v-btn>
         </template> 
 
@@ -141,6 +142,7 @@ export default {
 .port{
   lost-column: 1/2 2 0.5em;   
   position: relative;  
+  padding: 0.5em;
 }
 .popover-content {
   /*background-color:  $str5;*/

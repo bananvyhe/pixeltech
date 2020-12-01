@@ -2,7 +2,7 @@
 	<div class="reg">
 		<v-dialog :width="calcul" v-model="dialogFormVisible" >
 			<template v-slot:activator="{ on, attrs }">
-				<v-btn type="primary"  @click="dialogFormVisible = true">Регистрация</v-btn>
+				<v-btn type="primary"  @click="dialogFormVisible = true" small>Регистрация</v-btn>
 			</template>
 			<v-card>
         <v-card-title class="headline grey darken-2">
