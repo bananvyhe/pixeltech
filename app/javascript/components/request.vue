@@ -13,9 +13,16 @@
           </div>
         </div>          
       </template>
-      <v-card>
+      <v-card
+        class="mx-auto">
+        <v-card-title class="headline grey darken-2">
+            Связь с разработчкиком
+          </v-card-title>
+          <v-container>
         <v-form :model="form" ref="forma">  
-          <v-text-field  v-model="form.email"
+          <v-text-field  
+            class="pt-5"
+            v-model="form.email"
             :rules="emailRules"
             type="text"
             label="ваша почта"
@@ -28,14 +35,11 @@
           label="Вопросы? Предложения."
           value=""
         ></v-textarea>
-          <v-form-item prop="textarea" size="medium"  label="Сообщение:">
-            <v-input type="textarea" v-model="form.text" auto-complete="off">
-            </v-input>
-          </v-form-item>
-          <v-form-item size="medium">
+ 
+      
             <v-btn  @click="dialogFormVisible = false">Отмена</v-btn><v-btn @click="handle" >Отправить</v-btn>
-          </v-form-item>    
-        </v-form>
+     
+        </v-form></v-container>
       </v-card>
     </v-dialog>
   </div>
