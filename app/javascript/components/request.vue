@@ -16,12 +16,15 @@
       <v-card
         class="mx-auto">
         <v-card-title class="headline grey darken-2">
-            Связь с разработчкиком
+            Связь с разработчиком
           </v-card-title>
           <v-container>
-        <v-form :model="form" ref="forma">  
+        <v-form 
+          class="my-0"
+          :model="form" 
+          ref="forma">  
           <v-text-field  
-            class="pt-5"
+            class="pt-5 pb-2"
             v-model="form.email"
             :rules="emailRules"
             type="text"
@@ -37,7 +40,7 @@
         ></v-textarea>
  
       
-            <v-btn  @click="dialogFormVisible = false">Отмена</v-btn><v-btn @click="handle" >Отправить</v-btn>
+            <v-btn  @click="dialogFormVisible = false">Отмена</v-btn><v-btn class="ml-2" @click="handle" >Отправить</v-btn>
      
         </v-form></v-container>
       </v-card>
