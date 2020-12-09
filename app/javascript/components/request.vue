@@ -1,35 +1,43 @@
 <template>
   <div class="request">
-    <div class="scale">
-      <div class="swing">
-        <el-button type="info" icon="el-icon-message" size="mini" circle @click="dialogFormVisible = true">
-        </el-button>
-      </div>
-    </div>
-    <el-dialog class="pos" top="18vh" :width="calcul" title="Задать вопрос:" :visible.sync="dialogFormVisible" :lock-scroll="false">
-      <el-form :model="form" ref="forma">  
-        <el-form-item 
-          prop="email" 
-          size="medium" 
-          label="Емайл:"
-          :rules="[
-            { required: true, message: 'Введите обратный адрес', trigger: 'blur' },
-            { type: 'email', message: 'Неправильный адрес почты', trigger: ['blur', 'change'] }
-          ]">
-          <el-input v-model="form.email" auto-complete="off"></el-input>
-        </el-form-item>
-        <el-form-item prop="textarea" size="medium"  label="Сообщение:">
-          <el-input type="textarea" v-model="form.text" auto-complete="off">
-          </el-input>
-        </el-form-item>
-        <el-form-item size="medium">
-          <el-button  @click="dialogFormVisible = false">Отмена</el-button><el-button   type="primary" @click="handle" >Отправить</el-button>
-        </el-form-item>    
-      </el-form>
-      <div slot="footer" class="footpostshow basetext font3">
-         
-      </div>
-    </el-dialog>
+    <v-dialog class="pos"  :width="calcul" :visible.sync="dialogFormVisible"  >
+      <template v-slot:activator="{ on, attrs }">
+        <div class="scale">
+          <div class="swing">
+            <v-btn icon
+              small
+              v-bind="attrs"
+              v-on="on"
+               @click="dialogFormVisible = true">почта
+            </v-btn>
+          </div>
+        </div>          
+      </template>
+      <v-card>
+        <v-form :model="form" ref="forma">  
+          <v-text-field  v-model="form.email"
+            :rules="emailRules"
+            type="text"
+            label="ваша почта"
+          >
+   
+          </v-text-field>
+          <v-textarea
+          outlined
+          name="input-7-4"
+          label="Вопросы? Предложения."
+          value=""
+        ></v-textarea>
+          <v-form-item prop="textarea" size="medium"  label="Сообщение:">
+            <v-input type="textarea" v-model="form.text" auto-complete="off">
+            </v-input>
+          </v-form-item>
+          <v-form-item size="medium">
+            <v-btn  @click="dialogFormVisible = false">Отмена</v-btn><v-btn @click="handle" >Отправить</v-btn>
+          </v-form-item>    
+        </v-form>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -39,9 +47,16 @@ let screenwidth = {value: ''}
 export default {
   data: function () {
     return {
+
+      emailRules: [
+        v => !!v || 'Обязательно к заполнению',
+        v => /.+@.+/.test(v) || 'E-mail не валиден ',
+         // v => (v || '').indexOf(' ') < 0 ||  'Пробелов не должно быть'
+      ],      
       dialogFormVisible: false,
       form: {
         email: '',
+
         text: '' 
       },
       formLabelWidth: '80px',

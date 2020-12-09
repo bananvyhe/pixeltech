@@ -8,6 +8,7 @@
           hide-on-scroll
           dense>
           <port></port>
+          <request></request>
           <v-spacer ></v-spacer>
           <div class="wrap" v-if="$store.getters.token == null" > 
             <reg></reg>

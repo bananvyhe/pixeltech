@@ -58,6 +58,7 @@ Vue.component('addpublic', Addpublic)
 Vue.component('topsidepanel', Topsidepanel)
  
 Vue.component('port', Port)
+Vue.component('request', Request)
 // Vue.component('inv', Inv)
 // Vue.component('vembed', vembed)
 // Vue.component('v-embed', {
