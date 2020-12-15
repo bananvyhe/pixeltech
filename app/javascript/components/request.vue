@@ -24,7 +24,8 @@
           :model="form" 
           ref="forma">  
           <v-text-field  
-            class="pt-5 pb-2"
+            class="pt-2 pb-1 px-1"
+
             v-model="form.email"
             :rules="emailRules"
             type="text"
@@ -33,14 +34,15 @@
    
           </v-text-field>
           <v-textarea
+           class="px-1"
           outlined
           name="input-7-4"
-          label="Вопросы? Предложения."
+          label="Вопросы, предложения."
           value=""
         ></v-textarea>
  
-      
-            <v-btn  @click="dialogFormVisible = false">Отмена</v-btn><v-btn class="ml-2" @click="handle" >Отправить</v-btn>
+          <container>
+            <v-btn   @click="dialogFormVisible = false">Отмена</v-btn><v-btn class="ml-2" @click="handle" >Отправить</v-btn></container>
      
         </v-form></v-container>
       </v-card>

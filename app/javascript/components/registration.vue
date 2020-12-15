@@ -32,7 +32,7 @@
 					          name="input-10-1"
 				          	@click:append="show1 = !show1"
 				            v-model="form.password"
-				            :rules="passRules"
+				             
 				            label="Пароль">
 				          </v-text-field>
 				        	</v-col> 
