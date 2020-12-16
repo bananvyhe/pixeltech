@@ -19,7 +19,7 @@
         	</v-btn>
       	</template>
         <v-card>
-	        <v-card-title class="headline grey darken-2">
+	        <v-card-title class="headline grey darken-2 px-3">
 	          Вход
 	        </v-card-title>
 					<v-card-actions>

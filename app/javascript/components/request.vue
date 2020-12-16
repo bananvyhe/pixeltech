@@ -15,7 +15,7 @@
       </template>
       <v-card
         class="mx-auto">
-        <v-card-title class="headline grey darken-2">
+        <v-card-title class="headline grey darken-2 px-3">
             Связь с разработчиком
           </v-card-title>
           <v-container>
@@ -33,16 +33,17 @@
           >
    
           </v-text-field>
+          <v-container class="px-0">
           <v-textarea
            class="px-1"
           outlined
           name="input-7-4"
-          label="Вопросы, предложения."
+          label="Ваше сообщение..."
           value=""
-        ></v-textarea>
+        ></v-textarea></v-container>
  
-          <container>
-            <v-btn   @click="dialogFormVisible = false">Отмена</v-btn><v-btn class="ml-2" @click="handle" >Отправить</v-btn></container>
+           <v-card-actions class="px-0 py-0">
+            <v-btn   @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn> </v-card-actions>
      
         </v-form></v-container>
       </v-card>

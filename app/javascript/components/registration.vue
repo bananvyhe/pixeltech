@@ -5,7 +5,7 @@
 				<v-btn type="primary"  @click="dialogFormVisible = true" small>Регистрация</v-btn>
 			</template>
 			<v-card>
-        <v-card-title class="headline grey darken-2">
+        <v-card-title class="headline grey darken-2 px-3">
           Регистрация
         </v-card-title>
 				<v-card-actions>	
