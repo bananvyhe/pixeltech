@@ -60,7 +60,7 @@
 					          name="input-10-1"
 				          	@click:append="show1 = !show1"
 				            v-model="form.username"
-				            :rules="passRulesConf"
+				            :rules="usernameRules"
 				            label="Имя пользователя">
 				          </v-text-field>
 				        </v-col> 							        			         
@@ -174,6 +174,9 @@
 	        v => !!v || 'Обязательно к заполнению',
 	        v => /.+@.+/.test(v) || 'E-mail не валиден ',
 	         // v => (v || '').indexOf(' ') < 0 ||  'Пробелов не должно быть'
+	      ],		    	
+	        usernameRules: [
+	        v => !!v || 'Обязательно к заполнению'
 	      ],		    	
 	    	valid: false,
 	    	responseEmail: false,
