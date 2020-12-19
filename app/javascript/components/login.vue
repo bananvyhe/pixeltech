@@ -19,16 +19,18 @@
         	</v-btn>
       	</template>
         <v-card>
+
 	        <v-card-title class="headline grey darken-2 px-3">
 	          Вход
 	        </v-card-title>
-					<v-card-actions>
+					         	<v-container>
 						<v-form 
 							v-model="valid"
 							class="mb-0">
-					    <v-container>
+					    
 					      <v-row>
         					<v-col
+        					class="py-0"
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -39,6 +41,7 @@
 				          	</v-text-field>
 				        	</v-col>
 				        	<v-col
+				        	class="py-0"
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -53,22 +56,23 @@
 				      </v-row>
 <!-- 				        			      <div class="forgetPassword"><a href="/users/password/new">забыли пароль?</a></div> -->
 				      <v-switch
+				      	class="mt-0"
 			      		v-model="checked"
 			      		:label="`${checked == false ? 'короткая сессия':'запомнить'}`">
 			      	</v-switch>
-				    </v-container>
+				    
 				  </v-form>
-				</v-card-actions>
+				 
         <v-divider></v-divider>
-        <v-card-actions>
+        <v-card-actions  class="px-0 py-0">
           <v-spacer></v-spacer>
           <v-btn
-            color="primary"
-            text
+     
+  
             @click="handle">
             Подтвердить
           </v-btn>
-        </v-card-actions>
+        </v-card-actions></v-container>
       </v-card>
 <!-- 	  	<el-form :model="form" :rules="rules" ref="form">	 
 		  	<el-form-item 

@@ -25,26 +25,25 @@
           ref="forma">  
           <v-text-field  
             class="pt-2 pb-1 px-1"
-
             v-model="form.email"
             :rules="emailRules"
             type="text"
-            label="ваша почта"
-          >
-   
+            label="ваша почта">
           </v-text-field>
-          <v-container class="px-0">
-          <v-textarea
-           class="px-1"
-          outlined
-          name="input-7-4"
-          label="Ваше сообщение..."
-          value=""
-        ></v-textarea></v-container>
- 
-           <v-card-actions class="px-0 py-0">
-            <v-btn   @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn> </v-card-actions>
-     
+          <v-container class="px-0 py-1">
+            <v-textarea
+             class="px-1"
+            outlined
+            name="input-7-4"
+            label="Ваше сообщение..."
+            value="">
+            </v-textarea>
+          </v-container>
+          <v-divider></v-divider>
+          <v-card-actions class="px-0 py-0">
+            <v-spacer></v-spacer>
+            <v-btn   @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn>
+          </v-card-actions>
         </v-form></v-container>
       </v-card>
     </v-dialog>

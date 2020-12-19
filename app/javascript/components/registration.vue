@@ -8,13 +8,14 @@
         <v-card-title class="headline grey darken-2 px-3">
           Регистрация
         </v-card-title>
-				<v-card-actions>	
+ 				<v-container>
 					<v-form 
 					v-model="valid"
 					class="mb-0">
 					  <v-container>
 					      <v-row>
         					<v-col
+        					class="py-0"
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -25,6 +26,7 @@
 				          	</v-text-field>
 				        	</v-col>
 				        	<v-col
+				        	class="py-0"
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -37,6 +39,7 @@
 				          </v-text-field>
 				        	</v-col> 
 				        	<v-col
+				        	class="py-0"
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -47,12 +50,28 @@
 				            :rules="passRulesConf"
 				            label="Повторите пароль">
 				          </v-text-field>
-				        </v-col> 				          
-
+				        </v-col> 	
+				        	<v-col
+				        	class="py-0"
+				          cols="12"
+				          md="12">
+				          	<v-text-field
+					          type="username"
+					          name="input-10-1"
+				          	@click:append="show1 = !show1"
+				            v-model="form.username"
+				            :rules="passRulesConf"
+				            label="Имя пользователя">
+				          </v-text-field>
+				        </v-col> 							        			         
 				      </v-row>					  	
 					  </v-container>
+					  <v-divider></v-divider>
+           <v-card-actions class="px-0 py-0">
+           	<v-spacer></v-spacer>
+            <v-btn   @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn> </v-card-actions>
 					</v-form>			
-				</v-card-actions>
+ 				</v-container>
 			</v-card>		
 			<!-- <h1 style="marginTop: -0.2em;">Создать аккаунт:</h1> -->
 <!-- 	  	<el-form :model="form" :rules="rules" ref="form"> 
