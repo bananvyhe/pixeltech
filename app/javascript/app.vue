@@ -27,7 +27,7 @@
         <!-- <topsidepanel></topsidepanel> -->
         <div v-if="$store.getters.role">
           <div v-if="$store.getters.role.role.includes('client') == true">
-           <siteown></siteown>ascas
+           <siteown></siteown>
           </div>
         </div>
       </v-main>
