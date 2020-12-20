@@ -2,13 +2,15 @@
   <div  class="vmain">
     <v-app >
       <v-container
-        class="py-1 px-0 app">
+        class="py-0 px-0 app">
         <v-app-bar 
           height="42px"
           hide-on-scroll
           dense>
           <port></port>
-          <request></request>
+          <div class="wrap" v-if="$store.getters.token == null" > 
+            <request></request>
+          </div>
           <v-spacer ></v-spacer>
           <div class="wrap" v-if="$store.getters.token == null" > 
             <reg></reg>
@@ -23,9 +25,9 @@
           <heado></heado>
         </div>
         <!-- <topsidepanel></topsidepanel> -->
-        <div v-if="$store.getters.role" >
-          <div v-if="$store.getters.role.role == 'client'">
-            <siteown></siteown>
+        <div v-if="$store.getters.role">
+          <div v-if="$store.getters.role.role.includes('client') == true">
+           <siteown></siteown>ascas
           </div>
         </div>
       </v-main>

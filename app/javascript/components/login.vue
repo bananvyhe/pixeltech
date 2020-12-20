@@ -27,7 +27,7 @@
 						<v-form 
 							v-model="valid"
 							class="mb-0">
-					    
+					    <v-container>
 					      <v-row>
         					<v-col
         					class="py-0"
@@ -60,7 +60,7 @@
 			      		v-model="checked"
 			      		:label="`${checked == false ? 'короткая сессия':'запомнить'}`">
 			      	</v-switch>
-				    
+				    </v-container>
 				  </v-form>
 				 
         <v-divider></v-divider>
