@@ -29,6 +29,7 @@ import Chat from '../chat.vue'
 import App from '../app.vue'
 import Siteown from '../siteown.vue'
 import Port from '../components/port.vue'
+import Gamebo from '../components/gamebo.vue'
 // import CommentVotes from '../components/commentvotes.vue'
 // import Inv from '../components/inventory.vue'
 // import Topsection from '../components/topsection.vue'
@@ -60,6 +61,7 @@ Vue.component('topsidepanel', Topsidepanel)
 Vue.component('port', Port)
 Vue.component('request', Request)
 Vue.component('siteown', Siteown)
+Vue.component('gamebo', Gamebo)
 // Vue.component('inv', Inv)
 // Vue.component('vembed', vembed)
 // Vue.component('v-embed', {

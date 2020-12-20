@@ -12,6 +12,7 @@
             <request></request>
           </div>
           <v-spacer ></v-spacer>
+          <gamebo></gamebo>
           <div class="wrap" v-if="$store.getters.token == null" > 
             <reg></reg>
           </div>
