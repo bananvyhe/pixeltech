@@ -1,75 +1,56 @@
 <template>
-  <div >
-    <!-- <v-app class="vmain" > -->
- 
-      <!-- <v-main > -->
-        <!-- <topsidepanel ></topsidepanel> -->
-        <!-- <div style="height: 4em;"></div> -->
-       <!--  <div v-if="!$store.getters.role">
-          <heado ></heado>
-        </div> -->
-        <div class="basetext pay">
-<!--       баланс: <%= @client.ballance%>  руб. -->
-   
-     
-          <v-form 
-
-            v-model="valid" 
-            method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
-            <v-container>
-              <h3>пополнить счет:</h3>
-              <v-row >
-                <v-col
-                class="py-0"
-                  cols="4"
-                   >
-                  <v-text-field name="sum" 
-                    v-model="firstname"
-                    :rules="nameRules"
-                    label="введите сумму"
-                    required
-                  ></v-text-field> способ оплаты:
-                </v-col>
-              </v-row>
-    
- 
- 
-  </v-row>
-              <v-radio-group v-model="radios" class="my-0" >
-                <v-radio  
-                  label="Яндекс деньгами"
-                  value="PC"
-                >
-                </v-radio>
-                <v-radio   
-                  label="Банковской картой"
-                  value="AC"
-                >                
-                </v-radio>
-              </v-radio-group>
-               <input type="hidden" name="receiver" value="410013909808332">
-       <input type="hidden" name="label" value="<%=current_user.id %>">    
-      <input type="hidden" name="quickpay-form" value="donate">    
-      <input type="hidden" name="targets" value="хостинг">    
-              <v-row class="px-3">
-                <v-btn type="submit" small>Оплатить</v-btn>
-              </v-row>
-            </v-container>
-          </v-form>
-<!--        <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">    
-      <input type="hidden" name="receiver" value="410013909808332">
-       <input type="hidden" name="label" value="<%=current_user.id %>">    
-      <input type="hidden" name="quickpay-form" value="donate">    
-      <input type="hidden" name="targets" value="хостинг">    
-      <input   name="sum" value="2" data-type="number"> руб.    -->
-
-        </div>        
-        {{ballance}}
+  <div>
+    <div class="basetext pay">
+      <!-- баланс: <%= @client.ballance%>  руб. -->
+      <v-form
+        v-model="valid" 
+        method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
         <v-container>
-        <posts  ></posts> 
- </v-container>
+          <h3>пополнить счет:</h3>
+          <v-row >
+            <v-col
+            class="py-0"
+            cols="4">
+              <v-text-field name="sum" 
+              v-model="firstname"
+              :rules="nameRules"
+              label="введите сумму"
+              required>
+              </v-text-field>способ оплаты:
+            </v-col>
+          </v-row>
+          <v-radio-group v-model="radios" class="my-0" >
+            <v-radio  
+            label="Яндекс деньгами"
+            value="PC">
+            </v-radio>
+            <v-radio   
+            label="Банковской картой"
+            value="AC">                
+            </v-radio>
+          </v-radio-group>
+          <input type="hidden" name="receiver" value="410013909808332">
+          <input type="hidden" name="label" value="<%=current_user.id %>">    
+          <input type="hidden" name="quickpay-form" value="donate">    
+          <input type="hidden" name="targets" value="хостинг">    
+          <v-row class="px-3">
+            <v-btn type="submit" small>Оплатить</v-btn>
+          </v-row>
+        </v-container>
+      </v-form>
+  <!--        <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">    
+        <input type="hidden" name="receiver" value="410013909808332">
+         <input type="hidden" name="label" value="<%=current_user.id %>">    
+        <input type="hidden" name="quickpay-form" value="donate">    
+        <input type="hidden" name="targets" value="хостинг">    
+        <input   name="sum" value="2" data-type="number"> руб.    -->
+    </div>        
+    {{ballance}}
+    <v-container>
+      <posts></posts> 
+    </v-container>
       <!-- </v-main>  -->
-    <!-- </v-app> -->
+      <!-- </v-app> -->
   </div>
 </template>
 <script>
