@@ -27,7 +27,7 @@
         </div>
         <!-- <topsidepanel></topsidepanel> -->
         <div v-if="$store.getters.role">
-          <div v-if="$store.getters.role.role.includes('client') == true">
+          <div v-if="$store.getters.role.includes('client') == true">
            <siteown></siteown>
           </div>
         </div>
