@@ -480,7 +480,7 @@
 
 	  },
 	  mounted() {
-	  		  	  this.popoverOptions.popoverReference = this.$refs.popoverReference
+	  	this.popoverOptions.popoverReference = this.$refs.popoverReference
 	  	//проверка условий на существования логина 
 	  	if (!this.exptime){
   			this.checkRelevanceToken()

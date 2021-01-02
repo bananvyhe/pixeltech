@@ -47,7 +47,7 @@
     </div>        
     {{ballance}}
     <v-container>
-      <posts></posts> 
+      <!-- <posts></posts>  -->
     </v-container>
       <!-- </v-main>  -->
       <!-- </v-app> -->
