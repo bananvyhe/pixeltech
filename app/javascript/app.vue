@@ -18,6 +18,7 @@
           </div>
           <div class="wrap">
             <log ></log>{{$store.getters.token}}
+            <!-- |||||{{exptime}}++++{{errored}} -->
           </div>
         </v-app-bar>
       </v-container>
@@ -58,6 +59,7 @@ import axios from 'axios'
   export default {
     data: function (){
       return {
+        errored:'',
         exptime: '',
         icons: [
           'mdi-home',
@@ -105,6 +107,9 @@ import axios from 'axios'
         }
         return attrs
       },
+
+    },      
+    methods:{
       nulltoken: function(){
         axios.delete('/users/sign_out', {
         }) 
@@ -118,9 +123,7 @@ import axios from 'axios'
             document.location.reload()
           }
         })
-      },      
-    },
-    methods:{
+      },  
       storeCommitGbData(){
         if (this.$store.getters.role) {
           axios({
@@ -197,8 +200,9 @@ import axios from 'axios'
 
           }
         })
-        .catch(function (error) {
-           
+        .catch( error => {
+          console.log('555')
+            this.nulltoken()
         }); 
       },
       stopTimer() {

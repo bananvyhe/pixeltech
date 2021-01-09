@@ -75,7 +75,7 @@
       }
     },
      beforeCreate () {
-    document.querySelectorAll('[data-app="true"]')[0].removeAttribute('data-app')
+    // document.querySelectorAll('[data-app="true"]')[0].removeAttribute('data-app')
   },    
      
     mounted() {
