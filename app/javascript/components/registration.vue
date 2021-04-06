@@ -215,8 +215,13 @@
 			      username: val
 			    }
 	  		})
-      	.then((response) => { 	 
-    			this.responseName =  response.data.username
+      	.then((response) => { 	
+      	if(response.data != null) {
+      		console.log(response.data);
+      		this.responseName =  response.data.username
+      	}
+    			
+
 
        	})
       	.catch(function (error) {

@@ -1,5 +1,6 @@
 <template>
   <div  class="vmain">
+
     <v-app >
       <v-container
         class="py-0 px-0 app">
@@ -17,22 +18,25 @@
             <reg></reg>
           </div>
           <div class="wrap">
-            <log ></log>{{$store.getters.token}}
+            <log ></log>
+             <div v-if="$store.getters.token == null" > {{$store.getters.token}} </div>
             <!-- |||||{{exptime}}++++{{errored}} -->
           </div>
         </v-app-bar>
       </v-container>
       <v-main>
-        <div v-if="!$store.getters.role"  class="heado">
+        <div v-if="$store.getters.role == null"  class="heado">
           <heado></heado>
         </div>
         <!-- <topsidepanel></topsidepanel> -->
-        <div v-if="$store.getters.role">
+        <div v-if="$store.getters.role != null ">
+          {{$store.getters.role.role}}
           <div v-if="$store.getters.role.role.includes('client') == true">
            <siteown></siteown>
           </div>
         </div>
       </v-main>
+
       <v-container
       class="py-1 pb-0  px-0">
         <v-footer
