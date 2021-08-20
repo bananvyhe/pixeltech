@@ -25,16 +25,19 @@
         </v-app-bar>
       </v-container>
       <v-main>
-        <div v-if="$store.getters.role == null"  class="heado">
+        <div v-if="$store.getters.role">
+                <div v-if="$store.getters.role == null"  class="heado">
           <heado></heado>
         </div>
         <!-- <topsidepanel></topsidepanel> -->
-        <div v-if="$store.getters.role != null ">
-          {{$store.getters.role.role}}
+        <div v-if="$store.getters.role != 0 ">
+          {{$store.getters.role }}
           <div v-if="$store.getters.role.role.includes('client') == true">
            <siteown></siteown>
           </div>
         </div>
+        </div>
+  
       </v-main>
 
       <v-container
