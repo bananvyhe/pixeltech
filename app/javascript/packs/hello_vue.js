@@ -30,7 +30,7 @@ import Siteown from '../siteown.vue'
 import Port from '../components/port.vue'
 import Gamebo from '../components/gamebo.vue'
 
-import '../../../public/theme/index.css'
+// import '../../../public/theme/index.css'
 
 import { EmojiPickerPlugin } from 'vue-emoji-picker'
 Vue.use(EmojiPickerPlugin)

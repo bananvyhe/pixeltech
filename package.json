@@ -49,7 +49,7 @@
   "devDependencies": {
     "deepmerge": "^4.2.2",
     "fibers": "^5.0.0",
-    "sass": "^1.26.10",
+    "sass": "~1.32.12",
     "sass-loader": "^10.0.2",
     "webpack-dev-server": "3.11.0"
   }
