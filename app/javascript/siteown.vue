@@ -19,7 +19,7 @@
               </v-text-field>способ оплаты:
             </v-col>
           </v-row>
-          <v-radio-group v-model="radios" class="my-0" >
+          <v-radio-group v-model="radios" class="my-2" >
             <v-radio  
             label="Яндекс деньгами"
             value="PC">
@@ -110,11 +110,12 @@
 @import "stylesheets/_variables";
 
 #app{
+  /*lost-utility: edit;*/
   /*background-color: var(--v-background-base);*/
 }
 .pay{
 
-  padding: 0.0em 0.4em;
+  /*padding: 0.0em 0.0em;*/
 }
 .vmain{
   lost-center: $lcenter;
