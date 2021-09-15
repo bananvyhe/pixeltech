@@ -1,6 +1,6 @@
 <template>
   <div class="request">
-    <v-dialog class="pos"  :width="calcul" :visible.sync="dialogFormVisible"  >
+    <v-dialog class="pos"  :width="calcul" v-model="dialogFormVisible" >
       <template v-slot:activator="{ on, attrs }">
         <div class="scale">
           <div class="shake">
@@ -47,6 +47,21 @@
         </v-form></v-container>
       </v-card>
     </v-dialog>
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="timeout">
+      {{ text }}
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="blue"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 
@@ -56,7 +71,9 @@ let screenwidth = {value: ''}
 export default {
   data: function () {
     return {
-
+      snackbar: false,
+      text: 'My timeout is set to 2000.',
+      timeout: 4000,
       emailRules: [
         v => !!v || 'Обязательно к заполнению',
         v => /.+@.+/.test(v) || 'E-mail не валиден ',
@@ -82,28 +99,28 @@ export default {
   },
   methods: {
     resetForm(formName) {
-      this.$refs[formName].resetFields();
+     this.$refs[formName].reset();
     },
-    open() {
-      const h = this.$createElement;
+    // open() {
+    //   const h = this.$createElement;
 
-      this.$notify({
-        type: 'success',
-        title: 'Спасибо',
-        message: h('i', { style: 'color: teal' }, 'Ваше сообщение отправлено.'),
-        position: 'bottom-right'
-      });
-    },    
+    //   this.$notify({
+    //     type: 'success',
+    //     title: 'Спасибо',
+    //     message: h('i', { style: 'color: teal' }, 'Ваше сообщение отправлено.'),
+    //     position: 'bottom-right'
+    //   });
+    // },    
     handle: function () {
       this.onSubmit();
-      this.dialogFormVisible = false
       var contain = $('.contain');
       contain.addClass('hidden');
       var bg = $('#bg');
       bg.addClass('hidden');
-      this.open();
-      this.resetForm('forma');      
-      // this.dialogFormVisible = false
+      this.snackbar = true;
+      // this.open();
+      this.resetForm('forma');   
+      this.dialogFormVisible = false;
     },
     onSubmit: function () {
       axios.post('/api/v1/request', {
