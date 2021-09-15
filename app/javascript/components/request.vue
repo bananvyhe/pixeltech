@@ -3,12 +3,12 @@
     <v-dialog class="pos"  :width="calcul" :visible.sync="dialogFormVisible"  >
       <template v-slot:activator="{ on, attrs }">
         <div class="scale">
-          <div class="swing">
+          <div class="shake">
             <v-btn icon
               small
               v-bind="attrs"
               v-on="on"
-               @click="dialogFormVisible = true">почта
+               @click="dialogFormVisible = true">задать вопрос
             </v-btn>
           </div>
         </div>          

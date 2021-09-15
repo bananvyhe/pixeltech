@@ -13,7 +13,7 @@
             v-bind="attrs"
             v-on="on">
             <!-- <v-icon x-large>mdi-language-ruby-on-rails</v-icon> -->
-            <v-icon x-large>mdi-content-copy</v-icon>
+            <v-icon x-large>mdi-view-module</v-icon>
           </v-btn>
         </template> 
 
