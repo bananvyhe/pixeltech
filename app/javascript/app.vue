@@ -15,7 +15,11 @@
           <gamebo></gamebo>
           <div class="wrap" v-if="$store.getters.token == null" > 
             <reg></reg>
-          </div>            &#x20bd; {{ballance}}
+          </div>
+          <div v-if="ballance != 0">
+            &#x20bd; {{ballance}}            
+          </div>
+
           <div class="wrap">
             <log ></log>
              <div v-if="$store.getters.token == null" > {{$store.getters.token}} </div>
