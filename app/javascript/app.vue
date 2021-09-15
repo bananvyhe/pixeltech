@@ -1,6 +1,5 @@
 <template>
   <div  class="vmain">
-
     <v-app >
       <v-container
         class="py-0 px-0 app">
@@ -16,7 +15,7 @@
           <gamebo></gamebo>
           <div class="wrap" v-if="$store.getters.token == null" > 
             <reg></reg>
-          </div>
+          </div>            &#x20bd; {{ballance}}
           <div class="wrap">
             <log ></log>
              <div v-if="$store.getters.token == null" > {{$store.getters.token}} </div>
@@ -31,9 +30,11 @@
         </div>
         <!-- <topsidepanel></topsidepanel> -->
         <div v-if="$store.getters.role != 0 ">
-          {{$store.getters.role }}
+          <!-- {{$store.getters.role }} -->
           <div v-if="$store.getters.role.role.includes('client') == true">
+
            <siteown></siteown>
+            
           </div>
         </div>
         </div>
@@ -66,6 +67,7 @@ import axios from 'axios'
   export default {
     data: function (){
       return {
+        ballance:"",
         errored:'',
         exptime: '',
         icons: [
@@ -105,7 +107,6 @@ import axios from 'axios'
     computed: {
       localAttrs () {
         const attrs = {}
-
         if (this.variant === 'default') {
           attrs.absolute = false
           attrs.fixed = false
@@ -114,9 +115,28 @@ import axios from 'axios'
         }
         return attrs
       },
-
     },      
     methods:{
+      getBallance(){
+        if (this.$store.getters.role) {
+          axios({
+          method: 'get',
+          url: '/clients',
+            headers: {
+              'Authorization': 'bearer '+this.$store.getters.token.access
+            } 
+          })
+          .then((response) => {
+            console.log(response.data)
+            if (response.data){
+              this.ballance = response.data 
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });             
+        }       
+      },      
       nulltoken: function(){
         axios.delete('/users/sign_out', {
         }) 
@@ -228,7 +248,7 @@ import axios from 'axios'
       },
     },
     mounted() {
- 
+       this.getBallance()
       //проверка условий на существования логина 
       if (!this.exptime){
         this.checkRelevanceToken()

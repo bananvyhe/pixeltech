@@ -4,9 +4,14 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @users = User.all
-    @client = User.joins(:inboxe).find_by(payload['user_id'])
-     render json: @client
+    # @users = User.all
+ 
+              print '================||>'
+    # @client = Client.find_by(payload['user_id'])
+    @client = Client.find_by_user_id(payload['user_id']).ballance
+    render json: @client 
+
+          print '++++++++++++++||>'
   end
 
   # GET /clients/1

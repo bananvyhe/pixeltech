@@ -9,8 +9,8 @@
           <h3>пополнить счет:</h3>
           <v-row >
             <v-col
-            class="py-0"
-            cols="4">
+            class=" "
+            cols="4"  >
               <v-text-field name="sum" 
               v-model="firstname"
               :rules="nameRules"
@@ -38,14 +38,7 @@
           </v-row>
         </v-container>
       </v-form>
-  <!--        <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">    
-        <input type="hidden" name="receiver" value="410013909808332">
-         <input type="hidden" name="label" value="<%=current_user.id %>">    
-        <input type="hidden" name="quickpay-form" value="donate">    
-        <input type="hidden" name="targets" value="хостинг">    
-        <input   name="sum" value="2" data-type="number"> руб.    -->
     </div>        
-    {{ballance}}
     <v-container>
       <!-- <posts></posts>  -->
     </v-container>
@@ -60,7 +53,7 @@
     data: function (){
       return {
         chip1: true,
-         chip2: true,
+        chip2: true,
         chip3: true,
         chip4: true,
         ballance:"",
@@ -71,15 +64,13 @@
           v => !!v || 'необходимо ввести сумму',
           v => isNaN(v) == false || 'допускается только ввод чисел',
         ],
-     
       }
     },
      beforeCreate () {
     // document.querySelectorAll('[data-app="true"]')[0].removeAttribute('data-app')
   },    
-     
     mounted() {
-      this.getBallance()
+      // this.getBallance()
     },
     methods: {
       getBallance(){
