@@ -12,14 +12,16 @@
             class=" "
             cols="4"  >
               <v-text-field name="sum" 
+               append-outer-icon= "mdi-currency-rub"
               v-model="firstname"
               :rules="nameRules"
-              label="введите сумму"
+              label="пополнить балланс"
               required>
-              </v-text-field>способ оплаты:
+              </v-text-field>
+              способ оплаты:
             </v-col>
           </v-row>
-          <v-radio-group v-model="radios" class="my-2" >
+          <v-radio-group v-model="radios" class="my-2">
             <v-radio  
             label="Яндекс деньгами"
             value="PC">

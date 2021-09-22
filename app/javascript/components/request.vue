@@ -41,8 +41,8 @@
           </v-container>
           <v-divider></v-divider>
           <v-card-actions class="px-0 py-0">
-            <v-spacer></v-spacer>
-            <v-btn   @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn>
+            <!-- <v-spacer></v-spacer> -->
+            <v-btn @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn>
           </v-card-actions>
         </v-form></v-container>
       </v-card>
@@ -56,8 +56,7 @@
           color="blue"
           text
           v-bind="attrs"
-          @click="snackbar = false"
-        >
+          @click="snackbar = false">
           Close
         </v-btn>
       </template>

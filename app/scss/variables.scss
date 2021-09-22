@@ -12,7 +12,8 @@ $list-item-two-line-min-height: 55px ;
 $textarea-box-enclosed-single-outlined-margin-top: 6px;
 $textarea-box-enclosed-single-outlined-label-top: 20px;
  $textarea-box-enclosed-prefix-margin-top:	14px;
- $textarea-line-height: 1.4rem;
+ $textarea-line-height: 1.75rem;
+ $divider-inset-margin: 12px !default;
 // @import "stylesheets/_variables";
  // $color-pack: false;
  // 
@@ -45,3 +46,4 @@ $material-dark: (
 $card-actions-padding: 8px !important;
 $footer-border-radius: 3px;
 $footer-padding:0px 0px;
+ 
