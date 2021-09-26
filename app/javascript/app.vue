@@ -275,6 +275,7 @@ import axios from 'axios'
   }
 </script>
 <style scoped>
+ 
 @import "stylesheets/_variables";
 /*.app{
   position: relative;

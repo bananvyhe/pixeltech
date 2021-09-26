@@ -12,7 +12,7 @@
             class=" "
             cols="4"  >
               <v-text-field name="sum" 
-               append-outer-icon= "mdi-currency-rub"
+              append-outer-icon="mdi-currency-rub"
               v-model="firstname"
               :rules="nameRules"
               label="пополнить балланс"
