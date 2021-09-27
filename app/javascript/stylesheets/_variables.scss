@@ -49,6 +49,15 @@ $bgcol2: color(#1E1E21 shade(16%));
   border-radius: 0.1em;
   padding: 0em 0.6em 0.1em 0.8em;
 }
+@custom-media --telpanel-small-screen (width <= 720px);
+@custom-media --only-956less-screen (width <= 956px);
+
+@custom-media --only-xsmall-screen (width >= 0px) and (width <= 450px);
+@custom-media --only-small-screen (width >= 451px) and (width <= 799px);
+@custom-media --only-medium-screen (width >= 800px) and (width <= 1559px);
+
+@custom-media --only-1600more-screen (width >= 1560px);
+@custom-media --only-big-screen (width >= 1920px);
 /*span{
 	$blu1: #1D4B8F;
 	$blu2: #2B456B;
