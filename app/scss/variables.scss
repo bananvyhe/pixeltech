@@ -16,7 +16,7 @@ $textarea-box-enclosed-single-outlined-label-top: 20px;
 $textarea-box-enclosed-prefix-margin-top:	14px;
 $textarea-line-height: 1.75rem;
 $divider-inset-margin: 12px !default;
-
+ 
  // $color-pack: false;
  // 
 //  $material-dark-elevation-colors: (
@@ -34,7 +34,7 @@ $divider-inset-margin: 12px !default;
 $material-dark: (
 	'app-bar': $blu2,
 	 // 'status-bar': (
-      'regular': #373737,
+      'regular': $blu3,
   //     'lights-out': #000000
   //   ),
   'background': #222922,

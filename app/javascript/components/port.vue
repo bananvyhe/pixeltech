@@ -116,7 +116,7 @@ export default {
 // window.addEventListener('resize', _.throttle(parseCalc, 100));
 </script>
 <style scoped>
-@import "../stylesheets/_variables";
+@import "../stylesheets/_variables.scss";
 .price{
   position: absolute;
   display: flex;

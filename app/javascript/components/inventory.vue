@@ -261,7 +261,7 @@ export default {
 }
 </script>
 <style scoped>
-@import "../stylesheets/_variables";
+@import "../stylesheets/_variables.scss";
 .uiframe{
   padding-top: 0.25em;
 }

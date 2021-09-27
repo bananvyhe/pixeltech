@@ -504,7 +504,7 @@
 	//подсчет ширины вьюпорта и отправление в переменную
 </script>
 <style scoped>
-@import "stylesheets/_variables";
+@import "stylesheets/_variables.scss";
  
 /*@import "stylesheets/_extends";*/
 .folio{

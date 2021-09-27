@@ -76,7 +76,7 @@ export default {
  
 </script>
 <style scoped>
-@import "../../stylesheets/_variables";
+@import "../../stylesheets/_variables.scss";
 .el-tag{
   margin: 0.3em;
 }

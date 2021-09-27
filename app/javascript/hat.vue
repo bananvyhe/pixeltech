@@ -158,8 +158,8 @@
 	// }());
 </script>
 <style scoped>
-@import "stylesheets/_variables";
-@import "stylesheets/_extends";
+@import "stylesheets/_variables.scss";
+/*@import "stylesheets/_extends";*/
 .plashken {
 	position: absolute;
 	width: 100%;
