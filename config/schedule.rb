@@ -3,6 +3,7 @@ env :PATH, ENV['PATH']
 job_type :sidekiq,  "cd :path && RAILS_ENV=:environment sidekiq-client :task :output"
 # set :output, error: '/log/whenever/error.log', standard: '/log/whenever/cron.log'
 
+# set :output, "/log/cron.log"
 set :output, "#{path}/log/cron.log"
 
 set :environment, :development 
