@@ -36,16 +36,16 @@ body {
 .aprior {
   font-family: 'aprior';
 }
-.font3 {
+/*.font3 {
   font-family: 'elemend';
-}
+}*/
 /*#siteown{
   top: 0;
 }*/
  
-.footer-color{
-  /*background-color: $str2;*/
-}
+/*.footer-color{
+  background-color: $str2;
+}*/
 /*@typography {*/
 /*  body {
     color: $isabelline;
