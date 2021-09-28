@@ -20,7 +20,7 @@
       	</template>
         <v-card>
 
-	        <v-card-title class="headline grey darken-2 px-3">
+	        <v-card-title class="headline">
 	          Вход
 	        </v-card-title>
 					         	<v-container>
@@ -62,13 +62,9 @@
 			      	</v-switch>
 				    </v-container>
 				  </v-form>
-				 
-        <v-divider></v-divider>
         <v-card-actions  class="px-0 py-0">
           <v-spacer></v-spacer>
           <v-btn
-     
-  
             @click="handle">
             Подтвердить
           </v-btn>

@@ -244,7 +244,7 @@ body {
   margin: 1em;
   .comm {
     padding: 0.5em 0.5em;
-    border-top: 1px solid color( $HeadBackColor  shade(0%));
+    /*border-top: 1px solid color( $HeadBackColor  shade(0%));*/
   } 
 }
 

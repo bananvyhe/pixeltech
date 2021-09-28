@@ -5,7 +5,7 @@
 				<v-btn type="primary"  @click="dialogFormVisible = true" small>Регистрация</v-btn>
 			</template>
 			<v-card>
-        <v-card-title class="headline grey darken-2 px-3">
+        <v-card-title class="headline">
           Регистрация
         </v-card-title>
  				<v-container>
@@ -66,7 +66,6 @@
 				        </v-col> 							        			         
 				      </v-row>					  	
 					  </v-container>
-					  <v-divider></v-divider>
            <v-card-actions class="px-0 py-0">
            	<v-spacer></v-spacer>
             <v-btn   @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn> </v-card-actions>

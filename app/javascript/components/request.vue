@@ -8,14 +8,15 @@
               small
               v-bind="attrs"
               v-on="on"
-               @click="dialogFormVisible = true">задать вопрос
+               @click="dialogFormVisible = true">
+               задать вопрос
             </v-btn>
           </div>
         </div>          
       </template>
       <v-card
         class="mx-auto">
-        <v-card-title class="headline grey darken-2 px-3">
+        <v-card-title class="headline">
             Связь с разработчиком
           </v-card-title>
           <v-container>
@@ -39,9 +40,8 @@
             value="">
             </v-textarea>
           </v-container>
-          <v-divider></v-divider>
           <v-card-actions class="px-0 py-0">
-            <!-- <v-spacer></v-spacer> -->
+            <v-spacer></v-spacer>
             <v-btn @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn>
           </v-card-actions>
         </v-form></v-container>
