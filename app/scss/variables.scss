@@ -32,15 +32,16 @@ $divider-inset-margin: 12px !default;
 //ё   '24': #373737
 // );
 $material-dark: (
-	'app-bar': $blu2,
+	
+	'app-bar': $blu1,
 	 // 'status-bar': (
       'regular': $blu3,
   //     'lights-out': #000000
   //   ),
-  'background': #222922,
- 'surface': #FFC107,
+  'background': $cards,
+ // 'surface': #FFC107,
  // 'bottom-navigation': #FFC107,
- 'cards':  #393e41,
+ // 'cards':  #393e41,
 );
 // $line-height-root: 1.5;
 // $toolbar-btn-icon-size: 24px;

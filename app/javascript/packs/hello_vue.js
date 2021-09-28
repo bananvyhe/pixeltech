@@ -59,7 +59,7 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-import colors from 'vuetify/lib/util/colors'
+// import colors from 'vuetify/lib/util/colors'
 
 Vue.use(Vuetify, {
 	components: {

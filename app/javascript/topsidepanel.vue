@@ -520,8 +520,8 @@
 }
 .elpro {
 	/*padding: 0.5em 0 0;*/
-	font-size: 11px;
-	color: $str5;
+/*	font-size: 11px;
+	color: $str5;*/
 }
 .crytop {
  display: flex;
