@@ -5,42 +5,18 @@
 			<div class="  smalltext" v-bind:style="styleObject"> 
 				<div class="logohead">
 					<div class="voodoo1" v-if="!$store.getters.role">
- 
-						<!-- <request class="request"></request> -->
-						<!-- <v-btn small v-popover.right="{ name: 'topside' }" >сайты</v-btn> -->
-						<!-- <popover
-							name="topside">
-					    <div style="text-align: center;">
-					    	<a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a><br>
-					    	<a target="_blank" href="https://farmspot.ru">farmspot.ru</a>
-					    </div>
-			   		</popover> -->
- 
-			   		  <v-btn small ref="popoverReference"" @click="openPopover">сайты</v-btn>
- <VueSlickPopover
-      v-if="isPopoverVisible"
-      :popover-options="popoverOptions"
-      @closePopover="closePopover">
-
-
-      <VueSlickPopoverContent>
-     <div class="popover-content">
-     	<a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a><br>
-			<a target="_blank" href="https://farmspot.ru">farmspot.ru</a>
-     </div>
-      </VueSlickPopoverContent>
-    </VueSlickPopover>
- 	
- 
-<!--       <v-btn
-        fab
-        dark
-        x-small
-        color="red"
-      >
-        <v-icon>mdi-delete</v-icon>
-      </v-btn>
- 	   		 -->
+<!-- 			   		<v-btn small ref="popoverReference"" @click="openPopover">сайты</v-btn>
+ 						<VueSlickPopover
+			      v-if="isPopoverVisible"
+			      :popover-options="popoverOptions"
+			      @closePopover="closePopover">
+							<VueSlickPopoverContent>
+     						<div class="popover-content">
+						     	<a target="_blank" href="https://impuls-psy.ru">impuls-psy.ru</a><br>
+									<a target="_blank" href="https://farmspot.ru">farmspot.ru</a>
+						    </div>
+						  </VueSlickPopoverContent>
+						</VueSlickPopover> -->
 					</div>
 					<div v-if="$store.getters.role" >
 						<div class="backbar" v-if="$store.getters.token">
