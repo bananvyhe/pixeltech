@@ -2,7 +2,7 @@
 	<div class="log"> 
 		<!-- {{this.$store.getters.token.access}}<br>{{this.$store.getters.token.refresh}} -->
 		<div v-if="$store.getters.token != null" ><!-- <div style="position: fixed; left: 0; top: 3em;"> {{$store.getters.token}}</div> -->
-      <v-btn small type="primary" @click="handler" class="ma-2">
+      <v-btn small type="primary" @click="handler" class=" ">
       	Выйти
       </v-btn>
     </div>
@@ -13,7 +13,7 @@
         	small
           v-bind="attrs"
           v-on="on"
-          class="ma-2"
+          class=" "
         	>
           Войти
         	</v-btn>
@@ -26,11 +26,11 @@
 					         	<v-container>
 						<v-form 
 							v-model="valid"
-							class="mb-0">
+							class=" ">
 					    <v-container>
 					      <v-row>
         					<v-col
-        					class="py-0"
+        					class=" "
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -41,7 +41,7 @@
 				          	</v-text-field>
 				        	</v-col>
 				        	<v-col
-				        	class="py-0"
+				        	class=" "
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -56,13 +56,13 @@
 				      </v-row>
 <!-- 				        			      <div class="forgetPassword"><a href="/users/password/new">забыли пароль?</a></div> -->
 				      <v-switch
-				      	class="mt-0"
+				      	class=" "
 			      		v-model="checked"
 			      		:label="`${checked == false ? 'короткая сессия':'запомнить'}`">
 			      	</v-switch>
 				    </v-container>
 				  </v-form>
-        <v-card-actions  class="px-0 py-0">
+        <v-card-actions  class=" ">
           <v-spacer></v-spacer>
           <v-btn
             @click="handle">
@@ -369,35 +369,6 @@
 <style scoped>
 @import "../stylesheets/_variables.scss";
  
-
-.bottomField {
-	padding-top: 2em;
-}
-.forgetPassword{
-	/*padding: 0.0em 0em;*/
-/*	display: flex; 
-	justify-content: flex-end;*/
-
-	/*position: absolute;*/
-	float: right;
-}
-.el-input--mini {
-	width: 16em;
-}
-.flexlab {
-	 
-}
-.lab {
-	display: flex;
-	justify-content: flex-end;
-/* padding-top: 0.2em;*/
-	right: 0px;
-}
-.log  {
-  /*z-index: 5000;*/
-
-  display: flex;
- /*	right: 0;*/
-} 
+ 
 
 </style>

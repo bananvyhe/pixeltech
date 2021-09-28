@@ -7,6 +7,7 @@
           height="42px"
           hide-on-scroll
           dense>
+           
           <port></port>
           <div class="wrap" v-if="$store.getters.token == null" > 
             <request></request>
@@ -21,10 +22,11 @@
           </div>
 
           <div class="wrap">
-            <log ></log>
+            <log class="mx-2"></log>
              <div v-if="$store.getters.token == null" > {{$store.getters.token}} </div>
             <!-- |||||{{exptime}}++++{{errored}} -->
           </div>
+           
         </v-app-bar>
       </v-container>
       <v-main>
@@ -287,15 +289,14 @@ import axios from 'axios'
 .vmain{
   /*lost-center: $lcenter;*/
 }
-.heado{
+/*.heado{
   display: flex;
-  /*overflow: visible;*/
+ 
   align-items: justify;
   justify-content: center;
   height: 100%;
-
-  /*background-color: #dad;*/
-}
+ 
+}*/
 
 .test{
   background-color: #dad;
@@ -306,16 +307,13 @@ import axios from 'axios'
   position: relative;
  height: 100%;
 }
-.app{
-  /*background-color: #dad;*/
-  /*background-color: var(--v-background-base) !important;*/
-}
+ 
   .v-app-bar{
   /*float: left;*/
   
 }
 .topsidepanel{
-  margin-top: 4em;
+  /*margin-top: 4em;*/
   /*background-color: #dad;*/
 }
 </style>

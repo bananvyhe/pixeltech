@@ -11,11 +11,11 @@
  				<v-container>
 					<v-form 
 					v-model="valid"
-					class="mb-0">
+					class=" ">
 					  <v-container>
 					      <v-row>
         					<v-col
-        					class="py-0"
+        					class=" "
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -26,7 +26,7 @@
 				          	</v-text-field>
 				        	</v-col>
 				        	<v-col
-				        	class="py-0"
+				        	class=" "
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -39,7 +39,7 @@
 				          </v-text-field>
 				        	</v-col> 
 				        	<v-col
-				        	class="py-0"
+				        	class=" "
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -52,7 +52,7 @@
 				          </v-text-field>
 				        </v-col> 	
 				        	<v-col
-				        	class="py-0"
+				        	class=" "
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -66,7 +66,7 @@
 				        </v-col> 							        			         
 				      </v-row>					  	
 					  </v-container>
-           <v-card-actions class="px-0 py-0">
+           <v-card-actions class=" ">
            	<v-spacer></v-spacer>
             <v-btn   @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn> </v-card-actions>
 					</v-form>			
@@ -316,7 +316,7 @@
 	height: 2.7em;
 },*/
  .el-form-item__label {
- 	width: 30px;
+ 	/*width: 30px;*/
  }
 .reg  {
   z-index: 5000;

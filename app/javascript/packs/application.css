@@ -158,18 +158,18 @@ body {
   cursor: pointer;
 }
  
-.loa{
+/*.loa{
   color: $str5;
 
-}
-.loading {
+}*/
+/*.loading {
 
   padding: 0.5em;
   height: 2em;
   color: white;
   text-align: center;
   font-size: 20px;
-}
+}*/
 .hidden {
   display: none;
 }

@@ -31,16 +31,12 @@
 						</div>
 					</div>
 					<div v-else>
-
 					</div>
 					<div v-if="($store.getters.gamebo)" class="crytop">
- 
 						<inv class="invclass" v-if="$store.getters.role" @my-event="storeCommitGbData"></inv>
 					</div> 
 					<div v-else>
-
 					</div>
- 
 				</div>
 				<div class="maininfo">
 					<div v-if="$store.getters.token != null" class="info wrap">

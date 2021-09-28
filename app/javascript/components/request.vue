@@ -2,7 +2,7 @@
   <div class="request">
     <v-dialog class="pos"  :width="calcul" v-model="dialogFormVisible" >
       <template v-slot:activator="{ on, attrs }">
-        <div class="scale">
+        <div class=" ">
           <div class="shake">
             <v-btn icon
               small
@@ -21,26 +21,26 @@
           </v-card-title>
           <v-container>
         <v-form 
-          class="my-0"
+          class=" "
           :model="form" 
           ref="forma">  
           <v-text-field  
-            class="pt-2 pb-1 px-1"
+            class=" "
             v-model="form.email"
             :rules="emailRules"
             type="text"
             label="ваша почта">
           </v-text-field>
-          <v-container class="px-0 py-1">
+          <v-container class=" ">
             <v-textarea
-             class="px-1"
+             class=" "
             outlined
             name="input-7-4"
             label="Ваше сообщение..."
             value="">
             </v-textarea>
           </v-container>
-          <v-card-actions class="px-0 py-0">
+          <v-card-actions class="">
             <v-spacer></v-spacer>
             <v-btn @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn>
           </v-card-actions>
@@ -53,7 +53,7 @@
       {{ text }}
       <template v-slot:action="{ attrs }">
         <v-btn
-          color="blue"
+          
           text
           v-bind="attrs"
           @click="snackbar = false">
@@ -285,7 +285,7 @@ function parseCalc() {
   }
 }
 .el-input--mini {
-  width: 16em;
+  
 }
 .flexlab {
    
