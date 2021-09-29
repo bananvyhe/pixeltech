@@ -5,19 +5,20 @@
 				<v-btn type="primary"  @click="dialogFormVisible = true" small>Регистрация</v-btn>
 			</template>
 			<v-card>
+				<v-container class=" ">
         <v-card-title class="headline">
           Регистрация
         </v-card-title>
- 				<v-container>
+        </v-container>
+ 				<v-container class="pt-0">
 					<v-form 
 					v-model="valid"
 					class=" ">
-					  <v-container>
+					  <v-container class="px-6">
 					      <v-row>
         					<v-col
-        					class=" "
 				          cols="12"
-				          md="12">
+				          md="12" >
 				          	<v-text-field
 				            v-model="form.email"
 				            :rules="emailRules"
@@ -26,7 +27,7 @@
 				          	</v-text-field>
 				        	</v-col>
 				        	<v-col
-				        	class=" "
+				        	class="pt-0"
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -38,8 +39,9 @@
 				            label="Пароль">
 				          </v-text-field>
 				        	</v-col> 
+				        	<v-container class="px-8">
 				        	<v-col
-				        	class=" "
+				        	class="pt-0 "
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -50,9 +52,9 @@
 				            :rules="passRulesConf"
 				            label="Повторите пароль">
 				          </v-text-field>
-				        </v-col> 	
+				        	</v-col> 	
 				        	<v-col
-				        	class=" "
+				        	class="pt-0"
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -62,11 +64,11 @@
 				            v-model="form.username"
 				            :rules="usernameRules"
 				            label="Имя пользователя">
-				          </v-text-field>
-				        </v-col> 							        			         
-				      </v-row>					  	
-					  </v-container>
-           <v-card-actions class=" ">
+				          	</v-text-field>
+				        	</v-col> </v-container>							        			         
+					      </v-row>					  	
+						  </v-container>
+	           <v-card-actions class=" ">
            	<v-spacer></v-spacer>
             <v-btn   @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn> </v-card-actions>
 					</v-form>			

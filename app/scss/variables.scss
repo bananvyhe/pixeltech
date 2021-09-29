@@ -50,6 +50,6 @@ $card-actions-padding: 8px !important;
 $footer-border-radius: 3px;
 $footer-padding:0px 0px;
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 50px map-get($material-dark-elevation-colors, '1') inset;
+  -webkit-box-shadow: 0 0 0 50px $blu3 inset;
   -webkit-text-fill-color: $str4;
 }
