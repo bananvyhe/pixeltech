@@ -19,18 +19,18 @@ $divider-inset-margin: 12px !default;
  
  // $color-pack: false;
  // 
-//  $material-dark-elevation-colors: (
-//   '0': #000000,
-//   '1': #1E1E1E,
-//   '2': #222222,
-//   '3': #252525,
-//   '4': #FFC107,
-//   '6': #2C2C2C,
-//   '8': #2E2E2E,
-//   '12': #333333,
-//   '16': #363636,
-//ё   '24': #373737
-// );
+ $material-dark-elevation-colors: (
+  '0': #000000,
+  '1': #1E1E1E,
+  '2': #222222,
+  '3': #252525,
+  '4': #272727,
+  '6': #2C2C2C,
+  '8': #2E2E2E,
+  '12': #333333,
+  '16': #363636,
+  '24': #373737
+);
 $material-dark: (
 	
 	'app-bar': $blu1,
@@ -48,4 +48,7 @@ $material-dark: (
 $card-actions-padding: 8px !important;
 $footer-border-radius: 3px;
 $footer-padding:0px 0px;
- 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 50px map-get($material-dark-elevation-colors, '1') inset;
+  -webkit-text-fill-color: $str4;
+}

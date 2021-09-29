@@ -1,10 +1,5 @@
 @import "../stylesheets/_variables.scss";
- 
- 
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 50px $blu3 inset;
-  -webkit-text-fill-color: $str4;
-}
+
 html {
   overflow-y: auto !important;
   scrollbar-face-color: #646464;
@@ -16,7 +11,6 @@ html {
   scrollbar-shadow-color: #646464;
   scrollbar-dark-shadow-color: #646464;
 }
-
 ::-webkit-scrollbar { width: 8px; height: 3px;}
 ::-webkit-scrollbar-button {  background-color: #666; }
 ::-webkit-scrollbar-track {  background-color: #646464;}
@@ -24,45 +18,14 @@ html {
 ::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
 ::-webkit-scrollbar-corner { background-color: #646464;}
 ::-webkit-resizer { background-color: #666;}
+
 body {
- /* background-color:color( $spacecadet shade(0%));*/
   font-family: 'RobotoReg';
- 
 }
  
 .aprior {
   font-family: 'aprior';
 }
-/*.font3 {
-  font-family: 'elemend';
-}*/
-/*#siteown{
-  top: 0;
-}*/
- 
-/*.footer-color{
-  background-color: $str2;
-}*/
-/*@typography {*/
-/*  body {
-    color: $isabelline;
-  }*/
-/*  a {
-    color:  color( $str6 shade(15s%)saturation(90%));
-    text-decoration: none;
-  }
-  a:visited {
-   
-    color: color( $deeptaupe lightness(30%)saturation(45%));
-  }  
-  a:hover {
-    color: color( $str6 shade(0%)saturation(90%));
-  }   */
-/*  h1,h2,h3,h4,h5 {
-    margin-bottom: 0.2em;
-    font-family: "aprior";
-  }*/
-/*}*/
 .app{
  /* position: relative;
   z-index: 9999;*/
@@ -71,7 +34,6 @@ body {
   position: relative;
   display: inline-block;
 }*/
-
 .cry {
   border: 1px solid color( $screenbg shade(56%));; 
   text-shadow: 0px 1px #222, 1px 0px #222;
