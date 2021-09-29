@@ -33,18 +33,19 @@ $divider-inset-margin: 12px !default;
 );
 $material-dark: (
 	
-	'app-bar': $blu1,
+	'app-bar': $HeadBackColor,
 	 // 'status-bar': (
       'regular': $blu3,
   //     'lights-out': #000000
   //   ),
-  'background': $blu3,
- 'surface': $blu3,
+  'background': map-get($material-dark-elevation-colors, '2'),
+ 'surface': #121212,
  // 'bottom-navigation': #FFC107,
- // 'cards':  #393e41,
+ 'cards':  $blu3,
 );
 // $line-height-root: 1.5;
 // $toolbar-btn-icon-size: 24px;
+ 
 $card-actions-padding: 8px !important;
 $footer-border-radius: 3px;
 $footer-padding:0px 0px;

@@ -14,12 +14,16 @@
           </div>
         </div>          
       </template>
+
       <v-card
         class="mx-auto">
+        <v-container class=" pb-0">
         <v-card-title class="headline">
             Связь с разработчиком
-          </v-card-title>
-          <v-container>
+        </v-card-title>
+      </v-container>
+        <v-container class=" pt-0">
+          <v-container class=" py-0">
         <v-form 
           class=" "
           :model="form" 
@@ -31,20 +35,20 @@
             type="text"
             label="ваша почта">
           </v-text-field>
-          <v-container class=" ">
-            <v-textarea
-             class=" "
+          <v-textarea
+            class=" pt-2"
             outlined
             name="input-7-4"
             label="Ваше сообщение..."
             value="">
-            </v-textarea>
-          </v-container>
-          <v-card-actions class="">
+          </v-textarea>
+          <v-card-actions class="pr-0 pt-0">
             <v-spacer></v-spacer>
             <v-btn @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn>
           </v-card-actions>
-        </v-form></v-container>
+        </v-form>
+        </v-container>
+        </v-container>
       </v-card>
     </v-dialog>
     <v-snackbar
@@ -53,7 +57,6 @@
       {{ text }}
       <template v-slot:action="{ attrs }">
         <v-btn
-          
           text
           v-bind="attrs"
           @click="snackbar = false">
