@@ -17,11 +17,13 @@
         <v-card >
           <v-list class="py-1">
             <v-list-item class="px-2 py-0">
+
               <div v-for="(item, index) in items" class="py-0 port" >
                 <v-card-title class="headline" v-html="item.title" >                  
                 </v-card-title>
                 <v-card-subtitle v-html="item.subtitle"></v-card-subtitle>
               </div>
+
             </v-list-item>
           </v-list>
         </v-card> 
@@ -47,14 +49,12 @@ export default {
         
         {
           avatar: '',
-          price: '30 тыс.', 
           title: '<a href="https:impuls-psy.ru" target="_blank">Impuls-psy.ru</a>',
           subtitle: `<span class="text--primary">Психологический центр</span> &mdash; веб-сайт с несколькими разделами с простым редактором контента. Обычный сайт без сильной программной части.`,
         },
  
         {
           avatar: '',
-          price: '120+ тыс.', 
           title: '<a href="https:farmspot.ru" target="_blank">Farmspot.ru</span>',
           subtitle: `<span class="text--primary">Игровой форум</span> &mdash; веб-приложение, уровни доступа, механики для пользователей (прокачка аккаунта, среда для взаимодействие между пользователями). Парсер-робот выполняющий функции в заданное время`,
         },
@@ -87,7 +87,7 @@ export default {
 </script>
 <style scoped>
 @import "../stylesheets/_variables.scss";
-.price{
+.bgcss{
   position: absolute;
   display: flex;
   justify-content: flex-end;
@@ -111,7 +111,7 @@ export default {
 }
 .port{
   lost-column: 1/2 2 0.5em;   
-  position: relative;  
+ 
   /*padding: 0.5em;*/
 }
 .popover-content {
