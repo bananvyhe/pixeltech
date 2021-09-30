@@ -42,3 +42,7 @@ app/.DS_Store
 craig.html
 craiglist_gig_scrapper.rb
 {:error=
+config/access.log
+config/deploy.error.log
+config/sidekiq.log
+config/deploy.access.log

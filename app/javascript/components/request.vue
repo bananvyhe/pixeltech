@@ -9,7 +9,7 @@
               v-bind="attrs"
               v-on="on"
                @click="dialogFormVisible = true">
-               задать вопрос
+               отправить сообщение
             </v-btn>
           </div>
         </div>          
