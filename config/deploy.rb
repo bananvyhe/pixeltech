@@ -4,9 +4,20 @@ lock "~> 3.16.0"
 
 # set :sidekiq_processes, 2
 # set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
+namespace :sidekiq do
+  task :quiet do
+    on roles(:app) do
+      puts capture("pgrep -f 'sidekiq' | xargs kill -TSTP") 
+    end
+  end
+  task :restart do
+    on roles(:app) do
+      execute :sudo,  :restart, :workers
+    end
+  end
+end
 
-
-set :repo_url, "git@github.com:bananvyhe/pixeltech.git"
+set :repo_url, "git://github.com/bananvyhe/pixeltech.git"
 # set :init_system, :systemd
 # set :upstart_service_name, 'sidekiq'
 # set :rbenv_map_bins, fetch(:rbenv_map_bins).to_a.concat(%w(sidekiq sidekiqctl))
