@@ -19,14 +19,16 @@
         	</v-btn>
       	</template>
         <v-card>
-	        <v-card-title class="headline">
-	          Вход
-	        </v-card-title>
-					         	<v-container>
+        	<v-container class="pb-0">
+		        <v-card-title class="headline">
+		          Вход
+		        </v-card-title>
+	      	</v-container>
+					<v-container class="">
 						<v-form 
 							v-model="valid"
 							class=" ">
-					    <v-container>
+					    <v-container class="pb-0">
 					      <v-row>
         					<v-col
         					class=" "
