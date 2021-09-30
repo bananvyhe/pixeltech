@@ -78,7 +78,7 @@ set :application, "pixeltech"
  append :linked_files, "config/database.yml"
 
 # Default value for linked_dirs is []
- append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads"
+ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/uploads", '.bundle'
 # role :all, %w{deploy@46.161.39.175}
 set :host, "46.161.39.175"
 # role :app, host
