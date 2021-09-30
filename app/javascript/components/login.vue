@@ -19,7 +19,6 @@
         	</v-btn>
       	</template>
         <v-card>
-
 	        <v-card-title class="headline">
 	          Вход
 	        </v-card-title>
@@ -41,7 +40,7 @@
 				          	</v-text-field>
 				        	</v-col>
 				        	<v-col
-				        	class=" "
+				        	class="pt-0"
 				          cols="12"
 				          md="12">
 				          	<v-text-field
@@ -54,7 +53,6 @@
 				          </v-text-field>
 				        </v-col> 
 				      </v-row>
-<!-- 				        			      <div class="forgetPassword"><a href="/users/password/new">забыли пароль?</a></div> -->
 				      <v-switch
 				      	class=" "
 			      		v-model="checked"
@@ -62,7 +60,7 @@
 			      	</v-switch>
 				    </v-container>
 				  </v-form>
-        <v-card-actions  class=" ">
+        <v-card-actions  class="pt-0">
           <v-spacer></v-spacer>
           <v-btn
             @click="handle">
