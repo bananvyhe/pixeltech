@@ -10,11 +10,11 @@
           Регистрация
         </v-card-title>
         </v-container>
- 				<v-container class="pt-0">
+ 				<v-container class="pt-0 px-4">
 					<v-form 
 					v-model="valid"
 					class=" ">
-					  <v-container class="px-6">
+					  <v-container class=" ">
 					      <v-row>
         					<v-col
 				          cols="12"
@@ -68,9 +68,10 @@
 				        	</v-col> </v-container>							        			         
 					      </v-row>					  	
 						  </v-container>
-	           <v-card-actions class=" ">
+	           <v-card-actions class="pt-0 pb-1">
            	<v-spacer></v-spacer>
-            <v-btn   @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn> </v-card-actions>
+            <v-btn   @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn> 
+          	</v-card-actions>
 					</v-form>			
  				</v-container>
 			</v-card>		

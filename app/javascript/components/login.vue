@@ -62,8 +62,8 @@
 			      	</v-switch>
 				    </v-container>
 				  </v-form>
-        <v-card-actions  class="pt-0">
-          <v-spacer></v-spacer>
+	        <v-card-actions  class="pt-0 pb-1 ">
+	          <v-spacer></v-spacer>
           <v-btn
             @click="handle">
             Подтвердить

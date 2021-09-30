@@ -41,7 +41,7 @@ $material-dark: (
   'background': map-get($material-dark-elevation-colors, '2'),
  'surface': #121212,
  // 'bottom-navigation': #FFC107,
- 'cards':  $blu3,
+ 'cards':  $cor3,
 );
 // $line-height-root: 1.5;
 // $toolbar-btn-icon-size: 24px;
@@ -50,6 +50,6 @@ $card-actions-padding: 8px !important;
 $footer-border-radius: 3px;
 $footer-padding:0px 0px;
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 50px $blu3 inset;
+  -webkit-box-shadow: 0 0 0 50px $cor3 inset;
   -webkit-text-fill-color: $str4;
 }

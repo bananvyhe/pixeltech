@@ -33,7 +33,7 @@
             v-model="form.email"
             :rules="emailRules"
             type="text"
-            label="ваша почта">
+            label="ваша почта"> 
           </v-text-field>
           <v-textarea
             class=" pt-2"
@@ -42,7 +42,7 @@
             label="Ваше сообщение..."
             value="">
           </v-textarea>
-          <v-card-actions class="pr-0 pt-0">
+          <v-card-actions class="pr-0 pt-0 pb-1">
             <v-spacer></v-spacer>
             <v-btn @click="dialogFormVisible = false">Отмена</v-btn><v-btn class=" " @click="handle" >Отправить</v-btn>
           </v-card-actions>
