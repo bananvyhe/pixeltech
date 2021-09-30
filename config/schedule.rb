@@ -6,7 +6,7 @@ job_type :sidekiq,  "cd :path && RAILS_ENV=:environment sidekiq-client :task :ou
 # set :output, "/log/cron.log"
 set :output, "#{path}/log/cron.log"
 
-set :environment, :development 
+set :environment, :production 
 
 # every 1.minutes do
 #   rake   output: {error: "#{path}/log/error.log", standard: "#{path}/log/cron.log"}
