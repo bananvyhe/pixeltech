@@ -4,18 +4,18 @@ lock "~> 3.16.0"
 
 # set :sidekiq_processes, 2
 # set :sidekiq_options_per_process, ["--queue high", "--queue default --queue low"]
-# namespace :sidekiq do
-#   task :quiet do
-#     on roles(:app) do
-#       puts capture("pgrep -f 'sidekiq' | xargs kill -TSTP") 
-#     end
-#   end
-#   task :restart do
-#     on roles(:app) do
-#       execute :sudo,  :restart, :workers
-#     end
-#   end
-# end
+namespace :sidekiq do
+  task :quiet do
+    on roles(:app) do
+      puts capture("pgrep -f 'sidekiq' | xargs kill -TSTP") 
+    end
+  end
+  task :restart do
+    on roles(:app) do
+      execute :sudo,  :restart, :workers
+    end
+  end
+end
 
 set :repo_url, "git://github.com/bananvyhe/pixeltech.git"
 # set :init_system, :systemd
@@ -82,25 +82,25 @@ set :application, "pixeltech"
 # role :all, %w{deploy@46.161.39.175}
 set :host, "46.161.39.175"
 # role :app, host
-# namespace :deploy do
-# 	desc "Update cron jobs"
-#   task :update_crontab do
-#   	on roles(:deploy) do
-#   		run "cd #{release_path} && whenever --update-crontab pixeltech"
-#   	end
-#   end
-#     desc "Clear cron jobs"
-#   task :clear_crontab do
-#   	on roles(:deploy) do
-#     	run "cd #{release_path} && whenever --clear-crontab pixeltech"
-#   	end
-#   end
-# end
-# after 'deploy:starting', 'deploy:clear_crontab'
-# after 'deploy:starting', 'deploy:update_crontab'
-# after 'deploy:starting', 'sidekiq:quiet'
-# after 'deploy:reverted', 'sidekiq:restart'
-# after 'deploy:published', 'sidekiq:restart'
+namespace :deploy do
+	desc "Update cron jobs"
+  task :update_crontab do
+  	on roles(:deploy) do
+  		run "cd #{release_path} && whenever --update-crontab pixeltech"
+  	end
+  end
+    desc "Clear cron jobs"
+  task :clear_crontab do
+  	on roles(:deploy) do
+    	run "cd #{release_path} && whenever --clear-crontab pixeltech"
+  	end
+  end
+end
+after 'deploy:starting', 'deploy:clear_crontab'
+after 'deploy:starting', 'deploy:update_crontab'
+after 'deploy:starting', 'sidekiq:quiet'
+after 'deploy:reverted', 'sidekiq:restart'
+after 'deploy:published', 'sidekiq:restart'
 # set :upstart_service_name, 'sidekiq'
 
 # namespace :sidekiq do

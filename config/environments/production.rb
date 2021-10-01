@@ -1,7 +1,7 @@
 
 Rails.application.configure do
 
-
+server '46.161.39.175', roles: %w(app web db), primary: true, user: 'deploy'
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
   # Settings specified here will take precedence over those in config/application.rb.
