@@ -46,3 +46,4 @@ config/access.log
 config/deploy.error.log
 config/sidekiq.log
 config/deploy.access.log
+notes.log
