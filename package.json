@@ -48,6 +48,7 @@
     "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
+    "babel-loader": "^8.2.2",
     "deepmerge": "^4.2.2",
     "fibers": "^5.0.0",
     "node-sass": "^6.0.1",
