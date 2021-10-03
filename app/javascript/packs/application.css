@@ -31,10 +31,10 @@ body {
 .lostedit{
    lost-utility: edit;
 }
-.lost1 {
+.lost2 {
   lost-column: 1/2;
 }
-.lost2 {
+.lost1 {
   lost-column: 1/1;
 }
 .lostcenter {
@@ -196,18 +196,7 @@ body {
   height: $topBlank;
  
 }
-.lostedit{
-   lost-utility: edit;
-}
-.lost1 {
-  lost-column: 1/2;
-}
-.lost2 {
-  lost-column: 1/1;
-}
-.lostcenter {
-  lost-center: 980px;
-}
+ 
 .mainframepaddings {
   margin: 1em;
   .comm {
@@ -224,9 +213,7 @@ body {
 .thumb_map_img_as_div{
   height: 300px; width: 500px;
 }
-.firstpagebg {
  
-}
 .mes {
   font-family: 'aprior';
   padding: 0.5em 0 0 0;
