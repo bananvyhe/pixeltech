@@ -254,7 +254,7 @@ import axios from 'axios'
       },
     },
     mounted() {
-      if (this.$store.getters.role.role.includes('client') == true) {
+      if (this.$store.getters.role != null && this.$store.getters.role.role.includes('client') == true) {
        this.getBallance()
      }
       //проверка условий на существования логина 

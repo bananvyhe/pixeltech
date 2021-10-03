@@ -22,7 +22,7 @@
 				</div> 
 				<% if user.has_role? :client %> 
           <div style="background-color: green;">
-						<%= user.client.ballance %>
+						<%#= user.client.ballance %>
 					</div> 
 				<% end %>
 				<div v-on:click="reload">

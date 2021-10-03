@@ -2,7 +2,7 @@
  <div class=" lostcenter">
    <div class="mainframe" style="padding: 1em;">
     <div class="basetext">
-      баланс: <%= @client.ballance%> руб.
+      баланс: <%#= @client.ballance%> руб.
     </div>
     <br>
      пополнить счет:
@@ -17,10 +17,10 @@
  <br><br>
       <label><input type="radio" name="paymentType" value="PC">&nbsp;&nbsp;Яндекс.Деньгами</label>  <br>  <label><input type="radio" name="paymentType" value="AC" checked="checked">&nbsp;&nbsp;Банковской картой</label>  <br><br>  <input type="submit" value="Оплатить"></form>
 
-    <% if current_user.try(:admin?) or  current_user.try(:superadmin?) %>
-      <%= link_to 'зачисления',  inboxes_path %>
-    <% end %>
-     ~ <%=  (@client.ballance/$stepcash/24).round %> дней 
+    <%# if current_user.try(:admin?) or  current_user.try(:superadmin?) %>
+      <%#= link_to 'зачисления',  inboxes_path %>
+    <%# end %>
+     ~ <%#  (@client.ballance/$stepcash/24).round %> дней 
     <br>
       <div >
         <br>
@@ -31,6 +31,6 @@
       </div>
 
     <br>
-  <%= render :template => "inboxes/index" %>
+  <%#= render :template => "inboxes/index" %>
    </div>
  </div>   -->
