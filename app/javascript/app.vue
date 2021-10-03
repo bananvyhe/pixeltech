@@ -279,43 +279,11 @@ import axios from 'axios'
   }
 </script>
 <style scoped>
- 
-@import "stylesheets/_variables.scss";
-/*.app{
-  position: relative;
-  z-index: 9999;
-}*/
-.appbar{
-  /*lost-center: $lcenter;*/
-}
-.vmain{
-  /*lost-center: $lcenter;*/
-}
-/*.heado{
-  display: flex;
- 
-  align-items: justify;
-  justify-content: center;
-  height: 100%;
- 
-}*/
-
 .test{
   background-color: #dad;
 }
 .plash{
-
-  /*background-color: #ada;*/
   position: relative;
- height: 100%;
-}
- 
-  .v-app-bar{
-  /*float: left;*/
-  
-}
-.topsidepanel{
-  /*margin-top: 4em;*/
-  /*background-color: #dad;*/
+  height: 100%;
 }
 </style>
