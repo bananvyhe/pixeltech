@@ -59,6 +59,7 @@
     "devDependencies": {
         "deepmerge": "^4.2.2",
         "fibers": "^5.0.0",
+        "postcss": "^8.3.9",
         "webpack-dev-server": "3.11.0"
     }
 }
