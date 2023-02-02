@@ -20,7 +20,7 @@
         "es6-promise": "^4.2.4",
         "gsap": "^2.0.1",
         "lost": "^8.2.1",
-        "npm": "^6.10.2",
+        "npm": "^9.4.1",
         "precss": "^1.4.0",
         "postcss-assets": "^5.0.0",
         "postcss-color-function": "^4.1.0",
