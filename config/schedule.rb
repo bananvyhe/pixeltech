@@ -1,11 +1,17 @@
 env :PATH, ENV['PATH']
 # env :GEM_PATH, ENV['GEM_PATH']
 job_type :sidekiq,  "cd :path && RAILS_ENV=:environment sidekiq-client :task :output"
+# set :output, error: '/log/whenever/error.log', standard: '/log/whenever/cron.log'
 
-set :output, error: 'error.log', standard: 'cron.log'
-set :environment, :production
+set :output, "#{path}/log/cron.log"
 
-every 1.hours do
+set :environment, :development 
+
+every 1.minutes do
+  rake   output: {error: "#{path}/log/error.log", standard: "#{path}/log/cron.log"}
+end
+ 	
+every 2.minutes do
   sidekiq 'push CashWorker'
 end
 # every 1.hours do
